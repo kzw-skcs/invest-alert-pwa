@@ -1,0 +1,18 @@
+{
+  "generated": "2026-06-29T11:23:26.470652+00:00",
+  "generatedJST": "2026-06-29 20:23 JST",
+  "settings": {
+    "lookbackDays": 252,
+    "bandPctOfRange": 0.03,
+    "maShort": 50,
+    "maLong": 200,
+    "breakoutLookbackDays": 90,
+    "vixWarnPct": 20,
+    "vixUrgentPct": 50,
+    "rebalanceThresholdPct": 5,
+    "hitThresholdPct": 3,
+    "minScoreToAlert": 0
+  },
+  "note": "予測データ蓄積中（シグナルが想定期間ぶん経過すると的中率を計算します）",
+  "history": []
+}

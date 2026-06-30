@@ -1,0 +1,70 @@
+{
+  "_comment": "監視銘柄・目標比率・判定パラメータの単一ソース。GitHub Actionsの判定処理とPWA表示の両方がこれを参照します。銘柄や方針(tradePolicy)を変えたいときはこのファイルを編集して git push してください。",
+  "settings": {
+    "lookbackDays": 252,
+    "lookbackLongDays": 1260,
+    "longRangeMinDays": 504,
+    "longTermLowPct": 50,
+    "bandPctOfRange": 0.03,
+    "maShort": 20,
+    "maLong": 50,
+    "maTrend": 200,
+    "breakoutLookbackDays": 90,
+    "counterTrendFilter": true,
+    "vixWarnPct": 20,
+    "vixUrgentPct": 50,
+    "vixAbsWarn": 30,
+    "vixAbsUrgent": 40,
+    "rebalanceThresholdPct": 5,
+    "hitThresholdPct": 3,
+    "minScoreToAlert": 0
+  },
+  "targets": {
+    "_comment": "アラート/リバランス対象は5資産。比率 個別株6 : BTC1 : ETH1 : 金1 : 銀1（投資信託は対象外）。",
+    "stocks": 6,
+    "btc": 1,
+    "eth": 1,
+    "gold": 1,
+    "silver": 1
+  },
+  "crypto": [
+    {"key": "btc", "coingeckoId": "bitcoin", "name": "ビットコイン", "tradePolicy": "accumulate"},
+    {"key": "eth", "coingeckoId": "ethereum", "name": "イーサリアム", "tradePolicy": "accumulate"}
+  ],
+  "metals": [
+    {"key": "gold", "stooq": "xauusd", "name": "金現物 (XAU/USD)", "tradePolicy": "accumulate"},
+    {"key": "silver", "stooq": "xagusd", "name": "銀現物 (XAG/USD)", "tradePolicy": "accumulate"}
+  ],
+  "vix": {"stooq": "^vix", "name": "VIX恐怖指数"},
+  "stocks": [
+    {"ticker": "AAPL",  "stooq": "aapl.us",  "name": "Apple",              "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "MSFT",  "stooq": "msft.us",  "name": "Microsoft",          "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "GOOGL", "stooq": "googl.us", "name": "Alphabet (Google)",  "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "AMZN",  "stooq": "amzn.us",  "name": "Amazon",             "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "AVGO",  "stooq": "avgo.us",  "name": "Broadcom",           "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "NVDA",  "stooq": "nvda.us",  "name": "NVIDIA",             "sector": "ハイテク",   "tradePolicy": "trade"},
+    {"ticker": "META",  "stooq": "meta.us",  "name": "Meta Platforms",     "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "TSLA",  "stooq": "tsla.us",  "name": "Tesla",              "sector": "ハイテク",   "tradePolicy": "trade"},
+    {"ticker": "AMD",   "stooq": "amd.us",   "name": "AMD",                "sector": "ハイテク",   "tradePolicy": "trade"},
+    {"ticker": "PLTR",  "stooq": "pltr.us",  "name": "Palantir",           "sector": "ハイテク",   "tradePolicy": "trade"},
+    {"ticker": "XOM",   "stooq": "xom.us",   "name": "ExxonMobil",         "sector": "エネルギー", "tradePolicy": "hold"},
+    {"ticker": "CVX",   "stooq": "cvx.us",   "name": "Chevron",            "sector": "エネルギー", "tradePolicy": "hold"},
+    {"ticker": "COP",   "stooq": "cop.us",   "name": "ConocoPhillips",     "sector": "エネルギー", "tradePolicy": "hold"},
+    {"ticker": "NEE",   "stooq": "nee.us",   "name": "NextEra Energy",     "sector": "エネルギー", "tradePolicy": "hold"},
+    {"ticker": "SLB",   "stooq": "slb.us",   "name": "Schlumberger (SLB)", "sector": "エネルギー", "tradePolicy": "trade"},
+    {"ticker": "LMT",   "stooq": "lmt.us",   "name": "Lockheed Martin",    "sector": "宇宙・防衛", "tradePolicy": "hold"},
+    {"ticker": "RTX",   "stooq": "rtx.us",   "name": "RTX (Raytheon)",     "sector": "宇宙・防衛", "tradePolicy": "hold"},
+    {"ticker": "NOC",   "stooq": "noc.us",   "name": "Northrop Grumman",   "sector": "宇宙・防衛", "tradePolicy": "hold"},
+    {"ticker": "BA",    "stooq": "ba.us",    "name": "Boeing",             "sector": "宇宙・防衛", "tradePolicy": "trade"},
+    {"ticker": "RKLB",  "stooq": "rklb.us",  "name": "Rocket Lab",         "sector": "宇宙・防衛", "tradePolicy": "trade"},
+    {"ticker": "IBM",   "stooq": "ibm.us",   "name": "IBM",                "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "ASML",  "stooq": "asml.us",  "name": "ASML (ADR)",         "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "MRVL",  "stooq": "mrvl.us",  "name": "Marvell Technology", "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "ANET",  "stooq": "anet.us",  "name": "Arista Networks",    "sector": "ハイテク",   "tradePolicy": "trade"},
+    {"ticker": "VRT",   "stooq": "vrt.us",   "name": "Vertiv Holdings",    "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "CLMB",  "stooq": "clmb.us",  "name": "Climb Global Solutions（小型株）", "sector": "ハイテク", "tradePolicy": "trade"},
+    {"ticker": "IQV",   "stooq": "iqv.us",   "name": "IQVIA Holdings",     "sector": "ヘルスケア", "tradePolicy": "hold"},
+    {"ticker": "CACI",  "stooq": "caci.us",  "name": "CACI International",  "sector": "宇宙・防衛", "tradePolicy": "hold"},
+    {"ticker": "SPCX",  "stooq": "spcx.us",  "name": "SpaceX (Space Exploration Technologies)", "sector": "宇宙・防衛", "tradePolicy": "trade"}
+  ]
+}

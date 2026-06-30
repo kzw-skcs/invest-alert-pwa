@@ -1,0 +1,34 @@
+name: reanalyze
+
+# 週1回（日曜 22:00 JST = 13:00 UTC）＋ アプリの「再分析」ボタンから手動実行
+on:
+  schedule:
+    - cron: "0 13 * * 0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  reanalyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Run reanalysis
+        run: python reanalyze.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add config.json analysis.json predictions.jsonl 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "reanalyze $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "変更なし"
+          fi

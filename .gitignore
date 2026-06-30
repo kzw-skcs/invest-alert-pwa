@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+_app_check.js
+.DS_Store

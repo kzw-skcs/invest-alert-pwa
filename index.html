@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>投資シグナル</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+:root{
+  --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --line:#334155;
+  --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8;
+  --buy:#2563eb; --superbuy:#15803d; --sell:#dc2626; --supersell:#b91c1c;
+  --rising:#16a34a; --falling:#ea580c; --neutral:#64748b;
+  --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  padding-bottom:calc(64px + env(safe-area-inset-bottom,0));font-size:15px;line-height:1.5}
+header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.95);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top,0))}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.htitle{font-weight:700;font-size:17px}
+.hsub{font-size:11px;color:var(--muted);margin-top:2px}
+.btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;
+  padding:8px 12px;font-size:13px;font-weight:600;cursor:pointer}
+.btn:active{transform:scale(.97)}
+.btn-accent{background:var(--accent);color:#04293a;border:none}
+.btn-wide{width:100%;padding:13px;font-size:15px;margin-top:8px}
+main{padding:12px 12px 20px}
+.tab{display:none}.tab.active{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.sec-title{font-size:12px;color:var(--muted);font-weight:700;margin:16px 4px 6px;letter-spacing:.04em}
+.badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;color:#fff}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mut{color:var(--muted);font-size:12px}
+.big{font-size:18px;font-weight:700}
+.stars{color:#fbbf24;letter-spacing:1px;font-size:13px}
+.lvl{font-weight:800;border-radius:6px;padding:1px 6px;font-size:12px}
+.lvl.S{background:#15803d}.lvl.A{background:#2563eb}.lvl.B{background:#64748b}.lvl.C{background:#475569}.lvl-{background:#334155}
+.pill{font-size:11px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:2px 7px;color:var(--muted)}
+.spark{display:block;width:100%;height:34px;margin-top:8px}
+.kv{display:flex;justify-content:space-between;font-size:13px;padding:2px 0}
+.kv b{font-weight:700}
+.pos{color:var(--good)}.neg{color:var(--bad)}
+input,select{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;
+  padding:8px;font-size:14px;width:100%}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 4px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600;font-size:11px}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(15,23,42,.97);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0);z-index:50}
+.nav button{flex:1;background:none;border:none;color:var(--muted);padding:9px 0 7px;font-size:11px;cursor:pointer}
+.nav button.on{color:var(--accent)}
+.nav .ic{font-size:20px;display:block}
+.alertbar{border-radius:12px;padding:10px 12px;margin-bottom:10px;font-size:13px;font-weight:600}
+.vix-ok{background:#14342b;border:1px solid #166534}
+.vix-warn{background:#3a2a08;border:1px solid #b45309}
+.vix-urgent{background:#3b0d0d;border:1px solid #b91c1c}
+.note{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
+.disc{font-size:11px;color:var(--muted);background:var(--panel);border:1px dashed var(--line);
+  border-radius:10px;padding:10px;margin-top:10px;line-height:1.6}
+.flex2{display:flex;gap:8px}.flex2>*{flex:1}
+.muted-small{font-size:11px;color:var(--muted)}
+.tag{font-size:10px;padding:1px 6px;border-radius:6px;background:var(--panel2);color:var(--muted);margin-left:6px}
+.hidden{display:none!important}
+h3{font-size:14px;margin:4px 0 8px}
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <div>
+      <div class="htitle">📈 投資シグナル</div>
+      <div class="hsub" id="updated">読み込み中…</div>
+    </div>
+    <button class="btn" onclick="updateApp()">🔄 更新</button>
+  </div>
+</header>
+
+<main>
+  <!-- ===== シグナル ===== -->
+  <section id="tab-signals" class="tab active">
+    <div id="setup-banner"></div>
+    <div id="vixbar"></div>
+    <div id="ranking"></div>
+    <div id="signal-list"></div>
+  </section>
+
+  <!-- ===== 資産（損益・リバランス） ===== -->
+  <section id="tab-portfolio" class="tab">
+    <div class="card">
+      <div class="row"><h3>💼 ポートフォリオ損益</h3>
+        <span class="pill" id="fxpill">USD/JPY —</span></div>
+      <div id="pl-summary"></div>
+      <div class="note">各資産の<b>数量</b>と<b>取得単価（円）</b>を入力すると、現在の評価額・損益（％と円）を自動計算します。金・銀は単位（g/oz）を選べます。株は1株あたり、暗号資産は1コインあたりの取得単価（円）。</div>
+    </div>
+    <div id="holdings"></div>
+    <div class="card">
+      <div class="row"><h3>⚖️ リバランス</h3><span class="pill" id="rb-th">閾値 ±5%</span></div>
+      <div id="rebalance"></div>
+      <div class="note">目標比率 個別株6 : BTC1 : ETH1 : 金1 : 銀1（投資信託は対象外）。乖離が閾値を超えるとおすすめの資産移動を表示します。</div>
+    </div>
+  </section>
+
+  <!-- ===== 分析・設定 ===== -->
+  <section id="tab-analysis" class="tab">
+    <div class="card">
+      <h3>🤖 アルゴリズム再分析</h3>
+      <div class="note">過去に出したシグナルを、実際のその後の値動きと突き合わせて<b>予想的中率</b>を計算し、結果に応じて判定パラメータを自動調整します（あなたが実際に売買したかは無関係）。</div>
+      <button class="btn btn-accent btn-wide" onclick="runReanalyze()">🔁 アルゴリズム再分析を実行</button>
+      <div id="reanalyze-msg" class="note"></div>
+      <div id="analysis"></div>
+    </div>
+    <div class="card">
+      <h3>🔔 プッシュ通知</h3>
+      <div id="push-area"></div>
+    </div>
+    <div class="card">
+      <h3>⚙️ 現在の判定設定</h3>
+      <div id="settings-view"></div>
+    </div>
+    <div class="disc" id="disclaimer">
+      ⚠️ 本アプリの状態判定・推奨度・見込みリターン・的中率は、トレンドライン（線形回帰チャネル）と移動平均、過去の値動きに基づく<b>機械的な計算値</b>です。将来の値動き・収益を保証するものではなく、投資助言ではありません。最終的な投資判断はご自身の責任で行ってください。データはStooq／CoinGeckoの無料ソースに依存し、遅延・欠損が生じる場合があります。
+    </div>
+  </section>
+</main>
+
+<nav class="nav">
+  <button id="nav-signals" class="on" onclick="showTab('signals')"><span class="ic">📊</span>シグナル</button>
+  <button id="nav-portfolio" onclick="showTab('portfolio')"><span class="ic">💼</span>資産</button>
+  <button id="nav-analysis" onclick="showTab('analysis')"><span class="ic">🤖</span>分析</button>
+</nav>
+
+<script>
+const OZ_G = 31.1034768;
+const STATE_COLOR = {SUPER_BUY:'var(--superbuy)',BUY:'var(--buy)',SELL:'var(--sell)',SUPER_SELL:'var(--supersell)',
+  RISING:'var(--rising)',FALLING:'var(--falling)',NEUTRAL:'var(--neutral)',UNKNOWN:'#475569'};
+let DATA=null, ANALYSIS=null;
+const LS=k=>'invsig_'+k;
+const getH=()=>{try{return JSON.parse(localStorage.getItem(LS('holdings'))||'{}')}catch(e){return {}}};
+const setH=h=>localStorage.setItem(LS('holdings'),JSON.stringify(h));
+
+function showTab(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('on'));
+  document.getElementById('nav-'+t).classList.add('on');
+  window.scrollTo(0,0);
+}
+function updateApp(){
+  if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.update()))}
+  location.reload(true);
+}
+const yen=n=>'¥'+Math.round(n).toLocaleString('ja-JP');
+const pct=n=>(n>=0?'+':'')+n.toFixed(1)+'%';
+const stars=n=>'★'.repeat(n)+'☆'.repeat(Math.max(0,5-n));
+
+function metalPerUnitUSD(price,unit){return unit==='g'?price/OZ_G:price;}
+
+// ---------- データ取得 ----------
+async function load(){
+  try{
+    const r=await fetch('data.json?_='+Date.now()); DATA=await r.json();
+  }catch(e){document.getElementById('updated').textContent='データ取得失敗';return;}
+  document.getElementById('updated').textContent='更新: '+(DATA.updatedJST||'-');
+  renderBanner(); renderVix(); renderRanking(); renderSignals(); renderPortfolio(); renderSettings();
+  try{const a=await fetch('analysis.json?_='+Date.now()); if(a.ok){ANALYSIS=await a.json();}}catch(e){}
+  renderAnalysis(); renderPush();
+}
+
+// ---------- シグナル ----------
+function renderBanner(){
+  const el=document.getElementById('setup-banner');
+  if(DATA.needsRun || DATA.sample){
+    el.className='alertbar vix-urgent';
+    el.innerHTML='⚠ <b>実データ未取得</b>：現在は仮表示で、価格は実在の値ではありません。GitHubの Actions →「daily」→ Run workflow を一度実行すると、Stooq/CoinGeckoから最新の実データを取得して表示されます。';
+  }else{
+    el.className=''; el.innerHTML='';
+  }
+}
+function renderVix(){
+  const v=DATA.vix||{}; const el=document.getElementById('vixbar');
+  if(v.value==null){ el.className=''; el.innerHTML=''; return; }
+  let cls='vix-ok',txt='😌 平穏';
+  if(v.level==='緊急'){cls='vix-urgent';txt='🚨 緊急';}
+  else if(v.level==='警戒'){cls='vix-warn';txt='⚠️ 警戒';}
+  const ch=v.changePct==null?'-':pct(v.changePct);
+  el.className='alertbar '+cls;
+  el.innerHTML=`VIX恐怖指数: <b>${v.value??'-'}</b>（前日比 ${ch}） ${txt}`+
+    (v.level?` ｜ 超買い場/超売り場と重なるとアラート強化`:'');
+}
+function polLabel(p){return (p==='accumulate'||p==='hold')?'長期保有':(p==='trade'?'短期売買':'');}
+function recLine(inst){
+  const rc=inst.rec||{};
+  if(rc.action==='avoid')return `<div class="mut" style="margin-top:6px;color:#fca5a5">⚠ ${rc.note||'下降トレンド中の逆張り（非推奨）'}</div>`;
+  if(!rc.action||rc.action==='hold')return rc.note?`<div class="mut" style="margin-top:6px">${rc.note}</div>`:'';
+  let s=`<span class="stars">${stars(rc.stars||0)}</span> <span class="lvl ${rc.level||'-'}">${rc.level||'-'}</span> 推奨度${rc.score||0}`;
+  if(rc.action==='buy'){
+    if(rc.expReturnPct!=null){
+      let ann=rc.annualizedPct;
+      let annTxt = ann==null?'':(ann>999?'（年率換算: 高・短期サイクル）':` / 年率換算 ${pct(ann)} ※単純換算`);
+      s+=`<div class="mut" style="margin-top:3px">📈 見込み <b class="pos">+${rc.expReturnPct}%</b>（${rc.expPeriodLabel||'期間—'}まで）${annTxt}</div>`;
+    }else if(rc.note){s+=`<div class="mut" style="margin-top:3px">${rc.note}</div>`;}
+  }
+  return `<div style="margin-top:6px">${s}</div>`;
+}
+function renderRanking(){
+  const el=document.getElementById('ranking');
+  const al=(DATA.alerts||[]);
+  if(!al.length){el.innerHTML=`<div class="card mut">現在アクション対象（買い場/売り場/超買い場/超売り場）のシグナルはありません。</div>`;return;}
+  let rows=al.map((a,i)=>{
+    const buy=a.side==='buy';
+    let ex = (buy&&a.expReturnPct!=null)?` ｜ 見込み<b class="pos">+${a.expReturnPct}%</b> ${a.expPeriodLabel||''}`:'';
+    let vx = a.vixLevel?` <span class="tag" style="color:#fca5a5">VIX${a.vixLevel}</span>`:'';
+    return `<div class="kv" style="align-items:flex-start">
+      <div><b>${i+1}. ${a.name}</b> <span class="mut">${a.ticker||''}</span><br>
+        <span class="badge" style="background:${STATE_COLOR[a.state]}">${a.label}</span>
+        <span class="stars">${stars(a.stars||0)}</span> <span class="lvl ${a.level||'-'}">${a.level||'-'}</span>${vx}
+        <div class="mut">${ex}</div></div>
+      <div style="text-align:right"><div class="big">${a.score||0}</div><div class="mut">推奨度</div></div></div>`;
+  }).join('');
+  el.innerHTML=`<div class="card"><div class="row"><h3>🏅 推奨ランキング（${al.length}件）</h3></div>
+    <div class="mut" style="margin-bottom:6px">推奨度が高い順。複数の買い/売り推奨を比較できます。</div>${rows}</div>`;
+}
+function sparkline(hist,color){
+  if(!hist||hist.length<2)return '';
+  const cs=hist.map(h=>h.c),mn=Math.min(...cs),mx=Math.max(...cs),W=300,H=34,n=cs.length;
+  const pts=cs.map((c,i)=>`${(i/(n-1)*W).toFixed(1)},${(H-((c-mn)/((mx-mn)||1))*H).toFixed(1)}`).join(' ');
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2"/></svg>`;
+}
+function renderSignals(){
+  const el=document.getElementById('signal-list');
+  const groups={'宇宙・防衛':[],'ハイテク':[],'エネルギー':[],'貴金属':[],'暗号資産':[]};
+  (DATA.instruments||[]).forEach(inst=>{
+    let g=inst.sector||'';
+    if(inst.class==='crypto')g='暗号資産'; else if(inst.class==='metal')g='貴金属';
+    (groups[g]=groups[g]||[]).push(inst);
+  });
+  const order=['ハイテク','エネルギー','宇宙・防衛','ヘルスケア','貴金属','暗号資産'];
+  const seen=new Set(order);
+  const extras=Object.keys(groups).filter(g=>!seen.has(g));
+  let html='';
+  order.concat(extras).forEach(g=>{
+    const list=groups[g]; if(!list||!list.length)return;
+    html+=`<div class="sec-title">${g||'その他'}</div>`;
+    list.forEach(inst=>{ html+=card(inst); });
+  });
+  el.innerHTML=html;
+}
+function card(inst){
+  const col=STATE_COLOR[inst.state]||'#475569';
+  const price=inst.price!=null?inst.price.toLocaleString('en-US',{maximumFractionDigits:inst.price<10?3:2}):'-';
+  const f2=v=>v.toLocaleString('en-US',{maximumFractionDigits:2});
+  let rangeRow='';
+  if(inst.top!=null&&inst.bottom!=null){
+    const posS=inst.pctInRange!=null?` <span class="mut">(位置${inst.pctInRange.toFixed(0)}%)</span>`:'';
+    rangeRow=`<div class="kv"><span class="mut">1年レンジ</span>
+      <span>底 ${f2(inst.bottom)} 〜 天井 ${f2(inst.top)}${posS}</span></div>`;
+  }
+  let rangeRowL='';
+  if(inst.longRangeAvailable&&inst.topLong!=null&&inst.bottomLong!=null){
+    const posL=inst.pctInRangeLong!=null?` <span class="mut">(位置${inst.pctInRangeLong.toFixed(0)}%)</span>`:'';
+    const ltT=inst.trendLong==='up'?'↗':inst.trendLong==='down'?'↘':'';
+    rangeRowL=`<div class="kv"><span class="mut">5年レンジ ${ltT}</span>
+      <span>底 ${f2(inst.bottomLong)} 〜 天井 ${f2(inst.topLong)}${posL}</span></div>`;
+  }
+  const sN=(DATA.settings&&DATA.settings.maShort)||20, lN=(DATA.settings&&DATA.settings.maLong)||50;
+  let maRow='';
+  if(inst.smaShort!=null&&inst.smaLong!=null){
+    const cr=inst.cross==='golden'?'<span class="pos">ゴールデンクロス</span>':inst.cross==='dead'?'<span class="neg">デッドクロス</span>':(inst.smaShort>=inst.smaLong?`${sN}>${lN}（上）`:`${sN}<${lN}（下）`);
+    maRow=`<div class="kv"><span class="mut">${sN}日/${lN}日線</span><span>${cr}</span></div>`;
+  }
+  const tr=inst.trend==='up'?'<span class="tag" style="color:#86efac">↗長期トレンド上</span>':inst.trend==='down'?'<span class="tag" style="color:#fca5a5">↘長期トレンド下</span>':'';
+  const pl=polLabel(inst.tradePolicy); const polTag=pl?`<span class="tag">${pl}</span>`:'';
+  const err=inst.error?`<div class="mut neg">⚠️ ${inst.stateLabel}</div>`:'';
+  return `<div class="card">
+    <div class="row">
+      <div><b>${inst.name}</b> <span class="mut">${inst.ticker||''}</span> ${polTag}${tr}</div>
+      <span class="badge" style="background:${col}">${inst.emoji||''} ${inst.stateLabel}</span>
+    </div>
+    <div class="row" style="margin-top:6px"><span class="big">${price}</span>
+      <span class="mut">${inst.class==='stock'?'USD':inst.class==='metal'?'USD/oz':'USD'}</span></div>
+    ${recLine(inst)}
+    ${rangeRow}${rangeRowL}${maRow}${err}
+    ${sparkline(inst.history,col)}
+  </div>`;
+}
+
+// ---------- 資産・損益・リバランス ----------
+function assetDefs(){
+  // [{key, label, class, unitSel?}]
+  const defs=[];
+  (DATA.instruments||[]).filter(i=>i.class==='stock').forEach(i=>defs.push({key:i.key,label:`${i.name} (${i.ticker})`,cls:'stock',bucket:'stocks',price:i.price}));
+  (DATA.instruments||[]).filter(i=>i.class==='crypto').forEach(i=>defs.push({key:i.key,label:i.name,cls:'crypto',bucket:i.key,price:i.price}));
+  (DATA.instruments||[]).filter(i=>i.class==='metal').forEach(i=>defs.push({key:i.key,label:i.name,cls:'metal',bucket:i.key,price:i.price,unit:true}));
+  return defs;
+}
+function fx(){return (DATA.fx&&DATA.fx.usdjpy)|| Number(localStorage.getItem(LS('fxrate'))) || 150;}
+function holdingValueJPY(d,h){
+  if(!d.price)return null;
+  let perUnitUSD=d.price;
+  if(d.cls==='metal')perUnitUSD=metalPerUnitUSD(d.price,(h.unit||'g'));
+  const qty=Number(h.qty)||0;
+  return qty*perUnitUSD*fx();
+}
+function renderPortfolio(){
+  document.getElementById('fxpill').textContent='USD/JPY '+(fx().toLocaleString());
+  document.getElementById('rb-th').textContent='閾値 ±'+((DATA.settings&&DATA.settings.rebalanceThresholdPct)||5)+'%';
+  const defs=assetDefs(); const H=getH();
+  // 保有入力カード
+  let html='';
+  const groupLabel={stock:'個別株',crypto:'暗号資産',metal:'貴金属'};
+  let lastCls='';
+  defs.forEach(d=>{
+    if(d.cls!==lastCls){html+=`<div class="sec-title">${groupLabel[d.cls]}</div>`;lastCls=d.cls;}
+    const h=H[d.key]||{};
+    const valJPY=holdingValueJPY(d,h);
+    const cost=(Number(h.qty)||0)*(Number(h.buy)||0);
+    let pl='';
+    if(valJPY!=null&&cost>0&&Number(h.qty)>0){
+      const diff=valJPY-cost,p=diff/cost*100;
+      pl=`<div class="kv"><span class="mut">評価額 / 損益</span>
+        <span>${yen(valJPY)} ｜ <b class="${diff>=0?'pos':'neg'}">${pct(p)} (${diff>=0?'+':''}${yen(diff)})</b></span></div>`;
+    }else if(valJPY!=null&&Number(h.qty)>0){
+      pl=`<div class="kv"><span class="mut">評価額</span><span>${yen(valJPY)}</span></div>`;
+    }
+    const unitSel=d.unit?`<select onchange="setField('${d.key}','unit',this.value)" style="max-width:70px">
+        <option value="g" ${(h.unit||'g')==='g'?'selected':''}>g</option>
+        <option value="oz" ${h.unit==='oz'?'selected':''}>oz</option></select>`:'';
+    html+=`<div class="card">
+      <div class="row"><b>${d.label}</b>${unitSel}</div>
+      <div class="flex2" style="margin-top:8px">
+        <div><div class="muted-small">数量${d.unit?'('+(h.unit||'g')+')':''}</div>
+          <input type="number" inputmode="decimal" value="${h.qty??''}" placeholder="0"
+            onchange="setField('${d.key}','qty',this.value)"></div>
+        <div><div class="muted-small">取得単価(円/${d.cls==='stock'?'株':d.unit?(h.unit||'g'):'枚'})</div>
+          <input type="number" inputmode="decimal" value="${h.buy??''}" placeholder="0"
+            onchange="setField('${d.key}','buy',this.value)"></div>
+      </div>${pl}</div>`;
+  });
+  document.getElementById('holdings').innerHTML=html;
+  renderPLSummary(defs,H); renderRebalance(defs,H);
+}
+function setField(key,field,val){const H=getH();H[key]=H[key]||{};H[key][field]=val;setH(H);renderPortfolio();}
+function bucketValues(defs,H){
+  const b={stocks:0,btc:0,eth:0,gold:0,silver:0}; const cost={stocks:0,btc:0,eth:0,gold:0,silver:0};
+  defs.forEach(d=>{
+    const h=H[d.key]||{}; const v=holdingValueJPY(d,h); const q=Number(h.qty)||0;
+    if(v!=null){b[d.bucket]=(b[d.bucket]||0)+v; cost[d.bucket]=(cost[d.bucket]||0)+q*(Number(h.buy)||0);}
+  });
+  return {b,cost};
+}
+function renderPLSummary(defs,H){
+  const {b,cost}=bucketValues(defs,H);
+  const totV=Object.values(b).reduce((a,c)=>a+c,0), totC=Object.values(cost).reduce((a,c)=>a+c,0);
+  const el=document.getElementById('pl-summary');
+  if(totV<=0){el.innerHTML=`<div class="mut">下の各資産に数量と取得単価を入力してください。</div>`;return;}
+  const diff=totV-totC, p=totC>0?diff/totC*100:0;
+  el.innerHTML=`<div class="kv"><span>合計評価額</span><b class="big">${yen(totV)}</b></div>`+
+    (totC>0?`<div class="kv"><span>合計損益</span><b class="${diff>=0?'pos':'neg'}">${pct(p)} (${diff>=0?'+':''}${yen(diff)})</b></div>`:'');
+}
+function renderRebalance(defs,H){
+  const el=document.getElementById('rebalance');
+  const {b}=bucketValues(defs,H);
+  const labels={stocks:'個別株',btc:'BTC',eth:'ETH',gold:'金',silver:'銀'};
+  const tg=DATA.targets||{stocks:6,btc:1,eth:1,gold:1,silver:1};
+  const tsum=Object.values(tg).reduce((a,c)=>a+c,0);
+  const total=Object.values(b).reduce((a,c)=>a+c,0);
+  if(total<=0){el.innerHTML=`<div class="mut">数量・評価額が入力されると、目標比率との乖離とおすすめの資産移動を表示します。</div>`;return;}
+  const th=(DATA.settings&&DATA.settings.rebalanceThresholdPct)||5;
+  let rows=`<table><tr><th>資産</th><th>現在</th><th>目標</th><th>乖離</th><th>調整額</th></tr>`;
+  const diffs={};
+  Object.keys(labels).forEach(k=>{
+    const cur=b[k]||0, curW=cur/total*100, tgtW=tg[k]/tsum*100, tgtV=total*tg[k]/tsum;
+    const dpp=curW-tgtW; diffs[k]=cur-tgtV;
+    const adj=tgtV-cur;
+    const cls=Math.abs(dpp)>th?(dpp>0?'neg':'pos'):'';
+    rows+=`<tr><td>${labels[k]}</td><td>${curW.toFixed(1)}%</td><td>${tgtW.toFixed(1)}%</td>
+      <td class="${cls}">${dpp>=0?'+':''}${dpp.toFixed(1)}pt</td>
+      <td class="${cls}">${adj>=0?'+':''}${yen(adj)}</td></tr>`;
+  });
+  rows+=`</table>`;
+  // おすすめ移動
+  const over=Object.entries(diffs).filter(([k,v])=>v>0).sort((a,b)=>b[1]-a[1]);
+  const under=Object.entries(diffs).filter(([k,v])=>v<0).sort((a,b)=>a[1]-b[1]);
+  const maxDpp=Math.max(...Object.keys(labels).map(k=>Math.abs((b[k]||0)/total*100-tg[k]/tsum*100)));
+  let advice='';
+  if(maxDpp>th){
+    let moves=[],oi=0,ui=0,o=over.map(x=>[x[0],x[1]]),u=under.map(x=>[x[0],-x[1]]);
+    while(oi<o.length&&ui<u.length){
+      const m=Math.min(o[oi][1],u[ui][1]);
+      if(m>total*0.005){moves.push(`<li><b>${labels[o[oi][0]]}</b> → <b>${labels[u[ui][0]]}</b> へ ${yen(m)}</li>`);}
+      o[oi][1]-=m;u[ui][1]-=m;
+      if(o[oi][1]<=1)oi++; if(u[ui][1]<=1)ui++;
+    }
+    advice=`<div class="alertbar vix-warn" style="margin-top:10px">⚖️ 乖離が${th}%を超えています。おすすめの移動：</div><ul style="margin:6px 0 0;padding-left:20px">${moves.join('')}</ul>`;
+  }else{
+    advice=`<div class="alertbar vix-ok" style="margin-top:10px">✅ 目標比率の範囲内です（最大乖離 ${maxDpp.toFixed(1)}pt）。</div>`;
+  }
+  el.innerHTML=rows+advice;
+}
+
+// ---------- 分析・設定 ----------
+function renderSettings(){
+  const s=DATA.settings||{}; const el=document.getElementById('settings-view');
+  el.innerHTML=`<div class="kv"><span class="mut">トレンドライン期間（短期）</span><span>${s.lookbackDays}日（約1年）</span></div>
+    <div class="kv"><span class="mut">トレンドライン期間（長期）</span><span>${s.lookbackLongDays||1260}日（約5年）</span></div>
+    <div class="kv"><span class="mut">到達判定の許容幅</span><span>レンジ幅の ${(s.bandPctOfRange*100).toFixed(1)}%</span></div>
+    <div class="kv"><span class="mut">クロス判定（超買い/超売り）</span><span>${s.maShort}日 × ${s.maLong}日</span></div>
+    <div class="kv"><span class="mut">長期トレンド線（逆張りフィルタ）</span><span>${s.maTrend||200}日</span></div>
+    <div class="kv"><span class="mut">逆張りフィルタ</span><span>${s.counterTrendFilter?'ON（下降トレンド中の買い場を抑制）':'OFF'}</span></div>
+    <div class="kv"><span class="mut">VIXアラート（変化率）</span><span>±${s.vixWarnPct}% 警戒 / ±${s.vixUrgentPct}% 緊急</span></div>
+    <div class="kv"><span class="mut">VIXアラート（絶対水準）</span><span>${s.vixAbsWarn||30} 警戒 / ${s.vixAbsUrgent||40} 緊急</span></div>
+    <div class="kv"><span class="mut">リバランス閾値</span><span>±${s.rebalanceThresholdPct}%</span></div>
+    <div class="kv"><span class="mut">通知の足切りスコア</span><span>${s.minScoreToAlert||0}</span></div>`;
+}
+function rateTxt(b){return (b&&b.rate!=null)?`${(b.rate*100).toFixed(0)}% (${b.hits}/${b.n})`:'データ蓄積中';}
+function renderAnalysis(){
+  const el=document.getElementById('analysis');
+  if(!ANALYSIS){el.innerHTML=`<div class="note">まだ再分析データがありません。シグナルが蓄積され、想定期間が経過すると的中率を計算できます。</div>`;return;}
+  if(ANALYSIS.note&&!ANALYSIS.stats){el.innerHTML=`<div class="note">${ANALYSIS.note}<br>最終実行: ${ANALYSIS.generatedJST||'-'}</div>`;return;}
+  const st=ANALYSIS.stats||{};
+  let adj=(ANALYSIS.adjustments||[]).map(a=>`<li>${a.param}: ${a.from} → <b>${a.to}</b><br><span class="mut">${a.reason}</span></li>`).join('');
+  let hist=(ANALYSIS.history||[]).slice(0,5).map(h=>`<div class="kv"><span class="mut">${h.at}</span><span>総合 ${h.overall&&h.overall.rate!=null?(h.overall.rate*100).toFixed(0)+'%':'-'}（${h.evaluatedCount||0}件）</span></div>`).join('');
+  el.innerHTML=`<div style="margin-top:8px">
+    <div class="kv"><span>総合的中率</span><b class="big">${st.overall&&st.overall.rate!=null?(st.overall.rate*100).toFixed(0)+'%':'蓄積中'}</b></div>
+    <div class="kv"><span class="mut">買いシグナル</span><span>${rateTxt(st.bySide&&st.bySide.buy)}</span></div>
+    <div class="kv"><span class="mut">売りシグナル</span><span>${rateTxt(st.bySide&&st.bySide.sell)}</span></div>
+    <div class="kv"><span class="mut">高スコア(≥65)</span><span>${rateTxt(st.byScoreBand&&st.byScoreBand['high(>=65)'])}</span></div>
+    <div class="kv"><span class="mut">低スコア(<50)</span><span>${rateTxt(st.byScoreBand&&st.byScoreBand['low(<50)'])}</span></div>
+    <div class="kv"><span class="mut">評価済 / 保留</span><span>${ANALYSIS.evaluatedCount||0} / ${ANALYSIS.pendingCount||0}件</span></div>
+    ${adj?`<div class="sec-title">自動調整</div><ul style="margin:0;padding-left:20px">${adj}</ul>`:'<div class="note">今回は調整なし（十分なデータが集まると自動調整します）。</div>'}
+    ${hist?`<div class="sec-title">履歴</div>${hist}`:''}
+    <div class="note">最終実行: ${ANALYSIS.generatedJST||'-'}</div></div>`;
+}
+async function runReanalyze(){
+  const m=document.getElementById('reanalyze-msg');
+  m.innerHTML='⏳ 実行をリクエスト中…';
+  try{
+    const r=await fetch('/api/reanalyze',{method:'POST'});
+    if(r.ok){m.innerHTML='✅ 再分析を開始しました。完了まで1〜2分。少し待ってから「🔄 更新」を押してください。';}
+    else{throw new Error('api');}
+  }catch(e){
+    m.innerHTML='⚠️ 自動実行サーバー（任意設定）が未構成のため、手動で実行してください：GitHubの Actions →「reanalyze」→ Run workflow。完了後に「🔄 更新」で結果が反映されます。';
+  }
+}
+
+// ---------- プッシュ通知 ----------
+async function renderPush(){
+  const el=document.getElementById('push-area');
+  if(!('serviceWorker' in navigator)||!('PushManager' in window)){
+    el.innerHTML='<div class="mut">この端末/ブラウザはプッシュ通知に対応していません。iPhoneはホーム画面に追加したアプリから開くと通知が使えます。</div>';return;
+  }
+  let vapid=null;
+  try{const v=await fetch('vapid.json?_='+Date.now()); if(v.ok)vapid=await v.json();}catch(e){}
+  if(!vapid||!vapid.publicKey){
+    el.innerHTML='<div class="note">プッシュ通知はまだ未設定です（VAPID鍵の登録が必要）。設定手順はセットアップガイドを参照してください。設定するまではアプリ内のシグナル表示でご確認いただけます。</div>';return;
+  }
+  el.innerHTML='<button class="btn btn-accent btn-wide" onclick="enablePush()">🔔 この端末で通知を受け取る</button><div id="push-msg" class="note"></div>';
+  window._vapid=vapid.publicKey;
+}
+function urlB64ToU8(s){const pad='='.repeat((4-s.length%4)%4);const b=(s+pad).replace(/-/g,'+').replace(/_/g,'/');
+  const raw=atob(b);return Uint8Array.from([...raw].map(c=>c.charCodeAt(0)));}
+async function enablePush(){
+  const m=document.getElementById('push-msg');
+  try{
+    const perm=await Notification.requestPermission();
+    if(perm!=='granted'){m.textContent='通知が許可されませんでした。';return;}
+    const reg=await navigator.serviceWorker.ready;
+    const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:urlB64ToU8(window._vapid)});
+    try{
+      const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(sub)});
+      if(r.ok){m.innerHTML='✅ 通知を登録しました。毎朝6時の判定でアラートが届きます。';return;}
+      throw new Error('api');
+    }catch(e){
+      m.innerHTML='登録サーバーが未設定です。以下のテキストを subscriptions.json に貼り付けてください（手動設定）：<br><textarea style="width:100%;height:80px">'+JSON.stringify(sub)+'</textarea>';
+    }
+  }catch(e){m.textContent='通知の登録に失敗しました: '+e.message;}
+}
+
+// ---------- 起動 ----------
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
+load();
+</script>
+</body>
+</html>

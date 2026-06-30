@@ -1,0 +1,15 @@
+{
+  "name": "投資シグナル",
+  "short_name": "投資シグナル",
+  "description": "個別株・暗号資産・金銀の買い場/売り場アラート、推奨度・見込みリターン、ポートフォリオ損益とリバランス",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-180.png", "sizes": "180x180", "type": "image/png"}
+  ]
+}
