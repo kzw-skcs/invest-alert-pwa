@@ -9,11 +9,13 @@
 ネットワークは GitHub Actions 上では自由に使えます。各資産は取得失敗しても全体は止めません。
 """
 from __future__ import annotations
-import csv, io, json, os, time, datetime, urllib.request, urllib.error
+import csv, io, json, os, time, datetime, urllib.request, urllib.parse, urllib.error
 import engine as E
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-UA = {"User-Agent": "Mozilla/5.0 (invest-alert-pwa)"}
+UA = {"User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                     "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"),
+      "Accept": "application/json,text/csv,*/*"}
 HIST_KEEP = 150  # PWA のスパークライン用に残す日数
 
 
@@ -28,6 +30,33 @@ def http_get(url, tries=3, timeout=30):
             last = e
             time.sleep(2 * (k + 1))
     raise last
+
+
+def fetch_yahoo(symbol, rng="5y"):
+    """Yahoo Finance から日次終値 [(date, close), ...] を取得（クラウドIPでも比較的安定）。"""
+    q = urllib.parse.quote(symbol, safe="")
+    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{q}"
+           f"?range={rng}&interval=1d")
+    text = http_get(url)
+    data = json.loads(text)
+    chart = data.get("chart") or {}
+    if chart.get("error"):
+        raise RuntimeError(f"Yahoo: {chart['error']} ({symbol})")
+    result = (chart.get("result") or [None])[0]
+    if not result:
+        raise RuntimeError(f"Yahoo: 結果なし ({symbol})")
+    ts = result.get("timestamp") or []
+    quote = ((result.get("indicators") or {}).get("quote") or [{}])[0]
+    closes = quote.get("close") or []
+    out = []
+    for t, c in zip(ts, closes):
+        if c is None:
+            continue
+        d = datetime.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d")
+        out.append((d, float(c)))
+    if not out:
+        raise RuntimeError(f"Yahoo: データ空 ({symbol})")
+    return out
 
 
 def fetch_stooq(symbol):
@@ -126,17 +155,39 @@ def main():
                 "side": "none", "actionable": False, "history": [], "error": str(e),
             })
 
+    # Yahoo Finance を主・Stooq/CoinGecko をフォールバックに。
+    def stock_hist(s):
+        try:
+            return fetch_yahoo(s["ticker"])
+        except Exception:  # noqa
+            return fetch_stooq(s["stooq"])
+
+    def metal_hist(m):
+        try:
+            return fetch_yahoo(m["yahoo"])
+        except Exception:  # noqa
+            return fetch_stooq(m["stooq"])
+
+    def crypto_hist(c):
+        try:
+            return fetch_yahoo(c["yahoo"])
+        except Exception:  # noqa
+            return fetch_coingecko(c["coingeckoId"])
+
     for s in cfg["stocks"]:
-        add(s, lambda s=s: fetch_stooq(s["stooq"]), "stock")
+        add(s, lambda s=s: stock_hist(s), "stock"); time.sleep(0.4)
     for m in cfg["metals"]:
-        add(m, lambda m=m: fetch_stooq(m["stooq"]), "metal")
+        add(m, lambda m=m: metal_hist(m), "metal"); time.sleep(0.4)
     for c in cfg["crypto"]:
-        add(c, lambda c=c: fetch_coingecko(c["coingeckoId"]), "crypto")
+        add(c, lambda c=c: crypto_hist(c), "crypto"); time.sleep(0.4)
 
     # VIX
     vix = {"value": None, "changePct": None, "level": None}
     try:
-        vseries = fetch_stooq(cfg["vix"]["stooq"])
+        try:
+            vseries = fetch_yahoo(cfg["vix"].get("yahoo", "^VIX"))
+        except Exception:  # noqa
+            vseries = fetch_stooq(cfg["vix"]["stooq"])
         vix = E.vix_status([c for _, c in vseries], settings)
     except Exception as e:  # noqa
         errors.append({"name": "VIX", "error": str(e)})
@@ -144,7 +195,11 @@ def main():
     # USD/JPY（円建て評価額・損益の計算に使用）
     usdjpy = None
     try:
-        fxseries = fetch_stooq("usdjpy")
+        fxcfg = cfg.get("fx", {})
+        try:
+            fxseries = fetch_yahoo(fxcfg.get("yahoo", "JPY=X"))
+        except Exception:  # noqa
+            fxseries = fetch_stooq(fxcfg.get("stooq", "usdjpy"))
         usdjpy = round(fxseries[-1][1], 3)
     except Exception as e:  # noqa
         errors.append({"name": "USDJPY", "error": str(e)})

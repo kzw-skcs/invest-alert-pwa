@@ -28,14 +28,15 @@
     "silver": 1
   },
   "crypto": [
-    {"key": "btc", "coingeckoId": "bitcoin", "name": "ビットコイン", "tradePolicy": "accumulate"},
-    {"key": "eth", "coingeckoId": "ethereum", "name": "イーサリアム", "tradePolicy": "accumulate"}
+    {"key": "btc", "yahoo": "BTC-USD", "coingeckoId": "bitcoin", "name": "ビットコイン", "tradePolicy": "accumulate"},
+    {"key": "eth", "yahoo": "ETH-USD", "coingeckoId": "ethereum", "name": "イーサリアム", "tradePolicy": "accumulate"}
   ],
   "metals": [
-    {"key": "gold", "stooq": "xauusd", "name": "金現物 (XAU/USD)", "tradePolicy": "accumulate"},
-    {"key": "silver", "stooq": "xagusd", "name": "銀現物 (XAG/USD)", "tradePolicy": "accumulate"}
+    {"key": "gold", "yahoo": "GC=F", "stooq": "xauusd", "name": "金 (COMEX先物 GC=F)", "tradePolicy": "accumulate"},
+    {"key": "silver", "yahoo": "SI=F", "stooq": "xagusd", "name": "銀 (COMEX先物 SI=F)", "tradePolicy": "accumulate"}
   ],
-  "vix": {"stooq": "^vix", "name": "VIX恐怖指数"},
+  "vix": {"yahoo": "^VIX", "stooq": "^vix", "name": "VIX恐怖指数"},
+  "fx": {"yahoo": "JPY=X", "stooq": "usdjpy", "name": "USD/JPY"},
   "stocks": [
     {"ticker": "AAPL",  "stooq": "aapl.us",  "name": "Apple",              "sector": "ハイテク",   "tradePolicy": "hold"},
     {"ticker": "MSFT",  "stooq": "msft.us",  "name": "Microsoft",          "sector": "ハイテク",   "tradePolicy": "hold"},

@@ -1,6 +1,7 @@
 {
-  "updated": "2026-06-30T18:30:02.584271+00:00",
-  "updatedJST": "2026-07-01 03:30 JST",
+  "updatedJST": "実データ未取得",
+  "needsRun": true,
+  "sample": true,
   "settings": {
     "lookbackDays": 252,
     "lookbackLongDays": 1260,
@@ -44,24 +45,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (aapl.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "MSFT",
@@ -70,24 +70,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (msft.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "GOOGL",
@@ -96,24 +95,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (googl.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "AMZN",
@@ -122,24 +120,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (amzn.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "AVGO",
@@ -148,24 +145,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (avgo.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "NVDA",
@@ -174,24 +170,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (nvda.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "META",
@@ -200,24 +195,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (meta.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "TSLA",
@@ -226,24 +220,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (tsla.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "AMD",
@@ -252,24 +245,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (amd.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "PLTR",
@@ -278,24 +270,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (pltr.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "XOM",
@@ -304,24 +295,23 @@
       "sector": "エネルギー",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (xom.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "CVX",
@@ -330,24 +320,23 @@
       "sector": "エネルギー",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (cvx.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "COP",
@@ -356,24 +345,23 @@
       "sector": "エネルギー",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (cop.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "NEE",
@@ -382,24 +370,23 @@
       "sector": "エネルギー",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (nee.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "SLB",
@@ -408,24 +395,23 @@
       "sector": "エネルギー",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (slb.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "LMT",
@@ -434,24 +420,23 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (lmt.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "RTX",
@@ -460,24 +445,23 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (rtx.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "NOC",
@@ -486,24 +470,23 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (noc.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "BA",
@@ -512,24 +495,23 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (ba.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "RKLB",
@@ -538,24 +520,23 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (rklb.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "IBM",
@@ -564,24 +545,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (ibm.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "ASML",
@@ -590,24 +570,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (asml.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "MRVL",
@@ -616,24 +595,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (mrvl.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "ANET",
@@ -642,24 +620,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (anet.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "VRT",
@@ -668,24 +645,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (vrt.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "CLMB",
@@ -694,24 +670,23 @@
       "sector": "ハイテク",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (clmb.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "IQV",
@@ -720,24 +695,23 @@
       "sector": "ヘルスケア",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (iqv.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "CACI",
@@ -746,24 +720,23 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "hold",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (caci.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "SPCX",
@@ -772,76 +745,73 @@
       "sector": "宇宙・防衛",
       "class": "stock",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "trade",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (spcx.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "gold",
       "ticker": "gold",
-      "name": "金現物 (XAU/USD)",
+      "name": "金 (COMEX先物 GC=F)",
       "sector": "",
       "class": "metal",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "accumulate",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (xauusd) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "silver",
       "ticker": "silver",
-      "name": "銀現物 (XAG/USD)",
+      "name": "銀 (COMEX先物 SI=F)",
       "sector": "",
       "class": "metal",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "accumulate",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "Stooq: データ空 (xagusd) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "btc",
@@ -849,649 +819,24 @@
       "name": "ビットコイン",
       "sector": "",
       "class": "crypto",
-      "stateLabel": "レンジ内",
-      "emoji": "⬜",
-      "color": "#6b7280",
+      "state": "UNKNOWN",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
+      "color": "#9ca3af",
       "side": "none",
       "actionable": false,
-      "history": [
-        {
-          "d": "2026-02-02",
-          "c": 76937.0641
-        },
-        {
-          "d": "2026-02-03",
-          "c": 78767.6582
-        },
-        {
-          "d": "2026-02-04",
-          "c": 75638.9567
-        },
-        {
-          "d": "2026-02-05",
-          "c": 73172.292
-        },
-        {
-          "d": "2026-02-06",
-          "c": 62853.6904
-        },
-        {
-          "d": "2026-02-07",
-          "c": 70523.9542
-        },
-        {
-          "d": "2026-02-08",
-          "c": 69296.8068
-        },
-        {
-          "d": "2026-02-09",
-          "c": 70542.3733
-        },
-        {
-          "d": "2026-02-10",
-          "c": 70096.4069
-        },
-        {
-          "d": "2026-02-11",
-          "c": 68779.9098
-        },
-        {
-          "d": "2026-02-12",
-          "c": 66937.5814
-        },
-        {
-          "d": "2026-02-13",
-          "c": 66184.5777
-        },
-        {
-          "d": "2026-02-14",
-          "c": 68838.8749
-        },
-        {
-          "d": "2026-02-15",
-          "c": 69765.5964
-        },
-        {
-          "d": "2026-02-16",
-          "c": 68716.5834
-        },
-        {
-          "d": "2026-02-17",
-          "c": 68907.7835
-        },
-        {
-          "d": "2026-02-18",
-          "c": 67489.4554
-        },
-        {
-          "d": "2026-02-19",
-          "c": 66456.3538
-        },
-        {
-          "d": "2026-02-20",
-          "c": 66918.6842
-        },
-        {
-          "d": "2026-02-21",
-          "c": 67970.294
-        },
-        {
-          "d": "2026-02-22",
-          "c": 67977.909
-        },
-        {
-          "d": "2026-02-23",
-          "c": 67585.1172
-        },
-        {
-          "d": "2026-02-24",
-          "c": 64577.5532
-        },
-        {
-          "d": "2026-02-25",
-          "c": 64074.111
-        },
-        {
-          "d": "2026-02-26",
-          "c": 67947.3919
-        },
-        {
-          "d": "2026-02-27",
-          "c": 67469.0604
-        },
-        {
-          "d": "2026-02-28",
-          "c": 65883.991
-        },
-        {
-          "d": "2026-03-01",
-          "c": 67008.4544
-        },
-        {
-          "d": "2026-03-02",
-          "c": 65713.499
-        },
-        {
-          "d": "2026-03-03",
-          "c": 68864.0369
-        },
-        {
-          "d": "2026-03-04",
-          "c": 68321.6178
-        },
-        {
-          "d": "2026-03-05",
-          "c": 72669.7702
-        },
-        {
-          "d": "2026-03-06",
-          "c": 70874.9869
-        },
-        {
-          "d": "2026-03-07",
-          "c": 68148.2834
-        },
-        {
-          "d": "2026-03-08",
-          "c": 67271.1908
-        },
-        {
-          "d": "2026-03-09",
-          "c": 66036.1578
-        },
-        {
-          "d": "2026-03-10",
-          "c": 68459.3154
-        },
-        {
-          "d": "2026-03-11",
-          "c": 69883.0089
-        },
-        {
-          "d": "2026-03-12",
-          "c": 70226.8188
-        },
-        {
-          "d": "2026-03-13",
-          "c": 70544.4254
-        },
-        {
-          "d": "2026-03-14",
-          "c": 70965.2823
-        },
-        {
-          "d": "2026-03-15",
-          "c": 71217.101
-        },
-        {
-          "d": "2026-03-16",
-          "c": 72681.9133
-        },
-        {
-          "d": "2026-03-17",
-          "c": 74858.1487
-        },
-        {
-          "d": "2026-03-18",
-          "c": 73926.279
-        },
-        {
-          "d": "2026-03-19",
-          "c": 71255.8635
-        },
-        {
-          "d": "2026-03-20",
-          "c": 69871.4515
-        },
-        {
-          "d": "2026-03-21",
-          "c": 70552.6253
-        },
-        {
-          "d": "2026-03-22",
-          "c": 68733.5478
-        },
-        {
-          "d": "2026-03-23",
-          "c": 67848.8761
-        },
-        {
-          "d": "2026-03-24",
-          "c": 70892.8282
-        },
-        {
-          "d": "2026-03-25",
-          "c": 70524.5118
-        },
-        {
-          "d": "2026-03-26",
-          "c": 71309.264
-        },
-        {
-          "d": "2026-03-27",
-          "c": 68791.1109
-        },
-        {
-          "d": "2026-03-28",
-          "c": 66321.0162
-        },
-        {
-          "d": "2026-03-29",
-          "c": 66321.0654
-        },
-        {
-          "d": "2026-03-30",
-          "c": 65970.429
-        },
-        {
-          "d": "2026-03-31",
-          "c": 66699.2744
-        },
-        {
-          "d": "2026-04-01",
-          "c": 68231.8305
-        },
-        {
-          "d": "2026-04-02",
-          "c": 68089.0554
-        },
-        {
-          "d": "2026-04-03",
-          "c": 66891.6646
-        },
-        {
-          "d": "2026-04-04",
-          "c": 66939.6912
-        },
-        {
-          "d": "2026-04-05",
-          "c": 67304.2496
-        },
-        {
-          "d": "2026-04-06",
-          "c": 68985.5264
-        },
-        {
-          "d": "2026-04-07",
-          "c": 68864.2345
-        },
-        {
-          "d": "2026-04-08",
-          "c": 71975.6217
-        },
-        {
-          "d": "2026-04-09",
-          "c": 71117.0771
-        },
-        {
-          "d": "2026-04-10",
-          "c": 71770.7469
-        },
-        {
-          "d": "2026-04-11",
-          "c": 72972.7082
-        },
-        {
-          "d": "2026-04-12",
-          "c": 73053.8881
-        },
-        {
-          "d": "2026-04-13",
-          "c": 70756.7511
-        },
-        {
-          "d": "2026-04-14",
-          "c": 74514.6301
-        },
-        {
-          "d": "2026-04-15",
-          "c": 74181.1081
-        },
-        {
-          "d": "2026-04-16",
-          "c": 74833.5064
-        },
-        {
-          "d": "2026-04-17",
-          "c": 75149.193
-        },
-        {
-          "d": "2026-04-18",
-          "c": 77128.4433
-        },
-        {
-          "d": "2026-04-19",
-          "c": 75728.4568
-        },
-        {
-          "d": "2026-04-20",
-          "c": 73856.055
-        },
-        {
-          "d": "2026-04-21",
-          "c": 75874.5463
-        },
-        {
-          "d": "2026-04-22",
-          "c": 76350.252
-        },
-        {
-          "d": "2026-04-23",
-          "c": 78194.7833
-        },
-        {
-          "d": "2026-04-24",
-          "c": 78260.62
-        },
-        {
-          "d": "2026-04-25",
-          "c": 77444.7956
-        },
-        {
-          "d": "2026-04-26",
-          "c": 77619.1422
-        },
-        {
-          "d": "2026-04-27",
-          "c": 78645.1256
-        },
-        {
-          "d": "2026-04-28",
-          "c": 77361.2991
-        },
-        {
-          "d": "2026-04-29",
-          "c": 76345.2252
-        },
-        {
-          "d": "2026-04-30",
-          "c": 75774.8855
-        },
-        {
-          "d": "2026-05-01",
-          "c": 76286.5771
-        },
-        {
-          "d": "2026-05-02",
-          "c": 78172.0742
-        },
-        {
-          "d": "2026-05-03",
-          "c": 78655.3456
-        },
-        {
-          "d": "2026-05-04",
-          "c": 78562.5505
-        },
-        {
-          "d": "2026-05-05",
-          "c": 79823.8856
-        },
-        {
-          "d": "2026-05-06",
-          "c": 80925.0937
-        },
-        {
-          "d": "2026-05-07",
-          "c": 81424.9952
-        },
-        {
-          "d": "2026-05-08",
-          "c": 80022.0413
-        },
-        {
-          "d": "2026-05-09",
-          "c": 80189.065
-        },
-        {
-          "d": "2026-05-10",
-          "c": 80678.0339
-        },
-        {
-          "d": "2026-05-11",
-          "c": 82145.6561
-        },
-        {
-          "d": "2026-05-12",
-          "c": 81725.2077
-        },
-        {
-          "d": "2026-05-13",
-          "c": 80480.886
-        },
-        {
-          "d": "2026-05-14",
-          "c": 79277.8045
-        },
-        {
-          "d": "2026-05-15",
-          "c": 81051.9829
-        },
-        {
-          "d": "2026-05-16",
-          "c": 79068.8202
-        },
-        {
-          "d": "2026-05-17",
-          "c": 78135.0099
-        },
-        {
-          "d": "2026-05-18",
-          "c": 77425.7152
-        },
-        {
-          "d": "2026-05-19",
-          "c": 76952.2149
-        },
-        {
-          "d": "2026-05-20",
-          "c": 76808.8106
-        },
-        {
-          "d": "2026-05-21",
-          "c": 77459.9443
-        },
-        {
-          "d": "2026-05-22",
-          "c": 77546.3377
-        },
-        {
-          "d": "2026-05-23",
-          "c": 75482.5238
-        },
-        {
-          "d": "2026-05-24",
-          "c": 76672.7929
-        },
-        {
-          "d": "2026-05-25",
-          "c": 76988.1613
-        },
-        {
-          "d": "2026-05-26",
-          "c": 77274.4015
-        },
-        {
-          "d": "2026-05-27",
-          "c": 75824.0633
-        },
-        {
-          "d": "2026-05-28",
-          "c": 74352.6993
-        },
-        {
-          "d": "2026-05-29",
-          "c": 73539.8419
-        },
-        {
-          "d": "2026-05-30",
-          "c": 73382.7183
-        },
-        {
-          "d": "2026-05-31",
-          "c": 73751.0679
-        },
-        {
-          "d": "2026-06-01",
-          "c": 73593.3712
-        },
-        {
-          "d": "2026-06-02",
-          "c": 71360.3252
-        },
-        {
-          "d": "2026-06-03",
-          "c": 66649.8556
-        },
-        {
-          "d": "2026-06-04",
-          "c": 64021.8892
-        },
-        {
-          "d": "2026-06-05",
-          "c": 63796.2544
-        },
-        {
-          "d": "2026-06-06",
-          "c": 60921.7944
-        },
-        {
-          "d": "2026-06-07",
-          "c": 60861.8801
-        },
-        {
-          "d": "2026-06-08",
-          "c": 63254.5722
-        },
-        {
-          "d": "2026-06-09",
-          "c": 63078.4405
-        },
-        {
-          "d": "2026-06-10",
-          "c": 61658.312
-        },
-        {
-          "d": "2026-06-11",
-          "c": 61492.5144
-        },
-        {
-          "d": "2026-06-12",
-          "c": 63552.3009
-        },
-        {
-          "d": "2026-06-13",
-          "c": 63537.739
-        },
-        {
-          "d": "2026-06-14",
-          "c": 64377.5767
-        },
-        {
-          "d": "2026-06-15",
-          "c": 65713.6236
-        },
-        {
-          "d": "2026-06-16",
-          "c": 66300.9585
-        },
-        {
-          "d": "2026-06-17",
-          "c": 65598.944
-        },
-        {
-          "d": "2026-06-18",
-          "c": 64422.5737
-        },
-        {
-          "d": "2026-06-19",
-          "c": 62900.2271
-        },
-        {
-          "d": "2026-06-20",
-          "c": 63513.6587
-        },
-        {
-          "d": "2026-06-21",
-          "c": 64240.2328
-        },
-        {
-          "d": "2026-06-22",
-          "c": 63231.8696
-        },
-        {
-          "d": "2026-06-23",
-          "c": 63957.1956
-        },
-        {
-          "d": "2026-06-24",
-          "c": 62651.9347
-        },
-        {
-          "d": "2026-06-25",
-          "c": 60908.9951
-        },
-        {
-          "d": "2026-06-26",
-          "c": 59712.6181
-        },
-        {
-          "d": "2026-06-27",
-          "c": 59981.8316
-        },
-        {
-          "d": "2026-06-28",
-          "c": 59943.1108
-        },
-        {
-          "d": "2026-06-29",
-          "c": 59612.294
-        },
-        {
-          "d": "2026-06-30",
-          "c": 60159.6302
-        },
-        {
-          "d": "2026-06-30",
-          "c": 58417.0393
-        }
-      ],
-      "state": "NEUTRAL",
-      "price": 58417.0393,
-      "top": 64544.2981,
-      "bottom": 55936.353,
-      "band": 258.2384,
-      "pctInRange": 28.8,
-      "distToBottomPct": 4.43,
-      "distToTopPct": 10.49,
-      "smaShort": 62636.7177,
-      "smaLong": 68497.9872,
-      "smaTrend": 75356.7686,
-      "trend": "down",
-      "cross": null,
-      "brokeAboveRecently": true,
-      "brokeBelowRecently": true,
-      "trendMethod": "pivot",
-      "cycleHalfDays": 8,
-      "topLong": null,
-      "bottomLong": null,
-      "pctInRangeLong": null,
-      "trendLong": null,
-      "longRangeAvailable": false,
-      "longTermLow": false,
       "tradePolicy": "accumulate",
-      "counterTrend": false,
+      "price": null,
+      "top": null,
+      "bottom": null,
+      "history": [],
       "rec": {
-        "score": 15,
-        "stars": 1,
-        "level": "-",
         "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "score": 0,
+        "stars": 0,
+        "level": "-"
+      },
+      "longRangeAvailable": false
     },
     {
       "key": "eth",
@@ -1500,163 +845,25 @@
       "sector": "",
       "class": "crypto",
       "state": "UNKNOWN",
-      "stateLabel": "取得失敗",
-      "emoji": "⚠️",
+      "stateLabel": "実データ未取得",
+      "emoji": "⏳",
       "color": "#9ca3af",
       "side": "none",
       "actionable": false,
+      "tradePolicy": "accumulate",
+      "price": null,
+      "top": null,
+      "bottom": null,
       "history": [],
-      "error": "HTTP Error 429: Too Many Requests",
       "rec": {
+        "action": "hold",
         "score": 0,
         "stars": 0,
-        "level": "-",
-        "action": "hold",
-        "expReturnPct": null,
-        "expDays": null,
-        "expPeriodLabel": null,
-        "annualizedPct": null,
-        "note": ""
-      }
+        "level": "-"
+      },
+      "longRangeAvailable": false
     }
   ],
   "alerts": [],
-  "errors": [
-    {
-      "name": "Apple",
-      "error": "Stooq: データ空 (aapl.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Microsoft",
-      "error": "Stooq: データ空 (msft.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Alphabet (Google)",
-      "error": "Stooq: データ空 (googl.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Amazon",
-      "error": "Stooq: データ空 (amzn.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Broadcom",
-      "error": "Stooq: データ空 (avgo.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "NVIDIA",
-      "error": "Stooq: データ空 (nvda.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Meta Platforms",
-      "error": "Stooq: データ空 (meta.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Tesla",
-      "error": "Stooq: データ空 (tsla.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "AMD",
-      "error": "Stooq: データ空 (amd.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Palantir",
-      "error": "Stooq: データ空 (pltr.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "ExxonMobil",
-      "error": "Stooq: データ空 (xom.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Chevron",
-      "error": "Stooq: データ空 (cvx.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "ConocoPhillips",
-      "error": "Stooq: データ空 (cop.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "NextEra Energy",
-      "error": "Stooq: データ空 (nee.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Schlumberger (SLB)",
-      "error": "Stooq: データ空 (slb.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Lockheed Martin",
-      "error": "Stooq: データ空 (lmt.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "RTX (Raytheon)",
-      "error": "Stooq: データ空 (rtx.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Northrop Grumman",
-      "error": "Stooq: データ空 (noc.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Boeing",
-      "error": "Stooq: データ空 (ba.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Rocket Lab",
-      "error": "Stooq: データ空 (rklb.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "IBM",
-      "error": "Stooq: データ空 (ibm.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "ASML (ADR)",
-      "error": "Stooq: データ空 (asml.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Marvell Technology",
-      "error": "Stooq: データ空 (mrvl.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Arista Networks",
-      "error": "Stooq: データ空 (anet.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Vertiv Holdings",
-      "error": "Stooq: データ空 (vrt.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "Climb Global Solutions（小型株）",
-      "error": "Stooq: データ空 (clmb.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "IQVIA Holdings",
-      "error": "Stooq: データ空 (iqv.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "CACI International",
-      "error": "Stooq: データ空 (caci.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "SpaceX (Space Exploration Technologies)",
-      "error": "Stooq: データ空 (spcx.us) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "金現物 (XAU/USD)",
-      "error": "Stooq: データ空 (xauusd) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "銀現物 (XAG/USD)",
-      "error": "Stooq: データ空 (xagusd) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "イーサリアム",
-      "error": "HTTP Error 429: Too Many Requests"
-    },
-    {
-      "name": "VIX",
-      "error": "Stooq: データ空 (^vix) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    },
-    {
-      "name": "USDJPY",
-      "error": "Stooq: データ空 (usdjpy) / 応答先頭: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"no'"
-    }
-  ]
+  "errors": []
 }
