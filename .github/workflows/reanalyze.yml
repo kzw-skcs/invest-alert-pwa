@@ -25,7 +25,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add config.json analysis.json predictions.jsonl 2>/dev/null || true
+          git add -A
           if ! git diff --cached --quiet; then
             git commit -m "reanalyze $(date -u +%Y-%m-%d)"
             git push
