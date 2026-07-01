@@ -70,6 +70,17 @@ th{color:var(--muted);font-weight:600;font-size:11px}
 .muted-small{font-size:11px;color:var(--muted)}
 .tag{font-size:10px;padding:1px 6px;border-radius:6px;background:var(--panel2);color:var(--muted);margin-left:6px}
 .hidden{display:none!important}
+.seg{display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:10px}
+.seg button{flex:1;background:none;border:none;color:var(--muted);padding:9px 0;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer}
+.seg button.on{background:var(--accent);color:#04293a}
+.wlrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}
+.sw{position:relative;width:96px;height:30px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);cursor:pointer;flex:none;font-size:11px;font-weight:700}
+.sw .kn{position:absolute;top:2px;left:2px;width:46px;height:24px;border-radius:999px;transition:left .18s;display:flex;align-items:center;justify-content:center;color:#fff}
+.sw.hold .kn{left:2px;background:#2563eb}
+.sw.trade .kn{left:48px;background:#ea580c}
+.sw .lbl{position:absolute;top:0;height:30px;display:flex;align-items:center;color:var(--muted);font-size:10px}
+.sw .lbl.l{left:8px}.sw .lbl.r{right:8px}
+.xbtn{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:0 4px}
 h3{font-size:14px;margin:4px 0 8px}
 </style>
 </head>
@@ -95,17 +106,53 @@ h3{font-size:14px;margin:4px 0 8px}
 
   <!-- ===== 資産（損益・リバランス） ===== -->
   <section id="tab-portfolio" class="tab">
+    <div class="seg" id="acct-seg">
+      <button data-acct="tokutei" class="on" onclick="setAcct('tokutei')">特定口座</button>
+      <button data-acct="nisa" onclick="setAcct('nisa')">NISA口座</button>
+      <button data-acct="sum" onclick="setAcct('sum')">合算</button>
+    </div>
     <div class="card">
-      <div class="row"><h3>💼 ポートフォリオ損益</h3>
+      <div class="row"><h3>💼 <span id="acct-title">特定口座</span>の損益</h3>
         <span class="pill" id="fxpill">USD/JPY —</span></div>
       <div id="pl-summary"></div>
-      <div class="note">各資産の<b>数量</b>と<b>取得単価（円）</b>を入力すると、現在の評価額・損益（％と円）を自動計算します。金・銀は単位（g/oz）を選べます。株は1株あたり、暗号資産は1コインあたりの取得単価（円）。</div>
+      <div class="note">各資産の<b>数量</b>と<b>取得単価（円）</b>を入力すると評価額・損益（％と円）を自動計算します。口座（特定/NISA）ごとに別々に保存されます。金・銀は単位（g/oz）選択可。株は1株あたり、暗号資産は1コインあたりの取得単価（円）。</div>
+    </div>
+    <div class="card" id="pf-search-card">
+      <div class="row"><h3>🔎 銘柄を検索して追加</h3></div>
+      <input type="text" id="pf-search" placeholder="ティッカー/名前で検索（例: NVDA, 金）" oninput="renderPortfolio()">
+      <div class="note">入力すると下の一覧が絞り込まれます。監視リストに無い銘柄は「🧬銘柄」タブで追加できます。</div>
     </div>
     <div id="holdings"></div>
     <div class="card">
       <div class="row"><h3>⚖️ リバランス</h3><span class="pill" id="rb-th">閾値 ±5%</span></div>
       <div id="rebalance"></div>
-      <div class="note">目標比率 個別株6 : BTC1 : ETH1 : 金1 : 銀1（投資信託は対象外）。乖離が閾値を超えるとおすすめの資産移動を表示します。</div>
+      <div class="note">目標比率 個別株6 : BTC1 : ETH1 : 金1 : 銀1（投資信託は対象外）。合算ベースで乖離が閾値を超えると資産移動を提案します。</div>
+    </div>
+  </section>
+
+  <!-- ===== 銘柄管理 ===== -->
+  <section id="tab-watchlist" class="tab">
+    <div class="card">
+      <div class="row"><h3>🔎 ティッカー検索・追加</h3></div>
+      <input type="text" id="wl-search" placeholder="ティッカーを入力（例: TSM, IONQ）" oninput="renderWatchlist()">
+      <div class="flex2" style="margin-top:8px">
+        <input type="text" id="wl-name" placeholder="表示名（任意）">
+        <select id="wl-sector">
+          <option>ハイテク</option><option>エネルギー</option><option>宇宙・防衛</option>
+          <option>ヘルスケア</option><option>その他</option>
+        </select>
+      </div>
+      <div class="flex2" style="margin-top:8px">
+        <select id="wl-policy"><option value="hold">長期保有</option><option value="trade">短期売買</option></select>
+        <button class="btn btn-accent" onclick="addTicker()">＋ 追加</button>
+      </div>
+      <div id="wl-add-msg" class="note"></div>
+    </div>
+    <div class="card">
+      <div class="row"><h3>📋 監視リスト</h3><button class="btn" onclick="syncWatchlist()">☁️ サーバーに同期</button></div>
+      <div class="note">スイッチで<b>長期保有／短期売買</b>を切替。長期保有＝売りアラートなし（押し目買い専用）。×で非表示。変更後は「サーバーに同期」で毎朝の自動判定にも反映されます（未設定時は表示のみ変更）。</div>
+      <div id="wl-sync-msg" class="note"></div>
+      <div id="watchlist"></div>
     </div>
   </section>
 
@@ -135,6 +182,7 @@ h3{font-size:14px;margin:4px 0 8px}
 <nav class="nav">
   <button id="nav-signals" class="on" onclick="showTab('signals')"><span class="ic">📊</span>シグナル</button>
   <button id="nav-portfolio" onclick="showTab('portfolio')"><span class="ic">💼</span>資産</button>
+  <button id="nav-watchlist" onclick="showTab('watchlist')"><span class="ic">🧬</span>銘柄</button>
   <button id="nav-analysis" onclick="showTab('analysis')"><span class="ic">🤖</span>分析</button>
 </nav>
 
@@ -142,10 +190,30 @@ h3{font-size:14px;margin:4px 0 8px}
 const OZ_G = 31.1034768;
 const STATE_COLOR = {SUPER_BUY:'var(--superbuy)',BUY:'var(--buy)',SELL:'var(--sell)',SUPER_SELL:'var(--supersell)',
   RISING:'var(--rising)',FALLING:'var(--falling)',NEUTRAL:'var(--neutral)',UNKNOWN:'#475569'};
-let DATA=null, ANALYSIS=null;
+let DATA=null, ANALYSIS=null, ACCT='tokutei';
 const LS=k=>'invsig_'+k;
-const getH=()=>{try{return JSON.parse(localStorage.getItem(LS('holdings'))||'{}')}catch(e){return {}}};
-const setH=h=>localStorage.setItem(LS('holdings'),JSON.stringify(h));
+// 口座別保有（holdings_tokutei / holdings_nisa）。旧holdingsは特定口座へ移行。
+(function migrate(){const old=localStorage.getItem(LS('holdings'));
+  if(old && !localStorage.getItem(LS('holdings_tokutei'))) localStorage.setItem(LS('holdings_tokutei'),old);})();
+const getHA=a=>{try{return JSON.parse(localStorage.getItem(LS('holdings_'+a))||'{}')}catch(e){return {}}};
+const setHA=(a,h)=>localStorage.setItem(LS('holdings_'+a),JSON.stringify(h));
+// 銘柄の方針オーバーライド・追加・非表示
+const getPolov=()=>{try{return JSON.parse(localStorage.getItem(LS('polov'))||'{}')}catch(e){return {}}};
+const setPolov=o=>localStorage.setItem(LS('polov'),JSON.stringify(o));
+const getExtra=()=>{try{return JSON.parse(localStorage.getItem(LS('wlextra'))||'[]')}catch(e){return []}};
+const setExtra=x=>localStorage.setItem(LS('wlextra'),JSON.stringify(x));
+const getHidden=()=>{try{return JSON.parse(localStorage.getItem(LS('wlhidden'))||'[]')}catch(e){return []}};
+const setHidden=x=>localStorage.setItem(LS('wlhidden'),JSON.stringify(x));
+const effPolicy=inst=>{const o=getPolov();return o[inst.ticker] || inst.tradePolicy || 'trade';};
+// 方針オーバーライドを表示用に適用（hold/accumulateなら売りシグナルを消す）
+function displayInst(inst){
+  const p=effPolicy(inst); const d=Object.assign({},inst); d._effPolicy=p;
+  if((p==='hold'||p==='accumulate') && (inst.side==='sell')){
+    d.actionable=false;
+    d.rec=Object.assign({},inst.rec||{},{action:'hold',note:'長期保有方針：売りシグナルは無効（押し目買い専用）',stars:1,level:'-'});
+  }
+  return d;
+}
 
 function showTab(t){
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
@@ -170,9 +238,27 @@ async function load(){
     const r=await fetch('data.json?_='+Date.now()); DATA=await r.json();
   }catch(e){document.getElementById('updated').textContent='データ取得失敗';return;}
   document.getElementById('updated').textContent='更新: '+(DATA.updatedJST||'-');
-  renderBanner(); renderVix(); renderRanking(); renderSignals(); renderPortfolio(); renderSettings();
+  ACCT=localStorage.getItem(LS('acct'))||'tokutei';
+  document.querySelectorAll('#acct-seg button').forEach(b=>b.classList.toggle('on',b.dataset.acct===ACCT));
+  document.getElementById('acct-title').textContent = ACCT==='tokutei'?'特定口座':ACCT==='nisa'?'NISA口座':'合算';
+  renderBanner(); renderVix(); renderRanking(); renderSignals(); renderPortfolio(); renderWatchlist(); renderSettings();
   try{const a=await fetch('analysis.json?_='+Date.now()); if(a.ok){ANALYSIS=await a.json();}}catch(e){}
   renderAnalysis(); renderPush();
+}
+// 全銘柄（サーバー＋アプリ追加分）。追加分でdata.jsonに未反映のものはplaceholder。
+function allInstruments(){
+  const base=(DATA.instruments||[]).slice();
+  const have=new Set(base.map(i=>i.ticker));
+  getExtra().forEach(x=>{
+    if(!have.has(x.ticker)){
+      base.push({key:x.ticker,ticker:x.ticker,name:x.name||x.ticker,sector:x.sector||'その他',
+        class:'stock',state:'UNKNOWN',stateLabel:'監視登録待ち',emoji:'⏳',color:'#9ca3af',
+        side:'none',actionable:false,price:null,top:null,bottom:null,history:[],
+        tradePolicy:x.policy||'hold',rec:{action:'hold',score:0,stars:0,level:'-'},pending:true});
+    }
+  });
+  const hidden=new Set(getHidden());
+  return base.filter(i=>!hidden.has(i.ticker));
 }
 
 // ---------- シグナル ----------
@@ -213,7 +299,13 @@ function recLine(inst){
 }
 function renderRanking(){
   const el=document.getElementById('ranking');
-  const al=(DATA.alerts||[]);
+  const hidden=new Set(getHidden()); const pov=getPolov();
+  const al=(DATA.alerts||[]).filter(a=>{
+    if(hidden.has(a.ticker))return false;
+    const p=pov[a.ticker]; // ローカルでholdに切替えたら売りアラートは隠す
+    if((p==='hold') && a.side==='sell')return false;
+    return true;
+  });
   if(!al.length){el.innerHTML=`<div class="card mut">現在アクション対象（買い場/売り場/超買い場/超売り場）のシグナルはありません。</div>`;return;}
   let rows=al.map((a,i)=>{
     const buy=a.side==='buy';
@@ -238,7 +330,8 @@ function sparkline(hist,color){
 function renderSignals(){
   const el=document.getElementById('signal-list');
   const groups={'宇宙・防衛':[],'ハイテク':[],'エネルギー':[],'貴金属':[],'暗号資産':[]};
-  (DATA.instruments||[]).forEach(inst=>{
+  allInstruments().forEach(raw=>{
+    const inst=displayInst(raw);
     let g=inst.sector||'';
     if(inst.class==='crypto')g='暗号資産'; else if(inst.class==='metal')g='貴金属';
     (groups[g]=groups[g]||[]).push(inst);
@@ -278,7 +371,7 @@ function card(inst){
     maRow=`<div class="kv"><span class="mut">${sN}日/${lN}日線</span><span>${cr}</span></div>`;
   }
   const tr=inst.trend==='up'?'<span class="tag" style="color:#86efac">↗長期トレンド上</span>':inst.trend==='down'?'<span class="tag" style="color:#fca5a5">↘長期トレンド下</span>':'';
-  const pl=polLabel(inst.tradePolicy); const polTag=pl?`<span class="tag">${pl}</span>`:'';
+  const pl=polLabel(inst._effPolicy||inst.tradePolicy); const polTag=pl?`<span class="tag">${pl}</span>`:'';
   const err=inst.error?`<div class="mut neg">⚠️ ${inst.stateLabel}</div>`:'';
   return `<div class="card">
     <div class="row">
@@ -295,11 +388,11 @@ function card(inst){
 
 // ---------- 資産・損益・リバランス ----------
 function assetDefs(){
-  // [{key, label, class, unitSel?}]
   const defs=[];
-  (DATA.instruments||[]).filter(i=>i.class==='stock').forEach(i=>defs.push({key:i.key,label:`${i.name} (${i.ticker})`,cls:'stock',bucket:'stocks',price:i.price}));
-  (DATA.instruments||[]).filter(i=>i.class==='crypto').forEach(i=>defs.push({key:i.key,label:i.name,cls:'crypto',bucket:i.key,price:i.price}));
-  (DATA.instruments||[]).filter(i=>i.class==='metal').forEach(i=>defs.push({key:i.key,label:i.name,cls:'metal',bucket:i.key,price:i.price,unit:true}));
+  const ai=allInstruments();
+  ai.filter(i=>i.class==='stock').forEach(i=>defs.push({key:i.key,ticker:i.ticker,label:`${i.name} (${i.ticker})`,cls:'stock',bucket:'stocks',price:i.price,pending:i.pending}));
+  ai.filter(i=>i.class==='crypto').forEach(i=>defs.push({key:i.key,ticker:i.ticker,label:i.name,cls:'crypto',bucket:i.key,price:i.price}));
+  ai.filter(i=>i.class==='metal').forEach(i=>defs.push({key:i.key,ticker:i.ticker,label:i.name,cls:'metal',bucket:i.key,price:i.price,unit:true}));
   return defs;
 }
 function fx(){return (DATA.fx&&DATA.fx.usdjpy)|| Number(localStorage.getItem(LS('fxrate'))) || 150;}
@@ -310,65 +403,70 @@ function holdingValueJPY(d,h){
   const qty=Number(h.qty)||0;
   return qty*perUnitUSD*fx();
 }
+function acctBuckets(a,defs){
+  const H=getHA(a); const b={stocks:0,btc:0,eth:0,gold:0,silver:0},cost={stocks:0,btc:0,eth:0,gold:0,silver:0};
+  defs.forEach(d=>{const h=H[d.key]||{};const v=holdingValueJPY(d,h);const q=Number(h.qty)||0;
+    if(v!=null){b[d.bucket]=(b[d.bucket]||0)+v;cost[d.bucket]=(cost[d.bucket]||0)+q*(Number(h.buy)||0);}});
+  return {b,cost};
+}
+function combinedBuckets(defs){
+  const t=acctBuckets('tokutei',defs),n=acctBuckets('nisa',defs); const b={},cost={};
+  ['stocks','btc','eth','gold','silver'].forEach(k=>{b[k]=(t.b[k]||0)+(n.b[k]||0);cost[k]=(t.cost[k]||0)+(n.cost[k]||0);});
+  return {b,cost};
+}
+function setAcct(a){ACCT=a;localStorage.setItem(LS('acct'),a);
+  document.querySelectorAll('#acct-seg button').forEach(b=>b.classList.toggle('on',b.dataset.acct===a));
+  document.getElementById('acct-title').textContent=a==='tokutei'?'特定口座':a==='nisa'?'NISA口座':'合算';
+  renderPortfolio();}
+function setField(key,field,val){if(ACCT==='sum')return;const H=getHA(ACCT);H[key]=H[key]||{};H[key][field]=val;setHA(ACCT,H);renderPortfolio();}
 function renderPortfolio(){
   document.getElementById('fxpill').textContent='USD/JPY '+(fx().toLocaleString());
   document.getElementById('rb-th').textContent='閾値 ±'+((DATA.settings&&DATA.settings.rebalanceThresholdPct)||5)+'%';
-  const defs=assetDefs(); const H=getH();
-  // 保有入力カード
-  let html='';
-  const groupLabel={stock:'個別株',crypto:'暗号資産',metal:'貴金属'};
-  let lastCls='';
-  defs.forEach(d=>{
-    if(d.cls!==lastCls){html+=`<div class="sec-title">${groupLabel[d.cls]}</div>`;lastCls=d.cls;}
-    const h=H[d.key]||{};
-    const valJPY=holdingValueJPY(d,h);
-    const cost=(Number(h.qty)||0)*(Number(h.buy)||0);
-    let pl='';
-    if(valJPY!=null&&cost>0&&Number(h.qty)>0){
-      const diff=valJPY-cost,p=diff/cost*100;
-      pl=`<div class="kv"><span class="mut">評価額 / 損益</span>
-        <span>${yen(valJPY)} ｜ <b class="${diff>=0?'pos':'neg'}">${pct(p)} (${diff>=0?'+':''}${yen(diff)})</b></span></div>`;
-    }else if(valJPY!=null&&Number(h.qty)>0){
-      pl=`<div class="kv"><span class="mut">評価額</span><span>${yen(valJPY)}</span></div>`;
-    }
-    const unitSel=d.unit?`<select onchange="setField('${d.key}','unit',this.value)" style="max-width:70px">
-        <option value="g" ${(h.unit||'g')==='g'?'selected':''}>g</option>
-        <option value="oz" ${h.unit==='oz'?'selected':''}>oz</option></select>`:'';
-    html+=`<div class="card">
-      <div class="row"><b>${d.label}</b>${unitSel}</div>
-      <div class="flex2" style="margin-top:8px">
-        <div><div class="muted-small">数量${d.unit?'('+(h.unit||'g')+')':''}</div>
-          <input type="number" inputmode="decimal" value="${h.qty??''}" placeholder="0"
-            onchange="setField('${d.key}','qty',this.value)"></div>
-        <div><div class="muted-small">取得単価(円/${d.cls==='stock'?'株':d.unit?(h.unit||'g'):'枚'})</div>
-          <input type="number" inputmode="decimal" value="${h.buy??''}" placeholder="0"
-            onchange="setField('${d.key}','buy',this.value)"></div>
-      </div>${pl}</div>`;
-  });
-  document.getElementById('holdings').innerHTML=html;
-  renderPLSummary(defs,H); renderRebalance(defs,H);
+  const defs=assetDefs();
+  const q=((document.getElementById('pf-search')||{}).value||'').trim().toUpperCase();
+  const searchCard=document.getElementById('pf-search-card');
+  renderPLSummary(ACCT==='sum'?combinedBuckets(defs):acctBuckets(ACCT,defs));
+  if(ACCT==='sum'){
+    if(searchCard)searchCard.classList.add('hidden');
+    document.getElementById('holdings').innerHTML='<div class="card mut">合算表示中です。保有の入力は「特定口座」「NISA口座」タブで行ってください。損益・リバランスは両口座の合算です。</div>';
+  }else{
+    if(searchCard)searchCard.classList.remove('hidden');
+    const H=getHA(ACCT); let html=''; const groupLabel={stock:'個別株',crypto:'暗号資産',metal:'貴金属'}; let lastCls=''; let shown=0;
+    defs.forEach(d=>{
+      if(q && !((d.ticker||'').toUpperCase().includes(q) || (d.label||'').toUpperCase().includes(q)))return;
+      shown++;
+      if(d.cls!==lastCls){html+=`<div class="sec-title">${groupLabel[d.cls]}</div>`;lastCls=d.cls;}
+      const h=H[d.key]||{}; const valJPY=holdingValueJPY(d,h); const cost=(Number(h.qty)||0)*(Number(h.buy)||0);
+      let pl='';
+      if(valJPY!=null&&cost>0&&Number(h.qty)>0){const diff=valJPY-cost,p=diff/cost*100;
+        pl=`<div class="kv"><span class="mut">評価額 / 損益</span><span>${yen(valJPY)} ｜ <b class="${diff>=0?'pos':'neg'}">${pct(p)} (${diff>=0?'+':''}${yen(diff)})</b></span></div>`;
+      }else if(valJPY!=null&&Number(h.qty)>0){pl=`<div class="kv"><span class="mut">評価額</span><span>${yen(valJPY)}</span></div>`;}
+      const pend=d.pending?' <span class="tag">登録待ち</span>':'';
+      const unitSel=d.unit?`<select onchange="setField('${d.key}','unit',this.value)" style="max-width:70px"><option value="g" ${(h.unit||'g')==='g'?'selected':''}>g</option><option value="oz" ${h.unit==='oz'?'selected':''}>oz</option></select>`:'';
+      html+=`<div class="card"><div class="row"><b>${d.label}</b>${pend}${unitSel}</div>
+        <div class="flex2" style="margin-top:8px">
+          <div><div class="muted-small">数量${d.unit?'('+(h.unit||'g')+')':''}</div>
+            <input type="number" inputmode="decimal" value="${h.qty??''}" placeholder="0" onchange="setField('${d.key}','qty',this.value)"></div>
+          <div><div class="muted-small">取得単価(円/${d.cls==='stock'?'株':d.unit?(h.unit||'g'):'枚'})</div>
+            <input type="number" inputmode="decimal" value="${h.buy??''}" placeholder="0" onchange="setField('${d.key}','buy',this.value)"></div>
+        </div>${pl}</div>`;
+    });
+    if(!shown)html=`<div class="card mut">該当する銘柄がありません。</div>`;
+    document.getElementById('holdings').innerHTML=html;
+  }
+  renderRebalance(defs);
 }
-function setField(key,field,val){const H=getH();H[key]=H[key]||{};H[key][field]=val;setH(H);renderPortfolio();}
-function bucketValues(defs,H){
-  const b={stocks:0,btc:0,eth:0,gold:0,silver:0}; const cost={stocks:0,btc:0,eth:0,gold:0,silver:0};
-  defs.forEach(d=>{
-    const h=H[d.key]||{}; const v=holdingValueJPY(d,h); const q=Number(h.qty)||0;
-    if(v!=null){b[d.bucket]=(b[d.bucket]||0)+v; cost[d.bucket]=(cost[d.bucket]||0)+q*(Number(h.buy)||0);}
-  });
-  return {b,cost};
-}
-function renderPLSummary(defs,H){
-  const {b,cost}=bucketValues(defs,H);
-  const totV=Object.values(b).reduce((a,c)=>a+c,0), totC=Object.values(cost).reduce((a,c)=>a+c,0);
+function renderPLSummary(bc){
+  const {b,cost}=bc; const totV=Object.values(b).reduce((a,c)=>a+c,0),totC=Object.values(cost).reduce((a,c)=>a+c,0);
   const el=document.getElementById('pl-summary');
-  if(totV<=0){el.innerHTML=`<div class="mut">下の各資産に数量と取得単価を入力してください。</div>`;return;}
-  const diff=totV-totC, p=totC>0?diff/totC*100:0;
+  if(totV<=0){el.innerHTML=`<div class="mut">各資産に数量と取得単価を入力してください。</div>`;return;}
+  const diff=totV-totC,p=totC>0?diff/totC*100:0;
   el.innerHTML=`<div class="kv"><span>合計評価額</span><b class="big">${yen(totV)}</b></div>`+
     (totC>0?`<div class="kv"><span>合計損益</span><b class="${diff>=0?'pos':'neg'}">${pct(p)} (${diff>=0?'+':''}${yen(diff)})</b></div>`:'');
 }
-function renderRebalance(defs,H){
+function renderRebalance(defs){
   const el=document.getElementById('rebalance');
-  const {b}=bucketValues(defs,H);
+  const {b}=combinedBuckets(defs);   // リバランスは常に両口座の合算（全体最適）
   const labels={stocks:'個別株',btc:'BTC',eth:'ETH',gold:'金',silver:'銀'};
   const tg=DATA.targets||{stocks:6,btc:1,eth:1,gold:1,silver:1};
   const tsum=Object.values(tg).reduce((a,c)=>a+c,0);
@@ -405,6 +503,69 @@ function renderRebalance(defs,H){
     advice=`<div class="alertbar vix-ok" style="margin-top:10px">✅ 目標比率の範囲内です（最大乖離 ${maxDpp.toFixed(1)}pt）。</div>`;
   }
   el.innerHTML=rows+advice;
+}
+
+// ---------- 銘柄管理 ----------
+function renderWatchlist(){
+  const el=document.getElementById('watchlist'); if(!el)return;
+  const q=((document.getElementById('wl-search')||{}).value||'').trim().toUpperCase();
+  const hidden=new Set(getHidden()); const pov=getPolov();
+  const stocks=(DATA.instruments||[]).filter(i=>i.class==='stock').map(i=>({ticker:i.ticker,name:i.name,sector:i.sector,extra:false,cfgPol:i.tradePolicy}));
+  getExtra().forEach(x=>{ if(!stocks.find(s=>s.ticker===x.ticker)) stocks.push({ticker:x.ticker,name:x.name||x.ticker,sector:x.sector||'その他',extra:true,cfgPol:x.policy||'hold'}); });
+  const rows=[];
+  stocks.forEach(s=>{
+    if(q && !(s.ticker.toUpperCase().includes(q)||(s.name||'').toUpperCase().includes(q)))return;
+    const pol=pov[s.ticker]||s.cfgPol||'hold';
+    const isHidden=hidden.has(s.ticker);
+    rows.push(`<div class="wlrow" style="${isHidden?'opacity:.45':''}">
+      <div><b>${s.ticker}</b> <span class="mut">${s.name}</span>${s.extra?' <span class="tag">追加</span>':''}${isHidden?' <span class="tag">非表示</span>':''}<br><span class="muted-small">${s.sector||''}</span></div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="sw ${pol}" onclick="togglePolicy('${s.ticker}','${pol}')" title="長期保有/短期売買 切替"><div class="kn">${pol==='hold'?'長期':'短期'}</div><span class="lbl l">長期</span><span class="lbl r">短期</span></div>
+        ${isHidden?`<button class="xbtn" onclick="unhide('${s.ticker}')">↩︎</button>`:`<button class="xbtn" onclick="removeTicker('${s.ticker}',${s.extra})">✕</button>`}
+      </div></div>`);
+  });
+  el.innerHTML=rows.join('')||'<div class="mut">該当する銘柄がありません。</div>';
+}
+function togglePolicy(ticker,cur){
+  const o=getPolov(); o[ticker]=(cur==='hold')?'trade':'hold'; setPolov(o);
+  renderWatchlist(); renderSignals(); renderRanking();
+}
+function removeTicker(ticker,isExtra){
+  if(isExtra){ setExtra(getExtra().filter(x=>x.ticker!==ticker)); }
+  else { const h=getHidden(); if(!h.includes(ticker)){h.push(ticker);setHidden(h);} }
+  renderWatchlist(); renderSignals(); renderRanking(); renderPortfolio();
+}
+function unhide(ticker){ setHidden(getHidden().filter(t=>t!==ticker)); renderWatchlist(); renderSignals(); renderRanking(); }
+function addTicker(){
+  const t=(document.getElementById('wl-search').value||'').trim().toUpperCase();
+  const msg=document.getElementById('wl-add-msg');
+  if(!t||!/^[A-Z0-9.\-]{1,10}$/.test(t)){msg.textContent='ティッカーを入力してください（英数字）';return;}
+  const name=(document.getElementById('wl-name').value||'').trim();
+  const sector=document.getElementById('wl-sector').value;
+  const policy=document.getElementById('wl-policy').value;
+  const exists=(DATA.instruments||[]).some(i=>i.ticker===t)||getExtra().some(x=>x.ticker===t);
+  const o=getPolov(); o[t]=policy; setPolov(o);
+  if(exists){ msg.textContent=t+' は既に監視リストにあります。方針を更新しました。'; }
+  else{ const x=getExtra(); x.push({ticker:t,name:name||t,sector,policy}); setExtra(x);
+    setHidden(getHidden().filter(h=>h!==t));
+    msg.innerHTML=t+' を追加しました。実データ取得・自動判定に反映するには「☁️ サーバーに同期」を押してください。'; }
+  document.getElementById('wl-search').value=''; document.getElementById('wl-name').value='';
+  renderWatchlist(); renderSignals(); renderPortfolio();
+}
+async function syncWatchlist(){
+  const msg=document.getElementById('wl-sync-msg'); msg.textContent='☁️ 同期中…';
+  const pov=getPolov(); const hidden=new Set(getHidden()); const stocks=[];
+  (DATA.instruments||[]).filter(i=>i.class==='stock').forEach(i=>{ if(hidden.has(i.ticker))return;
+    stocks.push({ticker:i.ticker,name:i.name,sector:i.sector,tradePolicy:pov[i.ticker]||i.tradePolicy||'hold'});});
+  getExtra().forEach(x=>{ if(hidden.has(x.ticker)||stocks.find(s=>s.ticker===x.ticker))return;
+    stocks.push({ticker:x.ticker,name:x.name||x.ticker,sector:x.sector||'その他',tradePolicy:pov[x.ticker]||x.policy||'hold'});});
+  try{
+    const r=await fetch('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({stocks})});
+    if(r.ok){const j=await r.json();msg.innerHTML='✅ 同期しました（'+(j.count||stocks.length)+'銘柄）。GitHub Actions →「daily」を実行すると新しい銘柄・方針が実データに反映されます。';}
+    else{throw new Error('api');}
+  }catch(e){
+    msg.innerHTML='⚠️ サーバー同期は未設定です（アプリ表示は変更済み）。自動判定にも反映するには、Vercelに GH_TOKEN と GH_REPO を設定してください（READMEの手順）。または config.json を直接編集してください。';
+  }
 }
 
 // ---------- 分析・設定 ----------

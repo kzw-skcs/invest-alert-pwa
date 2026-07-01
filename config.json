@@ -60,6 +60,7 @@
     {"ticker": "RKLB",  "stooq": "rklb.us",  "name": "Rocket Lab",         "sector": "宇宙・防衛", "tradePolicy": "trade"},
     {"ticker": "IBM",   "stooq": "ibm.us",   "name": "IBM",                "sector": "ハイテク",   "tradePolicy": "hold"},
     {"ticker": "ASML",  "stooq": "asml.us",  "name": "ASML (ADR)",         "sector": "ハイテク",   "tradePolicy": "hold"},
+    {"ticker": "TSM",   "stooq": "tsm.us",   "name": "TSMC (台湾セミコンダクター ADR)", "sector": "ハイテク", "tradePolicy": "hold"},
     {"ticker": "MRVL",  "stooq": "mrvl.us",  "name": "Marvell Technology", "sector": "ハイテク",   "tradePolicy": "hold"},
     {"ticker": "ANET",  "stooq": "anet.us",  "name": "Arista Networks",    "sector": "ハイテク",   "tradePolicy": "trade"},
     {"ticker": "VRT",   "stooq": "vrt.us",   "name": "Vertiv Holdings",    "sector": "ハイテク",   "tradePolicy": "hold"},
