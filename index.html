@@ -81,6 +81,11 @@ th{color:var(--muted);font-weight:600;font-size:11px}
 .xbtn{background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;padding:0 3px;line-height:1}
 .ordbtns{display:flex;flex-direction:column;gap:0}
 .ordbtns .xbtn{font-size:12px;padding:0 2px}
+.cm{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column}
+.cm.hidden{display:none}
+.cm-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;padding-top:calc(10px + env(safe-area-inset-top,0));border-bottom:1px solid var(--line);font-weight:700}
+.cm-body{flex:1;min-height:0}
+.btn-chart{width:100%;margin-top:8px;background:var(--panel2);border:1px solid var(--line);color:var(--accent)}
 h3{font-size:14px;margin:4px 0 8px}
 </style>
 </head>
@@ -186,6 +191,11 @@ h3{font-size:14px;margin:4px 0 8px}
   <button id="nav-analysis" onclick="showTab('analysis')"><span class="ic">🤖</span>分析</button>
 </nav>
 
+<div id="chart-modal" class="cm hidden">
+  <div class="cm-head"><span id="cm-title"></span><button class="btn" onclick="closeChart()">✕ 閉じる</button></div>
+  <div id="tvchart" class="cm-body"></div>
+</div>
+
 <script>
 const OZ_G = 31.1034768;
 const STATE_COLOR = {SUPER_BUY:'var(--superbuy)',BUY:'var(--buy)',SELL:'var(--sell)',SUPER_SELL:'var(--supersell)',
@@ -237,6 +247,36 @@ const pct=n=>(n>=0?'+':'')+n.toFixed(1)+'%';
 const stars=n=>'★'.repeat(n)+'☆'.repeat(Math.max(0,5-n));
 
 function metalPerUnitUSD(price,unit){return unit==='g'?price/OZ_G:price;}
+
+// ---------- TradingViewチャート ----------
+function tvSymbol(inst){
+  if(inst.class==='crypto')return inst.key==='btc'?'BTCUSD':inst.key==='eth'?'ETHUSD':(inst.ticker+'USD');
+  if(inst.class==='metal')return inst.key==='gold'?'TVC:GOLD':inst.key==='silver'?'TVC:SILVER':inst.ticker;
+  return inst.ticker; // 米国株はティッカーそのまま
+}
+let _tvLoaded=false;
+function loadTV(cb){
+  if(_tvLoaded && window.TradingView){cb();return;}
+  const s=document.createElement('script'); s.src='https://s3.tradingview.com/tv.js';
+  s.onload=()=>{_tvLoaded=true;cb();};
+  s.onerror=()=>{document.getElementById('tvchart').innerHTML='<div class="mut" style="padding:16px">チャートの読み込みに失敗しました。ネット接続を確認してください。</div>';};
+  document.head.appendChild(s);
+}
+function openChart(sym,name){
+  const m=document.getElementById('chart-modal');
+  document.getElementById('cm-title').textContent=name+' 📈';
+  m.classList.remove('hidden');
+  document.getElementById('tvchart').innerHTML='<div class="mut" style="padding:16px">チャート読み込み中…</div>';
+  loadTV(()=>{
+    document.getElementById('tvchart').innerHTML='';
+    try{
+      new TradingView.widget({container_id:'tvchart',symbol:sym,interval:'D',theme:'dark',style:'1',
+        locale:'ja',autosize:true,timezone:'Asia/Tokyo',hide_side_toolbar:false,allow_symbol_change:true,
+        withdateranges:true,studies:['MASimple@tv-basic-studies']});
+    }catch(e){document.getElementById('tvchart').innerHTML='<div class="mut" style="padding:16px">表示に失敗しました: '+e.message+'</div>';}
+  });
+}
+function closeChart(){document.getElementById('chart-modal').classList.add('hidden');document.getElementById('tvchart').innerHTML='';}
 
 // ---------- データ取得 ----------
 async function load(){
@@ -394,6 +434,7 @@ function card(inst){
     ${recLine(inst)}
     ${rangeRow}${rangeRowL}${maRow}${err}
     ${sparkline(inst.history,col)}
+    <button class="btn btn-chart" onclick="openChart('${tvSymbol(inst)}','${(inst.name||'').replace(/'/g,'')}')">📈 TradingViewチャートを開く</button>
   </div>`;
 }
 
