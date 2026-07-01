@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-01T12:15:06.296433+00:00",
-  "updatedJST": "2026-07-01 21:15 JST",
+  "updated": "2026-07-01T22:14:49.185846+00:00",
+  "updatedJST": "2026-07-02 07:14 JST",
   "settings": {
     "lookbackDays": 252,
     "lookbackLongDays": 1260,
@@ -29,13 +29,13 @@
     "silver": 1
   },
   "vix": {
-    "value": 16.74,
-    "changePct": 1.8,
+    "value": 16.59,
+    "changePct": 0.9,
     "level": null,
     "reason": null
   },
   "fx": {
-    "usdjpy": 162.654
+    "usdjpy": 162.542
   },
   "instruments": [
     {
@@ -50,10 +50,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 271.49
-        },
         {
           "d": "2025-11-24",
           "c": 275.92
@@ -649,28 +645,32 @@
         {
           "d": "2026-06-30",
           "c": 289.36
+        },
+        {
+          "d": "2026-07-01",
+          "c": 294.38
         }
       ],
       "state": "NEUTRAL",
-      "price": 289.36,
-      "top": 309.5786,
-      "bottom": 285.5545,
-      "band": 0.7207,
-      "pctInRange": 15.8,
-      "distToBottomPct": 1.33,
-      "distToTopPct": 6.99,
-      "smaShort": 295.925,
-      "smaLong": 292.2472,
-      "smaTrend": 270.0302,
+      "price": 294.38,
+      "top": 309.893,
+      "bottom": 285.8304,
+      "band": 0.7219,
+      "pctInRange": 35.5,
+      "distToBottomPct": 2.99,
+      "distToTopPct": 5.27,
+      "smaShort": 294.884,
+      "smaLong": 292.6738,
+      "smaTrend": 270.3318,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 268.7208,
-      "bottomLong": 247.3995,
-      "pctInRangeLong": 196.8,
+      "topLong": 268.8274,
+      "bottomLong": 247.4967,
+      "pctInRangeLong": 219.8,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -700,10 +700,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 472.12
-        },
         {
           "d": "2025-11-24",
           "c": 474.0
@@ -1299,28 +1295,32 @@
         {
           "d": "2026-06-30",
           "c": 373.02
+        },
+        {
+          "d": "2026-07-01",
+          "c": 384.28
         }
       ],
       "state": "NEUTRAL",
-      "price": 373.02,
-      "top": 417.2899,
-      "bottom": 361.9327,
-      "band": 1.6607,
-      "pctInRange": 20.0,
-      "distToBottomPct": 3.06,
-      "distToTopPct": 11.87,
-      "smaShort": 391.6495,
-      "smaLong": 408.9446,
-      "smaTrend": 446.6885,
+      "price": 384.28,
+      "top": 416.7759,
+      "bottom": 361.236,
+      "band": 1.6662,
+      "pctInRange": 41.5,
+      "distToBottomPct": 6.38,
+      "distToTopPct": 8.46,
+      "smaShort": 388.798,
+      "smaLong": 408.2688,
+      "smaTrend": 446.0604,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 6,
-      "topLong": 501.6234,
-      "bottomLong": 467.4295,
-      "pctInRangeLong": -276.1,
+      "topLong": 501.8177,
+      "bottomLong": 467.614,
+      "pctInRangeLong": -243.6,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -1350,10 +1350,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 299.66
-        },
         {
           "d": "2025-11-24",
           "c": 318.58
@@ -1949,28 +1945,32 @@
         {
           "d": "2026-06-30",
           "c": 357.37
+        },
+        {
+          "d": "2026-07-01",
+          "c": 361.21
         }
       ],
       "state": "FALLING",
-      "price": 357.37,
-      "top": 405.0762,
-      "bottom": 378.5058,
-      "band": 0.7971,
-      "pctInRange": -79.5,
-      "distToBottomPct": -5.58,
-      "distToTopPct": 13.35,
-      "smaShort": 358.53,
-      "smaLong": 369.9426,
-      "smaTrend": 315.0099,
+      "price": 361.21,
+      "top": 405.8463,
+      "bottom": 376.8644,
+      "band": 0.8695,
+      "pctInRange": -54.0,
+      "distToBottomPct": -4.15,
+      "distToTopPct": 12.36,
+      "smaShort": 358.498,
+      "smaLong": 370.4184,
+      "smaTrend": 315.612,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
-      "cycleHalfDays": 8,
-      "topLong": 276.5493,
-      "bottomLong": 252.9167,
-      "pctInRangeLong": 442.0,
+      "cycleHalfDays": 7,
+      "topLong": 276.7079,
+      "bottomLong": 253.0616,
+      "pctInRangeLong": 457.4,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -2000,10 +2000,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 220.69
-        },
         {
           "d": "2025-11-24",
           "c": 226.28
@@ -2599,28 +2595,32 @@
         {
           "d": "2026-06-30",
           "c": 238.34
+        },
+        {
+          "d": "2026-07-01",
+          "c": 241.7
         }
       ],
       "state": "NEUTRAL",
-      "price": 238.34,
-      "top": 248.4766,
-      "bottom": 228.0977,
-      "band": 0.6114,
-      "pctInRange": 50.3,
-      "distToBottomPct": 4.49,
-      "distToTopPct": 4.25,
-      "smaShort": 241.3545,
-      "smaLong": 255.6932,
-      "smaTrend": 232.8586,
+      "price": 241.7,
+      "top": 248.5531,
+      "bottom": 228.8564,
+      "band": 0.5909,
+      "pctInRange": 65.2,
+      "distToBottomPct": 5.61,
+      "distToTopPct": 2.84,
+      "smaShort": 240.6135,
+      "smaLong": 255.5616,
+      "smaTrend": 232.9264,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 8,
-      "topLong": 237.1599,
-      "bottomLong": 221.233,
-      "pctInRangeLong": 107.4,
+      "topLong": 237.2589,
+      "bottomLong": 221.3253,
+      "pctInRangeLong": 127.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -2650,10 +2650,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 340.2
-        },
         {
           "d": "2025-11-24",
           "c": 377.96
@@ -3249,28 +3245,32 @@
         {
           "d": "2026-06-30",
           "c": 377.75
+        },
+        {
+          "d": "2026-07-01",
+          "c": 369.34
         }
       ],
       "state": "FALLING",
-      "price": 377.75,
-      "top": 433.6143,
-      "bottom": 385.0369,
-      "band": 1.4573,
-      "pctInRange": -15.0,
-      "distToBottomPct": -1.89,
-      "distToTopPct": 14.79,
-      "smaShort": 395.866,
-      "smaLong": 410.8692,
-      "smaTrend": 361.4214,
+      "price": 369.34,
+      "top": 434.0925,
+      "bottom": 385.4306,
+      "band": 1.4599,
+      "pctInRange": -33.1,
+      "distToBottomPct": -4.17,
+      "distToTopPct": 17.53,
+      "smaShort": 390.2545,
+      "smaLong": 410.2634,
+      "smaTrend": 361.4687,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 6,
-      "topLong": 362.9316,
-      "bottomLong": 329.6356,
-      "pctInRangeLong": 144.5,
+      "topLong": 363.2513,
+      "bottomLong": 329.9258,
+      "pctInRangeLong": 118.3,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -3300,10 +3300,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 178.88
-        },
         {
           "d": "2025-11-24",
           "c": 182.55
@@ -3899,28 +3895,32 @@
         {
           "d": "2026-06-30",
           "c": 200.09
+        },
+        {
+          "d": "2026-07-01",
+          "c": 197.58
         }
       ],
       "state": "NEUTRAL",
-      "price": 200.09,
-      "top": 218.5389,
-      "bottom": 189.8111,
-      "band": 0.8618,
-      "pctInRange": 35.8,
-      "distToBottomPct": 5.42,
-      "distToTopPct": 9.22,
-      "smaShort": 205.743,
-      "smaLong": 209.9866,
-      "smaTrend": 190.843,
+      "price": 197.58,
+      "top": 218.7224,
+      "bottom": 189.9099,
+      "band": 0.8644,
+      "pctInRange": 26.6,
+      "distToBottomPct": 4.04,
+      "distToTopPct": 10.7,
+      "smaShort": 204.481,
+      "smaLong": 209.897,
+      "smaTrend": 190.9418,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 206.2838,
-      "bottomLong": 183.5675,
-      "pctInRangeLong": 72.7,
+      "topLong": 206.4697,
+      "bottomLong": 183.7321,
+      "pctInRangeLong": 60.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -3950,10 +3950,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 594.25
-        },
         {
           "d": "2025-11-24",
           "c": 613.05
@@ -4549,28 +4545,32 @@
         {
           "d": "2026-06-30",
           "c": 563.29
+        },
+        {
+          "d": "2026-07-01",
+          "c": 612.91
         }
       ],
       "state": "NEUTRAL",
-      "price": 563.29,
-      "top": 623.2277,
-      "bottom": 547.1744,
-      "band": 2.2816,
-      "pctInRange": 21.2,
-      "distToBottomPct": 2.95,
-      "distToTopPct": 10.64,
-      "smaShort": 577.9385,
-      "smaLong": 608.1078,
-      "smaTrend": 648.1345,
+      "price": 612.91,
+      "top": 622.5848,
+      "bottom": 546.4525,
+      "band": 2.284,
+      "pctInRange": 87.3,
+      "distToBottomPct": 12.16,
+      "distToTopPct": 1.58,
+      "smaShort": 578.7025,
+      "smaLong": 606.9478,
+      "smaTrend": 647.4211,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 8,
-      "topLong": 740.7448,
-      "bottomLong": 678.8225,
-      "pctInRangeLong": -186.6,
+      "topLong": 741.2228,
+      "bottomLong": 679.2658,
+      "pctInRangeLong": -107.1,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -4600,10 +4600,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 391.09
-        },
         {
           "d": "2025-11-24",
           "c": 417.78
@@ -5199,28 +5195,32 @@
         {
           "d": "2026-06-30",
           "c": 420.6
+        },
+        {
+          "d": "2026-07-01",
+          "c": 425.3
         }
       ],
       "state": "NEUTRAL",
-      "price": 420.6,
-      "top": 449.2477,
-      "bottom": 413.7239,
-      "band": 1.0657,
-      "pctInRange": 19.4,
-      "distToBottomPct": 1.66,
-      "distToTopPct": 6.81,
-      "smaShort": 400.5915,
-      "smaLong": 405.6234,
-      "smaTrend": 418.5439,
+      "price": 425.3,
+      "top": 449.5207,
+      "bottom": 414.0122,
+      "band": 1.0653,
+      "pctInRange": 31.8,
+      "distToBottomPct": 2.73,
+      "distToTopPct": 5.69,
+      "smaShort": 400.6695,
+      "smaLong": 406.2794,
+      "smaTrend": 418.6907,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 370.096,
-      "bottomLong": 329.3878,
-      "pctInRangeLong": 224.1,
+      "topLong": 370.1992,
+      "bottomLong": 329.5093,
+      "pctInRangeLong": 235.4,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -5250,10 +5250,6 @@
       "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 203.78
-        },
         {
           "d": "2025-11-24",
           "c": 215.05
@@ -5849,28 +5845,32 @@
         {
           "d": "2026-06-30",
           "c": 580.91
+        },
+        {
+          "d": "2026-07-01",
+          "c": 540.88
         }
       ],
       "state": "RISING",
-      "price": 580.91,
-      "top": 443.9686,
-      "bottom": 346.1628,
-      "band": 2.9342,
-      "pctInRange": 240.0,
-      "distToBottomPct": 67.81,
-      "distToTopPct": -23.57,
-      "smaShort": 517.1035,
-      "smaLong": 450.3956,
-      "smaTrend": 274.4916,
+      "price": 540.88,
+      "top": 445.3568,
+      "bottom": 347.1091,
+      "band": 2.9474,
+      "pctInRange": 197.2,
+      "distToBottomPct": 55.82,
+      "distToTopPct": -17.66,
+      "smaShort": 518.0705,
+      "smaLong": 455.7142,
+      "smaTrend": 276.4031,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 6,
-      "topLong": 247.057,
-      "bottomLong": 202.3316,
-      "pctInRangeLong": 846.5,
+      "topLong": 247.2003,
+      "bottomLong": 202.4455,
+      "pctInRangeLong": 756.2,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -5900,10 +5900,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 154.85
-        },
         {
           "d": "2025-11-24",
           "c": 162.25
@@ -6499,28 +6495,32 @@
         {
           "d": "2026-06-30",
           "c": 116.67
+        },
+        {
+          "d": "2026-07-01",
+          "c": 125.73
         }
       ],
       "state": "FALLING",
-      "price": 116.67,
-      "top": 154.284,
-      "bottom": 126.5,
-      "band": 0.8335,
-      "pctInRange": -35.4,
-      "distToBottomPct": -7.77,
-      "distToTopPct": 32.24,
-      "smaShort": 127.9375,
-      "smaLong": 135.3209,
-      "smaTrend": 158.3528,
+      "price": 125.73,
+      "top": 154.1469,
+      "bottom": 126.3141,
+      "band": 0.835,
+      "pctInRange": -2.1,
+      "distToBottomPct": -0.46,
+      "distToTopPct": 22.6,
+      "smaShort": 126.6155,
+      "smaLong": 134.9177,
+      "smaTrend": 158.1243,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 151.7936,
-      "bottomLong": 134.1881,
-      "pctInRangeLong": -99.5,
+      "topLong": 151.9423,
+      "bottomLong": 134.3231,
+      "pctInRangeLong": -48.8,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -6550,10 +6550,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 117.08
-        },
         {
           "d": "2025-11-24",
           "c": 115.97
@@ -7149,31 +7145,35 @@
         {
           "d": "2026-06-30",
           "c": 136.72
+        },
+        {
+          "d": "2026-07-01",
+          "c": 136.28
         }
       ],
       "state": "FALLING",
-      "price": 136.72,
-      "top": 167.0445,
-      "bottom": 154.2083,
-      "band": 0.3851,
-      "pctInRange": -136.2,
-      "distToBottomPct": -11.34,
-      "distToTopPct": 22.18,
-      "smaShort": 143.612,
-      "smaLong": 148.351,
-      "smaTrend": 135.429,
+      "price": 136.28,
+      "top": 167.3057,
+      "bottom": 154.4347,
+      "band": 0.3861,
+      "pctInRange": -141.1,
+      "distToBottomPct": -11.76,
+      "distToTopPct": 22.77,
+      "smaShort": 142.948,
+      "smaLong": 148.123,
+      "smaTrend": 135.5496,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 140.0938,
-      "bottomLong": 132.5812,
-      "pctInRangeLong": 55.1,
+      "topLong": 140.1443,
+      "bottomLong": 132.6329,
+      "pctInRangeLong": 48.6,
       "trendLong": "up",
       "longRangeAvailable": true,
-      "longTermLow": false,
+      "longTermLow": true,
       "tradePolicy": "hold",
       "counterTrend": false,
       "rec": {
@@ -7200,10 +7200,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 149.98
-        },
         {
           "d": "2025-11-24",
           "c": 149.75
@@ -7799,28 +7795,32 @@
         {
           "d": "2026-06-30",
           "c": 165.76
+        },
+        {
+          "d": "2026-07-01",
+          "c": 165.69
         }
       ],
       "state": "FALLING",
-      "price": 165.76,
-      "top": 199.6771,
-      "bottom": 185.986,
-      "band": 0.4107,
-      "pctInRange": -147.7,
-      "distToBottomPct": -10.88,
-      "distToTopPct": 20.46,
-      "smaShort": 180.175,
-      "smaLong": 184.7072,
-      "smaTrend": 172.3228,
+      "price": 165.69,
+      "top": 199.8918,
+      "bottom": 186.1604,
+      "band": 0.4119,
+      "pctInRange": -149.1,
+      "distToBottomPct": -11.0,
+      "distToTopPct": 20.64,
+      "smaShort": 179.082,
+      "smaLong": 184.356,
+      "smaTrend": 172.3657,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 173.3909,
-      "bottomLong": 165.6196,
-      "pctInRangeLong": 1.8,
+      "topLong": 173.4139,
+      "bottomLong": 165.6486,
+      "pctInRangeLong": 0.5,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -7850,10 +7850,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 87.37
-        },
         {
           "d": "2025-11-24",
           "c": 87.56
@@ -8449,28 +8445,32 @@
         {
           "d": "2026-06-30",
           "c": 103.96
+        },
+        {
+          "d": "2026-07-01",
+          "c": 103.22
         }
       ],
       "state": "FALLING",
-      "price": 103.96,
-      "top": 126.7055,
-      "bottom": 115.8408,
-      "band": 0.3259,
-      "pctInRange": -109.4,
-      "distToBottomPct": -10.26,
-      "distToTopPct": 21.88,
-      "smaShort": 112.495,
-      "smaLong": 117.1182,
-      "smaTrend": 105.5836,
+      "price": 103.22,
+      "top": 128.058,
+      "bottom": 115.9721,
+      "band": 0.3626,
+      "pctInRange": -105.5,
+      "distToBottomPct": -11.0,
+      "distToTopPct": 24.06,
+      "smaShort": 111.8125,
+      "smaLong": 116.8536,
+      "smaTrend": 105.6376,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 114.8297,
-      "bottomLong": 106.8319,
-      "pctInRangeLong": -35.9,
+      "topLong": 114.8446,
+      "bottomLong": 106.8474,
+      "pctInRangeLong": -45.4,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -8500,10 +8500,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 83.48
-        },
         {
           "d": "2025-11-24",
           "c": 84.23
@@ -9099,28 +9095,32 @@
         {
           "d": "2026-06-30",
           "c": 87.77
+        },
+        {
+          "d": "2026-07-01",
+          "c": 86.37
         }
       ],
       "state": "FALLING",
-      "price": 87.77,
-      "top": 101.1551,
-      "bottom": 94.1881,
-      "band": 0.209,
-      "pctInRange": -92.1,
-      "distToBottomPct": -6.81,
-      "distToTopPct": 15.25,
-      "smaShort": 86.211,
-      "smaLong": 89.889,
-      "smaTrend": 86.3908,
-      "trend": "up",
+      "price": 86.37,
+      "top": 101.2692,
+      "bottom": 94.2925,
+      "band": 0.2093,
+      "pctInRange": -113.6,
+      "distToBottomPct": -8.4,
+      "distToTopPct": 17.25,
+      "smaShort": 86.2455,
+      "smaLong": 89.7762,
+      "smaTrend": 86.4645,
+      "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 78.6962,
-      "bottomLong": 73.4249,
-      "pctInRangeLong": 272.1,
+      "topLong": 78.6959,
+      "bottomLong": 73.4256,
+      "pctInRangeLong": 245.6,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -9150,10 +9150,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 36.19
-        },
         {
           "d": "2025-11-24",
           "c": 35.71
@@ -9749,28 +9745,32 @@
         {
           "d": "2026-06-30",
           "c": 46.49
+        },
+        {
+          "d": "2026-07-01",
+          "c": 45.09
         }
       ],
       "state": "FALLING",
-      "price": 46.49,
-      "top": 59.4995,
-      "bottom": 55.6315,
-      "band": 0.116,
-      "pctInRange": -236.3,
-      "distToBottomPct": -16.43,
-      "distToTopPct": 27.98,
-      "smaShort": 52.061,
-      "smaLong": 54.1316,
-      "smaTrend": 45.2781,
-      "trend": "up",
+      "price": 45.09,
+      "top": 59.6128,
+      "bottom": 55.7419,
+      "band": 0.1161,
+      "pctInRange": -275.2,
+      "distToBottomPct": -19.11,
+      "distToTopPct": 32.21,
+      "smaShort": 51.4875,
+      "smaLong": 53.9894,
+      "smaTrend": 45.3257,
+      "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 6,
-      "topLong": 48.5258,
-      "bottomLong": 44.6191,
-      "pctInRangeLong": 47.9,
+      "topLong": 48.5299,
+      "bottomLong": 44.6248,
+      "pctInRangeLong": 11.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -9800,10 +9800,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 460.78
-        },
         {
           "d": "2025-11-24",
           "c": 451.06
@@ -10399,28 +10395,32 @@
         {
           "d": "2026-06-30",
           "c": 509.46
+        },
+        {
+          "d": "2026-07-01",
+          "c": 521.82
         }
       ],
       "state": "FALLING",
-      "price": 509.46,
-      "top": 602.2296,
-      "bottom": 579.6995,
-      "band": 0.6759,
-      "pctInRange": -311.8,
-      "distToBottomPct": -12.12,
-      "distToTopPct": 18.21,
-      "smaShort": 517.747,
-      "smaLong": 522.0932,
-      "smaTrend": 539.8934,
+      "price": 521.82,
+      "top": 602.7446,
+      "bottom": 555.9415,
+      "band": 1.4041,
+      "pctInRange": -72.9,
+      "distToBottomPct": -6.14,
+      "distToTopPct": 15.51,
+      "smaShort": 518.1665,
+      "smaLong": 520.904,
+      "smaTrend": 540.1459,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
-      "cycleHalfDays": 6,
-      "topLong": 559.6859,
-      "bottomLong": 517.3525,
-      "pctInRangeLong": -18.6,
+      "cycleHalfDays": 8,
+      "topLong": 559.8207,
+      "bottomLong": 515.8999,
+      "pctInRangeLong": 13.5,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -10450,10 +10450,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 169.68
-        },
         {
           "d": "2025-11-24",
           "c": 173.21
@@ -11049,28 +11045,32 @@
         {
           "d": "2026-06-30",
           "c": 189.73
+        },
+        {
+          "d": "2026-07-01",
+          "c": 191.78
         }
       ],
       "state": "NEUTRAL",
-      "price": 189.73,
-      "top": 209.0696,
-      "bottom": 187.9709,
-      "band": 0.633,
-      "pctInRange": 8.3,
-      "distToBottomPct": 0.94,
-      "distToTopPct": 10.19,
-      "smaShort": 183.3045,
-      "smaLong": 179.603,
-      "smaTrend": 183.5014,
+      "price": 191.78,
+      "top": 209.2587,
+      "bottom": 188.0886,
+      "band": 0.6351,
+      "pctInRange": 17.4,
+      "distToBottomPct": 1.96,
+      "distToTopPct": 9.11,
+      "smaShort": 184.1805,
+      "smaLong": 179.5228,
+      "smaTrend": 183.681,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 169.5259,
-      "bottomLong": 160.5254,
-      "pctInRangeLong": 324.5,
+      "topLong": 169.6084,
+      "bottomLong": 160.6024,
+      "pctInRangeLong": 346.2,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -11100,10 +11100,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 566.7
-        },
         {
           "d": "2025-11-24",
           "c": 565.56
@@ -11699,28 +11695,32 @@
         {
           "d": "2026-06-30",
           "c": 509.31
+        },
+        {
+          "d": "2026-07-01",
+          "c": 519.95
         }
       ],
       "state": "FALLING",
-      "price": 509.31,
-      "top": 658.2392,
-      "bottom": 613.7544,
-      "band": 1.3345,
-      "pctInRange": -234.8,
-      "distToBottomPct": -17.02,
-      "distToTopPct": 29.24,
-      "smaShort": 529.1265,
-      "smaLong": 550.936,
-      "smaTrend": 613.2905,
+      "price": 519.95,
+      "top": 658.4563,
+      "bottom": 613.981,
+      "band": 1.3343,
+      "pctInRange": -211.4,
+      "distToBottomPct": -15.31,
+      "distToTopPct": 26.64,
+      "smaShort": 528.2945,
+      "smaLong": 548.1954,
+      "smaTrend": 613.0105,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 6,
-      "topLong": 606.87,
-      "bottomLong": 571.5266,
-      "pctInRangeLong": -176.0,
+      "topLong": 606.2954,
+      "bottomLong": 571.6862,
+      "pctInRangeLong": -149.5,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -11750,10 +11750,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 179.7
-        },
         {
           "d": "2025-11-24",
           "c": 179.12
@@ -12349,28 +12345,32 @@
         {
           "d": "2026-06-30",
           "c": 216.47
+        },
+        {
+          "d": "2026-07-01",
+          "c": 218.58
         }
       ],
       "state": "NEUTRAL",
-      "price": 216.47,
-      "top": 234.7781,
-      "bottom": 207.8255,
-      "band": 0.8086,
-      "pctInRange": 32.1,
-      "distToBottomPct": 4.16,
-      "distToTopPct": 8.46,
-      "smaShort": 218.5185,
-      "smaLong": 223.7662,
-      "smaTrend": 218.2543,
+      "price": 218.58,
+      "top": 234.8006,
+      "bottom": 207.8044,
+      "band": 0.8099,
+      "pctInRange": 39.9,
+      "distToBottomPct": 5.19,
+      "distToTopPct": 7.42,
+      "smaShort": 218.5625,
+      "smaLong": 223.6362,
+      "smaTrend": 218.2675,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 217.406,
-      "bottomLong": 194.0264,
-      "pctInRangeLong": 96.0,
+      "topLong": 217.4275,
+      "bottomLong": 194.0414,
+      "pctInRangeLong": 104.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -12400,10 +12400,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 40.3
-        },
         {
           "d": "2025-11-24",
           "c": 42.45
@@ -12999,28 +12995,32 @@
         {
           "d": "2026-06-30",
           "c": 101.65
+        },
+        {
+          "d": "2026-07-01",
+          "c": 100.07
         }
       ],
       "state": "NEUTRAL",
-      "price": 101.65,
-      "top": 116.3073,
-      "bottom": 81.1937,
-      "band": 1.0534,
-      "pctInRange": 58.3,
-      "distToBottomPct": 25.19,
-      "distToTopPct": 14.42,
-      "smaShort": 104.348,
-      "smaLong": 106.4408,
-      "smaTrend": 75.4115,
+      "price": 100.07,
+      "top": 116.6211,
+      "bottom": 81.3721,
+      "band": 1.0575,
+      "pctInRange": 53.0,
+      "distToBottomPct": 22.98,
+      "distToTopPct": 16.54,
+      "smaShort": 103.1855,
+      "smaLong": 106.653,
+      "smaTrend": 75.6451,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 6,
-      "topLong": 57.7763,
-      "bottomLong": 44.5077,
-      "pctInRangeLong": 430.7,
+      "topLong": 57.831,
+      "bottomLong": 44.5502,
+      "pctInRangeLong": 418.0,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -13044,16 +13044,12 @@
       "name": "IBM",
       "sector": "ハイテク",
       "class": "stock",
-      "stateLabel": "レンジ内",
-      "emoji": "⬜",
-      "color": "#6b7280",
-      "side": "none",
+      "stateLabel": "上昇中",
+      "emoji": "🟢",
+      "color": "#16a34a",
+      "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 297.44
-        },
         {
           "d": "2025-11-24",
           "c": 304.12
@@ -13649,37 +13645,41 @@
         {
           "d": "2026-06-30",
           "c": 281.21
+        },
+        {
+          "d": "2026-07-01",
+          "c": 286.25
         }
       ],
-      "state": "NEUTRAL",
-      "price": 281.21,
-      "top": 283.0277,
-      "bottom": 236.9278,
-      "band": 1.383,
-      "pctInRange": 96.1,
-      "distToBottomPct": 18.69,
-      "distToTopPct": 0.65,
-      "smaShort": 275.9715,
-      "smaLong": 254.0146,
-      "smaTrend": 273.9496,
+      "state": "RISING",
+      "price": 286.25,
+      "top": 282.961,
+      "bottom": 236.6903,
+      "band": 1.3881,
+      "pctInRange": 107.1,
+      "distToBottomPct": 20.94,
+      "distToTopPct": -1.15,
+      "smaShort": 273.8225,
+      "smaLong": 254.6654,
+      "smaTrend": 274.1136,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 295.0886,
-      "bottomLong": 267.5227,
-      "pctInRangeLong": 49.7,
+      "topLong": 295.2475,
+      "bottomLong": 267.6625,
+      "pctInRangeLong": 67.4,
       "trendLong": "up",
       "longRangeAvailable": true,
-      "longTermLow": true,
+      "longTermLow": false,
       "tradePolicy": "hold",
       "counterTrend": false,
       "rec": {
-        "score": 15,
-        "stars": 1,
-        "level": "-",
+        "score": 35,
+        "stars": 2,
+        "level": "C",
         "action": "hold",
         "expReturnPct": null,
         "expDays": null,
@@ -13700,10 +13700,6 @@
       "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 966.57
-        },
         {
           "d": "2025-11-24",
           "c": 987.82
@@ -14299,28 +14295,32 @@
         {
           "d": "2026-06-30",
           "c": 1989.4399
+        },
+        {
+          "d": "2026-07-01",
+          "c": 1843.04
         }
       ],
       "state": "RISING",
-      "price": 1989.4399,
-      "top": 1815.4687,
-      "bottom": 1603.4433,
-      "band": 6.3608,
-      "pctInRange": 182.1,
-      "distToBottomPct": 24.07,
-      "distToTopPct": -8.74,
-      "smaShort": 1816.393,
-      "smaLong": 1633.6116,
-      "smaTrend": 1305.1621,
+      "price": 1843.04,
+      "top": 1820.0422,
+      "bottom": 1648.4001,
+      "band": 5.1493,
+      "pctInRange": 113.4,
+      "distToBottomPct": 11.81,
+      "distToTopPct": -1.25,
+      "smaShort": 1823.2765,
+      "smaLong": 1640.9424,
+      "smaTrend": 1310.308,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
-      "cycleHalfDays": 7,
-      "topLong": 1158.3257,
-      "bottomLong": 1014.9229,
-      "pctInRangeLong": 679.6,
+      "cycleHalfDays": 6,
+      "topLong": 1158.8386,
+      "bottomLong": 1052.2874,
+      "pctInRangeLong": 742.1,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -14344,16 +14344,12 @@
       "name": "TSMC (台湾セミコンダクター ADR)",
       "sector": "ハイテク",
       "class": "stock",
-      "stateLabel": "上昇中",
-      "emoji": "🟢",
-      "color": "#16a34a",
-      "side": "up",
+      "stateLabel": "レンジ内",
+      "emoji": "⬜",
+      "color": "#6b7280",
+      "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 275.06
-        },
         {
           "d": "2025-11-24",
           "c": 284.64
@@ -14949,37 +14945,41 @@
         {
           "d": "2026-06-30",
           "c": 477.57
+        },
+        {
+          "d": "2026-07-01",
+          "c": 444.23
         }
       ],
-      "state": "RISING",
-      "price": 477.57,
-      "top": 448.0213,
-      "bottom": 403.7228,
-      "band": 1.329,
-      "pctInRange": 166.7,
-      "distToBottomPct": 18.29,
-      "distToTopPct": -6.19,
-      "smaShort": 437.917,
-      "smaLong": 416.6196,
-      "smaTrend": 342.235,
+      "state": "NEUTRAL",
+      "price": 444.23,
+      "top": 448.9209,
+      "bottom": 404.4992,
+      "band": 1.3327,
+      "pctInRange": 89.4,
+      "distToBottomPct": 9.82,
+      "distToTopPct": 1.06,
+      "smaShort": 437.794,
+      "smaLong": 418.1794,
+      "smaTrend": 343.1595,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 5,
-      "topLong": 321.062,
-      "bottomLong": 277.2334,
-      "pctInRangeLong": 457.1,
+      "topLong": 321.2958,
+      "bottomLong": 277.425,
+      "pctInRangeLong": 380.2,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
       "tradePolicy": "hold",
       "counterTrend": false,
       "rec": {
-        "score": 35,
-        "stars": 2,
-        "level": "C",
+        "score": 15,
+        "stars": 1,
+        "level": "-",
         "action": "hold",
         "expReturnPct": null,
         "expDays": null,
@@ -15000,10 +15000,6 @@
       "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 77.45
-        },
         {
           "d": "2025-11-24",
           "c": 83.79
@@ -15599,28 +15595,32 @@
         {
           "d": "2026-06-30",
           "c": 297.89
+        },
+        {
+          "d": "2026-07-01",
+          "c": 272.05
         }
       ],
       "state": "RISING",
-      "price": 297.89,
-      "top": 228.3218,
-      "bottom": 151.3099,
-      "band": 2.3104,
-      "pctInRange": 190.3,
-      "distToBottomPct": 96.87,
-      "distToTopPct": -23.35,
-      "smaShort": 285.8005,
-      "smaLong": 219.2632,
-      "smaTrend": 120.7179,
+      "price": 272.05,
+      "top": 229.1269,
+      "bottom": 151.7608,
+      "band": 2.321,
+      "pctInRange": 155.5,
+      "distToBottomPct": 79.26,
+      "distToTopPct": -15.78,
+      "smaShort": 284.8635,
+      "smaLong": 221.7474,
+      "smaTrend": 121.7414,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 120.5732,
-      "bottomLong": 91.3851,
-      "pctInRangeLong": 707.5,
+      "topLong": 120.6392,
+      "bottomLong": 91.4256,
+      "pctInRangeLong": 618.3,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -15650,10 +15650,6 @@
       "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 117.43
-        },
         {
           "d": "2025-11-24",
           "c": 122.17
@@ -16249,28 +16245,32 @@
         {
           "d": "2026-06-30",
           "c": 169.88
+        },
+        {
+          "d": "2026-07-01",
+          "c": 166.62
         }
       ],
       "state": "RISING",
-      "price": 169.88,
-      "top": 163.1951,
-      "bottom": 138.9983,
-      "band": 0.7259,
-      "pctInRange": 127.6,
-      "distToBottomPct": 22.22,
-      "distToTopPct": -3.94,
-      "smaShort": 163.8585,
-      "smaLong": 160.0584,
-      "smaTrend": 142.9104,
+      "price": 166.62,
+      "top": 163.2985,
+      "bottom": 139.047,
+      "band": 0.7275,
+      "pctInRange": 113.7,
+      "distToBottomPct": 19.83,
+      "distToTopPct": -1.99,
+      "smaShort": 163.423,
+      "smaLong": 160.0538,
+      "smaTrend": 143.0465,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 152.9728,
-      "bottomLong": 133.349,
-      "pctInRangeLong": 186.2,
+      "topLong": 153.861,
+      "bottomLong": 133.4559,
+      "pctInRangeLong": 162.5,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -16300,10 +16300,6 @@
       "side": "none",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 159.83
-        },
         {
           "d": "2025-11-24",
           "c": 168.91
@@ -16899,28 +16895,32 @@
         {
           "d": "2026-06-30",
           "c": 334.82
+        },
+        {
+          "d": "2026-07-01",
+          "c": 311.42
         }
       ],
       "state": "NEUTRAL",
-      "price": 334.82,
-      "top": 347.1606,
-      "bottom": 295.0369,
-      "band": 1.5637,
-      "pctInRange": 76.3,
-      "distToBottomPct": 13.48,
-      "distToTopPct": 3.69,
-      "smaShort": 314.418,
-      "smaLong": 324.8992,
-      "smaTrend": 230.7859,
+      "price": 311.42,
+      "top": 348.1295,
+      "bottom": 295.834,
+      "band": 1.5689,
+      "pctInRange": 29.8,
+      "distToBottomPct": 5.27,
+      "distToTopPct": 11.79,
+      "smaShort": 313.2645,
+      "smaLong": 324.8394,
+      "smaTrend": 231.6688,
       "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 218.6576,
-      "bottomLong": 184.7702,
-      "pctInRangeLong": 442.8,
+      "topLong": 218.8668,
+      "bottomLong": 184.946,
+      "pctInRangeLong": 372.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -16950,10 +16950,6 @@
       "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 26.245
-        },
         {
           "d": "2025-11-24",
           "c": 25.58
@@ -17549,28 +17545,32 @@
         {
           "d": "2026-06-30",
           "c": 23.21
+        },
+        {
+          "d": "2026-07-01",
+          "c": 24.57
         }
       ],
       "state": "RISING",
-      "price": 23.21,
-      "top": 22.4622,
-      "bottom": 19.2615,
-      "band": 0.096,
-      "pctInRange": 123.4,
-      "distToBottomPct": 20.5,
-      "distToTopPct": -3.22,
-      "smaShort": 22.718,
-      "smaLong": 21.3678,
-      "smaTrend": 26.0269,
+      "price": 24.57,
+      "top": 22.4124,
+      "bottom": 19.2167,
+      "band": 0.0959,
+      "pctInRange": 167.5,
+      "distToBottomPct": 27.86,
+      "distToTopPct": -8.78,
+      "smaShort": 22.822,
+      "smaLong": 21.414,
+      "smaTrend": 25.985,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 32.6329,
-      "bottomLong": 28.0647,
-      "pctInRangeLong": -106.3,
+      "topLong": 32.6566,
+      "bottomLong": 28.1546,
+      "pctInRangeLong": -79.6,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -17600,10 +17600,6 @@
       "side": "up",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 224.9
-        },
         {
           "d": "2025-11-24",
           "c": 228.18
@@ -18199,28 +18195,32 @@
         {
           "d": "2026-06-30",
           "c": 193.22
+        },
+        {
+          "d": "2026-07-01",
+          "c": 203.2
         }
       ],
       "state": "RISING",
-      "price": 193.22,
-      "top": 188.3566,
-      "bottom": 173.9886,
-      "band": 0.431,
-      "pctInRange": 133.8,
-      "distToBottomPct": 11.05,
-      "distToTopPct": -2.52,
-      "smaShort": 181.6215,
-      "smaLong": 174.8358,
-      "smaTrend": 195.2194,
-      "trend": "down",
+      "price": 203.2,
+      "top": 188.2801,
+      "bottom": 173.9046,
+      "band": 0.4313,
+      "pctInRange": 203.8,
+      "distToBottomPct": 16.85,
+      "distToTopPct": -7.34,
+      "smaShort": 182.7495,
+      "smaLong": 175.3646,
+      "smaTrend": 195.2993,
+      "trend": "up",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 7,
-      "topLong": 189.25,
-      "bottomLong": 173.9604,
-      "pctInRangeLong": 126.0,
+      "topLong": 189.2,
+      "bottomLong": 173.912,
+      "pctInRangeLong": 191.6,
       "trendLong": "down",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -18250,10 +18250,6 @@
       "side": "down",
       "actionable": false,
       "history": [
-        {
-          "d": "2025-11-21",
-          "c": 599.94
-        },
         {
           "d": "2025-11-24",
           "c": 610.23
@@ -18849,28 +18845,32 @@
         {
           "d": "2026-06-30",
           "c": 463.26
+        },
+        {
+          "d": "2026-07-01",
+          "c": 466.88
         }
       ],
       "state": "FALLING",
-      "price": 463.26,
-      "top": 609.9381,
-      "bottom": 557.6313,
-      "band": 1.5692,
-      "pctInRange": -180.4,
-      "distToBottomPct": -16.92,
-      "distToTopPct": 31.66,
-      "smaShort": 494.8405,
-      "smaLong": 500.7902,
-      "smaTrend": 554.7894,
+      "price": 466.88,
+      "top": 610.2459,
+      "bottom": 557.9467,
+      "band": 1.569,
+      "pctInRange": -174.1,
+      "distToBottomPct": -16.32,
+      "distToTopPct": 30.71,
+      "smaShort": 491.9445,
+      "smaLong": 499.6864,
+      "smaTrend": 554.644,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
       "brokeBelowRecently": true,
       "trendMethod": "pivot",
       "cycleHalfDays": 9,
-      "topLong": 579.8238,
-      "bottomLong": 523.9494,
-      "pctInRangeLong": -108.6,
+      "topLong": 580.1215,
+      "bottomLong": 524.2036,
+      "pctInRangeLong": -102.5,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -18947,10 +18947,14 @@
         {
           "d": "2026-06-30",
           "c": 170.86
+        },
+        {
+          "d": "2026-07-01",
+          "c": 157.54
         }
       ],
       "state": "UNKNOWN",
-      "reason": "データ不足(必要205日/現在12日)",
+      "reason": "データ不足(必要205日/現在13日)",
       "tradePolicy": "trade",
       "counterTrend": false,
       "rec": {
@@ -19575,20 +19579,20 @@
         },
         {
           "d": "2026-07-01",
-          "c": 4037.7
+          "c": 4050.6001
         }
       ],
       "state": "FALLING",
-      "price": 4037.7,
+      "price": 4050.6001,
       "top": 5218.1476,
       "bottom": 4675.9757,
       "band": 16.2652,
-      "pctInRange": -117.7,
-      "distToBottomPct": -13.65,
-      "distToTopPct": 29.24,
-      "smaShort": 4199.755,
-      "smaLong": 4440.766,
-      "smaTrend": 4453.9725,
+      "pctInRange": -115.3,
+      "distToBottomPct": -13.37,
+      "distToTopPct": 28.82,
+      "smaShort": 4200.4,
+      "smaLong": 4441.024,
+      "smaTrend": 4454.037,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -19597,7 +19601,7 @@
       "cycleHalfDays": 7,
       "topLong": 4212.8768,
       "bottomLong": 3891.1477,
-      "pctInRangeLong": 45.6,
+      "pctInRangeLong": 49.6,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -20225,20 +20229,20 @@
         },
         {
           "d": "2026-07-01",
-          "c": 59.195
+          "c": 59.835
         }
       ],
       "state": "FALLING",
-      "price": 59.195,
+      "price": 59.835,
       "top": 99.712,
       "bottom": 74.6229,
       "band": 0.7527,
-      "pctInRange": -61.5,
-      "distToBottomPct": -20.67,
-      "distToTopPct": 68.45,
-      "smaShort": 65.1493,
-      "smaLong": 72.3121,
-      "smaTrend": 68.5218,
+      "pctInRange": -58.9,
+      "distToBottomPct": -19.82,
+      "distToTopPct": 66.64,
+      "smaShort": 65.1813,
+      "smaLong": 72.3249,
+      "smaTrend": 68.525,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -20247,7 +20251,7 @@
       "cycleHalfDays": 8,
       "topLong": 56.463,
       "bottomLong": 47.5597,
-      "pctInRangeLong": 130.7,
+      "pctInRangeLong": 137.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -20875,20 +20879,20 @@
         },
         {
           "d": "2026-07-01",
-          "c": 58378.9414
+          "c": 60756.0898
         }
       ],
       "state": "NEUTRAL",
-      "price": 58378.9414,
+      "price": 60756.0898,
       "top": 64393.7384,
       "bottom": 55780.5986,
       "band": 258.3942,
-      "pctInRange": 30.2,
-      "distToBottomPct": 4.66,
-      "distToTopPct": 10.3,
-      "smaShort": 62390.0006,
-      "smaLong": 68058.1452,
-      "smaTrend": 75195.0196,
+      "pctInRange": 57.8,
+      "distToBottomPct": 8.92,
+      "distToTopPct": 5.99,
+      "smaShort": 62508.858,
+      "smaLong": 68105.6882,
+      "smaTrend": 75206.9054,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -20897,7 +20901,7 @@
       "cycleHalfDays": 8,
       "topLong": 118662.9009,
       "bottomLong": 102309.6356,
-      "pctInRangeLong": -268.6,
+      "pctInRangeLong": -254.1,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -20921,10 +20925,10 @@
       "name": "イーサリアム",
       "sector": "",
       "class": "crypto",
-      "stateLabel": "売り場",
-      "emoji": "🟥",
-      "color": "#dc2626",
-      "side": "sell",
+      "stateLabel": "上昇中",
+      "emoji": "🟢",
+      "color": "#16a34a",
+      "side": "up",
       "actionable": false,
       "history": [
         {
@@ -21525,20 +21529,20 @@
         },
         {
           "d": "2026-07-01",
-          "c": 1566.16
+          "c": 1628.1
         }
       ],
-      "state": "SELL",
-      "price": 1566.16,
+      "state": "RISING",
+      "price": 1628.1,
       "top": 1568.5116,
       "bottom": 1443.0112,
       "band": 3.765,
-      "pctInRange": 98.1,
-      "distToBottomPct": 8.53,
-      "distToTopPct": 0.15,
-      "smaShort": 1665.4401,
-      "smaLong": 1845.9961,
-      "smaTrend": 2286.6384,
+      "pctInRange": 147.5,
+      "distToBottomPct": 12.83,
+      "distToTopPct": -3.66,
+      "smaShort": 1668.5371,
+      "smaLong": 1847.2349,
+      "smaTrend": 2286.9481,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -21547,22 +21551,22 @@
       "cycleHalfDays": 8,
       "topLong": 3501.3479,
       "bottomLong": 2979.8636,
-      "pctInRangeLong": -271.1,
+      "pctInRangeLong": -259.2,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
       "tradePolicy": "accumulate",
       "counterTrend": false,
       "rec": {
-        "score": 10,
-        "stars": 1,
-        "level": "-",
+        "score": 35,
+        "stars": 2,
+        "level": "C",
         "action": "hold",
         "expReturnPct": null,
         "expDays": null,
         "expPeriodLabel": null,
         "annualizedPct": null,
-        "note": "長期保有方針のため売りシグナルは無効（押し目買い専用）"
+        "note": ""
       }
     }
   ],
