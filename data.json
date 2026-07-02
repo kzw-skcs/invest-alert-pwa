@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-02T10:54:20.327358+00:00",
- "updatedJST": "2026-07-02 19:54 JST",
+ "updated": "2026-07-02T12:30:31.736347+00:00",
+ "updatedJST": "2026-07-02 21:30 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -101,13 +101,13 @@
   "silver": 1
  },
  "vix": {
-  "value": 16.66,
-  "changePct": 0.42,
+  "value": 16.51,
+  "changePct": -0.48,
   "level": null,
   "reason": null
  },
  "fx": {
-  "usdjpy": 161.432999
+  "usdjpy": 161.167999
  },
  "instruments": [
   {
@@ -5112,7 +5112,7 @@
    "emoji": "🔻",
    "color": "#d97706",
    "side": "none",
-   "actionable": true,
+   "actionable": false,
    "value": {
     "score": 43,
     "tier": "none",
@@ -5128,9 +5128,9 @@
     "note": "hold銘柄"
    },
    "holdMgmt": {
-    "thesisBreak": true,
+    "thesisBreak": false,
     "trim": false,
-    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+    "note": ""
    },
    "rec": {
     "score": 43,
@@ -23139,20 +23139,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 61225.039062
+     "c": 61447.019531
     }
    ],
    "state": "DOWN",
-   "price": 61225.0391,
+   "price": 61447.0195,
    "top": 64244.5957,
    "bottom": 55634.3041,
    "band": 258.3087,
-   "pctInRange": 64.9,
-   "distToBottomPct": 10.05,
-   "distToTopPct": 4.93,
-   "smaShort": 62355.3334,
-   "smaLong": 67729.6,
-   "smaTrend": 75068.393,
+   "pctInRange": 67.5,
+   "distToBottomPct": 10.45,
+   "distToTopPct": 4.55,
+   "smaShort": 62366.4324,
+   "smaLong": 67734.0396,
+   "smaTrend": 75069.5029,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -23160,15 +23160,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 42.7,
-   "atr": 2217.9233,
+   "rsi": 43.6,
+   "atr": 2223.8943,
    "atrPct": 3.62,
    "high52w": 114472.4453,
-   "drawdownPct": 46.5,
+   "drawdownPct": 46.3,
    "macroDriven": null,
    "topLong": 118737.886,
    "bottomLong": 102371.0893,
-   "pctInRangeLong": -251.4,
+   "pctInRangeLong": -250.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -23179,7 +23179,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 55,
+    "score": 54,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -23198,7 +23198,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 55,
+    "score": 54,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -23857,20 +23857,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 1644.880005
+     "c": 1661.75
     }
    ],
    "state": "SELL",
-   "price": 1644.88,
+   "price": 1661.75,
    "top": 1560.2607,
    "bottom": 1436.4606,
    "band": 3.714,
-   "pctInRange": 168.4,
-   "distToBottomPct": 14.51,
-   "distToTopPct": -5.14,
-   "smaShort": 1666.5678,
-   "smaLong": 1834.5981,
-   "smaTrend": 2279.7739,
+   "pctInRange": 182.0,
+   "distToBottomPct": 15.68,
+   "distToTopPct": -6.11,
+   "smaShort": 1667.4113,
+   "smaLong": 1834.9355,
+   "smaTrend": 2279.8582,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -23878,15 +23878,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 44.3,
-   "atr": 76.4823,
-   "atrPct": 4.65,
+   "rsi": 46.2,
+   "atr": 76.8778,
+   "atrPct": 4.63,
    "high52w": 4157.9893,
-   "drawdownPct": 60.4,
+   "drawdownPct": 60.0,
    "macroDriven": null,
    "topLong": 3502.4169,
    "bottomLong": 2980.6705,
-   "pctInRangeLong": -256.0,
+   "pctInRangeLong": -252.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -24575,20 +24575,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 4077.300049
+     "c": 4078.800049
     }
    ],
    "state": "BUY",
-   "price": 4077.3,
+   "price": 4078.8,
    "top": 5224.4736,
    "bottom": 4680.365,
    "band": 16.3233,
-   "pctInRange": -110.8,
-   "distToBottomPct": -12.88,
-   "distToTopPct": 28.14,
-   "smaShort": 4183.315,
-   "smaLong": 4428.956,
-   "smaTrend": 4456.101,
+   "pctInRange": -110.6,
+   "distToBottomPct": -12.85,
+   "distToTopPct": 28.09,
+   "smaShort": 4183.39,
+   "smaLong": 4428.986,
+   "smaTrend": 4456.1085,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -24596,7 +24596,7 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 38.4,
+   "rsi": 38.5,
    "atr": 91.1684,
    "atrPct": 2.24,
    "high52w": 5318.3999,
@@ -24604,7 +24604,7 @@
    "macroDriven": null,
    "topLong": 4215.3493,
    "bottomLong": 3893.3495,
-   "pctInRangeLong": 57.1,
+   "pctInRangeLong": 57.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -24615,7 +24615,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 71,
+    "score": 70,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -24637,14 +24637,14 @@
     "note": ""
    },
    "rec": {
-    "score": 71,
+    "score": 70,
     "stars": 4,
     "level": "B",
     "action": "buy",
-    "expReturnPct": 28.14,
+    "expReturnPct": 28.09,
     "expDays": 7,
     "expPeriodLabel": "約7営業日",
-    "annualizedPct": 1013.0,
+    "annualizedPct": 1011.2,
     "note": "🟦購入検討"
    }
   },
@@ -25296,19 +25296,19 @@
     },
     {
      "d": "2026-07-02",
-     "c": 60.290001
+     "c": 60.279999
     }
    ],
    "state": "BUY",
-   "price": 60.29,
+   "price": 60.28,
    "top": 99.9573,
    "bottom": 74.6843,
    "band": 0.7582,
    "pctInRange": -57.0,
-   "distToBottomPct": -19.27,
-   "distToTopPct": 65.79,
-   "smaShort": 64.5345,
-   "smaLong": 72.0075,
+   "distToBottomPct": -19.29,
+   "distToTopPct": 65.82,
+   "smaShort": 64.534,
+   "smaLong": 72.0073,
    "smaTrend": 68.6151,
    "trend": "up",
    "trend200DownDays": 0,
@@ -25319,13 +25319,13 @@
    "cycleHalfDays": 8,
    "rsi": 35.7,
    "atr": 2.3961,
-   "atrPct": 3.97,
+   "atrPct": 3.98,
    "high52w": 115.08,
    "drawdownPct": 47.6,
    "macroDriven": false,
    "topLong": 56.4996,
    "bottomLong": 47.2419,
-   "pctInRangeLong": 140.9,
+   "pctInRangeLong": 140.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -25595,25 +25595,11 @@
  ],
  "alerts": [
   {
-   "type": "THESIS_REVIEW",
-   "ticker": "MSFT",
-   "priority": 2,
-   "title": "🧐 MSFT テーゼ見直し",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
    "type": "MOM_EXIT_WARN",
    "ticker": "NVDA",
    "priority": 2,
    "title": "⚠️ NVDA 売り管理シグナル",
    "detail": "デッドクロス"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "META",
-   "priority": 2,
-   "title": "🧐 META テーゼ見直し",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
   },
   {
    "type": "MOM_EXIT_WARN",
@@ -25628,13 +25614,6 @@
    "priority": 2,
    "title": "⚠️ AMD 売り管理シグナル",
    "detail": "急落-6.9%"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "ORCL",
-   "priority": 2,
-   "title": "🧐 ORCL テーゼ見直し",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
   },
   {
    "type": "MOM_EXIT_WARN",
@@ -25658,32 +25637,11 @@
    "detail": "デッドクロス"
   },
   {
-   "type": "THESIS_REVIEW",
-   "ticker": "NOC",
-   "priority": 2,
-   "title": "🧐 NOC テーゼ見直し",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
    "type": "MOM_EXIT_WARN",
    "ticker": "RKLB",
    "priority": 2,
    "title": "⚠️ RKLB 売り管理シグナル",
    "detail": "デッドクロス"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "btc",
-   "priority": 2,
-   "title": "🧐 btc テーゼ見直し",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "eth",
-   "priority": 2,
-   "title": "🧐 eth テーゼ見直し",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
   },
   {
    "type": "BUY_CONSIDER",
@@ -25731,7 +25689,7 @@
    "type": "BUY_CONSIDER",
    "ticker": "gold",
    "priority": 3,
-   "title": "🟦 gold 購入検討 (スコア71)",
+   "title": "🟦 gold 購入検討 (スコア70)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 高値-23% +14 / RSI38 +8"
   }
  ],
@@ -25767,5 +25725,167 @@
   "RKLB": 1.86,
   "CACI": 2.2,
   "IQV": 10.0
- }
+ },
+ "discovery": [
+  {
+   "ticker": "ISRG",
+   "name": "Intuitive Surgical",
+   "theme": "手術ロボット",
+   "moat": "da Vinciで世界シェア60%超・設置1.1万台の器具/保守の継続収益",
+   "thesis": "手術ロボの事実上の独占。da Vinci 5サイクルが成長触媒。ディフェンシブ×成長の両立",
+   "risk": "低〜中"
+  },
+  {
+   "ticker": "AXON",
+   "name": "Axon Enterprise",
+   "theme": "公共安全テック",
+   "moat": "TASER+ボディカメラ+証拠管理SaaSの警察OS独占。受注残$14B超",
+   "thesis": "行政の乗り換えコストが極めて高く、AI(Draft One)で独占が深化",
+   "risk": "中"
+  },
+  {
+   "ticker": "SNPS",
+   "name": "Synopsys",
+   "theme": "半導体設計(EDA)",
+   "moat": "EDAはSNPS/CDNSの実質複占。チップを設計する全社が顧客",
+   "thesis": "AIチップ乱立時代の「ツルハシ売り」。どの半導体が勝っても勝つ",
+   "risk": "低〜中"
+  },
+  {
+   "ticker": "CDNS",
+   "name": "Cadence Design",
+   "theme": "半導体設計(EDA)",
+   "moat": "同上(複占のもう一方)",
+   "thesis": "SNPSと同じ構造。2社セットで検討",
+   "risk": "低〜中"
+  },
+  {
+   "ticker": "KLAC",
+   "name": "KLA Corporation",
+   "theme": "半導体検査",
+   "moat": "プロセス制御・検査装置で寡占。微細化するほど必須",
+   "thesis": "ASMLと同型の「装置レイヤーの独占」。先端化の恩恵を装置で取る",
+   "risk": "中"
+  },
+  {
+   "ticker": "CEG",
+   "name": "Constellation Energy",
+   "theme": "原子力×AI電力",
+   "moat": "米最大のカーボンフリー発電。MSFT/METAと長期PPA締結済み",
+   "thesis": "AIデータセンターの電力不足の最直接的受益者。既存原発は新設不能の参入障壁",
+   "risk": "中"
+  },
+  {
+   "ticker": "ASTS",
+   "name": "AST SpaceMobile",
+   "theme": "衛星direct-to-cell",
+   "moat": "普通のスマホに直接つながる衛星通信の先行者。通信キャリアと提携多数",
+   "thesis": "成功すれば圏外の消滅=巨大市場の先頭。ただし実行リスク大",
+   "risk": "高(投機的)"
+  },
+  {
+   "ticker": "LLY",
+   "name": "Eli Lilly",
+   "theme": "GLP-1(肥満・糖尿病)",
+   "moat": "GLP-1はLLY/NVOの複占。製造能力自体が参入障壁",
+   "thesis": "医療コスト構造を変える薬の複占側。ヘルスケア枠の成長候補",
+   "risk": "中"
+  },
+  {
+   "ticker": "IONQ",
+   "name": "IonQ",
+   "theme": "量子コンピュータ",
+   "moat": "イオントラップ方式の先行上場企業",
+   "thesis": "実用化すれば独走の可能性があるが、時期は不確実。宝くじ枠",
+   "risk": "高(投機的)"
+  },
+  {
+   "ticker": "ALAB",
+   "name": "Astera Labs",
+   "theme": "AI接続半導体",
+   "moat": "AIラック内接続(PCIeリタイマ/CXL)の先行者。スイッチScorpioで$20B市場へ参入",
+   "thesis": "GPU同士を繋ぐ配線レイヤーの覇者候補。Q1売上+93%。ただし高バリュエーション",
+   "risk": "高"
+  },
+  {
+   "ticker": "CRDO",
+   "name": "Credo Technology",
+   "theme": "AI接続(ケーブル/SerDes)",
+   "moat": "AEC(アクティブ電気ケーブル)で先行。直近四半期+157%成長",
+   "thesis": "ALABと同じ「AIの神経系」テーマ。顧客集中リスクあり",
+   "risk": "高"
+  },
+  {
+   "ticker": "COHR",
+   "name": "Coherent",
+   "theme": "光トランシーバ",
+   "moat": "データセンター光部品の寡占プレイヤー",
+   "thesis": "AIトラフィック増→光化は不可逆。装置より安く買えることが多い",
+   "risk": "中"
+  },
+  {
+   "ticker": "MU",
+   "name": "Micron",
+   "theme": "HBMメモリ",
+   "moat": "HBMはMU/SKハイニックス/サムスンの3社寡占",
+   "thesis": "AIチップの性能はメモリ帯域で決まる時代。シクリカルだが構造的追い風",
+   "risk": "中"
+  },
+  {
+   "ticker": "ARM",
+   "name": "Arm Holdings",
+   "theme": "半導体IP",
+   "moat": "命令セットIPの実質独占(スマホ99%、DC浸透中)",
+   "thesis": "どのAIチップが勝ってもロイヤリティが入る構造",
+   "risk": "中"
+  },
+  {
+   "ticker": "GEV",
+   "name": "GE Vernova",
+   "theme": "電力インフラ",
+   "moat": "ガスタービン・送電網機器の寡占。DC電力不足の直接受益",
+   "thesis": "AIの律速は電力。発電設備の納期は数年待ち=価格決定力",
+   "risk": "中"
+  },
+  {
+   "ticker": "VST",
+   "name": "Vistra",
+   "theme": "独立系電力",
+   "moat": "原子力+ガス発電をDC需要地に保有",
+   "thesis": "CEGと同型の「既存発電資産の再評価」プレー",
+   "risk": "中"
+  },
+  {
+   "ticker": "CCJ",
+   "name": "Cameco",
+   "theme": "ウラン",
+   "moat": "西側最大のウラン生産者(カザトムプロム以外の代替が乏しい)",
+   "thesis": "原発回帰+SMR時代の燃料供給の要衝。金銀に近い実物資産性",
+   "risk": "中"
+  },
+  {
+   "ticker": "OKLO",
+   "name": "Oklo",
+   "theme": "SMR(小型原子炉)",
+   "moat": "DC向け小型高速炉の先行者(Altman支援)",
+   "thesis": "商用化前で売上ほぼゼロ。成功すれば独走、失敗なら大幅減。宝くじ枠",
+   "risk": "高(投機的)"
+  },
+  {
+   "ticker": "LUNR",
+   "name": "Intuitive Machines",
+   "theme": "月面経済",
+   "moat": "NASA月面輸送(CLPS)契約の先行者",
+   "thesis": "月面インフラの一番手候補。政府契約依存で変動大",
+   "risk": "高(投機的)"
+  },
+  {
+   "ticker": "KTOS",
+   "name": "Kratos Defense",
+   "theme": "無人機・極超音速",
+   "moat": "安価な無人戦闘機・標的機で独自地位",
+   "thesis": "防衛の主役が「高価な有人機→安価な無人機群」へ移る構造変化の先頭",
+   "risk": "中〜高"
+  }
+ ]
 }
