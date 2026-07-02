@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-01T22:14:49.185846+00:00",
-  "updatedJST": "2026-07-02 07:14 JST",
+  "updated": "2026-07-02T00:11:18.606385+00:00",
+  "updatedJST": "2026-07-02 09:11 JST",
   "settings": {
     "lookbackDays": 252,
     "lookbackLongDays": 1260,
@@ -35,7 +35,7 @@
     "reason": null
   },
   "fx": {
-    "usdjpy": 162.542
+    "usdjpy": 162.495
   },
   "instruments": [
     {
@@ -19578,21 +19578,21 @@
           "c": 4022.8999
         },
         {
-          "d": "2026-07-01",
-          "c": 4050.6001
+          "d": "2026-07-02",
+          "c": 4045.2
         }
       ],
       "state": "FALLING",
-      "price": 4050.6001,
+      "price": 4045.2,
       "top": 5218.1476,
       "bottom": 4675.9757,
       "band": 16.2652,
-      "pctInRange": -115.3,
-      "distToBottomPct": -13.37,
-      "distToTopPct": 28.82,
-      "smaShort": 4200.4,
-      "smaLong": 4441.024,
-      "smaTrend": 4454.037,
+      "pctInRange": -116.3,
+      "distToBottomPct": -13.49,
+      "distToTopPct": 29.0,
+      "smaShort": 4200.13,
+      "smaLong": 4440.916,
+      "smaTrend": 4454.01,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -19601,7 +19601,7 @@
       "cycleHalfDays": 7,
       "topLong": 4212.8768,
       "bottomLong": 3891.1477,
-      "pctInRangeLong": 49.6,
+      "pctInRangeLong": 47.9,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -20228,21 +20228,21 @@
           "c": 59.477
         },
         {
-          "d": "2026-07-01",
-          "c": 59.835
+          "d": "2026-07-02",
+          "c": 59.545
         }
       ],
       "state": "FALLING",
-      "price": 59.835,
+      "price": 59.545,
       "top": 99.712,
       "bottom": 74.6229,
       "band": 0.7527,
-      "pctInRange": -58.9,
-      "distToBottomPct": -19.82,
-      "distToTopPct": 66.64,
-      "smaShort": 65.1813,
-      "smaLong": 72.3249,
-      "smaTrend": 68.525,
+      "pctInRange": -60.1,
+      "distToBottomPct": -20.21,
+      "distToTopPct": 67.46,
+      "smaShort": 65.1668,
+      "smaLong": 72.3191,
+      "smaTrend": 68.5235,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -20251,7 +20251,7 @@
       "cycleHalfDays": 8,
       "topLong": 56.463,
       "bottomLong": 47.5597,
-      "pctInRangeLong": 137.9,
+      "pctInRangeLong": 134.6,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": false,
@@ -20878,21 +20878,21 @@
           "c": 58558.8594
         },
         {
-          "d": "2026-07-01",
-          "c": 60756.0898
+          "d": "2026-07-02",
+          "c": 59880.2891
         }
       ],
       "state": "NEUTRAL",
-      "price": 60756.0898,
+      "price": 59880.2891,
       "top": 64393.7384,
       "bottom": 55780.5986,
       "band": 258.3942,
-      "pctInRange": 57.8,
-      "distToBottomPct": 8.92,
-      "distToTopPct": 5.99,
-      "smaShort": 62508.858,
-      "smaLong": 68105.6882,
-      "smaTrend": 75206.9054,
+      "pctInRange": 47.6,
+      "distToBottomPct": 7.35,
+      "distToTopPct": 7.54,
+      "smaShort": 62465.068,
+      "smaLong": 68088.1722,
+      "smaTrend": 75202.5264,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -20901,7 +20901,7 @@
       "cycleHalfDays": 8,
       "topLong": 118662.9009,
       "bottomLong": 102309.6356,
-      "pctInRangeLong": -254.1,
+      "pctInRangeLong": -259.5,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
@@ -21528,21 +21528,21 @@
           "c": 1569.5839
         },
         {
-          "d": "2026-07-01",
-          "c": 1628.1
+          "d": "2026-07-02",
+          "c": 1604.5
         }
       ],
       "state": "RISING",
-      "price": 1628.1,
+      "price": 1604.5,
       "top": 1568.5116,
       "bottom": 1443.0112,
       "band": 3.765,
-      "pctInRange": 147.5,
-      "distToBottomPct": 12.83,
-      "distToTopPct": -3.66,
-      "smaShort": 1668.5371,
-      "smaLong": 1847.2349,
-      "smaTrend": 2286.9481,
+      "pctInRange": 128.7,
+      "distToBottomPct": 11.19,
+      "distToTopPct": -2.24,
+      "smaShort": 1667.3571,
+      "smaLong": 1846.7629,
+      "smaTrend": 2286.8301,
       "trend": "down",
       "cross": null,
       "brokeAboveRecently": true,
@@ -21551,7 +21551,7 @@
       "cycleHalfDays": 8,
       "topLong": 3501.3479,
       "bottomLong": 2979.8636,
-      "pctInRangeLong": -259.2,
+      "pctInRangeLong": -263.7,
       "trendLong": "up",
       "longRangeAvailable": true,
       "longTermLow": true,
