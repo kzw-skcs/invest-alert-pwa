@@ -260,6 +260,11 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div id="analysis-result" class="muted" style="margin-top:8px"></div>
   </div>
   <div class="card">
+    <h3>🧪 バックテスト結果</h3>
+    <div class="tiny" style="margin-bottom:6px">GitHub → Actions → backtest を実行すると過去約5年のルール検証結果がここに表示されます(数十分かかります)。</div>
+    <div id="backtest-result" class="muted">未実行</div>
+  </div>
+  <div class="card">
     <h3>🔔 プッシュ通知</h3>
     <button class="btn" onclick="subscribePush()">通知を有効化</button>
     <div id="push-status" class="tiny" style="margin-top:6px"></div>
@@ -864,7 +869,31 @@ async function runReanalyze() {
     toast(j.ok ? '✅ ' + j.message : '失敗: ' + (j.error || ''));
   } catch (e) { toast('失敗: サーバー未設定。GitHub Actionsのreanalyzeを手動実行してください。'); }
 }
+async function renderBacktest() {
+  const el = $('#backtest-result'); if (!el) return;
+  try {
+    const r = await fetch('backtest.json?t=' + Date.now());
+    if (!r.ok) throw 0;
+    const b = await r.json();
+    const tierRows = Object.entries(b.valueTiers || {}).map(([k, v]) => v.trades
+      ? `<tr><td>${k}</td><td>${v.trades}</td><td>${v.winRatePct}%</td><td>${v.avgRetPct}%</td><td>${v.avgDays}日</td><td>${v.annualizedPerTradePct ?? '—'}%</td></tr>`
+      : `<tr><td>${k}</td><td colspan="5">シグナルなし</td></tr>`).join('');
+    const m = b.momentum || {};
+    const allocRows = (Array.isArray(b.allocations) ? b.allocations : []).map((a) =>
+      `<tr><td>${a.label}</td><td>${Object.entries(a.weightsPct).filter(([,w])=>w>0).map(([n,w])=>`${n}${w}`).join(':')}</td><td>${a.cagrPct}%</td><td>${a.maxDDPct}%</td><td>${a.sharpe}</td></tr>`).join('');
+    el.innerHTML = `
+      <div class="tiny">${b.period ? `検証期間 ${b.period.start}〜${b.period.end} (${b.period.tradingDays}営業日) / 生成 ${b.generated}` : ''}</div>
+      <h3 style="font-size:12px;margin:8px 0 4px">Value戦略(Tier別・1トレードあたり)</h3>
+      <table><tr><th>Tier</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th><th>年率換算</th></tr>${tierRows}</table>
+      <h3 style="font-size:12px;margin:10px 0 4px">モメンタム戦略</h3>
+      <div class="tiny">${m.trades ? `${m.trades}回 / 勝率${m.winRatePct}% / 平均${m.avgRetPct}% / 平均${m.avgDays}日 / 最大${m.bestPct}% / 最悪${m.worstPct}%` : 'トレードなし'}</div>
+      <h3 style="font-size:12px;margin:10px 0 4px">配分の実測比較(日次リバランス近似)</h3>
+      <table><tr><th>配分</th><th>比率</th><th>CAGR</th><th>最大DD</th><th>Sharpe</th></tr>${allocRows}</table>
+      <div class="tiny" style="margin-top:6px">⚠️ ${b.warning || ''}</div>`;
+  } catch (e) { el.textContent = '未実行(Actions → backtest を実行してください)'; }
+}
 async function renderAnalysis() {
+  renderBacktest();
   try {
     const r = await fetch('analysis.json?t=' + Date.now());
     if (!r.ok) throw 0;

@@ -1,0 +1,27 @@
+name: backtest
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: install deps
+        run: pip install numpy
+      - name: run backtest
+        run: python backtest.py
+      - name: commit
+        run: |
+          git config user.name "invest-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add backtest.json
+          git diff --cached --quiet || git commit -m "backtest: 結果更新 $(date -u +%Y-%m-%d)"
+          git push
