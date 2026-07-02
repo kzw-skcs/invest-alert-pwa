@@ -220,6 +220,11 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 
 <!-- ================= 🚀 IPO ================= -->
 <div class="tab" id="tab-ipo">
+  <div class="card">
+    <h3>📰 ウィークリーブリーフィング
+      <button class="btn sm" style="float:right" onclick="window.open('https://app.notion.com/p/39173049b81a8146a89deadb1bcc10bf','_blank')">Notionで開く</button></h3>
+    <div id="briefing" class="muted">読み込み中…</div>
+  </div>
   <div id="events"></div>
   <div class="card">
     <h3>💎 お宝候補(発掘リスト)</h3>
@@ -363,7 +368,7 @@ function usdjpy() { return (DATA && DATA.fx && DATA.fx.usdjpy) || null; }
 function renderAll() {
   if (!DATA) return;
   for (const f of [renderStale, renderVix, renderAlerts, renderRanking, renderCards,
-                   renderAssets, renderTargetPF, renderEvents, renderDiscovery,
+                   renderAssets, renderTargetPF, renderEvents, renderDiscovery, renderBriefing,
                    renderWatchlist, renderSettingsView, renderAnalysis]) {
     try { f(); } catch (e) { console.error(f.name, e); }
   }
@@ -828,6 +833,26 @@ function renderEvents() {
   }).join('');
 }
 
+async function renderBriefing() {
+  const el = $('#briefing'); if (!el) return;
+  try {
+    const r = await fetch('api/briefing');
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || '');
+    // 最新号のみ表示(2つ目の日付見出しまで)
+    let html = '', dateHeads = 0;
+    for (const b of j.blocks) {
+      if (b.t === 'h' && /\d{4}-\d{2}-\d{2}|第\d+号|創刊/.test(b.x)) { dateHeads++; if (dateHeads > 1) break; }
+      if (b.t === 'h') html += `<div style="font-weight:700;font-size:13px;margin:8px 0 3px">${b.x}</div>`;
+      else if (b.t === 'p') html += `<div class="tiny" style="margin-bottom:4px">${b.x}</div>`;
+      else if (b.t === 'li') html += `<div class="tiny" style="margin:0 0 3px 10px">・${b.x}</div>`;
+      else if (b.t === 'q') html += `<div class="tiny" style="border-left:2px solid var(--line);padding-left:8px;margin:4px 0">${b.x}</div>`;
+    }
+    el.innerHTML = html || '<span class="muted">ブリーフィングがまだありません</span>';
+  } catch (e) {
+    el.innerHTML = '<span class="tiny">アプリ内表示は未設定です(NOTION_TOKEN)。右上の「Notionで開く」からご覧ください。</span>';
+  }
+}
 function renderDiscovery() {
   const el = $('#discovery'); if (!el) return;
   const list = (DATA && DATA.discovery) || [];
