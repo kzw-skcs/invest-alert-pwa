@@ -61,14 +61,7 @@
   },
   "portfolio": {
     "_comment": "推奨ポートフォリオ。cash=戦略キャッシュ(暴落時買付・IPO参加の待機資金)。比率は%。",
-    "targets": {
-      "stocks": 60,
-      "btc": 10,
-      "eth": 5,
-      "gold": 10,
-      "silver": 5,
-      "cash": 10
-    },
+    "targets": { "stocks": 60, "btc": 10, "eth": 5, "gold": 10, "silver": 5, "cash": 10 },
     "rebalanceThresholdPct": 5,
     "stockSectorTargets": {
       "AI・半導体/クラウド": 45,
@@ -79,555 +72,87 @@
     },
     "phasedEntry": {
       "_comment": "新規資金の段階的エントリー。tranche1=即時、tranche2=対象が高値から-10%、tranche3=-20%暴落時。",
-      "tranches": [
-        40,
-        30,
-        30
-      ],
-      "dipTriggersPct": [
-        0,
-        10,
-        20
-      ]
+      "tranches": [40, 30, 30],
+      "dipTriggersPct": [0, 10, 20]
     }
   },
   "targets": {
     "_comment": "(v1互換) リバランス表示用。v2はportfolio.targetsを優先。",
-    "stocks": 6,
-    "btc": 1,
-    "eth": 1,
-    "gold": 1,
-    "silver": 1
+    "stocks": 6, "btc": 1, "eth": 1, "gold": 1, "silver": 1
   },
   "crypto": [
-    {
-      "key": "btc",
-      "yahoo": "BTC-USD",
-      "coingeckoId": "bitcoin",
-      "name": "ビットコイン",
-      "tradePolicy": "accumulate",
-      "conviction": 5
-    },
-    {
-      "key": "eth",
-      "yahoo": "ETH-USD",
-      "coingeckoId": "ethereum",
-      "name": "イーサリアム",
-      "tradePolicy": "accumulate",
-      "conviction": 4
-    }
+    {"key": "btc", "yahoo": "BTC-USD", "coingeckoId": "bitcoin", "name": "ビットコイン", "tradePolicy": "accumulate", "conviction": 5},
+    {"key": "eth", "yahoo": "ETH-USD", "coingeckoId": "ethereum", "name": "イーサリアム", "tradePolicy": "accumulate", "conviction": 4}
   ],
   "metals": [
-    {
-      "key": "gold",
-      "yahoo": "GC=F",
-      "stooq": "xauusd",
-      "name": "金 (COMEX先物 GC=F)",
-      "tradePolicy": "accumulate",
-      "conviction": 5
-    },
-    {
-      "key": "silver",
-      "yahoo": "SI=F",
-      "stooq": "xagusd",
-      "name": "銀 (COMEX先物 SI=F)",
-      "tradePolicy": "accumulate",
-      "conviction": 4
-    }
+    {"key": "gold", "yahoo": "GC=F", "stooq": "xauusd", "name": "金 (COMEX先物 GC=F)", "tradePolicy": "accumulate", "conviction": 5},
+    {"key": "silver", "yahoo": "SI=F", "stooq": "xagusd", "name": "銀 (COMEX先物 SI=F)", "tradePolicy": "accumulate", "conviction": 4}
   ],
-  "vix": {
-    "yahoo": "^VIX",
-    "stooq": "^vix",
-    "name": "VIX恐怖指数"
-  },
-  "fx": {
-    "yahoo": "JPY=X",
-    "stooq": "usdjpy",
-    "name": "USD/JPY"
-  },
-  "benchmark": {
-    "yahoo": "^GSPC",
-    "stooq": "^spx",
-    "name": "S&P500"
-  },
+  "vix": {"yahoo": "^VIX", "stooq": "^vix", "name": "VIX恐怖指数"},
+  "fx": {"yahoo": "JPY=X", "stooq": "usdjpy", "name": "USD/JPY"},
+  "benchmark": {"yahoo": "^GSPC", "stooq": "^spx", "name": "S&P500"},
   "stocks": [
-    {
-      "ticker": "AAPL",
-      "stooq": "aapl.us",
-      "name": "Apple",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "held": true
-    },
-    {
-      "ticker": "MSFT",
-      "stooq": "msft.us",
-      "name": "Microsoft",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "GOOGL",
-      "stooq": "googl.us",
-      "name": "Alphabet (Google)",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "AMZN",
-      "stooq": "amzn.us",
-      "name": "Amazon",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "AVGO",
-      "stooq": "avgo.us",
-      "name": "Broadcom",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "NVDA",
-      "stooq": "nvda.us",
-      "name": "NVIDIA",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "held": true
-    },
-    {
-      "ticker": "META",
-      "stooq": "meta.us",
-      "name": "Meta Platforms",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "held": true
-    },
-    {
-      "ticker": "TSLA",
-      "stooq": "tsla.us",
-      "name": "Tesla",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "AMD",
-      "stooq": "amd.us",
-      "name": "AMD",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "PLTR",
-      "stooq": "pltr.us",
-      "name": "Palantir",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "ORCL",
-      "stooq": "orcl.us",
-      "name": "Oracle",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "OpenAI/Stargate関連"
-    },
-    {
-      "ticker": "CRWV",
-      "stooq": "crwv.us",
-      "name": "CoreWeave",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "OpenAIコンピュート関連・高ボラ"
-    },
-    {
-      "ticker": "XOM",
-      "stooq": "xom.us",
-      "name": "ExxonMobil",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "CVX",
-      "stooq": "cvx.us",
-      "name": "Chevron",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "NEE",
-      "stooq": "nee.us",
-      "name": "NextEra Energy",
-      "sector": "エネルギー",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "LMT",
-      "stooq": "lmt.us",
-      "name": "Lockheed Martin",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "RTX",
-      "stooq": "rtx.us",
-      "name": "RTX (Raytheon)",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "NOC",
-      "stooq": "noc.us",
-      "name": "Northrop Grumman",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 4
-    },
-    {
-      "ticker": "RKLB",
-      "stooq": "rklb.us",
-      "name": "Rocket Lab",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "IBM",
-      "stooq": "ibm.us",
-      "name": "IBM",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "held": true
-    },
-    {
-      "ticker": "ASML",
-      "stooq": "asml.us",
-      "name": "ASML (ADR)",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "note": "EUV露光装置の完全独占"
-    },
-    {
-      "ticker": "TSM",
-      "stooq": "tsm.us",
-      "name": "TSMC (ADR)",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "held": true,
-      "note": "先端ファウンドリ寡占"
-    },
-    {
-      "ticker": "MRVL",
-      "stooq": "mrvl.us",
-      "name": "Marvell Technology",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "held": true
-    },
-    {
-      "ticker": "ANET",
-      "stooq": "anet.us",
-      "name": "Arista Networks",
-      "sector": "ハイテク",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "held": true
-    },
-    {
-      "ticker": "VRT",
-      "stooq": "vrt.us",
-      "name": "Vertiv Holdings",
-      "sector": "ハイテク",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "held": true
-    },
-    {
-      "ticker": "CLMB",
-      "stooq": "clmb.us",
-      "name": "Climb Global Solutions（小型株）",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 2
-    },
-    {
-      "ticker": "IQV",
-      "stooq": "iqv.us",
-      "name": "IQVIA Holdings",
-      "sector": "ヘルスケア",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "CACI",
-      "stooq": "caci.us",
-      "name": "CACI International",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "SPCX",
-      "stooq": "spcx.us",
-      "name": "SpaceX",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "新規上場・データ蓄積中"
-    },
-    {
-      "ticker": "TLN",
-      "name": "TLN",
-      "sector": "その他",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "tln.us"
-    },
-    {
-      "ticker": "MU",
-      "name": "MU",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "mu.us"
-    },
-    {
-      "ticker": "ARM",
-      "name": "ARM",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "arm.us"
-    }
+    {"ticker": "AAPL",  "stooq": "aapl.us",  "name": "Apple",              "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 3, "held": true},
+    {"ticker": "MSFT",  "stooq": "msft.us",  "name": "Microsoft",          "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "GOOGL", "stooq": "googl.us", "name": "Alphabet (Google)",  "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "AMZN",  "stooq": "amzn.us",  "name": "Amazon",             "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "AVGO",  "stooq": "avgo.us",  "name": "Broadcom",           "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "NVDA",  "stooq": "nvda.us",  "name": "NVIDIA",             "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 5, "held": true},
+    {"ticker": "META",  "stooq": "meta.us",  "name": "Meta Platforms",     "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4, "held": true},
+    {"ticker": "TSLA",  "stooq": "tsla.us",  "name": "Tesla",              "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "AMD",   "stooq": "amd.us",   "name": "AMD",                "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "PLTR",  "stooq": "pltr.us",  "name": "Palantir",           "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "ORCL",  "stooq": "orcl.us",  "name": "Oracle",             "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 3, "note": "OpenAI/Stargate関連"},
+    {"ticker": "CRWV",  "stooq": "crwv.us",  "name": "CoreWeave",          "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3, "note": "OpenAIコンピュート関連・高ボラ"},
+    {"ticker": "XOM",   "stooq": "xom.us",   "name": "ExxonMobil",         "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "CVX",   "stooq": "cvx.us",   "name": "Chevron",            "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "COP",   "stooq": "cop.us",   "name": "ConocoPhillips",     "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "NEE",   "stooq": "nee.us",   "name": "NextEra Energy",     "sector": "エネルギー", "subSector": "電力・DCインフラ", "tradePolicy": "hold", "conviction": 3},
+    {"ticker": "SLB",   "stooq": "slb.us",   "name": "Schlumberger (SLB)", "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "LMT",   "stooq": "lmt.us",   "name": "Lockheed Martin",    "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "RTX",   "stooq": "rtx.us",   "name": "RTX (Raytheon)",     "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "NOC",   "stooq": "noc.us",   "name": "Northrop Grumman",   "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "BA",    "stooq": "ba.us",    "name": "Boeing",             "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 2},
+    {"ticker": "RKLB",  "stooq": "rklb.us",  "name": "Rocket Lab",         "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "IBM",   "stooq": "ibm.us",   "name": "IBM",                "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 3, "held": true},
+    {"ticker": "ASML",  "stooq": "asml.us",  "name": "ASML (ADR)",         "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 5, "note": "EUV露光装置の完全独占"},
+    {"ticker": "TSM",   "stooq": "tsm.us",   "name": "TSMC (ADR)",         "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 5, "held": true, "note": "先端ファウンドリ寡占"},
+    {"ticker": "MRVL",  "stooq": "mrvl.us",  "name": "Marvell Technology", "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4, "held": true},
+    {"ticker": "ANET",  "stooq": "anet.us",  "name": "Arista Networks",    "sector": "ハイテク",   "subSector": "電力・DCインフラ", "tradePolicy": "trade", "conviction": 4, "held": true},
+    {"ticker": "VRT",   "stooq": "vrt.us",   "name": "Vertiv Holdings",    "sector": "ハイテク",   "subSector": "電力・DCインフラ", "tradePolicy": "hold",  "conviction": 4, "held": true},
+    {"ticker": "CLMB",  "stooq": "clmb.us",  "name": "Climb Global Solutions（小型株）", "sector": "ハイテク", "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 2},
+    {"ticker": "IQV",   "stooq": "iqv.us",   "name": "IQVIA Holdings",     "sector": "ヘルスケア", "subSector": "その他モート", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "CACI",  "stooq": "caci.us",  "name": "CACI International", "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "SPCX",  "stooq": "spcx.us",  "name": "SpaceX",             "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 4, "note": "新規上場・データ蓄積中"}
   ],
   "discovery": [
-    {
-      "ticker": "ISRG",
-      "name": "Intuitive Surgical",
-      "theme": "手術ロボット",
-      "moat": "da Vinciで世界シェア60%超・設置1.1万台の器具/保守の継続収益",
-      "thesis": "手術ロボの事実上の独占。da Vinci 5サイクルが成長触媒。ディフェンシブ×成長の両立",
-      "risk": "低〜中"
-    },
-    {
-      "ticker": "AXON",
-      "name": "Axon Enterprise",
-      "theme": "公共安全テック",
-      "moat": "TASER+ボディカメラ+証拠管理SaaSの警察OS独占。受注残$14B超",
-      "thesis": "行政の乗り換えコストが極めて高く、AI(Draft One)で独占が深化",
-      "risk": "中"
-    },
-    {
-      "ticker": "SNPS",
-      "name": "Synopsys",
-      "theme": "半導体設計(EDA)",
-      "moat": "EDAはSNPS/CDNSの実質複占。チップを設計する全社が顧客",
-      "thesis": "AIチップ乱立時代の「ツルハシ売り」。どの半導体が勝っても勝つ",
-      "risk": "低〜中"
-    },
-    {
-      "ticker": "CDNS",
-      "name": "Cadence Design",
-      "theme": "半導体設計(EDA)",
-      "moat": "同上(複占のもう一方)",
-      "thesis": "SNPSと同じ構造。2社セットで検討",
-      "risk": "低〜中"
-    },
-    {
-      "ticker": "KLAC",
-      "name": "KLA Corporation",
-      "theme": "半導体検査",
-      "moat": "プロセス制御・検査装置で寡占。微細化するほど必須",
-      "thesis": "ASMLと同型の「装置レイヤーの独占」。先端化の恩恵を装置で取る",
-      "risk": "中"
-    },
-    {
-      "ticker": "CEG",
-      "name": "Constellation Energy",
-      "theme": "原子力×AI電力",
-      "moat": "米最大のカーボンフリー発電。MSFT/METAと長期PPA締結済み",
-      "thesis": "AIデータセンターの電力不足の最直接的受益者。既存原発は新設不能の参入障壁",
-      "risk": "中"
-    },
-    {
-      "ticker": "ASTS",
-      "name": "AST SpaceMobile",
-      "theme": "衛星direct-to-cell",
-      "moat": "普通のスマホに直接つながる衛星通信の先行者。通信キャリアと提携多数",
-      "thesis": "成功すれば圏外の消滅=巨大市場の先頭。ただし実行リスク大",
-      "risk": "高(投機的)"
-    },
-    {
-      "ticker": "LLY",
-      "name": "Eli Lilly",
-      "theme": "GLP-1(肥満・糖尿病)",
-      "moat": "GLP-1はLLY/NVOの複占。製造能力自体が参入障壁",
-      "thesis": "医療コスト構造を変える薬の複占側。ヘルスケア枠の成長候補",
-      "risk": "中"
-    },
-    {
-      "ticker": "IONQ",
-      "name": "IonQ",
-      "theme": "量子コンピュータ",
-      "moat": "イオントラップ方式の先行上場企業",
-      "thesis": "実用化すれば独走の可能性があるが、時期は不確実。宝くじ枠",
-      "risk": "高(投機的)"
-    },
-    {
-      "ticker": "ALAB",
-      "name": "Astera Labs",
-      "theme": "AI接続半導体",
-      "moat": "AIラック内接続(PCIeリタイマ/CXL)の先行者。スイッチScorpioで$20B市場へ参入",
-      "thesis": "GPU同士を繋ぐ配線レイヤーの覇者候補。Q1売上+93%。ただし高バリュエーション",
-      "risk": "高"
-    },
-    {
-      "ticker": "CRDO",
-      "name": "Credo Technology",
-      "theme": "AI接続(ケーブル/SerDes)",
-      "moat": "AEC(アクティブ電気ケーブル)で先行。直近四半期+157%成長",
-      "thesis": "ALABと同じ「AIの神経系」テーマ。顧客集中リスクあり",
-      "risk": "高"
-    },
-    {
-      "ticker": "COHR",
-      "name": "Coherent",
-      "theme": "光トランシーバ",
-      "moat": "データセンター光部品の寡占プレイヤー",
-      "thesis": "AIトラフィック増→光化は不可逆。装置より安く買えることが多い",
-      "risk": "中"
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron",
-      "theme": "HBMメモリ",
-      "moat": "HBMはMU/SKハイニックス/サムスンの3社寡占",
-      "thesis": "AIチップの性能はメモリ帯域で決まる時代。シクリカルだが構造的追い風",
-      "risk": "中"
-    },
-    {
-      "ticker": "ARM",
-      "name": "Arm Holdings",
-      "theme": "半導体IP",
-      "moat": "命令セットIPの実質独占(スマホ99%、DC浸透中)",
-      "thesis": "どのAIチップが勝ってもロイヤリティが入る構造",
-      "risk": "中"
-    },
-    {
-      "ticker": "GEV",
-      "name": "GE Vernova",
-      "theme": "電力インフラ",
-      "moat": "ガスタービン・送電網機器の寡占。DC電力不足の直接受益",
-      "thesis": "AIの律速は電力。発電設備の納期は数年待ち=価格決定力",
-      "risk": "中"
-    },
-    {
-      "ticker": "VST",
-      "name": "Vistra",
-      "theme": "独立系電力",
-      "moat": "原子力+ガス発電をDC需要地に保有",
-      "thesis": "CEGと同型の「既存発電資産の再評価」プレー",
-      "risk": "中"
-    },
-    {
-      "ticker": "CCJ",
-      "name": "Cameco",
-      "theme": "ウラン",
-      "moat": "西側最大のウラン生産者(カザトムプロム以外の代替が乏しい)",
-      "thesis": "原発回帰+SMR時代の燃料供給の要衝。金銀に近い実物資産性",
-      "risk": "中"
-    },
-    {
-      "ticker": "OKLO",
-      "name": "Oklo",
-      "theme": "SMR(小型原子炉)",
-      "moat": "DC向け小型高速炉の先行者(Altman支援)",
-      "thesis": "商用化前で売上ほぼゼロ。成功すれば独走、失敗なら大幅減。宝くじ枠",
-      "risk": "高(投機的)"
-    },
-    {
-      "ticker": "LUNR",
-      "name": "Intuitive Machines",
-      "theme": "月面経済",
-      "moat": "NASA月面輸送(CLPS)契約の先行者",
-      "thesis": "月面インフラの一番手候補。政府契約依存で変動大",
-      "risk": "高(投機的)"
-    },
-    {
-      "ticker": "KTOS",
-      "name": "Kratos Defense",
-      "theme": "無人機・極超音速",
-      "moat": "安価な無人戦闘機・標的機で独自地位",
-      "thesis": "防衛の主役が「高価な有人機→安価な無人機群」へ移る構造変化の先頭",
-      "risk": "中〜高"
-    }
+    {"ticker": "ISRG", "name": "Intuitive Surgical", "theme": "手術ロボット", "moat": "da Vinciで世界シェア60%超・設置1.1万台の器具/保守の継続収益", "thesis": "手術ロボの事実上の独占。da Vinci 5サイクルが成長触媒。ディフェンシブ×成長の両立", "risk": "低〜中"},
+    {"ticker": "AXON", "name": "Axon Enterprise", "theme": "公共安全テック", "moat": "TASER+ボディカメラ+証拠管理SaaSの警察OS独占。受注残$14B超", "thesis": "行政の乗り換えコストが極めて高く、AI(Draft One)で独占が深化", "risk": "中"},
+    {"ticker": "SNPS", "name": "Synopsys", "theme": "半導体設計(EDA)", "moat": "EDAはSNPS/CDNSの実質複占。チップを設計する全社が顧客", "thesis": "AIチップ乱立時代の「ツルハシ売り」。どの半導体が勝っても勝つ", "risk": "低〜中"},
+    {"ticker": "CDNS", "name": "Cadence Design", "theme": "半導体設計(EDA)", "moat": "同上(複占のもう一方)", "thesis": "SNPSと同じ構造。2社セットで検討", "risk": "低〜中"},
+    {"ticker": "KLAC", "name": "KLA Corporation", "theme": "半導体検査", "moat": "プロセス制御・検査装置で寡占。微細化するほど必須", "thesis": "ASMLと同型の「装置レイヤーの独占」。先端化の恩恵を装置で取る", "risk": "中"},
+    {"ticker": "CEG", "name": "Constellation Energy", "theme": "原子力×AI電力", "moat": "米最大のカーボンフリー発電。MSFT/METAと長期PPA締結済み", "thesis": "AIデータセンターの電力不足の最直接的受益者。既存原発は新設不能の参入障壁", "risk": "中"},
+    {"ticker": "ASTS", "name": "AST SpaceMobile", "theme": "衛星direct-to-cell", "moat": "普通のスマホに直接つながる衛星通信の先行者。通信キャリアと提携多数", "thesis": "成功すれば圏外の消滅=巨大市場の先頭。ただし実行リスク大", "risk": "高(投機的)"},
+    {"ticker": "LLY", "name": "Eli Lilly", "theme": "GLP-1(肥満・糖尿病)", "moat": "GLP-1はLLY/NVOの複占。製造能力自体が参入障壁", "thesis": "医療コスト構造を変える薬の複占側。ヘルスケア枠の成長候補", "risk": "中"},
+    {"ticker": "IONQ", "name": "IonQ", "theme": "量子コンピュータ", "moat": "イオントラップ方式の先行上場企業", "thesis": "実用化すれば独走の可能性があるが、時期は不確実。宝くじ枠", "risk": "高(投機的)"},
+    {"ticker": "ALAB", "name": "Astera Labs", "theme": "AI接続半導体", "moat": "AIラック内接続(PCIeリタイマ/CXL)の先行者。スイッチScorpioで$20B市場へ参入", "thesis": "GPU同士を繋ぐ配線レイヤーの覇者候補。Q1売上+93%。ただし高バリュエーション", "risk": "高"},
+    {"ticker": "CRDO", "name": "Credo Technology", "theme": "AI接続(ケーブル/SerDes)", "moat": "AEC(アクティブ電気ケーブル)で先行。直近四半期+157%成長", "thesis": "ALABと同じ「AIの神経系」テーマ。顧客集中リスクあり", "risk": "高"},
+    {"ticker": "COHR", "name": "Coherent", "theme": "光トランシーバ", "moat": "データセンター光部品の寡占プレイヤー", "thesis": "AIトラフィック増→光化は不可逆。装置より安く買えることが多い", "risk": "中"},
+    {"ticker": "MU", "name": "Micron", "theme": "HBMメモリ", "moat": "HBMはMU/SKハイニックス/サムスンの3社寡占", "thesis": "AIチップの性能はメモリ帯域で決まる時代。シクリカルだが構造的追い風", "risk": "中"},
+    {"ticker": "ARM", "name": "Arm Holdings", "theme": "半導体IP", "moat": "命令セットIPの実質独占(スマホ99%、DC浸透中)", "thesis": "どのAIチップが勝ってもロイヤリティが入る構造", "risk": "中"},
+    {"ticker": "GEV", "name": "GE Vernova", "theme": "電力インフラ", "moat": "ガスタービン・送電網機器の寡占。DC電力不足の直接受益", "thesis": "AIの律速は電力。発電設備の納期は数年待ち=価格決定力", "risk": "中"},
+    {"ticker": "VST", "name": "Vistra", "theme": "独立系電力", "moat": "原子力+ガス発電をDC需要地に保有", "thesis": "CEGと同型の「既存発電資産の再評価」プレー", "risk": "中"},
+    {"ticker": "CCJ", "name": "Cameco", "theme": "ウラン", "moat": "西側最大のウラン生産者(カザトムプロム以外の代替が乏しい)", "thesis": "原発回帰+SMR時代の燃料供給の要衝。金銀に近い実物資産性", "risk": "中"},
+    {"ticker": "OKLO", "name": "Oklo", "theme": "SMR(小型原子炉)", "moat": "DC向け小型高速炉の先行者(Altman支援)", "thesis": "商用化前で売上ほぼゼロ。成功すれば独走、失敗なら大幅減。宝くじ枠", "risk": "高(投機的)"},
+    {"ticker": "LUNR", "name": "Intuitive Machines", "theme": "月面経済", "moat": "NASA月面輸送(CLPS)契約の先行者", "thesis": "月面インフラの一番手候補。政府契約依存で変動大", "risk": "高(投機的)"},
+    {"ticker": "KTOS", "name": "Kratos Defense", "theme": "無人機・極超音速", "moat": "安価な無人戦闘機・標的機で独自地位", "thesis": "防衛の主役が「高価な有人機→安価な無人機群」へ移る構造変化の先頭", "risk": "中〜高"}
   ],
   "events": [
     {
       "id": "anthropic-ipo",
       "name": "Anthropic IPO",
       "phase": "s1_filed",
-      "phaseLabels": {
-        "rumor": "観測",
-        "s1_filed": "S-1機密提出済",
-        "s1_public": "S-1公開",
-        "roadshow": "ロードショー",
-        "listed": "上場",
-        "lockup_expired": "ロックアップ解除"
-      },
+      "phaseLabels": {"rumor": "観測", "s1_filed": "S-1機密提出済", "s1_public": "S-1公開", "roadshow": "ロードショー", "listed": "上場", "lockup_expired": "ロックアップ解除"},
       "filedDate": "2026-06-01",
       "expectedListing": "2026-10-15",
       "exchange": "Nasdaq",
@@ -635,48 +160,13 @@
       "lockupDays": 180,
       "summary": "2026/6/1にS-1機密提出。10月Nasdaq上場観測。公開S-1は9月頃見込み。売上は2026年5月時点で年率$47B超と急成長、黒字化は2028年見込み。",
       "beneficiaries": [
-        {
-          "ticker": "GOOGL",
-          "relation": "大株主(出資評価益計上済)",
-          "direction": "strong_plus",
-          "action": "上場前に保有。上場で持分が市場評価され再評価余地。"
-        },
-        {
-          "ticker": "AMZN",
-          "relation": "大株主($16.8B評価益計上)",
-          "direction": "strong_plus",
-          "action": "上場前に保有。AWS計算需要も直結。"
-        },
-        {
-          "ticker": "NVDA",
-          "relation": "投資+GPU供給",
-          "direction": "plus",
-          "action": "保有継続。上場後の調達資金→GPU発注が追い風。"
-        },
-        {
-          "ticker": "TSM",
-          "relation": "全AIチップの製造元",
-          "direction": "plus",
-          "action": "保有継続・押し目買い。"
-        },
-        {
-          "ticker": "AVGO",
-          "relation": "カスタムチップ/ネットワーク",
-          "direction": "plus",
-          "action": "保有継続。"
-        },
-        {
-          "ticker": "VRT",
-          "relation": "DC電源・冷却(設備投資恩恵)",
-          "direction": "plus",
-          "action": "保有継続。"
-        },
-        {
-          "ticker": "ANET",
-          "relation": "DCネットワーク(設備投資恩恵)",
-          "direction": "plus",
-          "action": "保有継続。"
-        }
+        {"ticker": "GOOGL", "relation": "大株主(出資評価益計上済)", "direction": "strong_plus", "action": "上場前に保有。上場で持分が市場評価され再評価余地。"},
+        {"ticker": "AMZN",  "relation": "大株主($16.8B評価益計上)", "direction": "strong_plus", "action": "上場前に保有。AWS計算需要も直結。"},
+        {"ticker": "NVDA",  "relation": "投資+GPU供給", "direction": "plus", "action": "保有継続。上場後の調達資金→GPU発注が追い風。"},
+        {"ticker": "TSM",   "relation": "全AIチップの製造元", "direction": "plus", "action": "保有継続・押し目買い。"},
+        {"ticker": "AVGO",  "relation": "カスタムチップ/ネットワーク", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "VRT",   "relation": "DC電源・冷却(設備投資恩恵)", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "ANET",  "relation": "DCネットワーク(設備投資恩恵)", "direction": "plus", "action": "保有継続。"}
       ],
       "risks": "上場時、間接プロキシ銘柄→直接保有への資金ローテーションで一時的な売り圧の可能性。純粋プロキシ(出資関係のない関連銘柄)は上場日前後の高値で一部利確も検討。",
       "playbook": {
@@ -691,14 +181,7 @@
       "id": "openai-ipo",
       "name": "OpenAI IPO",
       "phase": "s1_filed",
-      "phaseLabels": {
-        "rumor": "観測",
-        "s1_filed": "S-1機密提出済",
-        "s1_public": "S-1公開",
-        "roadshow": "ロードショー",
-        "listed": "上場",
-        "lockup_expired": "ロックアップ解除"
-      },
+      "phaseLabels": {"rumor": "観測", "s1_filed": "S-1機密提出済", "s1_public": "S-1公開", "roadshow": "ロードショー", "listed": "上場", "lockup_expired": "ロックアップ解除"},
       "filedDate": "2026-05-22",
       "expectedListing": "2027-03-31",
       "exchange": "未定",
@@ -706,42 +189,12 @@
       "lockupDays": 180,
       "summary": "2026/5/22にS-1機密提出も、市場環境と$1T評価維持のため2027年上場に傾く報道。売上$20B超(2025年末)、2026年は$14B規模の損失見込み、黒字化2030年頃。",
       "beneficiaries": [
-        {
-          "ticker": "MSFT",
-          "relation": "約27%保有の筆頭株主",
-          "direction": "strong_plus",
-          "action": "上場前に保有。持分再評価の本命。"
-        },
-        {
-          "ticker": "ORCL",
-          "relation": "Stargate($500B)コンピュート供給",
-          "direction": "plus",
-          "action": "監視リスト追加済。IPO延期報道で下げる日が押し目候補。"
-        },
-        {
-          "ticker": "CRWV",
-          "relation": "コンピュート供給(業績連動大)",
-          "direction": "plus_volatile",
-          "action": "trade銘柄として。OpenAIニュースに敏感、モメンタムルール厳守。"
-        },
-        {
-          "ticker": "NVDA",
-          "relation": "投資+GPU供給",
-          "direction": "plus",
-          "action": "保有継続。"
-        },
-        {
-          "ticker": "AVGO",
-          "relation": "カスタムチップ開発",
-          "direction": "plus",
-          "action": "保有継続。"
-        },
-        {
-          "ticker": "VRT",
-          "relation": "Stargate等DC建設恩恵",
-          "direction": "plus",
-          "action": "保有継続。"
-        }
+        {"ticker": "MSFT", "relation": "約27%保有の筆頭株主", "direction": "strong_plus", "action": "上場前に保有。持分再評価の本命。"},
+        {"ticker": "ORCL", "relation": "Stargate($500B)コンピュート供給", "direction": "plus", "action": "監視リスト追加済。IPO延期報道で下げる日が押し目候補。"},
+        {"ticker": "CRWV", "relation": "コンピュート供給(業績連動大)", "direction": "plus_volatile", "action": "trade銘柄として。OpenAIニュースに敏感、モメンタムルール厳守。"},
+        {"ticker": "NVDA", "relation": "投資+GPU供給", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "AVGO", "relation": "カスタムチップ開発", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "VRT",  "relation": "Stargate等DC建設恩恵", "direction": "plus", "action": "保有継続。"}
       ],
       "risks": "延期・評価切り下げ報道のたびにORCL/CRWV等の高exposure銘柄が下落。逆にそれが押し目になる構造。上場時はプロキシからのローテーション売りに注意。",
       "playbook": {

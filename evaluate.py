@@ -178,15 +178,22 @@ def main():
         time.sleep(0.4)  # レート制限予防
 
     events = engine.analyze_events(cfg, instruments)
-    # テーゼ見直しの重複抑制: 前回data.jsonで既に出ていた銘柄は週1(月曜)のみ再通知
+    # 前回data.jsonの読込: テーゼ重複抑制 + 前日スコア(スコア急変の透明化)
     prev_thesis = set()
+    prev_scores = {}
     try:
         with open(os.path.join(BASE, "data.json"), encoding="utf-8") as f:
             for pi in json.load(f).get("instruments", []):
                 if pi.get("holdMgmt", {}).get("thesisBreak"):
                     prev_thesis.add(pi.get("ticker"))
+                if pi.get("value"):
+                    prev_scores[pi.get("ticker")] = pi["value"].get("score")
     except Exception:
         pass
+    for inst in instruments:
+        pv = prev_scores.get(inst.get("ticker"))
+        if inst.get("value") is not None and pv is not None:
+            inst["value"]["scorePrev"] = pv
     remind = datetime.now(JST).weekday() == 0
     alerts = engine.build_alerts(instruments, events, vix, cfg, prev_thesis, remind)
     weights = engine.planner_weights(instruments, cfg)

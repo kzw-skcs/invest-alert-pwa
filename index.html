@@ -261,12 +261,15 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
   <div class="card">
     <h3>🤖 アルゴリズム再分析</h3>
     <div class="muted" style="margin-bottom:8px">過去シグナルを実際の値動きと突き合わせ、Value/モメンタム別の的中率を計算しパラメータを自動調整します(実際の売買とは無関係)。</div>
-    <button class="btn" onclick="runReanalyze()">🔁 再分析を実行</button>
+    <div class="row" style="gap:8px;flex-wrap:wrap">
+      <button class="btn" onclick="runReanalyze()">🔁 再分析を実行</button>
+      <button class="btn" onclick="runWorkflow('daily','価格取得・判定(daily)')">📈 今すぐ判定を更新</button>
+    </div>
     <div id="analysis-result" class="muted" style="margin-top:8px"></div>
   </div>
   <div class="card">
-    <h3>🧪 バックテスト結果</h3>
-    <div class="tiny" style="margin-bottom:6px">GitHub → Actions → backtest を実行すると過去約5年のルール検証結果がここに表示されます(数十分かかります)。</div>
+    <h3>🧪 バックテスト結果 <button class="btn sm pri" style="float:right" onclick="runWorkflow('backtest','バックテスト')">▶️ 実行</button></h3>
+    <div class="tiny" style="margin-bottom:6px">過去約5年のルール検証。実行には20〜60分かかり、完了すると自動でここに表示されます(🔄で再読込)。</div>
     <div id="backtest-result" class="muted">未実行</div>
   </div>
   <div class="card">
@@ -501,6 +504,7 @@ function cardHTML(i) {
       <div style="text-align:right;min-width:110px">
         <div style="font-weight:800;font-size:16px">${fmtN(i.price)}</div>
         ${v.tier !== 'none' ? `<span class="tierpill tier-${v.tier}">${v.tierLabel} ${v.score}</span>` : `<span class="tiny">Value ${v.score ?? 0}</span>`}
+        ${v.scorePrev != null && Math.abs(v.scorePrev - v.score) >= 10 ? `<div class="tiny" style="color:var(--amber)">前日${v.scorePrev}→${v.score} ${v.score < v.scorePrev ? '(反発などで買い場条件が後退)' : '(条件成立が進行)'}</div>` : ''}
         <div class="stars" style="font-size:11px">${'★'.repeat(i.rec.stars)}${'☆'.repeat(5 - i.rec.stars)}</div>
       </div>
     </div>
@@ -891,6 +895,14 @@ async function syncServer() {
     const j = await r.json();
     toast(j.ok ? `✅ 同期完了(${j.count}銘柄)。翌朝の判定から反映されます。` : `同期失敗: ${j.error || ''}`);
   } catch (e) { toast('同期失敗: サーバー未設定(GH_TOKEN)。表示のみ変更されています。'); }
+}
+async function runWorkflow(name, label) {
+  toast(`${label} を起動中…`);
+  try {
+    const r = await fetch('api/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ workflow: name }) });
+    const j = await r.json();
+    toast(j.ok ? `✅ ${label} を開始しました。${name === 'backtest' ? '20〜60分後' : '2〜5分後'}に🔄更新で反映されます。` : `失敗: ${j.error || ''}`);
+  } catch (e) { toast(`失敗: サーバー未設定(GH_TOKEN)。GitHub → Actions から手動実行してください。`); }
 }
 async function runReanalyze() {
   try {
