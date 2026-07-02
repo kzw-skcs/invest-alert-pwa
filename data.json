@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-02T13:40:53.922514+00:00",
- "updatedJST": "2026-07-02 22:40 JST",
+ "updated": "2026-07-02T13:52:09.852633+00:00",
+ "updatedJST": "2026-07-02 22:52 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -101,13 +101,13 @@
   "silver": 1
  },
  "vix": {
-  "value": 16.139999,
-  "changePct": -2.71,
+  "value": 16.02,
+  "changePct": -3.44,
   "level": null,
   "reason": null
  },
  "fx": {
-  "usdjpy": 160.981003
+  "usdjpy": 160.936005
  },
  "instruments": [
   {
@@ -758,20 +758,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 300.195007
+     "c": 301.559998
     }
    ],
    "state": "UP",
-   "price": 300.195,
+   "price": 301.56,
    "top": 310.2075,
    "bottom": 283.265,
    "band": 0.8083,
-   "pctInRange": 62.8,
-   "distToBottomPct": 5.98,
-   "distToTopPct": 3.34,
-   "smaShort": 294.3807,
-   "smaLong": 293.3543,
-   "smaTrend": 270.6493,
+   "pctInRange": 67.9,
+   "distToBottomPct": 6.46,
+   "distToTopPct": 2.87,
+   "smaShort": 294.449,
+   "smaLong": 293.3816,
+   "smaTrend": 270.6561,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -779,15 +779,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 55.2,
-   "atr": 8.0803,
-   "atrPct": 2.69,
+   "rsi": 56.1,
+   "atr": 8.2546,
+   "atrPct": 2.74,
    "high52w": 315.2,
-   "drawdownPct": 4.8,
+   "drawdownPct": 4.3,
    "macroDriven": null,
    "topLong": 268.9341,
    "bottomLong": 249.1543,
-   "pctInRangeLong": 258.0,
+   "pctInRangeLong": 264.9,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -798,7 +798,7 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 19,
+    "score": 18,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -816,7 +816,7 @@
     "note": ""
    },
    "rec": {
-    "score": 19,
+    "score": 18,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -1475,20 +1475,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 384.980011
+     "c": 386.059998
     }
    ],
    "state": "SUPER_SELL",
-   "price": 384.98,
+   "price": 386.06,
    "top": 416.2618,
    "bottom": 358.1556,
    "band": 1.7432,
-   "pctInRange": 46.2,
-   "distToBottomPct": 7.49,
-   "distToTopPct": 8.13,
-   "smaShort": 386.68,
-   "smaLong": 407.4852,
-   "smaTrend": 445.4085,
+   "pctInRange": 48.0,
+   "distToBottomPct": 7.79,
+   "distToTopPct": 7.82,
+   "smaShort": 386.734,
+   "smaLong": 407.5068,
+   "smaTrend": 445.4139,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": "dead",
@@ -1496,15 +1496,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 47.3,
-   "atr": 12.6932,
-   "atrPct": 3.3,
+   "rsi": 47.8,
+   "atr": 12.7189,
+   "atrPct": 3.29,
    "high52w": 542.07,
-   "drawdownPct": 29.0,
+   "drawdownPct": 28.8,
    "macroDriven": null,
    "topLong": 502.012,
    "bottomLong": 462.2416,
-   "pctInRangeLong": -194.3,
+   "pctInRangeLong": -191.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -2193,20 +2193,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 361.179993
+     "c": 362.959991
     }
    ],
    "state": "BUY",
-   "price": 361.18,
+   "price": 362.96,
    "top": 406.6163,
    "bottom": 377.6123,
    "band": 0.8701,
-   "pctInRange": -56.7,
-   "distToBottomPct": -4.35,
-   "distToTopPct": 12.58,
-   "smaShort": 358.6075,
-   "smaLong": 370.9962,
-   "smaTrend": 316.1598,
+   "pctInRange": -50.5,
+   "distToBottomPct": -3.88,
+   "distToTopPct": 12.03,
+   "smaShort": 358.6965,
+   "smaLong": 371.0318,
+   "smaTrend": 316.1687,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "dead",
@@ -2214,15 +2214,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 50.3,
-   "atr": 11.0875,
-   "atrPct": 3.07,
+   "rsi": 51.4,
+   "atr": 11.1181,
+   "atrPct": 3.06,
    "high52w": 402.62,
-   "drawdownPct": 10.3,
+   "drawdownPct": 9.9,
    "macroDriven": null,
    "topLong": 276.8666,
    "bottomLong": 253.2064,
-   "pctInRangeLong": 456.4,
+   "pctInRangeLong": 463.9,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -2912,20 +2912,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 243.210007
+     "c": 242.869995
     }
    ],
    "state": "DOWN",
-   "price": 243.21,
+   "price": 242.87,
    "top": 248.6296,
    "bottom": 228.3292,
    "band": 0.609,
-   "pctInRange": 73.3,
-   "distToBottomPct": 6.52,
-   "distToTopPct": 2.23,
-   "smaShort": 240.273,
-   "smaLong": 255.4276,
-   "smaTrend": 232.9853,
+   "pctInRange": 71.6,
+   "distToBottomPct": 6.37,
+   "distToTopPct": 2.37,
+   "smaShort": 240.256,
+   "smaLong": 255.4208,
+   "smaTrend": 232.9836,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -2933,15 +2933,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 49.2,
+   "rsi": 48.9,
    "atr": 8.0695,
    "atrPct": 3.32,
    "high52w": 274.99,
-   "drawdownPct": 11.6,
+   "drawdownPct": 11.7,
    "macroDriven": null,
    "topLong": 235.4514,
    "bottomLong": 221.746,
-   "pctInRangeLong": 156.6,
+   "pctInRangeLong": 154.1,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -3629,20 +3629,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 370.200012
+     "c": 371.695007
     }
    ],
    "state": "SUPER_SELL",
-   "price": 370.2,
+   "price": 371.695,
    "top": 434.5707,
    "bottom": 385.8244,
    "band": 1.4624,
-   "pctInRange": -32.1,
-   "distToBottomPct": -4.05,
-   "distToTopPct": 17.39,
-   "smaShort": 384.803,
-   "smaLong": 409.624,
-   "smaTrend": 361.4993,
+   "pctInRange": -29.0,
+   "distToBottomPct": -3.66,
+   "distToTopPct": 16.92,
+   "smaShort": 384.8778,
+   "smaLong": 409.6539,
+   "smaTrend": 361.5067,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "dead",
@@ -3650,15 +3650,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 42.3,
-   "atr": 17.1496,
-   "atrPct": 4.63,
+   "rsi": 42.9,
+   "atr": 17.1896,
+   "atrPct": 4.62,
    "high52w": 481.57,
-   "drawdownPct": 23.1,
+   "drawdownPct": 22.8,
    "macroDriven": false,
    "topLong": 363.5711,
    "bottomLong": 330.216,
-   "pctInRangeLong": 119.9,
+   "pctInRangeLong": 124.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -3709,7 +3709,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 5,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -4349,20 +4349,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 197.839996
+     "c": 198.610001
     }
    ],
    "state": "SUPER_SELL",
-   "price": 197.84,
+   "price": 198.61,
    "top": 218.9059,
    "bottom": 190.0087,
    "band": 0.8669,
-   "pctInRange": 27.1,
-   "distToBottomPct": 4.12,
-   "distToTopPct": 10.65,
-   "smaShort": 203.6355,
-   "smaLong": 209.8562,
-   "smaTrend": 191.0423,
+   "pctInRange": 29.8,
+   "distToBottomPct": 4.53,
+   "distToTopPct": 10.22,
+   "smaShort": 203.674,
+   "smaLong": 209.8716,
+   "smaTrend": 191.0461,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "dead",
@@ -4370,15 +4370,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 43.5,
-   "atr": 6.7106,
+   "rsi": 44.3,
+   "atr": 6.7285,
    "atrPct": 3.39,
    "high52w": 235.74,
-   "drawdownPct": 16.1,
+   "drawdownPct": 15.8,
    "macroDriven": null,
    "topLong": 205.4555,
    "bottomLong": 183.8967,
-   "pctInRangeLong": 64.7,
+   "pctInRangeLong": 68.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -4386,10 +4386,10 @@
    "stateLabel": "⭐超・売り場",
    "emoji": "⭐🔴",
    "color": "#991b1b",
-   "side": "sell",
-   "actionable": true,
+   "side": "none",
+   "actionable": false,
    "value": {
-    "score": 43,
+    "score": 42,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -4399,13 +4399,8 @@
     ]
    },
    "momentum": {
-    "signal": "exit_warning",
-    "note": "デッドクロス",
-    "relStrength3m": -2.7,
-    "breakoutHigh": 235.74,
-    "volConfirmed": false,
-    "trailStop": 181.0635,
-    "atrPct": 3.39
+    "signal": "none",
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -4413,15 +4408,15 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
-    "stars": 4,
-    "level": "C",
-    "action": "sell_check",
+    "score": 42,
+    "stars": 3,
+    "level": "-",
+    "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
-    "note": "売り管理: デッドクロス"
+    "note": ""
    }
   },
   {
@@ -5072,20 +5067,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 598.674988
+     "c": 594.97998
     }
    ],
    "state": "DOWN",
-   "price": 598.675,
+   "price": 594.98,
    "top": 615.6807,
    "bottom": 543.8887,
    "band": 2.1538,
-   "pctInRange": 76.3,
-   "distToBottomPct": 10.07,
-   "distToTopPct": 2.84,
-   "smaShort": 577.4872,
-   "smaLong": 605.5445,
-   "smaTrend": 646.591,
+   "pctInRange": 71.2,
+   "distToBottomPct": 9.39,
+   "distToTopPct": 3.48,
+   "smaShort": 577.3025,
+   "smaLong": 605.4706,
+   "smaTrend": 646.5725,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -5093,15 +5088,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 53.9,
-   "atr": 21.3035,
-   "atrPct": 3.56,
+   "rsi": 52.8,
+   "atr": 21.646,
+   "atrPct": 3.64,
    "high52w": 790.0,
-   "drawdownPct": 24.2,
+   "drawdownPct": 24.7,
    "macroDriven": null,
    "topLong": 741.7007,
    "bottomLong": 671.655,
-   "pctInRangeLong": -104.2,
+   "pctInRangeLong": -109.5,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -5112,12 +5107,12 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 46,
+    "score": 47,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-24% +14",
+     "高値-25% +14",
      "5年トレンド上向き +6"
     ]
    },
@@ -5131,7 +5126,7 @@
     "note": ""
    },
    "rec": {
-    "score": 46,
+    "score": 47,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -5150,7 +5145,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -5790,20 +5785,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 417.390015
+     "c": 412.720001
     }
    ],
    "state": "DOWN",
-   "price": 417.39,
+   "price": 412.72,
    "top": 449.7937,
    "bottom": 406.4756,
    "band": 1.2995,
-   "pctInRange": 25.2,
-   "distToBottomPct": 2.69,
-   "distToTopPct": 7.76,
-   "smaShort": 400.354,
-   "smaLong": 406.8988,
-   "smaTrend": 418.7275,
+   "pctInRange": 14.4,
+   "distToBottomPct": 1.54,
+   "distToTopPct": 8.98,
+   "smaShort": 400.1205,
+   "smaLong": 406.8054,
+   "smaTrend": 418.7041,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "dead",
@@ -5811,15 +5806,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 54.9,
-   "atr": 17.6208,
-   "atrPct": 4.22,
+   "rsi": 53.1,
+   "atr": 17.9958,
+   "atrPct": 4.36,
    "high52w": 489.88,
-   "drawdownPct": 14.8,
+   "drawdownPct": 15.8,
    "macroDriven": null,
    "topLong": 370.3024,
    "bottomLong": 330.753,
-   "pctInRangeLong": 219.1,
+   "pctInRangeLong": 207.3,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -5828,25 +5823,21 @@
    "emoji": "🔻",
    "color": "#d97706",
    "side": "none",
-   "actionable": true,
+   "actionable": false,
    "value": {
-    "score": 37,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "高値-15% +8",
+     "1年レンジ下限圏(14%位置) +21",
+     "高値-16% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4"
     ]
    },
    "momentum": {
-    "signal": "exit_warning",
-    "note": "デッドクロス",
-    "relStrength3m": 1.5,
-    "breakoutHigh": 445.27,
-    "volConfirmed": false,
-    "trailStop": 373.338,
-    "atrPct": 4.22
+    "signal": "none",
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -5854,15 +5845,15 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
-    "stars": 4,
-    "level": "C",
-    "action": "sell_check",
+    "score": 39,
+    "stars": 2,
+    "level": "-",
+    "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
-    "note": "売り管理: デッドクロス"
+    "note": ""
    }
   },
   {
@@ -5873,7 +5864,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -6513,20 +6504,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 531.369995
+     "c": 539.669983
     }
    ],
    "state": "SELL",
-   "price": 531.37,
+   "price": 539.67,
    "top": 446.745,
    "bottom": 348.0553,
    "band": 2.9607,
-   "pctInRange": 185.7,
-   "distToBottomPct": 52.67,
-   "distToTopPct": -15.93,
-   "smaShort": 517.513,
-   "smaLong": 460.6518,
-   "smaTrend": 278.2542,
+   "pctInRange": 194.2,
+   "distToBottomPct": 55.05,
+   "distToTopPct": -17.22,
+   "smaShort": 517.928,
+   "smaLong": 460.8178,
+   "smaTrend": 278.2957,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -6534,15 +6525,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 54.7,
+   "rsi": 56.2,
    "atr": 33.9847,
-   "atrPct": 6.4,
+   "atrPct": 6.3,
    "high52w": 580.91,
-   "drawdownPct": 8.5,
+   "drawdownPct": 7.1,
    "macroDriven": null,
    "topLong": 246.6859,
    "bottomLong": 202.5593,
-   "pctInRangeLong": 745.2,
+   "pctInRangeLong": 764.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -6550,7 +6541,7 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
+   "side": "none",
    "actionable": false,
    "value": {
     "score": 10,
@@ -6563,12 +6554,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 130.1,
-    "breakoutHigh": 580.91,
-    "volConfirmed": false,
-    "trailStop": 446.4082,
-    "atrPct": 6.4
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -6576,7 +6562,7 @@
     "note": ""
    },
    "rec": {
-    "score": 0,
+    "score": 10,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -6595,7 +6581,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -7235,20 +7221,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 132.0401
+     "c": 131.140106
     }
    ],
    "state": "DOWN",
-   "price": 132.0401,
+   "price": 131.1401,
    "top": 154.0098,
    "bottom": 121.2208,
    "band": 0.9837,
-   "pctInRange": 33.0,
-   "distToBottomPct": 8.93,
-   "distToTopPct": 16.64,
-   "smaShort": 126.1075,
-   "smaLong": 134.6391,
-   "smaTrend": 157.9285,
+   "pctInRange": 30.3,
+   "distToBottomPct": 8.18,
+   "distToTopPct": 17.44,
+   "smaShort": 126.0625,
+   "smaLong": 134.6211,
+   "smaTrend": 157.924,
    "trend": "down",
    "trend200DownDays": 45,
    "cross": null,
@@ -7256,15 +7242,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 53.7,
+   "rsi": 53.0,
    "atr": 6.7556,
-   "atrPct": 5.12,
+   "atrPct": 5.15,
    "high52w": 207.18,
-   "drawdownPct": 36.3,
+   "drawdownPct": 36.7,
    "macroDriven": null,
    "topLong": 152.091,
    "bottomLong": 133.0113,
-   "pctInRangeLong": -5.1,
+   "pctInRangeLong": -9.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -7280,18 +7266,13 @@
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-36%の暴落水準 +20",
+     "高値-37%の暴落水準 +20",
      "5年トレンド上向き +6"
     ]
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -25.3,
-    "breakoutHigh": 160.65,
-    "volConfirmed": false,
-    "trailStop": 115.1511,
-    "atrPct": 5.12
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -7299,8 +7280,8 @@
     "note": ""
    },
    "rec": {
-    "score": 53,
-    "stars": 3,
+    "score": 63,
+    "stars": 4,
     "level": "C",
     "action": "hold",
     "expReturnPct": null,
@@ -7958,20 +7939,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 145.289993
+     "c": 145.869995
     }
    ],
    "state": "SUPER_SELL",
-   "price": 145.29,
+   "price": 145.87,
    "top": 160.6028,
    "bottom": 122.2476,
    "band": 1.1507,
-   "pctInRange": 60.1,
-   "distToBottomPct": 18.85,
-   "distToTopPct": 10.54,
-   "smaShort": 178.339,
-   "smaLong": 186.473,
-   "smaTrend": 199.9029,
+   "pctInRange": 61.6,
+   "distToBottomPct": 19.32,
+   "distToTopPct": 10.1,
+   "smaShort": 178.368,
+   "smaLong": 186.4846,
+   "smaTrend": 199.9058,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": "dead",
@@ -7979,15 +7960,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 30.0,
+   "rsi": 30.6,
    "atr": 9.8705,
-   "atrPct": 6.79,
+   "atrPct": 6.77,
    "high52w": 328.33,
-   "drawdownPct": 55.7,
+   "drawdownPct": 55.6,
    "macroDriven": false,
    "topLong": 228.4314,
    "bottomLong": 196.1759,
-   "pctInRangeLong": -157.8,
+   "pctInRangeLong": -156.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -7998,13 +7979,13 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 56,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 49,
+    "tier": "none",
+    "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-56%の暴落水準 +20",
-     "RSI30 売られ過ぎ +15",
+     "RSI31 +8",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6"
     ]
@@ -8019,9 +8000,9 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 56,
+    "score": 49,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -8038,7 +8019,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -8678,20 +8659,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 85.934998
+     "c": 87.805
     }
    ],
    "state": "DOWN",
-   "price": 85.935,
+   "price": 87.805,
    "top": 105.164,
    "bottom": 81.1521,
    "band": 0.7204,
-   "pctInRange": 19.9,
-   "distToBottomPct": 5.89,
-   "distToTopPct": 22.38,
-   "smaShort": 101.897,
-   "smaLong": 108.7899,
-   "smaTrend": 100.1841,
+   "pctInRange": 27.7,
+   "distToBottomPct": 8.2,
+   "distToTopPct": 19.77,
+   "smaShort": 101.9905,
+   "smaLong": 108.8273,
+   "smaTrend": 100.1935,
    "trend": "up",
    "trend200DownDays": 3,
    "cross": null,
@@ -8699,11 +8680,11 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 36.0,
-   "atr": 8.3868,
-   "atrPct": 9.76,
+   "rsi": 37.9,
+   "atr": 8.4675,
+   "atrPct": 9.64,
    "high52w": 165.2,
-   "drawdownPct": 48.0,
+   "drawdownPct": 46.8,
    "macroDriven": false,
    "topLong": null,
    "bottomLong": null,
@@ -8718,24 +8699,19 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 37,
+    "score": 35,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "高値-48%の暴落水準 +20",
-     "RSI36 +8",
+     "高値-47%の暴落水準 +20",
+     "RSI38 +8",
      "個別要因の下落の疑い(falling knife) -15",
      "200日線上向き +4"
     ]
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -9.7,
-    "breakoutHigh": 137.98,
-    "volConfirmed": false,
-    "trailStop": 64.968,
-    "atrPct": 9.76
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -8743,7 +8719,7 @@
     "note": ""
    },
    "rec": {
-    "score": 27,
+    "score": 35,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -9402,20 +9378,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 137.509995
+     "c": 138.779999
     }
    ],
    "state": "BUY",
-   "price": 137.51,
+   "price": 138.78,
    "top": 167.5668,
    "bottom": 154.661,
    "band": 0.3872,
-   "pctInRange": -132.9,
-   "distToBottomPct": -11.09,
-   "distToTopPct": 21.86,
-   "smaShort": 142.197,
-   "smaLong": 147.906,
-   "smaTrend": 135.6754,
+   "pctInRange": -123.1,
+   "distToBottomPct": -10.27,
+   "distToTopPct": 20.74,
+   "smaShort": 142.2605,
+   "smaLong": 147.9314,
+   "smaTrend": 135.6817,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -9423,15 +9399,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 37.8,
-   "atr": 3.1958,
-   "atrPct": 2.32,
+   "rsi": 41.0,
+   "atr": 3.2958,
+   "atrPct": 2.37,
    "high52w": 171.47,
-   "drawdownPct": 19.8,
+   "drawdownPct": 19.1,
    "macroDriven": null,
    "topLong": 140.1948,
    "bottomLong": 132.6846,
-   "pctInRangeLong": 64.3,
+   "pctInRangeLong": 81.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -9442,13 +9418,12 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 63,
+    "score": 52,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
-     "高値-20% +8",
-     "RSI38 +8",
+     "高値-19% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5"
@@ -9464,8 +9439,8 @@
     "note": ""
    },
    "rec": {
-    "score": 63,
-    "stars": 4,
+    "score": 52,
+    "stars": 3,
     "level": "C",
     "action": "hold",
     "expReturnPct": null,
@@ -10123,20 +10098,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 168.020004
+     "c": 169.130005
     }
    ],
    "state": "BUY",
-   "price": 168.02,
+   "price": 169.13,
    "top": 200.1066,
    "bottom": 186.3349,
    "band": 0.4132,
-   "pctInRange": -133.0,
-   "distToBottomPct": -9.83,
-   "distToTopPct": 19.1,
-   "smaShort": 177.9975,
-   "smaLong": 183.9968,
-   "smaTrend": 172.4192,
+   "pctInRange": -124.9,
+   "distToBottomPct": -9.23,
+   "distToTopPct": 18.32,
+   "smaShort": 178.053,
+   "smaLong": 184.019,
+   "smaTrend": 172.4248,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -10144,15 +10119,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 33.0,
-   "atr": 3.9483,
-   "atrPct": 2.35,
+   "rsi": 35.3,
+   "atr": 4.0125,
+   "atrPct": 2.37,
    "high52w": 211.15,
-   "drawdownPct": 20.4,
+   "drawdownPct": 19.9,
    "macroDriven": false,
    "topLong": 173.4368,
    "bottomLong": 165.6776,
-   "pctInRangeLong": 30.2,
+   "pctInRangeLong": 44.5,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -10163,13 +10138,13 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 61,
+    "score": 52,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
-     "高値-20% +14",
-     "RSI33 +8",
+     "高値-20% +8",
+     "RSI35 +8",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
      "200日線上向き +4",
@@ -10186,8 +10161,8 @@
     "note": ""
    },
    "rec": {
-    "score": 61,
-    "stars": 4,
+    "score": 52,
+    "stars": 3,
     "level": "C",
     "action": "hold",
     "expReturnPct": null,
@@ -10195,729 +10170,6 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
-   }
-  },
-  {
-   "key": "COP",
-   "ticker": "COP",
-   "name": "ConocoPhillips",
-   "sector": "エネルギー",
-   "subSector": "エネルギー",
-   "class": "stock",
-   "conviction": 3,
-   "tradePolicy": "hold",
-   "history": [
-    {
-     "d": "2025-11-11",
-     "c": 90.690002
-    },
-    {
-     "d": "2025-11-12",
-     "c": 89.07
-    },
-    {
-     "d": "2025-11-13",
-     "c": 89.419998
-    },
-    {
-     "d": "2025-11-14",
-     "c": 91.370003
-    },
-    {
-     "d": "2025-11-17",
-     "c": 88.720001
-    },
-    {
-     "d": "2025-11-18",
-     "c": 89.68
-    },
-    {
-     "d": "2025-11-19",
-     "c": 87.980003
-    },
-    {
-     "d": "2025-11-20",
-     "c": 87.470001
-    },
-    {
-     "d": "2025-11-21",
-     "c": 87.370003
-    },
-    {
-     "d": "2025-11-24",
-     "c": 87.559998
-    },
-    {
-     "d": "2025-11-25",
-     "c": 86.620003
-    },
-    {
-     "d": "2025-11-26",
-     "c": 87.089996
-    },
-    {
-     "d": "2025-11-28",
-     "c": 88.690002
-    },
-    {
-     "d": "2025-12-01",
-     "c": 90.260002
-    },
-    {
-     "d": "2025-12-02",
-     "c": 89.290001
-    },
-    {
-     "d": "2025-12-03",
-     "c": 91.809998
-    },
-    {
-     "d": "2025-12-04",
-     "c": 93.120003
-    },
-    {
-     "d": "2025-12-05",
-     "c": 93.690002
-    },
-    {
-     "d": "2025-12-08",
-     "c": 92.879997
-    },
-    {
-     "d": "2025-12-09",
-     "c": 93.43
-    },
-    {
-     "d": "2025-12-10",
-     "c": 96.800003
-    },
-    {
-     "d": "2025-12-11",
-     "c": 96.709999
-    },
-    {
-     "d": "2025-12-12",
-     "c": 95.540001
-    },
-    {
-     "d": "2025-12-15",
-     "c": 94.360001
-    },
-    {
-     "d": "2025-12-16",
-     "c": 90.769997
-    },
-    {
-     "d": "2025-12-17",
-     "c": 94.959999
-    },
-    {
-     "d": "2025-12-18",
-     "c": 92.230003
-    },
-    {
-     "d": "2025-12-19",
-     "c": 91.940002
-    },
-    {
-     "d": "2025-12-22",
-     "c": 93.309998
-    },
-    {
-     "d": "2025-12-23",
-     "c": 92.730003
-    },
-    {
-     "d": "2025-12-24",
-     "c": 91.800003
-    },
-    {
-     "d": "2025-12-26",
-     "c": 91.540001
-    },
-    {
-     "d": "2025-12-29",
-     "c": 92.629997
-    },
-    {
-     "d": "2025-12-30",
-     "c": 94.099998
-    },
-    {
-     "d": "2025-12-31",
-     "c": 93.610001
-    },
-    {
-     "d": "2026-01-02",
-     "c": 96.699997
-    },
-    {
-     "d": "2026-01-05",
-     "c": 99.199997
-    },
-    {
-     "d": "2026-01-06",
-     "c": 97.110001
-    },
-    {
-     "d": "2026-01-07",
-     "c": 93.940002
-    },
-    {
-     "d": "2026-01-08",
-     "c": 98.720001
-    },
-    {
-     "d": "2026-01-09",
-     "c": 97.510002
-    },
-    {
-     "d": "2026-01-12",
-     "c": 95.5
-    },
-    {
-     "d": "2026-01-13",
-     "c": 96.459999
-    },
-    {
-     "d": "2026-01-14",
-     "c": 100.339996
-    },
-    {
-     "d": "2026-01-15",
-     "c": 98.93
-    },
-    {
-     "d": "2026-01-16",
-     "c": 98.190002
-    },
-    {
-     "d": "2026-01-20",
-     "c": 95.519997
-    },
-    {
-     "d": "2026-01-21",
-     "c": 97.150002
-    },
-    {
-     "d": "2026-01-22",
-     "c": 96.879997
-    },
-    {
-     "d": "2026-01-23",
-     "c": 98.349998
-    },
-    {
-     "d": "2026-01-26",
-     "c": 98.449997
-    },
-    {
-     "d": "2026-01-27",
-     "c": 99.870003
-    },
-    {
-     "d": "2026-01-28",
-     "c": 101.389999
-    },
-    {
-     "d": "2026-01-29",
-     "c": 102.800003
-    },
-    {
-     "d": "2026-01-30",
-     "c": 104.230003
-    },
-    {
-     "d": "2026-02-02",
-     "c": 101.790001
-    },
-    {
-     "d": "2026-02-03",
-     "c": 104.910004
-    },
-    {
-     "d": "2026-02-04",
-     "c": 107.589996
-    },
-    {
-     "d": "2026-02-05",
-     "c": 104.980003
-    },
-    {
-     "d": "2026-02-06",
-     "c": 107.620003
-    },
-    {
-     "d": "2026-02-09",
-     "c": 108.699997
-    },
-    {
-     "d": "2026-02-10",
-     "c": 107.5
-    },
-    {
-     "d": "2026-02-11",
-     "c": 111.209999
-    },
-    {
-     "d": "2026-02-12",
-     "c": 110.830002
-    },
-    {
-     "d": "2026-02-13",
-     "c": 111.43
-    },
-    {
-     "d": "2026-02-17",
-     "c": 108.779999
-    },
-    {
-     "d": "2026-02-18",
-     "c": 110.519997
-    },
-    {
-     "d": "2026-02-19",
-     "c": 111.589996
-    },
-    {
-     "d": "2026-02-20",
-     "c": 110.529999
-    },
-    {
-     "d": "2026-02-23",
-     "c": 109.879997
-    },
-    {
-     "d": "2026-02-24",
-     "c": 110.589996
-    },
-    {
-     "d": "2026-02-25",
-     "c": 110.010002
-    },
-    {
-     "d": "2026-02-26",
-     "c": 110.699997
-    },
-    {
-     "d": "2026-02-27",
-     "c": 113.459999
-    },
-    {
-     "d": "2026-03-02",
-     "c": 118.239998
-    },
-    {
-     "d": "2026-03-03",
-     "c": 118.519997
-    },
-    {
-     "d": "2026-03-04",
-     "c": 115.650002
-    },
-    {
-     "d": "2026-03-05",
-     "c": 116.82
-    },
-    {
-     "d": "2026-03-06",
-     "c": 117.07
-    },
-    {
-     "d": "2026-03-09",
-     "c": 117.029999
-    },
-    {
-     "d": "2026-03-10",
-     "c": 114.150002
-    },
-    {
-     "d": "2026-03-11",
-     "c": 117.029999
-    },
-    {
-     "d": "2026-03-12",
-     "c": 120.260002
-    },
-    {
-     "d": "2026-03-13",
-     "c": 121.889999
-    },
-    {
-     "d": "2026-03-16",
-     "c": 121.32
-    },
-    {
-     "d": "2026-03-17",
-     "c": 122.870003
-    },
-    {
-     "d": "2026-03-18",
-     "c": 123.650002
-    },
-    {
-     "d": "2026-03-19",
-     "c": 126.019997
-    },
-    {
-     "d": "2026-03-20",
-     "c": 126.919998
-    },
-    {
-     "d": "2026-03-23",
-     "c": 127.190002
-    },
-    {
-     "d": "2026-03-24",
-     "c": 129.350006
-    },
-    {
-     "d": "2026-03-25",
-     "c": 128.929993
-    },
-    {
-     "d": "2026-03-26",
-     "c": 133.25
-    },
-    {
-     "d": "2026-03-27",
-     "c": 133.800003
-    },
-    {
-     "d": "2026-03-30",
-     "c": 132.889999
-    },
-    {
-     "d": "2026-03-31",
-     "c": 132.0
-    },
-    {
-     "d": "2026-04-01",
-     "c": 128.380005
-    },
-    {
-     "d": "2026-04-02",
-     "c": 130.520004
-    },
-    {
-     "d": "2026-04-06",
-     "c": 131.639999
-    },
-    {
-     "d": "2026-04-07",
-     "c": 131.770004
-    },
-    {
-     "d": "2026-04-08",
-     "c": 125.220001
-    },
-    {
-     "d": "2026-04-09",
-     "c": 123.470001
-    },
-    {
-     "d": "2026-04-10",
-     "c": 122.550003
-    },
-    {
-     "d": "2026-04-13",
-     "c": 123.620003
-    },
-    {
-     "d": "2026-04-14",
-     "c": 118.790001
-    },
-    {
-     "d": "2026-04-15",
-     "c": 118.919998
-    },
-    {
-     "d": "2026-04-16",
-     "c": 121.57
-    },
-    {
-     "d": "2026-04-17",
-     "c": 116.040001
-    },
-    {
-     "d": "2026-04-20",
-     "c": 116.449997
-    },
-    {
-     "d": "2026-04-21",
-     "c": 120.260002
-    },
-    {
-     "d": "2026-04-22",
-     "c": 122.599998
-    },
-    {
-     "d": "2026-04-23",
-     "c": 124.370003
-    },
-    {
-     "d": "2026-04-24",
-     "c": 121.760002
-    },
-    {
-     "d": "2026-04-27",
-     "c": 121.68
-    },
-    {
-     "d": "2026-04-28",
-     "c": 124.32
-    },
-    {
-     "d": "2026-04-29",
-     "c": 128.25
-    },
-    {
-     "d": "2026-04-30",
-     "c": 125.779999
-    },
-    {
-     "d": "2026-05-01",
-     "c": 123.190002
-    },
-    {
-     "d": "2026-05-04",
-     "c": 124.910004
-    },
-    {
-     "d": "2026-05-05",
-     "c": 123.32
-    },
-    {
-     "d": "2026-05-06",
-     "c": 118.900002
-    },
-    {
-     "d": "2026-05-07",
-     "c": 114.879997
-    },
-    {
-     "d": "2026-05-08",
-     "c": 113.870003
-    },
-    {
-     "d": "2026-05-11",
-     "c": 115.550003
-    },
-    {
-     "d": "2026-05-12",
-     "c": 117.870003
-    },
-    {
-     "d": "2026-05-13",
-     "c": 117.400002
-    },
-    {
-     "d": "2026-05-14",
-     "c": 118.970001
-    },
-    {
-     "d": "2026-05-15",
-     "c": 122.410004
-    },
-    {
-     "d": "2026-05-18",
-     "c": 124.540001
-    },
-    {
-     "d": "2026-05-19",
-     "c": 125.110001
-    },
-    {
-     "d": "2026-05-20",
-     "c": 122.360001
-    },
-    {
-     "d": "2026-05-21",
-     "c": 120.550003
-    },
-    {
-     "d": "2026-05-22",
-     "c": 120.459999
-    },
-    {
-     "d": "2026-05-26",
-     "c": 116.57
-    },
-    {
-     "d": "2026-05-27",
-     "c": 115.129997
-    },
-    {
-     "d": "2026-05-28",
-     "c": 114.989998
-    },
-    {
-     "d": "2026-05-29",
-     "c": 113.980003
-    },
-    {
-     "d": "2026-06-01",
-     "c": 115.580002
-    },
-    {
-     "d": "2026-06-02",
-     "c": 116.870003
-    },
-    {
-     "d": "2026-06-03",
-     "c": 119.050003
-    },
-    {
-     "d": "2026-06-04",
-     "c": 119.230003
-    },
-    {
-     "d": "2026-06-05",
-     "c": 117.139999
-    },
-    {
-     "d": "2026-06-08",
-     "c": 118.889999
-    },
-    {
-     "d": "2026-06-09",
-     "c": 116.790001
-    },
-    {
-     "d": "2026-06-10",
-     "c": 119.919998
-    },
-    {
-     "d": "2026-06-11",
-     "c": 115.360001
-    },
-    {
-     "d": "2026-06-12",
-     "c": 116.980003
-    },
-    {
-     "d": "2026-06-15",
-     "c": 112.260002
-    },
-    {
-     "d": "2026-06-16",
-     "c": 111.339996
-    },
-    {
-     "d": "2026-06-17",
-     "c": 111.209999
-    },
-    {
-     "d": "2026-06-18",
-     "c": 107.739998
-    },
-    {
-     "d": "2026-06-22",
-     "c": 109.699997
-    },
-    {
-     "d": "2026-06-23",
-     "c": 109.970001
-    },
-    {
-     "d": "2026-06-24",
-     "c": 106.919998
-    },
-    {
-     "d": "2026-06-25",
-     "c": 106.410004
-    },
-    {
-     "d": "2026-06-26",
-     "c": 105.959999
-    },
-    {
-     "d": "2026-06-29",
-     "c": 104.199997
-    },
-    {
-     "d": "2026-06-30",
-     "c": 103.959999
-    },
-    {
-     "d": "2026-07-01",
-     "c": 103.220001
-    },
-    {
-     "d": "2026-07-02",
-     "c": 103.889999
-    }
-   ],
-   "state": "BUY",
-   "price": 103.89,
-   "top": 128.2308,
-   "bottom": 116.1035,
-   "band": 0.3638,
-   "pctInRange": -100.7,
-   "distToBottomPct": -10.52,
-   "distToTopPct": 23.43,
-   "smaShort": 111.0545,
-   "smaLong": 116.5262,
-   "smaTrend": 105.6954,
-   "trend": "up",
-   "trend200DownDays": 0,
-   "cross": null,
-   "brokeAboveRecently": true,
-   "brokeBelowRecently": true,
-   "trendMethod": "pivot",
-   "cycleHalfDays": 7,
-   "rsi": 32.0,
-   "atr": 2.8389,
-   "atrPct": 2.73,
-   "high52w": 133.8,
-   "drawdownPct": 22.4,
-   "macroDriven": false,
-   "topLong": 114.8594,
-   "bottomLong": 106.8629,
-   "pctInRangeLong": -37.2,
-   "trendLong": "up",
-   "longRangeAvailable": true,
-   "longTermLow": true,
-   "counterTrend": false,
-   "stateLabel": "買い場",
-   "emoji": "🟦",
-   "color": "#2563eb",
-   "side": "buy",
-   "actionable": true,
-   "value": {
-    "score": 67,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
-    "factors": [
-     "1年レンジ下限圏(0%位置) +25",
-     "5年レンジ下段(0%位置) +20",
-     "高値-22% +14",
-     "RSI32 +8",
-     "個別要因の下落の疑い(falling knife) -15",
-     "5年トレンド上向き +6",
-     "200日線上向き +4",
-     "買い場帯 +5"
-    ]
-   },
-   "momentum": {
-    "signal": "none",
-    "note": "hold銘柄"
-   },
-   "holdMgmt": {
-    "thesisBreak": false,
-    "trim": false,
-    "note": ""
-   },
-   "rec": {
-    "score": 67,
-    "stars": 4,
-    "level": "B",
-    "action": "buy",
-    "expReturnPct": 23.43,
-    "expDays": 7,
-    "expPeriodLabel": "約7営業日",
-    "annualizedPct": 843.5,
-    "note": "🟦購入検討"
    }
   },
   {
@@ -11568,20 +10820,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 86.589996
+     "c": 86.809998
     }
    ],
    "state": "BUY",
-   "price": 86.59,
+   "price": 86.81,
    "top": 101.3834,
    "bottom": 94.3969,
    "band": 0.2096,
-   "pctInRange": -111.7,
-   "distToBottomPct": -8.27,
-   "distToTopPct": 17.08,
-   "smaShort": 86.346,
-   "smaLong": 89.696,
-   "smaTrend": 86.5399,
+   "pctInRange": -108.6,
+   "distToBottomPct": -8.04,
+   "distToTopPct": 16.79,
+   "smaShort": 86.357,
+   "smaLong": 89.7004,
+   "smaTrend": 86.541,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -11589,15 +10841,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 45.9,
+   "rsi": 47.0,
    "atr": 1.6144,
    "atrPct": 1.86,
    "high52w": 97.88,
-   "drawdownPct": 11.5,
+   "drawdownPct": 11.3,
    "macroDriven": null,
    "topLong": 78.6957,
    "bottomLong": 73.4263,
-   "pctInRangeLong": 249.8,
+   "pctInRangeLong": 254.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -11637,734 +10889,6 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
-   }
-  },
-  {
-   "key": "SLB",
-   "ticker": "SLB",
-   "name": "Schlumberger (SLB)",
-   "sector": "エネルギー",
-   "subSector": "エネルギー",
-   "class": "stock",
-   "conviction": 3,
-   "tradePolicy": "trade",
-   "history": [
-    {
-     "d": "2025-11-11",
-     "c": 37.610001
-    },
-    {
-     "d": "2025-11-12",
-     "c": 36.07
-    },
-    {
-     "d": "2025-11-13",
-     "c": 36.310001
-    },
-    {
-     "d": "2025-11-14",
-     "c": 36.939999
-    },
-    {
-     "d": "2025-11-17",
-     "c": 35.799999
-    },
-    {
-     "d": "2025-11-18",
-     "c": 36.040001
-    },
-    {
-     "d": "2025-11-19",
-     "c": 35.860001
-    },
-    {
-     "d": "2025-11-20",
-     "c": 35.189999
-    },
-    {
-     "d": "2025-11-21",
-     "c": 36.189999
-    },
-    {
-     "d": "2025-11-24",
-     "c": 35.709999
-    },
-    {
-     "d": "2025-11-25",
-     "c": 35.900002
-    },
-    {
-     "d": "2025-11-26",
-     "c": 35.66
-    },
-    {
-     "d": "2025-11-28",
-     "c": 36.240002
-    },
-    {
-     "d": "2025-12-01",
-     "c": 36.599998
-    },
-    {
-     "d": "2025-12-02",
-     "c": 36.360001
-    },
-    {
-     "d": "2025-12-03",
-     "c": 37.549999
-    },
-    {
-     "d": "2025-12-04",
-     "c": 38.119999
-    },
-    {
-     "d": "2025-12-05",
-     "c": 38.459999
-    },
-    {
-     "d": "2025-12-08",
-     "c": 38.240002
-    },
-    {
-     "d": "2025-12-09",
-     "c": 38.299999
-    },
-    {
-     "d": "2025-12-10",
-     "c": 39.93
-    },
-    {
-     "d": "2025-12-11",
-     "c": 40.34
-    },
-    {
-     "d": "2025-12-12",
-     "c": 39.450001
-    },
-    {
-     "d": "2025-12-15",
-     "c": 38.900002
-    },
-    {
-     "d": "2025-12-16",
-     "c": 37.610001
-    },
-    {
-     "d": "2025-12-17",
-     "c": 38.529999
-    },
-    {
-     "d": "2025-12-18",
-     "c": 38.130001
-    },
-    {
-     "d": "2025-12-19",
-     "c": 38.080002
-    },
-    {
-     "d": "2025-12-22",
-     "c": 38.330002
-    },
-    {
-     "d": "2025-12-23",
-     "c": 38.200001
-    },
-    {
-     "d": "2025-12-24",
-     "c": 37.970001
-    },
-    {
-     "d": "2025-12-26",
-     "c": 37.790001
-    },
-    {
-     "d": "2025-12-29",
-     "c": 37.900002
-    },
-    {
-     "d": "2025-12-30",
-     "c": 38.549999
-    },
-    {
-     "d": "2025-12-31",
-     "c": 38.380001
-    },
-    {
-     "d": "2026-01-02",
-     "c": 40.200001
-    },
-    {
-     "d": "2026-01-05",
-     "c": 43.799999
-    },
-    {
-     "d": "2026-01-06",
-     "c": 43.630001
-    },
-    {
-     "d": "2026-01-07",
-     "c": 42.369999
-    },
-    {
-     "d": "2026-01-08",
-     "c": 44.43
-    },
-    {
-     "d": "2026-01-09",
-     "c": 45.200001
-    },
-    {
-     "d": "2026-01-12",
-     "c": 45.150002
-    },
-    {
-     "d": "2026-01-13",
-     "c": 45.900002
-    },
-    {
-     "d": "2026-01-14",
-     "c": 46.970001
-    },
-    {
-     "d": "2026-01-15",
-     "c": 46.57
-    },
-    {
-     "d": "2026-01-16",
-     "c": 46.73
-    },
-    {
-     "d": "2026-01-20",
-     "c": 46.450001
-    },
-    {
-     "d": "2026-01-21",
-     "c": 48.52
-    },
-    {
-     "d": "2026-01-22",
-     "c": 49.32
-    },
-    {
-     "d": "2026-01-23",
-     "c": 49.150002
-    },
-    {
-     "d": "2026-01-26",
-     "c": 49.700001
-    },
-    {
-     "d": "2026-01-27",
-     "c": 50.66
-    },
-    {
-     "d": "2026-01-28",
-     "c": 48.869999
-    },
-    {
-     "d": "2026-01-29",
-     "c": 48.450001
-    },
-    {
-     "d": "2026-01-30",
-     "c": 48.380001
-    },
-    {
-     "d": "2026-02-02",
-     "c": 48.049999
-    },
-    {
-     "d": "2026-02-03",
-     "c": 49.759998
-    },
-    {
-     "d": "2026-02-04",
-     "c": 51.349998
-    },
-    {
-     "d": "2026-02-05",
-     "c": 49.509998
-    },
-    {
-     "d": "2026-02-06",
-     "c": 50.700001
-    },
-    {
-     "d": "2026-02-09",
-     "c": 50.540001
-    },
-    {
-     "d": "2026-02-10",
-     "c": 50.32
-    },
-    {
-     "d": "2026-02-11",
-     "c": 51.560001
-    },
-    {
-     "d": "2026-02-12",
-     "c": 50.639999
-    },
-    {
-     "d": "2026-02-13",
-     "c": 50.389999
-    },
-    {
-     "d": "2026-02-17",
-     "c": 49.84
-    },
-    {
-     "d": "2026-02-18",
-     "c": 51.59
-    },
-    {
-     "d": "2026-02-19",
-     "c": 51.540001
-    },
-    {
-     "d": "2026-02-20",
-     "c": 50.849998
-    },
-    {
-     "d": "2026-02-23",
-     "c": 51.240002
-    },
-    {
-     "d": "2026-02-24",
-     "c": 51.849998
-    },
-    {
-     "d": "2026-02-25",
-     "c": 51.66
-    },
-    {
-     "d": "2026-02-26",
-     "c": 51.490002
-    },
-    {
-     "d": "2026-02-27",
-     "c": 51.34
-    },
-    {
-     "d": "2026-03-02",
-     "c": 51.27
-    },
-    {
-     "d": "2026-03-03",
-     "c": 48.580002
-    },
-    {
-     "d": "2026-03-04",
-     "c": 47.889999
-    },
-    {
-     "d": "2026-03-05",
-     "c": 47.400002
-    },
-    {
-     "d": "2026-03-06",
-     "c": 46.900002
-    },
-    {
-     "d": "2026-03-09",
-     "c": 47.189999
-    },
-    {
-     "d": "2026-03-10",
-     "c": 48.110001
-    },
-    {
-     "d": "2026-03-11",
-     "c": 48.169998
-    },
-    {
-     "d": "2026-03-12",
-     "c": 44.560001
-    },
-    {
-     "d": "2026-03-13",
-     "c": 44.720001
-    },
-    {
-     "d": "2026-03-16",
-     "c": 44.959999
-    },
-    {
-     "d": "2026-03-17",
-     "c": 46.130001
-    },
-    {
-     "d": "2026-03-18",
-     "c": 45.32
-    },
-    {
-     "d": "2026-03-19",
-     "c": 47.82
-    },
-    {
-     "d": "2026-03-20",
-     "c": 46.630001
-    },
-    {
-     "d": "2026-03-23",
-     "c": 49.25
-    },
-    {
-     "d": "2026-03-24",
-     "c": 50.509998
-    },
-    {
-     "d": "2026-03-25",
-     "c": 51.889999
-    },
-    {
-     "d": "2026-03-26",
-     "c": 52.310001
-    },
-    {
-     "d": "2026-03-27",
-     "c": 53.5
-    },
-    {
-     "d": "2026-03-30",
-     "c": 51.529999
-    },
-    {
-     "d": "2026-03-31",
-     "c": 51.389999
-    },
-    {
-     "d": "2026-04-01",
-     "c": 50.029999
-    },
-    {
-     "d": "2026-04-02",
-     "c": 49.439999
-    },
-    {
-     "d": "2026-04-06",
-     "c": 49.779999
-    },
-    {
-     "d": "2026-04-07",
-     "c": 50.349998
-    },
-    {
-     "d": "2026-04-08",
-     "c": 51.880001
-    },
-    {
-     "d": "2026-04-09",
-     "c": 52.540001
-    },
-    {
-     "d": "2026-04-10",
-     "c": 51.919998
-    },
-    {
-     "d": "2026-04-13",
-     "c": 51.919998
-    },
-    {
-     "d": "2026-04-14",
-     "c": 51.490002
-    },
-    {
-     "d": "2026-04-15",
-     "c": 52.419998
-    },
-    {
-     "d": "2026-04-16",
-     "c": 51.73
-    },
-    {
-     "d": "2026-04-17",
-     "c": 52.66
-    },
-    {
-     "d": "2026-04-20",
-     "c": 52.200001
-    },
-    {
-     "d": "2026-04-21",
-     "c": 52.77
-    },
-    {
-     "d": "2026-04-22",
-     "c": 54.349998
-    },
-    {
-     "d": "2026-04-23",
-     "c": 54.740002
-    },
-    {
-     "d": "2026-04-24",
-     "c": 56.150002
-    },
-    {
-     "d": "2026-04-27",
-     "c": 55.23
-    },
-    {
-     "d": "2026-04-28",
-     "c": 55.650002
-    },
-    {
-     "d": "2026-04-29",
-     "c": 55.700001
-    },
-    {
-     "d": "2026-04-30",
-     "c": 56.880001
-    },
-    {
-     "d": "2026-05-01",
-     "c": 56.919998
-    },
-    {
-     "d": "2026-05-04",
-     "c": 55.630001
-    },
-    {
-     "d": "2026-05-05",
-     "c": 56.0
-    },
-    {
-     "d": "2026-05-06",
-     "c": 55.16
-    },
-    {
-     "d": "2026-05-07",
-     "c": 53.0
-    },
-    {
-     "d": "2026-05-08",
-     "c": 53.27
-    },
-    {
-     "d": "2026-05-11",
-     "c": 54.93
-    },
-    {
-     "d": "2026-05-12",
-     "c": 55.639999
-    },
-    {
-     "d": "2026-05-13",
-     "c": 55.380001
-    },
-    {
-     "d": "2026-05-14",
-     "c": 55.75
-    },
-    {
-     "d": "2026-05-15",
-     "c": 55.380001
-    },
-    {
-     "d": "2026-05-18",
-     "c": 57.150002
-    },
-    {
-     "d": "2026-05-19",
-     "c": 56.77
-    },
-    {
-     "d": "2026-05-20",
-     "c": 57.279999
-    },
-    {
-     "d": "2026-05-21",
-     "c": 57.25
-    },
-    {
-     "d": "2026-05-22",
-     "c": 57.279999
-    },
-    {
-     "d": "2026-05-26",
-     "c": 57.98
-    },
-    {
-     "d": "2026-05-27",
-     "c": 56.5
-    },
-    {
-     "d": "2026-05-28",
-     "c": 55.119999
-    },
-    {
-     "d": "2026-05-29",
-     "c": 54.549999
-    },
-    {
-     "d": "2026-06-01",
-     "c": 54.75
-    },
-    {
-     "d": "2026-06-02",
-     "c": 56.560001
-    },
-    {
-     "d": "2026-06-03",
-     "c": 56.849998
-    },
-    {
-     "d": "2026-06-04",
-     "c": 58.009998
-    },
-    {
-     "d": "2026-06-05",
-     "c": 54.869999
-    },
-    {
-     "d": "2026-06-08",
-     "c": 56.549999
-    },
-    {
-     "d": "2026-06-09",
-     "c": 55.849998
-    },
-    {
-     "d": "2026-06-10",
-     "c": 55.509998
-    },
-    {
-     "d": "2026-06-11",
-     "c": 56.0
-    },
-    {
-     "d": "2026-06-12",
-     "c": 56.18
-    },
-    {
-     "d": "2026-06-15",
-     "c": 53.709999
-    },
-    {
-     "d": "2026-06-16",
-     "c": 53.07
-    },
-    {
-     "d": "2026-06-17",
-     "c": 50.330002
-    },
-    {
-     "d": "2026-06-18",
-     "c": 48.09
-    },
-    {
-     "d": "2026-06-22",
-     "c": 47.950001
-    },
-    {
-     "d": "2026-06-23",
-     "c": 47.790001
-    },
-    {
-     "d": "2026-06-24",
-     "c": 46.610001
-    },
-    {
-     "d": "2026-06-25",
-     "c": 47.419998
-    },
-    {
-     "d": "2026-06-26",
-     "c": 47.0
-    },
-    {
-     "d": "2026-06-29",
-     "c": 46.380001
-    },
-    {
-     "d": "2026-06-30",
-     "c": 46.490002
-    },
-    {
-     "d": "2026-07-01",
-     "c": 45.09
-    },
-    {
-     "d": "2026-07-02",
-     "c": 45.27
-    }
-   ],
-   "state": "BUY",
-   "price": 45.27,
-   "top": 59.7262,
-   "bottom": 55.8524,
-   "band": 0.1162,
-   "pctInRange": -273.2,
-   "distToBottomPct": -18.95,
-   "distToTopPct": 31.93,
-   "smaShort": 50.9085,
-   "smaLong": 53.8394,
-   "smaTrend": 45.3782,
-   "trend": "up",
-   "trend200DownDays": 0,
-   "cross": "dead",
-   "brokeAboveRecently": false,
-   "brokeBelowRecently": true,
-   "trendMethod": "pivot",
-   "cycleHalfDays": 6,
-   "rsi": 26.4,
-   "atr": 1.5416,
-   "atrPct": 3.41,
-   "high52w": 58.01,
-   "drawdownPct": 22.0,
-   "macroDriven": false,
-   "topLong": 48.5341,
-   "bottomLong": 44.6305,
-   "pctInRangeLong": 16.4,
-   "trendLong": "up",
-   "longRangeAvailable": true,
-   "longTermLow": true,
-   "counterTrend": false,
-   "stateLabel": "買い場",
-   "emoji": "🟦",
-   "color": "#2563eb",
-   "side": "buy",
-   "actionable": true,
-   "value": {
-    "score": 71,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
-    "factors": [
-     "1年レンジ下限圏(0%位置) +25",
-     "5年レンジ下段(16%位置) +17",
-     "高値-22% +14",
-     "RSI26 売られ過ぎ +15",
-     "個別要因の下落の疑い(falling knife) -15",
-     "5年トレンド上向き +6",
-     "200日線上向き +4",
-     "買い場帯 +5"
-    ]
-   },
-   "momentum": {
-    "signal": "exit_warning",
-    "note": "デッドクロス",
-    "relStrength3m": -22.7,
-    "breakoutHigh": 58.01,
-    "volConfirmed": false,
-    "trailStop": 41.416,
-    "atrPct": 3.41
-   },
-   "holdMgmt": {
-    "thesisBreak": false,
-    "trim": false,
-    "note": ""
-   },
-   "rec": {
-    "score": 60,
-    "stars": 4,
-    "level": "C",
-    "action": "sell_check",
-    "expReturnPct": null,
-    "expDays": null,
-    "expPeriodLabel": null,
-    "annualizedPct": null,
-    "note": "売り管理: デッドクロス"
    }
   },
   {
@@ -13015,20 +11539,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 535.934998
+     "c": 539.234985
     }
    ],
    "state": "BUY",
-   "price": 535.935,
+   "price": 539.235,
    "top": 603.2597,
    "bottom": 556.4903,
    "band": 1.4031,
-   "pctInRange": -44.0,
-   "distToBottomPct": -3.69,
-   "distToTopPct": 12.56,
-   "smaShort": 519.3618,
-   "smaLong": 520.1837,
-   "smaTrend": 540.4593,
+   "pctInRange": -36.9,
+   "distToBottomPct": -3.1,
+   "distToTopPct": 11.87,
+   "smaShort": 519.5268,
+   "smaLong": 520.2497,
+   "smaTrend": 540.4758,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -13036,31 +11560,31 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 56.5,
-   "atr": 13.917,
-   "atrPct": 2.6,
+   "rsi": 57.6,
+   "atr": 14.0502,
+   "atrPct": 2.61,
    "high52w": 676.7,
-   "drawdownPct": 20.8,
+   "drawdownPct": 20.3,
    "macroDriven": null,
    "topLong": 560.1683,
    "bottomLong": 516.0082,
-   "pctInRangeLong": 45.1,
+   "pctInRangeLong": 52.6,
    "trendLong": "up",
    "longRangeAvailable": true,
-   "longTermLow": true,
+   "longTermLow": false,
    "counterTrend": false,
    "stateLabel": "買い場",
    "emoji": "🟦",
    "color": "#2563eb",
    "side": "buy",
-   "actionable": true,
+   "actionable": false,
    "value": {
-    "score": 65,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
+    "score": 63,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
-     "高値-21% +14",
+     "高値-20% +14",
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5"
@@ -13076,15 +11600,15 @@
     "note": ""
    },
    "rec": {
-    "score": 65,
+    "score": 63,
     "stars": 4,
-    "level": "B",
-    "action": "buy",
-    "expReturnPct": 12.56,
-    "expDays": 8,
-    "expPeriodLabel": "約8営業日",
-    "annualizedPct": 395.6,
-    "note": "🟦購入検討"
+    "level": "C",
+    "action": "hold",
+    "expReturnPct": null,
+    "expDays": null,
+    "expPeriodLabel": null,
+    "annualizedPct": null,
+    "note": ""
    }
   },
   {
@@ -13735,20 +12259,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 196.432007
+     "c": 197.125
     }
    ],
    "state": "SUPER_BUY",
-   "price": 196.432,
+   "price": 197.125,
    "top": 209.4477,
    "bottom": 188.2063,
    "band": 0.6372,
-   "pctInRange": 38.7,
-   "distToBottomPct": 4.37,
-   "distToTopPct": 6.63,
-   "smaShort": 185.3746,
-   "smaLong": 179.708,
-   "smaTrend": 183.8713,
+   "pctInRange": 42.0,
+   "distToBottomPct": 4.74,
+   "distToTopPct": 6.25,
+   "smaShort": 185.4093,
+   "smaLong": 179.7219,
+   "smaTrend": 183.8748,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "golden",
@@ -13756,15 +12280,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 65.8,
-   "atr": 4.453,
-   "atrPct": 2.27,
+   "rsi": 66.4,
+   "atr": 4.5166,
+   "atrPct": 2.29,
    "high52w": 212.16,
-   "drawdownPct": 7.4,
+   "drawdownPct": 7.1,
    "macroDriven": null,
    "topLong": 169.6908,
    "bottomLong": 160.6794,
-   "pctInRangeLong": 396.7,
+   "pctInRangeLong": 404.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -13775,7 +12299,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 35,
+    "score": 34,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -13794,7 +12318,7 @@
     "note": ""
    },
    "rec": {
-    "score": 35,
+    "score": 34,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -14453,20 +12977,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 538.719971
+     "c": 538.005005
     }
    ],
    "state": "BUY",
-   "price": 538.72,
+   "price": 538.005,
    "top": 658.6735,
    "bottom": 614.2076,
    "band": 1.334,
-   "pctInRange": -169.8,
-   "distToBottomPct": -12.29,
-   "distToTopPct": 22.27,
-   "smaShort": 528.9275,
-   "smaLong": 546.7472,
-   "smaTrend": 612.8314,
+   "pctInRange": -171.4,
+   "distToBottomPct": -12.41,
+   "distToTopPct": 22.43,
+   "smaShort": 528.8918,
+   "smaLong": 546.7329,
+   "smaTrend": 612.8278,
    "trend": "down",
    "trend200DownDays": 36,
    "cross": null,
@@ -14474,15 +12998,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 52.5,
-   "atr": 14.435,
-   "atrPct": 2.68,
+   "rsi": 52.2,
+   "atr": 14.575,
+   "atrPct": 2.71,
    "high52w": 768.02,
    "drawdownPct": 29.9,
    "macroDriven": null,
    "topLong": 607.2054,
    "bottomLong": 571.8458,
-   "pctInRangeLong": -93.7,
+   "pctInRangeLong": -95.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -14518,732 +13042,11 @@
     "stars": 4,
     "level": "B",
     "action": "buy",
-    "expReturnPct": 22.27,
+    "expReturnPct": 22.43,
     "expDays": 6,
     "expPeriodLabel": "約6営業日",
-    "annualizedPct": 935.3,
+    "annualizedPct": 942.1,
     "note": "🟦購入検討"
-   }
-  },
-  {
-   "key": "BA",
-   "ticker": "BA",
-   "name": "Boeing",
-   "sector": "宇宙・防衛",
-   "subSector": "宇宙・防衛",
-   "class": "stock",
-   "conviction": 2,
-   "tradePolicy": "trade",
-   "history": [
-    {
-     "d": "2025-11-11",
-     "c": 195.210007
-    },
-    {
-     "d": "2025-11-12",
-     "c": 195.5
-    },
-    {
-     "d": "2025-11-13",
-     "c": 194.580002
-    },
-    {
-     "d": "2025-11-14",
-     "c": 194.520004
-    },
-    {
-     "d": "2025-11-17",
-     "c": 191.809998
-    },
-    {
-     "d": "2025-11-18",
-     "c": 189.630005
-    },
-    {
-     "d": "2025-11-19",
-     "c": 185.699997
-    },
-    {
-     "d": "2025-11-20",
-     "c": 179.380005
-    },
-    {
-     "d": "2025-11-21",
-     "c": 179.699997
-    },
-    {
-     "d": "2025-11-24",
-     "c": 179.119995
-    },
-    {
-     "d": "2025-11-25",
-     "c": 182.440002
-    },
-    {
-     "d": "2025-11-26",
-     "c": 186.919998
-    },
-    {
-     "d": "2025-11-28",
-     "c": 189.0
-    },
-    {
-     "d": "2025-12-01",
-     "c": 186.460007
-    },
-    {
-     "d": "2025-12-02",
-     "c": 205.380005
-    },
-    {
-     "d": "2025-12-03",
-     "c": 202.539993
-    },
-    {
-     "d": "2025-12-04",
-     "c": 201.869995
-    },
-    {
-     "d": "2025-12-05",
-     "c": 201.889999
-    },
-    {
-     "d": "2025-12-08",
-     "c": 206.270004
-    },
-    {
-     "d": "2025-12-09",
-     "c": 200.369995
-    },
-    {
-     "d": "2025-12-10",
-     "c": 198.720001
-    },
-    {
-     "d": "2025-12-11",
-     "c": 200.710007
-    },
-    {
-     "d": "2025-12-12",
-     "c": 204.380005
-    },
-    {
-     "d": "2025-12-15",
-     "c": 205.5
-    },
-    {
-     "d": "2025-12-16",
-     "c": 206.710007
-    },
-    {
-     "d": "2025-12-17",
-     "c": 206.330002
-    },
-    {
-     "d": "2025-12-18",
-     "c": 208.270004
-    },
-    {
-     "d": "2025-12-19",
-     "c": 214.080002
-    },
-    {
-     "d": "2025-12-22",
-     "c": 216.839996
-    },
-    {
-     "d": "2025-12-23",
-     "c": 216.850006
-    },
-    {
-     "d": "2025-12-24",
-     "c": 218.160004
-    },
-    {
-     "d": "2025-12-26",
-     "c": 216.440002
-    },
-    {
-     "d": "2025-12-29",
-     "c": 217.25
-    },
-    {
-     "d": "2025-12-30",
-     "c": 218.5
-    },
-    {
-     "d": "2025-12-31",
-     "c": 217.119995
-    },
-    {
-     "d": "2026-01-02",
-     "c": 227.770004
-    },
-    {
-     "d": "2026-01-05",
-     "c": 228.130005
-    },
-    {
-     "d": "2026-01-06",
-     "c": 229.839996
-    },
-    {
-     "d": "2026-01-07",
-     "c": 228.119995
-    },
-    {
-     "d": "2026-01-08",
-     "c": 227.380005
-    },
-    {
-     "d": "2026-01-09",
-     "c": 234.529999
-    },
-    {
-     "d": "2026-01-12",
-     "c": 239.809998
-    },
-    {
-     "d": "2026-01-13",
-     "c": 244.550003
-    },
-    {
-     "d": "2026-01-14",
-     "c": 242.610001
-    },
-    {
-     "d": "2026-01-15",
-     "c": 247.740005
-    },
-    {
-     "d": "2026-01-16",
-     "c": 247.679993
-    },
-    {
-     "d": "2026-01-20",
-     "c": 249.0
-    },
-    {
-     "d": "2026-01-21",
-     "c": 250.070007
-    },
-    {
-     "d": "2026-01-22",
-     "c": 251.410004
-    },
-    {
-     "d": "2026-01-23",
-     "c": 252.149994
-    },
-    {
-     "d": "2026-01-26",
-     "c": 248.429993
-    },
-    {
-     "d": "2026-01-27",
-     "c": 244.559998
-    },
-    {
-     "d": "2026-01-28",
-     "c": 241.589996
-    },
-    {
-     "d": "2026-01-29",
-     "c": 234.039993
-    },
-    {
-     "d": "2026-01-30",
-     "c": 233.720001
-    },
-    {
-     "d": "2026-02-02",
-     "c": 233.020004
-    },
-    {
-     "d": "2026-02-03",
-     "c": 233.149994
-    },
-    {
-     "d": "2026-02-04",
-     "c": 235.949997
-    },
-    {
-     "d": "2026-02-05",
-     "c": 236.949997
-    },
-    {
-     "d": "2026-02-06",
-     "c": 243.029999
-    },
-    {
-     "d": "2026-02-09",
-     "c": 244.710007
-    },
-    {
-     "d": "2026-02-10",
-     "c": 242.589996
-    },
-    {
-     "d": "2026-02-11",
-     "c": 236.259995
-    },
-    {
-     "d": "2026-02-12",
-     "c": 239.350006
-    },
-    {
-     "d": "2026-02-13",
-     "c": 242.960007
-    },
-    {
-     "d": "2026-02-17",
-     "c": 244.039993
-    },
-    {
-     "d": "2026-02-18",
-     "c": 238.929993
-    },
-    {
-     "d": "2026-02-19",
-     "c": 233.710007
-    },
-    {
-     "d": "2026-02-20",
-     "c": 232.029999
-    },
-    {
-     "d": "2026-02-23",
-     "c": 230.440002
-    },
-    {
-     "d": "2026-02-24",
-     "c": 233.389999
-    },
-    {
-     "d": "2026-02-25",
-     "c": 230.360001
-    },
-    {
-     "d": "2026-02-26",
-     "c": 229.410004
-    },
-    {
-     "d": "2026-02-27",
-     "c": 227.529999
-    },
-    {
-     "d": "2026-03-02",
-     "c": 229.740005
-    },
-    {
-     "d": "2026-03-03",
-     "c": 224.119995
-    },
-    {
-     "d": "2026-03-04",
-     "c": 227.309998
-    },
-    {
-     "d": "2026-03-05",
-     "c": 222.059998
-    },
-    {
-     "d": "2026-03-06",
-     "c": 231.110001
-    },
-    {
-     "d": "2026-03-09",
-     "c": 225.0
-    },
-    {
-     "d": "2026-03-10",
-     "c": 217.759995
-    },
-    {
-     "d": "2026-03-11",
-     "c": 214.100006
-    },
-    {
-     "d": "2026-03-12",
-     "c": 204.759995
-    },
-    {
-     "d": "2026-03-13",
-     "c": 209.889999
-    },
-    {
-     "d": "2026-03-16",
-     "c": 213.470001
-    },
-    {
-     "d": "2026-03-17",
-     "c": 210.820007
-    },
-    {
-     "d": "2026-03-18",
-     "c": 205.990005
-    },
-    {
-     "d": "2026-03-19",
-     "c": 201.179993
-    },
-    {
-     "d": "2026-03-20",
-     "c": 195.119995
-    },
-    {
-     "d": "2026-03-23",
-     "c": 198.410004
-    },
-    {
-     "d": "2026-03-24",
-     "c": 196.419998
-    },
-    {
-     "d": "2026-03-25",
-     "c": 199.610001
-    },
-    {
-     "d": "2026-03-26",
-     "c": 194.360001
-    },
-    {
-     "d": "2026-03-27",
-     "c": 190.520004
-    },
-    {
-     "d": "2026-03-30",
-     "c": 189.210007
-    },
-    {
-     "d": "2026-03-31",
-     "c": 199.029999
-    },
-    {
-     "d": "2026-04-01",
-     "c": 207.320007
-    },
-    {
-     "d": "2026-04-02",
-     "c": 208.220001
-    },
-    {
-     "d": "2026-04-06",
-     "c": 212.300003
-    },
-    {
-     "d": "2026-04-07",
-     "c": 210.0
-    },
-    {
-     "d": "2026-04-08",
-     "c": 217.800003
-    },
-    {
-     "d": "2026-04-09",
-     "c": 220.059998
-    },
-    {
-     "d": "2026-04-10",
-     "c": 217.630005
-    },
-    {
-     "d": "2026-04-13",
-     "c": 222.139999
-    },
-    {
-     "d": "2026-04-14",
-     "c": 223.770004
-    },
-    {
-     "d": "2026-04-15",
-     "c": 223.929993
-    },
-    {
-     "d": "2026-04-16",
-     "c": 218.880005
-    },
-    {
-     "d": "2026-04-17",
-     "c": 223.380005
-    },
-    {
-     "d": "2026-04-20",
-     "c": 225.080002
-    },
-    {
-     "d": "2026-04-21",
-     "c": 219.160004
-    },
-    {
-     "d": "2026-04-22",
-     "c": 231.279999
-    },
-    {
-     "d": "2026-04-23",
-     "c": 234.149994
-    },
-    {
-     "d": "2026-04-24",
-     "c": 232.440002
-    },
-    {
-     "d": "2026-04-27",
-     "c": 231.330002
-    },
-    {
-     "d": "2026-04-28",
-     "c": 230.720001
-    },
-    {
-     "d": "2026-04-29",
-     "c": 224.110001
-    },
-    {
-     "d": "2026-04-30",
-     "c": 229.029999
-    },
-    {
-     "d": "2026-05-01",
-     "c": 227.380005
-    },
-    {
-     "d": "2026-05-04",
-     "c": 221.300003
-    },
-    {
-     "d": "2026-05-05",
-     "c": 224.380005
-    },
-    {
-     "d": "2026-05-06",
-     "c": 229.929993
-    },
-    {
-     "d": "2026-05-07",
-     "c": 231.029999
-    },
-    {
-     "d": "2026-05-08",
-     "c": 237.360001
-    },
-    {
-     "d": "2026-05-11",
-     "c": 238.210007
-    },
-    {
-     "d": "2026-05-12",
-     "c": 236.869995
-    },
-    {
-     "d": "2026-05-13",
-     "c": 240.600006
-    },
-    {
-     "d": "2026-05-14",
-     "c": 229.210007
-    },
-    {
-     "d": "2026-05-15",
-     "c": 220.490005
-    },
-    {
-     "d": "2026-05-18",
-     "c": 220.610001
-    },
-    {
-     "d": "2026-05-19",
-     "c": 215.009995
-    },
-    {
-     "d": "2026-05-20",
-     "c": 222.199997
-    },
-    {
-     "d": "2026-05-21",
-     "c": 219.610001
-    },
-    {
-     "d": "2026-05-22",
-     "c": 219.020004
-    },
-    {
-     "d": "2026-05-26",
-     "c": 218.899994
-    },
-    {
-     "d": "2026-05-27",
-     "c": 224.300003
-    },
-    {
-     "d": "2026-05-28",
-     "c": 228.779999
-    },
-    {
-     "d": "2026-05-29",
-     "c": 231.149994
-    },
-    {
-     "d": "2026-06-01",
-     "c": 224.300003
-    },
-    {
-     "d": "2026-06-02",
-     "c": 217.699997
-    },
-    {
-     "d": "2026-06-03",
-     "c": 210.580002
-    },
-    {
-     "d": "2026-06-04",
-     "c": 217.419998
-    },
-    {
-     "d": "2026-06-05",
-     "c": 215.449997
-    },
-    {
-     "d": "2026-06-08",
-     "c": 215.919998
-    },
-    {
-     "d": "2026-06-09",
-     "c": 214.509995
-    },
-    {
-     "d": "2026-06-10",
-     "c": 209.0
-    },
-    {
-     "d": "2026-06-11",
-     "c": 221.630005
-    },
-    {
-     "d": "2026-06-12",
-     "c": 219.050003
-    },
-    {
-     "d": "2026-06-15",
-     "c": 228.949997
-    },
-    {
-     "d": "2026-06-16",
-     "c": 227.490005
-    },
-    {
-     "d": "2026-06-17",
-     "c": 225.630005
-    },
-    {
-     "d": "2026-06-18",
-     "c": 222.720001
-    },
-    {
-     "d": "2026-06-22",
-     "c": 220.830002
-    },
-    {
-     "d": "2026-06-23",
-     "c": 216.710007
-    },
-    {
-     "d": "2026-06-24",
-     "c": 220.25
-    },
-    {
-     "d": "2026-06-25",
-     "c": 218.119995
-    },
-    {
-     "d": "2026-06-26",
-     "c": 217.25
-    },
-    {
-     "d": "2026-06-29",
-     "c": 214.690002
-    },
-    {
-     "d": "2026-06-30",
-     "c": 216.470001
-    },
-    {
-     "d": "2026-07-01",
-     "c": 218.580002
-    },
-    {
-     "d": "2026-07-02",
-     "c": 225.779999
-    }
-   ],
-   "state": "DOWN",
-   "price": 225.78,
-   "top": 234.8231,
-   "bottom": 207.7832,
-   "band": 0.8112,
-   "pctInRange": 66.6,
-   "distToBottomPct": 8.66,
-   "distToTopPct": 4.01,
-   "smaShort": 219.3225,
-   "smaLong": 223.7686,
-   "smaTrend": 218.3177,
-   "trend": "down",
-   "trend200DownDays": 31,
-   "cross": null,
-   "brokeAboveRecently": true,
-   "brokeBelowRecently": true,
-   "trendMethod": "pivot",
-   "cycleHalfDays": 7,
-   "rsi": 55.5,
-   "atr": 6.6165,
-   "atrPct": 2.93,
-   "high52w": 252.15,
-   "drawdownPct": 10.5,
-   "macroDriven": null,
-   "topLong": 217.4491,
-   "bottomLong": 194.0565,
-   "pctInRangeLong": 135.6,
-   "trendLong": "up",
-   "longRangeAvailable": true,
-   "longTermLow": false,
-   "counterTrend": false,
-   "stateLabel": "下落中",
-   "emoji": "🔻",
-   "color": "#d97706",
-   "side": "none",
-   "actionable": false,
-   "value": {
-    "score": 14,
-    "tier": "none",
-    "tierLabel": "-",
-    "factors": [
-     "5年トレンド上向き +6"
-    ]
-   },
-   "momentum": {
-    "signal": "none",
-    "note": "",
-    "relStrength3m": -5.8,
-    "breakoutHigh": 240.6,
-    "volConfirmed": false,
-    "trailStop": 209.2387,
-    "atrPct": 2.93
-   },
-   "holdMgmt": {
-    "thesisBreak": false,
-    "trim": false,
-    "note": ""
-   },
-   "rec": {
-    "score": 4,
-    "stars": 1,
-    "level": "-",
-    "action": "hold",
-    "expReturnPct": null,
-    "expDays": null,
-    "expPeriodLabel": null,
-    "annualizedPct": null,
-    "note": ""
    }
   },
   {
@@ -15254,7 +13057,7 @@
    "subSector": "宇宙・防衛",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -15894,20 +13697,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 104.139999
+     "c": 106.730003
     }
    ],
    "state": "SUPER_SELL",
-   "price": 104.14,
+   "price": 106.73,
    "top": 116.9349,
    "bottom": 81.5588,
    "band": 1.0613,
-   "pctInRange": 63.8,
-   "distToBottomPct": 27.69,
-   "distToTopPct": 12.29,
-   "smaShort": 102.6575,
-   "smaLong": 107.003,
-   "smaTrend": 75.8956,
+   "pctInRange": 71.2,
+   "distToBottomPct": 30.86,
+   "distToTopPct": 9.56,
+   "smaShort": 102.787,
+   "smaLong": 107.0548,
+   "smaTrend": 75.9086,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "dead",
@@ -15915,15 +13718,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 50.2,
-   "atr": 9.5781,
-   "atrPct": 9.2,
+   "rsi": 51.7,
+   "atr": 9.6999,
+   "atrPct": 9.09,
    "high52w": 150.23,
-   "drawdownPct": 30.7,
+   "drawdownPct": 29.0,
    "macroDriven": null,
    "topLong": 57.8857,
    "bottomLong": 46.5158,
-   "pctInRangeLong": 506.8,
+   "pctInRangeLong": 529.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -15931,26 +13734,21 @@
    "stateLabel": "⭐超・売り場",
    "emoji": "⭐🔴",
    "color": "#991b1b",
-   "side": "sell",
-   "actionable": true,
+   "side": "none",
+   "actionable": false,
    "value": {
-    "score": 39,
+    "score": 31,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "高値-31%の暴落水準 +20",
+     "高値-29% +14",
      "5年トレンド上向き +6",
      "200日線上向き +4"
     ]
    },
    "momentum": {
-    "signal": "exit_warning",
-    "note": "デッドクロス",
-    "relStrength3m": 39.5,
-    "breakoutHigh": 150.23,
-    "volConfirmed": false,
-    "trailStop": 80.1947,
-    "atrPct": 9.2
+    "signal": "none",
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -15958,15 +13756,15 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
-    "stars": 4,
-    "level": "C",
-    "action": "sell_check",
+    "score": 31,
+    "stars": 2,
+    "level": "-",
+    "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
-    "note": "売り管理: デッドクロス"
+    "note": ""
    }
   },
   {
@@ -16617,20 +14415,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 288.700012
+     "c": 289.059998
     }
    ],
    "state": "SELL",
-   "price": 288.7,
+   "price": 289.06,
    "top": 282.8942,
    "bottom": 236.4527,
    "band": 1.3932,
-   "pctInRange": 112.5,
-   "distToBottomPct": 22.1,
-   "distToTopPct": -2.01,
-   "smaShort": 272.976,
-   "smaLong": 255.3258,
-   "smaTrend": 274.2759,
+   "pctInRange": 113.3,
+   "distToBottomPct": 22.25,
+   "distToTopPct": -2.13,
+   "smaShort": 272.994,
+   "smaLong": 255.333,
+   "smaTrend": 274.2777,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -16638,15 +14436,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 61.2,
+   "rsi": 61.4,
    "atr": 12.1035,
    "atrPct": 4.19,
    "high52w": 329.23,
-   "drawdownPct": 12.3,
+   "drawdownPct": 12.2,
    "macroDriven": null,
    "topLong": 295.4063,
    "bottomLong": 266.7967,
-   "pctInRangeLong": 76.6,
+   "pctInRangeLong": 77.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -16657,7 +14455,7 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 23,
+    "score": 22,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -16676,7 +14474,7 @@
     "note": ""
    },
    "rec": {
-    "score": 23,
+    "score": 22,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -17335,20 +15133,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 1829.810059
+     "c": 1853.300049
     }
    ],
    "state": "SELL",
-   "price": 1829.8101,
+   "price": 1853.3,
    "top": 1824.6156,
    "bottom": 1652.601,
    "band": 5.1604,
-   "pctInRange": 103.0,
-   "distToBottomPct": 10.72,
-   "distToTopPct": -0.28,
-   "smaShort": 1828.449,
-   "smaLong": 1648.3592,
-   "smaTrend": 1315.1205,
+   "pctInRange": 116.7,
+   "distToBottomPct": 12.14,
+   "distToTopPct": -1.55,
+   "smaShort": 1829.6235,
+   "smaLong": 1648.829,
+   "smaTrend": 1315.238,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -17356,15 +15154,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 53.1,
-   "atr": 90.3775,
-   "atrPct": 4.94,
+   "rsi": 54.4,
+   "atr": 90.9725,
+   "atrPct": 4.91,
    "high52w": 1989.4399,
-   "drawdownPct": 8.0,
+   "drawdownPct": 6.8,
    "macroDriven": null,
    "topLong": 1159.3514,
    "bottomLong": 1047.153,
-   "pctInRangeLong": 697.6,
+   "pctInRangeLong": 718.5,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -18052,20 +15850,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 450.125
+     "c": 455.450012
     }
    ],
    "state": "SELL",
-   "price": 450.125,
+   "price": 455.45,
    "top": 449.8205,
    "bottom": 405.2755,
    "band": 1.3363,
-   "pctInRange": 100.7,
-   "distToBottomPct": 11.07,
-   "distToTopPct": -0.07,
-   "smaShort": 438.4658,
-   "smaLong": 419.8203,
-   "smaTrend": 344.1032,
+   "pctInRange": 112.6,
+   "distToBottomPct": 12.38,
+   "distToTopPct": -1.24,
+   "smaShort": 438.732,
+   "smaLong": 419.9268,
+   "smaTrend": 344.1299,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -18073,15 +15871,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 5,
-   "rsi": 54.3,
-   "atr": 19.7599,
-   "atrPct": 4.39,
+   "rsi": 55.6,
+   "atr": 20.0556,
+   "atrPct": 4.4,
    "high52w": 477.57,
-   "drawdownPct": 5.7,
+   "drawdownPct": 4.6,
    "macroDriven": null,
    "topLong": 321.5295,
    "bottomLong": 277.6166,
-   "pctInRangeLong": 392.8,
+   "pctInRangeLong": 405.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -18769,20 +16567,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 266.390015
+     "c": 274.11499
     }
    ],
    "state": "SELL",
-   "price": 266.39,
+   "price": 274.115,
    "top": 229.932,
    "bottom": 152.2116,
    "band": 2.3316,
-   "pctInRange": 146.9,
-   "distToBottomPct": 75.01,
-   "distToTopPct": -13.69,
-   "smaShort": 283.1005,
-   "smaLong": 224.049,
-   "smaTrend": 122.7362,
+   "pctInRange": 156.8,
+   "distToBottomPct": 80.09,
+   "distToTopPct": -16.12,
+   "smaShort": 283.4868,
+   "smaLong": 224.2035,
+   "smaTrend": 122.7748,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -18790,15 +16588,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 51.1,
-   "atr": 25.3548,
-   "atrPct": 9.52,
+   "rsi": 53.0,
+   "atr": 25.5164,
+   "atrPct": 9.31,
    "high52w": 316.43,
-   "drawdownPct": 15.8,
-   "macroDriven": false,
+   "drawdownPct": 13.4,
+   "macroDriven": null,
    "topLong": 120.7053,
    "bottomLong": 91.466,
-   "pctInRangeLong": 598.2,
+   "pctInRangeLong": 624.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -18809,12 +16607,11 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 3,
+    "score": 18,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "高値-16% +8",
-     "個別要因の下落の疑い(falling knife) -15",
+     "高値-13% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4"
     ]
@@ -18829,7 +16626,7 @@
     "note": ""
    },
    "rec": {
-    "score": 3,
+    "score": 18,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -18848,7 +16645,7 @@
    "subSector": "電力・DCインフラ",
    "class": "stock",
    "conviction": 4,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -19488,20 +17285,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 165.149994
+     "c": 166.464996
     }
    ],
    "state": "SELL",
-   "price": 165.15,
+   "price": 166.465,
    "top": 163.4019,
    "bottom": 139.0958,
    "band": 0.7292,
-   "pctInRange": 107.2,
-   "distToBottomPct": 18.73,
-   "distToTopPct": -1.06,
-   "smaShort": 162.962,
-   "smaLong": 159.8996,
-   "smaTrend": 143.1451,
+   "pctInRange": 112.6,
+   "distToBottomPct": 19.68,
+   "distToTopPct": -1.84,
+   "smaShort": 163.0277,
+   "smaLong": 159.9259,
+   "smaTrend": 143.1517,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -19509,15 +17306,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 52.4,
+   "rsi": 53.5,
    "atr": 8.6062,
-   "atrPct": 5.21,
+   "atrPct": 5.17,
    "high52w": 177.73,
-   "drawdownPct": 7.1,
+   "drawdownPct": 6.3,
    "macroDriven": null,
    "topLong": 153.2215,
    "bottomLong": 133.5628,
-   "pctInRangeLong": 160.7,
+   "pctInRangeLong": 167.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -19525,7 +17322,7 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
+   "side": "none",
    "actionable": false,
    "value": {
     "score": 10,
@@ -19538,12 +17335,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 16.1,
-    "breakoutHigh": 177.73,
-    "volConfirmed": false,
-    "trailStop": 143.6345,
-    "atrPct": 5.21
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -19551,7 +17343,7 @@
     "note": ""
    },
    "rec": {
-    "score": 0,
+    "score": 10,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -20210,20 +18002,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 307.565002
+     "c": 311.929993
     }
    ],
    "state": "DOWN",
-   "price": 307.565,
+   "price": 311.93,
    "top": 351.082,
    "bottom": 296.6311,
    "band": 1.6335,
-   "pctInRange": 20.1,
-   "distToBottomPct": 3.69,
-   "distToTopPct": 14.15,
-   "smaShort": 312.0708,
-   "smaLong": 324.7419,
-   "smaTrend": 232.5153,
+   "pctInRange": 28.1,
+   "distToBottomPct": 5.16,
+   "distToTopPct": 12.55,
+   "smaShort": 312.289,
+   "smaLong": 324.8292,
+   "smaTrend": 232.5372,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -20231,15 +18023,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 47.3,
-   "atr": 20.8671,
-   "atrPct": 6.78,
+   "rsi": 48.4,
+   "atr": 20.9192,
+   "atrPct": 6.71,
    "high52w": 376.23,
-   "drawdownPct": 18.3,
+   "drawdownPct": 17.1,
    "macroDriven": null,
    "topLong": 217.364,
    "bottomLong": 183.4607,
-   "pctInRangeLong": 366.1,
+   "pctInRangeLong": 378.9,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -20250,11 +18042,11 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 38,
+    "score": 36,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "高値-18% +8",
+     "高値-17% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4"
     ]
@@ -20269,7 +18061,7 @@
     "note": ""
    },
    "rec": {
-    "score": 38,
+    "score": 36,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -20288,7 +18080,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -20965,8 +18757,8 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
-   "actionable": false,
+   "side": "none",
+   "actionable": true,
    "value": {
     "score": 46,
     "tier": "none",
@@ -20979,21 +18771,16 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 4.9,
-    "breakoutHigh": 24.57,
-    "volConfirmed": false,
-    "trailStop": 21.5713,
-    "atrPct": 4.94
+    "note": "hold銘柄"
    },
    "holdMgmt": {
-    "thesisBreak": false,
+    "thesisBreak": true,
     "trim": false,
-    "note": ""
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 36,
-    "stars": 2,
+    "score": 46,
+    "stars": 3,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -21651,20 +19438,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 205.120697
+     "c": 204.979904
     }
    ],
    "state": "SELL",
-   "price": 205.1207,
+   "price": 204.9799,
    "top": 188.2036,
    "bottom": 173.8206,
    "band": 0.4315,
-   "pctInRange": 217.6,
-   "distToBottomPct": 18.01,
-   "distToTopPct": -8.25,
-   "smaShort": 183.903,
-   "smaLong": 175.9532,
-   "smaTrend": 195.3951,
+   "pctInRange": 216.6,
+   "distToBottomPct": 17.93,
+   "distToTopPct": -8.18,
+   "smaShort": 183.896,
+   "smaLong": 175.9504,
+   "smaTrend": 195.3944,
    "trend": "down",
    "trend200DownDays": 0,
    "cross": null,
@@ -21673,14 +19460,14 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 72.4,
-   "atr": 7.0958,
+   "atr": 7.0981,
    "atrPct": 3.46,
    "high52w": 244.29,
-   "drawdownPct": 16.0,
+   "drawdownPct": 16.1,
    "macroDriven": null,
    "topLong": 189.0961,
    "bottomLong": 173.8637,
-   "pctInRangeLong": 205.2,
+   "pctInRangeLong": 204.3,
    "trendLong": "down",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -22367,20 +20154,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 489.265015
+     "c": 493.722504
     }
    ],
    "state": "SUPER_SELL",
-   "price": 489.265,
+   "price": 493.7225,
    "top": 610.5537,
    "bottom": 525.8842,
    "band": 2.5401,
-   "pctInRange": -43.2,
-   "distToBottomPct": -6.96,
-   "distToTopPct": 24.79,
-   "smaShort": 490.0043,
-   "smaLong": 499.1041,
-   "smaTrend": 554.615,
+   "pctInRange": -38.0,
+   "distToBottomPct": -6.12,
+   "distToTopPct": 23.66,
+   "smaShort": 490.2271,
+   "smaLong": 499.1933,
+   "smaTrend": 554.6373,
    "trend": "up",
    "trend200DownDays": 7,
    "cross": "dead",
@@ -22388,15 +20175,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 9,
-   "rsi": 50.6,
-   "atr": 19.5765,
-   "atrPct": 4.0,
+   "rsi": 52.2,
+   "atr": 19.7168,
+   "atrPct": 3.99,
    "high52w": 662.19,
-   "drawdownPct": 26.1,
+   "drawdownPct": 25.4,
    "macroDriven": null,
    "topLong": 580.4191,
    "bottomLong": 519.4136,
-   "pctInRangeLong": -49.4,
+   "pctInRangeLong": -42.1,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -22413,7 +20200,7 @@
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(0%位置) +20",
-     "高値-26% +14",
+     "高値-25% +14",
      "5年トレンド上向き +6",
      "200日線上向き +4"
     ]
@@ -22432,10 +20219,10 @@
     "stars": 4,
     "level": "B",
     "action": "buy",
-    "expReturnPct": 24.79,
+    "expReturnPct": 23.66,
     "expDays": 9,
     "expPeriodLabel": "約9営業日",
-    "annualizedPct": 694.1,
+    "annualizedPct": 662.5,
     "note": "🟦購入検討"
    }
   },
@@ -22447,7 +20234,7 @@
    "subSector": "宇宙・防衛",
    "class": "stock",
    "conviction": 4,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [],
    "state": "NO_DATA",
    "stateLabel": "データ不足",
@@ -22480,6 +20267,2162 @@
    "holdMgmt": {
     "thesisBreak": false,
     "trim": false,
+    "note": ""
+   }
+  },
+  {
+   "key": "TLN",
+   "ticker": "TLN",
+   "name": "TLN",
+   "sector": "その他",
+   "subSector": "エネルギー",
+   "class": "stock",
+   "conviction": 3,
+   "tradePolicy": "hold",
+   "history": [
+    {
+     "d": "2025-11-11",
+     "c": 374.549988
+    },
+    {
+     "d": "2025-11-12",
+     "c": 367.540009
+    },
+    {
+     "d": "2025-11-13",
+     "c": 355.040009
+    },
+    {
+     "d": "2025-11-14",
+     "c": 360.920013
+    },
+    {
+     "d": "2025-11-17",
+     "c": 368.649994
+    },
+    {
+     "d": "2025-11-18",
+     "c": 374.799988
+    },
+    {
+     "d": "2025-11-19",
+     "c": 390.51001
+    },
+    {
+     "d": "2025-11-20",
+     "c": 369.100006
+    },
+    {
+     "d": "2025-11-21",
+     "c": 365.959991
+    },
+    {
+     "d": "2025-11-24",
+     "c": 380.48999
+    },
+    {
+     "d": "2025-11-25",
+     "c": 378.98999
+    },
+    {
+     "d": "2025-11-26",
+     "c": 392.420013
+    },
+    {
+     "d": "2025-11-28",
+     "c": 394.269989
+    },
+    {
+     "d": "2025-12-01",
+     "c": 379.98999
+    },
+    {
+     "d": "2025-12-02",
+     "c": 367.959991
+    },
+    {
+     "d": "2025-12-03",
+     "c": 365.459991
+    },
+    {
+     "d": "2025-12-04",
+     "c": 367.929993
+    },
+    {
+     "d": "2025-12-05",
+     "c": 354.23999
+    },
+    {
+     "d": "2025-12-08",
+     "c": 353.380005
+    },
+    {
+     "d": "2025-12-09",
+     "c": 348.380005
+    },
+    {
+     "d": "2025-12-10",
+     "c": 358.5
+    },
+    {
+     "d": "2025-12-11",
+     "c": 368.820007
+    },
+    {
+     "d": "2025-12-12",
+     "c": 356.359985
+    },
+    {
+     "d": "2025-12-15",
+     "c": 357.940002
+    },
+    {
+     "d": "2025-12-16",
+     "c": 376.769989
+    },
+    {
+     "d": "2025-12-17",
+     "c": 351.959991
+    },
+    {
+     "d": "2025-12-18",
+     "c": 371.720001
+    },
+    {
+     "d": "2025-12-19",
+     "c": 372.25
+    },
+    {
+     "d": "2025-12-22",
+     "c": 378.850006
+    },
+    {
+     "d": "2025-12-23",
+     "c": 380.75
+    },
+    {
+     "d": "2025-12-24",
+     "c": 383.579987
+    },
+    {
+     "d": "2025-12-26",
+     "c": 384.519989
+    },
+    {
+     "d": "2025-12-29",
+     "c": 380.269989
+    },
+    {
+     "d": "2025-12-30",
+     "c": 378.970001
+    },
+    {
+     "d": "2025-12-31",
+     "c": 374.839996
+    },
+    {
+     "d": "2026-01-02",
+     "c": 396.730011
+    },
+    {
+     "d": "2026-01-05",
+     "c": 395.200012
+    },
+    {
+     "d": "2026-01-06",
+     "c": 393.179993
+    },
+    {
+     "d": "2026-01-07",
+     "c": 374.709991
+    },
+    {
+     "d": "2026-01-08",
+     "c": 356.0
+    },
+    {
+     "d": "2026-01-09",
+     "c": 370.829987
+    },
+    {
+     "d": "2026-01-12",
+     "c": 369.029999
+    },
+    {
+     "d": "2026-01-13",
+     "c": 376.859985
+    },
+    {
+     "d": "2026-01-14",
+     "c": 374.829987
+    },
+    {
+     "d": "2026-01-15",
+     "c": 419.070007
+    },
+    {
+     "d": "2026-01-16",
+     "c": 371.660004
+    },
+    {
+     "d": "2026-01-20",
+     "c": 356.660004
+    },
+    {
+     "d": "2026-01-21",
+     "c": 374.309998
+    },
+    {
+     "d": "2026-01-22",
+     "c": 379.859985
+    },
+    {
+     "d": "2026-01-23",
+     "c": 366.429993
+    },
+    {
+     "d": "2026-01-26",
+     "c": 350.410004
+    },
+    {
+     "d": "2026-01-27",
+     "c": 359.51001
+    },
+    {
+     "d": "2026-01-28",
+     "c": 365.170013
+    },
+    {
+     "d": "2026-01-29",
+     "c": 362.200012
+    },
+    {
+     "d": "2026-01-30",
+     "c": 348.359985
+    },
+    {
+     "d": "2026-02-02",
+     "c": 340.799988
+    },
+    {
+     "d": "2026-02-03",
+     "c": 341.420013
+    },
+    {
+     "d": "2026-02-04",
+     "c": 317.049988
+    },
+    {
+     "d": "2026-02-05",
+     "c": 324.630005
+    },
+    {
+     "d": "2026-02-06",
+     "c": 345.0
+    },
+    {
+     "d": "2026-02-09",
+     "c": 353.660004
+    },
+    {
+     "d": "2026-02-10",
+     "c": 357.929993
+    },
+    {
+     "d": "2026-02-11",
+     "c": 354.619995
+    },
+    {
+     "d": "2026-02-12",
+     "c": 367.809998
+    },
+    {
+     "d": "2026-02-13",
+     "c": 376.700012
+    },
+    {
+     "d": "2026-02-17",
+     "c": 388.279999
+    },
+    {
+     "d": "2026-02-18",
+     "c": 380.290009
+    },
+    {
+     "d": "2026-02-19",
+     "c": 380.059998
+    },
+    {
+     "d": "2026-02-20",
+     "c": 382.25
+    },
+    {
+     "d": "2026-02-23",
+     "c": 367.839996
+    },
+    {
+     "d": "2026-02-24",
+     "c": 375.23999
+    },
+    {
+     "d": "2026-02-25",
+     "c": 391.429993
+    },
+    {
+     "d": "2026-02-26",
+     "c": 390.049988
+    },
+    {
+     "d": "2026-02-27",
+     "c": 370.970001
+    },
+    {
+     "d": "2026-03-02",
+     "c": 353.23999
+    },
+    {
+     "d": "2026-03-03",
+     "c": 341.390015
+    },
+    {
+     "d": "2026-03-04",
+     "c": 336.570007
+    },
+    {
+     "d": "2026-03-05",
+     "c": 334.859985
+    },
+    {
+     "d": "2026-03-06",
+     "c": 320.559998
+    },
+    {
+     "d": "2026-03-09",
+     "c": 335.109985
+    },
+    {
+     "d": "2026-03-10",
+     "c": 331.579987
+    },
+    {
+     "d": "2026-03-11",
+     "c": 316.220001
+    },
+    {
+     "d": "2026-03-12",
+     "c": 311.450012
+    },
+    {
+     "d": "2026-03-13",
+     "c": 316.140015
+    },
+    {
+     "d": "2026-03-16",
+     "c": 317.600006
+    },
+    {
+     "d": "2026-03-17",
+     "c": 327.140015
+    },
+    {
+     "d": "2026-03-18",
+     "c": 338.600006
+    },
+    {
+     "d": "2026-03-19",
+     "c": 340.070007
+    },
+    {
+     "d": "2026-03-20",
+     "c": 302.970001
+    },
+    {
+     "d": "2026-03-23",
+     "c": 311.019989
+    },
+    {
+     "d": "2026-03-24",
+     "c": 315.769989
+    },
+    {
+     "d": "2026-03-25",
+     "c": 328.290009
+    },
+    {
+     "d": "2026-03-26",
+     "c": 323.130005
+    },
+    {
+     "d": "2026-03-27",
+     "c": 324.540009
+    },
+    {
+     "d": "2026-03-30",
+     "c": 313.029999
+    },
+    {
+     "d": "2026-03-31",
+     "c": 319.230011
+    },
+    {
+     "d": "2026-04-01",
+     "c": 328.079987
+    },
+    {
+     "d": "2026-04-02",
+     "c": 327.579987
+    },
+    {
+     "d": "2026-04-06",
+     "c": 324.089996
+    },
+    {
+     "d": "2026-04-07",
+     "c": 330.070007
+    },
+    {
+     "d": "2026-04-08",
+     "c": 328.649994
+    },
+    {
+     "d": "2026-04-09",
+     "c": 312.76001
+    },
+    {
+     "d": "2026-04-10",
+     "c": 321.329987
+    },
+    {
+     "d": "2026-04-13",
+     "c": 326.079987
+    },
+    {
+     "d": "2026-04-14",
+     "c": 345.76001
+    },
+    {
+     "d": "2026-04-15",
+     "c": 353.299988
+    },
+    {
+     "d": "2026-04-16",
+     "c": 362.399994
+    },
+    {
+     "d": "2026-04-17",
+     "c": 365.350006
+    },
+    {
+     "d": "2026-04-20",
+     "c": 346.26001
+    },
+    {
+     "d": "2026-04-21",
+     "c": 329.73999
+    },
+    {
+     "d": "2026-04-22",
+     "c": 339.320007
+    },
+    {
+     "d": "2026-04-23",
+     "c": 345.25
+    },
+    {
+     "d": "2026-04-24",
+     "c": 364.320007
+    },
+    {
+     "d": "2026-04-27",
+     "c": 369.670013
+    },
+    {
+     "d": "2026-04-28",
+     "c": 361.170013
+    },
+    {
+     "d": "2026-04-29",
+     "c": 351.910004
+    },
+    {
+     "d": "2026-04-30",
+     "c": 372.420013
+    },
+    {
+     "d": "2026-05-01",
+     "c": 372.160004
+    },
+    {
+     "d": "2026-05-04",
+     "c": 384.640015
+    },
+    {
+     "d": "2026-05-05",
+     "c": 384.899994
+    },
+    {
+     "d": "2026-05-06",
+     "c": 409.98999
+    },
+    {
+     "d": "2026-05-07",
+     "c": 390.549988
+    },
+    {
+     "d": "2026-05-08",
+     "c": 386.369995
+    },
+    {
+     "d": "2026-05-11",
+     "c": 383.440002
+    },
+    {
+     "d": "2026-05-12",
+     "c": 374.609985
+    },
+    {
+     "d": "2026-05-13",
+     "c": 351.029999
+    },
+    {
+     "d": "2026-05-14",
+     "c": 352.880005
+    },
+    {
+     "d": "2026-05-15",
+     "c": 334.23999
+    },
+    {
+     "d": "2026-05-18",
+     "c": 324.209991
+    },
+    {
+     "d": "2026-05-19",
+     "c": 314.570007
+    },
+    {
+     "d": "2026-05-20",
+     "c": 344.459991
+    },
+    {
+     "d": "2026-05-21",
+     "c": 360.480011
+    },
+    {
+     "d": "2026-05-22",
+     "c": 372.450012
+    },
+    {
+     "d": "2026-05-26",
+     "c": 389.0
+    },
+    {
+     "d": "2026-05-27",
+     "c": 379.779999
+    },
+    {
+     "d": "2026-05-28",
+     "c": 381.470001
+    },
+    {
+     "d": "2026-05-29",
+     "c": 386.799988
+    },
+    {
+     "d": "2026-06-01",
+     "c": 377.200012
+    },
+    {
+     "d": "2026-06-02",
+     "c": 385.51001
+    },
+    {
+     "d": "2026-06-03",
+     "c": 379.589996
+    },
+    {
+     "d": "2026-06-04",
+     "c": 378.079987
+    },
+    {
+     "d": "2026-06-05",
+     "c": 364.73999
+    },
+    {
+     "d": "2026-06-08",
+     "c": 364.779999
+    },
+    {
+     "d": "2026-06-09",
+     "c": 358.73999
+    },
+    {
+     "d": "2026-06-10",
+     "c": 336.589996
+    },
+    {
+     "d": "2026-06-11",
+     "c": 344.799988
+    },
+    {
+     "d": "2026-06-12",
+     "c": 360.540009
+    },
+    {
+     "d": "2026-06-15",
+     "c": 386.209991
+    },
+    {
+     "d": "2026-06-16",
+     "c": 406.51001
+    },
+    {
+     "d": "2026-06-17",
+     "c": 409.809998
+    },
+    {
+     "d": "2026-06-18",
+     "c": 436.290009
+    },
+    {
+     "d": "2026-06-22",
+     "c": 438.119995
+    },
+    {
+     "d": "2026-06-23",
+     "c": 411.920013
+    },
+    {
+     "d": "2026-06-24",
+     "c": 405.890015
+    },
+    {
+     "d": "2026-06-25",
+     "c": 416.799988
+    },
+    {
+     "d": "2026-06-26",
+     "c": 404.089996
+    },
+    {
+     "d": "2026-06-29",
+     "c": 399.339996
+    },
+    {
+     "d": "2026-06-30",
+     "c": 384.26001
+    },
+    {
+     "d": "2026-07-01",
+     "c": 360.790009
+    },
+    {
+     "d": "2026-07-02",
+     "c": 374.86499
+    }
+   ],
+   "state": "UP",
+   "price": 374.865,
+   "top": 389.1302,
+   "bottom": 318.726,
+   "band": 2.1121,
+   "pctInRange": 79.7,
+   "distToBottomPct": 17.61,
+   "distToTopPct": 3.81,
+   "smaShort": 387.1582,
+   "smaLong": 375.3511,
+   "smaTrend": 372.3228,
+   "trend": "up",
+   "trend200DownDays": 2,
+   "cross": null,
+   "brokeAboveRecently": true,
+   "brokeBelowRecently": true,
+   "trendMethod": "pivot",
+   "cycleHalfDays": 8,
+   "rsi": 46.9,
+   "atr": 21.8811,
+   "atrPct": 5.84,
+   "high52w": 445.84,
+   "drawdownPct": 15.9,
+   "macroDriven": null,
+   "topLong": 445.3961,
+   "bottomLong": 382.0952,
+   "pctInRangeLong": -11.4,
+   "trendLong": "up",
+   "longRangeAvailable": true,
+   "longTermLow": true,
+   "counterTrend": false,
+   "stateLabel": "上昇中",
+   "emoji": "🟢",
+   "color": "#16a34a",
+   "side": "none",
+   "actionable": false,
+   "value": {
+    "score": 43,
+    "tier": "none",
+    "tierLabel": "-",
+    "factors": [
+     "5年レンジ下段(0%位置) +20",
+     "高値-16% +8",
+     "5年トレンド上向き +6",
+     "200日線上向き +4"
+    ]
+   },
+   "momentum": {
+    "signal": "none",
+    "note": "hold銘柄"
+   },
+   "holdMgmt": {
+    "thesisBreak": false,
+    "trim": false,
+    "note": ""
+   },
+   "rec": {
+    "score": 43,
+    "stars": 3,
+    "level": "-",
+    "action": "hold",
+    "expReturnPct": null,
+    "expDays": null,
+    "expPeriodLabel": null,
+    "annualizedPct": null,
+    "note": ""
+   }
+  },
+  {
+   "key": "MU",
+   "ticker": "MU",
+   "name": "MU",
+   "sector": "その他",
+   "subSector": "AI・半導体/クラウド",
+   "class": "stock",
+   "conviction": 3,
+   "tradePolicy": "hold",
+   "history": [
+    {
+     "d": "2025-11-11",
+     "c": 241.110001
+    },
+    {
+     "d": "2025-11-12",
+     "c": 244.899994
+    },
+    {
+     "d": "2025-11-13",
+     "c": 236.949997
+    },
+    {
+     "d": "2025-11-14",
+     "c": 246.830002
+    },
+    {
+     "d": "2025-11-17",
+     "c": 241.949997
+    },
+    {
+     "d": "2025-11-18",
+     "c": 228.5
+    },
+    {
+     "d": "2025-11-19",
+     "c": 225.919998
+    },
+    {
+     "d": "2025-11-20",
+     "c": 201.369995
+    },
+    {
+     "d": "2025-11-21",
+     "c": 207.369995
+    },
+    {
+     "d": "2025-11-24",
+     "c": 223.929993
+    },
+    {
+     "d": "2025-11-25",
+     "c": 224.529999
+    },
+    {
+     "d": "2025-11-26",
+     "c": 230.259995
+    },
+    {
+     "d": "2025-11-28",
+     "c": 236.479996
+    },
+    {
+     "d": "2025-12-01",
+     "c": 240.460007
+    },
+    {
+     "d": "2025-12-02",
+     "c": 239.490005
+    },
+    {
+     "d": "2025-12-03",
+     "c": 234.160004
+    },
+    {
+     "d": "2025-12-04",
+     "c": 226.649994
+    },
+    {
+     "d": "2025-12-05",
+     "c": 237.220001
+    },
+    {
+     "d": "2025-12-08",
+     "c": 246.919998
+    },
+    {
+     "d": "2025-12-09",
+     "c": 252.419998
+    },
+    {
+     "d": "2025-12-10",
+     "c": 263.709991
+    },
+    {
+     "d": "2025-12-11",
+     "c": 258.459991
+    },
+    {
+     "d": "2025-12-12",
+     "c": 241.139999
+    },
+    {
+     "d": "2025-12-15",
+     "c": 237.5
+    },
+    {
+     "d": "2025-12-16",
+     "c": 232.509995
+    },
+    {
+     "d": "2025-12-17",
+     "c": 225.520004
+    },
+    {
+     "d": "2025-12-18",
+     "c": 248.550003
+    },
+    {
+     "d": "2025-12-19",
+     "c": 265.920013
+    },
+    {
+     "d": "2025-12-22",
+     "c": 276.589996
+    },
+    {
+     "d": "2025-12-23",
+     "c": 276.269989
+    },
+    {
+     "d": "2025-12-24",
+     "c": 286.679993
+    },
+    {
+     "d": "2025-12-26",
+     "c": 284.790009
+    },
+    {
+     "d": "2025-12-29",
+     "c": 294.369995
+    },
+    {
+     "d": "2025-12-30",
+     "c": 292.630005
+    },
+    {
+     "d": "2025-12-31",
+     "c": 285.410004
+    },
+    {
+     "d": "2026-01-02",
+     "c": 315.420013
+    },
+    {
+     "d": "2026-01-05",
+     "c": 312.149994
+    },
+    {
+     "d": "2026-01-06",
+     "c": 343.429993
+    },
+    {
+     "d": "2026-01-07",
+     "c": 339.549988
+    },
+    {
+     "d": "2026-01-08",
+     "c": 327.019989
+    },
+    {
+     "d": "2026-01-09",
+     "c": 345.089996
+    },
+    {
+     "d": "2026-01-12",
+     "c": 345.869995
+    },
+    {
+     "d": "2026-01-13",
+     "c": 338.130005
+    },
+    {
+     "d": "2026-01-14",
+     "c": 333.350006
+    },
+    {
+     "d": "2026-01-15",
+     "c": 336.630005
+    },
+    {
+     "d": "2026-01-16",
+     "c": 362.75
+    },
+    {
+     "d": "2026-01-20",
+     "c": 365.0
+    },
+    {
+     "d": "2026-01-21",
+     "c": 389.109985
+    },
+    {
+     "d": "2026-01-22",
+     "c": 397.579987
+    },
+    {
+     "d": "2026-01-23",
+     "c": 399.649994
+    },
+    {
+     "d": "2026-01-26",
+     "c": 389.089996
+    },
+    {
+     "d": "2026-01-27",
+     "c": 410.23999
+    },
+    {
+     "d": "2026-01-28",
+     "c": 435.279999
+    },
+    {
+     "d": "2026-01-29",
+     "c": 435.790009
+    },
+    {
+     "d": "2026-01-30",
+     "c": 414.880005
+    },
+    {
+     "d": "2026-02-02",
+     "c": 437.799988
+    },
+    {
+     "d": "2026-02-03",
+     "c": 419.440002
+    },
+    {
+     "d": "2026-02-04",
+     "c": 379.399994
+    },
+    {
+     "d": "2026-02-05",
+     "c": 382.890015
+    },
+    {
+     "d": "2026-02-06",
+     "c": 394.690002
+    },
+    {
+     "d": "2026-02-09",
+     "c": 383.5
+    },
+    {
+     "d": "2026-02-10",
+     "c": 373.25
+    },
+    {
+     "d": "2026-02-11",
+     "c": 410.339996
+    },
+    {
+     "d": "2026-02-12",
+     "c": 413.970001
+    },
+    {
+     "d": "2026-02-13",
+     "c": 411.660004
+    },
+    {
+     "d": "2026-02-17",
+     "c": 399.779999
+    },
+    {
+     "d": "2026-02-18",
+     "c": 420.950012
+    },
+    {
+     "d": "2026-02-19",
+     "c": 417.350006
+    },
+    {
+     "d": "2026-02-20",
+     "c": 428.170013
+    },
+    {
+     "d": "2026-02-23",
+     "c": 420.970001
+    },
+    {
+     "d": "2026-02-24",
+     "c": 418.01001
+    },
+    {
+     "d": "2026-02-25",
+     "c": 429.0
+    },
+    {
+     "d": "2026-02-26",
+     "c": 415.559998
+    },
+    {
+     "d": "2026-02-27",
+     "c": 412.369995
+    },
+    {
+     "d": "2026-03-02",
+     "c": 412.670013
+    },
+    {
+     "d": "2026-03-03",
+     "c": 379.679993
+    },
+    {
+     "d": "2026-03-04",
+     "c": 400.769989
+    },
+    {
+     "d": "2026-03-05",
+     "c": 397.049988
+    },
+    {
+     "d": "2026-03-06",
+     "c": 370.299988
+    },
+    {
+     "d": "2026-03-09",
+     "c": 389.320007
+    },
+    {
+     "d": "2026-03-10",
+     "c": 403.109985
+    },
+    {
+     "d": "2026-03-11",
+     "c": 418.690002
+    },
+    {
+     "d": "2026-03-12",
+     "c": 405.350006
+    },
+    {
+     "d": "2026-03-13",
+     "c": 426.130005
+    },
+    {
+     "d": "2026-03-16",
+     "c": 441.799988
+    },
+    {
+     "d": "2026-03-17",
+     "c": 461.690002
+    },
+    {
+     "d": "2026-03-18",
+     "c": 461.730011
+    },
+    {
+     "d": "2026-03-19",
+     "c": 444.269989
+    },
+    {
+     "d": "2026-03-20",
+     "c": 422.899994
+    },
+    {
+     "d": "2026-03-23",
+     "c": 404.350006
+    },
+    {
+     "d": "2026-03-24",
+     "c": 395.529999
+    },
+    {
+     "d": "2026-03-25",
+     "c": 382.089996
+    },
+    {
+     "d": "2026-03-26",
+     "c": 355.459991
+    },
+    {
+     "d": "2026-03-27",
+     "c": 357.220001
+    },
+    {
+     "d": "2026-03-30",
+     "c": 321.799988
+    },
+    {
+     "d": "2026-03-31",
+     "c": 337.839996
+    },
+    {
+     "d": "2026-04-01",
+     "c": 367.850006
+    },
+    {
+     "d": "2026-04-02",
+     "c": 366.23999
+    },
+    {
+     "d": "2026-04-06",
+     "c": 377.76001
+    },
+    {
+     "d": "2026-04-07",
+     "c": 377.579987
+    },
+    {
+     "d": "2026-04-08",
+     "c": 406.730011
+    },
+    {
+     "d": "2026-04-09",
+     "c": 421.51001
+    },
+    {
+     "d": "2026-04-10",
+     "c": 420.589996
+    },
+    {
+     "d": "2026-04-13",
+     "c": 426.559998
+    },
+    {
+     "d": "2026-04-14",
+     "c": 465.660004
+    },
+    {
+     "d": "2026-04-15",
+     "c": 456.230011
+    },
+    {
+     "d": "2026-04-16",
+     "c": 457.230011
+    },
+    {
+     "d": "2026-04-17",
+     "c": 455.070007
+    },
+    {
+     "d": "2026-04-20",
+     "c": 448.420013
+    },
+    {
+     "d": "2026-04-21",
+     "c": 449.380005
+    },
+    {
+     "d": "2026-04-22",
+     "c": 487.480011
+    },
+    {
+     "d": "2026-04-23",
+     "c": 481.720001
+    },
+    {
+     "d": "2026-04-24",
+     "c": 496.720001
+    },
+    {
+     "d": "2026-04-27",
+     "c": 524.559998
+    },
+    {
+     "d": "2026-04-28",
+     "c": 504.290009
+    },
+    {
+     "d": "2026-04-29",
+     "c": 518.460022
+    },
+    {
+     "d": "2026-04-30",
+     "c": 517.159973
+    },
+    {
+     "d": "2026-05-01",
+     "c": 542.210022
+    },
+    {
+     "d": "2026-05-04",
+     "c": 576.450012
+    },
+    {
+     "d": "2026-05-05",
+     "c": 640.200012
+    },
+    {
+     "d": "2026-05-06",
+     "c": 666.590027
+    },
+    {
+     "d": "2026-05-07",
+     "c": 646.630005
+    },
+    {
+     "d": "2026-05-08",
+     "c": 746.809998
+    },
+    {
+     "d": "2026-05-11",
+     "c": 795.330017
+    },
+    {
+     "d": "2026-05-12",
+     "c": 766.580017
+    },
+    {
+     "d": "2026-05-13",
+     "c": 803.630005
+    },
+    {
+     "d": "2026-05-14",
+     "c": 776.01001
+    },
+    {
+     "d": "2026-05-15",
+     "c": 724.659973
+    },
+    {
+     "d": "2026-05-18",
+     "c": 681.539978
+    },
+    {
+     "d": "2026-05-19",
+     "c": 698.73999
+    },
+    {
+     "d": "2026-05-20",
+     "c": 731.98999
+    },
+    {
+     "d": "2026-05-21",
+     "c": 762.099976
+    },
+    {
+     "d": "2026-05-22",
+     "c": 751.0
+    },
+    {
+     "d": "2026-05-26",
+     "c": 895.880005
+    },
+    {
+     "d": "2026-05-27",
+     "c": 928.409973
+    },
+    {
+     "d": "2026-05-28",
+     "c": 923.52002
+    },
+    {
+     "d": "2026-05-29",
+     "c": 971.0
+    },
+    {
+     "d": "2026-06-01",
+     "c": 1035.5
+    },
+    {
+     "d": "2026-06-02",
+     "c": 1064.099976
+    },
+    {
+     "d": "2026-06-03",
+     "c": 1079.569946
+    },
+    {
+     "d": "2026-06-04",
+     "c": 996.0
+    },
+    {
+     "d": "2026-06-05",
+     "c": 864.01001
+    },
+    {
+     "d": "2026-06-08",
+     "c": 949.280029
+    },
+    {
+     "d": "2026-06-09",
+     "c": 935.890015
+    },
+    {
+     "d": "2026-06-10",
+     "c": 891.880005
+    },
+    {
+     "d": "2026-06-11",
+     "c": 995.869995
+    },
+    {
+     "d": "2026-06-12",
+     "c": 981.609985
+    },
+    {
+     "d": "2026-06-15",
+     "c": 1087.98999
+    },
+    {
+     "d": "2026-06-16",
+     "c": 1020.76001
+    },
+    {
+     "d": "2026-06-17",
+     "c": 1043.189941
+    },
+    {
+     "d": "2026-06-18",
+     "c": 1133.98999
+    },
+    {
+     "d": "2026-06-22",
+     "c": 1211.380005
+    },
+    {
+     "d": "2026-06-23",
+     "c": 1051.77002
+    },
+    {
+     "d": "2026-06-24",
+     "c": 1048.51001
+    },
+    {
+     "d": "2026-06-25",
+     "c": 1213.560059
+    },
+    {
+     "d": "2026-06-26",
+     "c": 1132.329956
+    },
+    {
+     "d": "2026-06-29",
+     "c": 1145.280029
+    },
+    {
+     "d": "2026-06-30",
+     "c": 1154.290039
+    },
+    {
+     "d": "2026-07-01",
+     "c": 1032.280029
+    },
+    {
+     "d": "2026-07-02",
+     "c": 1056.5
+    }
+   ],
+   "state": "SELL",
+   "price": 1056.5,
+   "top": 922.8562,
+   "bottom": 683.6442,
+   "band": 7.1764,
+   "pctInRange": 155.9,
+   "distToBottomPct": 54.54,
+   "distToTopPct": -12.65,
+   "smaShort": 1047.3185,
+   "smaLong": 853.7042,
+   "smaTrend": 444.7492,
+   "trend": "up",
+   "trend200DownDays": 0,
+   "cross": null,
+   "brokeAboveRecently": true,
+   "brokeBelowRecently": true,
+   "trendMethod": "pivot",
+   "cycleHalfDays": 7,
+   "rsi": 53.2,
+   "atr": 91.2262,
+   "atrPct": 8.63,
+   "high52w": 1213.5601,
+   "drawdownPct": 12.9,
+   "macroDriven": null,
+   "topLong": 365.7506,
+   "bottomLong": 245.9238,
+   "pctInRangeLong": 676.5,
+   "trendLong": "up",
+   "longRangeAvailable": true,
+   "longTermLow": false,
+   "counterTrend": false,
+   "stateLabel": "売り場",
+   "emoji": "🟥",
+   "color": "#dc2626",
+   "side": "none",
+   "actionable": false,
+   "value": {
+    "score": 18,
+    "tier": "none",
+    "tierLabel": "-",
+    "factors": [
+     "高値-13% +8",
+     "5年トレンド上向き +6",
+     "200日線上向き +4"
+    ]
+   },
+   "momentum": {
+    "signal": "none",
+    "note": "hold銘柄"
+   },
+   "holdMgmt": {
+    "thesisBreak": false,
+    "trim": false,
+    "note": ""
+   },
+   "rec": {
+    "score": 18,
+    "stars": 1,
+    "level": "-",
+    "action": "hold",
+    "expReturnPct": null,
+    "expDays": null,
+    "expPeriodLabel": null,
+    "annualizedPct": null,
+    "note": ""
+   }
+  },
+  {
+   "key": "ARM",
+   "ticker": "ARM",
+   "name": "ARM",
+   "sector": "その他",
+   "subSector": "AI・半導体/クラウド",
+   "class": "stock",
+   "conviction": 3,
+   "tradePolicy": "hold",
+   "history": [
+    {
+     "d": "2025-11-11",
+     "c": 149.740005
+    },
+    {
+     "d": "2025-11-12",
+     "c": 148.75
+    },
+    {
+     "d": "2025-11-13",
+     "c": 140.309998
+    },
+    {
+     "d": "2025-11-14",
+     "c": 139.770004
+    },
+    {
+     "d": "2025-11-17",
+     "c": 140.259995
+    },
+    {
+     "d": "2025-11-18",
+     "c": 136.039993
+    },
+    {
+     "d": "2025-11-19",
+     "c": 136.990005
+    },
+    {
+     "d": "2025-11-20",
+     "c": 132.529999
+    },
+    {
+     "d": "2025-11-21",
+     "c": 131.570007
+    },
+    {
+     "d": "2025-11-24",
+     "c": 134.710007
+    },
+    {
+     "d": "2025-11-25",
+     "c": 131.440002
+    },
+    {
+     "d": "2025-11-26",
+     "c": 132.610001
+    },
+    {
+     "d": "2025-11-28",
+     "c": 135.559998
+    },
+    {
+     "d": "2025-12-01",
+     "c": 135.009995
+    },
+    {
+     "d": "2025-12-02",
+     "c": 136.479996
+    },
+    {
+     "d": "2025-12-03",
+     "c": 139.190002
+    },
+    {
+     "d": "2025-12-04",
+     "c": 140.490005
+    },
+    {
+     "d": "2025-12-05",
+     "c": 141.309998
+    },
+    {
+     "d": "2025-12-08",
+     "c": 139.779999
+    },
+    {
+     "d": "2025-12-09",
+     "c": 141.929993
+    },
+    {
+     "d": "2025-12-10",
+     "c": 141.520004
+    },
+    {
+     "d": "2025-12-11",
+     "c": 136.139999
+    },
+    {
+     "d": "2025-12-12",
+     "c": 130.889999
+    },
+    {
+     "d": "2025-12-15",
+     "c": 124.370003
+    },
+    {
+     "d": "2025-12-16",
+     "c": 121.099998
+    },
+    {
+     "d": "2025-12-17",
+     "c": 114.580002
+    },
+    {
+     "d": "2025-12-18",
+     "c": 113.510002
+    },
+    {
+     "d": "2025-12-19",
+     "c": 114.029999
+    },
+    {
+     "d": "2025-12-22",
+     "c": 113.290001
+    },
+    {
+     "d": "2025-12-23",
+     "c": 112.019997
+    },
+    {
+     "d": "2025-12-24",
+     "c": 111.550003
+    },
+    {
+     "d": "2025-12-26",
+     "c": 110.269997
+    },
+    {
+     "d": "2025-12-29",
+     "c": 110.510002
+    },
+    {
+     "d": "2025-12-30",
+     "c": 110.860001
+    },
+    {
+     "d": "2025-12-31",
+     "c": 109.309998
+    },
+    {
+     "d": "2026-01-02",
+     "c": 114.730003
+    },
+    {
+     "d": "2026-01-05",
+     "c": 116.110001
+    },
+    {
+     "d": "2026-01-06",
+     "c": 115.529999
+    },
+    {
+     "d": "2026-01-07",
+     "c": 115.68
+    },
+    {
+     "d": "2026-01-08",
+     "c": 113.080002
+    },
+    {
+     "d": "2026-01-09",
+     "c": 111.790001
+    },
+    {
+     "d": "2026-01-12",
+     "c": 111.139999
+    },
+    {
+     "d": "2026-01-13",
+     "c": 107.839996
+    },
+    {
+     "d": "2026-01-14",
+     "c": 104.989998
+    },
+    {
+     "d": "2026-01-15",
+     "c": 105.110001
+    },
+    {
+     "d": "2026-01-16",
+     "c": 105.779999
+    },
+    {
+     "d": "2026-01-20",
+     "c": 107.169998
+    },
+    {
+     "d": "2026-01-21",
+     "c": 113.919998
+    },
+    {
+     "d": "2026-01-22",
+     "c": 119.199997
+    },
+    {
+     "d": "2026-01-23",
+     "c": 116.07
+    },
+    {
+     "d": "2026-01-26",
+     "c": 114.730003
+    },
+    {
+     "d": "2026-01-27",
+     "c": 114.879997
+    },
+    {
+     "d": "2026-01-28",
+     "c": 109.959999
+    },
+    {
+     "d": "2026-01-29",
+     "c": 108.43
+    },
+    {
+     "d": "2026-01-30",
+     "c": 105.360001
+    },
+    {
+     "d": "2026-02-02",
+     "c": 106.93
+    },
+    {
+     "d": "2026-02-03",
+     "c": 104.550003
+    },
+    {
+     "d": "2026-02-04",
+     "c": 104.900002
+    },
+    {
+     "d": "2026-02-05",
+     "c": 110.879997
+    },
+    {
+     "d": "2026-02-06",
+     "c": 123.699997
+    },
+    {
+     "d": "2026-02-09",
+     "c": 124.610001
+    },
+    {
+     "d": "2026-02-10",
+     "c": 125.949997
+    },
+    {
+     "d": "2026-02-11",
+     "c": 125.279999
+    },
+    {
+     "d": "2026-02-12",
+     "c": 122.190002
+    },
+    {
+     "d": "2026-02-13",
+     "c": 125.279999
+    },
+    {
+     "d": "2026-02-17",
+     "c": 126.889999
+    },
+    {
+     "d": "2026-02-18",
+     "c": 127.239998
+    },
+    {
+     "d": "2026-02-19",
+     "c": 126.93
+    },
+    {
+     "d": "2026-02-20",
+     "c": 125.580002
+    },
+    {
+     "d": "2026-02-23",
+     "c": 123.779999
+    },
+    {
+     "d": "2026-02-24",
+     "c": 128.139999
+    },
+    {
+     "d": "2026-02-25",
+     "c": 131.740005
+    },
+    {
+     "d": "2026-02-26",
+     "c": 129.259995
+    },
+    {
+     "d": "2026-02-27",
+     "c": 127.449997
+    },
+    {
+     "d": "2026-03-02",
+     "c": 124.370003
+    },
+    {
+     "d": "2026-03-03",
+     "c": 121.720001
+    },
+    {
+     "d": "2026-03-04",
+     "c": 124.110001
+    },
+    {
+     "d": "2026-03-05",
+     "c": 120.620003
+    },
+    {
+     "d": "2026-03-06",
+     "c": 114.379997
+    },
+    {
+     "d": "2026-03-09",
+     "c": 117.629997
+    },
+    {
+     "d": "2026-03-10",
+     "c": 120.550003
+    },
+    {
+     "d": "2026-03-11",
+     "c": 120.099998
+    },
+    {
+     "d": "2026-03-12",
+     "c": 115.120003
+    },
+    {
+     "d": "2026-03-13",
+     "c": 115.75
+    },
+    {
+     "d": "2026-03-16",
+     "c": 121.699997
+    },
+    {
+     "d": "2026-03-17",
+     "c": 127.309998
+    },
+    {
+     "d": "2026-03-18",
+     "c": 128.360001
+    },
+    {
+     "d": "2026-03-19",
+     "c": 129.820007
+    },
+    {
+     "d": "2026-03-20",
+     "c": 132.350006
+    },
+    {
+     "d": "2026-03-23",
+     "c": 136.889999
+    },
+    {
+     "d": "2026-03-24",
+     "c": 134.960007
+    },
+    {
+     "d": "2026-03-25",
+     "c": 157.070007
+    },
+    {
+     "d": "2026-03-26",
+     "c": 154.800003
+    },
+    {
+     "d": "2026-03-27",
+     "c": 144.130005
+    },
+    {
+     "d": "2026-03-30",
+     "c": 136.960007
+    },
+    {
+     "d": "2026-03-31",
+     "c": 151.279999
+    },
+    {
+     "d": "2026-04-01",
+     "c": 155.070007
+    },
+    {
+     "d": "2026-04-02",
+     "c": 149.110001
+    },
+    {
+     "d": "2026-04-06",
+     "c": 148.770004
+    },
+    {
+     "d": "2026-04-07",
+     "c": 143.860001
+    },
+    {
+     "d": "2026-04-08",
+     "c": 148.910004
+    },
+    {
+     "d": "2026-04-09",
+     "c": 149.794998
+    },
+    {
+     "d": "2026-04-10",
+     "c": 148.929993
+    },
+    {
+     "d": "2026-04-13",
+     "c": 157.580002
+    },
+    {
+     "d": "2026-04-14",
+     "c": 161.220001
+    },
+    {
+     "d": "2026-04-15",
+     "c": 159.339996
+    },
+    {
+     "d": "2026-04-16",
+     "c": 162.330002
+    },
+    {
+     "d": "2026-04-17",
+     "c": 166.729996
+    },
+    {
+     "d": "2026-04-20",
+     "c": 175.100006
+    },
+    {
+     "d": "2026-04-21",
+     "c": 175.490005
+    },
+    {
+     "d": "2026-04-22",
+     "c": 196.570007
+    },
+    {
+     "d": "2026-04-23",
+     "c": 204.610001
+    },
+    {
+     "d": "2026-04-24",
+     "c": 234.809998
+    },
+    {
+     "d": "2026-04-27",
+     "c": 215.880005
+    },
+    {
+     "d": "2026-04-28",
+     "c": 198.649994
+    },
+    {
+     "d": "2026-04-29",
+     "c": 201.690002
+    },
+    {
+     "d": "2026-04-30",
+     "c": 210.320007
+    },
+    {
+     "d": "2026-05-01",
+     "c": 211.179993
+    },
+    {
+     "d": "2026-05-04",
+     "c": 203.259995
+    },
+    {
+     "d": "2026-05-05",
+     "c": 208.839996
+    },
+    {
+     "d": "2026-05-06",
+     "c": 237.300003
+    },
+    {
+     "d": "2026-05-07",
+     "c": 213.309998
+    },
+    {
+     "d": "2026-05-08",
+     "c": 213.270004
+    },
+    {
+     "d": "2026-05-11",
+     "c": 212.649994
+    },
+    {
+     "d": "2026-05-12",
+     "c": 207.919998
+    },
+    {
+     "d": "2026-05-13",
+     "c": 221.210007
+    },
+    {
+     "d": "2026-05-14",
+     "c": 228.5
+    },
+    {
+     "d": "2026-05-15",
+     "c": 209.160004
+    },
+    {
+     "d": "2026-05-18",
+     "c": 215.119995
+    },
+    {
+     "d": "2026-05-19",
+     "c": 223.149994
+    },
+    {
+     "d": "2026-05-20",
+     "c": 256.730011
+    },
+    {
+     "d": "2026-05-21",
+     "c": 298.230011
+    },
+    {
+     "d": "2026-05-22",
+     "c": 306.51001
+    },
+    {
+     "d": "2026-05-26",
+     "c": 321.220001
+    },
+    {
+     "d": "2026-05-27",
+     "c": 302.709991
+    },
+    {
+     "d": "2026-05-28",
+     "c": 335.269989
+    },
+    {
+     "d": "2026-05-29",
+     "c": 353.290009
+    },
+    {
+     "d": "2026-06-01",
+     "c": 408.850006
+    },
+    {
+     "d": "2026-06-02",
+     "c": 402.709991
+    },
+    {
+     "d": "2026-06-03",
+     "c": 411.829987
+    },
+    {
+     "d": "2026-06-04",
+     "c": 393.440002
+    },
+    {
+     "d": "2026-06-05",
+     "c": 342.929993
+    },
+    {
+     "d": "2026-06-08",
+     "c": 346.390015
+    },
+    {
+     "d": "2026-06-09",
+     "c": 324.859985
+    },
+    {
+     "d": "2026-06-10",
+     "c": 307.429993
+    },
+    {
+     "d": "2026-06-11",
+     "c": 342.230011
+    },
+    {
+     "d": "2026-06-12",
+     "c": 380.809998
+    },
+    {
+     "d": "2026-06-15",
+     "c": 412.549988
+    },
+    {
+     "d": "2026-06-16",
+     "c": 396.339996
+    },
+    {
+     "d": "2026-06-17",
+     "c": 418.880005
+    },
+    {
+     "d": "2026-06-18",
+     "c": 439.459991
+    },
+    {
+     "d": "2026-06-22",
+     "c": 407.720001
+    },
+    {
+     "d": "2026-06-23",
+     "c": 366.390015
+    },
+    {
+     "d": "2026-06-24",
+     "c": 359.079987
+    },
+    {
+     "d": "2026-06-25",
+     "c": 347.709991
+    },
+    {
+     "d": "2026-06-26",
+     "c": 334.269989
+    },
+    {
+     "d": "2026-06-29",
+     "c": 343.579987
+    },
+    {
+     "d": "2026-06-30",
+     "c": 354.570007
+    },
+    {
+     "d": "2026-07-01",
+     "c": 337.470001
+    },
+    {
+     "d": "2026-07-02",
+     "c": 348.299988
+    }
+   ],
+   "state": "SELL",
+   "price": 348.3,
+   "top": 302.8729,
+   "bottom": 195.8829,
+   "band": 3.2097,
+   "pctInRange": 142.5,
+   "distToBottomPct": 77.81,
+   "distToTopPct": -13.04,
+   "smaShort": 365.2205,
+   "smaLong": 299.3832,
+   "smaTrend": 177.3371,
+   "trend": "up",
+   "trend200DownDays": 0,
+   "cross": null,
+   "brokeAboveRecently": true,
+   "brokeBelowRecently": true,
+   "trendMethod": "pivot",
+   "cycleHalfDays": 8,
+   "rsi": 50.9,
+   "atr": 32.3783,
+   "atrPct": 9.3,
+   "high52w": 439.46,
+   "drawdownPct": 20.7,
+   "macroDriven": false,
+   "topLong": 232.9488,
+   "bottomLong": 171.9318,
+   "pctInRangeLong": 289.0,
+   "trendLong": "up",
+   "longRangeAvailable": true,
+   "longTermLow": false,
+   "counterTrend": false,
+   "stateLabel": "売り場",
+   "emoji": "🟥",
+   "color": "#dc2626",
+   "side": "none",
+   "actionable": false,
+   "value": {
+    "score": 9,
+    "tier": "none",
+    "tierLabel": "-",
+    "factors": [
+     "高値-21% +14",
+     "個別要因の下落の疑い(falling knife) -15",
+     "5年トレンド上向き +6",
+     "200日線上向き +4"
+    ]
+   },
+   "momentum": {
+    "signal": "none",
+    "note": "hold銘柄"
+   },
+   "holdMgmt": {
+    "thesisBreak": false,
+    "trim": false,
+    "note": ""
+   },
+   "rec": {
+    "score": 9,
+    "stars": 1,
+    "level": "-",
+    "action": "hold",
+    "expReturnPct": null,
+    "expDays": null,
+    "expPeriodLabel": null,
+    "annualizedPct": null,
     "note": ""
    }
   },
@@ -23131,20 +23074,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 61821.988281
+     "c": 61880.011719
     }
    ],
    "state": "DOWN",
-   "price": 61821.9883,
+   "price": 61880.0117,
    "top": 64244.5957,
    "bottom": 55634.3041,
    "band": 258.3087,
-   "pctInRange": 71.9,
-   "distToBottomPct": 11.12,
-   "distToTopPct": 3.92,
-   "smaShort": 62385.1809,
-   "smaLong": 67741.539,
-   "smaTrend": 75071.3778,
+   "pctInRange": 72.5,
+   "distToBottomPct": 11.23,
+   "distToTopPct": 3.82,
+   "smaShort": 62388.082,
+   "smaLong": 67742.6995,
+   "smaTrend": 75071.6679,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -23152,15 +23095,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 45.0,
-   "atr": 2263.5793,
-   "atrPct": 3.66,
+   "rsi": 45.2,
+   "atr": 2271.1329,
+   "atrPct": 3.67,
    "high52w": 114472.4453,
-   "drawdownPct": 46.0,
+   "drawdownPct": 45.9,
    "macroDriven": null,
    "topLong": 118737.886,
    "bottomLong": 102371.0893,
-   "pctInRangeLong": -247.8,
+   "pctInRangeLong": -247.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -23849,20 +23792,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 1705.189941
+     "c": 1711.439941
     }
    ],
    "state": "SELL",
-   "price": 1705.1899,
+   "price": 1711.4399,
    "top": 1560.2607,
    "bottom": 1436.4606,
    "band": 3.714,
-   "pctInRange": 217.1,
-   "distToBottomPct": 18.71,
-   "distToTopPct": -8.5,
-   "smaShort": 1669.5833,
-   "smaLong": 1835.8043,
-   "smaTrend": 2280.0754,
+   "pctInRange": 222.1,
+   "distToBottomPct": 19.14,
+   "distToTopPct": -8.83,
+   "smaShort": 1669.8958,
+   "smaLong": 1835.9293,
+   "smaTrend": 2280.1067,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -23870,15 +23813,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 50.5,
-   "atr": 80.4834,
-   "atrPct": 4.72,
+   "rsi": 51.1,
+   "atr": 80.9751,
+   "atrPct": 4.73,
    "high52w": 4157.9893,
-   "drawdownPct": 59.0,
+   "drawdownPct": 58.8,
    "macroDriven": null,
    "topLong": 3502.4169,
    "bottomLong": 2980.6705,
-   "pctInRangeLong": -244.5,
+   "pctInRangeLong": -243.3,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -24567,20 +24510,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 4129.399902
+     "c": 4141.0
     }
    ],
    "state": "BUY",
-   "price": 4129.3999,
+   "price": 4141.0,
    "top": 5224.4736,
    "bottom": 4680.365,
    "band": 16.3233,
-   "pctInRange": -101.3,
-   "distToBottomPct": -11.77,
-   "distToTopPct": 26.52,
-   "smaShort": 4185.92,
-   "smaLong": 4429.998,
-   "smaTrend": 4456.3615,
+   "pctInRange": -99.1,
+   "distToBottomPct": -11.52,
+   "distToTopPct": 26.16,
+   "smaShort": 4186.5,
+   "smaLong": 4430.23,
+   "smaTrend": 4456.4195,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -24588,15 +24531,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 42.4,
+   "rsi": 43.2,
    "atr": 95.5684,
    "atrPct": 2.31,
    "high52w": 5318.3999,
-   "drawdownPct": 22.4,
+   "drawdownPct": 22.1,
    "macroDriven": null,
    "topLong": 4215.3493,
    "bottomLong": 3893.3495,
-   "pctInRangeLong": 73.3,
+   "pctInRangeLong": 76.9,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -25287,20 +25230,20 @@
     },
     {
      "d": "2026-07-02",
-     "c": 61.470001
+     "c": 62.07
     }
    ],
    "state": "BUY",
-   "price": 61.47,
+   "price": 62.07,
    "top": 99.9573,
    "bottom": 74.6843,
    "band": 0.7582,
-   "pctInRange": -52.3,
-   "distToBottomPct": -17.69,
-   "distToTopPct": 62.61,
-   "smaShort": 64.5935,
-   "smaLong": 72.0311,
-   "smaTrend": 68.621,
+   "pctInRange": -49.9,
+   "distToBottomPct": -16.89,
+   "distToTopPct": 61.04,
+   "smaShort": 64.6235,
+   "smaLong": 72.0431,
+   "smaTrend": 68.624,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -25308,15 +25251,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 39.0,
-   "atr": 2.4915,
-   "atrPct": 4.05,
+   "rsi": 40.5,
+   "atr": 2.4954,
+   "atrPct": 4.02,
    "high52w": 115.08,
-   "drawdownPct": 46.6,
+   "drawdownPct": 46.1,
    "macroDriven": false,
    "topLong": 56.4996,
    "bottomLong": 47.2419,
-   "pctInRangeLong": 153.7,
+   "pctInRangeLong": 160.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -25327,13 +25270,12 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 53,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 45,
+    "tier": "none",
+    "tierLabel": "-",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
-     "高値-47%の暴落水準 +20",
-     "RSI39 +8",
+     "高値-46%の暴落水準 +20",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
      "200日線上向き +4",
@@ -25350,9 +25292,9 @@
     "note": ""
    },
    "rec": {
-    "score": 53,
+    "score": 45,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -25401,7 +25343,7 @@
      "emoji": "🟦",
      "valueTier": "-",
      "valueScore": 40,
-     "price": 361.18,
+     "price": 362.96,
      "inWatchlist": true
     },
     {
@@ -25413,7 +25355,7 @@
      "emoji": "🔻",
      "valueTier": "-",
      "valueScore": 17,
-     "price": 243.21,
+     "price": 242.87,
      "inWatchlist": true
     },
     {
@@ -25424,8 +25366,8 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "-",
-     "valueScore": 43,
-     "price": 197.84,
+     "valueScore": 42,
+     "price": 198.61,
      "inWatchlist": true
     },
     {
@@ -25437,7 +25379,7 @@
      "emoji": "🟥",
      "valueTier": "-",
      "valueScore": 10,
-     "price": 450.125,
+     "price": 455.45,
      "inWatchlist": true
     },
     {
@@ -25449,7 +25391,7 @@
      "emoji": "⭐🔴",
      "valueTier": "-",
      "valueScore": 34,
-     "price": 370.2,
+     "price": 371.695,
      "inWatchlist": true
     },
     {
@@ -25460,8 +25402,8 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 38,
-     "price": 307.565,
+     "valueScore": 36,
+     "price": 311.93,
      "inWatchlist": true
     },
     {
@@ -25473,7 +25415,7 @@
      "emoji": "🟥",
      "valueTier": "-",
      "valueScore": 10,
-     "price": 165.15,
+     "price": 166.465,
      "inWatchlist": true
     }
    ],
@@ -25517,7 +25459,7 @@
      "emoji": "⭐🔴",
      "valueTier": "👀監視",
      "valueScore": 53,
-     "price": 384.98,
+     "price": 386.06,
      "inWatchlist": true
     },
     {
@@ -25527,9 +25469,9 @@
      "action": "監視リスト追加済。IPO延期報道で下げる日が押し目候補。",
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
-     "valueTier": "👀監視",
-     "valueScore": 56,
-     "price": 145.29,
+     "valueTier": "-",
+     "valueScore": 49,
+     "price": 145.87,
      "inWatchlist": true
     },
     {
@@ -25540,8 +25482,8 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 37,
-     "price": 85.935,
+     "valueScore": 35,
+     "price": 87.805,
      "inWatchlist": true
     },
     {
@@ -25552,8 +25494,8 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "-",
-     "valueScore": 43,
-     "price": 197.84,
+     "valueScore": 42,
+     "price": 198.61,
      "inWatchlist": true
     },
     {
@@ -25565,7 +25507,7 @@
      "emoji": "⭐🔴",
      "valueTier": "-",
      "valueScore": 34,
-     "price": 370.2,
+     "price": 371.695,
      "inWatchlist": true
     },
     {
@@ -25576,8 +25518,8 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 38,
-     "price": 307.565,
+     "valueScore": 36,
+     "price": 311.93,
      "inWatchlist": true
     }
    ],
@@ -25586,53 +25528,11 @@
  ],
  "alerts": [
   {
-   "type": "MOM_EXIT_WARN",
-   "ticker": "NVDA",
+   "type": "THESIS_REVIEW",
+   "ticker": "CLMB",
    "priority": 2,
-   "title": "⚠️ NVDA 売り管理シグナル",
-   "detail": "デッドクロス"
-  },
-  {
-   "type": "MOM_EXIT_WARN",
-   "ticker": "TSLA",
-   "priority": 2,
-   "title": "⚠️ TSLA 売り管理シグナル",
-   "detail": "デッドクロス"
-  },
-  {
-   "type": "MOM_EXIT_WARN",
-   "ticker": "SLB",
-   "priority": 2,
-   "title": "⚠️ SLB 売り管理シグナル",
-   "detail": "デッドクロス"
-  },
-  {
-   "type": "MOM_EXIT_WARN",
-   "ticker": "RKLB",
-   "priority": 2,
-   "title": "⚠️ RKLB 売り管理シグナル",
-   "detail": "デッドクロス"
-  },
-  {
-   "type": "BUY_CONSIDER",
-   "ticker": "COP",
-   "priority": 3,
-   "title": "🟦 COP 購入検討 (スコア67)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-22% +14"
-  },
-  {
-   "type": "BUY_CONSIDER",
-   "ticker": "SLB",
-   "priority": 3,
-   "title": "🟦 SLB 購入検討 (スコア71)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(16%位置) +17 / 高値-22% +14"
-  },
-  {
-   "type": "BUY_CONSIDER",
-   "ticker": "LMT",
-   "priority": 3,
-   "title": "🟦 LMT 購入検討 (スコア65)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 高値-21% +14 / 5年トレンド上向き +6"
+   "title": "🧐 CLMB テーゼ見直し(新規)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
   },
   {
    "type": "BUY_CONSIDER",
@@ -25646,40 +25546,40 @@
    "ticker": "CACI",
    "priority": 3,
    "title": "🟦 CACI 購入検討 (スコア69)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-26% +14"
+   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-25% +14"
   }
  ],
  "plannerWeights": {
-  "AAPL": 1.84,
-  "MSFT": 3.28,
-  "GOOGL": 3.11,
-  "AMZN": 2.81,
-  "AVGO": 3.03,
-  "NVDA": 4.4,
-  "META": 3.19,
-  "TSLA": 1.99,
-  "AMD": 1.77,
-  "PLTR": 2.21,
-  "ORCL": 2.15,
-  "CRWV": 1.99,
-  "IBM": 1.88,
-  "ASML": 3.8,
-  "TSM": 3.8,
-  "MRVL": 2.63,
-  "CLMB": 1.13,
-  "XOM": 5.04,
-  "CVX": 3.25,
-  "COP": 3.33,
-  "SLB": 3.38,
-  "NEE": 3.87,
-  "ANET": 5.22,
-  "VRT": 5.91,
-  "LMT": 3.38,
-  "RTX": 3.0,
-  "NOC": 3.45,
-  "BA": 0.97,
-  "RKLB": 1.98,
-  "CACI": 2.23,
+  "AAPL": 1.69,
+  "MSFT": 3.03,
+  "GOOGL": 2.87,
+  "AMZN": 2.6,
+  "AVGO": 2.8,
+  "NVDA": 4.05,
+  "META": 2.96,
+  "TSLA": 1.86,
+  "AMD": 1.63,
+  "PLTR": 2.04,
+  "ORCL": 1.94,
+  "CRWV": 1.83,
+  "IBM": 1.73,
+  "ASML": 3.51,
+  "TSM": 3.51,
+  "MRVL": 2.61,
+  "CLMB": 1.04,
+  "MU": 1.69,
+  "ARM": 1.62,
+  "XOM": 6.59,
+  "CVX": 4.28,
+  "TLN": 4.13,
+  "NEE": 3.88,
+  "ANET": 5.23,
+  "VRT": 5.88,
+  "LMT": 3.61,
+  "RTX": 3.21,
+  "NOC": 3.71,
+  "RKLB": 2.06,
+  "CACI": 2.4,
   "IQV": 10.0
  },
  "discovery": [
