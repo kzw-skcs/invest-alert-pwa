@@ -587,6 +587,36 @@ def analyze_instrument(meta, history, bench_closes, vix_value, cfg):
     })
     return out
 
+# ---------------------------------------------------------------- ファンダ品質統合
+
+def apply_quality(inst, q, vp):
+    """fundamentals.jsonの品質データをValue判定に統合(取得失敗時は無補正)。
+    ルール: Q<40 → Value減点-10&Tier1段階格下げ(質の悪い安さを弾く) / Q>=70 → +5
+    警告(売上マイナス等)はテーゼ見直しの補足情報に追加。"""
+    if not q or q.get("score") is None or inst.get("state") == "NO_DATA":
+        return
+    score_q = q["score"]
+    v = inst["value"]
+    inst["quality"] = {"score": score_q, "warnings": q.get("warnings", []),
+                       "metrics": q.get("metrics", {})}
+    if score_q < 40:
+        v["score"] = max(0, v["score"] - 10)
+        v["factors"].append(f"品質スコア{score_q}(低) -10")
+        order = ["none", "watch", "consider", "strong", "absolute"]
+        i = order.index(v["tier"]) if v["tier"] in order else 0
+        if i > 0:
+            v["tier"] = order[i - 1]
+            labels = {"absolute": "🚨絶対的買い場", "strong": "🔥強い買い",
+                      "consider": "🟦購入検討", "watch": "👀監視", "none": "-"}
+            v["tierLabel"] = labels[v["tier"]] + "(質↓)"
+    elif score_q >= 70:
+        v["score"] = min(100, v["score"] + 5)
+        v["factors"].append(f"品質スコア{score_q}(高) +5")
+    warns = q.get("warnings", [])
+    if warns and inst.get("holdMgmt", {}).get("thesisBreak"):
+        inst["holdMgmt"]["note"] += " / 財務面の警告: " + "・".join(warns)
+
+
 # ---------------------------------------------------------------- プランナー用ウェイト
 
 def planner_weights(instruments, cfg):

@@ -177,6 +177,22 @@ def main():
         instruments.append(inst)
         time.sleep(0.4)  # レート制限予防
 
+    # ファンダ品質の統合(fundamentals.jsonがあれば)
+    try:
+        with open(os.path.join(BASE, "fundamentals.json"), encoding="utf-8") as f:
+            fund = json.load(f).get("tickers", {})
+        applied = 0
+        for inst in instruments:
+            q = fund.get(inst.get("ticker"))
+            if q:
+                engine.apply_quality(inst, q, cfg["valueParams"])
+                applied += 1
+        print(f"品質スコア統合: {applied}銘柄")
+    except FileNotFoundError:
+        print("fundamentals.json なし(品質補正スキップ)")
+    except Exception as e:
+        print(f"品質統合エラー(スキップ): {e}")
+
     events = engine.analyze_events(cfg, instruments)
     # 前回data.jsonの読込: テーゼ重複抑制 + 前日スコア(スコア急変の透明化)
     prev_thesis = set()
@@ -243,6 +259,7 @@ def main():
             continue
         log.append({"date": today, "ticker": i["ticker"], "price": i["price"],
                     "types": entry_types, "score": i["value"]["score"],
+                    "q": (i.get("quality") or {}).get("score"),
                     "expReturnPct": i["rec"].get("expReturnPct"),
                     "expDays": i["rec"].get("expDays")})
     log = log[-3000:]

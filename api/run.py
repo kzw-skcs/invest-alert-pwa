@@ -5,7 +5,8 @@ from http.server import BaseHTTPRequestHandler
 
 import json, os, urllib.request
 
-ALLOWED = {"daily": "daily.yml", "reanalyze": "reanalyze.yml", "backtest": "backtest.yml"}
+ALLOWED = {"daily": "daily.yml", "reanalyze": "reanalyze.yml",
+           "backtest": "backtest.yml", "fundamentals": "fundamentals.yml"}
 
 
 def gh_req(path, method="GET", body=None):

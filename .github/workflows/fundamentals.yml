@@ -1,0 +1,26 @@
+name: fundamentals
+on:
+  schedule:
+    - cron: '0 23 * * 5'   # 毎週土曜 8:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fundamentals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: run fundamentals
+        run: python fundamentals.py
+      - name: commit
+        run: |
+          git config user.name "invest-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add fundamentals.json
+          git diff --cached --quiet || git commit -m "fundamentals: 品質スコア更新 $(date -u +%Y-%m-%d)"
+          git push

@@ -146,7 +146,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div class="muted">
       ⭐🟢超・買い場(下抜け後GC) / 🟦買い場 / 🟢上昇中 / ⬜レンジ内 / 🔻下落中 / 🟥売り場 / ⭐🔴超・売り場<br>
       Valueスコア: 🚨90+絶対的買い場 / 🔥80+強い買い / 🟦65+購入検討 / 👀50+監視<br>
-      ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>モメンタム(trade銘柄): 50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
+      ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>品質Q(週次更新): ROE・利益率・成長率・財務健全性・PERの総合0-100。Q40未満は買いTierを1段階格下げ(「安いが質が悪い」を弾く)、Q70以上は+5点。⚠️警告(売上マイナス等)はテーゼ点検の材料。<br>モメンタム(trade銘柄): 50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
     </div>
   </div>
 </div>
@@ -269,6 +269,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div class="row" style="gap:8px;flex-wrap:wrap">
       <button class="btn" onclick="runReanalyze()">🔁 再分析を実行</button>
       <button class="btn" onclick="runWorkflow('daily','価格取得・判定(daily)')">📈 今すぐ判定を更新</button>
+      <button class="btn" onclick="runWorkflow('fundamentals','品質スコア更新')">🏭 品質スコア更新</button>
     </div>
     <div id="analysis-result" class="muted" style="margin-top:8px"></div>
   </div>
@@ -513,6 +514,13 @@ function cardHTML(i) {
         <div class="stars" style="font-size:11px">${'★'.repeat(i.rec.stars)}${'☆'.repeat(5 - i.rec.stars)}</div>
       </div>
     </div>
+    ${i.quality && i.quality.score != null ? `<div class="kv">
+      <span class="pill" style="background:${i.quality.score >= 70 ? '#14532d' : i.quality.score >= 40 ? '#374151' : '#7f1d1d'};color:#fff">品質Q ${i.quality.score}</span>
+      ${i.quality.metrics.fwdPE != null ? `<span>予想PER <b>${fmtN(i.quality.metrics.fwdPE, 1)}</b></span>` : ''}
+      ${i.quality.metrics.revGrowth != null ? `<span>売上成長 <b class="${cls(i.quality.metrics.revGrowth)}">${fmtP(i.quality.metrics.revGrowth * 100)}</b></span>` : ''}
+      ${i.quality.metrics.fcfMargin != null ? `<span>FCFマージン <b class="${cls(i.quality.metrics.fcfMargin)}">${fmtP(i.quality.metrics.fcfMargin * 100)}</b></span>` : ''}
+      ${(i.quality.warnings || []).length ? `<span style="color:var(--amber)">⚠️${i.quality.warnings.join('・')}</span>` : ''}
+    </div>` : ''}
     <div class="kv">
       <span>RSI <b>${fmtN(i.rsi, 0)}</b></span><span>高値比 <b class="${cls(-(i.drawdownPct || 0))}">-${fmtN(i.drawdownPct, 1)}%</b></span>
       <span>20日 <b>${fmtN(i.smaShort)}</b></span><span>50日 <b>${fmtN(i.smaLong)}</b></span>
