@@ -134,7 +134,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div class="muted">
       ⭐🟢超・買い場(下抜け後GC) / 🟦買い場 / 🟢上昇中 / ⬜レンジ内 / 🔻下落中 / 🟥売り場 / ⭐🔴超・売り場<br>
       Valueスコア: 🚨90+絶対的買い場 / 🔥80+強い買い / 🟦65+購入検討 / 👀50+監視<br>
-      モメンタム(trade銘柄): 50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
+      ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>モメンタム(trade銘柄): 50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
     </div>
   </div>
 </div>
@@ -428,10 +428,18 @@ function renderCards() {
   list.forEach((i) => drawSpark(i));
 }
 
+function dispState(i) {
+  // hold/accumulate銘柄は「売り」の言葉を使わず、買い手目線のラベルに変換
+  const longSide = i.tradePolicy !== 'trade';
+  if (longSide && i.state === 'SELL') return { label: '🟠高値圏(押し目待ち)', color: '#f59e0b' };
+  if (longSide && i.state === 'SUPER_SELL') return { label: '🟠過熱後失速(買い増し不適)', color: '#f59e0b' };
+  return { label: i.stateLabel, color: i.color };
+}
 function cardHTML(i) {
   if (i.state === 'NO_DATA') return `<div class="icard"><div class="head"><span class="tk">${i.ticker}</span><span class="nm">${i.name}</span><span class="st">❔ データ蓄積中</span></div></div>`;
   const v = i.value || { tier: 'none' };
   const m = i.momentum || {};
+  const ds = dispState(i);
   const pol = i.tradePolicy === 'trade' ? '<span class="pill" style="background:#78350f;color:#fde68a">短期</span>' : '<span class="pill" style="background:#1e3a5f;color:#bfdbfe">長期</span>';
   const pos1 = Math.max(0, Math.min(100, i.pctInRange ?? 50));
   const posL = i.pctInRangeLong != null ? Math.max(0, Math.min(100, i.pctInRangeLong)) : null;
@@ -442,7 +450,7 @@ function cardHTML(i) {
     <div class="head" onclick="openChart('${i.ticker}','${i.class}')">
       <span style="font-size:17px">${i.emoji}</span>
       <span class="tk">${i.ticker}</span><span class="nm">${i.name}</span>${pol}
-      <span class="st" style="color:${i.color}">${i.stateLabel}</span>
+      <span class="st" style="color:${ds.color}">${ds.label}</span>
     </div>
     <div class="row">
       <div class="grow">
