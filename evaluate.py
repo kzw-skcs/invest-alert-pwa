@@ -1,338 +1,269 @@
+# -*- coding: utf-8 -*-
 """
-毎日の判定処理（GitHub Actions が 6:00 JST に実行）。
- 1) config.json を読む
- 2) Stooq（米国株・金銀・VIX）と CoinGecko（BTC/ETH）から日次終値を取得
- 3) engine.classify で各資産の状態を判定
- 4) data.json を書き出す（PWA がこれを表示）
- 5) アラート対象があれば Web Push を送信（VAPID鍵と subscriptions.json がある場合のみ）
-
-ネットワークは GitHub Actions 上では自由に使えます。各資産は取得失敗しても全体は止めません。
+evaluate.py v2 — 価格取得 + engine実行 + data.json更新 + シグナルログ + Web Push
+GitHub Actions (daily, 毎朝6:00 JST) から実行される。
+データ源: Yahoo Finance(主) → Stooq → CoinGecko(暗号資産) フォールバック。
 """
-from __future__ import annotations
-import csv, io, json, os, time, datetime, urllib.request, urllib.parse, urllib.error
-import engine as E
+import json
+import os
+import sys
+import time
+import urllib.request
+import urllib.error
+import urllib.parse
+from datetime import datetime, timezone, timedelta
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-UA = {"User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                     "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"),
-      "Accept": "application/json,text/csv,*/*"}
-HIST_KEEP = 150  # PWA のスパークライン用に残す日数
+import engine
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+UA = {"User-Agent": "Mozilla/5.0 (invest-alert-pwa; personal use)"}
+JST = timezone(timedelta(hours=9))
 
 
-def http_get(url, tries=3, timeout=30):
-    last = None
-    for k in range(tries):
+def http_json(url, retries=2):
+    for i in range(retries + 1):
         try:
             req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                return resp.read().decode("utf-8", "replace")
-        except Exception as e:  # noqa
-            last = e
-            time.sleep(2 * (k + 1))
-    raise last
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except Exception as e:
+            if i == retries:
+                print(f"  fetch失敗 {url}: {e}")
+                return None
+            time.sleep(1.5 * (i + 1))
 
 
-def fetch_yahoo(symbol, rng="5y"):
-    """Yahoo Finance から日次終値 [(date, close), ...] を取得（クラウドIPでも比較的安定）。"""
-    q = urllib.parse.quote(symbol, safe="")
-    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{q}"
-           f"?range={rng}&interval=1d")
-    text = http_get(url)
-    data = json.loads(text)
-    chart = data.get("chart") or {}
-    if chart.get("error"):
-        raise RuntimeError(f"Yahoo: {chart['error']} ({symbol})")
-    result = (chart.get("result") or [None])[0]
-    if not result:
-        raise RuntimeError(f"Yahoo: 結果なし ({symbol})")
-    ts = result.get("timestamp") or []
-    quote = ((result.get("indicators") or {}).get("quote") or [{}])[0]
-    closes = quote.get("close") or []
-    out = []
-    for t, c in zip(ts, closes):
-        if c is None:
-            continue
-        d = datetime.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d")
-        out.append((d, float(c)))
-    if not out:
-        raise RuntimeError(f"Yahoo: データ空 ({symbol})")
-    return out
+def http_text(url, retries=2):
+    for i in range(retries + 1):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return r.read().decode("utf-8", errors="replace")
+        except Exception as e:
+            if i == retries:
+                print(f"  fetch失敗 {url}: {e}")
+                return None
+            time.sleep(1.5 * (i + 1))
+
+
+# ---------------------------------------------------------------- データ取得
+
+def fetch_yahoo(symbol, range_="6y"):
+    """Yahoo chart API → OHLCV。"""
+    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}"
+           f"?range={range_}&interval=1d&events=history")
+    j = http_json(url)
+    try:
+        res = j["chart"]["result"][0]
+        ts = res["timestamp"]
+        q = res["indicators"]["quote"][0]
+        hist = []
+        for i, t in enumerate(ts):
+            c = q["close"][i]
+            if c is None:
+                continue
+            hist.append({
+                "d": datetime.fromtimestamp(t, tz=timezone.utc).strftime("%Y-%m-%d"),
+                "c": round(float(c), 6),
+                "h": round(float(q["high"][i]), 6) if q["high"][i] else None,
+                "l": round(float(q["low"][i]), 6) if q["low"][i] else None,
+                "v": int(q["volume"][i]) if q["volume"][i] else None,
+            })
+        return hist if len(hist) >= 30 else None
+    except Exception:
+        return None
 
 
 def fetch_stooq(symbol):
-    """Stooq から日次終値 [(date, close), ...] を取得（古い→新しい順）。"""
-    url = f"https://stooq.com/q/d/l/?s={symbol}&i=d"
-    text = http_get(url)
-    rows = list(csv.DictReader(io.StringIO(text)))
-    out = []
-    for r in rows:
-        c = r.get("Close") or r.get("close")
-        d = r.get("Date") or r.get("date")
-        if c and c not in ("N/D", "") and d:
-            try:
-                out.append((d, float(c)))
-            except ValueError:
-                pass
-    if not out:
-        raise RuntimeError(f"Stooq: データ空 ({symbol}) / 応答先頭: {text[:80]!r}")
-    return out
+    txt = http_text(f"https://stooq.com/q/d/l/?s={symbol}&i=d")
+    if not txt or txt.lstrip().startswith("<"):
+        return None
+    hist = []
+    for line in txt.strip().splitlines()[1:]:
+        p = line.split(",")
+        if len(p) < 5:
+            continue
+        try:
+            hist.append({"d": p[0], "c": float(p[4]),
+                         "h": float(p[2]), "l": float(p[3]),
+                         "v": int(float(p[5])) if len(p) > 5 and p[5] else None})
+        except ValueError:
+            continue
+    return hist[-1600:] if len(hist) >= 30 else None
 
 
 def fetch_coingecko(coin_id, days=1825):
-    """CoinGecko から日次終値 [(date, close), ...] を取得。
-    無料枠で長期(1825日)が拒否される場合は365日にフォールバックする。"""
-    last_err = None
-    for d_param in (days, 365):
-        try:
-            url = (f"https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart"
-                   f"?vs_currency=usd&days={d_param}")
-            data = json.loads(http_get(url))
-            prices = data.get("prices") or []
-            out = []
-            for ts, price in prices:
-                d = datetime.datetime.utcfromtimestamp(ts / 1000).strftime("%Y-%m-%d")
-                out.append((d, float(price)))
-            if out:
-                return out
-            last_err = RuntimeError(f"CoinGecko: データ空 ({coin_id}, days={d_param})")
-        except Exception as e:  # noqa
-            last_err = e
-    raise last_err or RuntimeError(f"CoinGecko: 取得失敗 ({coin_id})")
+    j = http_json(f"https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart"
+                  f"?vs_currency=usd&days={days}&interval=daily")
+    try:
+        prices = j["prices"]
+        vols = {int(v[0] / 86400000): v[1] for v in j.get("total_volumes", [])}
+        hist = []
+        for ms, price in prices:
+            day = int(ms / 86400000)
+            hist.append({"d": datetime.fromtimestamp(ms / 1000, tz=timezone.utc).strftime("%Y-%m-%d"),
+                         "c": round(float(price), 6), "h": None, "l": None,
+                         "v": int(vols.get(day, 0)) or None})
+        # 同日重複除去
+        seen, out = set(), []
+        for h in hist:
+            if h["d"] not in seen:
+                seen.add(h["d"]); out.append(h)
+        return out if len(out) >= 30 else None
+    except Exception:
+        return None
 
 
-def build_instrument(meta, series, settings, asset_class):
-    closes = [c for _, c in series]
-    res = E.classify(closes, settings)
-    st = E.STATE.get(res.get("state", "UNKNOWN"), E.STATE["UNKNOWN"])
-    state = res.get("state", "UNKNOWN")
-    policy = meta.get("tradePolicy", "trade")
-    actionable = st["actionable"]
-    counter = False
-    # 逆張りフィルタ：本物の長期(5年)下降トレンド中の通常「買い場」のみ抑制。
-    # 横ばいボックスや上昇チャネルの下限買いは残す（5年トレンドが取れない時のみ200日線で代替）。
-    ltrend = res.get("trendLong")
-    downtrend = (ltrend == "down") if ltrend is not None else (res.get("trend") == "down")
-    if state == "BUY" and downtrend and settings.get("counterTrendFilter", True):
-        actionable = False; counter = True
-    # 長期保有方針(accumulate/hold)：売りシグナルは出さない
-    if policy in ("accumulate", "hold") and st["side"] == "sell":
-        actionable = False
-    hist = [{"d": d, "c": round(c, 4)} for d, c in series[-HIST_KEEP:]]
-    inst = {
-        "key": meta.get("key") or meta.get("ticker"),
-        "ticker": meta.get("ticker") or meta.get("key"),
-        "name": meta["name"],
-        "sector": meta.get("sector", ""),
-        "class": asset_class,
-        "stateLabel": st["label"], "emoji": st["emoji"], "color": st["color"],
-        "side": st["side"], "actionable": actionable,
-        "history": hist,
-    }
-    inst.update(res)
-    inst["tradePolicy"] = policy
-    inst["counterTrend"] = counter
-    return inst
+def fetch_history(entry):
+    y = entry.get("yahoo") or entry.get("ticker")
+    if y:
+        h = fetch_yahoo(y)
+        if h:
+            return h, "yahoo"
+    if entry.get("stooq"):
+        h = fetch_stooq(entry["stooq"])
+        if h:
+            return h, "stooq"
+    if entry.get("coingeckoId"):
+        h = fetch_coingecko(entry["coingeckoId"])
+        if h:
+            return h, "coingecko"
+    return None, None
 
+
+# ---------------------------------------------------------------- メイン
 
 def main():
-    with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
+    with open(os.path.join(BASE, "config.json"), encoding="utf-8") as f:
         cfg = json.load(f)
-    settings = cfg["settings"]
-    instruments, errors = [], []
+    s = cfg["settings"]
 
-    def add(meta, fetch_fn, asset_class):
-        try:
-            series = fetch_fn()
-            instruments.append(build_instrument(meta, series, settings, asset_class))
-        except Exception as e:  # noqa
-            errors.append({"name": meta.get("name"), "error": str(e)})
-            instruments.append({
-                "key": meta.get("key") or meta.get("ticker"),
-                "ticker": meta.get("ticker") or meta.get("key"),
-                "name": meta["name"], "sector": meta.get("sector", ""),
-                "class": asset_class, "state": "UNKNOWN",
-                "stateLabel": "取得失敗", "emoji": "⚠️", "color": "#9ca3af",
-                "side": "none", "actionable": False, "history": [], "error": str(e),
-            })
+    # ベンチマーク(S&P500)・VIX・FX
+    bench_hist, _ = fetch_history(cfg.get("benchmark", {"yahoo": "^GSPC", "stooq": "^spx"}))
+    bench_closes = [h["c"] for h in bench_hist] if bench_hist else None
+    print(f"benchmark: {'OK' if bench_closes else '取得失敗'}")
 
-    # Yahoo Finance を主・Stooq/CoinGecko をフォールバックに。
-    def stock_hist(s):
-        try:
-            return fetch_yahoo(s["ticker"])
-        except Exception:  # noqa
-            return fetch_stooq(s["stooq"])
+    vix_hist, _ = fetch_history(cfg["vix"])
+    vix_val = vix_prev = None
+    if vix_hist and len(vix_hist) >= 2:
+        vix_val, vix_prev = vix_hist[-1]["c"], vix_hist[-2]["c"]
+    vix = engine.analyze_vix(vix_val, vix_prev, s)
+    print(f"VIX: {vix}")
 
-    def metal_hist(m):
-        try:
-            return fetch_yahoo(m["yahoo"])
-        except Exception:  # noqa
-            return fetch_stooq(m["stooq"])
+    fx_hist, _ = fetch_history(cfg["fx"])
+    usdjpy = fx_hist[-1]["c"] if fx_hist else None
+    print(f"USD/JPY: {usdjpy}")
 
-    def crypto_hist(c):
-        try:
-            return fetch_yahoo(c["yahoo"])
-        except Exception:  # noqa
-            return fetch_coingecko(c["coingeckoId"])
+    # 全銘柄
+    instruments = []
+    entries = []
+    for st in cfg["stocks"]:
+        e = dict(st); e["class"] = "stock"; e["key"] = st["ticker"]; entries.append(e)
+    for cr in cfg["crypto"]:
+        e = dict(cr); e["class"] = "crypto"; entries.append(e)
+    for mt in cfg["metals"]:
+        e = dict(mt); e["class"] = "metal"; entries.append(e)
 
-    for s in cfg["stocks"]:
-        add(s, lambda s=s: stock_hist(s), "stock"); time.sleep(0.4)
-    for m in cfg["metals"]:
-        add(m, lambda m=m: metal_hist(m), "metal"); time.sleep(0.4)
-    for c in cfg["crypto"]:
-        add(c, lambda c=c: crypto_hist(c), "crypto"); time.sleep(0.4)
+    for e in entries:
+        hist, src = fetch_history(e)
+        name = e.get("key") or e.get("ticker")
+        if not hist:
+            print(f"{name}: 全ソース取得失敗 → NO_DATA")
+            hist = []
+        else:
+            print(f"{name}: {len(hist)}本 ({src})")
+        inst = engine.analyze_instrument(e, hist, bench_closes,
+                                         vix.get("value"), cfg)
+        instruments.append(inst)
+        time.sleep(0.4)  # レート制限予防
 
-    # VIX
-    vix = {"value": None, "changePct": None, "level": None}
-    try:
-        try:
-            vseries = fetch_yahoo(cfg["vix"].get("yahoo", "^VIX"))
-        except Exception:  # noqa
-            vseries = fetch_stooq(cfg["vix"]["stooq"])
-        vix = E.vix_status([c for _, c in vseries], settings)
-    except Exception as e:  # noqa
-        errors.append({"name": "VIX", "error": str(e)})
+    events = engine.analyze_events(cfg, instruments)
+    alerts = engine.build_alerts(instruments, events, vix, cfg)
+    weights = engine.planner_weights(instruments, cfg)
 
-    # USD/JPY（円建て評価額・損益の計算に使用）
-    usdjpy = None
-    try:
-        fxcfg = cfg.get("fx", {})
-        try:
-            fxseries = fetch_yahoo(fxcfg.get("yahoo", "JPY=X"))
-        except Exception:  # noqa
-            fxseries = fetch_stooq(fxcfg.get("stooq", "usdjpy"))
-        usdjpy = round(fxseries[-1][1], 3)
-    except Exception as e:  # noqa
-        errors.append({"name": "USDJPY", "error": str(e)})
-
-    # 各資産に推奨度を付与（VIX確定後）
-    for inst in instruments:
-        inst["rec"] = E.recommend(inst, vix, settings)
-
-    # アラート抽出（actionable な状態のみ）＋推奨度・見込みリターン
-    min_score = settings.get("minScoreToAlert", 0)
-    alerts = []
-    for inst in instruments:
-        if inst.get("actionable") and inst.get("rec", {}).get("score", 0) >= min_score:
-            rec = inst.get("rec", {})
-            vlevel = vix.get("level") if inst["state"] in ("SUPER_BUY", "SUPER_SELL") else None
-            stars = "★" * rec.get("stars", 0)
-            msg = f"{inst['name']}（{inst.get('ticker','')}）が「{inst['stateLabel']}」 推奨度{stars}"
-            if rec.get("action") == "buy" and rec.get("expReturnPct") is not None:
-                period = rec.get("expPeriodLabel") or "—"
-                msg += f" 見込み+{rec['expReturnPct']}%・{period}"
-            if vlevel:
-                msg += f" ＋VIX{vlevel}({vix.get('reason') or ''})"
-            alerts.append({
-                "key": inst["key"], "name": inst["name"], "ticker": inst.get("ticker"),
-                "state": inst["state"], "label": inst["stateLabel"], "side": inst["side"],
-                "score": rec.get("score", 0), "stars": rec.get("stars", 0),
-                "level": rec.get("level", "-"),
-                "expReturnPct": rec.get("expReturnPct"),
-                "expPeriodLabel": rec.get("expPeriodLabel"),
-                "annualizedPct": rec.get("annualizedPct"),
-                "vixLevel": vlevel, "message": msg,
-            })
-    # 推奨度が高い順
-    alerts.sort(key=lambda a: a.get("score", 0), reverse=True)
-
-    now = datetime.datetime.now(datetime.timezone.utc)
-    jst = now.astimezone(datetime.timezone(datetime.timedelta(hours=9)))
-    out = {
+    now = datetime.now(timezone.utc)
+    data = {
+        "version": 2,
         "updated": now.isoformat(),
-        "updatedJST": jst.strftime("%Y-%m-%d %H:%M JST"),
-        "settings": settings,
-        "targets": cfg["targets"],
+        "updatedJST": now.astimezone(JST).strftime("%Y-%m-%d %H:%M JST"),
+        "settings": s,
+        "valueParams": cfg["valueParams"],
+        "momentumParams": cfg["momentumParams"],
+        "portfolio": cfg["portfolio"],
+        "targets": cfg.get("targets", {}),
         "vix": vix,
         "fx": {"usdjpy": usdjpy},
         "instruments": instruments,
+        "events": events,
         "alerts": alerts,
-        "errors": errors,
+        "plannerWeights": weights,
     }
-    with open(os.path.join(HERE, "data.json"), "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"data.json 書き出し完了: {len(instruments)}資産, アラート{len(alerts)}件, エラー{len(errors)}件")
+    with open(os.path.join(BASE, "data.json"), "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+    print(f"data.json 更新: 銘柄{len(instruments)} アラート{len(alerts)}")
 
-    # 予測ログを追記（後日のアルゴリズム再分析＝的中率計算に使用）
-    log_predictions(jst.strftime("%Y-%m-%d"), instruments, vix)
+    # シグナルログ(再分析用に追記)
+    log_path = os.path.join(BASE, "signals_log.json")
+    log = []
+    if os.path.exists(log_path):
+        try:
+            with open(log_path, encoding="utf-8") as f:
+                log = json.load(f)
+        except Exception:
+            log = []
+    today = now.astimezone(JST).strftime("%Y-%m-%d")
+    log = [x for x in log if x.get("date") != today]  # 同日再実行は上書き
+    for i in instruments:
+        if i.get("state") == "NO_DATA":
+            continue
+        entry_types = []
+        if i["value"]["tier"] in ("consider", "strong", "absolute"):
+            entry_types.append("value_" + i["value"]["tier"])
+        if i.get("momentum", {}).get("signal") == "entry":
+            entry_types.append("mom_entry")
+        if not entry_types:
+            continue
+        log.append({"date": today, "ticker": i["ticker"], "price": i["price"],
+                    "types": entry_types, "score": i["value"]["score"],
+                    "expReturnPct": i["rec"].get("expReturnPct"),
+                    "expDays": i["rec"].get("expDays")})
+    log = log[-3000:]
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False)
+    print(f"signals_log.json: {len(log)}件")
 
-    # Web Push（任意：VAPID鍵 + subscriptions.json がある時だけ）
-    try:
-        send_push(alerts, vix)
-    except Exception as e:  # noqa
-        print("Push送信スキップ/失敗:", e)
-
-
-def log_predictions(date_str, instruments, vix):
-    """その日のアクション可能シグナルを predictions.jsonl に追記（同日同銘柄は重複させない）。"""
-    path = os.path.join(HERE, "predictions.jsonl")
-    existing = set()
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
-            for line in f:
-                try:
-                    o = json.loads(line)
-                    existing.add((o["date"], o["key"]))
-                except Exception:  # noqa
-                    pass
-    added = 0
-    with open(path, "a", encoding="utf-8") as f:
-        for inst in instruments:
-            if not inst.get("actionable"):
-                continue
-            if (date_str, inst["key"]) in existing:
-                continue
-            rec = inst.get("rec", {})
-            f.write(json.dumps({
-                "date": date_str, "key": inst["key"], "ticker": inst.get("ticker"),
-                "state": inst["state"], "side": inst["side"],
-                "price": inst.get("price"), "top": inst.get("top"), "bottom": inst.get("bottom"),
-                "expReturnPct": rec.get("expReturnPct"), "expDays": rec.get("expDays"),
-                "score": rec.get("score"), "evaluated": False, "hit": None,
-            }, ensure_ascii=False) + "\n")
-            added += 1
-    print(f"予測ログ追記: {added}件 (predictions.jsonl)")
+    # Web Push(VAPID設定時のみ)
+    send_push(alerts)
 
 
-def send_push(alerts, vix):
-    if not alerts:
-        print("アラートなし → Push送信なし"); return
+def send_push(alerts):
     priv = os.environ.get("VAPID_PRIVATE_KEY")
-    email = os.environ.get("VAPID_CLAIMS_EMAIL", "mailto:kazawa@skclinicalsupport.com")
-    sub_path = os.path.join(HERE, "subscriptions.json")
-    if not priv or not os.path.exists(sub_path):
-        print("VAPID鍵 or subscriptions.json 未設定 → Push送信なし（アプリ内表示のみ）"); return
+    email = os.environ.get("VAPID_CLAIMS_EMAIL")
+    subs_path = os.path.join(BASE, "subscriptions.json")
+    urgent = [a for a in alerts if a["priority"] <= 2]
+    if not (priv and email and os.path.exists(subs_path) and urgent):
+        print("push: スキップ(未設定または対象なし)")
+        return
     try:
-        from pywebpush import webpush, WebPushException
+        from pywebpush import webpush
     except ImportError:
-        print("pywebpush 未インストール → Push送信なし"); return
-
-    with open(sub_path, encoding="utf-8") as f:
+        print("push: pywebpush未インストール")
+        return
+    with open(subs_path, encoding="utf-8") as f:
         subs = json.load(f)
-    # 強い順に並べて先頭を通知タイトルに
-    order = {"SUPER_BUY": 0, "SUPER_SELL": 0, "BUY": 1, "SELL": 1}
-    alerts_sorted = sorted(alerts, key=lambda a: order.get(a["state"], 9))
-    head = alerts_sorted[0]
-    title = f"投資シグナル：{head['label']} {head['name']}"
-    body = "／".join(a["message"] for a in alerts_sorted[:4])
-    if len(alerts_sorted) > 4:
-        body += f" ほか{len(alerts_sorted)-4}件"
-    payload = json.dumps({"title": title, "body": body, "alerts": alerts}, ensure_ascii=False)
-
-    still_valid = []
+    body = "\n".join(f"{a['title']}" for a in urgent[:6])
+    payload = json.dumps({"title": f"📈 投資シグナル ({len(urgent)}件)", "body": body,
+                          "url": "./index.html"}, ensure_ascii=False)
+    ok = 0
     for sub in subs:
         try:
             webpush(subscription_info=sub, data=payload,
-                    vapid_private_key=priv, vapid_claims={"sub": email})
-            still_valid.append(sub)
-        except WebPushException as ex:
-            code = getattr(ex.response, "status_code", None)
-            if code in (404, 410):
-                print("期限切れ購読を削除"); continue
-            still_valid.append(sub); print("Push失敗(保持):", code)
-    if len(still_valid) != len(subs):
-        with open(sub_path, "w", encoding="utf-8") as f:
-            json.dump(still_valid, f, ensure_ascii=False, indent=2)
-    print(f"Push送信: {len(still_valid)}/{len(subs)} 件")
+                    vapid_private_key=priv,
+                    vapid_claims={"sub": f"mailto:{email}"})
+            ok += 1
+        except Exception as e:
+            print(f"push失敗: {e}")
+    print(f"push: {ok}/{len(subs)}件送信")
 
 
 if __name__ == "__main__":

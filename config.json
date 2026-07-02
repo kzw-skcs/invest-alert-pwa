@@ -1,5 +1,6 @@
 {
-  "_comment": "監視銘柄・目標比率・判定パラメータの単一ソース。GitHub Actionsの判定処理とPWA表示の両方がこれを参照します。銘柄や方針(tradePolicy)を変えたいときはこのファイルを編集して git push してください。",
+  "_comment": "v2: 監視銘柄・推奨ポートフォリオ・Value/モメンタム判定パラメータ・IPOイベントの単一ソース。GitHub Actionsの判定処理(evaluate.py)とPWA表示(index.html)の両方が参照。編集して git push で反映。",
+  "version": 2,
   "settings": {
     "lookbackDays": 252,
     "lookbackLongDays": 1260,
@@ -17,56 +18,170 @@
     "vixAbsUrgent": 40,
     "rebalanceThresholdPct": 5,
     "hitThresholdPct": 3,
-    "minScoreToAlert": 0
+    "minScoreToAlert": 60
+  },
+  "valueParams": {
+    "_comment": "Value買い判定(hold銘柄+accumulate資産)。スコア0-100を多因子で構成。",
+    "rsiPeriod": 14,
+    "rsiOversold": 30,
+    "rsiOverbought": 75,
+    "ddConsider": 12,
+    "ddStrong": 20,
+    "ddAbsolute": 30,
+    "macroCorrWindow": 60,
+    "macroVixThreshold": 25,
+    "fallingKnifeSlopeDays": 20,
+    "tierWatch": 50,
+    "tierConsider": 65,
+    "tierStrong": 80,
+    "tierAbsolute": 90,
+    "trimChannelPos": 97,
+    "trimRsi": 75,
+    "thesisBreakDays": 20
+  },
+  "momentumParams": {
+    "_comment": "モメンタム売買(trade銘柄・現物のみ)。エントリー/損切り/部分利確/タイムストップ。",
+    "breakoutLookback": 50,
+    "volConfirmMult": 1.5,
+    "volAvgDays": 20,
+    "rsiMin": 50,
+    "rsiMax": 72,
+    "relStrengthWindow": 63,
+    "relStrengthMinPct": 0,
+    "stopInitPct": 8,
+    "atrPeriod": 14,
+    "atrMult": 2.5,
+    "tp1GainPct": 20,
+    "tp1SellPct": 33,
+    "tp2GainPct": 40,
+    "tp2SellPct": 33,
+    "timeStopWeeks": 8,
+    "gapDownAlertPct": 6,
+    "maxShareOfStocksPct": 25
+  },
+  "portfolio": {
+    "_comment": "推奨ポートフォリオ。cash=戦略キャッシュ(暴落時買付・IPO参加の待機資金)。比率は%。",
+    "targets": { "stocks": 60, "btc": 10, "eth": 5, "gold": 10, "silver": 5, "cash": 10 },
+    "rebalanceThresholdPct": 5,
+    "stockSectorTargets": {
+      "AI・半導体/クラウド": 45,
+      "電力・DCインフラ": 15,
+      "エネルギー": 15,
+      "宇宙・防衛": 15,
+      "その他モート": 10
+    },
+    "phasedEntry": {
+      "_comment": "新規資金の段階的エントリー。tranche1=即時、tranche2=対象が高値から-10%、tranche3=-20%暴落時。",
+      "tranches": [40, 30, 30],
+      "dipTriggersPct": [0, 10, 20]
+    }
   },
   "targets": {
-    "_comment": "アラート/リバランス対象は5資産。比率 個別株6 : BTC1 : ETH1 : 金1 : 銀1（投資信託は対象外）。",
-    "stocks": 6,
-    "btc": 1,
-    "eth": 1,
-    "gold": 1,
-    "silver": 1
+    "_comment": "(v1互換) リバランス表示用。v2はportfolio.targetsを優先。",
+    "stocks": 6, "btc": 1, "eth": 1, "gold": 1, "silver": 1
   },
   "crypto": [
-    {"key": "btc", "yahoo": "BTC-USD", "coingeckoId": "bitcoin", "name": "ビットコイン", "tradePolicy": "accumulate"},
-    {"key": "eth", "yahoo": "ETH-USD", "coingeckoId": "ethereum", "name": "イーサリアム", "tradePolicy": "accumulate"}
+    {"key": "btc", "yahoo": "BTC-USD", "coingeckoId": "bitcoin", "name": "ビットコイン", "tradePolicy": "accumulate", "conviction": 5},
+    {"key": "eth", "yahoo": "ETH-USD", "coingeckoId": "ethereum", "name": "イーサリアム", "tradePolicy": "accumulate", "conviction": 4}
   ],
   "metals": [
-    {"key": "gold", "yahoo": "GC=F", "stooq": "xauusd", "name": "金 (COMEX先物 GC=F)", "tradePolicy": "accumulate"},
-    {"key": "silver", "yahoo": "SI=F", "stooq": "xagusd", "name": "銀 (COMEX先物 SI=F)", "tradePolicy": "accumulate"}
+    {"key": "gold", "yahoo": "GC=F", "stooq": "xauusd", "name": "金 (COMEX先物 GC=F)", "tradePolicy": "accumulate", "conviction": 5},
+    {"key": "silver", "yahoo": "SI=F", "stooq": "xagusd", "name": "銀 (COMEX先物 SI=F)", "tradePolicy": "accumulate", "conviction": 4}
   ],
   "vix": {"yahoo": "^VIX", "stooq": "^vix", "name": "VIX恐怖指数"},
   "fx": {"yahoo": "JPY=X", "stooq": "usdjpy", "name": "USD/JPY"},
+  "benchmark": {"yahoo": "^GSPC", "stooq": "^spx", "name": "S&P500"},
   "stocks": [
-    {"ticker": "AAPL",  "stooq": "aapl.us",  "name": "Apple",              "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "MSFT",  "stooq": "msft.us",  "name": "Microsoft",          "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "GOOGL", "stooq": "googl.us", "name": "Alphabet (Google)",  "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "AMZN",  "stooq": "amzn.us",  "name": "Amazon",             "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "AVGO",  "stooq": "avgo.us",  "name": "Broadcom",           "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "NVDA",  "stooq": "nvda.us",  "name": "NVIDIA",             "sector": "ハイテク",   "tradePolicy": "trade"},
-    {"ticker": "META",  "stooq": "meta.us",  "name": "Meta Platforms",     "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "TSLA",  "stooq": "tsla.us",  "name": "Tesla",              "sector": "ハイテク",   "tradePolicy": "trade"},
-    {"ticker": "AMD",   "stooq": "amd.us",   "name": "AMD",                "sector": "ハイテク",   "tradePolicy": "trade"},
-    {"ticker": "PLTR",  "stooq": "pltr.us",  "name": "Palantir",           "sector": "ハイテク",   "tradePolicy": "trade"},
-    {"ticker": "XOM",   "stooq": "xom.us",   "name": "ExxonMobil",         "sector": "エネルギー", "tradePolicy": "hold"},
-    {"ticker": "CVX",   "stooq": "cvx.us",   "name": "Chevron",            "sector": "エネルギー", "tradePolicy": "hold"},
-    {"ticker": "COP",   "stooq": "cop.us",   "name": "ConocoPhillips",     "sector": "エネルギー", "tradePolicy": "hold"},
-    {"ticker": "NEE",   "stooq": "nee.us",   "name": "NextEra Energy",     "sector": "エネルギー", "tradePolicy": "hold"},
-    {"ticker": "SLB",   "stooq": "slb.us",   "name": "Schlumberger (SLB)", "sector": "エネルギー", "tradePolicy": "trade"},
-    {"ticker": "LMT",   "stooq": "lmt.us",   "name": "Lockheed Martin",    "sector": "宇宙・防衛", "tradePolicy": "hold"},
-    {"ticker": "RTX",   "stooq": "rtx.us",   "name": "RTX (Raytheon)",     "sector": "宇宙・防衛", "tradePolicy": "hold"},
-    {"ticker": "NOC",   "stooq": "noc.us",   "name": "Northrop Grumman",   "sector": "宇宙・防衛", "tradePolicy": "hold"},
-    {"ticker": "BA",    "stooq": "ba.us",    "name": "Boeing",             "sector": "宇宙・防衛", "tradePolicy": "trade"},
-    {"ticker": "RKLB",  "stooq": "rklb.us",  "name": "Rocket Lab",         "sector": "宇宙・防衛", "tradePolicy": "trade"},
-    {"ticker": "IBM",   "stooq": "ibm.us",   "name": "IBM",                "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "ASML",  "stooq": "asml.us",  "name": "ASML (ADR)",         "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "TSM",   "stooq": "tsm.us",   "name": "TSMC (台湾セミコンダクター ADR)", "sector": "ハイテク", "tradePolicy": "hold"},
-    {"ticker": "MRVL",  "stooq": "mrvl.us",  "name": "Marvell Technology", "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "ANET",  "stooq": "anet.us",  "name": "Arista Networks",    "sector": "ハイテク",   "tradePolicy": "trade"},
-    {"ticker": "VRT",   "stooq": "vrt.us",   "name": "Vertiv Holdings",    "sector": "ハイテク",   "tradePolicy": "hold"},
-    {"ticker": "CLMB",  "stooq": "clmb.us",  "name": "Climb Global Solutions（小型株）", "sector": "ハイテク", "tradePolicy": "trade"},
-    {"ticker": "IQV",   "stooq": "iqv.us",   "name": "IQVIA Holdings",     "sector": "ヘルスケア", "tradePolicy": "hold"},
-    {"ticker": "CACI",  "stooq": "caci.us",  "name": "CACI International",  "sector": "宇宙・防衛", "tradePolicy": "hold"},
-    {"ticker": "SPCX",  "stooq": "spcx.us",  "name": "SpaceX (Space Exploration Technologies)", "sector": "宇宙・防衛", "tradePolicy": "trade"}
+    {"ticker": "AAPL",  "stooq": "aapl.us",  "name": "Apple",              "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 3, "held": true},
+    {"ticker": "MSFT",  "stooq": "msft.us",  "name": "Microsoft",          "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "GOOGL", "stooq": "googl.us", "name": "Alphabet (Google)",  "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "AMZN",  "stooq": "amzn.us",  "name": "Amazon",             "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "AVGO",  "stooq": "avgo.us",  "name": "Broadcom",           "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "NVDA",  "stooq": "nvda.us",  "name": "NVIDIA",             "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 5, "held": true},
+    {"ticker": "META",  "stooq": "meta.us",  "name": "Meta Platforms",     "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4, "held": true},
+    {"ticker": "TSLA",  "stooq": "tsla.us",  "name": "Tesla",              "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "AMD",   "stooq": "amd.us",   "name": "AMD",                "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "PLTR",  "stooq": "pltr.us",  "name": "Palantir",           "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "ORCL",  "stooq": "orcl.us",  "name": "Oracle",             "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 3, "note": "OpenAI/Stargate関連"},
+    {"ticker": "CRWV",  "stooq": "crwv.us",  "name": "CoreWeave",          "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 3, "note": "OpenAIコンピュート関連・高ボラ"},
+    {"ticker": "XOM",   "stooq": "xom.us",   "name": "ExxonMobil",         "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "CVX",   "stooq": "cvx.us",   "name": "Chevron",            "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "COP",   "stooq": "cop.us",   "name": "ConocoPhillips",     "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "NEE",   "stooq": "nee.us",   "name": "NextEra Energy",     "sector": "エネルギー", "subSector": "電力・DCインフラ", "tradePolicy": "hold", "conviction": 3},
+    {"ticker": "SLB",   "stooq": "slb.us",   "name": "Schlumberger (SLB)", "sector": "エネルギー", "subSector": "エネルギー", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "LMT",   "stooq": "lmt.us",   "name": "Lockheed Martin",    "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "RTX",   "stooq": "rtx.us",   "name": "RTX (Raytheon)",     "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "NOC",   "stooq": "noc.us",   "name": "Northrop Grumman",   "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 4},
+    {"ticker": "BA",    "stooq": "ba.us",    "name": "Boeing",             "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 2},
+    {"ticker": "RKLB",  "stooq": "rklb.us",  "name": "Rocket Lab",         "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 3},
+    {"ticker": "IBM",   "stooq": "ibm.us",   "name": "IBM",                "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 3, "held": true},
+    {"ticker": "ASML",  "stooq": "asml.us",  "name": "ASML (ADR)",         "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 5, "note": "EUV露光装置の完全独占"},
+    {"ticker": "TSM",   "stooq": "tsm.us",   "name": "TSMC (ADR)",         "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 5, "held": true, "note": "先端ファウンドリ寡占"},
+    {"ticker": "MRVL",  "stooq": "mrvl.us",  "name": "Marvell Technology", "sector": "ハイテク",   "subSector": "AI・半導体/クラウド", "tradePolicy": "hold",  "conviction": 4, "held": true},
+    {"ticker": "ANET",  "stooq": "anet.us",  "name": "Arista Networks",    "sector": "ハイテク",   "subSector": "電力・DCインフラ", "tradePolicy": "trade", "conviction": 4, "held": true},
+    {"ticker": "VRT",   "stooq": "vrt.us",   "name": "Vertiv Holdings",    "sector": "ハイテク",   "subSector": "電力・DCインフラ", "tradePolicy": "hold",  "conviction": 4, "held": true},
+    {"ticker": "CLMB",  "stooq": "clmb.us",  "name": "Climb Global Solutions（小型株）", "sector": "ハイテク", "subSector": "AI・半導体/クラウド", "tradePolicy": "trade", "conviction": 2},
+    {"ticker": "IQV",   "stooq": "iqv.us",   "name": "IQVIA Holdings",     "sector": "ヘルスケア", "subSector": "その他モート", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "CACI",  "stooq": "caci.us",  "name": "CACI International", "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 3},
+    {"ticker": "SPCX",  "stooq": "spcx.us",  "name": "SpaceX",             "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 4, "note": "新規上場・データ蓄積中"}
+  ],
+  "events": [
+    {
+      "id": "anthropic-ipo",
+      "name": "Anthropic IPO",
+      "phase": "s1_filed",
+      "phaseLabels": {"rumor": "観測", "s1_filed": "S-1機密提出済", "s1_public": "S-1公開", "roadshow": "ロードショー", "listed": "上場", "lockup_expired": "ロックアップ解除"},
+      "filedDate": "2026-06-01",
+      "expectedListing": "2026-10-15",
+      "exchange": "Nasdaq",
+      "valuationUsd": "約$965B (Series H) / 調達約$30B観測",
+      "lockupDays": 180,
+      "summary": "2026/6/1にS-1機密提出。10月Nasdaq上場観測。公開S-1は9月頃見込み。売上は2026年5月時点で年率$47B超と急成長、黒字化は2028年見込み。",
+      "beneficiaries": [
+        {"ticker": "GOOGL", "relation": "大株主(出資評価益計上済)", "direction": "strong_plus", "action": "上場前に保有。上場で持分が市場評価され再評価余地。"},
+        {"ticker": "AMZN",  "relation": "大株主($16.8B評価益計上)", "direction": "strong_plus", "action": "上場前に保有。AWS計算需要も直結。"},
+        {"ticker": "NVDA",  "relation": "投資+GPU供給", "direction": "plus", "action": "保有継続。上場後の調達資金→GPU発注が追い風。"},
+        {"ticker": "TSM",   "relation": "全AIチップの製造元", "direction": "plus", "action": "保有継続・押し目買い。"},
+        {"ticker": "AVGO",  "relation": "カスタムチップ/ネットワーク", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "VRT",   "relation": "DC電源・冷却(設備投資恩恵)", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "ANET",  "relation": "DCネットワーク(設備投資恩恵)", "direction": "plus", "action": "保有継続。"}
+      ],
+      "risks": "上場時、間接プロキシ銘柄→直接保有への資金ローテーションで一時的な売り圧の可能性。純粋プロキシ(出資関係のない関連銘柄)は上場日前後の高値で一部利確も検討。",
+      "playbook": {
+        "s1_filed": "恩恵銘柄(特にGOOGL/AMZN)の押し目を優先的に拾う。戦略キャッシュ温存。",
+        "s1_public": "公開S-1で財務確認。過熱していなければ買い増し最終期限。",
+        "roadshow": "新規買いは停止。プロキシ銘柄の利確ライン設定。",
+        "listed": "初値が高騰したら関連銘柄の一部利確。IPO株本体は初日は追わない(統計的に不利)。",
+        "lockup_expired": "解除後の需給悪化での下落は本体株の買い場候補(ファンダ確認前提)。"
+      }
+    },
+    {
+      "id": "openai-ipo",
+      "name": "OpenAI IPO",
+      "phase": "s1_filed",
+      "phaseLabels": {"rumor": "観測", "s1_filed": "S-1機密提出済", "s1_public": "S-1公開", "roadshow": "ロードショー", "listed": "上場", "lockup_expired": "ロックアップ解除"},
+      "filedDate": "2026-05-22",
+      "expectedListing": "2027-03-31",
+      "exchange": "未定",
+      "valuationUsd": "$1T超目標(Altmanが$1兆下限視)。2027年へ延期観測(2026/6 Reuters/Bloomberg)",
+      "lockupDays": 180,
+      "summary": "2026/5/22にS-1機密提出も、市場環境と$1T評価維持のため2027年上場に傾く報道。売上$20B超(2025年末)、2026年は$14B規模の損失見込み、黒字化2030年頃。",
+      "beneficiaries": [
+        {"ticker": "MSFT", "relation": "約27%保有の筆頭株主", "direction": "strong_plus", "action": "上場前に保有。持分再評価の本命。"},
+        {"ticker": "ORCL", "relation": "Stargate($500B)コンピュート供給", "direction": "plus", "action": "監視リスト追加済。IPO延期報道で下げる日が押し目候補。"},
+        {"ticker": "CRWV", "relation": "コンピュート供給(業績連動大)", "direction": "plus_volatile", "action": "trade銘柄として。OpenAIニュースに敏感、モメンタムルール厳守。"},
+        {"ticker": "NVDA", "relation": "投資+GPU供給", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "AVGO", "relation": "カスタムチップ開発", "direction": "plus", "action": "保有継続。"},
+        {"ticker": "VRT",  "relation": "Stargate等DC建設恩恵", "direction": "plus", "action": "保有継続。"}
+      ],
+      "risks": "延期・評価切り下げ報道のたびにORCL/CRWV等の高exposure銘柄が下落。逆にそれが押し目になる構造。上場時はプロキシからのローテーション売りに注意。",
+      "playbook": {
+        "s1_filed": "MSFT/ORCLの押し目を優先。CRWVはモメンタムルールでのみ。",
+        "s1_public": "財務・Microsoft持分の扱いを確認して買い増し判断。",
+        "roadshow": "新規買い停止。プロキシの利確ライン設定。",
+        "listed": "初日は追わない。関連銘柄の一部利確検討。",
+        "lockup_expired": "本体株の需給底を待って打診買い候補。"
+      }
+    }
   ]
 }

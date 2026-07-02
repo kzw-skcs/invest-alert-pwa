@@ -1,7 +1,7 @@
 {
   "name": "投資シグナル",
   "short_name": "投資シグナル",
-  "description": "個別株・暗号資産・金銀の買い場/売り場アラート、推奨度・見込みリターン、ポートフォリオ損益とリバランス",
+  "description": "Value買い場/モメンタム売買/損切り・利確/資金配分プランナー/IPOイベント分析",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f172a",
