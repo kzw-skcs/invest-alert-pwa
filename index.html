@@ -112,6 +112,18 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 
 <!-- ================= 📊 シグナル ================= -->
 <div class="tab act" id="tab-signal">
+  <div class="seg" id="view-seg">
+    <button class="act" data-v="value">📈 長期Value</button>
+    <button data-v="momentum">⚡ 短期モメンタム</button>
+  </div>
+  <div class="card" id="mom-rules" style="display:none">
+    <h3>⚡ モメンタム売買ルール(現物のみ・trade銘柄)</h3>
+    <div class="muted">
+      <b>入口</b>: 50日高値ブレイク + 20日&gt;50日MA + RSI50-72 + 対S&amp;P500相対強度プラス + 出来高1.5倍<br>
+      <b>出口(機械的に厳守)</b>: ①初期損切り -8%上限(ATR×2.5) ②+20%で1/3利確 ③+40%でさらに1/3 ④残りはATRトレーリング ⑤8週停滞でタイムストップ<br>
+      <b>資金枠</b>: 株スリーブの25%まで。Valueの押し目買い資金(戦略キャッシュ)とは別勘定で管理。
+    </div>
+  </div>
   <div id="stale-banner"></div>
   <div id="vix-banner"></div>
   <div class="card" id="alerts-card">
@@ -294,6 +306,7 @@ const $$ = (s) => [...document.querySelectorAll(s)];
 let DATA = null;          // data.json
 let ACCT = 'tokutei';     // tokutei | nisa | all
 let SIGFILTER = 'all';
+let VIEW = 'value';   // value | momentum
 const OZ_G = 31.1035;
 
 const LS = {
@@ -369,29 +382,35 @@ function positionAlerts() {
     const priceJpy = instPriceJpy(inst, h.unit);
     const gain = (priceJpy / h.cost - 1) * 100;
     const isTrade = inst.tradePolicy === 'trade';
+    const strat = isTrade ? 'mom' : 'val';
     if (isTrade) {
       const stopPct = mp.stopInitPct || 8;
       const trail = inst.momentum && inst.momentum.trailStop ? inst.momentum.trailStop * fx / (h.unit === 'g' ? OZ_G : 1) : null;
-      if (gain <= -stopPct) out.push({ p: 1, t: `🛑 ${inst.ticker} 損切りライン到達 (${fmtP(gain)})`, d: `取得単価から-${stopPct}%超。現物ルール: 想定が崩れたら退出し、次の機会に回す。` });
-      else if (trail && priceJpy < trail) out.push({ p: 1, t: `🛑 ${inst.ticker} トレーリングストップ割れ`, d: `ATR×${mp.atrMult}の追従ラインを終値が下回りました。利益確保の売却検討。` });
-      else if (gain >= (mp.tp2GainPct || 40)) out.push({ p: 2, t: `💰 ${inst.ticker} 第2利確 (${fmtP(gain)})`, d: `+${mp.tp2GainPct}%到達。さらに${mp.tp2SellPct}%売却し、残りはトレーリングで伸ばす。` });
-      else if (gain >= (mp.tp1GainPct || 20)) out.push({ p: 2, t: `💰 ${inst.ticker} 第1部分利確 (${fmtP(gain)})`, d: `+${mp.tp1GainPct}%到達。${mp.tp1SellPct}%売却で元本回収を進める。` });
-      if (inst.momentum && inst.momentum.signal === 'exit_warning') out.push({ p: 2, t: `⚠️ ${inst.ticker} 売り管理シグナル`, d: inst.momentum.note });
+      if (gain <= -stopPct) out.push({ strat, p: 1, t: `🛑 ${inst.ticker} 損切りライン到達 (${fmtP(gain)})`, d: `取得単価から-${stopPct}%超。現物ルール: 想定が崩れたら退出し、次の機会に回す。` });
+      else if (trail && priceJpy < trail) out.push({ strat, p: 1, t: `🛑 ${inst.ticker} トレーリングストップ割れ`, d: `ATR×${mp.atrMult}の追従ラインを終値が下回りました。利益確保の売却検討。` });
+      else if (gain >= (mp.tp2GainPct || 40)) out.push({ strat, p: 2, t: `💰 ${inst.ticker} 第2利確 (${fmtP(gain)})`, d: `+${mp.tp2GainPct}%到達。さらに${mp.tp2SellPct}%売却し、残りはトレーリングで伸ばす。` });
+      else if (gain >= (mp.tp1GainPct || 20)) out.push({ strat, p: 2, t: `💰 ${inst.ticker} 第1部分利確 (${fmtP(gain)})`, d: `+${mp.tp1GainPct}%到達。${mp.tp1SellPct}%売却で元本回収を進める。` });
+      if (inst.momentum && inst.momentum.signal === 'exit_warning') out.push({ strat, p: 2, t: `⚠️ ${inst.ticker} 売り管理シグナル`, d: inst.momentum.note });
     } else {
-      if (inst.holdMgmt && inst.holdMgmt.thesisBreak) out.push({ p: 2, t: `🧐 ${inst.ticker} テーゼ見直し`, d: inst.holdMgmt.note });
-      if (inst.holdMgmt && inst.holdMgmt.trim && gain > 0) out.push({ p: 3, t: `✂️ ${inst.ticker} 部分利確検討 (${fmtP(gain)})`, d: inst.holdMgmt.note });
+      if (inst.holdMgmt && inst.holdMgmt.thesisBreak) out.push({ strat, p: 2, t: `🧐 ${inst.ticker} テーゼ見直し`, d: inst.holdMgmt.note });
+      if (inst.holdMgmt && inst.holdMgmt.trim && gain > 0) out.push({ strat, p: 3, t: `✂️ ${inst.ticker} 部分利確検討 (${fmtP(gain)})`, d: inst.holdMgmt.note });
     }
   }
   return out;
 }
 
 function renderAlerts() {
-  const server = (DATA.alerts || []).map((a) => ({ p: a.priority, t: a.title, d: a.detail }));
+  const server = (DATA.alerts || []).map((a) => ({
+    p: a.priority, t: a.title, d: a.detail,
+    strat: (a.type === 'MOM_ENTRY' || a.type === 'MOM_EXIT_WARN') ? 'mom' : (a.type === 'VIX' ? 'both' : 'val'),
+  }));
   const pos = positionAlerts();
-  const all = [...pos, ...server].sort((a, b) => a.p - b.p);
+  const every = [...pos, ...server];
+  const all = every.filter((a) => VIEW === 'momentum' ? (a.strat === 'mom' || a.strat === 'both') : a.strat !== 'mom')
+    .sort((a, b) => a.p - b.p);
   $('#alert-count').textContent = all.length ? `${all.length}件` : '';
   const badge = $('#nav-badge');
-  const urgent = all.filter((a) => a.p <= 2).length;
+  const urgent = every.filter((a) => a.p <= 2).length;
   badge.style.display = urgent ? '' : 'none'; badge.textContent = urgent;
   $('#alerts-list').innerHTML = all.length
     ? all.slice(0, 30).map((a) => `<div class="alert-item p${a.p}"><div class="t">${a.t}</div><div class="d">${a.d || ''}</div></div>`).join('')
@@ -401,8 +420,15 @@ function renderAlerts() {
 }
 
 function renderRanking() {
-  const list = instruments().filter((i) => i.rec && i.rec.score >= 50 && i.rec.action !== 'hold')
-    .sort((a, b) => b.rec.score - a.rec.score).slice(0, 8);
+  let list;
+  if (VIEW === 'momentum') {
+    list = instruments().filter((i) => i.tradePolicy === 'trade' && i.momentum &&
+      (i.momentum.signal === 'entry' || i.momentum.signal === 'exit_warning' || (i.rec && i.rec.score >= 50)))
+      .sort((a, b) => (b.momentum.signal === 'entry') - (a.momentum.signal === 'entry') || b.rec.score - a.rec.score).slice(0, 8);
+  } else {
+    list = instruments().filter((i) => i.tradePolicy !== 'trade' && i.value && i.value.score >= 50)
+      .sort((a, b) => b.value.score - a.value.score).slice(0, 8);
+  }
   $('#ranking').innerHTML = list.length ? list.map((i) => `
     <div class="amount-row" onclick="openChart('${i.ticker}','${i.class}')">
       <div class="lbl">${i.emoji} <b>${i.ticker}</b>
@@ -418,7 +444,7 @@ function renderRanking() {
 /* ---------------- 資産カード ---------------- */
 function renderCards() {
   const el = $('#cards');
-  let list = instruments();
+  let list = instruments().filter((i) => VIEW === 'momentum' ? i.tradePolicy === 'trade' : i.tradePolicy !== 'trade');
   if (SIGFILTER === 'action') list = list.filter((i) => i.actionable);
   if (SIGFILTER === 'stock') list = list.filter((i) => i.class === 'stock');
   if (SIGFILTER === 'other') list = list.filter((i) => i.class !== 'stock');
@@ -969,6 +995,13 @@ $('#acct-seg').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return;
   $$('#acct-seg button').forEach((x) => x.classList.remove('act'));
   b.classList.add('act'); ACCT = b.dataset.a; renderAssets(); renderAlerts();
+});
+$('#view-seg').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  $$('#view-seg button').forEach((x) => x.classList.remove('act'));
+  b.classList.add('act'); VIEW = b.dataset.v;
+  $('#mom-rules').style.display = VIEW === 'momentum' ? '' : 'none';
+  renderAlerts(); renderRanking(); renderCards();
 });
 $('#sig-filter').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return;
