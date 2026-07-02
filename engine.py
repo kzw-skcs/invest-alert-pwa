@@ -406,7 +406,8 @@ def hold_management(calc, vp):
     below_long_bottom = (calc.get("bottomLong") is not None and
                          calc.get("price") is not None and
                          calc["price"] < calc["bottomLong"] * 0.97)
-    if below_long_bottom and trend200_down_days >= vp["thesisBreakDays"]:
+    deep_dd = (calc.get("drawdownPct") or 0) >= 25   # 高値から-25%以上も必須条件(誤検知抑制)
+    if below_long_bottom and deep_dd and trend200_down_days >= vp["thesisBreakDays"]:
         out["thesisBreak"] = True
         out["note"] = "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
     pos1 = calc.get("pctInRange")
@@ -665,9 +666,11 @@ def analyze_events(cfg, instruments, today=None):
 
 # ---------------------------------------------------------------- アラート集約(プッシュ用)
 
-def build_alerts(instruments, events, vix, cfg):
-    """サーバー発報アラート。位置情報(取得単価)依存のものはクライアント側で生成。"""
+def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
+    """サーバー発報アラート。位置情報(取得単価)依存のものはクライアント側で生成。
+    prev_thesis: 前回すでにテーゼ見直しが出ていた銘柄集合。継続中の再通知は週1(remind=True)のみ。"""
     min_score = cfg["settings"].get("minScoreToAlert", 60)
+    prev_thesis = prev_thesis or set()
     alerts = []
     for i in instruments:
         if i.get("state") == "NO_DATA":
@@ -694,9 +697,10 @@ def build_alerts(instruments, events, vix, cfg):
         if m.get("signal") == "exit_warning":
             alerts.append({"type": "MOM_EXIT_WARN", "ticker": t, "priority": 2,
                            "title": f"⚠️ {t} 売り管理シグナル", "detail": m.get("note", "")})
-        if hm.get("thesisBreak"):
+        if hm.get("thesisBreak") and (t not in prev_thesis or remind):
+            label = "テーゼ見直し(新規)" if t not in prev_thesis else "テーゼ見直し(継続中・週次リマインド)"
             alerts.append({"type": "THESIS_REVIEW", "ticker": t, "priority": 2,
-                           "title": f"🧐 {t} テーゼ見直し", "detail": hm.get("note", "")})
+                           "title": f"🧐 {t} {label}", "detail": hm.get("note", "")})
         if hm.get("trim"):
             alerts.append({"type": "TRIM", "ticker": t, "priority": 3,
                            "title": f"✂️ {t} 部分利確検討", "detail": hm.get("note", "")})

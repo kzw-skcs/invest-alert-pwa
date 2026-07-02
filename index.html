@@ -222,6 +222,11 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 <div class="tab" id="tab-ipo">
   <div id="events"></div>
   <div class="card">
+    <h3>💎 お宝候補(発掘リスト)</h3>
+    <div class="tiny" style="margin-bottom:8px">劇的成長が見込める分野の先頭企業・寡占/独占企業の候補です。追加ボタンでウォッチリストに入れると翌朝から自動判定・アラート対象になります(要サーバー同期)。⚠️候補=推奨ではありません。テーゼ(なぜ勝つか)に納得できたものだけを。</div>
+    <div id="discovery"></div>
+  </div>
+  <div class="card">
     <h3>📖 IPOイベント投資の原則</h3>
     <div class="muted">
       ① 上場「前」に恩恵を受けるのは出資者(持分再評価)とサプライヤー(調達資金→発注)。<br>
@@ -249,7 +254,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     </div>
   </div>
   <div class="card">
-    <h3>📋 監視リスト <button class="btn sm" style="float:right" onclick="syncServer()">☁️ サーバーに同期</button></h3>
+    <h3>📋 ウォッチリスト <button class="btn sm" style="float:right" onclick="syncServer()">☁️ サーバーに同期</button></h3>
     <div class="tiny" style="margin-bottom:8px">スイッチON=短期売買(trade)、OFF=長期保有(hold・売りアラートなし)。×で非表示。変更後「サーバーに同期」で毎朝の自動判定へ反映(GH_TOKEN未設定時は表示のみ)。</div>
     <div id="watchlist"></div>
   </div>
@@ -307,6 +312,8 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
    ============================================================ */
 'use strict';
 const $ = (s) => document.querySelector(s);
+const on = (sel, ev, fn) => { const el = document.querySelector(sel); if (el) el.addEventListener(ev, fn); };
+window.addEventListener('error', (e) => { try { toast('⚠️ 内部エラー: ' + e.message); } catch (_) {} });
 const $$ = (s) => [...document.querySelectorAll(s)];
 let DATA = null;          // data.json
 let ACCT = 'tokutei';     // tokutei | nisa | all
@@ -352,9 +359,11 @@ function usdjpy() { return (DATA && DATA.fx && DATA.fx.usdjpy) || null; }
 /* ---------------- レンダリング統括 ---------------- */
 function renderAll() {
   if (!DATA) return;
-  renderStale(); renderVix(); renderAlerts(); renderRanking(); renderCards();
-  renderAssets(); renderTargetPF(); renderEvents(); renderWatchlist(); renderSettingsView();
-  renderAnalysis();
+  for (const f of [renderStale, renderVix, renderAlerts, renderRanking, renderCards,
+                   renderAssets, renderTargetPF, renderEvents, renderDiscovery,
+                   renderWatchlist, renderSettingsView, renderAnalysis]) {
+    try { f(); } catch (e) { console.error(f.name, e); }
+  }
   if ($('#plan-total').value) renderFullPlan();
   if ($('#plan-add').value) renderAddPlan();
 }
@@ -397,7 +406,6 @@ function positionAlerts() {
       else if (gain >= (mp.tp1GainPct || 20)) out.push({ strat, p: 2, t: `💰 ${inst.ticker} 第1部分利確 (${fmtP(gain)})`, d: `+${mp.tp1GainPct}%到達。${mp.tp1SellPct}%売却で元本回収を進める。` });
       if (inst.momentum && inst.momentum.signal === 'exit_warning') out.push({ strat, p: 2, t: `⚠️ ${inst.ticker} 売り管理シグナル`, d: inst.momentum.note });
     } else {
-      if (inst.holdMgmt && inst.holdMgmt.thesisBreak) out.push({ strat, p: 2, t: `🧐 ${inst.ticker} テーゼ見直し`, d: inst.holdMgmt.note });
       if (inst.holdMgmt && inst.holdMgmt.trim && gain > 0) out.push({ strat, p: 3, t: `✂️ ${inst.ticker} 部分利確検討 (${fmtP(gain)})`, d: inst.holdMgmt.note });
     }
   }
@@ -814,6 +822,26 @@ function renderEvents() {
   }).join('');
 }
 
+function renderDiscovery() {
+  const el = $('#discovery'); if (!el) return;
+  const list = (DATA && DATA.discovery) || [];
+  if (!list.length) { el.innerHTML = '<span class="muted">候補なし(config.jsonのdiscoveryで管理)</span>'; return; }
+  const inWatch = new Set(instruments().map((i) => i.ticker));
+  el.innerHTML = list.map((d) => `
+    <div style="padding:8px 0;border-bottom:1px solid #24334a">
+      <div class="row"><b>${d.ticker}</b><span class="tiny grow">${d.name} / ${d.theme}</span>
+        <span class="pill" style="background:${d.risk && d.risk.includes('高') ? '#7f1d1d' : '#1e3a5f'};color:#fff">${d.risk || ''}</span>
+        ${inWatch.has(d.ticker) ? '<span class="tiny">✅追加済</span>' : `<button class="btn sm pri" onclick="addDiscovery('${d.ticker}','${(d.name || '').replace(/'/g, '')}')">＋追加</button>`}</div>
+      <div class="tiny" style="margin-top:3px"><b>独占性:</b> ${d.moat || ''}</div>
+      <div class="tiny"><b>テーゼ:</b> ${d.thesis || ''}</div>
+    </div>`).join('');
+}
+function addDiscovery(tk, name) {
+  CUSTOM.push({ ticker: tk, name: name || tk, subSector: 'その他モート', tradePolicy: 'hold', conviction: 3, added: true });
+  HIDDEN = HIDDEN.filter((h) => h !== tk);
+  saveAll(); renderDiscovery();
+  toast(`${tk} をウォッチリストに追加。⚙️設定→「サーバーに同期」で翌朝から判定対象になります。`);
+}
 /* ---------------- ⚙️ 設定タブ ---------------- */
 function renderWatchlist() {
   const el = $('#watchlist');
@@ -881,12 +909,18 @@ async function renderBacktest() {
     const m = b.momentum || {};
     const allocRows = (Array.isArray(b.allocations) ? b.allocations : []).map((a) =>
       `<tr><td>${a.label}</td><td>${Object.entries(a.weightsPct).filter(([,w])=>w>0).map(([n,w])=>`${n}${w}`).join(':')}</td><td>${a.cagrPct}%</td><td>${a.maxDDPct}%</td><td>${a.sharpe}</td></tr>`).join('');
+    const interp = (b.interpretation || []).map((s) => `<div class="alert-item p3" style="margin-bottom:6px"><div class="d">${s}</div></div>`).join('');
     el.innerHTML = `
       <div class="tiny">${b.period ? `検証期間 ${b.period.start}〜${b.period.end} (${b.period.tradingDays}営業日) / 生成 ${b.generated}` : ''}</div>
+      ${interp ? `<h3 style="font-size:12px;margin:8px 0 4px">🧠 自動解釈(まずこれを読む)</h3>${interp}` : ''}
       <h3 style="font-size:12px;margin:8px 0 4px">Value戦略(Tier別・1トレードあたり)</h3>
       <table><tr><th>Tier</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th><th>年率換算</th></tr>${tierRows}</table>
       <h3 style="font-size:12px;margin:10px 0 4px">モメンタム戦略</h3>
-      <div class="tiny">${m.trades ? `${m.trades}回 / 勝率${m.winRatePct}% / 平均${m.avgRetPct}% / 平均${m.avgDays}日 / 最大${m.bestPct}% / 最悪${m.worstPct}%` : 'トレードなし'}</div>
+      <div class="tiny">現行ルール: ${m.trades ? `${m.trades}回 / 勝率${m.winRatePct}% / 平均${m.avgRetPct}% / 平均${m.avgDays}日 / 最大${m.bestPct}% / 最悪${m.worstPct}%` : 'トレードなし'}</div>
+      ${b.momentumNoTP && b.momentumNoTP.trades ? `<div class="tiny">利確なし(比較): ${b.momentumNoTP.trades}回 / 勝率${b.momentumNoTP.winRatePct}% / 平均${b.momentumNoTP.avgRetPct}% / 最大${b.momentumNoTP.bestPct}% / 最悪${b.momentumNoTP.worstPct}%</div>` : ''}
+      ${b.sleeveStats ? `<h3 style="font-size:12px;margin:10px 0 4px">資産別の実測(この検証期間・金銀BTC/ETHは買い持ち)</h3>
+      <table><tr><th>資産</th><th>年率(CAGR)</th><th>最大DD</th><th>Sharpe</th></tr>
+      ${Object.entries(b.sleeveStats).map(([k, s]) => s ? `<tr><td>${k}</td><td>${s.cagrPct}%</td><td>${s.maxDDPct}%</td><td>${s.sharpe}</td></tr>` : '').join('')}</table>` : ''}
       <h3 style="font-size:12px;margin:10px 0 4px">配分の実測比較(日次リバランス近似)</h3>
       <table><tr><th>配分</th><th>比率</th><th>CAGR</th><th>最大DD</th><th>Sharpe</th></tr>${allocRows}</table>
       <div class="tiny" style="margin-top:6px">⚠️ ${b.warning || ''}</div>`;
@@ -1020,25 +1054,25 @@ $$('nav button').forEach((b) => b.addEventListener('click', () => {
   $$('.tab').forEach((x) => x.classList.remove('act'));
   $('#tab-' + b.dataset.t).classList.add('act');
 }));
-$('#acct-seg').addEventListener('click', (e) => {
+on('#acct-seg', 'click', (e) => {
   const b = e.target.closest('button'); if (!b) return;
   $$('#acct-seg button').forEach((x) => x.classList.remove('act'));
   b.classList.add('act'); ACCT = b.dataset.a; renderAssets(); renderAlerts();
 });
-$('#view-seg').addEventListener('click', (e) => {
+on('#view-seg', 'click', (e) => {
   const b = e.target.closest('button'); if (!b) return;
   $$('#view-seg button').forEach((x) => x.classList.remove('act'));
   b.classList.add('act'); VIEW = b.dataset.v;
   $('#mom-rules').style.display = VIEW === 'momentum' ? '' : 'none';
   renderAlerts(); renderRanking(); renderCards();
 });
-$('#sig-filter').addEventListener('click', (e) => {
+on('#sig-filter', 'click', (e) => {
   const b = e.target.closest('button'); if (!b) return;
   $$('#sig-filter button').forEach((x) => x.classList.remove('act'));
   b.classList.add('act'); SIGFILTER = b.dataset.f; renderCards();
 });
-$('#h-search').addEventListener('input', renderHoldingsForm);
-$('#cash-input').addEventListener('change', (e) => {
+on('#h-search', 'input', renderHoldingsForm);
+on('#cash-input', 'change', (e) => {
   if (ACCT !== 'all') { CASH[ACCT] = Number(e.target.value) || 0; saveAll(); renderAssets(); }
 });
 const savedPlan = LS.get('iv2.plan', null);

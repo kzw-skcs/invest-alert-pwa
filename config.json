@@ -125,6 +125,28 @@
     {"ticker": "CACI",  "stooq": "caci.us",  "name": "CACI International", "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "hold",  "conviction": 3},
     {"ticker": "SPCX",  "stooq": "spcx.us",  "name": "SpaceX",             "sector": "宇宙・防衛", "subSector": "宇宙・防衛", "tradePolicy": "trade", "conviction": 4, "note": "新規上場・データ蓄積中"}
   ],
+  "discovery": [
+    {"ticker": "ISRG", "name": "Intuitive Surgical", "theme": "手術ロボット", "moat": "da Vinciで世界シェア60%超・設置1.1万台の器具/保守の継続収益", "thesis": "手術ロボの事実上の独占。da Vinci 5サイクルが成長触媒。ディフェンシブ×成長の両立", "risk": "低〜中"},
+    {"ticker": "AXON", "name": "Axon Enterprise", "theme": "公共安全テック", "moat": "TASER+ボディカメラ+証拠管理SaaSの警察OS独占。受注残$14B超", "thesis": "行政の乗り換えコストが極めて高く、AI(Draft One)で独占が深化", "risk": "中"},
+    {"ticker": "SNPS", "name": "Synopsys", "theme": "半導体設計(EDA)", "moat": "EDAはSNPS/CDNSの実質複占。チップを設計する全社が顧客", "thesis": "AIチップ乱立時代の「ツルハシ売り」。どの半導体が勝っても勝つ", "risk": "低〜中"},
+    {"ticker": "CDNS", "name": "Cadence Design", "theme": "半導体設計(EDA)", "moat": "同上(複占のもう一方)", "thesis": "SNPSと同じ構造。2社セットで検討", "risk": "低〜中"},
+    {"ticker": "KLAC", "name": "KLA Corporation", "theme": "半導体検査", "moat": "プロセス制御・検査装置で寡占。微細化するほど必須", "thesis": "ASMLと同型の「装置レイヤーの独占」。先端化の恩恵を装置で取る", "risk": "中"},
+    {"ticker": "CEG", "name": "Constellation Energy", "theme": "原子力×AI電力", "moat": "米最大のカーボンフリー発電。MSFT/METAと長期PPA締結済み", "thesis": "AIデータセンターの電力不足の最直接的受益者。既存原発は新設不能の参入障壁", "risk": "中"},
+    {"ticker": "ASTS", "name": "AST SpaceMobile", "theme": "衛星direct-to-cell", "moat": "普通のスマホに直接つながる衛星通信の先行者。通信キャリアと提携多数", "thesis": "成功すれば圏外の消滅=巨大市場の先頭。ただし実行リスク大", "risk": "高(投機的)"},
+    {"ticker": "LLY", "name": "Eli Lilly", "theme": "GLP-1(肥満・糖尿病)", "moat": "GLP-1はLLY/NVOの複占。製造能力自体が参入障壁", "thesis": "医療コスト構造を変える薬の複占側。ヘルスケア枠の成長候補", "risk": "中"},
+    {"ticker": "IONQ", "name": "IonQ", "theme": "量子コンピュータ", "moat": "イオントラップ方式の先行上場企業", "thesis": "実用化すれば独走の可能性があるが、時期は不確実。宝くじ枠", "risk": "高(投機的)"},
+    {"ticker": "ALAB", "name": "Astera Labs", "theme": "AI接続半導体", "moat": "AIラック内接続(PCIeリタイマ/CXL)の先行者。スイッチScorpioで$20B市場へ参入", "thesis": "GPU同士を繋ぐ配線レイヤーの覇者候補。Q1売上+93%。ただし高バリュエーション", "risk": "高"},
+    {"ticker": "CRDO", "name": "Credo Technology", "theme": "AI接続(ケーブル/SerDes)", "moat": "AEC(アクティブ電気ケーブル)で先行。直近四半期+157%成長", "thesis": "ALABと同じ「AIの神経系」テーマ。顧客集中リスクあり", "risk": "高"},
+    {"ticker": "COHR", "name": "Coherent", "theme": "光トランシーバ", "moat": "データセンター光部品の寡占プレイヤー", "thesis": "AIトラフィック増→光化は不可逆。装置より安く買えることが多い", "risk": "中"},
+    {"ticker": "MU", "name": "Micron", "theme": "HBMメモリ", "moat": "HBMはMU/SKハイニックス/サムスンの3社寡占", "thesis": "AIチップの性能はメモリ帯域で決まる時代。シクリカルだが構造的追い風", "risk": "中"},
+    {"ticker": "ARM", "name": "Arm Holdings", "theme": "半導体IP", "moat": "命令セットIPの実質独占(スマホ99%、DC浸透中)", "thesis": "どのAIチップが勝ってもロイヤリティが入る構造", "risk": "中"},
+    {"ticker": "GEV", "name": "GE Vernova", "theme": "電力インフラ", "moat": "ガスタービン・送電網機器の寡占。DC電力不足の直接受益", "thesis": "AIの律速は電力。発電設備の納期は数年待ち=価格決定力", "risk": "中"},
+    {"ticker": "VST", "name": "Vistra", "theme": "独立系電力", "moat": "原子力+ガス発電をDC需要地に保有", "thesis": "CEGと同型の「既存発電資産の再評価」プレー", "risk": "中"},
+    {"ticker": "CCJ", "name": "Cameco", "theme": "ウラン", "moat": "西側最大のウラン生産者(カザトムプロム以外の代替が乏しい)", "thesis": "原発回帰+SMR時代の燃料供給の要衝。金銀に近い実物資産性", "risk": "中"},
+    {"ticker": "OKLO", "name": "Oklo", "theme": "SMR(小型原子炉)", "moat": "DC向け小型高速炉の先行者(Altman支援)", "thesis": "商用化前で売上ほぼゼロ。成功すれば独走、失敗なら大幅減。宝くじ枠", "risk": "高(投機的)"},
+    {"ticker": "LUNR", "name": "Intuitive Machines", "theme": "月面経済", "moat": "NASA月面輸送(CLPS)契約の先行者", "thesis": "月面インフラの一番手候補。政府契約依存で変動大", "risk": "高(投機的)"},
+    {"ticker": "KTOS", "name": "Kratos Defense", "theme": "無人機・極超音速", "moat": "安価な無人戦闘機・標的機で独自地位", "thesis": "防衛の主役が「高価な有人機→安価な無人機群」へ移る構造変化の先頭", "risk": "中〜高"}
+  ],
   "events": [
     {
       "id": "anthropic-ipo",

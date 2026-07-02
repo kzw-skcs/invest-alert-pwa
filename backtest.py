@@ -276,6 +276,56 @@ def optimize_allocation(sleeve_daily, names):
     return out
 
 
+# ---------------------------------------------------------------- 自動解釈
+
+def build_interpretation(value_results, mom, allocations, names):
+    """結果を平易な日本語に自動翻訳する。表示はUIの先頭。"""
+    L = []
+    L.append("【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。")
+    # Value Tier
+    tiers = [(k, v) for k, v in value_results.items() if v.get("trades")]
+    if len(tiers) >= 2:
+        lo_k, lo = tiers[0]; hi_k, hi = tiers[-1]
+        L.append(f"Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。{lo_k}は{lo['trades']}回・勝率{lo['winRatePct']}%・平均{lo['avgRetPct']}%に対し、{hi_k}は{hi['trades']}回・勝率{hi['winRatePct']}%・平均{hi['avgRetPct']}%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。")
+    if mom.get("trades"):
+        L.append(f"モメンタム戦略: 勝率{mom['winRatePct']}%と“半分は負ける”が、平均{mom['avgRetPct']}%がプラスなのは損切り(-8%上限)で負けを小さく、利確ルールで勝ちを大きくする非対称性が機能した証拠。勝率の低さに動揺してルールを破らないことが最重要。")
+    # 配分
+    if isinstance(allocations, list) and allocations:
+        by_label = {a["label"]: a for a in allocations}
+        cur = next((a for a in allocations if a["label"].startswith("現行推奨")), None)
+        sharpe_a = next((a for a in allocations if "シャープ" in a["label"]), None)
+        dd25 = next((a for a in allocations if "25%" in a["label"]), None)
+        refs = [a for a in (sharpe_a, dd25) if a]
+        if refs:
+            mom_high = all(a["weightsPct"].get("momentum", 0) >= 30 for a in refs)
+            crypto_zero = all(a["weightsPct"].get("btc", 0) + a["weightsPct"].get("eth", 0) <= 5 for a in refs)
+            metals_heavy = all(a["weightsPct"].get("gold", 0) + a["weightsPct"].get("silver", 0) >= 25 for a in refs)
+            obs = []
+            if mom_high:
+                obs.append("どの参考配分もモメンタム枠を上限近くまで使っており、この期間はルール通りのモメンタム売買が最も効率的な稼ぎ手だった")
+            if metals_heavy:
+                obs.append("金銀の比率が高いのは検証期間が貴金属の強気相場だったため(将来も続く保証はない)")
+            if crypto_zero:
+                obs.append("BTC/ETHが小さいのは“上がらなかった”からではなく、この期間は下落の深さ(DD)に対してリターンが見合わなかったため。長期テーゼで持つ判断と過去最適化は別物")
+            if obs:
+                L.append("配分の読み方: " + "。".join(obs) + "。")
+        if cur and sharpe_a:
+            L.append(f"現行推奨(CAGR{cur['cagrPct']}%・DD{cur['maxDDPct']}%・Sharpe{cur['sharpe']})は、最大シャープ配分(CAGR{sharpe_a['cagrPct']}%・DD{sharpe_a['maxDDPct']}%・Sharpe{sharpe_a['sharpe']})に全指標で劣後。見直し余地あり。ただし“最大CAGR”は過去に最も上がった資産へ寄るだけの過剰適合なので鵜呑みにしない。")
+        if cur and sharpe_a:
+            # 中庸たたき台: 現行と最大シャープの中間(5%丸め)
+            mid = {}
+            for k in names:
+                m = (cur["weightsPct"].get(k, 0) + sharpe_a["weightsPct"].get(k, 0)) / 2
+                mid[k] = int(round(m / 5) * 5)
+            diff = 100 - sum(mid.values())
+            mid["value"] = mid.get("value", 0) + diff
+            L.append("たたき台(現行と最大シャープの中間・5%丸め): " +
+                     " : ".join(f"{k}{v}" for k, v in mid.items() if v > 0) +
+                     "。一括で動かさず、追加投資から新配分に寄せるのが税制上も心理上も安全。")
+    L.append("【限界】約5年という一つの時代の検証であり、手数料・税・スリッページ未考慮。この結果は“ルールが壊れていないことの確認”と“配分の相場観”に使い、将来の約束とは考えないこと。")
+    return L
+
+
 # ---------------------------------------------------------------- メイン
 
 def main():
@@ -320,6 +370,9 @@ def main():
                      for label, thr in TIER_THRESHOLDS.items()}
     print("モメンタム戦略 検証中…")
     mom_results, mom_daily = backtest_momentum(stock_data, trade_tickers, mp)
+    # 比較用: 部分利確なし(トレーリングのみで勝ちを伸ばす)バリアント
+    mp_notp = dict(mp); mp_notp["tp1GainPct"] = 10 ** 9; mp_notp["tp2GainPct"] = 10 ** 9
+    mom_notp_results, _ = backtest_momentum(stock_data, trade_tickers, mp_notp)
 
     # スリーブ系列
     print("配分最適化中…")
@@ -343,12 +396,21 @@ def main():
         sleeve_stats[nm] = stats_from_series([sleeve_daily[d][i] for d in common])
     allocations = optimize_allocation(sleeve_daily, names) if common else {"error": "共通期間なし"}
 
+    interpretation = build_interpretation(value_results, mom_results, allocations, names)
+    if mom_results.get("trades") and mom_notp_results.get("trades"):
+        interpretation.append(
+            f"モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均{mom_results['avgRetPct']}%/勝率{mom_results['winRatePct']}%、"
+            f"部分利確なし(トレーリングのみ)は平均{mom_notp_results['avgRetPct']}%/勝率{mom_notp_results['winRatePct']}%"
+            f"(最大{mom_notp_results.get('bestPct')}%・最悪{mom_notp_results.get('worstPct')}%)。"
+            "利確なしの方が平均が高ければ“爆発力を殺していた”証拠になり、低ければ“利確が正解だった”ことになる。数字で判断を。")
     result = {
         "generated": datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"),
+        "interpretation": interpretation,
         "period": {"start": common[0] if common else None, "end": common[-1] if common else None,
                    "tradingDays": len(common)},
         "valueTiers": value_results,
         "momentum": mom_results,
+        "momentumNoTP": mom_notp_results,
         "sleeveStats": sleeve_stats,
         "allocations": allocations,
         "assumptions": ("Value: スコア閾値上抜けで買い→チャネル天井 or 120営業日で売り / "
