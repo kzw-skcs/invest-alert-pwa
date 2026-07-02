@@ -463,7 +463,8 @@ function renderCards() {
   if (SIGFILTER === 'other') list = list.filter((i) => i.class !== 'stock');
   const order = { SUPER_BUY: 0, BUY: 1, SUPER_SELL: 2, SELL: 3, DOWN: 4, NEUTRAL: 5, UP: 6, NO_DATA: 9 };
   list.sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0) || (order[a.state] ?? 5) - (order[b.state] ?? 5));
-  el.innerHTML = list.map(cardHTML).join('');
+  const fLabel = { all: 'すべて', action: 'アクションあり', stock: '株のみ', other: '暗号資産・金銀のみ' }[SIGFILTER] || '';
+  el.innerHTML = `<div class="tiny" style="margin:2px 0 8px">🔽 ${VIEW === 'momentum' ? '⚡短期モメンタム' : '📈長期Value'} / ${fLabel}: <b>${list.length}銘柄</b>${list.length === 0 ? ' — 該当なし(フィルタを「すべて」に戻してください)' : ''}</div>` + list.map(cardHTML).join('');
   list.forEach((i) => drawSpark(i));
 }
 
@@ -523,6 +524,7 @@ function drawSpark(i) {
   const w = c.clientWidth * dpr, h = c.clientHeight * dpr;
   c.width = w; c.height = h;
   const ctx = c.getContext('2d');
+  if (!ctx) return;
   const vals = i.history.map((x) => x.c);
   let lo = Math.min(...vals, i.bottom ?? Infinity), hi = Math.max(...vals, i.top ?? -Infinity);
   if (!(hi > lo)) { hi = Math.max(...vals); lo = Math.min(...vals); }
@@ -915,6 +917,11 @@ async function renderBacktest() {
       ${interp ? `<h3 style="font-size:12px;margin:8px 0 4px">🧠 自動解釈(まずこれを読む)</h3>${interp}` : ''}
       <h3 style="font-size:12px;margin:8px 0 4px">Value戦略(Tier別・1トレードあたり)</h3>
       <table><tr><th>Tier</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th><th>年率換算</th></tr>${tierRows}</table>
+      ${b.valueTiersHold ? `<h3 style="font-size:12px;margin:10px 0 4px">比較: 最初のシグナルで買い→期間末まで保有し続けた場合</h3>
+      <table><tr><th>Tier</th><th>銘柄数</th><th>勝率</th><th>平均リターン</th><th>平均保有</th><th>年率換算</th></tr>
+      ${Object.entries(b.valueTiersHold).map(([k, v]) => v.trades
+        ? `<tr><td>${k}</td><td>${v.trades}</td><td>${v.winRatePct}%</td><td>${v.avgRetPct}%</td><td>${v.avgHoldDays}日</td><td>${v.avgAnnualizedPct}%</td></tr>`
+        : `<tr><td>${k}</td><td colspan="5">該当なし</td></tr>`).join('')}</table>` : ''}
       <h3 style="font-size:12px;margin:10px 0 4px">モメンタム戦略</h3>
       <div class="tiny">現行ルール: ${m.trades ? `${m.trades}回 / 勝率${m.winRatePct}% / 平均${m.avgRetPct}% / 平均${m.avgDays}日 / 最大${m.bestPct}% / 最悪${m.worstPct}%` : 'トレードなし'}</div>
       ${b.momentumNoTP && b.momentumNoTP.trades ? `<div class="tiny">利確なし(比較): ${b.momentumNoTP.trades}回 / 勝率${b.momentumNoTP.winRatePct}% / 平均${b.momentumNoTP.avgRetPct}% / 最大${b.momentumNoTP.bestPct}% / 最悪${b.momentumNoTP.worstPct}%</div>` : ''}

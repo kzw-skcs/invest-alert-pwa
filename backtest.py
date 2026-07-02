@@ -96,6 +96,32 @@ def backtest_value(instruments_data, threshold):
     return summarize_trades(trades)
 
 
+def backtest_value_hold(instruments_data, threshold):
+    """比較用: 最初にスコアが閾値を超えた日に買い、そのまま検証期間末まで保有し続けた場合。"""
+    rows = []
+    for tk, (sig, closes, dates) in instruments_data.items():
+        for t in range(WARMUP + 1, len(closes)):
+            s_now, s_prev = sig[t], sig[t - 1]
+            if s_now and s_now["score"] >= threshold and (s_prev is None or s_prev["score"] < threshold):
+                days = len(closes) - 1 - t
+                if days < 20:
+                    break
+                ret = closes[-1] / closes[t] - 1
+                ann = ((1 + ret) ** (252 / days) - 1) * 100
+                rows.append({"ticker": tk, "retPct": ret * 100, "days": days, "annPct": ann})
+                break  # 最初のシグナルで買ってずっと保有
+    if not rows:
+        return {"trades": 0}
+    rets = [r["retPct"] for r in rows]
+    anns = [r["annPct"] for r in rows]
+    return {"trades": len(rows),
+            "winRatePct": round(sum(1 for r in rets if r > 0) / len(rets) * 100, 1),
+            "avgRetPct": round(sum(rets) / len(rets), 2),
+            "medianRetPct": round(sorted(rets)[len(rets) // 2], 2),
+            "avgAnnualizedPct": round(sum(anns) / len(anns), 1),
+            "avgHoldDays": round(sum(r["days"] for r in rows) / len(rows), 1)}
+
+
 # ---------------------------------------------------------------- モメンタム戦略
 
 def backtest_momentum(instruments_data, trade_tickers, mp):
@@ -368,6 +394,8 @@ def main():
     print("Value戦略 検証中…")
     value_results = {label: backtest_value(stock_data, thr)
                      for label, thr in TIER_THRESHOLDS.items()}
+    value_hold_results = {label: backtest_value_hold(stock_data, thr)
+                          for label, thr in TIER_THRESHOLDS.items()}
     print("モメンタム戦略 検証中…")
     mom_results, mom_daily = backtest_momentum(stock_data, trade_tickers, mp)
     # 比較用: 部分利確なし(トレーリングのみで勝ちを伸ばす)バリアント
@@ -397,6 +425,14 @@ def main():
     allocations = optimize_allocation(sleeve_daily, names) if common else {"error": "共通期間なし"}
 
     interpretation = build_interpretation(value_results, mom_results, allocations, names)
+    vh = value_hold_results.get("consider(65)", {})
+    vs = value_results.get("consider(65)", {})
+    if vh.get("trades") and vs.get("trades"):
+        interpretation.append(
+            f"売り時比較実験(スコア65基準): 「天井/120日で売る」方式は1回平均{vs['avgRetPct']}%(年率換算{vs.get('annualizedPerTradePct')}%)、"
+            f"「最初のシグナルで買って以後ずっと保有」は平均{vh['avgRetPct']}%(平均{vh['avgHoldDays']}営業日保有・年率換算{vh['avgAnnualizedPct']}%)。"
+            "年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。"
+            "ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。")
     if mom_results.get("trades") and mom_notp_results.get("trades"):
         interpretation.append(
             f"モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均{mom_results['avgRetPct']}%/勝率{mom_results['winRatePct']}%、"
@@ -409,6 +445,7 @@ def main():
         "period": {"start": common[0] if common else None, "end": common[-1] if common else None,
                    "tradingDays": len(common)},
         "valueTiers": value_results,
+        "valueTiersHold": value_hold_results,
         "momentum": mom_results,
         "momentumNoTP": mom_notp_results,
         "sleeveStats": sleeve_stats,
