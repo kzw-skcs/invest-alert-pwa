@@ -1,29 +1,31 @@
 {
- "generated": "2026-07-02 22:54 JST",
+ "generated": "2026-07-03 21:53 JST",
  "interpretation": [
   "【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。",
-  "Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。consider(65)は222回・勝率78.8%・平均7.35%に対し、absolute(90)は62回・勝率87.1%・平均14.65%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。",
+  "Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。consider(65)は602回・勝率76.2%・平均6.11%に対し、absolute(90)は150回・勝率88.0%・平均14.03%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。",
+  "モメンタム戦略: 勝率48.0%と“半分は負ける”が、平均4.38%がプラスなのは損切り(-8%上限)で負けを小さく、利確ルールで勝ちを大きくする非対称性が機能した証拠。勝率の低さに動揺してルールを破らないことが最重要。",
   "配分の読み方: 金銀の比率が高いのは検証期間が貴金属の強気相場だったため(将来も続く保証はない)。BTC/ETHが小さいのは“上がらなかった”からではなく、この期間は下落の深さ(DD)に対してリターンが見合わなかったため。長期テーゼで持つ判断と過去最適化は別物。",
-  "現行推奨(CAGR20.7%・DD36.4%・Sharpe0.97)は、最大シャープ配分(CAGR25.0%・DD22.6%・Sharpe1.44)に全指標で劣後。見直し余地あり。ただし“最大CAGR”は過去に最も上がった資産へ寄るだけの過剰適合なので鵜呑みにしない。",
-  "たたき台(現行と最大シャープの中間・5%丸め): value60 : btc5 : gold35。一括で動かさず、追加投資から新配分に寄せるのが税制上も心理上も安全。",
+  "現行推奨(CAGR19.1%・DD29.1%・Sharpe0.99)は、最大シャープ配分(CAGR28.3%・DD17.1%・Sharpe1.71)に全指標で劣後。見直し余地あり。ただし“最大CAGR”は過去に最も上がった資産へ寄るだけの過剰適合なので鵜呑みにしない。",
+  "たたき台(現行と最大シャープの中間・5%丸め): value55 : momentum10 : btc5 : gold30。一括で動かさず、追加投資から新配分に寄せるのが税制上も心理上も安全。",
   "【限界】約5年という一つの時代の検証であり、手数料・税・スリッページ未考慮。この結果は“ルールが壊れていないことの確認”と“配分の相場観”に使い、将来の約束とは考えないこと。",
-  "売り時比較実験(スコア65基準): 「天井/120日で売る」方式は1回平均7.35%(年率換算41.0%)、「最初のシグナルで買って以後ずっと保有」は平均309.24%(平均1020.6営業日保有・年率換算34.3%)。年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。"
+  "売り時比較実験(スコア65基準): 「天井/120日で売る」方式は1回平均6.11%(年率換算35.4%)、「最初のシグナルで買って以後ずっと保有」は平均222.55%(平均1041.1営業日保有・年率換算24.7%)。年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。",
+  "モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均4.38%/勝率48.0%、部分利確なし(トレーリングのみ)は平均5.51%/勝率46.0%(最大202.3%・最悪-15.7%)。利確なしの方が平均が高ければ“爆発力を殺していた”証拠になり、低ければ“利確が正解だった”ことになる。数字で判断を。"
  ],
  "period": {
   "start": "2021-10-13",
-  "end": "2026-07-02",
-  "tradingDays": 1186
+  "end": "2026-07-03",
+  "tradingDays": 1187
  },
  "valueTiers": {
   "consider(65)": {
-   "trades": 222,
-   "winRatePct": 78.8,
-   "avgRetPct": 7.35,
-   "medianRetPct": 6.77,
+   "trades": 602,
+   "winRatePct": 76.2,
+   "avgRetPct": 6.11,
+   "medianRetPct": 6.1,
    "bestPct": 79.3,
    "worstPct": -61.6,
-   "avgDays": 52.0,
-   "annualizedPerTradePct": 41.0,
+   "avgDays": 49.3,
+   "annualizedPerTradePct": 35.4,
    "recent": [
     "MU 2022-03-07→2022-08-26 -23.9% (time)",
     "MU 2022-10-10→2022-10-13 +6.8% (top)",
@@ -36,18 +38,18 @@
    ]
   },
   "strong(80)": {
-   "trades": 116,
-   "winRatePct": 83.6,
-   "avgRetPct": 11.19,
-   "medianRetPct": 10.23,
-   "bestPct": 61.0,
-   "worstPct": -29.4,
+   "trades": 296,
+   "winRatePct": 81.1,
+   "avgRetPct": 9.52,
+   "medianRetPct": 8.92,
+   "bestPct": 61.8,
+   "worstPct": -33.1,
    "avgDays": 47.2,
-   "annualizedPerTradePct": 76.2,
+   "annualizedPerTradePct": 62.5,
    "recent": [
-    "CACI 2026-06-17→2026-07-02 -0.3% (time)",
-    "TLN 2026-03-04→2026-06-16 +20.8% (top)",
-    "MU 2022-07-01→2022-10-13 +2.3% (top)",
+    "KTOS 2022-09-02→2022-12-23 -22.1% (top)",
+    "KTOS 2026-06-22→2026-07-02 +8.3% (time)",
+    "MU 2022-07-05→2022-10-13 -3.3% (top)",
     "MU 2024-08-02→2025-01-17 +14.1% (top)",
     "MU 2025-01-28→2025-02-18 +21.0% (top)",
     "MU 2025-03-10→2025-03-14 +15.7% (top)",
@@ -56,20 +58,20 @@
    ]
   },
   "absolute(90)": {
-   "trades": 62,
-   "winRatePct": 87.1,
-   "avgRetPct": 14.65,
-   "medianRetPct": 15.13,
-   "bestPct": 61.0,
-   "worstPct": -28.5,
-   "avgDays": 47.3,
-   "annualizedPerTradePct": 107.3,
+   "trades": 150,
+   "winRatePct": 88.0,
+   "avgRetPct": 14.03,
+   "medianRetPct": 12.05,
+   "bestPct": 70.5,
+   "worstPct": -28.8,
+   "avgDays": 44.8,
+   "annualizedPerTradePct": 109.3,
    "recent": [
-    "IQV 2022-09-21→2022-10-28 +6.5% (top)",
-    "IQV 2025-04-01→2025-06-17 -10.0% (top)",
-    "IQV 2026-03-12→2026-06-26 +17.3% (top)",
-    "CACI 2026-06-18→2026-07-02 +5.8% (time)",
-    "MU 2022-07-01→2022-10-13 +2.3% (top)",
+    "CCJ 2022-12-19→2023-01-23 +25.5% (top)",
+    "CCJ 2024-08-02→2024-10-16 +46.7% (top)",
+    "CCJ 2025-03-03→2025-05-07 +21.0% (top)",
+    "KTOS 2022-09-26→2022-12-23 -12.3% (top)",
+    "MU 2022-07-05→2022-10-13 -3.3% (top)",
     "MU 2024-08-06→2025-01-17 +18.8% (top)",
     "MU 2025-03-10→2025-03-14 +15.7% (top)",
     "MU 2025-04-03→2025-05-12 +24.1% (top)"
@@ -78,69 +80,103 @@
  },
  "valueTiersHold": {
   "consider(65)": {
-   "trades": 30,
-   "winRatePct": 96.7,
-   "avgRetPct": 309.24,
-   "medianRetPct": 122.82,
-   "avgAnnualizedPct": 34.3,
-   "avgHoldDays": 1020.6
+   "trades": 76,
+   "winRatePct": 86.8,
+   "avgRetPct": 222.55,
+   "medianRetPct": 93.95,
+   "avgAnnualizedPct": 24.7,
+   "avgHoldDays": 1041.1
   },
   "strong(80)": {
-   "trades": 29,
-   "winRatePct": 96.6,
-   "avgRetPct": 486.8,
-   "medianRetPct": 143.01,
-   "avgAnnualizedPct": 86.5,
-   "avgHoldDays": 915.9
+   "trades": 73,
+   "winRatePct": 84.9,
+   "avgRetPct": 244.95,
+   "medianRetPct": 93.63,
+   "avgAnnualizedPct": 42.7,
+   "avgHoldDays": 885.1
   },
   "absolute(90)": {
-   "trades": 24,
-   "winRatePct": 100.0,
-   "avgRetPct": 327.96,
-   "medianRetPct": 139.85,
-   "avgAnnualizedPct": 47.9,
-   "avgHoldDays": 794.5
+   "trades": 63,
+   "winRatePct": 82.5,
+   "avgRetPct": 218.15,
+   "medianRetPct": 75.65,
+   "avgAnnualizedPct": 29.4,
+   "avgHoldDays": 758.0
   }
  },
  "momentum": {
-  "trades": 0
+  "trades": 100,
+  "winRatePct": 48.0,
+  "avgRetPct": 4.38,
+  "medianRetPct": -1.54,
+  "bestPct": 95.4,
+  "worstPct": -15.7,
+  "avgDays": 22.6,
+  "annualizedPerTradePct": 61.5,
+  "recent": [
+   "GPGI 2025-02-18→2025-02-25 -10.2% (stop)",
+   "GPGI 2025-05-13→2025-07-29 +15.2% (stop)",
+   "GPGI 2025-11-04→2025-11-17 -9.7% (stop)",
+   "BMI 2022-07-20→2022-08-29 +10.9% (stop)",
+   "BMI 2022-10-31→2022-12-16 -2.1% (stop)",
+   "BMI 2023-07-20→2023-08-18 +1.6% (stop)",
+   "BMI 2024-08-30→2024-09-04 -5.6% (stop)",
+   "BMI 2024-12-10→2024-12-18 -6.5% (stop)"
+  ]
  },
  "momentumNoTP": {
-  "trades": 0
+  "trades": 100,
+  "winRatePct": 46.0,
+  "avgRetPct": 5.51,
+  "medianRetPct": -1.54,
+  "bestPct": 202.3,
+  "worstPct": -15.7,
+  "avgDays": 22.6,
+  "annualizedPerTradePct": 82.1,
+  "recent": [
+   "GPGI 2025-02-18→2025-02-25 -10.2% (stop)",
+   "GPGI 2025-05-13→2025-07-29 +12.4% (stop)",
+   "GPGI 2025-11-04→2025-11-17 -9.7% (stop)",
+   "BMI 2022-07-20→2022-08-29 +10.9% (stop)",
+   "BMI 2022-10-31→2022-12-16 -2.1% (stop)",
+   "BMI 2023-07-20→2023-08-18 +1.6% (stop)",
+   "BMI 2024-08-30→2024-09-04 -5.6% (stop)",
+   "BMI 2024-12-10→2024-12-18 -6.5% (stop)"
+  ]
  },
  "sleeveStats": {
   "value": {
-   "cagrPct": 28.8,
-   "maxDDPct": 42.1,
-   "volPct": 27.9,
-   "sharpe": 1.05
+   "cagrPct": 26.3,
+   "maxDDPct": 28.5,
+   "volPct": 23.5,
+   "sharpe": 1.11
   },
   "momentum": {
-   "cagrPct": 0.0,
-   "maxDDPct": 0.0,
-   "volPct": 0.0,
-   "sharpe": 0.0
+   "cagrPct": 36.7,
+   "maxDDPct": 36.1,
+   "volPct": 33.4,
+   "sharpe": 1.1
   },
   "btc": {
-   "cagrPct": -6.6,
+   "cagrPct": -6.5,
    "maxDDPct": 76.4,
    "volPct": 47.9,
    "sharpe": 0.1
   },
   "eth": {
-   "cagrPct": -21.8,
+   "cagrPct": -21.5,
    "maxDDPct": 80.5,
-   "volPct": 63.3,
+   "volPct": 63.2,
    "sharpe": -0.07
   },
   "gold": {
-   "cagrPct": 20.0,
+   "cagrPct": 20.2,
    "maxDDPct": 25.0,
    "volPct": 18.8,
-   "sharpe": 1.07
+   "sharpe": 1.08
   },
   "silver": {
-   "cagrPct": 24.2,
+   "cagrPct": 24.3,
    "maxDDPct": 49.6,
    "volPct": 39.6,
    "sharpe": 0.75
@@ -150,58 +186,58 @@
   {
    "label": "最大CAGR(過剰適合注意)",
    "weightsPct": {
-    "value": 70,
-    "momentum": 0,
+    "value": 25,
+    "momentum": 40,
     "btc": 0,
     "eth": 0,
     "gold": 0,
-    "silver": 30
+    "silver": 35
    },
-   "cagrPct": 30.1,
-   "maxDDPct": 35.1,
-   "sharpe": 1.2
+   "cagrPct": 33.9,
+   "maxDDPct": 23.7,
+   "sharpe": 1.43
   },
   {
    "label": "最大シャープ(リスク効率)",
    "weightsPct": {
-    "value": 40,
-    "momentum": 0,
+    "value": 30,
+    "momentum": 25,
     "btc": 0,
     "eth": 0,
-    "gold": 60,
+    "gold": 45,
     "silver": 0
    },
-   "cagrPct": 25.0,
-   "maxDDPct": 22.6,
-   "sharpe": 1.44
+   "cagrPct": 28.3,
+   "maxDDPct": 17.1,
+   "sharpe": 1.71
   },
   {
    "label": "最大CAGR(最大DD40%以内)",
    "weightsPct": {
-    "value": 70,
-    "momentum": 0,
+    "value": 25,
+    "momentum": 40,
     "btc": 0,
     "eth": 0,
     "gold": 0,
-    "silver": 30
+    "silver": 35
    },
-   "cagrPct": 30.1,
-   "maxDDPct": 35.1,
-   "sharpe": 1.2
+   "cagrPct": 33.9,
+   "maxDDPct": 23.7,
+   "sharpe": 1.43
   },
   {
    "label": "最大CAGR(最大DD25%以内)",
    "weightsPct": {
-    "value": 40,
-    "momentum": 0,
+    "value": 25,
+    "momentum": 40,
     "btc": 0,
     "eth": 0,
-    "gold": 40,
-    "silver": 20
+    "gold": 0,
+    "silver": 35
    },
-   "cagrPct": 26.8,
-   "maxDDPct": 25.0,
-   "sharpe": 1.32
+   "cagrPct": 33.9,
+   "maxDDPct": 23.7,
+   "sharpe": 1.43
   },
   {
    "label": "現行推奨(株60:BTC10:ETH5:金10:銀5:現金10)",
@@ -213,9 +249,9 @@
     "gold": 10,
     "silver": 5
    },
-   "cagrPct": 20.7,
-   "maxDDPct": 36.4,
-   "sharpe": 0.97
+   "cagrPct": 19.1,
+   "maxDDPct": 29.1,
+   "sharpe": 0.99
   }
  ],
  "assumptions": "Value: スコア閾値上抜けで買い→チャネル天井 or 120営業日で売り / モメンタム: ルール完全再現(初期-8%上限,ATR×2.5,TP20/40%,タイムストップ40日) / 配分: 日次リバランス近似・現金金利0% / 手数料・税・スリッページ未考慮",
