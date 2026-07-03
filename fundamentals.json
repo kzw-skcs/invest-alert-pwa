@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-03 21:20 JST",
+ "updated": "2026-07-03 21:38 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -43,22 +43,22 @@
    }
   },
   "GOOGL": {
-   "score": 76,
+   "score": 75,
    "parts": {
     "profit": 25.0,
-    "growth": 20.4,
-    "health": 25.0,
+    "growth": 20.9,
+    "health": 22.7,
     "valuation": 6
    },
    "warnings": [],
    "metrics": {
     "roe": 0.3183,
-    "opMargin": 0.3687,
-    "revGrowth": 0.1387,
+    "opMargin": 0.3203,
+    "revGrowth": 0.1509,
     "epsGrowth": 0.3201,
-    "fcfMargin": 0.2093,
+    "fcfMargin": 0.1819,
     "trailPE": 33.2942,
-    "fyEnd": "2024-12-31"
+    "fyEnd": "2025-12-31"
    }
   },
   "AMZN": {
@@ -82,16 +82,16 @@
    }
   },
   "AVGO": {
-   "score": 63,
+   "score": 55,
    "parts": {
-    "profit": 24.3,
+    "profit": 16.1,
     "growth": 12.0,
     "health": 25.0,
     "valuation": 2
    },
    "warnings": [],
    "metrics": {
-    "roe": 0.2364,
+    "roe": 0.0725,
     "opMargin": 0.3989,
     "revGrowth": 0.2387,
     "epsGrowth": -0.5814,
@@ -112,13 +112,13 @@
    "warnings": [],
    "metrics": {
     "roe": 0.7633,
-    "opMargin": 4.8446,
-    "revGrowth": 0.614,
+    "opMargin": 0.6038,
+    "revGrowth": 0.6547,
     "epsGrowth": 0.6475,
-    "fcfMargin": 3.8114,
+    "fcfMargin": 0.475,
     "trailPE": 39.7612,
-    "psr": 175.1834,
-    "fyEnd": "2022-01-30"
+    "psr": 21.8344,
+    "fyEnd": "2026-01-25"
    }
   },
   "META": {
@@ -201,65 +201,25 @@
     "fyEnd": "2025-12-31"
    }
   },
-  "ORCL": {
-   "score": 59,
-   "parts": {
-    "profit": 25.0,
-    "growth": 21.8,
-    "health": 0.0,
-    "valuation": 12
-   },
-   "warnings": [
-    "FCF赤字"
-   ],
-   "metrics": {
-    "roe": 0.402,
-    "opMargin": 0.3059,
-    "revGrowth": 0.1735,
-    "epsGrowth": 0.3732,
-    "fcfMargin": -0.3516,
-    "trailPE": 24.06,
-    "psr": 5.9985,
-    "fyEnd": "2026-05-31"
-   }
-  },
-  "CRWV": {
-   "score": 33,
-   "parts": {
-    "profit": 0.0,
-    "growth": 25.0,
-    "health": 0.0,
-    "valuation": null
-   },
-   "warnings": [
-    "FCF赤字"
-   ],
-   "metrics": {
-    "roe": -0.3499,
-    "opMargin": -0.009,
-    "revGrowth": 1.6794,
-    "epsGrowth": 0.3523,
-    "fcfMargin": -1.4132,
-    "fyEnd": "2025-12-31"
-   }
-  },
   "XOM": {
-   "score": 52,
+   "score": 38,
    "parts": {
     "profit": 11.1,
-    "growth": 12.5,
-    "health": 10.7,
+    "growth": 0.0,
+    "health": 8.9,
     "valuation": 18
    },
-   "warnings": [],
+   "warnings": [
+    "売上成長マイナス"
+   ],
    "metrics": {
     "roe": 0.1112,
-    "revGrowth": 0.5495,
+    "revGrowth": -0.0496,
     "epsGrowth": -0.1436,
-    "fcfMargin": 0.0853,
+    "fcfMargin": 0.0711,
     "trailPE": 20.4612,
-    "psr": 2.0537,
-    "fyEnd": "2021-12-31"
+    "psr": 1.7103,
+    "fyEnd": "2025-12-31"
    }
   },
   "CVX": {
@@ -280,25 +240,6 @@
     "fcfMargin": 0.184,
     "trailPE": 25.5204,
     "psr": 1.8271,
-    "fyEnd": "2025-12-31"
-   }
-  },
-  "COP": {
-   "score": 60,
-   "parts": {
-    "profit": 12.4,
-    "growth": 4.1,
-    "health": 25.0,
-    "valuation": 18
-   },
-   "warnings": [],
-   "metrics": {
-    "roe": 0.1239,
-    "revGrowth": 0.0487,
-    "epsGrowth": -0.136,
-    "fcfMargin": 0.382,
-    "trailPE": 16.4929,
-    "psr": 2.462,
     "fyEnd": "2025-12-31"
    }
   },
@@ -324,46 +265,24 @@
     "fyEnd": "2012-12-31"
    }
   },
-  "SLB": {
-   "score": 52,
-   "parts": {
-    "profit": 15.6,
-    "growth": 1.4,
-    "health": 16.8,
-    "valuation": 18
-   },
-   "warnings": [
-    "売上成長マイナス"
-   ],
-   "metrics": {
-    "roe": 0.1292,
-    "opMargin": 0.1827,
-    "revGrowth": -0.016,
-    "epsGrowth": -0.2437,
-    "fcfMargin": 0.1343,
-    "trailPE": 19.2043,
-    "psr": 1.8895,
-    "fyEnd": "2025-12-31"
-   }
-  },
   "LMT": {
-   "score": 54,
+   "score": 47,
    "parts": {
-    "profit": 19.0,
-    "growth": 6.8,
-    "health": 15.9,
+    "profit": 17.7,
+    "growth": 4.4,
+    "health": 12.7,
     "valuation": 12
    },
    "warnings": [],
    "metrics": {
     "roe": 0.7465,
-    "opMargin": 0.1293,
-    "revGrowth": 0.1125,
+    "opMargin": 0.103,
+    "revGrowth": 0.0564,
     "epsGrowth": -0.0598,
-    "fcfMargin": 0.1273,
+    "fcfMargin": 0.1015,
     "trailPE": 25.403,
-    "psr": 2.1044,
-    "fyEnd": "2019-12-31"
+    "psr": 1.6772,
+    "fyEnd": "2025-12-31"
    }
   },
   "RTX": {
@@ -404,29 +323,6 @@
     "trailPE": 18.8793,
     "psr": 1.8586,
     "fyEnd": "2025-12-31"
-   }
-  },
-  "BA": {
-   "score": 17,
-   "parts": {
-    "profit": 15.3,
-    "growth": 0.0,
-    "health": 0.0,
-    "valuation": 2
-   },
-   "warnings": [
-    "売上成長マイナス",
-    "FCF赤字"
-   ],
-   "metrics": {
-    "roe": 0.4098,
-    "opMargin": 0.0559,
-    "revGrowth": -0.2429,
-    "epsGrowth": -1.1891,
-    "fcfMargin": -0.0245,
-    "trailPE": 91.3266,
-    "psr": 2.3321,
-    "fyEnd": "2019-12-31"
    }
   },
   "RKLB": {
@@ -570,23 +466,23 @@
    }
   },
   "CLMB": {
-   "score": 60,
+   "score": 59,
    "parts": {
-    "profit": 13.3,
-    "growth": 15.6,
-    "health": 5.9,
+    "profit": 11.4,
+    "growth": 19.5,
+    "health": 3.2,
     "valuation": 25
    },
    "warnings": [],
    "metrics": {
     "roe": 0.183,
-    "opMargin": 0.0829,
-    "revGrowth": 0.1566,
+    "opMargin": 0.0447,
+    "revGrowth": 0.4014,
     "epsGrowth": 0.1462,
-    "fcfMargin": 0.0472,
+    "fcfMargin": 0.0254,
     "trailPE": 5.1422,
-    "psr": 1.2605,
-    "fyEnd": "2023-12-31"
+    "psr": 0.68,
+    "fyEnd": "2025-12-31"
    }
   },
   "IQV": {
@@ -612,14 +508,14 @@
   "CACI": {
    "score": 47,
    "parts": {
-    "profit": 11.5,
+    "profit": 10.8,
     "growth": 15.9,
     "health": 7.9,
     "valuation": 12
    },
    "warnings": [],
    "metrics": {
-    "roe": 0.1421,
+    "roe": 0.1284,
     "opMargin": 0.0886,
     "revGrowth": 0.1264,
     "epsGrowth": 0.1903,
@@ -742,11 +638,11 @@
    }
   },
   "BDX": {
-   "score": 50,
+   "score": 43,
    "parts": {
     "profit": 9.2,
     "growth": 6.7,
-    "health": 22.2,
+    "health": 15.3,
     "valuation": 12
    },
    "warnings": [],
@@ -755,30 +651,30 @@
     "opMargin": 0.1181,
     "revGrowth": 0.0824,
     "epsGrowth": -0.0158,
-    "fcfMargin": 0.178,
+    "fcfMargin": 0.1223,
     "trailPE": 27.1615,
     "psr": 1.9944,
     "fyEnd": "2025-09-30"
    }
   },
   "MA": {
-   "score": 60,
+   "score": 56,
    "parts": {
     "profit": 16.5,
-    "growth": 12.5,
+    "growth": 8.9,
     "health": 25.0,
     "valuation": 6
    },
    "warnings": [],
    "metrics": {
     "roe": 0.0805,
-    "opMargin": 0.6332,
-    "revGrowth": 0.2638,
+    "opMargin": 0.5763,
+    "revGrowth": 0.1642,
     "epsGrowth": -0.2912,
-    "fcfMargin": 0.5749,
+    "fcfMargin": 0.5233,
     "trailPE": 32.6507,
-    "psr": 2.2145,
-    "fyEnd": "2021-12-31"
+    "psr": 2.0155,
+    "fyEnd": "2025-12-31"
    }
   },
   "HON": {
@@ -886,16 +782,16 @@
    }
   },
   "UNH": {
-   "score": 32,
+   "score": 26,
    "parts": {
-    "profit": 14.6,
+    "profit": 8.1,
     "growth": 7.0,
     "health": 4.5,
     "valuation": 6
    },
    "warnings": [],
    "metrics": {
-    "roe": 0.3715,
+    "roe": 0.1205,
     "opMargin": 0.0424,
     "revGrowth": 0.1181,
     "epsGrowth": -0.1631,
@@ -915,7 +811,7 @@
    },
    "warnings": [],
    "metrics": {
-    "roe": 0.7587,
+    "roe": 0.5291,
     "opMargin": 0.5998,
     "revGrowth": 0.1134,
     "epsGrowth": 0.016,
@@ -1083,21 +979,23 @@
    }
   },
   "KKR": {
-   "score": 34,
+   "score": 24,
    "parts": {
     "profit": 7.7,
-    "growth": 7.1,
-    "health": 17.6,
-    "valuation": 2
+    "growth": 0.0,
+    "health": 1.8,
+    "valuation": 14
    },
-   "warnings": [],
+   "warnings": [
+    "売上成長マイナス"
+   ],
    "metrics": {
     "roe": 0.0767,
-    "revGrowth": 0.1208,
+    "revGrowth": -0.1104,
     "epsGrowth": -0.2294,
-    "fcfMargin": 0.1411,
-    "psr": 41.9856,
-    "fyEnd": "2020-12-31"
+    "fcfMargin": 0.0145,
+    "psr": 4.3288,
+    "fyEnd": "2025-12-31"
    }
   },
   "JXN": {
@@ -1300,16 +1198,16 @@
    }
   },
   "MSA": {
-   "score": 61,
+   "score": 59,
    "parts": {
-    "profit": 17.7,
+    "profit": 15.7,
     "growth": 16.5,
     "health": 25.0,
     "valuation": 2
    },
    "warnings": [],
    "metrics": {
-    "roe": 0.1042,
+    "roe": 0.0636,
     "opMargin": 0.7278,
     "revGrowth": 0.0907,
     "epsGrowth": 0.2488,
@@ -1333,31 +1231,32 @@
    ],
    "metrics": {
     "roe": 0.0256,
-    "opMargin": 1.5255,
-    "revGrowth": -0.5763,
+    "opMargin": 0.5615,
+    "revGrowth": -0.2431,
     "epsGrowth": -0.5728,
-    "fcfMargin": -0.1925,
+    "fcfMargin": -0.0709,
     "trailPE": 15.2143,
-    "psr": 6.1333,
-    "fyEnd": "2021-12-31"
+    "psr": 2.2577,
+    "fyEnd": "2025-12-31"
    }
   },
   "PBI": {
-   "score": 33,
+   "score": 51,
    "parts": {
     "profit": 0.0,
-    "growth": 0.0,
-    "health": 15.1,
+    "growth": 12.5,
+    "health": 20.9,
     "valuation": 18
    },
    "warnings": [],
    "metrics": {
     "roe": -0.1803,
+    "revGrowth": 2.667,
     "epsGrowth": -4.8717,
-    "fcfMargin": 0.1205,
+    "fcfMargin": 0.1675,
     "trailPE": 20.0238,
-    "psr": 0.8664,
-    "fyEnd": "2018-12-31"
+    "psr": 1.2037,
+    "fyEnd": "2025-12-31"
    }
   },
   "XPEL": {
@@ -1644,6 +1543,26 @@
     "trailPE": 128.5323,
     "psr": 29.477,
     "fyEnd": "2025-08-28"
+   }
+  },
+  "ARM": {
+   "score": 60,
+   "parts": {
+    "profit": 14.6,
+    "growth": 18.4,
+    "health": 24.9,
+    "valuation": 2
+   },
+   "warnings": [],
+   "metrics": {
+    "roe": 0.1091,
+    "opMargin": 0.1829,
+    "revGrowth": 0.2279,
+    "epsGrowth": 0.1414,
+    "fcfMargin": 0.199,
+    "trailPE": 370.9176,
+    "psr": 68.186,
+    "fyEnd": "2026-03-31"
    }
   }
  }
