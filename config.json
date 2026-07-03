@@ -853,7 +853,7 @@
       "name": "Constellation Energy",
       "sector": "エネルギー",
       "subSector": "電力・DCインフラ",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 5,
       "note": "原子力PPA・コア採用"
     },
