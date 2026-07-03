@@ -246,26 +246,6 @@
       "conviction": 3
     },
     {
-      "ticker": "ORCL",
-      "stooq": "orcl.us",
-      "name": "Oracle",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "OpenAI/Stargate関連"
-    },
-    {
-      "ticker": "CRWV",
-      "stooq": "crwv.us",
-      "name": "CoreWeave",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
-      "conviction": 3,
-      "note": "OpenAIコンピュート関連・高ボラ"
-    },
-    {
       "ticker": "XOM",
       "stooq": "xom.us",
       "name": "ExxonMobil",
@@ -285,30 +265,12 @@
       "note": "△スコア急変の要因確認まで様子見"
     },
     {
-      "ticker": "COP",
-      "stooq": "cop.us",
-      "name": "ConocoPhillips",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
       "ticker": "NEE",
       "stooq": "nee.us",
       "name": "NextEra Energy",
       "sector": "エネルギー",
       "subSector": "電力・DCインフラ",
       "tradePolicy": "hold",
-      "conviction": 3
-    },
-    {
-      "ticker": "SLB",
-      "stooq": "slb.us",
-      "name": "Schlumberger (SLB)",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "trade",
       "conviction": 3
     },
     {
@@ -337,15 +299,6 @@
       "subSector": "宇宙・防衛",
       "tradePolicy": "hold",
       "conviction": 4
-    },
-    {
-      "ticker": "BA",
-      "stooq": "ba.us",
-      "name": "Boeing",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "trade",
-      "conviction": 2
     },
     {
       "ticker": "RKLB",
@@ -953,6 +906,15 @@
       "tradePolicy": "hold",
       "conviction": 4,
       "note": "HBM寡占・押し目限定"
+    },
+    {
+      "ticker": "ARM",
+      "name": "ARM",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "arm.us"
     }
   ],
   "discovery": [
