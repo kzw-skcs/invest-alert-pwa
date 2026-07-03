@@ -906,6 +906,15 @@
       "tradePolicy": "hold",
       "conviction": 4,
       "note": "HBM寡占・押し目限定"
+    },
+    {
+      "ticker": "ARM",
+      "name": "ARM",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "arm.us"
     }
   ],
   "discovery": [
