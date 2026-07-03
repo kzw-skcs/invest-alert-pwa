@@ -73,7 +73,10 @@ def cik_map():
 
 
 def annual_series(facts, key):
-    """年次(FY)の値を新しい順で最大3件返す。"""
+    """年次(FY)の値を新しい順で最大3件返す。
+    全候補タグを走査し「最新の決算期を持つ系列」を採用する
+    (タグの世代交代で古いタグに古いデータだけが残っているケースを回避)。"""
+    best = []
     for tax, tag in TAGS[key]:
         node = facts.get("facts", {}).get(tax, {}).get(tag)
         if not node:
@@ -85,13 +88,14 @@ def annual_series(facts, key):
                     and x.get("end")]
             if not rows:
                 continue
-            # 同一決算期の重複(訂正報告等)は最新endで一意化
             uniq = {}
             for x in rows:
                 uniq[x["end"]] = x["val"]
             ends = sorted(uniq.keys(), reverse=True)
-            return [(e, uniq[e]) for e in ends[:3]]
-    return []
+            series = [(e, uniq[e]) for e in ends[:3]]
+            if not best or series[0][0] > best[0][0]:
+                best = series
+    return best
 
 
 def latest_shares(facts):
