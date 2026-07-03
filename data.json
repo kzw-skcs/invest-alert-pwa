@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-03T11:55:53.234193+00:00",
- "updatedJST": "2026-07-03 20:55 JST",
+ "updated": "2026-07-03T12:30:00.781618+00:00",
+ "updatedJST": "2026-07-03 21:30 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -101,13 +101,13 @@
   "silver": 1
  },
  "vix": {
-  "value": 15.99,
-  "changePct": -0.99,
+  "value": 15.95,
+  "changePct": -1.24,
   "level": null,
   "reason": null
  },
  "fx": {
-  "usdjpy": 161.117996
+  "usdjpy": 161.128006
  },
  "instruments": [
   {
@@ -798,12 +798,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 11,
+    "score": 16,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア70(高) +5"
     ],
     "scorePrev": 11
    },
@@ -817,7 +818,7 @@
     "note": ""
    },
    "rec": {
-    "score": 11,
+    "score": 16,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -826,6 +827,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 70,
+    "warnings": [],
+    "metrics": {
+     "roe": 1.5191,
+     "opMargin": 0.3197,
+     "revGrowth": 0.0643,
+     "epsGrowth": 0.195,
+     "fcfMargin": 0.2373,
+     "trailPE": 41.3713,
+     "psr": 10.8923,
+     "fyEnd": "2025-09-27"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 13.5,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -1516,13 +1537,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 51,
+    "score": 56,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-28% +14",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア78(高) +5"
     ],
     "scorePrev": 51
    },
@@ -1536,7 +1558,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 51,
+    "score": 56,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -1545,6 +1567,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 78,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2965,
+     "opMargin": 0.4562,
+     "revGrowth": 0.1493,
+     "epsGrowth": 0.1554,
+     "fcfMargin": 0.2542,
+     "trailPE": 28.6283,
+     "psr": 10.2964,
+     "fyEnd": "2025-06-30"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 15.6,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -2235,14 +2277,15 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 40,
+    "score": 45,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア76(高) +5"
     ],
     "scorePrev": 40
    },
@@ -2256,7 +2299,7 @@
     "note": ""
    },
    "rec": {
-    "score": 40,
+    "score": 45,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -2265,6 +2308,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 76,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3183,
+     "opMargin": 0.3687,
+     "revGrowth": 0.1387,
+     "epsGrowth": 0.3201,
+     "fcfMargin": 0.2093,
+     "trailPE": 33.2942,
+     "fyEnd": "2024-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 20.4,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -2983,6 +3045,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 64,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1889,
+     "opMargin": 0.1116,
+     "revGrowth": 0.1238,
+     "epsGrowth": 0.3109,
+     "fcfMargin": 0.1852,
+     "trailPE": 33.8452,
+     "psr": 3.6411,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 15.0,
+     "growth": 19.7,
+     "health": 23.2,
+     "valuation": 6
+    }
    }
   },
   {
@@ -3705,6 +3787,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 63,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2364,
+     "opMargin": 0.3989,
+     "revGrowth": 0.2387,
+     "epsGrowth": -0.5814,
+     "fcfMargin": 0.4213,
+     "trailPE": 75.566,
+     "psr": 26.8422,
+     "fyEnd": "2025-11-02"
+    },
+    "parts": {
+     "profit": 24.3,
+     "growth": 12.0,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -4395,13 +4497,14 @@
    "side": "sell",
    "actionable": true,
    "value": {
-    "score": 49,
+    "score": 54,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-17% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア81(高) +5"
     ],
     "scorePrev": 49
    },
@@ -4420,15 +4523,35 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
+    "score": 65,
     "stars": 4,
-    "level": "C",
+    "level": "B",
     "action": "sell_check",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": "売り管理: デッドクロス"
+   },
+   "quality": {
+    "score": 81,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.7633,
+     "opMargin": 4.8446,
+     "revGrowth": 0.614,
+     "epsGrowth": 0.6475,
+     "fcfMargin": 3.8114,
+     "trailPE": 39.7612,
+     "psr": 175.1834,
+     "fyEnd": "2022-01-30"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 25.0,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -5119,13 +5242,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 51,
+    "score": 56,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-26% +14",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア74(高) +5"
     ],
     "scorePrev": 51
    },
@@ -5139,7 +5263,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 51,
+    "score": 56,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -5148,6 +5272,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 74,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2783,
+     "opMargin": 0.4144,
+     "revGrowth": 0.2217,
+     "epsGrowth": -0.0305,
+     "fcfMargin": 0.2294,
+     "trailPE": 24.8148,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 12.0,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -5838,7 +5981,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 48,
+    "score": 38,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -5846,7 +5989,8 @@
      "高値-20% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア16(低) -10"
     ],
     "scorePrev": 48
    },
@@ -5865,8 +6009,8 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
-    "stars": 4,
+    "score": 50,
+    "stars": 3,
     "level": "C",
     "action": "sell_check",
     "expReturnPct": null,
@@ -5874,6 +6018,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": "売り管理: 50日線割れ・急落-7.5%・デッドクロス"
+   },
+   "quality": {
+    "score": 16,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.0462,
+     "opMargin": 0.0459,
+     "revGrowth": -0.0293,
+     "epsGrowth": -0.465,
+     "fcfMargin": 0.0656,
+     "trailPE": 364.3056,
+     "psr": 15.583,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 4.6,
+     "growth": 0.9,
+     "health": 8.2,
+     "valuation": 2
+    }
    }
   },
   {
@@ -6597,6 +6763,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 60,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0688,
+     "opMargin": 0.1066,
+     "revGrowth": 0.3434,
+     "epsGrowth": 1.6417,
+     "fcfMargin": 0.1944,
+     "trailPE": 195.4038,
+     "psr": 24.3759,
+     "fyEnd": "2025-12-27"
+    },
+    "parts": {
+     "profit": 8.8,
+     "growth": 25.0,
+     "health": 24.3,
+     "valuation": 2
+    }
    }
   },
   {
@@ -7287,13 +7473,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 65,
+    "score": 70,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-38%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア76(高) +5"
     ],
     "scorePrev": 65
    },
@@ -7312,8 +7499,8 @@
     "note": ""
    },
    "rec": {
-    "score": 55,
-    "stars": 3,
+    "score": 60,
+    "stars": 4,
     "level": "C",
     "action": "hold",
     "expReturnPct": null,
@@ -7321,6 +7508,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 76,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.22,
+     "opMargin": 0.3159,
+     "revGrowth": 0.5618,
+     "epsGrowth": 2.5159,
+     "fcfMargin": 0.4694,
+     "trailPE": 205.2381,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 23.5,
+     "growth": 25.0,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -8020,7 +8226,8 @@
      "RSI27 売られ過ぎ +15",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6"
-    ]
+    ],
+    "scorePrev": 59
    },
    "momentum": {
     "signal": "none",
@@ -8029,7 +8236,7 @@
    "holdMgmt": {
     "thesisBreak": true,
     "trim": false,
-    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: FCF赤字"
    },
    "rec": {
     "score": 59,
@@ -8041,6 +8248,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 59,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": 0.402,
+     "opMargin": 0.3059,
+     "revGrowth": 0.1735,
+     "epsGrowth": 0.3732,
+     "fcfMargin": -0.3516,
+     "trailPE": 24.06,
+     "psr": 5.9985,
+     "fyEnd": "2026-05-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 21.8,
+     "health": 0.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -8731,7 +8960,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 46,
+    "score": 36,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -8740,8 +8969,10 @@
      "RSI34 +8",
      "個別要因の下落の疑い(falling knife) -15",
      "200日線上向き +4",
-     "買い場帯 +5"
-    ]
+     "買い場帯 +5",
+     "品質スコア33(低) -10"
+    ],
+    "scorePrev": 46
    },
    "momentum": {
     "signal": "none",
@@ -8758,7 +8989,7 @@
     "note": ""
    },
    "rec": {
-    "score": 36,
+    "score": 26,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -8767,6 +8998,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 33,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": -0.3499,
+     "opMargin": -0.009,
+     "revGrowth": 1.6794,
+     "epsGrowth": 0.3523,
+     "fcfMargin": -1.4132,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 25.0,
+     "health": 0.0,
+     "valuation": null
+    }
    }
   },
   {
@@ -9489,6 +9740,25 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 800.3,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 52,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1112,
+     "revGrowth": 0.5495,
+     "epsGrowth": -0.1436,
+     "fcfMargin": 0.0853,
+     "trailPE": 20.4612,
+     "psr": 2.0537,
+     "fyEnd": "2021-12-31"
+    },
+    "parts": {
+     "profit": 11.1,
+     "growth": 12.5,
+     "health": 10.7,
+     "valuation": 18
+    }
    }
   },
   {
@@ -10211,6 +10481,27 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 657.7,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 42,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.066,
+     "revGrowth": -0.0464,
+     "epsGrowth": -0.3036,
+     "fcfMargin": 0.184,
+     "trailPE": 25.5204,
+     "psr": 1.8271,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 6.6,
+     "growth": 0.1,
+     "health": 23.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -10913,7 +11204,8 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5"
-    ]
+    ],
+    "scorePrev": 67
    },
    "momentum": {
     "signal": "none",
@@ -10934,6 +11226,25 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 807.8,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 60,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1239,
+     "revGrowth": 0.0487,
+     "epsGrowth": -0.136,
+     "fcfMargin": 0.382,
+     "trailPE": 16.4929,
+     "psr": 2.462,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 12.4,
+     "growth": 4.1,
+     "health": 25.0,
+     "valuation": 18
+    }
    }
   },
   {
@@ -11654,6 +11965,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 57,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.1252,
+     "opMargin": 2.4533,
+     "revGrowth": -0.1218,
+     "epsGrowth": -0.016,
+     "fcfMargin": 3.6993,
+     "trailPE": 26.7697,
+     "psr": 54.5834,
+     "fyEnd": "2012-12-31"
+    },
+    "parts": {
+     "profit": 18.8,
+     "growth": 1.2,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -12356,7 +12689,8 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5"
-    ]
+    ],
+    "scorePrev": 71
    },
    "momentum": {
     "signal": "exit_warning",
@@ -12382,6 +12716,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": "売り管理: デッドクロス"
+   },
+   "quality": {
+    "score": 52,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.1292,
+     "opMargin": 0.1827,
+     "revGrowth": -0.016,
+     "epsGrowth": -0.2437,
+     "fcfMargin": 0.1343,
+     "trailPE": 19.2043,
+     "psr": 1.8895,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 15.6,
+     "growth": 1.4,
+     "health": 16.8,
+     "valuation": 18
+    }
    }
   },
   {
@@ -13103,6 +13459,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 54,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.7465,
+     "opMargin": 0.1293,
+     "revGrowth": 0.1125,
+     "epsGrowth": -0.0598,
+     "fcfMargin": 0.1273,
+     "trailPE": 25.403,
+     "psr": 2.1044,
+     "fyEnd": "2019-12-31"
+    },
+    "parts": {
+     "profit": 19.0,
+     "growth": 6.8,
+     "health": 15.9,
+     "valuation": 12
+    }
    }
   },
   {
@@ -13822,6 +14198,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 46,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1032,
+     "opMargin": 0.105,
+     "revGrowth": 0.0974,
+     "epsGrowth": 0.4101,
+     "fcfMargin": 0.0896,
+     "trailPE": 40.1714,
+     "psr": 3.0284,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 10.4,
+     "growth": 18.6,
+     "health": 11.2,
+     "valuation": 6
+    }
    }
   },
   {
@@ -14543,6 +14939,26 @@
     "expPeriodLabel": "約6営業日",
     "annualizedPct": 838.7,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 51,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2508,
+     "opMargin": 0.1075,
+     "revGrowth": 0.0224,
+     "epsGrowth": 0.0019,
+     "fcfMargin": 0.0788,
+     "trailPE": 18.8793,
+     "psr": 1.8586,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 17.9,
+     "growth": 4.9,
+     "health": 9.9,
+     "valuation": 18
+    }
    }
   },
   {
@@ -15233,12 +15649,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 14,
+    "score": 4,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "5年トレンド上向き +6"
-    ]
+     "5年トレンド上向き +6",
+     "品質スコア17(低) -10"
+    ],
+    "scorePrev": 14
    },
    "momentum": {
     "signal": "none",
@@ -15255,7 +15673,7 @@
     "note": ""
    },
    "rec": {
-    "score": 4,
+    "score": 0,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -15264,6 +15682,29 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 17,
+    "warnings": [
+     "売上成長マイナス",
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": 0.4098,
+     "opMargin": 0.0559,
+     "revGrowth": -0.2429,
+     "epsGrowth": -1.1891,
+     "fcfMargin": -0.0245,
+     "trailPE": 91.3266,
+     "psr": 2.3321,
+     "fyEnd": "2019-12-31"
+    },
+    "parts": {
+     "profit": 15.3,
+     "growth": 0.0,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -15954,14 +16395,15 @@
    "side": "sell",
    "actionable": true,
    "value": {
-    "score": 27,
+    "score": 17,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-33%の暴落水準 +20",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア18(低) -10"
     ],
     "scorePrev": 27
    },
@@ -15980,8 +16422,8 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
-    "stars": 4,
+    "score": 50,
+    "stars": 3,
     "level": "C",
     "action": "sell_check",
     "expReturnPct": null,
@@ -15989,6 +16431,27 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": "売り管理: デッドクロス"
+   },
+   "quality": {
+    "score": 18,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": -0.1151,
+     "opMargin": -0.3803,
+     "revGrowth": 0.3796,
+     "epsGrowth": 0.0422,
+     "fcfMargin": -0.5347,
+     "psr": 96.6125,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 15.8,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -16679,13 +17142,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 22,
+    "score": 27,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-12% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア77(高) +5"
     ],
     "scorePrev": 22
    },
@@ -16699,7 +17163,7 @@
     "note": ""
    },
    "rec": {
-    "score": 22,
+    "score": 27,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -16708,6 +17172,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 77,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3245,
+     "revGrowth": 0.0762,
+     "epsGrowth": 0.7588,
+     "fcfMargin": 0.1792,
+     "trailPE": 25.9194,
+     "psr": 4.0293,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 17.8,
+     "health": 22.4,
+     "valuation": 12
+    }
    }
   },
   {
@@ -17398,12 +17881,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 18,
+    "score": 23,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア72(高) +5"
     ],
     "scorePrev": 18
    },
@@ -17417,8 +17901,8 @@
     "note": ""
    },
    "rec": {
-    "score": 18,
-    "stars": 1,
+    "score": 23,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -17426,6 +17910,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 72,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.49,
+     "opMargin": 0.346,
+     "revGrowth": 0.1558,
+     "epsGrowth": 0.2691,
+     "fcfMargin": 0.3393,
+     "trailPE": 71.6034,
+     "psr": 20.8749,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 20.0,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -18116,12 +18620,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 19,
+    "score": 24,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア100(高) +5"
     ],
     "scorePrev": 19
    },
@@ -18135,8 +18640,8 @@
     "note": ""
    },
    "rec": {
-    "score": 19,
-    "stars": 1,
+    "score": 24,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -18144,6 +18649,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 100,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2729,
+     "opMargin": 0.4568,
+     "revGrowth": 0.3389,
+     "epsGrowth": 0.36,
+     "fcfMargin": 0.3006,
+     "trailPE": 9.7193,
+     "psr": 3.89,
+     "fyEnd": "2024-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 25.0,
+     "health": 25.0,
+     "valuation": 25
+    }
    }
   },
   {
@@ -18864,6 +19389,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 53,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1866,
+     "opMargin": 0.1614,
+     "revGrowth": 0.4209,
+     "epsGrowth": -4.0171,
+     "fcfMargin": 0.1704,
+     "trailPE": 79.899,
+     "psr": 26.1855,
+     "fyEnd": "2026-01-31"
+    },
+    "parts": {
+     "profit": 17.4,
+     "growth": 12.5,
+     "health": 21.3,
+     "valuation": 2
+    }
    }
   },
   {
@@ -19554,12 +20099,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 14,
+    "score": 19,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア74(高) +5"
     ],
     "scorePrev": 14
    },
@@ -19578,7 +20124,7 @@
     "note": ""
    },
    "rec": {
-    "score": 4,
+    "score": 9,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -19587,6 +20133,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 74,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2839,
+     "opMargin": 0.4282,
+     "revGrowth": 0.286,
+     "epsGrowth": 0.2312,
+     "fcfMargin": 0.4837,
+     "trailPE": 58.1782,
+     "psr": 22.3703,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 22.5,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -20277,14 +20843,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 47,
+    "score": 52,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "1年レンジ下限圏(7%位置) +23",
      "高値-20% +14",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア72(高) +5"
     ],
     "scorePrev": 47
    },
@@ -20298,15 +20865,35 @@
     "note": ""
    },
    "rec": {
-    "score": 47,
+    "score": 52,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 72,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3382,
+     "opMargin": 0.1789,
+     "revGrowth": 0.2769,
+     "epsGrowth": 1.6882,
+     "fcfMargin": 0.1851,
+     "trailPE": 88.132,
+     "psr": 11.2842,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 21.4,
+     "growth": 25.0,
+     "health": 23.1,
+     "valuation": 2
+    }
    }
   },
   {
@@ -21031,6 +21618,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 60,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.183,
+     "opMargin": 0.0829,
+     "revGrowth": 0.1566,
+     "epsGrowth": 0.1462,
+     "fcfMargin": 0.0472,
+     "trailPE": 5.1422,
+     "psr": 1.2605,
+     "fyEnd": "2023-12-31"
+    },
+    "parts": {
+     "profit": 13.3,
+     "growth": 15.6,
+     "health": 5.9,
+     "valuation": 25
+    }
    }
   },
   {
@@ -21748,6 +22355,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 55,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2091,
+     "opMargin": 0.1338,
+     "revGrowth": 0.0587,
+     "epsGrowth": -0.0095,
+     "fcfMargin": 0.1627,
+     "trailPE": 26.4082,
+     "psr": 2.1186,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 17.1,
+     "growth": 6.0,
+     "health": 20.3,
+     "valuation": 12
+    }
    }
   },
   {
@@ -22469,6 +23096,26 @@
     "expPeriodLabel": "約9営業日",
     "annualizedPct": 599.8,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 47,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1421,
+     "opMargin": 0.0886,
+     "revGrowth": 0.1264,
+     "epsGrowth": 0.1903,
+     "fcfMargin": 0.0634,
+     "trailPE": 22.5282,
+     "psr": 1.2875,
+     "fyEnd": "2025-06-30"
+    },
+    "parts": {
+     "profit": 11.5,
+     "growth": 15.9,
+     "health": 7.9,
+     "valuation": 12
+    }
    }
   },
   {
@@ -23204,11 +23851,12 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 16,
+    "score": 21,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア70(高) +5"
     ],
     "scorePrev": 16
    },
@@ -23222,8 +23870,8 @@
     "note": ""
    },
    "rec": {
-    "score": 16,
-    "stars": 1,
+    "score": 21,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -23231,6 +23879,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 70,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.6066,
+     "opMargin": 0.4342,
+     "revGrowth": 0.0889,
+     "epsGrowth": 0.1948,
+     "fcfMargin": 0.3336,
+     "trailPE": 35.8822,
+     "psr": 11.1029,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 14.5,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -23950,6 +24618,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 62,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3236,
+     "opMargin": 0.0688,
+     "revGrowth": 0.0639,
+     "epsGrowth": 0.0695,
+     "fcfMargin": 0.3874,
+     "trailPE": 22.8843,
+     "psr": 5.8142,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 15.9,
+     "growth": 9.0,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -24640,13 +25328,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 34,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-18% +8",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア70(高) +5"
     ],
     "scorePrev": 34
    },
@@ -24660,7 +25349,7 @@
     "note": ""
    },
    "rec": {
-    "score": 34,
+    "score": 39,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -24669,6 +25358,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 70,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1436,
+     "opMargin": 0.4224,
+     "revGrowth": 0.0794,
+     "epsGrowth": 0.1607,
+     "fcfMargin": 0.364,
+     "trailPE": 30.0061,
+     "psr": 8.4903,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 19.7,
+     "growth": 12.9,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -25388,6 +26097,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 44,
+    "warnings": [],
+    "metrics": {
+     "roe": -2.4032,
+     "opMargin": 0.0718,
+     "revGrowth": 3.7444,
+     "epsGrowth": 2.8721,
+     "fcfMargin": 0.0753,
+     "trailPE": 45.4286,
+     "fyEnd": "2026-01-30"
+    },
+    "parts": {
+     "profit": 3.6,
+     "growth": 25.0,
+     "health": 9.4,
+     "valuation": 6
+    }
    }
   },
   {
@@ -26078,13 +26806,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 38,
+    "score": 43,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-42%の暴落水準 +20",
-     "個別要因の下落の疑い(falling knife) -15"
+     "個別要因の下落の疑い(falling knife) -15",
+     "品質スコア93(高) +5"
     ],
     "scorePrev": 38
    },
@@ -26098,8 +26827,8 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 38,
-    "stars": 2,
+    "score": 43,
+    "stars": 3,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -26107,6 +26836,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 93,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.6134,
+     "opMargin": 0.3663,
+     "revGrowth": 0.1053,
+     "epsGrowth": 0.2824,
+     "fcfMargin": 0.4145,
+     "trailPE": 13.1569,
+     "psr": 3.6745,
+     "fyEnd": "2025-11-28"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 18.3,
+     "health": 25.0,
+     "valuation": 25
+    }
    }
   },
   {
@@ -26825,6 +27574,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 50,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0661,
+     "opMargin": 0.1181,
+     "revGrowth": 0.0824,
+     "epsGrowth": -0.0158,
+     "fcfMargin": 0.178,
+     "trailPE": 27.1615,
+     "psr": 1.9944,
+     "fyEnd": "2025-09-30"
+    },
+    "parts": {
+     "profit": 9.2,
+     "growth": 6.7,
+     "health": 22.2,
+     "valuation": 12
+    }
    }
   },
   {
@@ -27543,6 +28312,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 60,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0805,
+     "opMargin": 0.6332,
+     "revGrowth": 0.2638,
+     "epsGrowth": -0.2912,
+     "fcfMargin": 0.5749,
+     "trailPE": 32.6507,
+     "psr": 2.2145,
+     "fyEnd": "2021-12-31"
+    },
+    "parts": {
+     "profit": 16.5,
+     "growth": 12.5,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -28261,6 +29050,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 47,
+    "warnings": [],
+    "metrics": {
+     "roe": -0.0083,
+     "opMargin": 0.8329,
+     "revGrowth": 0.034,
+     "epsGrowth": -1.063,
+     "fcfMargin": 0.5556,
+     "psr": 14.9264,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 12.5,
+     "growth": 3.5,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -28979,6 +29787,27 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 51,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.2436,
+     "revGrowth": -0.0984,
+     "epsGrowth": -0.4353,
+     "fcfMargin": 0.0706,
+     "trailPE": 20.412,
+     "psr": 0.8144,
+     "fyEnd": "2025-05-31"
+    },
+    "parts": {
+     "profit": 24.4,
+     "growth": 0.0,
+     "health": 8.8,
+     "valuation": 18
+    }
    }
   },
   {
@@ -29698,6 +30527,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 42,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.1937,
+     "opMargin": 0.1979,
+     "revGrowth": -0.1166,
+     "epsGrowth": -0.292,
+     "fcfMargin": 0.1335,
+     "trailPE": 33.5822,
+     "psr": 3.671,
+     "fyEnd": "2025-11-02"
+    },
+    "parts": {
+     "profit": 19.6,
+     "growth": 0.0,
+     "health": 16.7,
+     "valuation": 6
+    }
    }
   },
   {
@@ -30388,16 +31239,17 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 63,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 53,
+    "tier": "none",
+    "tierLabel": "-(質↓)",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(0%位置) +20",
      "高値-55%の暴落水準 +20",
      "RSI39 +8",
      "個別要因の下落の疑い(falling knife) -15",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア37(低) -10"
     ],
     "scorePrev": 63
    },
@@ -30408,11 +31260,11 @@
    "holdMgmt": {
     "thesisBreak": true,
     "trim": false,
-    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 63,
-    "stars": 4,
+    "score": 53,
+    "stars": 3,
     "level": "C",
     "action": "hold",
     "expReturnPct": null,
@@ -30420,6 +31272,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 37,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.0453,
+     "opMargin": 0.1165,
+     "revGrowth": -0.0074,
+     "epsGrowth": -0.3566,
+     "fcfMargin": 0.618,
+     "trailPE": 61.0444,
+     "psr": 4.9723,
+     "fyEnd": "2025-08-31"
+    },
+    "parts": {
+     "profit": 8.1,
+     "growth": 1.8,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -31110,7 +31984,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 70,
+    "score": 75,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -31118,7 +31992,8 @@
      "5年レンジ下段(0%位置) +20",
      "高値-29% +14",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア70(高) +5"
     ],
     "scorePrev": 70
    },
@@ -31132,7 +32007,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 70,
+    "score": 75,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -31141,6 +32016,26 @@
     "expPeriodLabel": "約12営業日",
     "annualizedPct": 412.9,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 70,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1146,
+     "opMargin": 0.39,
+     "revGrowth": 0.0747,
+     "epsGrowth": 0.2037,
+     "fcfMargin": 0.3393,
+     "trailPE": 23.0485,
+     "psr": 5.95,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 18.2,
+     "growth": 14.3,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -31831,11 +32726,12 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 4,
+    "score": 0,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア32(低) -10"
     ],
     "scorePrev": 4
    },
@@ -31849,7 +32745,7 @@
     "note": ""
    },
    "rec": {
-    "score": 4,
+    "score": 0,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -31858,6 +32754,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 32,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3715,
+     "opMargin": 0.0424,
+     "revGrowth": 0.1181,
+     "epsGrowth": -0.1631,
+     "fcfMargin": 0.0359,
+     "trailPE": 32.1512,
+     "psr": 0.8631,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 14.6,
+     "growth": 7.0,
+     "health": 4.5,
+     "valuation": 6
+    }
    }
   },
   {
@@ -32548,11 +33464,12 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 6,
+    "score": 11,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア73(高) +5"
     ],
     "scorePrev": 6
    },
@@ -32566,7 +33483,7 @@
     "note": "1年チャネル上限+RSI77過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 6,
+    "score": 11,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -32575,6 +33492,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 73,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.7587,
+     "opMargin": 0.5998,
+     "revGrowth": 0.1134,
+     "epsGrowth": 0.016,
+     "fcfMargin": 0.5765,
+     "psr": 4.2485,
+     "fyEnd": "2025-09-30"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 9.2,
+     "health": 25.0,
+     "valuation": 14
+    }
    }
   },
   {
@@ -33293,6 +34229,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 53,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0083,
+     "revGrowth": 0.2342,
+     "epsGrowth": 0.2035,
+     "fcfMargin": 6.4799,
+     "trailPE": 41.1396,
+     "psr": 1.5807,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.8,
+     "growth": 20.9,
+     "health": 25.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -33983,13 +34938,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 46,
+    "score": 51,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-50%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア79(高) +5"
     ],
     "scorePrev": 46
    },
@@ -34003,15 +34959,35 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 46,
+    "score": 51,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 79,
+    "warnings": [],
+    "metrics": {
+     "roe": 4.0679,
+     "opMargin": 0.2277,
+     "revGrowth": 0.0826,
+     "epsGrowth": -0.0661,
+     "fcfMargin": 0.3182,
+     "trailPE": 14.2299,
+     "psr": 2.3671,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 23.9,
+     "growth": 5.5,
+     "health": 25.0,
+     "valuation": 25
+    }
    }
   },
   {
@@ -34702,12 +35678,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 36,
+    "score": 26,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア15(低) -10"
     ],
     "scorePrev": 36
    },
@@ -34721,7 +35698,7 @@
     "note": ""
    },
    "rec": {
-    "score": 36,
+    "score": 26,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -34730,6 +35707,27 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 15,
+    "warnings": [
+     "売上成長マイナス",
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": 0.0079,
+     "revGrowth": -0.1268,
+     "epsGrowth": 1.039,
+     "fcfMargin": -0.0505,
+     "trailPE": 88.6327,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.8,
+     "growth": 12.5,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -35449,6 +36447,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 57,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3428,
+     "opMargin": 0.2922,
+     "revGrowth": 0.0439,
+     "epsGrowth": -0.0249,
+     "fcfMargin": 0.2009,
+     "trailPE": 69.6351,
+     "psr": 16.8778,
+     "fyEnd": "2025-10-26"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 4.8,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -36139,13 +37157,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 18,
+    "score": 23,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-19% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア76(高) +5"
     ],
     "scorePrev": 18
    },
@@ -36159,8 +37178,8 @@
     "note": ""
    },
    "rec": {
-    "score": 18,
-    "stars": 1,
+    "score": 23,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -36168,6 +37187,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 76,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.5433,
+     "opMargin": 0.3201,
+     "revGrowth": 0.2368,
+     "epsGrowth": 0.3998,
+     "fcfMargin": 0.3349,
+     "trailPE": 84.6771,
+     "psr": 23.8378,
+     "fyEnd": "2025-06-29"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 24.5,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -36858,13 +37897,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 40,
+    "score": 45,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-26% +14",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア72(高) +5"
     ],
     "scorePrev": 40
    },
@@ -36878,7 +37918,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 40,
+    "score": 45,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -36887,6 +37927,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 72,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3718,
+     "opMargin": 0.107,
+     "revGrowth": 0.1828,
+     "epsGrowth": 0.02,
+     "fcfMargin": 0.1877,
+     "trailPE": 15.7357,
+     "psr": 2.9127,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 17.8,
+     "growth": 12.2,
+     "health": 23.5,
+     "valuation": 18
+    }
    }
   },
   {
@@ -37577,12 +38637,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 26,
+    "score": 31,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア96(高) +5"
     ],
     "scorePrev": 26
    },
@@ -37596,7 +38657,7 @@
     "note": ""
    },
    "rec": {
-    "score": 26,
+    "score": 31,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -37605,6 +38666,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 96,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3729,
+     "revGrowth": 0.1632,
+     "epsGrowth": 0.3335,
+     "fcfMargin": 0.1962,
+     "trailPE": 12.0759,
+     "psr": 1.5478,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 25.0,
+     "growth": 21.4,
+     "health": 24.5,
+     "valuation": 25
+    }
    }
   },
   {
@@ -38326,6 +39406,25 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 816.1,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 51,
+    "warnings": [],
+    "metrics": {
+     "roe": -1.1256,
+     "revGrowth": 0.0708,
+     "epsGrowth": 0.1778,
+     "fcfMargin": 0.1017,
+     "trailPE": 14.4899,
+     "psr": 1.2046,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 13.2,
+     "health": 12.7,
+     "valuation": 25
+    }
    }
   },
   {
@@ -39016,13 +40115,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 46,
+    "score": 36,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-38%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア34(低) -10"
     ],
     "scorePrev": 46
    },
@@ -39036,8 +40136,8 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 46,
-    "stars": 3,
+    "score": 36,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -39045,6 +40145,24 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 34,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0767,
+     "revGrowth": 0.1208,
+     "epsGrowth": -0.2294,
+     "fcfMargin": 0.1411,
+     "psr": 41.9856,
+     "fyEnd": "2020-12-31"
+    },
+    "parts": {
+     "profit": 7.7,
+     "growth": 7.1,
+     "health": 17.6,
+     "valuation": 2
+    }
    }
   },
   {
@@ -39767,6 +40885,24 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 499.0,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 60,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0027,
+     "revGrowth": 1.0431,
+     "epsGrowth": -0.9715,
+     "fcfMargin": 0.8616,
+     "psr": 1.0902,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.3,
+     "growth": 12.5,
+     "health": 25.0,
+     "valuation": 22
+    }
    }
   },
   {
@@ -40487,6 +41623,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 44,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3182,
+     "opMargin": 0.0847,
+     "revGrowth": 0.038,
+     "epsGrowth": 0.0697,
+     "fcfMargin": 0.062,
+     "trailPE": 24.7039,
+     "psr": 1.4515,
+     "fyEnd": "2025-07-31"
+    },
+    "parts": {
+     "profit": 16.7,
+     "growth": 7.9,
+     "health": 7.8,
+     "valuation": 12
+    }
    }
   },
   {
@@ -41177,13 +42333,14 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 20,
+    "score": 10,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "品質スコア35(低) -10"
     ],
     "scorePrev": 20
    },
@@ -41197,8 +42354,8 @@
     "note": "1年チャネル上限+RSI81過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 20,
-    "stars": 2,
+    "score": 10,
+    "stars": 1,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -41206,6 +42363,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 35,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.157,
+     "opMargin": 0.0304,
+     "revGrowth": 0.0408,
+     "epsGrowth": 0.3684,
+     "fcfMargin": 0.0243,
+     "trailPE": 35.4728,
+     "psr": 0.5826,
+     "fyEnd": "2025-12-27"
+    },
+    "parts": {
+     "profit": 9.4,
+     "growth": 16.3,
+     "health": 3.0,
+     "valuation": 6
+    }
    }
   },
   {
@@ -41896,14 +43073,15 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 44,
+    "score": 49,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-13% +8",
      "5年トレンド上向き +6",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "品質スコア85(高) +5"
     ],
     "scorePrev": 44
    },
@@ -41917,7 +43095,7 @@
     "note": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 44,
+    "score": 49,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -41926,6 +43104,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 85,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.2268,
+     "revGrowth": 0.0633,
+     "epsGrowth": 0.1665,
+     "fcfMargin": 0.3234,
+     "trailPE": 14.3066,
+     "psr": 3.0535,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 22.7,
+     "growth": 12.5,
+     "health": 25.0,
+     "valuation": 25
+    }
    }
   },
   {
@@ -42616,13 +43813,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 46,
+    "score": 36,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-43%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア33(低) -10"
     ],
     "scorePrev": 46
    },
@@ -42633,11 +43831,11 @@
    "holdMgmt": {
     "thesisBreak": true,
     "trim": false,
-    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 46,
-    "stars": 3,
+    "score": 36,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -42645,6 +43843,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 33,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.1,
+     "opMargin": 0.0518,
+     "revGrowth": -0.0738,
+     "epsGrowth": -0.5963,
+     "fcfMargin": 0.0562,
+     "trailPE": 21.7712,
+     "psr": 0.5997,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 7.6,
+     "growth": 0.0,
+     "health": 7.0,
+     "valuation": 18
+    }
    }
   },
   {
@@ -43335,15 +44555,16 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 59,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 49,
+    "tier": "none",
+    "tierLabel": "-(質↓)",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "高値-20% +14",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "品質スコア27(低) -10"
     ],
     "scorePrev": 59
    },
@@ -43357,15 +44578,36 @@
     "note": ""
    },
    "rec": {
-    "score": 59,
+    "score": 49,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 27,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": -0.1811,
+     "revGrowth": 0.4453,
+     "epsGrowth": 1.3316,
+     "fcfMargin": -0.135,
+     "trailPE": 53.9261,
+     "psr": 10.1486,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 25.0,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -44084,6 +45326,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 56,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0391,
+     "opMargin": 0.4081,
+     "revGrowth": 0.0542,
+     "epsGrowth": -0.0484,
+     "fcfMargin": 0.3159,
+     "trailPE": 23.2205,
+     "psr": 7.0433,
+     "fyEnd": "2025-05-31"
+    },
+    "parts": {
+     "profit": 14.5,
+     "growth": 4.4,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -44805,6 +46067,26 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 175.7,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 42,
+    "warnings": [],
+    "metrics": {
+     "roe": -0.2567,
+     "opMargin": 0.1478,
+     "revGrowth": 0.0119,
+     "epsGrowth": -0.1587,
+     "fcfMargin": 0.1106,
+     "trailPE": 20.8971,
+     "psr": 1.9448,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 7.4,
+     "growth": 2.6,
+     "health": 13.8,
+     "valuation": 18
+    }
    }
   },
   {
@@ -45525,6 +46807,25 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 52,
+    "warnings": [],
+    "metrics": {
+     "roe": -0.2004,
+     "opMargin": -0.0357,
+     "revGrowth": 0.5997,
+     "epsGrowth": -1.2194,
+     "fcfMargin": 0.2407,
+     "psr": 6.5743,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 12.5,
+     "health": 25.0,
+     "valuation": 14
+    }
    }
   },
   {
@@ -46244,6 +47545,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 47,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.4246,
+     "opMargin": 0.0945,
+     "revGrowth": 0.0431,
+     "epsGrowth": -0.0047,
+     "fcfMargin": 0.0477,
+     "trailPE": 15.4175,
+     "psr": 1.0729,
+     "fyEnd": "2025-12-27"
+    },
+    "parts": {
+     "profit": 17.2,
+     "growth": 5.5,
+     "health": 6.0,
+     "valuation": 18
+    }
    }
   },
   {
@@ -46963,6 +48284,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 61,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1042,
+     "opMargin": 0.7278,
+     "revGrowth": 0.0907,
+     "epsGrowth": 0.2488,
+     "fcfMargin": 0.5782,
+     "trailPE": 77.5928,
+     "psr": 12.9569,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 17.7,
+     "growth": 16.5,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -47653,13 +48994,14 @@
    "side": "sell",
    "actionable": false,
    "value": {
-    "score": 46,
+    "score": 36,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-71%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア32(低) -10"
     ],
     "scorePrev": 46
    },
@@ -47678,7 +49020,7 @@
     "note": ""
    },
    "rec": {
-    "score": 36,
+    "score": 26,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -47687,6 +49029,29 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 32,
+    "warnings": [
+     "売上成長マイナス",
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": 0.0256,
+     "opMargin": 1.5255,
+     "revGrowth": -0.5763,
+     "epsGrowth": -0.5728,
+     "fcfMargin": -0.1925,
+     "trailPE": 15.2143,
+     "psr": 6.1333,
+     "fyEnd": "2021-12-31"
+    },
+    "parts": {
+     "profit": 13.8,
+     "growth": 0.0,
+     "health": 0.0,
+     "valuation": 18
+    }
    }
   },
   {
@@ -48377,12 +49742,13 @@
    "side": "sell",
    "actionable": false,
    "value": {
-    "score": 10,
+    "score": 0,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "品質スコア33(低) -10"
     ],
     "scorePrev": 10
    },
@@ -48410,6 +49776,24 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 33,
+    "warnings": [],
+    "metrics": {
+     "roe": -0.1803,
+     "epsGrowth": -4.8717,
+     "fcfMargin": 0.1205,
+     "trailPE": 20.0238,
+     "psr": 0.8664,
+     "fyEnd": "2018-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 0.0,
+     "health": 15.1,
+     "valuation": 18
+    }
    }
   },
   {
@@ -49133,6 +50517,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 58,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1828,
+     "opMargin": 0.1316,
+     "revGrowth": 0.1327,
+     "epsGrowth": 0.1261,
+     "fcfMargin": 0.1322,
+     "trailPE": 26.227,
+     "psr": 2.8082,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 15.7,
+     "growth": 13.9,
+     "health": 16.5,
+     "valuation": 12
+    }
    }
   },
   {
@@ -49823,7 +51227,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 48,
+    "score": 53,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -49831,7 +51235,8 @@
      "高値-13% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア85(高) +5"
     ],
     "scorePrev": 48
    },
@@ -49850,15 +51255,35 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
+    "score": 65,
     "stars": 4,
-    "level": "C",
+    "level": "B",
     "action": "sell_check",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": "売り管理: 50日線割れ"
+   },
+   "quality": {
+    "score": 85,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.3028,
+     "opMargin": 0.2158,
+     "revGrowth": 0.4542,
+     "epsGrowth": 0.6193,
+     "fcfMargin": 0.2484,
+     "trailPE": 24.6076,
+     "psr": 4.2776,
+     "fyEnd": "2023-12-31"
+    },
+    "parts": {
+     "profit": 23.3,
+     "growth": 25.0,
+     "health": 25.0,
+     "valuation": 12
+    }
    }
   },
   {
@@ -50549,15 +51974,16 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 79,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
+    "score": 69,
+    "tier": "watch",
+    "tierLabel": "👀監視(質↓)",
     "factors": [
      "1年レンジ下限圏(4%位置) +24",
      "5年レンジ下段(0%位置) +20",
      "高値-25% +14",
      "RSI29 売られ過ぎ +15",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア36(低) -10"
     ],
     "scorePrev": 79
    },
@@ -50576,15 +52002,35 @@
     "note": ""
    },
    "rec": {
-    "score": 69,
-    "stars": 4,
-    "level": "B",
+    "score": 59,
+    "stars": 3,
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 36,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1527,
+     "opMargin": 0.1119,
+     "revGrowth": 0.1121,
+     "epsGrowth": -0.0332,
+     "fcfMargin": 0.0794,
+     "trailPE": 35.4194,
+     "psr": 2.6668,
+     "fyEnd": "2026-03-29"
+    },
+    "parts": {
+     "profit": 13.2,
+     "growth": 7.4,
+     "health": 9.9,
+     "valuation": 6
+    }
    }
   },
   {
@@ -51275,13 +52721,14 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 48,
+    "score": 38,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-36%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "品質スコア14(低) -10"
     ],
     "scorePrev": 48
    },
@@ -51300,7 +52747,7 @@
     "note": ""
    },
    "rec": {
-    "score": 38,
+    "score": 28,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -51309,6 +52756,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 14,
+    "warnings": [
+     "売上成長マイナス",
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": -0.5594,
+     "opMargin": -0.2295,
+     "revGrowth": -0.8578,
+     "epsGrowth": 1.5318,
+     "fcfMargin": -0.3825,
+     "psr": 81.1577,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 12.5,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -52034,6 +53503,28 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 42,
+    "warnings": [
+     "売上成長マイナス"
+    ],
+    "metrics": {
+     "roe": 0.0471,
+     "opMargin": 0.8311,
+     "revGrowth": -0.0634,
+     "epsGrowth": -0.0428,
+     "fcfMargin": 0.7688,
+     "trailPE": 127.9561,
+     "psr": 19.2895,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 14.9,
+     "growth": 0.3,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -52755,6 +54246,26 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 502.9,
     "note": "🟦購入検討"
+   },
+   "quality": {
+    "score": 68,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1602,
+     "opMargin": 0.2927,
+     "revGrowth": 0.2051,
+     "epsGrowth": 0.2297,
+     "fcfMargin": 0.3011,
+     "trailPE": 54.1309,
+     "psr": 14.9907,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 20.5,
+     "growth": 20.6,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -53445,13 +54956,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 42,
+    "score": 32,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(19%位置) +16",
      "高値-32%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア20(低) -10"
     ],
     "scorePrev": 42
    },
@@ -53465,8 +54977,8 @@
     "note": "1年チャネル上限+RSI77過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 42,
-    "stars": 3,
+    "score": 32,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -53474,6 +54986,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 20,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0384,
+     "opMargin": -0.0223,
+     "revGrowth": 0.3347,
+     "epsGrowth": -0.6694,
+     "fcfMargin": 0.027,
+     "trailPE": 395.3907,
+     "psr": 17.3132,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 1.9,
+     "growth": 12.5,
+     "health": 3.4,
+     "valuation": 2
+    }
    }
   },
   {
@@ -54195,6 +55727,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 43,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.047,
+     "opMargin": 0.1297,
+     "revGrowth": 0.1512,
+     "epsGrowth": -0.4114,
+     "fcfMargin": 0.1913,
+     "trailPE": 54.3731,
+     "psr": 11.8663,
+     "fyEnd": "2025-10-31"
+    },
+    "parts": {
+     "profit": 8.8,
+     "growth": 8.4,
+     "health": 23.9,
+     "valuation": 2
+    }
    }
   },
   {
@@ -54885,16 +56437,17 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 84,
-    "tier": "strong",
-    "tierLabel": "🔥強い買い",
+    "score": 74,
+    "tier": "consider",
+    "tierLabel": "🟦購入検討(質↓)",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(0%位置) +20",
      "高値-41%の暴落水準 +20",
      "RSI34 +8",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア38(低) -10"
     ],
     "scorePrev": 84
    },
@@ -54908,15 +56461,35 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 84,
-    "stars": 5,
-    "level": "A",
+    "score": 74,
+    "stars": 4,
+    "level": "B",
     "action": "buy",
     "expReturnPct": 27.37,
     "expDays": 7,
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 985.3,
     "note": "🔥強い買い"
+   },
+   "quality": {
+    "score": 38,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1597,
+     "opMargin": 0.1362,
+     "revGrowth": 0.1951,
+     "epsGrowth": -0.3814,
+     "fcfMargin": 0.0568,
+     "trailPE": 32.3311,
+     "psr": 3.813,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 14.8,
+     "growth": 10.2,
+     "health": 7.1,
+     "valuation": 6
+    }
    }
   },
   {
@@ -55635,6 +57208,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 51,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.4369,
+     "opMargin": 0.0365,
+     "revGrowth": 0.0897,
+     "epsGrowth": 2.1469,
+     "fcfMargin": 0.131,
+     "trailPE": 62.9231,
+     "psr": 7.8574,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 14.3,
+     "growth": 18.3,
+     "health": 16.4,
+     "valuation": 2
+    }
    }
   },
   {
@@ -56325,13 +57918,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 48,
+    "score": 38,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-31%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "品質スコア36(低) -10"
     ],
     "scorePrev": 48
    },
@@ -56345,8 +57939,8 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 48,
-    "stars": 3,
+    "score": 38,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -56354,6 +57948,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 36,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1852,
+     "opMargin": 0.1084,
+     "revGrowth": 0.1914,
+     "epsGrowth": -0.645,
+     "fcfMargin": 0.0749,
+     "trailPE": 69.289,
+     "psr": 2.8961,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 14.7,
+     "growth": 10.1,
+     "health": 9.4,
+     "valuation": 2
+    }
    }
   },
   {
@@ -57077,6 +58691,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 59,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.0854,
+     "opMargin": 0.1775,
+     "revGrowth": 0.1104,
+     "epsGrowth": 2.4307,
+     "fcfMargin": 0.3089,
+     "trailPE": 71.5111,
+     "psr": 12.0735,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 13.1,
+     "growth": 19.2,
+     "health": 25.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -57767,15 +59401,16 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 74,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
+    "score": 64,
+    "tier": "watch",
+    "tierLabel": "👀監視(質↓)",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(9%位置) +18",
      "高値-58%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "品質スコア26(低) -10"
     ],
     "scorePrev": 74
    },
@@ -57789,15 +59424,37 @@
     "note": ""
    },
    "rec": {
-    "score": 74,
+    "score": 64,
     "stars": 4,
-    "level": "B",
-    "action": "buy",
+    "level": "C",
+    "action": "hold",
     "expReturnPct": 72.2,
     "expDays": 8,
     "expPeriodLabel": "約8営業日",
     "annualizedPct": 2274.3,
-    "note": "🟦購入検討"
+    "note": "🟦購入検討(品質低下により見送り)"
+   },
+   "quality": {
+    "score": 26,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": 0.011,
+     "opMargin": 0.019,
+     "revGrowth": 0.1853,
+     "epsGrowth": 0.3497,
+     "fcfMargin": -0.0313,
+     "trailPE": 425.7692,
+     "psr": 7.7066,
+     "fyEnd": "2025-12-28"
+    },
+    "parts": {
+     "profit": 1.5,
+     "growth": 22.3,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -58517,6 +60174,26 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 53,
+    "warnings": [],
+    "metrics": {
+     "roe": 0.1576,
+     "opMargin": 0.2614,
+     "revGrowth": 0.4885,
+     "epsGrowth": 9.9756,
+     "fcfMargin": 0.0446,
+     "trailPE": 128.5323,
+     "psr": 29.477,
+     "fyEnd": "2025-08-28"
+    },
+    "parts": {
+     "profit": 20.4,
+     "growth": 25.0,
+     "health": 5.6,
+     "valuation": 2
+    }
    }
   },
   {
@@ -59167,20 +60844,20 @@
     },
     {
      "d": "2026-07-03",
-     "c": 61948.050781
+     "c": 61865.148438
     }
    ],
    "state": "DOWN",
-   "price": 61948.0508,
+   "price": 61865.1484,
    "top": 64095.4529,
    "bottom": 55488.0095,
    "band": 258.2233,
-   "pctInRange": 75.1,
-   "distToBottomPct": 11.64,
-   "distToTopPct": 3.47,
-   "smaShort": 62244.6828,
-   "smaLong": 67352.7413,
-   "smaTrend": 74947.3357,
+   "pctInRange": 74.1,
+   "distToBottomPct": 11.49,
+   "distToTopPct": 3.61,
+   "smaShort": 62240.5377,
+   "smaLong": 67351.0832,
+   "smaTrend": 74946.9212,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -59188,15 +60865,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 45.6,
-   "atr": 2177.1945,
-   "atrPct": 3.51,
+   "rsi": 45.3,
+   "atr": 2183.6513,
+   "atrPct": 3.53,
    "high52w": 114472.4453,
-   "drawdownPct": 45.9,
+   "drawdownPct": 46.0,
    "macroDriven": null,
    "topLong": 118812.871,
    "bottomLong": 102432.5431,
-   "pctInRangeLong": -247.2,
+   "pctInRangeLong": -247.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -59215,7 +60892,7 @@
      "高値-46%の暴落水準 +20",
      "5年トレンド上向き +6"
     ],
-    "scorePrev": 53
+    "scorePrev": 52
    },
    "momentum": {
     "signal": "none",
@@ -59886,20 +61563,20 @@
     },
     {
      "d": "2026-07-03",
-     "c": 1740.76001
+     "c": 1732.130005
     }
    ],
    "state": "SELL",
-   "price": 1740.76,
+   "price": 1732.13,
    "top": 1552.0098,
    "bottom": 1429.9099,
    "band": 3.663,
-   "pctInRange": 254.6,
-   "distToBottomPct": 21.74,
-   "distToTopPct": -10.84,
-   "smaShort": 1672.2595,
-   "smaLong": 1824.8604,
-   "smaTrend": 2273.9232,
+   "pctInRange": 247.5,
+   "distToBottomPct": 21.14,
+   "distToTopPct": -10.4,
+   "smaShort": 1671.828,
+   "smaLong": 1824.6878,
+   "smaTrend": 2273.88,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -59907,15 +61584,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 53.9,
+   "rsi": 53.1,
    "atr": 79.5644,
-   "atrPct": 4.57,
+   "atrPct": 4.59,
    "high52w": 4157.9893,
-   "drawdownPct": 58.1,
+   "drawdownPct": 58.3,
    "macroDriven": null,
    "topLong": 3503.486,
    "bottomLong": 2981.4775,
-   "pctInRangeLong": -237.7,
+   "pctInRangeLong": -239.3,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -60605,20 +62282,20 @@
     },
     {
      "d": "2026-07-03",
-     "c": 4198.100098
+     "c": 4188.0
     }
    ],
    "state": "BUY",
-   "price": 4198.1001,
+   "price": 4188.0,
    "top": 5230.7996,
    "bottom": 4684.7542,
    "band": 16.3814,
-   "pctInRange": -89.1,
-   "distToBottomPct": -10.39,
-   "distToTopPct": 24.6,
-   "smaShort": 4171.2,
-   "smaLong": 4418.976,
-   "smaTrend": 4458.824,
+   "pctInRange": -91.0,
+   "distToBottomPct": -10.6,
+   "distToTopPct": 24.9,
+   "smaShort": 4170.695,
+   "smaLong": 4418.774,
+   "smaTrend": 4458.7735,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -60626,15 +62303,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 47.3,
+   "rsi": 46.7,
    "atr": 93.3619,
-   "atrPct": 2.22,
+   "atrPct": 2.23,
    "high52w": 5318.3999,
-   "drawdownPct": 21.1,
+   "drawdownPct": 21.3,
    "macroDriven": null,
    "topLong": 4217.8218,
    "bottomLong": 3895.5513,
-   "pctInRangeLong": 93.9,
+   "pctInRangeLong": 90.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -60645,7 +62322,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 55,
+    "score": 56,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -60655,7 +62332,7 @@
      "200日線上向き +4",
      "買い場帯 +5"
     ],
-    "scorePrev": 56
+    "scorePrev": 55
    },
    "momentum": {
     "signal": "none",
@@ -60667,7 +62344,7 @@
     "note": ""
    },
    "rec": {
-    "score": 55,
+    "score": 56,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -61326,20 +63003,20 @@
     },
     {
      "d": "2026-07-03",
-     "c": 62.900002
+     "c": 62.625
     }
    ],
    "state": "BUY",
-   "price": 62.9,
+   "price": 62.625,
    "top": 100.2027,
    "bottom": 74.8358,
    "band": 0.761,
-   "pctInRange": -47.1,
-   "distToBottomPct": -15.95,
-   "distToTopPct": 59.3,
-   "smaShort": 64.0083,
-   "smaLong": 71.7147,
-   "smaTrend": 68.719,
+   "pctInRange": -48.1,
+   "distToBottomPct": -16.32,
+   "distToTopPct": 60.0,
+   "smaShort": 63.9945,
+   "smaLong": 71.7092,
+   "smaTrend": 68.7176,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -61347,15 +63024,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 43.0,
+   "rsi": 42.3,
    "atr": 2.4635,
-   "atrPct": 3.92,
+   "atrPct": 3.93,
    "high52w": 115.08,
-   "drawdownPct": 45.3,
+   "drawdownPct": 45.6,
    "macroDriven": false,
    "topLong": 56.5362,
    "bottomLong": 47.269,
-   "pctInRangeLong": 168.7,
+   "pctInRangeLong": 165.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -61371,7 +63048,7 @@
     "tierLabel": "-",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
-     "高値-45%の暴落水準 +20",
+     "高値-46%の暴落水準 +20",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
      "200日線上向き +4",
@@ -61439,7 +63116,7 @@
      "state": "買い場",
      "emoji": "🟦",
      "valueTier": "-",
-     "valueScore": 40,
+     "valueScore": 45,
      "price": 359.91,
      "inWatchlist": true
     },
@@ -61463,7 +63140,7 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "-",
-     "valueScore": 49,
+     "valueScore": 54,
      "price": 194.83,
      "inWatchlist": true
     },
@@ -61475,7 +63152,7 @@
      "state": "上昇中",
      "emoji": "🟢",
      "valueTier": "-",
-     "valueScore": 19,
+     "valueScore": 24,
      "price": 434.16,
      "inWatchlist": true
     },
@@ -61499,7 +63176,7 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 47,
+     "valueScore": 52,
      "price": 300.53,
      "inWatchlist": true
     },
@@ -61511,7 +63188,7 @@
      "state": "上昇中",
      "emoji": "🟢",
      "valueTier": "-",
-     "valueScore": 14,
+     "valueScore": 19,
      "price": 159.99,
      "inWatchlist": true
     }
@@ -61555,7 +63232,7 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "👀監視",
-     "valueScore": 51,
+     "valueScore": 56,
      "price": 390.49,
      "inWatchlist": true
     },
@@ -61579,7 +63256,7 @@
      "state": "買い場",
      "emoji": "🟦",
      "valueTier": "-",
-     "valueScore": 46,
+     "valueScore": 36,
      "price": 81.745,
      "inWatchlist": true
     },
@@ -61591,7 +63268,7 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "-",
-     "valueScore": 49,
+     "valueScore": 54,
      "price": 194.83,
      "inWatchlist": true
     },
@@ -61615,7 +63292,7 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 47,
+     "valueScore": 52,
      "price": 300.53,
      "inWatchlist": true
     }
@@ -61639,13 +63316,6 @@
    "detail": "50日線割れ・急落-7.5%・デッドクロス"
   },
   {
-   "type": "THESIS_REVIEW",
-   "ticker": "ORCL",
-   "priority": 2,
-   "title": "🧐 ORCL テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
    "type": "MOM_EXIT_WARN",
    "ticker": "SLB",
    "priority": 2,
@@ -61667,24 +63337,10 @@
    "detail": "50日線割れ"
   },
   {
-   "type": "BUY_STRONG",
-   "ticker": "CEG",
-   "priority": 2,
-   "title": "🔥 CEG 強い買い (スコア84)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-41%の暴落水準 +20"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "CEG",
-   "priority": 2,
-   "title": "🧐 CEG テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
    "type": "BUY_CONSIDER",
    "ticker": "PLTR",
    "priority": 3,
-   "title": "🟦 PLTR 購入検討 (スコア65)",
+   "title": "🟦 PLTR 購入検討 (スコア70)",
    "detail": "5年レンジ下段(0%位置) +20 / 高値-38%の暴落水準 +20 / 5年トレンド上向き +6"
   },
   {
@@ -61733,7 +63389,7 @@
    "type": "BUY_CONSIDER",
    "ticker": "ICE",
    "priority": 3,
-   "title": "🟦 ICE 購入検討 (スコア70)",
+   "title": "🟦 ICE 購入検討 (スコア75)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-29% +14"
   },
   {
@@ -61780,13 +63436,6 @@
   },
   {
    "type": "BUY_CONSIDER",
-   "ticker": "HWKN",
-   "priority": 3,
-   "title": "🟦 HWKN 購入検討 (スコア79)",
-   "detail": "1年レンジ下限圏(4%位置) +24 / 5年レンジ下段(0%位置) +20 / 高値-25% +14"
-  },
-  {
-   "type": "BUY_CONSIDER",
    "ticker": "ISRG",
    "priority": 3,
    "title": "🟦 ISRG 購入検討 (スコア70)",
@@ -61801,94 +63450,94 @@
   },
   {
    "type": "BUY_CONSIDER",
-   "ticker": "KTOS",
+   "ticker": "CEG",
    "priority": 3,
-   "title": "🟦 KTOS 購入検討 (スコア74)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(9%位置) +18 / 高値-58%の暴落水準 +20"
+   "title": "🟦 CEG 購入検討 (スコア74)",
+   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-41%の暴落水準 +20"
   }
  ],
  "plannerWeights": {
-  "AAPL": 1.29,
-  "MSFT": 0.84,
-  "GOOGL": 3.17,
-  "AMZN": 2.05,
-  "AVGO": 3.22,
-  "NVDA": 3.29,
-  "META": 2.37,
-  "TSLA": 1.52,
-  "AMD": 1.29,
-  "PLTR": 1.63,
-  "ORCL": 1.59,
-  "CRWV": 1.51,
-  "IBM": 1.36,
-  "ASML": 2.88,
-  "TSM": 2.89,
-  "MRVL": 1.97,
-  "CLMB": 0.82,
-  "DELL": 1.34,
-  "ADBE": 1.46,
-  "AMAT": 2.06,
-  "LRCX": 2.06,
-  "SNPS": 2.32,
-  "MU": 2.06,
+  "AAPL": 1.31,
+  "MSFT": 0.85,
+  "GOOGL": 3.21,
+  "AMZN": 2.03,
+  "AVGO": 3.2,
+  "NVDA": 3.33,
+  "META": 2.4,
+  "TSLA": 1.45,
+  "AMD": 1.28,
+  "PLTR": 1.64,
+  "ORCL": 1.58,
+  "CRWV": 1.44,
+  "IBM": 1.38,
+  "ASML": 2.92,
+  "TSM": 2.93,
+  "MRVL": 1.96,
+  "CLMB": 0.81,
+  "DELL": 1.33,
+  "ADBE": 1.48,
+  "AMAT": 2.04,
+  "LRCX": 2.09,
+  "SNPS": 2.31,
+  "MU": 2.04,
   "XOM": 5.28,
   "CVX": 1.32,
   "COP": 2.43,
   "SLB": 2.46,
   "CCJ": 3.5,
-  "NEE": 1.24,
-  "ANET": 2.37,
-  "VRT": 2.74,
-  "TLN": 1.96,
-  "CEG": 3.7,
-  "GEV": 1.71,
+  "NEE": 1.29,
+  "ANET": 2.53,
+  "VRT": 2.91,
+  "TLN": 2.04,
+  "CEG": 3.17,
+  "GEV": 1.78,
   "VST": 1.28,
-  "LMT": 1.64,
-  "RTX": 2.31,
-  "NOC": 2.68,
-  "BA": 0.75,
-  "RKLB": 3.15,
-  "CACI": 1.74,
-  "KTOS": 2.72,
+  "LMT": 1.67,
+  "RTX": 2.35,
+  "NOC": 2.73,
+  "BA": 0.73,
+  "RKLB": 3.07,
+  "CACI": 1.77,
+  "KTOS": 2.67,
   "IQV": 0.25,
-  "MCO": 0.4,
+  "MCO": 0.41,
   "AXP": 0.27,
-  "SPGI": 0.6,
+  "SPGI": 0.62,
   "BDX": 0.28,
   "MA": 0.42,
   "HON": 0.26,
   "NKE": 0.16,
   "DE": 0.26,
   "ACN": 0.17,
-  "ICE": 0.32,
+  "ICE": 0.33,
   "UNH": 0.24,
-  "V": 0.37,
+  "V": 0.39,
   "IBKR": 0.25,
   "GDDY": 0.16,
-  "BN": 0.28,
+  "BN": 0.27,
   "UBER": 0.29,
-  "PGR": 0.27,
+  "PGR": 0.28,
   "HCA": 0.32,
-  "KKR": 0.29,
+  "KKR": 0.28,
   "JXN": 0.17,
   "FERG": 0.31,
   "USFD": 0.1,
   "RLI": 0.12,
-  "BLDR": 0.16,
-  "FTAI": 0.48,
+  "BLDR": 0.15,
+  "FTAI": 0.46,
   "PAYX": 0.15,
   "OTIS": 0.18,
   "TSCO": 0.17,
   "MSA": 0.16,
-  "BUR": 0.16,
-  "PBI": 0.14,
+  "BUR": 0.15,
+  "PBI": 0.13,
   "XPEL": 0.15,
-  "BKTI": 0.16,
+  "BKTI": 0.17,
   "HWKN": 0.18,
   "GPGI": 0.16,
   "BMI": 0.17,
-  "ISRG": 0.69,
-  "AXON": 0.33
+  "ISRG": 0.7,
+  "AXON": 0.32
  },
  "discovery": [
   {
