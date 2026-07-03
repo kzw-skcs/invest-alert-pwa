@@ -44,21 +44,32 @@ TAGS = {
 }
 
 
-def sec_json(url, retries=2):
+def sec_json(url, retries=3):
+    last = None
     for i in range(retries + 1):
         try:
             req = urllib.request.Request(url, headers=SEC_UA)
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=40) as r:
                 return json.loads(r.read().decode())
         except Exception as e:
-            if i == retries:
-                raise e
-            time.sleep(2)
+            last = e
+            print(f"  sec_json 失敗({i + 1}/{retries + 1}) {url.split('/')[-1]}: {e}")
+            time.sleep(3 * (i + 1))
+    raise last
 
 
 def cik_map():
-    j = sec_json("https://www.sec.gov/files/company_tickers.json")
-    return {v["ticker"].upper(): int(v["cik_str"]) for v in j.values()}
+    for url in ("https://www.sec.gov/files/company_tickers.json",
+                "https://www.sec.gov/files/company_tickers_exchange.json"):
+        try:
+            j = sec_json(url)
+            if "fields" in j and "data" in j:  # exchange形式
+                ti = j["fields"].index("ticker"); ci = j["fields"].index("cik")
+                return {row[ti].upper(): int(row[ci]) for row in j["data"] if row[ti]}
+            return {v["ticker"].upper(): int(v["cik_str"]) for v in j.values()}
+        except Exception as e:
+            print(f"CIKマップ取得失敗 {url}: {e}")
+    return {}
 
 
 def annual_series(facts, key):
@@ -174,34 +185,42 @@ def main():
         cfg = json.load(f)
     print("CIKマップ取得中…")
     ciks = cik_map()
+    if not ciks:
+        print("⚠️ CIKマップが取得できませんでした。既存のfundamentals.jsonを維持して終了します。")
+        return
+    print(f"CIKマップ: {len(ciks)}社")
     out = {}
-    ok = 0
+    ok = fail = 0
     for st in cfg["stocks"]:
         tk = st["ticker"].upper()
-        cik = ciks.get(tk)
-        if not cik:
-            print(f"{tk}: SEC CIKなし(スキップ)")
-            continue
         try:
-            facts = sec_json(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json")
+            cik = ciks.get(tk)
+            if not cik:
+                print(f"{tk}: SEC CIKなし(スキップ)")
+                continue
+            facts = sec_json(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json", retries=1)
+            price = None
+            try:
+                hist, _ = evaluate.fetch_history({"yahoo": tk, "stooq": tk.lower() + ".us"})
+                if hist:
+                    price = hist[-1]["c"]
+            except Exception:
+                pass
+            m = build_metrics(facts, price)
+            score, parts, warns = quality_score(m)
+            disp = {k: (round(v, 4) if isinstance(v, float) else v)
+                    for k, v in m.items() if v is not None}
+            out[tk] = {"score": score, "parts": parts, "warnings": warns, "metrics": disp}
+            ok += 1
+            print(f"{tk}: Q={score} 決算期{m.get('fyEnd')} {warns}")
         except Exception as e:
-            print(f"{tk}: EDGAR取得失敗 {e}")
-            continue
-        # 株価(PER/PSR用): Yahoo chart(動作実績のある経路)
-        price = None
-        try:
-            hist, _ = evaluate.fetch_history({"yahoo": tk, "stooq": tk.lower() + ".us"})
-            if hist:
-                price = hist[-1]["c"]
-        except Exception:
-            pass
-        m = build_metrics(facts, price)
-        score, parts, warns = quality_score(m)
-        disp = {k: (round(v, 4) if isinstance(v, float) else v) for k, v in m.items() if v is not None}
-        out[tk] = {"score": score, "parts": parts, "warnings": warns, "metrics": disp}
-        ok += 1
-        print(f"{tk}: Q={score} 決算期{m.get('fyEnd')} {warns}")
+            fail += 1
+            print(f"{tk}: 処理失敗(続行) {type(e).__name__}: {e}")
         time.sleep(0.2)  # SECレート制限(10req/s)への配慮
+    print(f"成功{ok} / 失敗{fail}")
+    if not out:
+        print("⚠️ 全銘柄失敗のため既存のfundamentals.jsonを維持します(上書きしない)")
+        return
     data = {"updated": datetime.now(JST).strftime("%Y-%m-%d %H:%M JST"),
             "source": "SEC EDGAR(年次) + Yahoo(株価)", "tickers": out}
     with open(os.path.join(BASE, "fundamentals.json"), "w", encoding="utf-8") as f:
