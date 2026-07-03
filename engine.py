@@ -598,8 +598,10 @@ def apply_quality(inst, q, vp):
     score_q = q["score"]
     v = inst["value"]
     inst["quality"] = {"score": score_q, "warnings": q.get("warnings", []),
-                       "metrics": q.get("metrics", {})}
+                       "metrics": q.get("metrics", {}), "parts": q.get("parts", {})}
+    delta = 0
     if score_q < 40:
+        delta = -10
         v["score"] = max(0, v["score"] - 10)
         v["factors"].append(f"品質スコア{score_q}(低) -10")
         order = ["none", "watch", "consider", "strong", "absolute"]
@@ -610,8 +612,19 @@ def apply_quality(inst, q, vp):
                       "consider": "🟦購入検討", "watch": "👀監視", "none": "-"}
             v["tierLabel"] = labels[v["tier"]] + "(質↓)"
     elif score_q >= 70:
+        delta = 5
         v["score"] = min(100, v["score"] + 5)
         v["factors"].append(f"品質スコア{score_q}(高) +5")
+    # 総合推奨(rec=★)にも同じ補正を反映(ランキングとの整合)
+    rec = inst.get("rec")
+    if rec and delta:
+        rec["score"] = max(0, min(100, rec["score"] + delta))
+        rec["stars"] = min(1 + int(rec["score"] // 20), 5)
+        rec["level"] = ("S" if rec["score"] >= 90 else "A" if rec["score"] >= 80
+                        else "B" if rec["score"] >= 65 else "C" if rec["score"] >= 50 else "-")
+        if delta < 0 and rec.get("action") == "buy" and v["tier"] in ("none", "watch"):
+            rec["action"] = "hold"
+            rec["note"] = (rec.get("note") or "") + "(品質低下により見送り)"
     warns = q.get("warnings", [])
     if warns and inst.get("holdMgmt", {}).get("thesisBreak"):
         inst["holdMgmt"]["note"] += " / 財務面の警告: " + "・".join(warns)

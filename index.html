@@ -530,6 +530,15 @@ function cardHTML(i) {
     </div>
     ${momLine}
     ${v.factors && v.factors.length ? `<details><summary>スコア内訳</summary><div class="tiny">${v.factors.join('<br>')}</div></details>` : ''}
+    ${i.quality && i.quality.metrics ? `<details><summary>財務指標(週次更新)</summary><div class="tiny">
+      ${[['ROE', i.quality.metrics.roe, 100, '%'], ['営業利益率', i.quality.metrics.opMargin, 100, '%'], ['粗利率', i.quality.metrics.grossMargin, 100, '%'],
+         ['売上成長', i.quality.metrics.revGrowth, 100, '%'], ['EPS成長', i.quality.metrics.epsGrowth, 100, '%'], ['FCFマージン', i.quality.metrics.fcfMargin, 100, '%'],
+         ['予想PER', i.quality.metrics.fwdPE, 1, '倍'], ['実績PER', i.quality.metrics.trailPE, 1, '倍'], ['PSR', i.quality.metrics.psr, 1, '倍'],
+         ['純負債/EBITDA', i.quality.metrics.netDebtEbitda, 1, '倍']]
+        .filter(([, v2]) => v2 != null)
+        .map(([n2, v2, mul, u]) => `${n2} <b>${fmtN(v2 * mul, 1)}${u}</b>`).join(' / ')}
+      ${i.quality.parts ? `<br>内訳: 収益性${i.quality.parts.profit ?? '—'} / 成長性${i.quality.parts.growth ?? '—'} / 財務健全${i.quality.parts.health ?? '—'} / 価格妥当${i.quality.parts.valuation ?? '—'} (各25点満点)` : ''}
+    </div></details>` : ''}
     <canvas class="spark" id="sp-${i.ticker}"></canvas>
   </div>`;
 }
