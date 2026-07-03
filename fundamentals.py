@@ -18,25 +18,50 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
+import http.cookiejar
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 JST = timezone(timedelta(hours=9))
-UA = {"User-Agent": "Mozilla/5.0 (invest-alert-pwa; personal use)"}
+UA = {"User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36")}
 MODULES = "financialData,defaultKeyStatistics,summaryDetail"
+
+# Yahooはcookie+crumb認証を要求するため、cookie jar付きopenerで取得する
+_JAR = http.cookiejar.CookieJar()
+_OPENER = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(_JAR))
+_CRUMB = {"v": None}
+
+
+def _get_crumb(force=False):
+    if _CRUMB["v"] and not force:
+        return _CRUMB["v"]
+    for seed in ("https://fc.yahoo.com/", "https://finance.yahoo.com/"):
+        try:
+            _OPENER.open(urllib.request.Request(seed, headers=UA), timeout=15).read()
+        except Exception:
+            pass  # fc.yahoo.comは404を返すがcookieは付与される
+    r = _OPENER.open(urllib.request.Request(
+        "https://query1.finance.yahoo.com/v1/test/getcrumb", headers=UA), timeout=15)
+    _CRUMB["v"] = r.read().decode().strip()
+    print(f"crumb取得: {'OK' if _CRUMB['v'] else '失敗'}")
+    return _CRUMB["v"]
 
 
 def fetch_summary(symbol):
-    for host in ("query1", "query2"):
-        url = (f"https://{host}.finance.yahoo.com/v10/finance/quoteSummary/"
-               f"{urllib.parse.quote(symbol)}?modules={MODULES}")
+    err = None
+    for attempt in range(3):
         try:
-            req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=20) as r:
+            crumb = _get_crumb(force=(attempt > 0))
+            host = "query1" if attempt % 2 == 0 else "query2"
+            url = (f"https://{host}.finance.yahoo.com/v10/finance/quoteSummary/"
+                   f"{urllib.parse.quote(symbol)}?modules={MODULES}"
+                   f"&crumb={urllib.parse.quote(crumb or '')}")
+            with _OPENER.open(urllib.request.Request(url, headers=UA), timeout=20) as r:
                 j = json.loads(r.read().decode())
-            res = j["quoteSummary"]["result"][0]
-            return res
+            return j["quoteSummary"]["result"][0]
         except Exception as e:
             err = e
-            time.sleep(1)
+            time.sleep(1.5)
     print(f"  {symbol}: 取得失敗 {err}")
     return None
 

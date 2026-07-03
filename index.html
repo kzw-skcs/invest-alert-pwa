@@ -874,7 +874,7 @@ function renderDiscovery() {
   const el = $('#discovery'); if (!el) return;
   const list = (DATA && DATA.discovery) || [];
   if (!list.length) { el.innerHTML = '<span class="muted">候補なし(config.jsonのdiscoveryで管理)</span>'; return; }
-  const inWatch = new Set(instruments().map((i) => i.ticker));
+  const inWatch = new Set([...instruments().map((i) => i.ticker), ...CUSTOM.filter((c) => c.added).map((c) => c.ticker)]);
   el.innerHTML = list.map((d) => `
     <div style="padding:8px 0;border-bottom:1px solid #24334a">
       <div class="row"><b>${d.ticker}</b><span class="tiny grow">${d.name} / ${d.theme}</span>
@@ -885,15 +885,34 @@ function renderDiscovery() {
     </div>`).join('');
 }
 function addDiscovery(tk, name) {
+  if (CUSTOM.some((c) => c.ticker === tk)) { toast(`${tk} は追加済みです(同期待ち)`); return; }
   CUSTOM.push({ ticker: tk, name: name || tk, subSector: 'その他モート', tradePolicy: 'hold', conviction: 3, added: true });
   HIDDEN = HIDDEN.filter((h) => h !== tk);
-  saveAll(); renderDiscovery();
-  toast(`${tk} をウォッチリストに追加。⚙️設定→「サーバーに同期」で翌朝から判定対象になります。`);
+  saveAll(); renderDiscovery(); renderWatchlist();
+  autoSyncAndRun(tk);
+}
+async function autoSyncAndRun(tk) {
+  toast(`${tk} を追加。サーバーへ同期中…`);
+  try {
+    const ok = await syncServer(true);
+    if (ok) {
+      await runWorkflow('daily', '判定更新');
+      toast(`✅ ${tk} を追加し同期完了。数分後に🔄で判定が表示されます。`);
+    }
+  } catch (e) { toast(`${tk} は追加済み(表示のみ)。同期は⚙️設定から手動で。`); }
 }
 /* ---------------- ⚙️ 設定タブ ---------------- */
 function renderWatchlist() {
   const el = $('#watchlist');
-  el.innerHTML = instruments().filter((i) => i.class === 'stock').map((i) => `
+  const known = new Set(instruments().map((i) => i.ticker));
+  const pending = CUSTOM.filter((c) => c.added && !known.has(c.ticker));
+  const pendingHtml = pending.map((c) => `
+    <div class="row" style="padding:7px 0;border-bottom:1px solid #24334a;gap:8px;opacity:.85">
+      <b style="width:58px">${c.ticker}</b>
+      <span class="tiny grow">${c.name || c.ticker}<br><span style="color:var(--amber)">⏳同期待ち — 判定は次回の「📈今すぐ判定を更新」または翌朝から</span></span>
+      <button class="btn sm" onclick="removePending('${c.ticker}')">×</button>
+    </div>`).join('');
+  el.innerHTML = pendingHtml + instruments().filter((i) => i.class === 'stock').map((i) => `
     <div class="row" style="padding:7px 0;border-bottom:1px solid #24334a;gap:8px">
       <b style="width:58px">${i.ticker}</b>
       <span class="tiny grow">${i.name}<br>${i.subSector || i.sector} / 確信度${'●'.repeat(i.conviction || 3)}</span>
@@ -901,6 +920,11 @@ function renderWatchlist() {
       <label class="switch"><input type="checkbox" ${i.tradePolicy === 'trade' ? 'checked' : ''} onchange="togglePolicy('${i.ticker}',this.checked)"><span></span></label>
       <button class="btn sm" onclick="hideTicker('${i.ticker}')">×</button>
     </div>`).join('');
+}
+function removePending(tk) {
+  CUSTOM = CUSTOM.filter((c) => c.ticker !== tk);
+  saveAll(); renderWatchlist(); renderDiscovery();
+  toast(`${tk} の追加を取り消しました(次回同期で反映)`);
 }
 function togglePolicy(tk, isTrade) {
   const inst = DATA.instruments.find((i) => i.ticker === tk);
@@ -917,14 +941,15 @@ function hideTicker(tk) {
 function addTicker() {
   const tk = ($('#add-ticker').value || '').trim().toUpperCase();
   if (!tk) return;
+  if (CUSTOM.some((c) => c.ticker === tk)) { toast(`${tk} は追加済みです(同期待ち)`); return; }
   CUSTOM.push({ ticker: tk, name: tk, subSector: $('#add-sub').value, tradePolicy: $('#add-policy').value, conviction: 3, added: true });
   HIDDEN = HIDDEN.filter((h) => h !== tk);
-  saveAll();
+  saveAll(); renderWatchlist();
   $('#add-ticker').value = '';
-  toast(`${tk} を追加しました。「サーバーに同期」すると翌朝から判定対象になります。`);
+  autoSyncAndRun(tk);
 }
-async function syncServer() {
-  if (!DATA) return;
+async function syncServer(silent) {
+  if (!DATA) return false;
   const stocks = instruments().filter((i) => i.class === 'stock').map((i) => ({
     ticker: i.ticker, name: i.name, sector: i.sector, subSector: i.subSector,
     tradePolicy: i.tradePolicy, conviction: i.conviction,
@@ -935,8 +960,10 @@ async function syncServer() {
   try {
     const r = await fetch('api/sync', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ stocks }) });
     const j = await r.json();
-    toast(j.ok ? `✅ 同期完了(${j.count}銘柄)。翌朝の判定から反映されます。` : `同期失敗: ${j.error || ''}`);
-  } catch (e) { toast('同期失敗: サーバー未設定(GH_TOKEN)。表示のみ変更されています。'); }
+    if (!silent) toast(j.ok ? `✅ 同期完了(${j.count}銘柄)。翌朝の判定から反映されます。` : `同期失敗: ${j.error || ''}`);
+    if (!j.ok && silent) toast(`同期失敗: ${j.error || ''}`);
+    return !!j.ok;
+  } catch (e) { toast('同期失敗: サーバー未設定(GH_TOKEN)。表示のみ変更されています。'); return false; }
 }
 async function runWorkflow(name, label) {
   toast(`${label} を起動中…`);
