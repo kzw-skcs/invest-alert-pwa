@@ -539,13 +539,17 @@ function cardHTML(i) {
         .map(([n2, v2, mul, u]) => `${n2} <b>${fmtN(v2 * mul, 1)}${u}</b>`).join(' / ')}
       ${i.quality.parts ? `<br>内訳: 収益性${i.quality.parts.profit ?? '—'} / 成長性${i.quality.parts.growth ?? '—'} / 財務健全${i.quality.parts.health ?? '—'} / 価格妥当${i.quality.parts.valuation ?? '—'} (各25点満点)` : ''}
     </div></details>` : ''}
-    <canvas class="spark" id="sp-${i.ticker}"></canvas>
+    <canvas class="spark" id="sp-${i.ticker}" style="width:100%;height:56px"></canvas>
   </div>`;
 }
 
 function drawSpark(i) {
   const c = document.getElementById('sp-' + i.ticker);
-  if (!c || !i.history || i.history.length < 10) return;
+  if (!c) return;
+  if (!i.history || i.history.length < 10) {
+    c.outerHTML = `<div class="tiny" style="margin-top:8px;color:var(--tx3)">チャート: 履歴データ${i.history ? i.history.length : 0}本(蓄積待ち)</div>`;
+    return;
+  }
   const dpr = window.devicePixelRatio || 1;
   const w = c.clientWidth * dpr, h = c.clientHeight * dpr;
   c.width = w; c.height = h;
