@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-04T18:07:54.502319+00:00",
- "updatedJST": "2026-07-05 03:07 JST",
+ "updated": "2026-07-04T18:14:59.112173+00:00",
+ "updatedJST": "2026-07-05 03:14 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -125,7 +125,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-05 03:07 JST"
+  "fetchedAt": "2026-07-05 03:15 JST"
  },
  "instruments": [
   {
@@ -825,7 +825,7 @@
      "品質スコア70(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 16
+    "scorePrev": 13
    },
    "momentum": {
     "signal": "none",
@@ -1566,7 +1566,7 @@
      "品質スコア78(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 56
+    "scorePrev": 53
    },
    "momentum": {
     "signal": "none",
@@ -2308,7 +2308,7 @@
      "品質スコア75(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 45
+    "scorePrev": 42
    },
    "momentum": {
     "signal": "none",
@@ -3046,7 +3046,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 17
+    "scorePrev": 14
    },
    "momentum": {
     "signal": "none",
@@ -3789,7 +3789,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 44
+    "scorePrev": 41
    },
    "momentum": {
     "signal": "none",
@@ -4530,7 +4530,7 @@
      "品質スコア81(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 54
+    "scorePrev": 51
    },
    "momentum": {
     "signal": "exit_warning",
@@ -5290,7 +5290,7 @@
      "品質スコア74(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 56
+    "scorePrev": 53
    },
    "momentum": {
     "signal": "none",
@@ -6032,7 +6032,7 @@
      "品質スコア16(低) -10",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 38
+    "scorePrev": 35
    },
    "momentum": {
     "signal": "exit_warning",
@@ -6792,7 +6792,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 10
+    "scorePrev": 7
    },
    "momentum": {
     "signal": "none",
@@ -7533,7 +7533,7 @@
      "品質スコア76(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 70
+    "scorePrev": 67
    },
    "momentum": {
     "signal": "none",
@@ -8276,7 +8276,7 @@
      "品質スコア38(低) -10",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 60
+    "scorePrev": 57
    },
    "momentum": {
     "signal": "none",
@@ -12742,7 +12742,7 @@
      "品質スコア77(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 27
+    "scorePrev": 24
    },
    "momentum": {
     "signal": "none",
@@ -13481,7 +13481,7 @@
      "品質スコア72(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 23
+    "scorePrev": 20
    },
    "momentum": {
     "signal": "none",
@@ -14221,7 +14221,7 @@
      "品質スコア100(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 24
+    "scorePrev": 21
    },
    "momentum": {
     "signal": "none",
@@ -14962,7 +14962,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 9
+    "scorePrev": 6
    },
    "momentum": {
     "signal": "none",
@@ -17182,7 +17182,7 @@
      "5年トレンド上向き +6",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 46
+    "scorePrev": 43
    },
    "momentum": {
     "signal": "none",
@@ -17920,7 +17920,7 @@
      "高値-15% +8",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 8
+    "scorePrev": 11
    },
    "momentum": {
     "signal": "none",
@@ -19445,7 +19445,7 @@
      "品質スコア70(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 21
+    "scorePrev": 24
    },
    "momentum": {
     "signal": "none",
@@ -20185,7 +20185,7 @@
      "⭐超・買い場(GC確認) +10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 23
+    "scorePrev": 26
    },
    "momentum": {
     "signal": "none",
@@ -20926,7 +20926,7 @@
      "品質スコア70(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 39
+    "scorePrev": 42
    },
    "momentum": {
     "signal": "none",
@@ -21666,7 +21666,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 18
+    "scorePrev": 15
    },
    "momentum": {
     "signal": "none",
@@ -22406,7 +22406,7 @@
      "品質スコア93(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 43
+    "scorePrev": 40
    },
    "momentum": {
     "signal": "none",
@@ -23145,7 +23145,7 @@
      "⭐超・買い場(GC確認) +10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 31
+    "scorePrev": 34
    },
    "momentum": {
     "signal": "none",
@@ -23884,7 +23884,7 @@
      "5年トレンド上向き +6",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 26
+    "scorePrev": 29
    },
    "momentum": {
     "signal": "none",
@@ -24623,7 +24623,7 @@
      "200日線上向き +4",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 19
+    "scorePrev": 22
    },
    "momentum": {
     "signal": "none",
@@ -25361,7 +25361,7 @@
      "高値-44%の暴落水準 +20",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 40
+    "scorePrev": 43
    },
    "momentum": {
     "signal": "none",
@@ -26102,7 +26102,7 @@
      "⭐超・買い場(GC確認) +10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 20
+    "scorePrev": 23
    },
    "momentum": {
     "signal": "none",
@@ -26848,7 +26848,7 @@
      "品質スコア37(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 53
+    "scorePrev": 56
    },
    "momentum": {
     "signal": "none",
@@ -27593,7 +27593,7 @@
      "品質スコア70(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 75
+    "scorePrev": 78
    },
    "momentum": {
     "signal": "none",
@@ -28332,7 +28332,7 @@
      "品質スコア26(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 0
+    "scorePrev": 3
    },
    "momentum": {
     "signal": "none",
@@ -29071,7 +29071,7 @@
      "品質スコア73(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 11
+    "scorePrev": 14
    },
    "momentum": {
     "signal": "none",
@@ -29809,7 +29809,7 @@
      "200日線上向き +4",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 10
+    "scorePrev": 13
    },
    "momentum": {
     "signal": "none",
@@ -30549,7 +30549,7 @@
      "品質スコア79(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 51
+    "scorePrev": 54
    },
    "momentum": {
     "signal": "none",
@@ -31289,7 +31289,7 @@
      "品質スコア15(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 26
+    "scorePrev": 29
    },
    "momentum": {
     "signal": "none",
@@ -32030,7 +32030,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 18
+    "scorePrev": 15
    },
    "momentum": {
     "signal": "none",
@@ -32771,7 +32771,7 @@
      "品質スコア76(高) +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 23
+    "scorePrev": 20
    },
    "momentum": {
     "signal": "none",
@@ -33512,7 +33512,7 @@
      "品質スコア72(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 45
+    "scorePrev": 48
    },
    "momentum": {
     "signal": "none",
@@ -34252,7 +34252,7 @@
      "品質スコア96(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 31
+    "scorePrev": 34
    },
    "momentum": {
     "signal": "none",
@@ -34993,7 +34993,7 @@
      "買い場帯 +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 70
+    "scorePrev": 73
    },
    "momentum": {
     "signal": "none",
@@ -35733,7 +35733,7 @@
      "品質スコア24(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 36
+    "scorePrev": 39
    },
    "momentum": {
     "signal": "none",
@@ -36476,7 +36476,7 @@
      "買い場帯 +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 68
+    "scorePrev": 71
    },
    "momentum": {
     "signal": "none",
@@ -37215,7 +37215,7 @@
      "200日線上向き +4",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 57
+    "scorePrev": 60
    },
    "momentum": {
     "signal": "none",
@@ -37956,7 +37956,7 @@
      "品質スコア35(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 10
+    "scorePrev": 13
    },
    "momentum": {
     "signal": "none",
@@ -38698,7 +38698,7 @@
      "品質スコア85(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 49
+    "scorePrev": 52
    },
    "momentum": {
     "signal": "none",
@@ -39438,7 +39438,7 @@
      "品質スコア33(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 36
+    "scorePrev": 39
    },
    "momentum": {
     "signal": "none",
@@ -40183,7 +40183,7 @@
      "品質スコア27(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 49
+    "scorePrev": 52
    },
    "momentum": {
     "signal": "none",
@@ -40923,7 +40923,7 @@
      "高値-28% +14",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 34
+    "scorePrev": 37
    },
    "momentum": {
     "signal": "none",
@@ -41665,7 +41665,7 @@
      "買い場帯 +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 70
+    "scorePrev": 73
    },
    "momentum": {
     "signal": "none",
@@ -43144,7 +43144,7 @@
      "5年トレンド上向き +6",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 62
+    "scorePrev": 65
    },
    "momentum": {
     "signal": "none",
@@ -43884,7 +43884,7 @@
      "5年トレンド上向き +6",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 47
+    "scorePrev": 50
    },
    "momentum": {
     "signal": "none",
@@ -44625,7 +44625,7 @@
      "品質スコア32(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 36
+    "scorePrev": 39
    },
    "momentum": {
     "signal": "none",
@@ -45367,7 +45367,7 @@
      "200日線上向き +4",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 10
+    "scorePrev": 13
    },
    "momentum": {
     "signal": "none",
@@ -46105,7 +46105,7 @@
      "200日線上向き +4",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 29
+    "scorePrev": 32
    },
    "momentum": {
     "signal": "none",
@@ -46848,7 +46848,7 @@
      "品質スコア85(高) +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 53
+    "scorePrev": 56
    },
    "momentum": {
     "signal": "none",
@@ -47591,7 +47591,7 @@
      "品質スコア36(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 69
+    "scorePrev": 72
    },
    "momentum": {
     "signal": "none",
@@ -48332,7 +48332,7 @@
      "品質スコア14(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 38
+    "scorePrev": 41
    },
    "momentum": {
     "signal": "none",
@@ -49075,7 +49075,7 @@
      "⭐超・買い場(GC確認) +10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 56
+    "scorePrev": 59
    },
    "momentum": {
     "signal": "none",
@@ -49819,7 +49819,7 @@
      "買い場帯 +5",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 70
+    "scorePrev": 73
    },
    "momentum": {
     "signal": "none",
@@ -50560,7 +50560,7 @@
      "品質スコア20(低) -10",
      "セクター資金流入 +3"
     ],
-    "scorePrev": 32
+    "scorePrev": 35
    },
    "momentum": {
     "signal": "none",
@@ -51302,7 +51302,7 @@
      "5年トレンド上向き +6",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 46
+    "scorePrev": 43
    },
    "momentum": {
     "signal": "none",
@@ -54267,7 +54267,7 @@
      "買い場帯 +5",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 50
+    "scorePrev": 47
    },
    "momentum": {
     "signal": "none",
@@ -55751,7 +55751,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 18
+    "scorePrev": 15
    },
    "momentum": {
     "signal": "none",
@@ -56492,7 +56492,7 @@
      "200日線上向き +4",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 9
+    "scorePrev": 6
    },
    "momentum": {
     "signal": "none",
@@ -57234,7 +57234,7 @@
      "品質スコア27(低) -10",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 29
+    "scorePrev": 16
    },
    "momentum": {
     "signal": "none",
@@ -57975,7 +57975,7 @@
      "品質スコア21(低) -10",
      "セクター資金流出 -3"
     ],
-    "scorePrev": 18
+    "scorePrev": 5
    },
    "momentum": {
     "signal": "none",
@@ -58667,20 +58667,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 63176.878906
+     "c": 63273.398438
     }
    ],
    "state": "DOWN",
-   "price": 63176.8789,
+   "price": 63273.3984,
    "top": 63946.3102,
    "bottom": 55341.715,
    "band": 258.1379,
-   "pctInRange": 91.1,
-   "distToBottomPct": 14.16,
-   "distToTopPct": 1.22,
-   "smaShort": 62147.8143,
-   "smaLong": 67046.8882,
-   "smaTrend": 74826.9809,
+   "pctInRange": 92.2,
+   "distToBottomPct": 14.33,
+   "distToTopPct": 1.06,
+   "smaShort": 62152.6402,
+   "smaLong": 67048.8186,
+   "smaTrend": 74827.4635,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58688,15 +58688,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 50.2,
+   "rsi": 50.5,
    "atr": 2154.6398,
    "atrPct": 3.41,
    "high52w": 114472.4453,
-   "drawdownPct": 44.8,
+   "drawdownPct": 44.7,
    "macroDriven": null,
    "topLong": 118887.8561,
    "bottomLong": 102493.9969,
-   "pctInRangeLong": -239.8,
+   "pctInRangeLong": -239.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -58716,7 +58716,7 @@
      "5年トレンド上向き +6",
      "半減期サイクル: 底形成ウィンドウ +5"
     ],
-    "scorePrev": 48
+    "scorePrev": 53
    },
    "momentum": {
     "signal": "none",
@@ -59387,20 +59387,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 1798.599976
+     "c": 1803.199951
     }
    ],
    "state": "SELL",
-   "price": 1798.6,
+   "price": 1803.2,
    "top": 1543.759,
    "bottom": 1423.3592,
    "band": 3.612,
-   "pctInRange": 311.7,
-   "distToBottomPct": 26.36,
-   "distToTopPct": -14.17,
-   "smaShort": 1676.7468,
-   "smaLong": 1816.681,
-   "smaTrend": 2268.1741,
+   "pctInRange": 315.5,
+   "distToBottomPct": 26.69,
+   "distToTopPct": -14.39,
+   "smaShort": 1676.9768,
+   "smaLong": 1816.773,
+   "smaTrend": 2268.1971,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -59408,15 +59408,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 58.6,
-   "atr": 79.7436,
-   "atrPct": 4.43,
+   "rsi": 58.9,
+   "atr": 79.7576,
+   "atrPct": 4.42,
    "high52w": 4157.9893,
-   "drawdownPct": 56.7,
+   "drawdownPct": 56.6,
    "macroDriven": null,
    "topLong": 3504.555,
    "bottomLong": 2982.2844,
-   "pctInRangeLong": -226.6,
+   "pctInRangeLong": -225.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -59436,7 +59436,7 @@
      "5年トレンド上向き +6",
      "半減期サイクル: 底形成ウィンドウ +5"
     ],
-    "scorePrev": 46
+    "scorePrev": 51
    },
    "momentum": {
     "signal": "none",
@@ -61443,11 +61443,174 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 63177,
-    "ddFromPeakPct": -49.4
+    "currentPrice": 63273,
+    "ddFromPeakPct": -49.3
    },
    "action": "現在は半減期+26.5ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   }
+ },
+ "modelPortfolio": {
+  "generatedAt": "2026-07-04",
+  "assets": {
+   "stocks": 57,
+   "btc": 12,
+   "eth": 11,
+   "gold": 6,
+   "silver": 5,
+   "cash": 9
+  },
+  "stockSplit": {
+   "value": 80,
+   "momentum": 20
+  },
+  "regime": {
+   "regime": "strong",
+   "label": "📈 好調期",
+   "tilt": -3,
+   "note": "堅調な上昇局面。新規は押し目に限定し、利確分は現金・金へ少しずつ退避"
+  },
+  "tilts": [
+   "📈 好調期(株-3pt) — 堅調な上昇局面。新規は押し目に限定し、利確分は現金・金へ少しずつ退避",
+   "₿ 半減期底ウィンドウ → BTC+2pt/ETH+1pt(現金から振替)"
+  ],
+  "tickers": [
+   {
+    "ticker": "XOM",
+    "conviction": 5,
+    "q": 38,
+    "tier": "👀監視",
+    "sec": "エネルギー",
+    "flow": "outflow",
+    "wPct": 6.8
+   },
+   {
+    "ticker": "CCJ",
+    "conviction": 4,
+    "q": 59,
+    "tier": "-",
+    "sec": "エネルギー",
+    "flow": "outflow",
+    "wPct": 5.5
+   },
+   {
+    "ticker": "VRT",
+    "conviction": 5,
+    "q": 72,
+    "tier": "-",
+    "sec": "電力・DCインフラ",
+    "flow": "neutral",
+    "wPct": 3.6
+   },
+   {
+    "ticker": "NVDA",
+    "conviction": 5,
+    "q": 81,
+    "tier": "👀監視",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 3.2
+   },
+   {
+    "ticker": "NOC",
+    "conviction": 4,
+    "q": 51,
+    "tier": "🟦購入検討",
+    "sec": "宇宙・防衛",
+    "flow": "neutral",
+    "wPct": 3.2
+   },
+   {
+    "ticker": "GOOGL",
+    "conviction": 5,
+    "q": 75,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 3.1
+   },
+   {
+    "ticker": "RKLB",
+    "conviction": 5,
+    "q": 18,
+    "tier": "-",
+    "sec": "宇宙・防衛",
+    "flow": "neutral",
+    "wPct": 3.1
+   },
+   {
+    "ticker": "ANET",
+    "conviction": 5,
+    "q": 74,
+    "tier": "-",
+    "sec": "電力・DCインフラ",
+    "flow": "neutral",
+    "wPct": 3.1
+   },
+   {
+    "ticker": "CEG",
+    "conviction": 5,
+    "q": 38,
+    "tier": "🟦購入検討(質↓)",
+    "sec": "電力・DCインフラ",
+    "flow": "neutral",
+    "wPct": 3.0
+   },
+   {
+    "ticker": "AVGO",
+    "conviction": 5,
+    "q": 55,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 2.8
+   },
+   {
+    "ticker": "RTX",
+    "conviction": 4,
+    "q": 46,
+    "tier": "-",
+    "sec": "宇宙・防衛",
+    "flow": "neutral",
+    "wPct": 2.8
+   },
+   {
+    "ticker": "ASML",
+    "conviction": 5,
+    "q": 72,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 2.8
+   },
+   {
+    "ticker": "TSM",
+    "conviction": 5,
+    "q": 100,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 2.8
+   },
+   {
+    "ticker": "KTOS",
+    "conviction": 4,
+    "q": 26,
+    "tier": "👀監視(質↓)",
+    "sec": "宇宙・防衛",
+    "flow": "neutral",
+    "wPct": 2.7
+   },
+   {
+    "ticker": "META",
+    "conviction": 4,
+    "q": 74,
+    "tier": "👀監視",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 2.3
+   }
+  ],
+  "note": "基準PFにサイクル状況を自動上乗せした現時点の完全版。毎朝再計算。機械的計算値であり保証ではない"
  },
  "discovery": [
   {
