@@ -547,14 +547,24 @@ function renderCycle() {
     const withCalc = secs.map(([s, v]) => ({ s, v, accel: (v.rs21 ?? 0) - (v.rs63 ?? 0) / 3 }));
     const leader = withCalc.slice().sort((a, b) => (b.v.rs63 ?? -99) - (a.v.rs63 ?? -99))[0];
     const next = withCalc.filter((x) => x !== leader && x.accel > 0).sort((a, b) => b.accel - a.accel)[0];
-    html += `<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">🔄 セクターローテーション表(毎朝更新)</b>
-      <table style="margin-top:4px"><tr><th>サブセクター</th><th>3ヶ月RS</th><th>1ヶ月RS</th><th>フロー</th><th></th></tr>
+    // 教科書的セクターローテーション: 現レジームで歴史的に追い風のセクター
+    const regime = (DATA.modelPortfolio && DATA.modelPortfolio.regime && DATA.modelPortfolio.regime.regime) || 'neutral';
+    const textbook = {
+      recovery: ['金融', '一般消費財', '資本財', '情報技術'],
+      strong: ['情報技術', 'コミュニケーション', '資本財'],
+      neutral: ['情報技術', 'コミュニケーション'],
+      overheat: ['エネルギー', '素材', '資本財'],
+      downtrend: ['生活必需品', 'ヘルスケア', '公益'],
+    }[regime] || [];
+    html += `<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">🔄 セクターローテーション表(GICS準拠・毎朝更新)</b>
+      ${textbook.length ? `<div class="tiny" style="margin-top:3px">📖 教科書的な現局面(${regime === 'recovery' ? '回復' : regime === 'overheat' ? '景気後期' : regime === 'downtrend' ? '後退' : '拡大'})の追い風: <b>${textbook.join('・')}</b> — 下の実測フローと一致するかを確認</div>` : ''}
+      <table style="margin-top:4px"><tr><th>セクター</th><th>3ヶ月RS</th><th>1ヶ月RS</th><th>フロー</th><th></th></tr>
       ${withCalc.sort((a, b) => (b.v.rs21 ?? -99) - (a.v.rs21 ?? -99)).map((x) => `<tr>
         <td>${x.s}</td><td class="${cls(x.v.rs63)}">${fmtP(x.v.rs63)}</td><td class="${cls(x.v.rs21)}">${fmtP(x.v.rs21)}</td>
         <td>${x.v.trend === 'inflow' ? '🟢流入' : x.v.trend === 'outflow' ? '🔴流出' : '⚪中立'}</td>
         <td>${x === leader ? '👑現リーダー' : x === next ? '🔮次候補' : ''}</td></tr>`).join('')}</table>`;
     if (next) {
-      const nextTickers = instruments().filter((i) => i.subSector === next.s && i.class === 'stock')
+      const nextTickers = instruments().filter((i) => (i.rotSector || i.subSector) === next.s && i.class === 'stock')
         .sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0)).slice(0, 6);
       html += `<div class="tiny" style="margin-top:6px"><b>🔮 次候補「${next.s}」の銘柄</b>(相対強度の加速から推定・保証ではない)</div>
         <div class="row" style="gap:6px;flex-wrap:wrap;margin-top:4px">

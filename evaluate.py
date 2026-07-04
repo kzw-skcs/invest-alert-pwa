@@ -258,7 +258,7 @@ def main():
         print(f"品質統合エラー(スキップ): {e}")
 
     # サイクル&ローテーション分析(サブセクター等ウェイト指数を構築)
-    sub_map = {s["ticker"]: (s.get("subSector") or "その他モート") for s in cfg["stocks"]}
+    sub_map = {s["ticker"]: (s.get("rotSector") or s.get("subSector") or "その他") for s in cfg["stocks"]}
     sec_ret = {}
     for tk, hist in stock_hist_map.items():
         sec = sub_map.get(tk)

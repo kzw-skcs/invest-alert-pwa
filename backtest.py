@@ -101,7 +101,7 @@ def build_cycle_context(stock_data, cfg, bench_hist):
     """過去各時点のサイクル文脈(セクター資金フロー・ベンチ200日線状態)を前計算。
     日付と価格のみから導出するため未来情報の混入なし。"""
     import bisect
-    sub_map = {s["ticker"]: (s.get("subSector") or "その他モート") for s in cfg["stocks"]}
+    sub_map = {s["ticker"]: (s.get("rotSector") or s.get("subSector") or "その他") for s in cfg["stocks"]}
     sec_ret = {}
     for tk, (sig, closes, dates) in stock_data.items():
         sec = sub_map.get(tk)

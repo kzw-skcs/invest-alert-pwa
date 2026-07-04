@@ -529,6 +529,7 @@ def analyze_instrument(meta, history, bench_closes, vix_value, cfg):
     out = {
         "key": key, "ticker": meta.get("ticker", key), "name": meta.get("name", key),
         "sector": meta.get("sector", "その他"), "subSector": meta.get("subSector"),
+        "rotSector": meta.get("rotSector"),
         "class": meta.get("class", "stock"),
         "conviction": meta.get("conviction", 3),
         "tradePolicy": meta.get("tradePolicy", "hold"),
@@ -915,7 +916,7 @@ def apply_cycle(inst, cycle, vp, today=None):
     if inst.get("state") == "NO_DATA":
         return
     today = today or datetime.utcnow().date()
-    sec = inst.get("subSector")
+    sec = inst.get("rotSector") or inst.get("subSector")
     strend = ((cycle.get("sectors") or {}).get(sec) or {}).get("trend")
     v = inst.get("value")
     delta, factors = 0, []
@@ -1119,7 +1120,7 @@ def model_portfolio(instruments, cycle, cfg, planner_w, bench_closes=None, vix_v
         if not w or i.get("state") == "NO_DATA":
             continue
         mult = 1.0
-        tr = (secs.get(i.get("subSector")) or {}).get("trend")
+        tr = (secs.get(i.get("rotSector") or i.get("subSector")) or {}).get("trend")
         if tr == "inflow":
             mult *= 1.2
         elif tr == "outflow":
