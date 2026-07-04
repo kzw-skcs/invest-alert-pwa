@@ -20,7 +20,7 @@ h/l/v は無い場合 None 可（ATRはclose近似、出来高確認はスキッ
 """
 from __future__ import annotations
 import math
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 # ---------------------------------------------------------------- 基本統計
 
@@ -755,6 +755,128 @@ def analyze_events(cfg, instruments, today=None):
         e["alerts"] = alerts
         out.append(e)
     return out
+
+# ---------------------------------------------------------------- サイクル & ローテーション
+
+def cycle_analysis(sector_idx, bench_closes, vix_value, today=None):
+    """長期サイクル(大統領選・季節性)とセクターローテーション兆候の分析。
+    sector_idx: {サブセクター名: 等ウェイト指数系列}。"_gold"キーで金の系列も受け取る。
+    すべて統計的傾向であり保証ではない。出力は「兆候→検討アクション」の形式。"""
+    today = today or datetime.utcnow().date()
+    out = {"calendar": [], "sectors": {}, "riskOff": {"score": 0, "factors": []}, "actions": []}
+    y, m = today.year, today.month
+    ph = y % 4  # 0:大統領選年 1:選挙翌年 2:中間選挙年 3:選挙前年
+    phases = {
+        0: ("大統領選挙年", "選挙前は政策期待で堅調になりやすいが、秋は結果不確実性でボラ拡大。結果確定後は年末ラリーになりやすい"),
+        1: ("選挙後1年目", "政権初年は4年サイクルで弱めの傾向。政策の初期不確実性があるため、押し目は選別して拾う"),
+        2: ("中間選挙年", "4年サイクルで歴史的に最弱の年。年央〜秋に底を作り、中間選挙通過後〜翌年(選挙前年)は最強区間に入りやすい"),
+        3: ("選挙前年", "4年サイクルで歴史的に最強の年。統計的には強気バイアス維持が有利"),
+    }
+    nm, desc = phases[ph]
+    out["calendar"].append({"type": "presidential", "label": f"大統領選サイクル: {nm}", "note": desc})
+    if ph == 2:
+        elec = date(y, 11, 3)
+        days = (elec - today).days
+        if 0 < days <= 200:
+            out["calendar"].append({"type": "presidential", "label": "中間選挙カウントダウン",
+                "note": f"中間選挙まで約{days}日。統計的には選挙前の調整がValueの仕込み場、通過後は上昇しやすい。選挙前に戦略キャッシュを厚めに"})
+    season = {1: "1月: 新年資金流入・小型株効果の追い風", 2: "2月: 中弛みしやすい月",
+              3: "3月: 四半期末リバランスのフローに注意", 4: "4月: 歴史的に強い月",
+              5: "5月: 『Sell in May』開始帯。新規買いは選別を", 6: "6月: 夏枯れ入り。急がない",
+              7: "7月: 夏の反発が出やすい月。ただし後半に向け利確準備", 8: "8月: 薄商いで急落が出やすい。現金厚めが安全",
+              9: "9月: 歴史的最弱月。買い急がず押し目リストの準備期間に", 10: "10月: 底を形成しやすい月。Value出動の準備",
+              11: "11月: 『最強の6ヶ月』(11-4月)の入り口。買い場を逃さない", 12: "12月: 年末ラリー期待と節税売りの交錯"}
+    out["calendar"].append({"type": "seasonal", "label": f"{m}月の季節性", "note": season[m]})
+
+    def rs(series, n):
+        if not series or len(series) <= n or not bench_closes or len(bench_closes) <= n:
+            return None
+        return round(((series[-1] / series[-1 - n]) - (bench_closes[-1] / bench_closes[-1 - n])) * 100, 2)
+
+    inflow, outflow = [], []
+    for sec, idx in (sector_idx or {}).items():
+        if sec.startswith("_"):
+            continue
+        r63, r21 = rs(idx, 63), rs(idx, 21)
+        trend = None
+        if r63 is not None and r21 is not None:
+            if r21 > 0.5 and r21 > r63 / 3:
+                trend = "inflow"
+            elif r21 < -0.5 and r21 < r63 / 3:
+                trend = "outflow"
+            else:
+                trend = "neutral"
+        out["sectors"][sec] = {"rs63": r63, "rs21": r21, "trend": trend}
+        if trend == "inflow":
+            inflow.append(sec)
+        elif trend == "outflow":
+            outflow.append(sec)
+    if inflow or outflow:
+        note = ""
+        if inflow:
+            note += "資金流入の兆候: " + "・".join(inflow)
+        if outflow:
+            note += (" / " if note else "") + "流出の兆候: " + "・".join(outflow)
+        note += "。→ 流出セクターの高値圏銘柄は部分利確を検討、流入セクターの押し目(Tier65+)を優先検討"
+        out["actions"].append({"icon": "🔄", "title": "セクターローテーションの兆候", "note": note, "timing": "目安: この兆候が2〜3週間継続したら本格シフト(1週間だけの動きは追わない)"})
+
+    score = 0
+    fac = []
+    if vix_value:
+        if vix_value >= 28:
+            score += 40; fac.append(f"VIX {vix_value:.0f}(高水準)")
+        elif vix_value >= 20:
+            score += 20; fac.append(f"VIX {vix_value:.0f}(警戒水準)")
+    if bench_closes and len(bench_closes) > 200:
+        sma200 = sum(bench_closes[-200:]) / 200
+        if bench_closes[-1] < sma200:
+            score += 20; fac.append("S&P500が200日線割れ")
+    g21 = rs((sector_idx or {}).get("_gold"), 21)
+    if g21 is not None and g21 > 2:
+        score += 20; fac.append("金が株を明確にアウトパフォーム(質への逃避)")
+    ai = out["sectors"].get("AI・半導体/クラウド", {}).get("rs21")
+    dfs = [v.get("rs21") for k, v in out["sectors"].items()
+           if k in ("その他モート", "エネルギー") and v.get("rs21") is not None]
+    if ai is not None and dfs and (sum(dfs) / len(dfs)) > ai + 1.5:
+        score += 20; fac.append("ディフェンシブ優位(グロースから資金退避)")
+    score = min(100, score)
+    out["riskOff"] = {"score": score, "factors": fac}
+    # 今後の節目カレンダー(残り週数つき)
+    milestones = [
+        ((5, 1), "『Sell in May』開始", "trade銘柄の利確前倒し・新規買いの選別強化を済ませる"),
+        ((8, 1), "薄商い・急落警戒期入り", "利確予定の整理と現金比率+5ptの準備を済ませる"),
+        ((9, 1), "歴史的最弱月(9月)入り", "新規買いを最小化し、押し目リスト(Tier65+候補)を準備しておく"),
+        ((10, 1), "底形成期入り", "Value出動リストを最終化。戦略キャッシュを満タンに"),
+        ((11, 1), "『最強の6ヶ月』(11-4月)入り", "仕込みを概ね完了させておく"),
+    ]
+    events_cal = []
+    for (mm, dd), label, prep in milestones:
+        d0 = date(y, mm, dd)
+        if d0 <= today:
+            d0 = date(y + 1, mm, dd)
+        days = (d0 - today).days
+        if days <= 120:
+            events_cal.append({"label": label, "date": d0.isoformat(),
+                               "weeksTo": max(1, round(days / 7)), "prep": prep})
+    if ph == 2:
+        elec = date(y, 11, 3)
+        if today < elec and (elec - today).days <= 200:
+            events_cal.append({"label": "中間選挙", "date": elec.isoformat(),
+                               "weeksTo": max(1, round((elec - today).days / 7)),
+                               "prep": "選挙前の調整はValueの仕込み場。直前2週間は新規大口を控え、通過後の上昇に乗る準備"})
+    events_cal.sort(key=lambda x: x["date"])
+    out["timeline"] = events_cal[:3]
+    if score >= 60:
+        out["actions"].append({"icon": "🛡️", "title": "そろそろ有事への備えを",
+            "note": f"リスクオフ度{score}/100。現金比率を目標10%→15〜20%へ引き上げ検討。新規買いは第1トランシェを半分に。金・ディフェンシブの押し目買いは継続可。パニック売りはしない(暴落はValueの主戦場)", "timing": "目安: 1〜2週間以内に段階的に実行(1日で動かさない)"})
+    elif score >= 40:
+        out["actions"].append({"icon": "⚠️", "title": "警戒モード",
+            "note": f"リスクオフ度{score}/100。新規買いのペースを落とし、trade銘柄の利確・損切りラインを厳格運用。戦略キャッシュは使い切らない", "timing": "目安: 2〜4週間かけて緩やかにシフト。悪化が続けばリスクオフ体制へ"})
+    else:
+        out["actions"].append({"icon": "🟢", "title": "通常運転",
+            "note": f"リスクオフ度{score}/100。シグナル通りの運用で問題なし", "timing": ""})
+    return out
+
 
 # ---------------------------------------------------------------- アラート集約(プッシュ用)
 

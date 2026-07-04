@@ -130,6 +130,10 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <h3>🔔 本日のアラート <span class="tiny" id="alert-count"></span></h3>
     <div id="alerts-list" class="muted">—</div>
   </div>
+  <div class="card" id="cycle-card">
+    <h3>🧭 サイクル & ローテーション</h3>
+    <div id="cycle" class="muted">—</div>
+  </div>
   <div class="card">
     <h3>🏆 推奨ランキング</h3>
     <div id="ranking"></div>
@@ -398,7 +402,7 @@ function usdjpy() { return (DATA && DATA.fx && DATA.fx.usdjpy) || null; }
 function renderAll() {
   if (!DATA) return;
   for (const f of [renderStale, renderVix, renderAlerts, renderRanking, renderCards,
-                   renderAssets, renderTargetPF, renderEvents, renderDiscovery, renderBriefing,
+                   renderAssets, renderTargetPF, renderEvents, renderDiscovery, renderBriefing, renderCycle,
                    renderWatchlist, renderSettingsView, renderAnalysis]) {
     try { f(); } catch (e) { console.error(f.name, e); }
   }
@@ -471,6 +475,34 @@ function renderAlerts() {
   if (pa) pa.innerHTML = pos.length ? '<div style="margin-top:10px">' + pos.map((a) => `<div class="alert-item p${a.p}"><div class="t">${a.t}</div><div class="d">${a.d}</div></div>`).join('') + '</div>' : '';
 }
 
+function renderCycle() {
+  const el = $('#cycle'); if (!el) return;
+  const c = DATA && DATA.cycle;
+  if (!c) { el.innerHTML = '<span class="tiny">次回の判定更新から表示されます(📈今すぐ判定を更新)</span>'; return; }
+  const ro = c.riskOff || { score: 0, factors: [] };
+  const roColor = ro.score >= 60 ? 'var(--red)' : ro.score >= 40 ? 'var(--amber)' : 'var(--green)';
+  let html = `<div class="row" style="gap:10px;align-items:center">
+      <span class="tiny" style="width:86px">リスクオフ度</span>
+      <div class="progress grow" style="height:10px"><div style="width:${ro.score}%;background:${roColor}"></div></div>
+      <b style="color:${roColor}">${ro.score}</b></div>
+    ${ro.factors && ro.factors.length ? `<div class="tiny" style="margin-top:3px">要因: ${ro.factors.join(' / ')}</div>` : ''}`;
+  html += (c.actions || []).map((a) => `<div class="alert-item ${a.icon === '🛡️' ? 'p1' : a.icon === '⚠️' || a.icon === '🔄' ? 'p2' : 'p3'}" style="margin-top:8px">
+      <div class="t">${a.icon} ${a.title}</div><div class="d">${a.note}${a.timing ? `<br><b style="color:var(--cyan)">⏱ ${a.timing}</b>` : ''}</div></div>`).join('');
+  if (c.timeline && c.timeline.length) {
+    html += '<div style="margin-top:8px"><b class="tiny" style="color:var(--tx2)">⏳ 今後の節目(準備の目安)</b>' +
+      c.timeline.map((t) => `<div class="tiny" style="margin:4px 0 0 4px">・<b>あと約${t.weeksTo}週</b>(${t.date}) ${t.label} — <span style="color:var(--cyan)">それまでに: ${t.prep}</span></div>`).join('') + '</div>';
+  }
+  html += (c.calendar || []).map((k) => `<div class="tiny" style="margin-top:6px">📅 <b>${k.label}</b> — ${k.note}</div>`).join('');
+  const secs = Object.entries(c.sectors || {});
+  if (secs.length) {
+    html += `<details style="margin-top:8px"><summary>セクター相対強度(対S&P500)</summary>
+      <table style="margin-top:4px"><tr><th>サブセクター</th><th>3ヶ月RS</th><th>1ヶ月RS</th><th>資金フロー</th></tr>
+      ${secs.map(([s, v]) => `<tr><td>${s}</td><td class="${cls(v.rs63)}">${fmtP(v.rs63)}</td><td class="${cls(v.rs21)}">${fmtP(v.rs21)}</td>
+        <td>${v.trend === 'inflow' ? '🟢 流入' : v.trend === 'outflow' ? '🔴 流出' : '⚪ 中立'}</td></tr>`).join('')}</table></details>`;
+  }
+  html += '<div class="tiny" style="margin-top:6px">※サイクル・季節性は統計的傾向であり、毎年再現される保証はありません。アクションは「検討」の提案です。</div>';
+  el.innerHTML = html;
+}
 function renderRanking() {
   if (VIEW === 'momentum') { renderRankingMom(); return; }
   const list = instruments().filter((i) => i.tradePolicy !== 'trade' && i.value && i.value.score >= 50)

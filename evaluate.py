@@ -211,6 +211,8 @@ def main():
 
     # 全銘柄
     instruments = []
+    stock_hist_map = {}
+    gold_closes = None
     entries = []
     for st in cfg["stocks"]:
         e = dict(st); e["class"] = "stock"; e["key"] = st["ticker"]; entries.append(e)
@@ -230,6 +232,10 @@ def main():
         inst = engine.analyze_instrument(e, hist, bench_closes,
                                          vix.get("value"), cfg)
         instruments.append(inst)
+        if e.get("class") == "stock" and hist:
+            stock_hist_map[e["ticker"]] = hist
+        if e.get("key") == "gold" and hist:
+            gold_closes = [h["c"] for h in hist]
         time.sleep(0.4)  # レート制限予防
 
     # ファンダ品質の統合(fundamentals.jsonがあれば)
@@ -247,6 +253,27 @@ def main():
         print("fundamentals.json なし(品質補正スキップ)")
     except Exception as e:
         print(f"品質統合エラー(スキップ): {e}")
+
+    # サイクル&ローテーション分析(サブセクター等ウェイト指数を構築)
+    sub_map = {s["ticker"]: (s.get("subSector") or "その他モート") for s in cfg["stocks"]}
+    sec_ret = {}
+    for tk, hist in stock_hist_map.items():
+        sec = sub_map.get(tk)
+        if not sec or len(hist) < 70:
+            continue
+        for i in range(1, len(hist)):
+            sec_ret.setdefault(sec, {}).setdefault(hist[i]["d"], []).append(hist[i]["c"] / hist[i - 1]["c"] - 1)
+    sector_idx = {}
+    for sec, dd in sec_ret.items():
+        idx, v = [], 1.0
+        for d in sorted(dd.keys()):
+            v *= 1 + sum(dd[d]) / len(dd[d])
+            idx.append(v)
+        sector_idx[sec] = idx
+    if gold_closes:
+        sector_idx["_gold"] = gold_closes
+    cycle = engine.cycle_analysis(sector_idx, bench_closes, vix.get("value"))
+    print(f"サイクル分析: リスクオフ度{cycle['riskOff']['score']} / セクター{list(cycle['sectors'].keys())}")
 
     events = engine.analyze_events(cfg, instruments)
     # 前回data.jsonの読込: テーゼ重複抑制 + 前日スコア(スコア急変の透明化)
@@ -267,6 +294,10 @@ def main():
             inst["value"]["scorePrev"] = pv
     remind = datetime.now(JST).weekday() == 0
     alerts = engine.build_alerts(instruments, events, vix, cfg, prev_thesis, remind)
+    if cycle["riskOff"]["score"] >= 60:
+        alerts.insert(0, {"type": "CYCLE", "ticker": "MARKET", "priority": 1,
+                          "title": f"🛡️ リスクオフ度{cycle['riskOff']['score']} — 有事への備えを",
+                          "detail": " / ".join(cycle["riskOff"]["factors"]) + "。現金比率引き上げ・新規買い減速を検討"})
     weights = engine.planner_weights(instruments, cfg)
 
     now = datetime.now(timezone.utc)
@@ -286,6 +317,7 @@ def main():
         "events": events,
         "alerts": alerts,
         "plannerWeights": weights,
+        "cycle": cycle,
         "discovery": cfg.get("discovery", []),
     }
     with open(os.path.join(BASE, "data.json"), "w", encoding="utf-8") as f:
