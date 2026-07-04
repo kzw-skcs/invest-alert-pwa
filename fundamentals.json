@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-05 02:38 JST",
+ "updated": "2026-07-05 03:07 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -1542,6 +1542,48 @@
     "trailPE": 370.9176,
     "psr": 68.186,
     "fyEnd": "2026-03-31"
+   }
+  },
+  "IONQ": {
+   "score": 27,
+   "parts": {
+    "profit": 0.0,
+    "growth": 25.0,
+    "health": 0.0,
+    "valuation": 2
+   },
+   "warnings": [
+    "FCF赤字"
+   ],
+   "metrics": {
+    "roe": -0.1343,
+    "opMargin": -4.8741,
+    "revGrowth": 2.0185,
+    "epsGrowth": 0.5389,
+    "fcfMargin": -2.3044,
+    "psr": 141.0213,
+    "fyEnd": "2025-12-31"
+   }
+  },
+  "SNDK": {
+   "score": 21,
+   "parts": {
+    "profit": 0.0,
+    "growth": 18.9,
+    "health": 0.0,
+    "valuation": 2
+   },
+   "warnings": [
+    "FCF赤字"
+   ],
+   "metrics": {
+    "roe": -0.1781,
+    "opMargin": -0.1872,
+    "revGrowth": 0.1039,
+    "epsGrowth": 1.442,
+    "fcfMargin": -0.0163,
+    "psr": 35.1348,
+    "fyEnd": "2025-06-27"
    }
   }
  }

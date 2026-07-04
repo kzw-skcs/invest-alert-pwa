@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-04T17:45:06.176139+00:00",
- "updatedJST": "2026-07-05 02:45 JST",
+ "updated": "2026-07-04T18:07:54.502319+00:00",
+ "updatedJST": "2026-07-05 03:07 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -116,7 +116,7 @@
  },
  "metalJpy": {
   "gold": {
-   "sell": 74866.0,
+   "sell": 24114.0,
    "buy": 23565.0
   },
   "silver": {
@@ -125,7 +125,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-05 02:45 JST"
+  "fetchedAt": "2026-07-05 03:07 JST"
  },
  "instruments": [
   {
@@ -816,13 +816,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 16,
+    "score": 13,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア70(高) +5"
+     "品質スコア70(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 16
    },
@@ -836,7 +837,7 @@
     "note": ""
    },
    "rec": {
-    "score": 16,
+    "score": 13,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -1555,14 +1556,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 56,
+    "score": 53,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-28% +14",
      "5年トレンド上向き +6",
-     "品質スコア78(高) +5"
+     "品質スコア78(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 56
    },
@@ -1576,7 +1578,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 56,
+    "score": 53,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -2295,7 +2297,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 45,
+    "score": 42,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -2303,7 +2305,8 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア75(高) +5"
+     "品質スコア75(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 45
    },
@@ -2317,7 +2320,7 @@
     "note": ""
    },
    "rec": {
-    "score": 45,
+    "score": 42,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -3035,12 +3038,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 17,
+    "score": 14,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 17
    },
@@ -3054,7 +3058,7 @@
     "note": ""
    },
    "rec": {
-    "score": 17,
+    "score": 14,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -3773,7 +3777,7 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 44,
+    "score": 41,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -3782,7 +3786,8 @@
      "RSI40 +8",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 44
    },
@@ -3796,7 +3801,7 @@
     "note": ""
    },
    "rec": {
-    "score": 44,
+    "score": 41,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -4515,14 +4520,15 @@
    "side": "sell",
    "actionable": true,
    "value": {
-    "score": 54,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 51,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "高値-17% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア81(高) +5"
+     "品質スコア81(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 54
    },
@@ -4555,9 +4561,9 @@
     "note": ""
    },
    "rec": {
-    "score": 65,
+    "score": 62,
     "stars": 4,
-    "level": "B",
+    "level": "C",
     "action": "sell_check",
     "expReturnPct": null,
     "expDays": null,
@@ -5274,14 +5280,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 56,
+    "score": 53,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-26% +14",
      "5年トレンド上向き +6",
-     "品質スコア74(高) +5"
+     "品質スコア74(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 56
    },
@@ -5295,7 +5302,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 56,
+    "score": 53,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -6013,7 +6020,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 38,
+    "score": 35,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -6022,7 +6029,8 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア16(低) -10"
+     "品質スコア16(低) -10",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 38
    },
@@ -6055,9 +6063,9 @@
     "note": ""
    },
    "rec": {
-    "score": 50,
+    "score": 47,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "sell_check",
     "expReturnPct": null,
     "expDays": null,
@@ -6776,12 +6784,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 10,
+    "score": 7,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 10
    },
@@ -6795,7 +6804,7 @@
     "note": ""
    },
    "rec": {
-    "score": 10,
+    "score": 7,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -7514,14 +7523,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 70,
+    "score": 67,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-38%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "品質スコア76(高) +5"
+     "品質スコア76(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 70
    },
@@ -7535,7 +7545,7 @@
     "note": ""
    },
    "rec": {
-    "score": 70,
+    "score": 67,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -8253,9 +8263,9 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 60,
+    "score": 57,
     "tier": "watch",
-    "tierLabel": "👀監視(質↓)",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "高値-20% +14",
@@ -8263,7 +8273,8 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア38(低) -10"
+     "品質スコア38(低) -10",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 60
    },
@@ -8277,8 +8288,8 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
-    "stars": 4,
+    "score": 57,
+    "stars": 3,
     "level": "C",
     "action": "hold",
     "expReturnPct": 22.23,
@@ -12721,14 +12732,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 27,
+    "score": 24,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-12% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア77(高) +5"
+     "品質スコア77(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 27
    },
@@ -12742,7 +12754,7 @@
     "note": ""
    },
    "rec": {
-    "score": 27,
+    "score": 24,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -13460,13 +13472,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 23,
+    "score": 20,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア72(高) +5"
+     "品質スコア72(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 23
    },
@@ -13480,7 +13493,7 @@
     "note": ""
    },
    "rec": {
-    "score": 23,
+    "score": 20,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -14199,13 +14212,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 24,
+    "score": 21,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア100(高) +5"
+     "品質スコア100(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 24
    },
@@ -14219,7 +14233,7 @@
     "note": ""
    },
    "rec": {
-    "score": 24,
+    "score": 21,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -14938,14 +14952,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 9,
+    "score": 6,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-22% +14",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 9
    },
@@ -14959,7 +14974,7 @@
     "note": ""
    },
    "rec": {
-    "score": 9,
+    "score": 6,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -17158,13 +17173,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 46,
+    "score": 43,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-33%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 46
    },
@@ -17178,7 +17194,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 46,
+    "score": 43,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -17897,11 +17913,12 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 8,
+    "score": 11,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "高値-15% +8"
+     "高値-15% +8",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 8
    },
@@ -17915,7 +17932,7 @@
     "note": ""
    },
    "rec": {
-    "score": 8,
+    "score": 11,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -19420,12 +19437,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 21,
+    "score": 24,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "品質スコア70(高) +5"
+     "品質スコア70(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 21
    },
@@ -19439,7 +19457,7 @@
     "note": ""
    },
    "rec": {
-    "score": 21,
+    "score": 24,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -20158,13 +20176,14 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 23,
+    "score": 26,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 23
    },
@@ -20178,7 +20197,7 @@
     "note": ""
    },
    "rec": {
-    "score": 23,
+    "score": 26,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -20897,14 +20916,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 39,
+    "score": 42,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-18% +8",
      "5年トレンド上向き +6",
-     "品質スコア70(高) +5"
+     "品質スコア70(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 39
    },
@@ -20918,8 +20938,8 @@
     "note": ""
    },
    "rec": {
-    "score": 39,
-    "stars": 2,
+    "score": 42,
+    "stars": 3,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -21637,13 +21657,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 18,
+    "score": 15,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-15% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 18
    },
@@ -21657,7 +21678,7 @@
     "note": ""
    },
    "rec": {
-    "score": 18,
+    "score": 15,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -22375,14 +22396,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 43,
+    "score": 40,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-42%の暴落水準 +20",
      "個別要因の下落の疑い(falling knife) -15",
-     "品質スコア93(高) +5"
+     "品質スコア93(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 43
    },
@@ -22396,7 +22418,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 43,
+    "score": 40,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -23115,12 +23137,13 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 31,
+    "score": 34,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-15% +8",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 31
    },
@@ -23134,7 +23157,7 @@
     "note": ""
    },
    "rec": {
-    "score": 31,
+    "score": 34,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -23853,12 +23876,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 26,
+    "score": 29,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 26
    },
@@ -23872,7 +23896,7 @@
     "note": ""
    },
    "rec": {
-    "score": 26,
+    "score": 29,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -24591,12 +24615,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 19,
+    "score": 22,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 19
    },
@@ -24610,8 +24635,8 @@
     "note": ""
    },
    "rec": {
-    "score": 19,
-    "stars": 1,
+    "score": 22,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -25328,12 +25353,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 40,
+    "score": 43,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-44%の暴落水準 +20"
+     "高値-44%の暴落水準 +20",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 40
    },
@@ -25347,7 +25373,7 @@
     "note": ""
    },
    "rec": {
-    "score": 40,
+    "score": 43,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -26067,13 +26093,14 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 20,
+    "score": 23,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 20
    },
@@ -26087,7 +26114,7 @@
     "note": ""
    },
    "rec": {
-    "score": 20,
+    "score": 23,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -26808,9 +26835,9 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 53,
-    "tier": "none",
-    "tierLabel": "-(質↓)",
+    "score": 56,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(0%位置) +20",
@@ -26818,7 +26845,8 @@
      "RSI39 +8",
      "個別要因の下落の疑い(falling knife) -15",
      "買い場帯 +5",
-     "品質スコア37(低) -10"
+     "品質スコア37(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 53
    },
@@ -26832,7 +26860,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 53,
+    "score": 56,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -27553,7 +27581,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 75,
+    "score": 78,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -27562,7 +27590,8 @@
      "高値-29% +14",
      "5年トレンド上向き +6",
      "買い場帯 +5",
-     "品質スコア70(高) +5"
+     "品質スコア70(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 75
    },
@@ -27576,7 +27605,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 75,
+    "score": 78,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -28295,12 +28324,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 0,
+    "score": 3,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "200日線上向き +4",
-     "品質スコア26(低) -10"
+     "品質スコア26(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 0
    },
@@ -28314,7 +28344,7 @@
     "note": ""
    },
    "rec": {
-    "score": 0,
+    "score": 3,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -29033,12 +29063,13 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 11,
+    "score": 14,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "品質スコア73(高) +5"
+     "品質スコア73(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 11
    },
@@ -29052,7 +29083,7 @@
     "note": "1年チャネル上限+RSI77過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 11,
+    "score": 14,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -29770,12 +29801,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 10,
+    "score": 13,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 10
    },
@@ -29789,7 +29821,7 @@
     "note": ""
    },
    "rec": {
-    "score": 10,
+    "score": 13,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -30507,14 +30539,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 51,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 54,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-50%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "品質スコア79(高) +5"
+     "品質スコア79(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 51
    },
@@ -30528,7 +30561,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 51,
+    "score": 54,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -31247,13 +31280,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 26,
+    "score": 29,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア15(低) -10"
+     "品質スコア15(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 26
    },
@@ -31267,7 +31301,7 @@
     "note": ""
    },
    "rec": {
-    "score": 26,
+    "score": 29,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -31987,13 +32021,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 18,
+    "score": 15,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-17% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 18
    },
@@ -32007,7 +32042,7 @@
     "note": ""
    },
    "rec": {
-    "score": 18,
+    "score": 15,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -32726,14 +32761,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 23,
+    "score": 20,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-19% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア76(高) +5"
+     "品質スコア76(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 23
    },
@@ -32747,7 +32783,7 @@
     "note": ""
    },
    "rec": {
-    "score": 23,
+    "score": 20,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -33466,14 +33502,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 45,
+    "score": 48,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-26% +14",
      "5年トレンド上向き +6",
-     "品質スコア72(高) +5"
+     "品質スコア72(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 45
    },
@@ -33487,7 +33524,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 45,
+    "score": 48,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -34206,13 +34243,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 31,
+    "score": 34,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "5年トレンド上向き +6",
-     "品質スコア96(高) +5"
+     "品質スコア96(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 31
    },
@@ -34226,7 +34264,7 @@
     "note": ""
    },
    "rec": {
-    "score": 31,
+    "score": 34,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -34944,7 +34982,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 70,
+    "score": 73,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -34952,7 +34990,8 @@
      "5年レンジ下段(0%位置) +20",
      "高値-25% +14",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 70
    },
@@ -34966,7 +35005,7 @@
     "note": ""
    },
    "rec": {
-    "score": 70,
+    "score": 73,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -35684,14 +35723,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 36,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-38%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "品質スコア24(低) -10"
+     "品質スコア24(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 36
    },
@@ -35705,7 +35745,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 36,
+    "score": 39,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -36424,7 +36464,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 68,
+    "score": 71,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -36433,7 +36473,8 @@
      "高値-14% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 68
    },
@@ -36447,7 +36488,7 @@
     "note": ""
    },
    "rec": {
-    "score": 68,
+    "score": 71,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -37164,14 +37205,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 57,
+    "score": 60,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(4%位置) +24",
      "高値-14% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 57
    },
@@ -37185,8 +37227,8 @@
     "note": ""
    },
    "rec": {
-    "score": 57,
-    "stars": 3,
+    "score": 60,
+    "stars": 4,
     "level": "C",
     "action": "hold",
     "expReturnPct": null,
@@ -37904,14 +37946,15 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 10,
+    "score": 13,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "⭐超・買い場(GC確認) +10",
-     "品質スコア35(低) -10"
+     "品質スコア35(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 10
    },
@@ -37925,7 +37968,7 @@
     "note": "1年チャネル上限+RSI81過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 10,
+    "score": 13,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -38644,15 +38687,16 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 49,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 52,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-13% +8",
      "5年トレンド上向き +6",
      "⭐超・買い場(GC確認) +10",
-     "品質スコア85(高) +5"
+     "品質スコア85(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 49
    },
@@ -38666,9 +38710,9 @@
     "note": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 49,
+    "score": 52,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -39384,14 +39428,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 36,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-43%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "品質スコア33(低) -10"
+     "品質スコア33(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 36
    },
@@ -39405,7 +39450,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 36,
+    "score": 39,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -40126,16 +40171,17 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 49,
-    "tier": "none",
-    "tierLabel": "-(質↓)",
+    "score": 52,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "高値-20% +14",
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "⭐超・買い場(GC確認) +10",
-     "品質スコア27(低) -10"
+     "品質スコア27(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 49
    },
@@ -40149,9 +40195,9 @@
     "note": ""
    },
    "rec": {
-    "score": 49,
+    "score": 52,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -40869,12 +40915,13 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 34,
+    "score": 37,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-28% +14"
+     "高値-28% +14",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 34
    },
@@ -40888,7 +40935,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 34,
+    "score": 37,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -41607,7 +41654,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 70,
+    "score": 73,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -41615,7 +41662,8 @@
      "5年レンジ下段(0%位置) +20",
      "高値-28% +14",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 70
    },
@@ -41629,7 +41677,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 70,
+    "score": 73,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -43087,13 +43135,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 62,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 65,
+    "tier": "consider",
+    "tierLabel": "🟦購入検討",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-49%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 62
    },
@@ -43107,9 +43156,9 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 62,
+    "score": 65,
     "stars": 4,
-    "level": "C",
+    "level": "B",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -43826,13 +43875,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 47,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 50,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-16% +8",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 47
    },
@@ -43846,9 +43896,9 @@
     "note": ""
    },
    "rec": {
-    "score": 47,
+    "score": 50,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -44565,14 +44615,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 36,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-71%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "品質スコア32(低) -10"
+     "品質スコア32(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 36
    },
@@ -44586,7 +44637,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス・FCF赤字"
    },
    "rec": {
-    "score": 36,
+    "score": 39,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -45308,12 +45359,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 10,
+    "score": 13,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 10
    },
@@ -45327,7 +45379,7 @@
     "note": ""
    },
    "rec": {
-    "score": 10,
+    "score": 13,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -46045,12 +46097,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 29,
+    "score": 32,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "1年レンジ下限圏(1%位置) +25",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 29
    },
@@ -46064,7 +46117,7 @@
     "note": ""
    },
    "rec": {
-    "score": 29,
+    "score": 32,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -46783,16 +46836,17 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 53,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 56,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "高値-13% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア85(高) +5"
+     "品質スコア85(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 53
    },
@@ -46806,7 +46860,7 @@
     "note": ""
    },
    "rec": {
-    "score": 53,
+    "score": 56,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -47525,16 +47579,17 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 69,
-    "tier": "watch",
-    "tierLabel": "👀監視(質↓)",
+    "score": 72,
+    "tier": "consider",
+    "tierLabel": "🟦購入検討",
     "factors": [
      "1年レンジ下限圏(4%位置) +24",
      "5年レンジ下段(0%位置) +20",
      "高値-25% +14",
      "RSI29 売られ過ぎ +15",
      "5年トレンド上向き +6",
-     "品質スコア36(低) -10"
+     "品質スコア36(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 69
    },
@@ -47548,7 +47603,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 69,
+    "score": 72,
     "stars": 4,
     "level": "B",
     "action": "hold",
@@ -48267,14 +48322,15 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 38,
+    "score": 41,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-36%の暴落水準 +20",
      "5年トレンド上向き +6",
      "⭐超・買い場(GC確認) +10",
-     "品質スコア14(低) -10"
+     "品質スコア14(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 38
    },
@@ -48288,8 +48344,8 @@
     "note": ""
    },
    "rec": {
-    "score": 38,
-    "stars": 2,
+    "score": 41,
+    "stars": 3,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -49009,14 +49065,15 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 56,
+    "score": 59,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-41%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 56
    },
@@ -49030,7 +49087,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 56,
+    "score": 59,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -49751,7 +49808,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 70,
+    "score": 73,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -49759,7 +49816,8 @@
      "5年レンジ下段(0%位置) +20",
      "高値-28% +14",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 70
    },
@@ -49773,7 +49831,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 70,
+    "score": 73,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -50492,14 +50550,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 32,
+    "score": 35,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(19%位置) +16",
      "高値-32%の暴落水準 +20",
      "5年トレンド上向き +6",
-     "品質スコア20(低) -10"
+     "品質スコア20(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 32
    },
@@ -50513,7 +50572,7 @@
     "note": "1年チャネル上限+RSI77過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 32,
+    "score": 35,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -51232,7 +51291,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 46,
+    "score": 43,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -51240,7 +51299,8 @@
      "高値-32%の暴落水準 +20",
      "RSI37 +8",
      "個別要因の下落の疑い(falling knife) -15",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 46
    },
@@ -51254,7 +51314,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 46,
+    "score": 43,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -54194,9 +54254,9 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 50,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 47,
+    "tier": "none",
+    "tierLabel": "-",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "高値-28% +14",
@@ -54204,7 +54264,8 @@
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 50
    },
@@ -54218,9 +54279,9 @@
     "note": ""
    },
    "rec": {
-    "score": 50,
+    "score": 47,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -55681,13 +55742,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 18,
+    "score": 15,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-20% +8",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 18
    },
@@ -55701,7 +55763,7 @@
     "note": ""
    },
    "rec": {
-    "score": 18,
+    "score": 15,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -56420,14 +56482,15 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 9,
+    "score": 6,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-28% +14",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 9
    },
@@ -56441,7 +56504,7 @@
     "note": ""
    },
    "rec": {
-    "score": 9,
+    "score": 6,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -57160,15 +57223,18 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 29,
+    "score": 16,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-40%の暴落水準 +20",
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
-    ]
+     "200日線上向き +4",
+     "品質スコア27(低) -10",
+     "セクター資金流出 -3"
+    ],
+    "scorePrev": 29
    },
    "momentum": {
     "signal": "none",
@@ -57180,8 +57246,8 @@
     "note": ""
    },
    "rec": {
-    "score": 29,
-    "stars": 2,
+    "score": 16,
+    "stars": 1,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -57189,6 +57255,27 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 27,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": -0.1343,
+     "opMargin": -4.8741,
+     "revGrowth": 2.0185,
+     "epsGrowth": 0.5389,
+     "fcfMargin": -2.3044,
+     "psr": 141.0213,
+     "fyEnd": "2025-12-31"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 25.0,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -57879,13 +57966,16 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 18,
+    "score": 5,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-25% +14",
-     "200日線上向き +4"
-    ]
+     "200日線上向き +4",
+     "品質スコア21(低) -10",
+     "セクター資金流出 -3"
+    ],
+    "scorePrev": 18
    },
    "momentum": {
     "signal": "none",
@@ -57897,7 +57987,7 @@
     "note": ""
    },
    "rec": {
-    "score": 18,
+    "score": 5,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -57906,6 +57996,27 @@
     "expPeriodLabel": null,
     "annualizedPct": null,
     "note": ""
+   },
+   "quality": {
+    "score": 21,
+    "warnings": [
+     "FCF赤字"
+    ],
+    "metrics": {
+     "roe": -0.1781,
+     "opMargin": -0.1872,
+     "revGrowth": 0.1039,
+     "epsGrowth": 1.442,
+     "fcfMargin": -0.0163,
+     "psr": 35.1348,
+     "fyEnd": "2025-06-27"
+    },
+    "parts": {
+     "profit": 0.0,
+     "growth": 18.9,
+     "health": 0.0,
+     "valuation": 2
+    }
    }
   },
   {
@@ -58556,20 +58667,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 63121.511719
+     "c": 63176.878906
     }
    ],
    "state": "DOWN",
-   "price": 63121.5117,
+   "price": 63176.8789,
    "top": 63946.3102,
    "bottom": 55341.715,
    "band": 258.1379,
-   "pctInRange": 90.4,
-   "distToBottomPct": 14.06,
-   "distToTopPct": 1.31,
-   "smaShort": 62145.0459,
-   "smaLong": 67045.7809,
-   "smaTrend": 74826.7041,
+   "pctInRange": 91.1,
+   "distToBottomPct": 14.16,
+   "distToTopPct": 1.22,
+   "smaShort": 62147.8143,
+   "smaLong": 67046.8882,
+   "smaTrend": 74826.9809,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58577,15 +58688,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 50.0,
-   "atr": 2140.5184,
-   "atrPct": 3.39,
+   "rsi": 50.2,
+   "atr": 2154.6398,
+   "atrPct": 3.41,
    "high52w": 114472.4453,
-   "drawdownPct": 44.9,
+   "drawdownPct": 44.8,
    "macroDriven": null,
    "topLong": 118887.8561,
    "bottomLong": 102493.9969,
-   "pctInRangeLong": -240.2,
+   "pctInRangeLong": -239.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -58596,13 +58707,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 48,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 53,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-45%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "半減期サイクル: 底形成ウィンドウ +5"
     ],
     "scorePrev": 48
    },
@@ -58616,9 +58728,9 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 48,
+    "score": 53,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -59275,20 +59387,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 1790.040039
+     "c": 1798.599976
     }
    ],
    "state": "SELL",
-   "price": 1790.04,
+   "price": 1798.6,
    "top": 1543.759,
    "bottom": 1423.3592,
    "band": 3.612,
-   "pctInRange": 304.6,
-   "distToBottomPct": 25.76,
-   "distToTopPct": -13.76,
-   "smaShort": 1676.3188,
-   "smaLong": 1816.5098,
-   "smaTrend": 2268.1313,
+   "pctInRange": 311.7,
+   "distToBottomPct": 26.36,
+   "distToTopPct": -14.17,
+   "smaShort": 1676.7468,
+   "smaLong": 1816.681,
+   "smaTrend": 2268.1741,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -59296,15 +59408,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 57.9,
-   "atr": 79.3291,
+   "rsi": 58.6,
+   "atr": 79.7436,
    "atrPct": 4.43,
    "high52w": 4157.9893,
-   "drawdownPct": 56.9,
+   "drawdownPct": 56.7,
    "macroDriven": null,
    "topLong": 3504.555,
    "bottomLong": 2982.2844,
-   "pctInRangeLong": -228.3,
+   "pctInRangeLong": -226.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -59315,13 +59427,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 46,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 51,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-57%の暴落水準 +20",
-     "5年トレンド上向き +6"
+     "5年トレンド上向き +6",
+     "半減期サイクル: 底形成ウィンドウ +5"
     ],
     "scorePrev": 46
    },
@@ -59335,9 +59448,9 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 46,
+    "score": 51,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -60828,7 +60941,7 @@
      "state": "買い場",
      "emoji": "🟦",
      "valueTier": "-",
-     "valueScore": 45,
+     "valueScore": 42,
      "price": 359.91,
      "inWatchlist": true
     },
@@ -60840,7 +60953,7 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 17,
+     "valueScore": 14,
      "price": 242.67,
      "inWatchlist": true
     },
@@ -60851,8 +60964,8 @@
      "action": "保有継続。上場後の調達資金→GPU発注が追い風。",
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
-     "valueTier": "-",
-     "valueScore": 54,
+     "valueTier": "👀監視",
+     "valueScore": 51,
      "price": 194.83,
      "inWatchlist": true
     },
@@ -60864,7 +60977,7 @@
      "state": "上昇中",
      "emoji": "🟢",
      "valueTier": "-",
-     "valueScore": 24,
+     "valueScore": 21,
      "price": 434.16,
      "inWatchlist": true
     },
@@ -60876,7 +60989,7 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "-",
-     "valueScore": 44,
+     "valueScore": 41,
      "price": 360.45,
      "inWatchlist": true
     },
@@ -60944,7 +61057,7 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "👀監視",
-     "valueScore": 56,
+     "valueScore": 53,
      "price": 390.49,
      "inWatchlist": true
     },
@@ -60969,8 +61082,8 @@
      "action": "保有継続。",
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
-     "valueTier": "-",
-     "valueScore": 54,
+     "valueTier": "👀監視",
+     "valueScore": 51,
      "price": 194.83,
      "inWatchlist": true
     },
@@ -60982,7 +61095,7 @@
      "state": "⭐超・売り場",
      "emoji": "⭐🔴",
      "valueTier": "-",
-     "valueScore": 44,
+     "valueScore": 41,
      "price": 360.45,
      "inWatchlist": true
     },
@@ -61028,7 +61141,7 @@
    "type": "BUY_CONSIDER",
    "ticker": "PLTR",
    "priority": 3,
-   "title": "🟦 PLTR 購入検討 (スコア70)",
+   "title": "🟦 PLTR 購入検討 (スコア67)",
    "detail": "5年レンジ下段(0%位置) +20 / 高値-38%の暴落水準 +20 / 5年トレンド上向き +6"
   },
   {
@@ -61049,7 +61162,7 @@
    "type": "BUY_CONSIDER",
    "ticker": "ICE",
    "priority": 3,
-   "title": "🟦 ICE 購入検討 (スコア75)",
+   "title": "🟦 ICE 購入検討 (スコア78)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-29% +14"
   },
   {
@@ -61063,14 +61176,14 @@
    "type": "BUY_CONSIDER",
    "ticker": "HCA",
    "priority": 3,
-   "title": "🟦 HCA 購入検討 (スコア70)",
+   "title": "🟦 HCA 購入検討 (スコア73)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-25% +14"
   },
   {
    "type": "BUY_CONSIDER",
    "ticker": "JXN",
    "priority": 3,
-   "title": "🟦 JXN 購入検討 (スコア68)",
+   "title": "🟦 JXN 購入検討 (スコア71)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-14% +8"
   },
   {
@@ -61091,14 +61204,28 @@
    "type": "BUY_CONSIDER",
    "ticker": "OTIS",
    "priority": 3,
-   "title": "🟦 OTIS 購入検討 (スコア70)",
+   "title": "🟦 OTIS 購入検討 (スコア73)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-28% +14"
+  },
+  {
+   "type": "BUY_CONSIDER",
+   "ticker": "TSCO",
+   "priority": 3,
+   "title": "🟦 TSCO 購入検討 (スコア65)",
+   "detail": "5年レンジ下段(0%位置) +20 / 高値-49%の暴落水準 +20 / 5年トレンド上向き +6"
+  },
+  {
+   "type": "BUY_CONSIDER",
+   "ticker": "HWKN",
+   "priority": 3,
+   "title": "🟦 HWKN 購入検討 (スコア72)",
+   "detail": "1年レンジ下限圏(4%位置) +24 / 5年レンジ下段(0%位置) +20 / 高値-25% +14"
   },
   {
    "type": "BUY_CONSIDER",
    "ticker": "ISRG",
    "priority": 3,
-   "title": "🟦 ISRG 購入検討 (スコア70)",
+   "title": "🟦 ISRG 購入検討 (スコア73)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-28% +14"
   },
   {
@@ -61119,28 +61246,28 @@
  "plannerWeights": {
   "AAPL": 1.29,
   "MSFT": 0.83,
-  "GOOGL": 3.14,
+  "GOOGL": 3.15,
   "AMZN": 1.99,
-  "AVGO": 3.13,
-  "NVDA": 3.26,
-  "META": 2.35,
+  "AVGO": 3.14,
+  "NVDA": 3.27,
+  "META": 2.36,
   "TSLA": 1.42,
   "AMD": 1.25,
-  "PLTR": 1.61,
-  "IBM": 1.35,
+  "PLTR": 1.62,
+  "IBM": 1.36,
   "ASML": 2.86,
-  "TSM": 2.87,
+  "TSM": 2.88,
   "MRVL": 1.92,
   "CLMB": 0.8,
   "DELL": 1.3,
   "ADBE": 1.45,
   "AMAT": 2.0,
-  "LRCX": 2.04,
+  "LRCX": 2.05,
   "SNPS": 2.26,
   "MU": 2.0,
-  "ARM": 1.24,
-  "IONQ": 1.36,
-  "SNDK": 1.3,
+  "ARM": 1.25,
+  "IONQ": 1.31,
+  "SNDK": 1.24,
   "XOM": 8.89,
   "CCJ": 6.11,
   "NEE": 1.29,
@@ -61165,7 +61292,7 @@
   "HON": 0.26,
   "NKE": 0.16,
   "DE": 0.26,
-  "ACN": 0.17,
+  "ACN": 0.16,
   "ICE": 0.33,
   "UNH": 0.24,
   "V": 0.39,
@@ -61189,11 +61316,11 @@
   "BUR": 0.15,
   "PBI": 0.14,
   "XPEL": 0.15,
-  "BKTI": 0.17,
+  "BKTI": 0.16,
   "HWKN": 0.18,
   "GPGI": 0.16,
   "BMI": 0.17,
-  "ISRG": 0.7,
+  "ISRG": 0.69,
   "AXON": 0.32
  },
  "cycle": {
@@ -61280,7 +61407,47 @@
     "weeksTo": 13,
     "prep": "Value出動リストを最終化。戦略キャッシュを満タンに"
    }
-  ]
+  ],
+  "btcHalving": {
+   "lastHalving": "2024-04-19",
+   "monthsSince": 26.5,
+   "phase": "bottom",
+   "phaseLabel": "⛏️ 底形成・仕込みウィンドウ",
+   "note": "過去3サイクルの底はすべて半減期+26〜30ヶ月に出現。歴史的にはこの時間帯の分割買いが次サイクルの主リターン源",
+   "nextHalvingEst": "2028-04-15",
+   "weeksToNextHalving": 93,
+   "stats": [
+    {
+     "cycle": "2012→",
+     "peakMonths": 12,
+     "peakGainX": 95.0,
+     "bottomMonths": 26,
+     "ddPct": -83
+    },
+    {
+     "cycle": "2016→",
+     "peakMonths": 17,
+     "peakGainX": 30.0,
+     "bottomMonths": 29,
+     "ddPct": -84
+    },
+    {
+     "cycle": "2020→",
+     "peakMonths": 18,
+     "peakGainX": 7.9,
+     "bottomMonths": 30,
+     "ddPct": -77
+    }
+   ],
+   "thisCycle": {
+    "peakPrice": 124753,
+    "peakDate": "2025-10-06",
+    "peakMonths": 17.6,
+    "currentPrice": 63177,
+    "ddFromPeakPct": -49.4
+   },
+   "action": "現在は半減期+26.5ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
+  }
  },
  "discovery": [
   {
