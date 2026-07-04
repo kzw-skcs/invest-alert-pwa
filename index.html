@@ -198,6 +198,10 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 
 <!-- ================= 💰 配分 ================= -->
 <div class="tab" id="tab-plan">
+  <div class="card" style="border-color:var(--amber)">
+    <h3>🏆 完全版モデルPF <span class="tiny">毎朝自動更新</span></h3>
+    <div id="model-pf" class="muted">—</div>
+  </div>
   <div class="card">
     <h3>💰 フル配分プラン</h3>
     <div class="muted" style="margin-bottom:8px">運用可能総資産額(円)を入力すると、推奨ポートフォリオ・確信度・現在のシグナルに基づき「どこに・いくら」を機械的に算出します。</div>
@@ -402,7 +406,7 @@ function usdjpy() { return (DATA && DATA.fx && DATA.fx.usdjpy) || null; }
 function renderAll() {
   if (!DATA) return;
   for (const f of [renderStale, renderVix, renderAlerts, renderRanking, renderCards,
-                   renderAssets, renderTargetPF, renderEvents, renderDiscovery, renderBriefing, renderCycle,
+                   renderAssets, renderTargetPF, renderEvents, renderDiscovery, renderBriefing, renderCycle, renderModelPF,
                    renderWatchlist, renderSettingsView, renderAnalysis]) {
     try { f(); } catch (e) { console.error(f.name, e); }
   }
@@ -962,9 +966,10 @@ function setHold(tk, field, val) {
 }
 
 function renderRebalance(pf) {
-  const t = (DATA.portfolio && DATA.portfolio.targets) || { stocks: 60, btc: 10, eth: 5, gold: 10, silver: 5, cash: 10 };
+  const t = targetsPct();
   const thr = (DATA.portfolio && DATA.portfolio.rebalanceThresholdPct) || 5;
-  $('#reb-thr').textContent = `閾値 ±${thr}% / 目標 株${t.stocks}:BTC${t.btc}:ETH${t.eth}:金${t.gold}:銀${t.silver}:現金${t.cash}`;
+  const isModel = !!(DATA && DATA.modelPortfolio && DATA.modelPortfolio.assets);
+  $('#reb-thr').textContent = `閾値 ±${thr}% / 目標${isModel ? '(モデルPF・市況自動調整済み)' : ''} 株${t.stocks}:BTC${t.btc}:ETH${t.eth}:金${t.gold}:銀${t.silver}:現金${t.cash}`;
   if (ACCT !== 'all') {
     $('#rebalance').innerHTML = '<span class="tiny">リバランスは資産全体で判断するため「合算」タブで表示されます。</span>'; return;
   }
@@ -999,7 +1004,13 @@ function renderRebalance(pf) {
 'use strict';
 /* ---------------- 💰 配分プランナー ---------------- */
 function targetsPct() {
-  return (DATA && DATA.portfolio && DATA.portfolio.targets) || { stocks: 60, btc: 10, eth: 5, gold: 10, silver: 5, cash: 10 };
+  // 優先順: モデルPF(市況・サイクル自動調整済み) > 基準PF(config) > 既定値
+  if (DATA && DATA.modelPortfolio && DATA.modelPortfolio.assets) return DATA.modelPortfolio.assets;
+  return (DATA && DATA.portfolio && DATA.portfolio.targets) || { stocks: 60, btc: 10, eth: 10, gold: 5, silver: 5, cash: 10 };
+}
+function stockSplitPct() {
+  if (DATA && DATA.modelPortfolio && DATA.modelPortfolio.stockSplit) return DATA.modelPortfolio.stockSplit;
+  return (DATA && DATA.portfolio && DATA.portfolio.stockSplit) || { value: 80, momentum: 20 };
 }
 function tickerPlan(stockBudget) {
   // plannerWeights(株スリーブ内%) → 金額・概算株数
@@ -1018,6 +1029,38 @@ function tickerPlan(stockBudget) {
 }
 const CLASS_NAMES = { stocks: '📈個別株', btc: '₿ビットコイン', eth: 'Ξイーサリアム', gold: '🥇金', silver: '🥈銀', cash: '💵戦略キャッシュ' };
 
+function renderModelPF() {
+  const el = $('#model-pf'); if (!el) return;
+  const m = DATA && DATA.modelPortfolio;
+  if (!m) { el.innerHTML = '<span class="tiny">次回の判定更新から表示されます</span>'; return; }
+  const names = { stocks: '📈個別株', btc: '₿BTC', eth: 'ΞETH', gold: '🥇金', silver: '🥈銀', cash: '💵現金' };
+  let html = '';
+  if (m.regime) {
+    const rc = m.regime.regime === 'overheat' ? '#7c2d12' : m.regime.regime === 'recovery' ? '#14532d' : m.regime.regime === 'downtrend' ? '#1e3a5f' : 'var(--bg3)';
+    html += `<div style="background:${rc};border-radius:10px;padding:9px 11px;margin-bottom:8px">
+      <b style="font-size:13px">${m.regime.label}</b>
+      <div class="tiny" style="margin-top:3px">${m.regime.note}</div></div>`;
+  }
+  html += Object.entries(m.assets).map(([k, v]) => `
+    <div class="amount-row"><div class="lbl">${names[k] || k}</div><div class="amt">${v}%</div></div>
+    <div class="progress"><div style="width:${v}%;background:var(--amber)"></div></div>`).join('');
+  html += `<div class="tiny" style="margin:6px 0">📈株の内訳: 長期Value ${m.stockSplit.value}% / ⚡モメンタム機動枠 ${m.stockSplit.momentum}%</div>`;
+  if (m.tilts && m.tilts.length) {
+    html += '<div style="margin-top:6px"><b class="tiny" style="color:var(--tx2)">今日の自動チルト(基準PFからの調整)</b>' +
+      m.tilts.map((t) => `<div class="tiny" style="margin:3px 0 0 4px">・${t}</div>`).join('') + '</div>';
+  } else {
+    html += '<div class="tiny" style="margin-top:6px">チルトなし(基準PF通り)</div>';
+  }
+  if (m.tickers && m.tickers.length) {
+    html += `<details open style="margin-top:8px"><summary>コア銘柄ウェイト(株スリーブ内・上位15)</summary>
+      <table style="margin-top:4px"><tr><th>銘柄</th><th>比率</th><th>確信度</th><th>Q</th><th>現況</th><th>フロー</th></tr>
+      ${m.tickers.map((r) => `<tr><td><b>${r.ticker}</b></td><td>${r.wPct}%</td><td>${'●'.repeat(r.conviction || 3)}</td>
+        <td>${r.q ?? '—'}</td><td class="tiny">${r.tier || '-'}</td>
+        <td>${r.flow === 'inflow' ? '🟢' : r.flow === 'outflow' ? '🔴' : '⚪'}</td></tr>`).join('')}</table></details>`;
+  }
+  html += `<div class="tiny" style="margin-top:6px">${m.note}(生成: ${m.generatedAt})。下の「フル配分プラン」に総額を入れると、このPFが金額・株数に変換されます。</div>`;
+  el.innerHTML = html;
+}
 function renderFullPlan() {
   const T = Number($('#plan-total').value) || 0;
   const el = $('#full-plan');
@@ -1033,7 +1076,7 @@ function renderFullPlan() {
     html += `<div class="amount-row"><div class="lbl">${CLASS_NAMES[k]} <span class="tiny">${t[k]}%</span></div><div class="amt">${fmtY(amt)}</div></div>`;
   }
   // 銘柄配分(株予算のうちValue枠のみを銘柄に配分。モメンタム枠はシグナル待ち待機資金)
-  const split = (DATA.portfolio && DATA.portfolio.stockSplit) || { value: 80, momentum: 20 };
+  const split = stockSplitPct();
   const stockBudgetAll = T * t.stocks / 100;
   const momBudget = stockBudgetAll * split.momentum / 100;
   const stockBudget = stockBudgetAll - momBudget;

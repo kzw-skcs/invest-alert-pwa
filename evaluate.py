@@ -310,6 +310,8 @@ def main():
                           "title": f"🛡️ リスクオフ度{cycle['riskOff']['score']} — 有事への備えを",
                           "detail": " / ".join(cycle["riskOff"]["factors"]) + "。現金比率引き上げ・新規買い減速を検討"})
     weights = engine.planner_weights(instruments, cfg)
+    model_pf = engine.model_portfolio(instruments, cycle, cfg, weights, bench_closes, vix.get("value"))
+    print(f"モデルPF: assets={model_pf['assets']} tilts={len(model_pf['tilts'])}件")
 
     now = datetime.now(timezone.utc)
     data = {
@@ -329,6 +331,7 @@ def main():
         "alerts": alerts,
         "plannerWeights": weights,
         "cycle": cycle,
+        "modelPortfolio": model_pf,
         "discovery": cfg.get("discovery", []),
     }
     with open(os.path.join(BASE, "data.json"), "w", encoding="utf-8") as f:

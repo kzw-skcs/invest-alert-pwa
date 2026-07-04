@@ -1032,6 +1032,115 @@ def btc_halving_analysis(btc_hist, today=None):
     return out
 
 
+# ---------------------------------------------------------------- 市場レジーム(株式温度計)
+
+def market_regime(bench_closes, vix_value=None):
+    """S&P500の位置から市場レジームを判定し、株式比率の自動チルト(pt)を返す。
+    思想: 絶好調で少しずつ降り(利確→現金/金)、低迷期は現金を厚く保ち、
+    回復初動(安値圏からの反転確認)で株へ戻る。逆張りグライド。"""
+    if not bench_closes or len(bench_closes) < 260:
+        return {"regime": "unknown", "label": "判定不能", "tilt": 0, "note": "ベンチマークデータ不足"}
+    c = bench_closes[-1]
+    sma200 = sum(bench_closes[-200:]) / 200
+    sma50 = sum(bench_closes[-50:]) / 50
+    sma50_prev = sum(bench_closes[-55:-5]) / 50
+    dist200 = (c / sma200 - 1) * 100
+    hi252 = max(bench_closes[-252:])
+    dd = (c / hi252 - 1) * 100
+    crossed_up_50 = c > sma50 and bench_closes[-6] <= sma50_prev
+    vix_hot = vix_value is not None and vix_value >= 28
+    if dd < -10 and (c > sma50 or crossed_up_50) and c < sma200 * 1.02:
+        return {"regime": "recovery", "label": "🌅 回復初動(安値圏からの反転)",
+                "tilt": +8, "note": "高値から-10%超の安値圏で50日線を回復。歴史的に良いサイクル入りの初動が出やすい局面 → 温存した現金で株比率を積み増す時間帯"}
+    if dist200 >= 9 and dd > -3 and not vix_hot:
+        return {"regime": "overheat", "label": "🔥 過熱期(絶好調)",
+                "tilt": -6, "note": "S&P500が200日線+9%超かつ高値圏。歴史的に伸び切った状態 → 上昇を追わず、少しずつ利確して現金・金へ移す時間帯"}
+    if dist200 >= 5 and dd > -5:
+        return {"regime": "strong", "label": "📈 好調期",
+                "tilt": -3, "note": "堅調な上昇局面。新規は押し目に限定し、利確分は現金・金へ少しずつ退避"}
+    if dist200 <= -5 or vix_hot:
+        return {"regime": "downtrend", "label": "🧊 低迷期",
+                "tilt": -4, "note": "200日線割れ/高VIX。現金厚めを維持し、ナイフは掴まない。🌅回復初動のサイン(50日線回復)を待って株へ戻る"}
+    return {"regime": "neutral", "label": "⚖️ 巡航", "tilt": 0, "note": "基準配分どおりで運用"}
+
+
+# ---------------------------------------------------------------- 完全版モデルポートフォリオ
+
+def model_portfolio(instruments, cycle, cfg, planner_w, bench_closes=None, vix_value=None, today=None):
+    """『その時点でのリターン最大化を狙う完全版PF』を毎朝自動生成。
+    基準PF(config) + サイクル自動チルト(リスクオフ/半減期/季節性/セクターフロー)。
+    ※機械的計算値であり保証ではない。チルトは基準から大きく逸脱しない範囲(数pt)に制限。"""
+    today = today or datetime.utcnow().date()
+    t = dict(cfg["portfolio"]["targets"])
+    split = dict(cfg["portfolio"].get("stockSplit", {"value": 80, "momentum": 20}))
+    split.pop("_comment", None)
+    tilts = []
+    regime = market_regime(bench_closes, vix_value)
+    if regime["tilt"]:
+        move = regime["tilt"]
+        t["stocks"] = max(40, t["stocks"] + move)
+        back = -(move)
+        t["cash"] = max(5, t["cash"] + round(back * 2 / 3))
+        t["gold"] = max(3, t["gold"] + (back - round(back * 2 / 3)))
+        tilts.append(f"{regime['label']}(株{'+' if move > 0 else ''}{move}pt) — {regime['note']}")
+    else:
+        tilts.append(f"{regime['label']} — {regime['note']}")
+    ro = (cycle.get("riskOff") or {}).get("score", 0)
+    bh = cycle.get("btcHalving") or {}
+    if ro >= 60:
+        t["stocks"] -= 5
+        t["cash"] += 5
+        split["momentum"] = max(5, split["momentum"] - 10)
+        split["value"] = 100 - split["momentum"]
+        tilts.append(f"🛡️ リスクオフ度{ro} → 株-5pt・現金+5pt、モメンタム枠20→{split['momentum']}%へ縮小")
+    elif ro >= 40:
+        tilts.append(f"⚠️ リスクオフ度{ro} → 配分は維持しつつ新規投入ペースを減速")
+    if bh.get("phase") == "bottom":
+        t["btc"] += 2
+        t["eth"] += 1
+        t["cash"] = max(5, t["cash"] - 3)
+        tilts.append("₿ 半減期底ウィンドウ → BTC+2pt/ETH+1pt(現金から振替)")
+    elif bh.get("phase") == "bull" and (bh.get("monthsSince") or 0) > 15:
+        tilts.append("₿ 半減期天井警戒ゾーン → 暗号資産の新規追加停止・超過分の段階利確検討")
+    elif bh.get("phase") == "bear":
+        tilts.append("₿ 半減期弱気期 → 暗号資産の追加は+26ヶ月以降の底ウィンドウまで温存")
+    if today.month in (8, 9):
+        tilts.append("📅 季節性(8-9月) → 新規投入は後半配分に(10月の押し目用に現金温存)")
+    elif today.month in (10, 11):
+        tilts.append("📅 季節性(10-11月) → 歴史的な仕込み期。計画した買いを実行に移す時間帯")
+    total_t = sum(t.values())
+    if total_t != 100:  # チルトで崩れた合計を正規化
+        t = {k: round(v * 100 / total_t, 1) for k, v in t.items()}
+    # 銘柄ウェイト: planner(確信度×サブセクター×Value) × セクターフロー × 品質微調整
+    secs = cycle.get("sectors") or {}
+    rows = []
+    for i in instruments:
+        w = (planner_w or {}).get(i.get("ticker"))
+        if not w or i.get("state") == "NO_DATA":
+            continue
+        mult = 1.0
+        tr = (secs.get(i.get("subSector")) or {}).get("trend")
+        if tr == "inflow":
+            mult *= 1.2
+        elif tr == "outflow":
+            mult *= 0.8
+        q = (i.get("quality") or {}).get("score")
+        if q is not None:
+            mult *= (0.85 if q < 40 else 1.1 if q >= 70 else 1.0)
+        rows.append({"ticker": i["ticker"], "w": w * mult, "conviction": i.get("conviction"),
+                     "q": q, "tier": (i.get("value") or {}).get("tierLabel", "-"),
+                     "sec": i.get("subSector"), "flow": tr})
+    tw = sum(r["w"] for r in rows) or 1
+    for r in rows:
+        r["wPct"] = round(r["w"] / tw * 100, 1)
+        del r["w"]
+    rows.sort(key=lambda r: -r["wPct"])
+    return {"generatedAt": today.isoformat(), "assets": t, "stockSplit": split,
+            "regime": regime,
+            "tilts": tilts, "tickers": rows[:15],
+            "note": "基準PFにサイクル状況を自動上乗せした現時点の完全版。毎朝再計算。機械的計算値であり保証ではない"}
+
+
 # ---------------------------------------------------------------- アラート集約(プッシュ用)
 
 def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
