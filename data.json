@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-04T05:34:51.005460+00:00",
- "updatedJST": "2026-07-04 14:34 JST",
+ "updated": "2026-07-04T16:55:44.961372+00:00",
+ "updatedJST": "2026-07-05 01:55 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -58,15 +58,15 @@
   "tp2SellPct": 33,
   "timeStopWeeks": 8,
   "gapDownAlertPct": 6,
-  "maxShareOfStocksPct": 25
+  "maxShareOfStocksPct": 20
  },
  "portfolio": {
   "_comment": "推奨ポートフォリオ。cash=戦略キャッシュ(暴落時買付・IPO参加の待機資金)。比率は%。",
   "targets": {
    "stocks": 60,
    "btc": 10,
-   "eth": 5,
-   "gold": 10,
+   "eth": 10,
+   "gold": 5,
    "silver": 5,
    "cash": 10
   },
@@ -90,6 +90,11 @@
     10,
     20
    ]
+  },
+  "stockSplit": {
+   "_comment": "株スリーブ内訳(%)。value=長期Value、momentum=シグナル発生時に使う機動枠",
+   "value": 80,
+   "momentum": 20
   }
  },
  "targets": {
@@ -108,6 +113,19 @@
  },
  "fx": {
   "usdjpy": 161.337006
+ },
+ "metalJpy": {
+  "gold": {
+   "sell": 23411,
+   "buy": 23261
+  },
+  "silver": {
+   "sell": 309,
+   "buy": 276
+  },
+  "source": "日本マテリアル",
+  "url": "https://www.material.co.jp/buy/price.php",
+  "fetchedAt": "2026-07-05 01:55 JST"
  },
  "instruments": [
   {
@@ -4515,7 +4533,21 @@
     "breakoutHigh": 235.74,
     "volConfirmed": false,
     "trailStop": 177.0178,
-    "atrPct": 3.66
+    "atrPct": 3.66,
+    "momState": "EXIT",
+    "momStateLabel": "🔴 売り場(手仕舞い検討)",
+    "momEmoji": "🔴",
+    "momColor": "#dc2626",
+    "momSide": "sell",
+    "momRec": {
+     "action": "sell",
+     "score": 67,
+     "stars": 4,
+     "label": "⚡ 手仕舞い(売り)推奨"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -6001,7 +6033,21 @@
     "breakoutHigh": 445.27,
     "volConfirmed": true,
     "trailStop": 344.407,
-    "atrPct": 4.99
+    "atrPct": 4.99,
+    "momState": "EXIT",
+    "momStateLabel": "🔴 売り場(手仕舞い検討)",
+    "momEmoji": "🔴",
+    "momColor": "#dc2626",
+    "momSide": "sell",
+    "momRec": {
+     "action": "sell",
+     "score": 90,
+     "stars": 5,
+     "label": "⚡ 手仕舞い(売り)推奨"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -6746,7 +6792,21 @@
     "breakoutHigh": 580.91,
     "volConfirmed": false,
     "trailStop": 428.1545,
-    "atrPct": 6.93
+    "atrPct": 6.93,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -7491,7 +7551,21 @@
     "breakoutHigh": 160.65,
     "volConfirmed": false,
     "trailStop": 112.411,
-    "atrPct": 5.22
+    "atrPct": 5.22,
+    "momState": "WAIT",
+    "momStateLabel": "⚪ 待機(モメンタム対象外)",
+    "momEmoji": "⚪",
+    "momColor": "#6b7280",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -8993,27 +9067,6 @@
     "expPeriodLabel": "約7営業日",
     "annualizedPct": 657.7,
     "note": "🟦購入検討"
-   },
-   "quality": {
-    "score": 42,
-    "warnings": [
-     "売上成長マイナス"
-    ],
-    "metrics": {
-     "roe": 0.066,
-     "revGrowth": -0.0464,
-     "epsGrowth": -0.3036,
-     "fcfMargin": 0.184,
-     "trailPE": 25.5204,
-     "psr": 1.8271,
-     "fyEnd": "2025-12-31"
-    },
-    "parts": {
-     "profit": 6.6,
-     "growth": 0.1,
-     "health": 23.0,
-     "valuation": 12
-    }
    }
   },
   {
@@ -12686,7 +12739,21 @@
     "breakoutHigh": 150.23,
     "volConfirmed": false,
     "trailStop": 75.7817,
-    "atrPct": 9.83
+    "atrPct": 9.83,
+    "momState": "EXIT",
+    "momStateLabel": "🔴 売り場(手仕舞い検討)",
+    "momEmoji": "🔴",
+    "momColor": "#dc2626",
+    "momSide": "sell",
+    "momRec": {
+     "action": "sell",
+     "score": 67,
+     "stars": 4,
+     "label": "⚡ 手仕舞い(売り)推奨"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -16388,7 +16455,21 @@
     "breakoutHigh": 177.73,
     "volConfirmed": false,
     "trailStop": 137.2308,
-    "atrPct": 5.69
+    "atrPct": 5.69,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -17873,7 +17954,21 @@
     "breakoutHigh": 24.57,
     "volConfirmed": false,
     "trailStop": 20.6123,
-    "atrPct": 5.44
+    "atrPct": 5.44,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -45286,7 +45381,21 @@
     "breakoutHigh": 5.3,
     "volConfirmed": false,
     "trailStop": 3.6635,
-    "atrPct": 5.6
+    "atrPct": 5.6,
+    "momState": "WAIT",
+    "momStateLabel": "⚪ 待機(モメンタム対象外)",
+    "momEmoji": "⚪",
+    "momColor": "#6b7280",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -46032,7 +46141,21 @@
     "breakoutHigh": 18.12,
     "volConfirmed": false,
     "trailStop": 15.2458,
-    "atrPct": 3.74
+    "atrPct": 3.74,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -46774,7 +46897,21 @@
     "breakoutHigh": 49.6,
     "volConfirmed": false,
     "trailStop": 44.1188,
-    "atrPct": 3.63
+    "atrPct": 3.63,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -47521,7 +47658,21 @@
     "breakoutHigh": 96.36,
     "volConfirmed": false,
     "trailStop": 76.0383,
-    "atrPct": 4.07
+    "atrPct": 4.07,
+    "momState": "EXIT",
+    "momStateLabel": "🔴 売り場(手仕舞い検討)",
+    "momEmoji": "🔴",
+    "momColor": "#dc2626",
+    "momSide": "sell",
+    "momRec": {
+     "action": "sell",
+     "score": 67,
+     "stars": 4,
+     "label": "⚡ 手仕舞い(売り)推奨"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -48268,7 +48419,21 @@
     "breakoutHigh": 171.68,
     "volConfirmed": false,
     "trailStop": 120.498,
-    "atrPct": 5.2
+    "atrPct": 5.2,
+    "momState": "WAIT",
+    "momStateLabel": "⚪ 待機(モメンタム対象外)",
+    "momEmoji": "⚪",
+    "momColor": "#6b7280",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -49013,7 +49178,21 @@
     "breakoutHigh": 17.46,
     "volConfirmed": false,
     "trailStop": 14.6645,
-    "atrPct": 4.98
+    "atrPct": 4.98,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -49760,7 +49939,21 @@
     "breakoutHigh": 148.38,
     "volConfirmed": false,
     "trailStop": 132.0665,
-    "atrPct": 3.79
+    "atrPct": 3.79,
+    "momState": "HOLD",
+    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+    "momEmoji": "🟡",
+    "momColor": "#16a34a",
+    "momSide": "none",
+    "momRec": {
+     "action": "none",
+     "score": 0,
+     "stars": 0,
+     "label": "アクションなし(待機)"
+    },
+    "contrarianValue": false,
+    "contrarianLabel": null,
+    "contrarianScore": null
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -57221,10 +57414,6 @@
    "tradePolicy": "accumulate",
    "history": [
     {
-     "d": "2026-01-25",
-     "c": 86572.21875
-    },
-    {
      "d": "2026-01-26",
      "c": 88267.140625
     },
@@ -57857,21 +58046,25 @@
      "c": 61485.300781
     },
     {
+     "d": "2026-07-03",
+     "c": 62544.199219
+    },
+    {
      "d": "2026-07-04",
-     "c": 62457.199219
+     "c": 62856.859375
     }
    ],
    "state": "DOWN",
-   "price": 62457.1992,
-   "top": 64095.4529,
-   "bottom": 55488.0095,
-   "band": 258.2233,
-   "pctInRange": 81.0,
-   "distToBottomPct": 12.56,
-   "distToTopPct": 2.62,
-   "smaShort": 62270.1402,
-   "smaLong": 67362.9242,
-   "smaTrend": 74949.8814,
+   "price": 62856.8594,
+   "top": 63946.3102,
+   "bottom": 55341.715,
+   "band": 258.1379,
+   "pctInRange": 87.3,
+   "distToBottomPct": 13.58,
+   "distToTopPct": 1.73,
+   "smaShort": 62131.8133,
+   "smaLong": 67040.4878,
+   "smaTrend": 74825.3808,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -57879,15 +58072,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 47.5,
-   "atr": 2219.1736,
-   "atrPct": 3.55,
+   "rsi": 49.0,
+   "atr": 2127.0915,
+   "atrPct": 3.38,
    "high52w": 114472.4453,
-   "drawdownPct": 45.4,
+   "drawdownPct": 45.1,
    "macroDriven": null,
-   "topLong": 118812.871,
-   "bottomLong": 102432.5431,
-   "pctInRangeLong": -244.0,
+   "topLong": 118887.8561,
+   "bottomLong": 102493.9969,
+   "pctInRangeLong": -241.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -57898,15 +58091,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 51,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 49,
+    "tier": "none",
+    "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-45%の暴落水準 +20",
      "5年トレンド上向き +6"
     ],
-    "scorePrev": 50
+    "scorePrev": 51
    },
    "momentum": {
     "signal": "none",
@@ -57918,9 +58111,9 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 51,
+    "score": 49,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -57939,10 +58132,6 @@
    "conviction": 4,
    "tradePolicy": "accumulate",
    "history": [
-    {
-     "d": "2026-01-25",
-     "c": 2815.902344
-    },
     {
      "d": "2026-01-26",
      "c": 2926.457031
@@ -58576,21 +58765,25 @@
      "c": 1698.169434
     },
     {
+     "d": "2026-07-03",
+     "c": 1756.518677
+    },
+    {
      "d": "2026-07-04",
-     "c": 1754.810059
+     "c": 1785.709961
     }
    ],
    "state": "SELL",
-   "price": 1754.8101,
-   "top": 1552.0098,
-   "bottom": 1429.9099,
-   "band": 3.663,
-   "pctInRange": 266.1,
-   "distToBottomPct": 22.72,
-   "distToTopPct": -11.56,
-   "smaShort": 1672.962,
-   "smaLong": 1825.1414,
-   "smaTrend": 2273.9934,
+   "price": 1785.71,
+   "top": 1543.759,
+   "bottom": 1423.3592,
+   "band": 3.612,
+   "pctInRange": 301.0,
+   "distToBottomPct": 25.46,
+   "distToTopPct": -13.55,
+   "smaShort": 1676.1023,
+   "smaLong": 1816.4232,
+   "smaTrend": 2268.1096,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58598,15 +58791,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 55.0,
-   "atr": 80.3963,
-   "atrPct": 4.58,
+   "rsi": 57.6,
+   "atr": 79.3291,
+   "atrPct": 4.44,
    "high52w": 4157.9893,
-   "drawdownPct": 57.8,
+   "drawdownPct": 57.1,
    "macroDriven": null,
-   "topLong": 3503.486,
-   "bottomLong": 2981.4775,
-   "pctInRangeLong": -235.0,
+   "topLong": 3504.555,
+   "bottomLong": 2982.2844,
+   "pctInRangeLong": -229.1,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -58622,7 +58815,7 @@
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-58%の暴落水準 +20",
+     "高値-57%の暴落水準 +20",
      "5年トレンド上向き +6"
     ],
     "scorePrev": 46
