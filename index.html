@@ -1010,6 +1010,19 @@ async function renderBacktest() {
       <h3 style="font-size:12px;margin:10px 0 4px">モメンタム戦略</h3>
       <div class="tiny">現行ルール: ${m.trades ? `${m.trades}回 / 勝率${m.winRatePct}% / 平均${m.avgRetPct}% / 平均${m.avgDays}日 / 最大${m.bestPct}% / 最悪${m.worstPct}%` : 'トレードなし'}</div>
       ${b.momentumNoTP && b.momentumNoTP.trades ? `<div class="tiny">利確なし(比較): ${b.momentumNoTP.trades}回 / 勝率${b.momentumNoTP.winRatePct}% / 平均${b.momentumNoTP.avgRetPct}% / 最大${b.momentumNoTP.bestPct}% / 最悪${b.momentumNoTP.worstPct}%</div>` : ''}
+      ${b.assetTiers ? `<h3 style="font-size:12px;margin:10px 0 4px">金銀BTC/ETH × 推奨度Tier(売りルール版: 天井 or 120日で売り)</h3>
+      <table><tr><th>資産</th><th>Tier</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th></tr>
+      ${Object.entries(b.assetTiers).map(([ak, tiers]) => Object.entries(tiers).map(([tk, v], i) =>
+        `<tr>${i===0?`<td rowspan="${Object.keys(tiers).length}">${{gold:'金',silver:'銀',btc:'BTC',eth:'ETH'}[ak]||ak}</td>`:''}<td>${tk}</td>${v.trades
+          ? `<td>${v.trades}</td><td>${v.winRatePct}%</td><td>${v.avgRetPct}%</td><td>${v.avgDays}日</td>`
+          : `<td colspan="4">シグナルなし</td>`}</tr>`).join('')).join('')}</table>
+      <div class="tiny">単一資産のため回数が少なく、合算Tier統計より信頼度は低い(参考値)。</div>` : ''}
+      ${b.assetTiersHold ? `<h3 style="font-size:12px;margin:10px 0 4px">金銀BTC/ETH × 推奨度Tier(保有継続版: 最初のシグナルで買い→期間末まで)</h3>
+      <table><tr><th>資産</th><th>Tier</th><th>リターン</th><th>保有</th><th>年率換算</th></tr>
+      ${Object.entries(b.assetTiersHold).map(([ak, tiers]) => Object.entries(tiers).map(([tk, v], i) =>
+        `<tr>${i===0?`<td rowspan="${Object.keys(tiers).length}">${{gold:'金',silver:'銀',btc:'BTC',eth:'ETH'}[ak]||ak}</td>`:''}<td>${tk}</td>${v.trades
+          ? `<td>${v.avgRetPct}%</td><td>${v.avgHoldDays}日</td><td>${v.avgAnnualizedPct}%</td>`
+          : `<td colspan="3">シグナルなし</td>`}</tr>`).join('')).join('')}</table>` : ''}
       ${b.sleeveStats ? `<h3 style="font-size:12px;margin:10px 0 4px">資産別の実測(この検証期間・金銀BTC/ETHは買い持ち)</h3>
       <table><tr><th>資産</th><th>年率(CAGR)</th><th>最大DD</th><th>Sharpe</th></tr>
       ${Object.entries(b.sleeveStats).map(([k, s]) => s ? `<tr><td>${k}</td><td>${s.cagrPct}%</td><td>${s.maxDDPct}%</td><td>${s.sharpe}</td></tr>` : '').join('')}</table>` : ''}

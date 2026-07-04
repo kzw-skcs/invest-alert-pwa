@@ -389,6 +389,8 @@ def main():
         class_hist[key] = (e.get("class"), hist)
 
     stock_data = {k: v for k, v in instruments_data.items() if class_hist[k][0] == "stock"}
+    asset_data = {k: v for k, v in instruments_data.items()
+                  if class_hist[k][0] in ("crypto", "metal")}
     trade_tickers = [s["ticker"] for s in cfg["stocks"] if s.get("tradePolicy") == "trade"]
 
     print("Value戦略 検証中…")
@@ -396,6 +398,19 @@ def main():
                      for label, thr in TIER_THRESHOLDS.items()}
     value_hold_results = {label: backtest_value_hold(stock_data, thr)
                           for label, thr in TIER_THRESHOLDS.items()}
+
+    # 金銀BTC/ETH × 推奨度Tier のクロス集計（売りルール版＋保有継続版）
+    print("資産別×Tier別 検証中…")
+    asset_tiers = {}
+    asset_tiers_hold = {}
+    for key in ("gold", "silver", "btc", "eth"):
+        if key not in asset_data:
+            continue
+        single = {key: asset_data[key]}
+        asset_tiers[key] = {label: backtest_value(single, thr)
+                            for label, thr in TIER_THRESHOLDS.items()}
+        asset_tiers_hold[key] = {label: backtest_value_hold(single, thr)
+                                 for label, thr in TIER_THRESHOLDS.items()}
     print("モメンタム戦略 検証中…")
     mom_results, mom_daily = backtest_momentum(stock_data, trade_tickers, mp)
     # 比較用: 部分利確なし(トレーリングのみで勝ちを伸ばす)バリアント
@@ -425,6 +440,22 @@ def main():
     allocations = optimize_allocation(sleeve_daily, names) if common else {"error": "共通期間なし"}
 
     interpretation = build_interpretation(value_results, mom_results, allocations, names)
+    # 資産別×Tierの自動解釈
+    ASSET_JP = {"gold": "金", "silver": "銀", "btc": "BTC", "eth": "ETH"}
+    asset_lines = []
+    for key, tiers in asset_tiers.items():
+        parts = []
+        for label, r in tiers.items():
+            if r.get("trades"):
+                parts.append(f"{label.split('(')[1].rstrip(')')}点:{r['trades']}回/勝率{r['winRatePct']}%/平均{r['avgRetPct']:+.1f}%")
+            else:
+                parts.append(f"{label.split('(')[1].rstrip(')')}点:シグナルなし")
+        asset_lines.append(f"{ASSET_JP.get(key, key)}＝" + "、".join(parts))
+    if asset_lines:
+        interpretation.append(
+            "資産別×推奨度Tier(売りルール版): " + " ／ ".join(asset_lines) +
+            "。注意: 単一資産のためシグナル回数が少なく、株82銘柄の合算Tier統計より統計的な信頼度は低い。"
+            "回数が数回しかないTierの勝率は参考程度に。accumulate方針(買い増し専用)の資産は保有継続版(assetTiersHold)も併せて見ること。")
     vh = value_hold_results.get("consider(65)", {})
     vs = value_results.get("consider(65)", {})
     if vh.get("trades") and vs.get("trades"):
@@ -446,6 +477,8 @@ def main():
                    "tradingDays": len(common)},
         "valueTiers": value_results,
         "valueTiersHold": value_hold_results,
+        "assetTiers": asset_tiers,
+        "assetTiersHold": asset_tiers_hold,
         "momentum": mom_results,
         "momentumNoTP": mom_notp_results,
         "sleeveStats": sleeve_stats,
