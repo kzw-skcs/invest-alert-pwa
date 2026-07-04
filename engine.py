@@ -396,6 +396,53 @@ def momentum_signal(history, closes, calc, bench_closes, mp):
             out["atrPct"] = round(a / price * 100, 2)
     return out
 
+# ---------------------------------------------------------------- モメンタム画面表示用の状態・推奨
+
+def momentum_status(calc, mom, val, rec):
+    """モメンタム画面(trade銘柄)表示用の状態と推奨。購入(エントリー)と売却(手仕舞い)を
+    明確に分離し、両者が同時に立つことはない。Value指標はここでは判定に用いない
+    (モメンタムのエントリーは 50日高値ブレイク+MA+RSI+相対強度+出来高+ATR のみ)。
+      momState: ENTRY(買い) / EXIT(売り) / HOLD(保有継続・様子見) / WAIT(対象外) / NODATA
+      momSide : buy / sell / none
+      momRec  : {action, score, stars, label}  ← モメンタム独自の推奨度(★はValueと別軸)
+    さらに、モメンタム買いが未成立でもValue的に激安なら『逆張り(Value)候補』を別枠フラグで保持。"""
+    if mom.get("note") == "データ不足":
+        return {"momState": "NODATA", "momStateLabel": "❔ データ不足", "momEmoji": "❔",
+                "momColor": "#6b7280", "momSide": "none",
+                "momRec": {"action": "none", "score": 0, "stars": 0, "label": "データ蓄積中"},
+                "contrarianValue": False, "contrarianLabel": None, "contrarianScore": None}
+    price = calc.get("price"); s20 = calc.get("smaShort"); s50 = calc.get("smaLong")
+    sig = mom.get("signal")
+    if sig == "entry":
+        st = {"momState": "ENTRY", "momStateLabel": "🟢 買い場(エントリー成立)",
+              "momEmoji": "🟢", "momColor": "#059669", "momSide": "buy"}
+    elif sig == "exit_warning":
+        st = {"momState": "EXIT", "momStateLabel": "🔴 売り場(手仕舞い検討)",
+              "momEmoji": "🔴", "momColor": "#dc2626", "momSide": "sell"}
+    elif s20 and s50 and price and s20 > s50 and price > s50:
+        st = {"momState": "HOLD", "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
+              "momEmoji": "🟡", "momColor": "#16a34a", "momSide": "none"}
+    else:
+        st = {"momState": "WAIT", "momStateLabel": "⚪ 待機(モメンタム対象外)",
+              "momEmoji": "⚪", "momColor": "#6b7280", "momSide": "none"}
+    # モメンタム推奨度: 購入と売却で別軸(同時に立たない)
+    if st["momSide"] == "buy":
+        st["momRec"] = {"action": "buy", "score": rec.get("score", 0),
+                        "stars": rec.get("stars", 1), "label": "⚡ モメンタム買い推奨"}
+    elif st["momSide"] == "sell":
+        flags = len([x for x in (mom.get("note") or "").split("・") if x])
+        sell_score = min(90, 55 + flags * 12)   # 手仕舞いシグナルの数で緊急度を段階化
+        st["momRec"] = {"action": "sell", "score": sell_score,
+                        "stars": min(1 + sell_score // 20, 5), "label": "⚡ 手仕舞い(売り)推奨"}
+    else:
+        st["momRec"] = {"action": "none", "score": 0, "stars": 0, "label": "アクションなし(待機)"}
+    # 逆張り(Value)候補: モメンタム買い未成立だが Value が 強い買い/絶対的買い場
+    contra = sig != "entry" and val.get("tier") in ("strong", "absolute")
+    st["contrarianValue"] = contra
+    st["contrarianLabel"] = val.get("tierLabel") if contra else None
+    st["contrarianScore"] = val.get("score") if contra else None
+    return st
+
 # ---------------------------------------------------------------- hold銘柄の売り管理
 
 def hold_management(calc, vp):
@@ -572,6 +619,8 @@ def analyze_instrument(meta, history, bench_closes, vix_value, cfg):
     hm = hold_management(calc, vp) if policy in ("hold", "accumulate") else \
         {"thesisBreak": False, "trim": False, "note": ""}
     rec = build_rec(calc, val, mom, policy, vp)
+    if policy == "trade":
+        mom.update(momentum_status(calc, mom, val, rec))  # モメンタム画面用の状態・推奨(購入/売却分離)
 
     meta_s = STATE_META.get(state, STATE_META["NEUTRAL"])
     side = meta_s["side"]

@@ -146,7 +146,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div class="muted">
       ⭐🟢超・買い場(下抜け後GC) / 🟦買い場 / 🟢上昇中 / ⬜レンジ内 / 🔻下落中 / 🟥売り場 / ⭐🔴超・売り場<br>
       Valueスコア: 🚨90+絶対的買い場 / 🔥80+強い買い / 🟦65+購入検討 / 👀50+監視<br>
-      ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>品質Q(週次更新): ROE・利益率・成長率・財務健全性・PERの総合0-100。Q40未満は買いTierを1段階格下げ(「安いが質が悪い」を弾く)、Q70以上は+5点。⚠️警告(売上マイナス等)はテーゼ点検の材料。<br>モメンタム(trade銘柄): 50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
+      ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>品質Q(週次更新): ROE・利益率・成長率・財務健全性・PERの総合0-100。Q40未満は買いTierを1段階格下げ(「安いが質が悪い」を弾く)、Q70以上は+5点。⚠️警告(売上マイナス等)はテーゼ点検の材料。<br><b>⚡短期モメンタム画面の状態(上のValue用ラベルとは別物)</b>: 🟢買い場(エントリー成立=50日高値ブレイク等の入口条件クリア) / 🔴売り場(手仕舞い=50日線割れ・急落・デッドクロス) / 🟡保有継続(上昇中・新規は押し目待ち) / ⚪待機(モメンタム対象外) / 🩹逆張り(Value)候補(モメンタム買いは未成立だが暴落で割安)。<b>購入(エントリー)と売却(手仕舞い)が同時に出ることはありません。</b>推奨度もValueとは別軸のモメンタム推奨度です。モメンタムは50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
     </div>
   </div>
 </div>
@@ -442,15 +442,9 @@ function renderAlerts() {
 }
 
 function renderRanking() {
-  let list;
-  if (VIEW === 'momentum') {
-    list = instruments().filter((i) => i.tradePolicy === 'trade' && i.momentum &&
-      (i.momentum.signal === 'entry' || i.momentum.signal === 'exit_warning' || (i.rec && i.rec.score >= 50)))
-      .sort((a, b) => (b.momentum.signal === 'entry') - (a.momentum.signal === 'entry') || b.rec.score - a.rec.score).slice(0, 8);
-  } else {
-    list = instruments().filter((i) => i.tradePolicy !== 'trade' && i.value && i.value.score >= 50)
-      .sort((a, b) => b.value.score - a.value.score).slice(0, 8);
-  }
+  if (VIEW === 'momentum') { renderRankingMom(); return; }
+  const list = instruments().filter((i) => i.tradePolicy !== 'trade' && i.value && i.value.score >= 50)
+    .sort((a, b) => b.value.score - a.value.score).slice(0, 8);
   $('#ranking').innerHTML = list.length ? list.map((i) => `
     <div class="amount-row" onclick="openChart('${i.ticker}','${i.class}')">
       <div class="lbl">${i.emoji} <b>${i.ticker}</b>
@@ -463,17 +457,62 @@ function renderRanking() {
     </div>`).join('') : '<span class="muted">現在アクション推奨はありません。待つのも投資です。</span>';
 }
 
+// モメンタム推奨ランキング: 購入(エントリー)と売却(手仕舞い)を明確に分離。逆張りValueは別枠。
+function renderRankingMom() {
+  const trades = instruments().filter((i) => i.tradePolicy === 'trade' && i.momentum);
+  const buys = trades.filter((i) => i.momentum.momSide === 'buy')
+    .sort((a, b) => (b.momentum.momRec.score) - (a.momentum.momRec.score));
+  const sells = trades.filter((i) => i.momentum.momSide === 'sell')
+    .sort((a, b) => (b.momentum.momRec.score) - (a.momentum.momRec.score));
+  const contra = trades.filter((i) => i.momentum.contrarianValue && i.momentum.momSide !== 'buy')
+    .sort((a, b) => (b.momentum.contrarianScore || 0) - (a.momentum.contrarianScore || 0));
+  const row = (i, right) => `<div class="amount-row" onclick="openChart('${i.ticker}','${i.class}')">
+      <div class="lbl"><b>${i.ticker}</b> <span class="nm" style="font-size:11px;color:var(--tx2)">${i.name}</span></div>
+      <div style="text-align:right">${right}</div></div>`;
+  let html = `<div class="tiny" style="margin:2px 0 4px;color:var(--green);font-weight:700">🟢 モメンタム買い（エントリー）</div>`;
+  html += buys.length ? buys.map((i) => row(i,
+      `<b>買い推奨度 ${i.momentum.momRec.score}</b><div class="tiny">損切り目安 -${i.momentum.stopPct}% / TP1 ${fmtN(i.momentum.tp1)} / TP2 ${fmtN(i.momentum.tp2)}</div>`)).join('')
+    : '<div class="muted tiny">該当なし（50日高値ブレイク等の新規エントリー条件を満たす銘柄はありません）</div>';
+  html += `<div class="tiny" style="margin:12px 0 4px;color:var(--red);font-weight:700">🔴 モメンタム売り（手仕舞い）</div>`;
+  html += sells.length ? sells.map((i) => row(i,
+      `<b>売り推奨度 ${i.momentum.momRec.score}</b><div class="tiny">${i.momentum.note || ''}</div>`)).join('')
+    : '<div class="muted tiny">該当なし（保有中の手仕舞いシグナルはありません）</div>';
+  if (contra.length) {
+    html += `<div class="tiny" style="margin:12px 0 4px;color:var(--amber);font-weight:700">🩹 逆張り（Value）候補 — モメンタム買いは未成立</div>`;
+    html += contra.map((i) => row(i,
+      `<span class="tierpill tier-${i.value.tier}">${i.momentum.contrarianLabel} ${i.momentum.contrarianScore}</span>`
+      + `<div class="tiny">暴落で割安。Value基準の押し目買い対象（モメンタムの損切りルールとは別管理）</div>`)).join('');
+  }
+  $('#ranking').innerHTML = html;
+}
+
 /* ---------------- 資産カード ---------------- */
 function renderCards() {
   const el = $('#cards');
-  let list = instruments().filter((i) => VIEW === 'momentum' ? i.tradePolicy === 'trade' : i.tradePolicy !== 'trade');
-  if (SIGFILTER === 'action') list = list.filter((i) => i.actionable);
+  const mom = VIEW === 'momentum';
+  let list = instruments().filter((i) => mom ? i.tradePolicy === 'trade' : i.tradePolicy !== 'trade');
+  if (SIGFILTER === 'action') list = list.filter((i) => mom
+    ? (i.momentum && (i.momentum.momSide !== 'none' || i.momentum.contrarianValue))
+    : i.actionable);
   if (SIGFILTER === 'stock') list = list.filter((i) => i.class === 'stock');
   if (SIGFILTER === 'other') list = list.filter((i) => i.class !== 'stock');
-  const order = { SUPER_BUY: 0, BUY: 1, SUPER_SELL: 2, SELL: 3, DOWN: 4, NEUTRAL: 5, UP: 6, NO_DATA: 9 };
-  list.sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0) || (order[a.state] ?? 5) - (order[b.state] ?? 5));
+  if (mom) {
+    // アクション優先: 買い(ENTRY)→売り(EXIT)→逆張りValue候補→保有継続→待機
+    const rank = { ENTRY: 0, EXIT: 1, HOLD: 3, WAIT: 4, NODATA: 9 };
+    const key = (i) => {
+      const ms = i.momentum ? i.momentum.momState : 'WAIT';
+      const base = rank[ms] ?? 4;
+      return (i.momentum && i.momentum.contrarianValue) ? Math.min(base, 2) : base;
+    };
+    list.sort((a, b) => key(a) - key(b)
+      || ((b.momentum && b.momentum.momRec ? b.momentum.momRec.score : 0)
+        - (a.momentum && a.momentum.momRec ? a.momentum.momRec.score : 0)));
+  } else {
+    const order = { SUPER_BUY: 0, BUY: 1, SUPER_SELL: 2, SELL: 3, DOWN: 4, NEUTRAL: 5, UP: 6, NO_DATA: 9 };
+    list.sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0) || (order[a.state] ?? 5) - (order[b.state] ?? 5));
+  }
   const fLabel = { all: 'すべて', action: 'アクションあり', stock: '株のみ', other: '暗号資産・金銀のみ' }[SIGFILTER] || '';
-  el.innerHTML = `<div class="tiny" style="margin:2px 0 8px">🔽 ${VIEW === 'momentum' ? '⚡短期モメンタム' : '📈長期Value'} / ${fLabel}: <b>${list.length}銘柄</b>${list.length === 0 ? ' — 該当なし(フィルタを「すべて」に戻してください)' : ''}</div>` + list.map(cardHTML).join('');
+  el.innerHTML = `<div class="tiny" style="margin:2px 0 8px">🔽 ${mom ? '⚡短期モメンタム' : '📈長期Value'} / ${fLabel}: <b>${list.length}銘柄</b>${list.length === 0 ? ' — 該当なし(フィルタを「すべて」に戻してください)' : ''}</div>` + list.map(mom ? momCardHTML : cardHTML).join('');
   list.forEach((i) => drawSpark(i));
 }
 
@@ -539,6 +578,57 @@ function cardHTML(i) {
         .map(([n2, v2, mul, u]) => `${n2} <b>${fmtN(v2 * mul, 1)}${u}</b>`).join(' / ')}
       ${i.quality.parts ? `<br>内訳: 収益性${i.quality.parts.profit ?? '—'} / 成長性${i.quality.parts.growth ?? '—'} / 財務健全${i.quality.parts.health ?? '—'} / 価格妥当${i.quality.parts.valuation ?? '—'} (各25点満点)` : ''}
     </div></details>` : ''}
+    <canvas class="spark" id="sp-${i.ticker}" style="width:100%;height:56px"></canvas>
+  </div>`;
+}
+
+/* ---- モメンタム画面専用カード(Value指標は表示しない・購入/売却を分離) ---- */
+function momCardHTML(i) {
+  const m = i.momentum || {};
+  if (i.state === 'NO_DATA' || m.momState === 'NODATA')
+    return `<div class="icard"><div class="head"><span class="tk">${i.ticker}</span><span class="nm">${i.name}</span><span class="st">❔ データ蓄積中</span></div></div>`;
+  const rec = m.momRec || { action: 'none', score: 0, label: '' };
+  const price = fmtN(i.price);
+  // 推奨(購入と売却は同時に立たない)
+  let recLine;
+  if (rec.action === 'buy') {
+    recLine = `<div style="border-left:3px solid var(--green);background:#052e1a;padding:8px 10px;border-radius:8px;margin-top:8px">
+      <div style="color:var(--green);font-weight:800">🟢 ${rec.label}　推奨度 ${rec.score}</div>
+      <div class="tiny" style="margin-top:3px">🚀 エントリー: 損切り目安 <b>${fmtN(m.stopSuggest)}</b> (-${m.stopPct}%) / TP1 <b>${fmtN(m.tp1)}</b> / TP2 <b>${fmtN(m.tp2)}</b>（買うなら損切りとTPを同時セット）</div></div>`;
+  } else if (rec.action === 'sell') {
+    recLine = `<div style="border-left:3px solid var(--red);background:#2e0a0a;padding:8px 10px;border-radius:8px;margin-top:8px">
+      <div style="color:var(--red);font-weight:800">🔴 ${rec.label}　売り推奨度 ${rec.score}</div>
+      <div class="tiny" style="margin-top:3px">${m.note || ''}${m.trailStop ? ' / トレーリング目安 <b>' + fmtN(m.trailStop) + '</b>' : ''}（保有していれば防衛。していなければ無視）</div></div>`;
+  } else {
+    recLine = `<div style="border-left:3px solid var(--line);background:var(--bg3);padding:8px 10px;border-radius:8px;margin-top:8px">
+      <div style="font-weight:700;color:var(--tx2)">⚪ アクションなし（待機）</div>
+      <div class="tiny" style="margin-top:3px">${m.momState === 'HOLD' ? '上昇中で保有継続。新規は次の50日高値ブレイク、または押し目を待つ。' : 'モメンタムの入口条件を満たしていません。手を出さない。'}</div></div>`;
+  }
+  // モメンタム指標のみ(Valueスコア/ティア/レンジは非表示)
+  const rs = m.relStrength3m;
+  const vol = m.volConfirmed === true ? '✅' : m.volConfirmed === false ? '✗' : '—';
+  const indics = `<div class="kv">
+    <span>50日高値 <b>${m.breakoutHigh != null ? fmtN(m.breakoutHigh) : '—'}</b></span>
+    <span>現在値 <b>${price}</b></span>
+    <span>20日 <b>${fmtN(i.smaShort)}</b>${(i.smaShort && i.smaLong) ? (i.smaShort > i.smaLong ? ' ↗' : ' ↘') : ''}</span>
+    <span>50日 <b>${fmtN(i.smaLong)}</b></span>
+    <span>RSI <b>${fmtN(i.rsi, 0)}</b></span>
+    <span>相対強度RS3m <b class="${cls(rs)}">${fmtP(rs)}</b></span>
+    <span>出来高確認 <b>${vol}</b></span>
+    ${i.atrPct != null ? `<span>ATR <b>${fmtN(i.atrPct, 1)}%</b></span>` : ''}
+  </div>`;
+  // 逆張り(Value)候補 — モメンタムとは別枠で小さく
+  const contra = m.contrarianValue ? `<div style="border-left:3px solid var(--amber);padding:6px 10px;margin-top:8px" class="tiny">
+    🩹 逆張り（Value）候補: <b style="color:var(--amber)">${m.contrarianLabel} スコア${m.contrarianScore}</b> — 暴落で割安。モメンタム買いは未成立。Value基準の押し目買い対象（損切りルールはモメンタムと別管理）。</div>` : '';
+  return `<div class="icard" data-tk="${i.ticker}">
+    <div class="head" onclick="openChart('${i.ticker}','${i.class}')">
+      <span class="tk">${i.ticker}</span><span class="nm">${i.name}</span>
+      <span class="pill" style="background:#78350f;color:#fde68a">短期</span>
+      <span class="st" style="color:${m.momColor || '#6b7280'}">${m.momStateLabel || ''}</span>
+    </div>
+    ${recLine}
+    ${indics}
+    ${contra}
     <canvas class="spark" id="sp-${i.ticker}" style="width:100%;height:56px"></canvas>
   </div>`;
 }
