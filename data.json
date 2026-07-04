@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-04T22:45:04.446455+00:00",
- "updatedJST": "2026-07-05 07:45 JST",
+ "updated": "2026-07-04T23:27:21.107765+00:00",
+ "updatedJST": "2026-07-05 08:27 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -125,7 +125,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-05 07:45 JST"
+  "fetchedAt": "2026-07-05 08:27 JST"
  },
  "instruments": [
   {
@@ -134,6 +134,7 @@
    "name": "Apple",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -874,6 +875,7 @@
    "name": "Microsoft",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -1615,6 +1617,7 @@
    "name": "Alphabet (Google)",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "コミュニケーション",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -2297,7 +2300,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 42,
+    "score": 45,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -2305,8 +2308,7 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア75(高) +5",
-     "セクター資金流出 -3"
+     "品質スコア75(高) +5"
     ],
     "scorePrev": 42
    },
@@ -2320,7 +2322,7 @@
     "note": ""
    },
    "rec": {
-    "score": 42,
+    "score": 45,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -2356,6 +2358,7 @@
    "name": "Amazon",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "一般消費財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -3038,13 +3041,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 14,
+    "score": 20,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "セクター資金流出 -3"
+     "セクター資金流入 +3"
     ],
     "scorePrev": 14
    },
@@ -3058,8 +3061,8 @@
     "note": ""
    },
    "rec": {
-    "score": 14,
-    "stars": 1,
+    "score": 20,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -3095,6 +3098,7 @@
    "name": "Broadcom",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -3838,6 +3842,7 @@
    "name": "NVIDIA",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "trade",
@@ -4598,6 +4603,7 @@
    "name": "Meta Platforms",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "コミュニケーション",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -5280,15 +5286,14 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 53,
+    "score": 56,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-26% +14",
      "5年トレンド上向き +6",
-     "品質スコア74(高) +5",
-     "セクター資金流出 -3"
+     "品質スコア74(高) +5"
     ],
     "scorePrev": 53
    },
@@ -5302,7 +5307,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 53,
+    "score": 56,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -5338,6 +5343,7 @@
    "name": "Tesla",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "一般消費財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "trade",
@@ -6020,7 +6026,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 35,
+    "score": 41,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -6030,7 +6036,7 @@
      "200日線上向き +4",
      "買い場帯 +5",
      "品質スコア16(低) -10",
-     "セクター資金流出 -3"
+     "セクター資金流入 +3"
     ],
     "scorePrev": 35
    },
@@ -6063,9 +6069,9 @@
     "note": ""
    },
    "rec": {
-    "score": 47,
+    "score": 53,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "sell_check",
     "expReturnPct": null,
     "expDays": null,
@@ -6102,6 +6108,7 @@
    "name": "AMD",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -6841,6 +6848,7 @@
    "name": "Palantir",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -7581,6 +7589,7 @@
    "name": "ExxonMobil",
    "sector": "エネルギー",
    "subSector": "エネルギー",
+   "rotSector": "エネルギー",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -8326,6 +8335,7 @@
    "name": "NextEra Energy",
    "sector": "エネルギー",
    "subSector": "電力・DCインフラ",
+   "rotSector": "公益",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -9068,6 +9078,7 @@
    "name": "Lockheed Martin",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -9750,7 +9761,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 54,
+    "score": 57,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -9758,7 +9769,8 @@
      "高値-19% +8",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 54
    },
@@ -9772,7 +9784,7 @@
     "note": ""
    },
    "rec": {
-    "score": 54,
+    "score": 57,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -9809,6 +9821,7 @@
    "name": "RTX (Raytheon)",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -10491,13 +10504,14 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 32,
+    "score": 35,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "⭐超・買い場(GC確認) +10"
+     "⭐超・買い場(GC確認) +10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 32
    },
@@ -10511,7 +10525,7 @@
     "note": ""
    },
    "rec": {
-    "score": 32,
+    "score": 35,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -10548,6 +10562,7 @@
    "name": "Northrop Grumman",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -11230,7 +11245,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 70,
+    "score": 73,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -11238,7 +11253,8 @@
      "5年レンジ下段(0%位置) +20",
      "高値-28% +14",
      "5年トレンド上向き +6",
-     "買い場帯 +5"
+     "買い場帯 +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 70
    },
@@ -11252,7 +11268,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 70,
+    "score": 73,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -11289,6 +11305,7 @@
    "name": "Rocket Lab",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "trade",
@@ -11971,7 +11988,7 @@
    "side": "sell",
    "actionable": true,
    "value": {
-    "score": 17,
+    "score": 20,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -11979,7 +11996,8 @@
      "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア18(低) -10"
+     "品質スコア18(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 17
    },
@@ -12012,7 +12030,7 @@
     "note": ""
    },
    "rec": {
-    "score": 50,
+    "score": 53,
     "stars": 3,
     "level": "C",
     "action": "sell_check",
@@ -12050,6 +12068,7 @@
    "name": "IBM",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -12790,6 +12809,7 @@
    "name": "ASML (ADR)",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -13530,6 +13550,7 @@
    "name": "TSMC (ADR)",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -14270,6 +14291,7 @@
    "name": "Marvell Technology",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -15011,6 +15033,7 @@
    "name": "Arista Networks",
    "sector": "ハイテク",
    "subSector": "電力・DCインフラ",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -15693,13 +15716,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 19,
+    "score": 16,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア74(高) +5"
+     "品質スコア74(高) +5",
+     "セクター資金流出 -3"
     ],
     "scorePrev": 19
    },
@@ -15713,7 +15737,7 @@
     "note": ""
    },
    "rec": {
-    "score": 19,
+    "score": 16,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -15750,6 +15774,7 @@
    "name": "Vertiv Holdings",
    "sector": "ハイテク",
    "subSector": "電力・DCインフラ",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -16432,15 +16457,16 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 52,
-    "tier": "none",
-    "tierLabel": "-",
+    "score": 55,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(7%位置) +23",
      "高値-20% +14",
      "5年トレンド上向き +6",
      "200日線上向き +4",
-     "品質スコア72(高) +5"
+     "品質スコア72(高) +5",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 52
    },
@@ -16454,7 +16480,7 @@
     "note": ""
    },
    "rec": {
-    "score": 52,
+    "score": 55,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -16491,6 +16517,7 @@
    "name": "Climb Global Solutions（小型株）",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -17231,6 +17258,7 @@
    "name": "IQVIA Holdings",
    "sector": "ヘルスケア",
    "subSector": "その他モート",
+   "rotSector": "ヘルスケア",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -17969,6 +17997,7 @@
    "name": "CACI International",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -18651,7 +18680,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 69,
+    "score": 72,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -18659,7 +18688,8 @@
      "5年レンジ下段(0%位置) +20",
      "高値-24% +14",
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 69
    },
@@ -18673,7 +18703,7 @@
     "note": ""
    },
    "rec": {
-    "score": 69,
+    "score": 72,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -18710,6 +18740,7 @@
    "name": "SpaceX",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -18755,6 +18786,7 @@
    "name": "Moody's",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -19494,6 +19526,7 @@
    "name": "American Express",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -20234,6 +20267,7 @@
    "name": "S&P Global",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -20975,6 +21009,7 @@
    "name": "Dell Technologies",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -21714,6 +21749,7 @@
    "name": "Adobe",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -22455,6 +22491,7 @@
    "name": "Becton Dickinson",
    "sector": "ヘルスケア",
    "subSector": "その他モート",
+   "rotSector": "ヘルスケア",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -23194,6 +23231,7 @@
    "name": "Mastercard",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -23933,6 +23971,7 @@
    "name": "Honeywell",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -24671,6 +24710,7 @@
    "name": "Nike",
    "sector": "一般消費財",
    "subSector": "その他モート",
+   "rotSector": "一般消費財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -25411,6 +25451,7 @@
    "name": "Deere & Co",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -26153,6 +26194,7 @@
    "name": "Accenture",
    "sector": "ハイテク",
    "subSector": "その他モート",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -26835,7 +26877,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 56,
+    "score": 50,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -26846,7 +26888,7 @@
      "個別要因の下落の疑い(falling knife) -15",
      "買い場帯 +5",
      "品質スコア37(低) -10",
-     "セクター資金流入 +3"
+     "セクター資金流出 -3"
     ],
     "scorePrev": 56
    },
@@ -26860,7 +26902,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 56,
+    "score": 50,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -26899,6 +26941,7 @@
    "name": "Intercontinental Exchange",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -27642,6 +27685,7 @@
    "name": "UnitedHealth",
    "sector": "ヘルスケア",
    "subSector": "その他モート",
+   "rotSector": "ヘルスケア",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -28381,6 +28425,7 @@
    "name": "Visa",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -29119,6 +29164,7 @@
    "name": "Interactive Brokers",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -29857,6 +29903,7 @@
    "name": "GoDaddy",
    "sector": "ハイテク",
    "subSector": "その他モート",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -30539,15 +30586,15 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 54,
-    "tier": "watch",
-    "tierLabel": "👀監視",
+    "score": 48,
+    "tier": "none",
+    "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-50%の暴落水準 +20",
      "5年トレンド上向き +6",
      "品質スコア79(高) +5",
-     "セクター資金流入 +3"
+     "セクター資金流出 -3"
     ],
     "scorePrev": 54
    },
@@ -30561,9 +30608,9 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 54,
+    "score": 48,
     "stars": 3,
-    "level": "C",
+    "level": "-",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -30598,6 +30645,7 @@
    "name": "Brookfield",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -31339,6 +31387,7 @@
    "name": "Applied Materials",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -32079,6 +32128,7 @@
    "name": "Lam Research",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -32820,6 +32870,7 @@
    "name": "Uber",
    "sector": "ハイテク",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -33561,6 +33612,7 @@
    "name": "Progressive",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -34300,6 +34352,7 @@
    "name": "HCA Healthcare",
    "sector": "ヘルスケア",
    "subSector": "その他モート",
+   "rotSector": "ヘルスケア",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -35041,6 +35094,7 @@
    "name": "KKR",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -35782,6 +35836,7 @@
    "name": "Jackson Financial",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -36523,6 +36578,7 @@
    "name": "Ferguson",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -37264,6 +37320,7 @@
    "name": "US Foods",
    "sector": "生活必需品",
    "subSector": "その他モート",
+   "rotSector": "生活必需品",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -38005,6 +38062,7 @@
    "name": "RLI Corp",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -38746,6 +38804,7 @@
    "name": "Builders FirstSource",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -39489,6 +39548,7 @@
    "name": "FTAI Aviation",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -40233,6 +40293,7 @@
    "name": "Paychex",
    "sector": "ハイテク",
    "subSector": "その他モート",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -40915,13 +40976,13 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 37,
+    "score": 31,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-28% +14",
-     "セクター資金流入 +3"
+     "セクター資金流出 -3"
     ],
     "scorePrev": 37
    },
@@ -40935,7 +40996,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 37,
+    "score": 31,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -40972,6 +41033,7 @@
    "name": "Otis Worldwide",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -41714,6 +41776,7 @@
    "name": "Talen Energy",
    "sector": "エネルギー",
    "subSector": "電力・DCインフラ",
+   "rotSector": "公益",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -42453,6 +42516,7 @@
    "name": "Tractor Supply",
    "sector": "一般消費財",
    "subSector": "その他モート",
+   "rotSector": "一般消費財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -43193,6 +43257,7 @@
    "name": "MSA Safety",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -43933,6 +43998,7 @@
    "name": "Burford Capital",
    "sector": "金融",
    "subSector": "その他モート",
+   "rotSector": "金融",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -44677,6 +44743,7 @@
    "name": "Pitney Bowes",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -45415,6 +45482,7 @@
    "name": "XPEL",
    "sector": "一般消費財",
    "subSector": "その他モート",
+   "rotSector": "一般消費財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -46154,6 +46222,7 @@
    "name": "BK Technologies",
    "sector": "ハイテク",
    "subSector": "その他モート",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -46836,7 +46905,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 56,
+    "score": 50,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -46846,7 +46915,7 @@
      "200日線上向き +4",
      "買い場帯 +5",
      "品質スコア85(高) +5",
-     "セクター資金流入 +3"
+     "セクター資金流出 -3"
     ],
     "scorePrev": 56
    },
@@ -46860,7 +46929,7 @@
     "note": ""
    },
    "rec": {
-    "score": 56,
+    "score": 50,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -46897,6 +46966,7 @@
    "name": "Hawkins",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "素材",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -47579,7 +47649,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 72,
+    "score": 66,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -47589,7 +47659,7 @@
      "RSI29 売られ過ぎ +15",
      "5年トレンド上向き +6",
      "品質スコア36(低) -10",
-     "セクター資金流入 +3"
+     "セクター資金流出 -3"
     ],
     "scorePrev": 72
    },
@@ -47603,7 +47673,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 72,
+    "score": 66,
     "stars": 4,
     "level": "B",
     "action": "hold",
@@ -47640,6 +47710,7 @@
    "name": "GPGI",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -48383,6 +48454,7 @@
    "name": "Badger Meter",
    "sector": "資本財",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
@@ -49126,6 +49198,7 @@
    "name": "Intuitive Surgical",
    "sector": "ヘルスケア",
    "subSector": "その他モート",
+   "rotSector": "ヘルスケア",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -49868,6 +49941,7 @@
    "name": "Axon Enterprise",
    "sector": "ハイテク",
    "subSector": "その他モート",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -50609,6 +50683,7 @@
    "name": "Synopsys",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -51351,6 +51426,7 @@
    "name": "Constellation Energy",
    "sector": "エネルギー",
    "subSector": "電力・DCインフラ",
+   "rotSector": "公益",
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
@@ -52094,6 +52170,7 @@
    "name": "GE Vernova",
    "sector": "資本財",
    "subSector": "電力・DCインフラ",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -52776,12 +52853,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 15,
+    "score": 18,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
-     "200日線上向き +4"
+     "200日線上向き +4",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 15
    },
@@ -52795,7 +52873,7 @@
     "note": ""
    },
    "rec": {
-    "score": 15,
+    "score": 18,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -52832,6 +52910,7 @@
    "name": "Vistra",
    "sector": "エネルギー",
    "subSector": "電力・DCインフラ",
+   "rotSector": "公益",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -53572,6 +53651,7 @@
    "name": "Cameco",
    "sector": "エネルギー",
    "subSector": "エネルギー",
+   "rotSector": "エネルギー",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -54316,6 +54396,7 @@
    "name": "Kratos Defense",
    "sector": "宇宙・防衛",
    "subSector": "宇宙・防衛",
+   "rotSector": "資本財",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -54998,16 +55079,17 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 64,
-    "tier": "watch",
-    "tierLabel": "👀監視(質↓)",
+    "score": 67,
+    "tier": "consider",
+    "tierLabel": "🟦購入検討",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(9%位置) +18",
      "高値-58%の暴落水準 +20",
      "5年トレンド上向き +6",
      "買い場帯 +5",
-     "品質スコア26(低) -10"
+     "品質スコア26(低) -10",
+     "セクター資金流入 +3"
     ],
     "scorePrev": 64
    },
@@ -55021,9 +55103,9 @@
     "note": ""
    },
    "rec": {
-    "score": 64,
+    "score": 67,
     "stars": 4,
-    "level": "C",
+    "level": "B",
     "action": "hold",
     "expReturnPct": 72.2,
     "expDays": 8,
@@ -55060,6 +55142,7 @@
    "name": "Micron",
    "sector": "ハイテク",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
@@ -55800,6 +55883,7 @@
    "name": "ARM",
    "sector": "その他",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": "情報技術",
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -56541,6 +56625,7 @@
    "name": "IONQ",
    "sector": "その他",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": null,
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -57284,6 +57369,7 @@
    "name": "SNDK",
    "sector": "その他",
    "subSector": "AI・半導体/クラウド",
+   "rotSector": null,
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
@@ -58025,6 +58111,7 @@
    "name": "ビットコイン",
    "sector": "その他",
    "subSector": null,
+   "rotSector": null,
    "class": "crypto",
    "conviction": 5,
    "tradePolicy": "accumulate",
@@ -58667,20 +58754,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 63148.570312
+     "c": 63035.980469
     }
    ],
    "state": "DOWN",
-   "price": 63148.5703,
+   "price": 63035.9805,
    "top": 63946.3102,
    "bottom": 55341.715,
    "band": 258.1379,
-   "pctInRange": 90.7,
-   "distToBottomPct": 14.11,
-   "distToTopPct": 1.26,
-   "smaShort": 62146.3988,
-   "smaLong": 67046.322,
-   "smaTrend": 74826.8394,
+   "pctInRange": 89.4,
+   "distToBottomPct": 13.9,
+   "distToTopPct": 1.44,
+   "smaShort": 62140.7693,
+   "smaLong": 67044.0702,
+   "smaTrend": 74826.2764,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58688,15 +58775,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 50.1,
+   "rsi": 49.7,
    "atr": 2160.4012,
-   "atrPct": 3.42,
+   "atrPct": 3.43,
    "high52w": 114472.4453,
-   "drawdownPct": 44.8,
+   "drawdownPct": 44.9,
    "macroDriven": null,
    "topLong": 118887.8561,
    "bottomLong": 102493.9969,
-   "pctInRangeLong": -240.0,
+   "pctInRangeLong": -240.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -58707,7 +58794,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 53,
+    "score": 54,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -58728,7 +58815,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 53,
+    "score": 54,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -58745,6 +58832,7 @@
    "name": "イーサリアム",
    "sector": "その他",
    "subSector": null,
+   "rotSector": null,
    "class": "crypto",
    "conviction": 4,
    "tradePolicy": "accumulate",
@@ -59387,20 +59475,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 1783.98999
+     "c": 1776.959961
     }
    ],
    "state": "SELL",
-   "price": 1783.99,
+   "price": 1776.96,
    "top": 1543.759,
    "bottom": 1423.3592,
    "band": 3.612,
-   "pctInRange": 299.5,
-   "distToBottomPct": 25.34,
-   "distToTopPct": -13.47,
-   "smaShort": 1676.0163,
-   "smaLong": 1816.3888,
-   "smaTrend": 2268.101,
+   "pctInRange": 293.7,
+   "distToBottomPct": 24.84,
+   "distToTopPct": -13.12,
+   "smaShort": 1675.6648,
+   "smaLong": 1816.2482,
+   "smaTrend": 2268.0659,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -59408,15 +59496,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 57.5,
+   "rsi": 56.9,
    "atr": 79.9418,
-   "atrPct": 4.48,
+   "atrPct": 4.5,
    "high52w": 4157.9893,
-   "drawdownPct": 57.1,
+   "drawdownPct": 57.3,
    "macroDriven": null,
    "topLong": 3504.555,
    "bottomLong": 2982.2844,
-   "pctInRangeLong": -229.4,
+   "pctInRangeLong": -230.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -59465,6 +59553,7 @@
    "name": "金 (COMEX先物 GC=F)",
    "sector": "その他",
    "subSector": null,
+   "rotSector": null,
    "class": "metal",
    "conviction": 5,
    "tradePolicy": "accumulate",
@@ -60186,6 +60275,7 @@
    "name": "銀 (COMEX先物 SI=F)",
    "sector": "その他",
    "subSector": null,
+   "rotSector": null,
    "class": "metal",
    "conviction": 4,
    "tradePolicy": "accumulate",
@@ -60941,7 +61031,7 @@
      "state": "買い場",
      "emoji": "🟦",
      "valueTier": "-",
-     "valueScore": 42,
+     "valueScore": 45,
      "price": 359.91,
      "inWatchlist": true
     },
@@ -60953,7 +61043,7 @@
      "state": "下落中",
      "emoji": "🔻",
      "valueTier": "-",
-     "valueScore": 14,
+     "valueScore": 20,
      "price": 242.67,
      "inWatchlist": true
     },
@@ -61000,8 +61090,8 @@
      "action": "保有継続。",
      "state": "下落中",
      "emoji": "🔻",
-     "valueTier": "-",
-     "valueScore": 52,
+     "valueTier": "👀監視",
+     "valueScore": 55,
      "price": 300.53,
      "inWatchlist": true
     },
@@ -61013,7 +61103,7 @@
      "state": "上昇中",
      "emoji": "🟢",
      "valueTier": "-",
-     "valueScore": 19,
+     "valueScore": 16,
      "price": 159.99,
      "inWatchlist": true
     }
@@ -61106,8 +61196,8 @@
      "action": "保有継続。",
      "state": "下落中",
      "emoji": "🔻",
-     "valueTier": "-",
-     "valueScore": 52,
+     "valueTier": "👀監視",
+     "valueScore": 55,
      "price": 300.53,
      "inWatchlist": true
     }
@@ -61148,14 +61238,14 @@
    "type": "BUY_CONSIDER",
    "ticker": "NOC",
    "priority": 3,
-   "title": "🟦 NOC 購入検討 (スコア70)",
+   "title": "🟦 NOC 購入検討 (スコア73)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-28% +14"
   },
   {
    "type": "BUY_CONSIDER",
    "ticker": "CACI",
    "priority": 3,
-   "title": "🟦 CACI 購入検討 (スコア69)",
+   "title": "🟦 CACI 購入検討 (スコア72)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-24% +14"
   },
   {
@@ -61218,7 +61308,7 @@
    "type": "BUY_CONSIDER",
    "ticker": "HWKN",
    "priority": 3,
-   "title": "🟦 HWKN 購入検討 (スコア72)",
+   "title": "🟦 HWKN 購入検討 (スコア66)",
    "detail": "1年レンジ下限圏(4%位置) +24 / 5年レンジ下段(0%位置) +20 / 高値-25% +14"
   },
   {
@@ -61241,41 +61331,48 @@
    "priority": 3,
    "title": "🟦 CEG 購入検討 (スコア74)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-41%の暴落水準 +20"
+  },
+  {
+   "type": "BUY_CONSIDER",
+   "ticker": "KTOS",
+   "priority": 3,
+   "title": "🟦 KTOS 購入検討 (スコア67)",
+   "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(9%位置) +18 / 高値-58%の暴落水準 +20"
   }
  ],
  "plannerWeights": {
-  "AAPL": 1.29,
+  "AAPL": 1.28,
   "MSFT": 0.83,
-  "GOOGL": 3.15,
-  "AMZN": 1.99,
-  "AVGO": 3.14,
-  "NVDA": 3.27,
-  "META": 2.36,
-  "TSLA": 1.42,
+  "GOOGL": 3.18,
+  "AMZN": 2.04,
+  "AVGO": 3.13,
+  "NVDA": 3.26,
+  "META": 2.38,
+  "TSLA": 1.45,
   "AMD": 1.25,
-  "PLTR": 1.62,
-  "IBM": 1.36,
-  "ASML": 2.86,
-  "TSM": 2.88,
-  "MRVL": 1.92,
+  "PLTR": 1.61,
+  "IBM": 1.35,
+  "ASML": 2.85,
+  "TSM": 2.87,
+  "MRVL": 1.91,
   "CLMB": 0.8,
   "DELL": 1.3,
   "ADBE": 1.45,
   "AMAT": 2.0,
-  "LRCX": 2.05,
+  "LRCX": 2.04,
   "SNPS": 2.26,
   "MU": 2.0,
-  "ARM": 1.25,
-  "IONQ": 1.31,
+  "ARM": 1.24,
+  "IONQ": 1.3,
   "SNDK": 1.24,
   "XOM": 8.89,
   "CCJ": 6.11,
   "NEE": 1.29,
-  "ANET": 2.53,
-  "VRT": 2.91,
+  "ANET": 2.49,
+  "VRT": 2.94,
   "TLN": 2.04,
-  "CEG": 3.17,
-  "GEV": 1.78,
+  "CEG": 3.16,
+  "GEV": 1.8,
   "VST": 1.28,
   "LMT": 1.76,
   "RTX": 2.47,
@@ -61317,10 +61414,10 @@
   "PBI": 0.14,
   "XPEL": 0.15,
   "BKTI": 0.16,
-  "HWKN": 0.18,
+  "HWKN": 0.17,
   "GPGI": 0.16,
   "BMI": 0.17,
-  "ISRG": 0.69,
+  "ISRG": 0.7,
   "AXON": 0.32
  },
  "cycle": {
@@ -61342,49 +61439,77 @@
    }
   ],
   "sectors": {
-   "AI・半導体/クラウド": {
-    "rs63": 34.04,
-    "rs21": -4.7,
+   "情報技術": {
+    "rs63": 25.73,
+    "rs21": -4.28,
     "trend": "outflow"
+   },
+   "コミュニケーション": {
+    "rs63": -2.59,
+    "rs21": 0.37,
+    "trend": "neutral"
+   },
+   "一般消費財": {
+    "rs63": -14.38,
+    "rs21": 2.41,
+    "trend": "inflow"
    },
    "エネルギー": {
     "rs63": -26.45,
     "rs21": -12.23,
     "trend": "outflow"
    },
-   "電力・DCインフラ": {
-    "rs63": -4.48,
-    "rs21": -1.44,
+   "公益": {
+    "rs63": -15.87,
+    "rs21": -2.99,
     "trend": "neutral"
    },
-   "宇宙・防衛": {
-    "rs63": -14.68,
-    "rs21": -0.2,
-    "trend": "neutral"
-   },
-   "その他モート": {
-    "rs63": -6.39,
-    "rs21": 8.39,
+   "資本財": {
+    "rs63": -5.75,
+    "rs21": 7.16,
     "trend": "inflow"
+   },
+   "ヘルスケア": {
+    "rs63": -4.32,
+    "rs21": 12.71,
+    "trend": "inflow"
+   },
+   "金融": {
+    "rs63": -3.71,
+    "rs21": 7.93,
+    "trend": "inflow"
+   },
+   "生活必需品": {
+    "rs63": 1.01,
+    "rs21": 30.86,
+    "trend": "inflow"
+   },
+   "素材": {
+    "rs63": -25.16,
+    "rs21": -10.1,
+    "trend": "outflow"
+   },
+   "AI・半導体/クラウド": {
+    "rs63": 109.85,
+    "rs21": -12.74,
+    "trend": "outflow"
    }
   },
   "riskOff": {
-   "score": 20,
-   "factors": [
-    "ディフェンシブ優位(グロースから資金退避)"
-   ]
+   "score": 0,
+   "factors": []
   },
   "actions": [
    {
     "icon": "🔄",
     "title": "セクターローテーションの兆候",
-    "note": "資金流入の兆候: その他モート / 流出の兆候: AI・半導体/クラウド・エネルギー。→ 流出セクターの高値圏銘柄は部分利確を検討、流入セクターの押し目(Tier65+)を優先検討",
+    "note": "資金流入の兆候: 一般消費財・資本財・ヘルスケア・金融・生活必需品 / 流出の兆候: 情報技術・エネルギー・素材・AI・半導体/クラウド。→ 流出セクターの高値圏銘柄は部分利確を検討、流入セクターの押し目(Tier65+)を優先検討",
     "timing": "目安: この兆候が2〜3週間継続したら本格シフト(1週間だけの動きは追わない)"
    },
    {
     "icon": "🟢",
     "title": "通常運転",
-    "note": "リスクオフ度20/100。シグナル通りの運用で問題なし",
+    "note": "リスクオフ度0/100。シグナル通りの運用で問題なし",
     "timing": ""
    }
   ],
@@ -61443,8 +61568,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 63149,
-    "ddFromPeakPct": -49.4
+    "currentPrice": 63036,
+    "ddFromPeakPct": -49.5
    },
    "action": "現在は半減期+26.5ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   }
@@ -61481,7 +61606,7 @@
     "tier": "👀監視",
     "sec": "エネルギー",
     "flow": "outflow",
-    "wPct": 6.8
+    "wPct": 6.4
    },
    {
     "ticker": "CCJ",
@@ -61490,16 +61615,52 @@
     "tier": "-",
     "sec": "エネルギー",
     "flow": "outflow",
-    "wPct": 5.5
+    "wPct": 5.2
    },
    {
     "ticker": "VRT",
     "conviction": 5,
     "q": 72,
-    "tier": "-",
+    "tier": "👀監視",
     "sec": "電力・DCインフラ",
+    "flow": "inflow",
+    "wPct": 4.1
+   },
+   {
+    "ticker": "GOOGL",
+    "conviction": 5,
+    "q": 75,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
     "flow": "neutral",
+    "wPct": 3.7
+   },
+   {
+    "ticker": "NOC",
+    "conviction": 4,
+    "q": 51,
+    "tier": "🟦購入検討",
+    "sec": "宇宙・防衛",
+    "flow": "inflow",
     "wPct": 3.6
+   },
+   {
+    "ticker": "RKLB",
+    "conviction": 5,
+    "q": 18,
+    "tier": "-",
+    "sec": "宇宙・防衛",
+    "flow": "inflow",
+    "wPct": 3.5
+   },
+   {
+    "ticker": "RTX",
+    "conviction": 4,
+    "q": 46,
+    "tier": "-",
+    "sec": "宇宙・防衛",
+    "flow": "inflow",
+    "wPct": 3.1
    },
    {
     "ticker": "NVDA",
@@ -61508,43 +61669,25 @@
     "tier": "👀監視",
     "sec": "AI・半導体/クラウド",
     "flow": "outflow",
-    "wPct": 3.2
+    "wPct": 3.0
    },
    {
-    "ticker": "NOC",
+    "ticker": "KTOS",
     "conviction": 4,
-    "q": 51,
+    "q": 26,
     "tier": "🟦購入検討",
     "sec": "宇宙・防衛",
-    "flow": "neutral",
-    "wPct": 3.2
+    "flow": "inflow",
+    "wPct": 3.0
    },
    {
-    "ticker": "GOOGL",
-    "conviction": 5,
-    "q": 75,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "outflow",
-    "wPct": 3.1
-   },
-   {
-    "ticker": "RKLB",
-    "conviction": 5,
-    "q": 18,
-    "tier": "-",
-    "sec": "宇宙・防衛",
-    "flow": "neutral",
-    "wPct": 3.1
-   },
-   {
-    "ticker": "ANET",
-    "conviction": 5,
+    "ticker": "META",
+    "conviction": 4,
     "q": 74,
-    "tier": "-",
-    "sec": "電力・DCインフラ",
+    "tier": "👀監視",
+    "sec": "AI・半導体/クラウド",
     "flow": "neutral",
-    "wPct": 3.1
+    "wPct": 2.8
    },
    {
     "ticker": "CEG",
@@ -61553,33 +61696,6 @@
     "tier": "🟦購入検討(質↓)",
     "sec": "電力・DCインフラ",
     "flow": "neutral",
-    "wPct": 3.0
-   },
-   {
-    "ticker": "AVGO",
-    "conviction": 5,
-    "q": 55,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "outflow",
-    "wPct": 2.8
-   },
-   {
-    "ticker": "RTX",
-    "conviction": 4,
-    "q": 46,
-    "tier": "-",
-    "sec": "宇宙・防衛",
-    "flow": "neutral",
-    "wPct": 2.8
-   },
-   {
-    "ticker": "ASML",
-    "conviction": 5,
-    "q": 72,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "outflow",
     "wPct": 2.8
    },
    {
@@ -61589,25 +61705,34 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "outflow",
-    "wPct": 2.8
-   },
-   {
-    "ticker": "KTOS",
-    "conviction": 4,
-    "q": 26,
-    "tier": "👀監視(質↓)",
-    "sec": "宇宙・防衛",
-    "flow": "neutral",
     "wPct": 2.7
    },
    {
-    "ticker": "META",
+    "ticker": "AMZN",
     "conviction": 4,
-    "q": 74,
-    "tier": "👀監視",
+    "q": 64,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "inflow",
+    "wPct": 2.6
+   },
+   {
+    "ticker": "AVGO",
+    "conviction": 5,
+    "q": 55,
+    "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "outflow",
-    "wPct": 2.3
+    "wPct": 2.6
+   },
+   {
+    "ticker": "ASML",
+    "conviction": 5,
+    "q": 72,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "outflow",
+    "wPct": 2.6
    }
   ],
   "note": "基準PFにサイクル状況を自動上乗せした現時点の完全版。毎朝再計算。機械的計算値であり保証ではない"
