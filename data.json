@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-04T17:11:08.307761+00:00",
- "updatedJST": "2026-07-05 02:11 JST",
+ "updated": "2026-07-04T17:39:33.869864+00:00",
+ "updatedJST": "2026-07-05 02:39 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -125,7 +125,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-05 02:11 JST"
+  "fetchedAt": "2026-07-05 02:39 JST"
  },
  "instruments": [
   {
@@ -57120,20 +57120,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 62858.238281
+     "c": 63115.351562
     }
    ],
    "state": "DOWN",
-   "price": 62858.2383,
+   "price": 63115.3516,
    "top": 63946.3102,
    "bottom": 55341.715,
    "band": 258.1379,
-   "pctInRange": 87.4,
-   "distToBottomPct": 13.58,
-   "distToTopPct": 1.73,
-   "smaShort": 62131.8822,
-   "smaLong": 67040.5154,
-   "smaTrend": 74825.3877,
+   "pctInRange": 90.3,
+   "distToBottomPct": 14.05,
+   "distToTopPct": 1.32,
+   "smaShort": 62144.7379,
+   "smaLong": 67045.6577,
+   "smaTrend": 74826.6733,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -57141,15 +57141,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 49.0,
-   "atr": 2127.0915,
-   "atrPct": 3.38,
+   "rsi": 50.0,
+   "atr": 2138.3309,
+   "atrPct": 3.39,
    "high52w": 114472.4453,
-   "drawdownPct": 45.1,
+   "drawdownPct": 44.9,
    "macroDriven": null,
    "topLong": 118887.8561,
    "bottomLong": 102493.9969,
-   "pctInRangeLong": -241.8,
+   "pctInRangeLong": -240.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -57160,7 +57160,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 49,
+    "score": 48,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -57180,7 +57180,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 49,
+    "score": 48,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -57839,20 +57839,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 1780.459961
+     "c": 1789.5
     }
    ],
    "state": "SELL",
-   "price": 1780.46,
+   "price": 1789.5,
    "top": 1543.759,
    "bottom": 1423.3592,
    "band": 3.612,
-   "pctInRange": 296.6,
-   "distToBottomPct": 25.09,
-   "distToTopPct": -13.29,
-   "smaShort": 1675.8398,
-   "smaLong": 1816.3182,
-   "smaTrend": 2268.0834,
+   "pctInRange": 304.1,
+   "distToBottomPct": 25.72,
+   "distToTopPct": -13.73,
+   "smaShort": 1676.2918,
+   "smaLong": 1816.499,
+   "smaTrend": 2268.1286,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -57860,15 +57860,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 57.2,
+   "rsi": 57.9,
    "atr": 79.3291,
-   "atrPct": 4.46,
+   "atrPct": 4.43,
    "high52w": 4157.9893,
-   "drawdownPct": 57.2,
+   "drawdownPct": 57.0,
    "macroDriven": null,
    "topLong": 3504.555,
    "bottomLong": 2982.2844,
-   "pctInRangeLong": -230.1,
+   "pctInRangeLong": -228.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -59589,34 +59589,6 @@
    "detail": "デッドクロス"
   },
   {
-   "type": "THESIS_REVIEW",
-   "ticker": "CLMB",
-   "priority": 2,
-   "title": "🧐 CLMB テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "BUR",
-   "priority": 2,
-   "title": "🧐 BUR テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス・FCF赤字"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "HWKN",
-   "priority": 2,
-   "title": "🧐 HWKN テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
-   "type": "THESIS_REVIEW",
-   "ticker": "BMI",
-   "priority": 2,
-   "title": "🧐 BMI テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
-  },
-  {
    "type": "BUY_CONSIDER",
    "ticker": "PLTR",
    "priority": 3,
@@ -59785,6 +59757,92 @@
   "BMI": 0.17,
   "ISRG": 0.7,
   "AXON": 0.32
+ },
+ "cycle": {
+  "calendar": [
+   {
+    "type": "presidential",
+    "label": "大統領選サイクル: 中間選挙年",
+    "note": "4年サイクルで歴史的に最弱の年。年央〜秋に底を作り、中間選挙通過後〜翌年(選挙前年)は最強区間に入りやすい"
+   },
+   {
+    "type": "presidential",
+    "label": "中間選挙カウントダウン",
+    "note": "中間選挙まで約122日。統計的には選挙前の調整がValueの仕込み場、通過後は上昇しやすい。選挙前に戦略キャッシュを厚めに"
+   },
+   {
+    "type": "seasonal",
+    "label": "7月の季節性",
+    "note": "7月: 夏の反発が出やすい月。ただし後半に向け利確準備"
+   }
+  ],
+  "sectors": {
+   "AI・半導体/クラウド": {
+    "rs63": 27.98,
+    "rs21": -4.09,
+    "trend": "outflow"
+   },
+   "エネルギー": {
+    "rs63": -26.45,
+    "rs21": -12.23,
+    "trend": "outflow"
+   },
+   "電力・DCインフラ": {
+    "rs63": -4.48,
+    "rs21": -1.44,
+    "trend": "neutral"
+   },
+   "宇宙・防衛": {
+    "rs63": -14.68,
+    "rs21": -0.2,
+    "trend": "neutral"
+   },
+   "その他モート": {
+    "rs63": -6.39,
+    "rs21": 8.39,
+    "trend": "inflow"
+   }
+  },
+  "riskOff": {
+   "score": 20,
+   "factors": [
+    "ディフェンシブ優位(グロースから資金退避)"
+   ]
+  },
+  "actions": [
+   {
+    "icon": "🔄",
+    "title": "セクターローテーションの兆候",
+    "note": "資金流入の兆候: その他モート / 流出の兆候: AI・半導体/クラウド・エネルギー。→ 流出セクターの高値圏銘柄は部分利確を検討、流入セクターの押し目(Tier65+)を優先検討",
+    "timing": "目安: この兆候が2〜3週間継続したら本格シフト(1週間だけの動きは追わない)"
+   },
+   {
+    "icon": "🟢",
+    "title": "通常運転",
+    "note": "リスクオフ度20/100。シグナル通りの運用で問題なし",
+    "timing": ""
+   }
+  ],
+  "timeline": [
+   {
+    "label": "薄商い・急落警戒期入り",
+    "date": "2026-08-01",
+    "weeksTo": 4,
+    "prep": "利確予定の整理と現金比率+5ptの準備を済ませる"
+   },
+   {
+    "label": "歴史的最弱月(9月)入り",
+    "date": "2026-09-01",
+    "weeksTo": 8,
+    "prep": "新規買いを最小化し、押し目リスト(Tier65+候補)を準備しておく"
+   },
+   {
+    "label": "底形成期入り",
+    "date": "2026-10-01",
+    "weeksTo": 13,
+    "prep": "Value出動リストを最終化。戦略キャッシュを満タンに"
+   }
+  ]
  },
  "discovery": [
   {
