@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-03T22:01:10.193151+00:00",
- "updatedJST": "2026-07-04 07:01 JST",
+ "updated": "2026-07-04T05:34:51.005460+00:00",
+ "updatedJST": "2026-07-04 14:34 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -101,8 +101,8 @@
   "silver": 1
  },
  "vix": {
-  "value": 15.81,
-  "changePct": -2.11,
+  "value": 16.15,
+  "changePct": -2.65,
   "level": null,
   "reason": null
  },
@@ -57857,21 +57857,21 @@
      "c": 61485.300781
     },
     {
-     "d": "2026-07-03",
-     "c": 62665.679688
+     "d": "2026-07-04",
+     "c": 62457.199219
     }
    ],
    "state": "DOWN",
-   "price": 62665.6797,
+   "price": 62457.1992,
    "top": 64095.4529,
    "bottom": 55488.0095,
    "band": 258.2233,
-   "pctInRange": 83.4,
-   "distToBottomPct": 12.94,
-   "distToTopPct": 2.28,
-   "smaShort": 62280.5643,
-   "smaLong": 67367.0938,
-   "smaTrend": 74950.9238,
+   "pctInRange": 81.0,
+   "distToBottomPct": 12.56,
+   "distToTopPct": 2.62,
+   "smaShort": 62270.1402,
+   "smaLong": 67362.9242,
+   "smaTrend": 74949.8814,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -57879,15 +57879,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 48.3,
-   "atr": 2233.3405,
-   "atrPct": 3.56,
+   "rsi": 47.5,
+   "atr": 2219.1736,
+   "atrPct": 3.55,
    "high52w": 114472.4453,
-   "drawdownPct": 45.3,
+   "drawdownPct": 45.4,
    "macroDriven": null,
    "topLong": 118812.871,
    "bottomLong": 102432.5431,
-   "pctInRangeLong": -242.8,
+   "pctInRangeLong": -244.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -57898,7 +57898,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 50,
+    "score": 51,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -57906,7 +57906,7 @@
      "高値-45%の暴落水準 +20",
      "5年トレンド上向き +6"
     ],
-    "scorePrev": 52
+    "scorePrev": 50
    },
    "momentum": {
     "signal": "none",
@@ -57918,7 +57918,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 50,
+    "score": 51,
     "stars": 3,
     "level": "C",
     "action": "hold",
@@ -58576,21 +58576,21 @@
      "c": 1698.169434
     },
     {
-     "d": "2026-07-03",
-     "c": 1760.98999
+     "d": "2026-07-04",
+     "c": 1754.810059
     }
    ],
    "state": "SELL",
-   "price": 1760.99,
+   "price": 1754.8101,
    "top": 1552.0098,
    "bottom": 1429.9099,
    "band": 3.663,
-   "pctInRange": 271.2,
-   "distToBottomPct": 23.15,
-   "distToTopPct": -11.87,
-   "smaShort": 1673.271,
-   "smaLong": 1825.265,
-   "smaTrend": 2274.0243,
+   "pctInRange": 266.1,
+   "distToBottomPct": 22.72,
+   "distToTopPct": -11.56,
+   "smaShort": 1672.962,
+   "smaLong": 1825.1414,
+   "smaTrend": 2273.9934,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58598,15 +58598,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 55.5,
-   "atr": 81.1183,
-   "atrPct": 4.61,
+   "rsi": 55.0,
+   "atr": 80.3963,
+   "atrPct": 4.58,
    "high52w": 4157.9893,
-   "drawdownPct": 57.6,
+   "drawdownPct": 57.8,
    "macroDriven": null,
    "topLong": 3503.486,
    "bottomLong": 2981.4775,
-   "pctInRangeLong": -233.8,
+   "pctInRangeLong": -235.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -60120,7 +60120,7 @@
    },
    "lockupDays": 180,
    "phaseLabel": "S-1機密提出済",
-   "daysToListing": 104,
+   "daysToListing": 103,
    "beneficiaries": [
     {
      "ticker": "GOOGL",
@@ -60236,7 +60236,7 @@
    },
    "lockupDays": 180,
    "phaseLabel": "S-1機密提出済",
-   "daysToListing": 271,
+   "daysToListing": 270,
    "beneficiaries": [
     {
      "ticker": "MSFT",
