@@ -1,18 +1,40 @@
 {
-  "generated": "2026-06-29T11:23:26.470652+00:00",
-  "generatedJST": "2026-06-29 20:23 JST",
-  "settings": {
-    "lookbackDays": 252,
-    "bandPctOfRange": 0.03,
-    "maShort": 50,
-    "maLong": 200,
-    "breakoutLookbackDays": 90,
-    "vixWarnPct": 20,
-    "vixUrgentPct": 50,
-    "rebalanceThresholdPct": 5,
-    "hitThresholdPct": 3,
-    "minScoreToAlert": 0
+ "latest": {
+  "date": "2026-07-05 01:53 JST",
+  "valueHitRate": null,
+  "momentumHitRate": null,
+  "valueResults": {
+   "hit": 0,
+   "miss": 0,
+   "open": 2
   },
-  "note": "予測データ蓄積中（シグナルが想定期間ぶん経過すると的中率を計算します）",
-  "history": []
+  "momentumResults": {
+   "hit": 0,
+   "miss": 0,
+   "open": 0
+  },
+  "totalSignals": 2,
+  "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
+  "adjustments": []
+ },
+ "history": [
+  {
+   "date": "2026-07-05 01:53 JST",
+   "valueHitRate": null,
+   "momentumHitRate": null,
+   "valueResults": {
+    "hit": 0,
+    "miss": 0,
+    "open": 2
+   },
+   "momentumResults": {
+    "hit": 0,
+    "miss": 0,
+    "open": 0
+   },
+   "totalSignals": 2,
+   "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
+   "adjustments": []
+  }
+ ]
 }
