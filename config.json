@@ -919,6 +919,15 @@
       "tradePolicy": "hold",
       "conviction": 3,
       "stooq": "ionq.us"
+    },
+    {
+      "ticker": "SNDK",
+      "name": "SNDK",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "sndk.us"
     }
   ],
   "discovery": [
