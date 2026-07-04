@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-04 23:19 JST",
+ "updated": "2026-07-05 00:52 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -219,27 +219,6 @@
     "fcfMargin": 0.0711,
     "trailPE": 20.4612,
     "psr": 1.7103,
-    "fyEnd": "2025-12-31"
-   }
-  },
-  "CVX": {
-   "score": 42,
-   "parts": {
-    "profit": 6.6,
-    "growth": 0.1,
-    "health": 23.0,
-    "valuation": 12
-   },
-   "warnings": [
-    "売上成長マイナス"
-   ],
-   "metrics": {
-    "roe": 0.066,
-    "revGrowth": -0.0464,
-    "epsGrowth": -0.3036,
-    "fcfMargin": 0.184,
-    "trailPE": 25.5204,
-    "psr": 1.8271,
     "fyEnd": "2025-12-31"
    }
   },
