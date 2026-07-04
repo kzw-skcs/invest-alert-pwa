@@ -302,6 +302,81 @@ def optimize_allocation(sleeve_daily, names):
     return out
 
 
+# ---------------------------------------------------------------- サブセクター最適化
+
+def optimize_sector_sleeves(stock_data, cfg):
+    """個別株スリーブ内のサブセクター配分を実測データで最適化。
+    各サブセクター=構成銘柄の等ウェイト買い持ち日次リターン。5%刻みグリッド。"""
+    if np is None:
+        return None
+    sub_map = {s["ticker"]: (s.get("subSector") or "その他モート") for s in cfg["stocks"]}
+    targets = cfg["portfolio"].get("stockSectorTargets", {})
+    secs = list(targets.keys()) or sorted(set(sub_map.values()))
+    daily = {}
+    for tk, (sig, closes, dates) in stock_data.items():
+        sec = sub_map.get(tk)
+        if sec not in secs:
+            continue
+        for i in range(1, len(closes)):
+            daily.setdefault(dates[i], {}).setdefault(sec, []).append(closes[i] / closes[i - 1] - 1)
+    common = sorted(d for d, m in daily.items() if len(m) == len(secs))
+    if len(common) < 250:
+        return {"error": f"共通営業日不足({len(common)}日)"}
+    R = np.array([[sum(daily[d][s]) / len(daily[d][s]) for s in secs] for d in common])
+    T, K = R.shape
+    yrs = T / 252
+
+    def stats(w):
+        p = R @ w
+        eq = np.cumprod(1 + p)
+        dd = float((1 - eq / np.maximum.accumulate(eq)).max())
+        return {"cagrPct": round((eq[-1] ** (1 / yrs) - 1) * 100, 1),
+                "maxDDPct": round(dd * 100, 1),
+                "sharpe": round(float(p.mean() / (p.std() + 1e-12) * math.sqrt(252)), 2)}
+
+    combos = []
+    def rec_(i, remaining, cur):
+        if i == K - 1:
+            combos.append(cur + [remaining]); return
+        for w in range(0, remaining + 1, GRID_STEP):
+            rec_(i + 1, remaining - w, cur + [w])
+    rec_(0, 100, [])
+    W = np.array(combos, dtype=np.float64) / 100.0
+    C = len(W)
+    cagr = np.empty(C); dd = np.empty(C); sharpe = np.empty(C)
+    for c0 in range(0, C, 4000):
+        Wc = W[c0:c0 + len(W[c0:c0 + 4000])]
+        port = R @ Wc.T
+        eq = np.cumprod(1 + port, axis=0)
+        peak = np.maximum.accumulate(eq, axis=0)
+        cagr[c0:c0 + len(Wc)] = eq[-1] ** (1 / yrs) - 1
+        dd[c0:c0 + len(Wc)] = (1 - eq / peak).max(axis=0)
+        sharpe[c0:c0 + len(Wc)] = port.mean(axis=0) / (port.std(axis=0) + 1e-12) * math.sqrt(252)
+
+    def pack(idx, label):
+        return {"label": label,
+                "weightsPct": {secs[k]: int(round(W[idx][k] * 100)) for k in range(K) if W[idx][k] > 0},
+                "cagrPct": round(float(cagr[idx]) * 100, 1),
+                "maxDDPct": round(float(dd[idx]) * 100, 1),
+                "sharpe": round(float(sharpe[idx]), 2)}
+    out = [pack(int(cagr.argmax()), "最大CAGR(過剰適合注意)"),
+           pack(int(sharpe.argmax()), "最大シャープ")]
+    mask = dd <= 0.35
+    if mask.any():
+        out.append(pack(int(np.where(mask, cagr, -1).argmax()), "最大CAGR(DD35%以内)"))
+    cur_w = np.array([targets.get(s, 0) / 100 for s in secs])
+    if cur_w.sum() > 0.99:
+        cur = stats(cur_w)
+        out.append({"label": "現行設定", "weightsPct": {s: targets.get(s, 0) for s in secs if targets.get(s)},
+                    **cur})
+    sleeve_stats = {}
+    for k, s in enumerate(secs):
+        w = np.zeros(K); w[k] = 1.0
+        sleeve_stats[s] = stats(w)
+    return {"period": {"start": common[0], "end": common[-1], "days": T},
+            "sleeveStats": sleeve_stats, "allocations": out}
+
+
 # ---------------------------------------------------------------- 自動解釈
 
 def build_interpretation(value_results, mom, allocations, names):
@@ -439,7 +514,20 @@ def main():
         sleeve_stats[nm] = stats_from_series([sleeve_daily[d][i] for d in common])
     allocations = optimize_allocation(sleeve_daily, names) if common else {"error": "共通期間なし"}
 
+    print("サブセクター配分 最適化中…")
+    sector_opt = optimize_sector_sleeves(stock_data, cfg)
     interpretation = build_interpretation(value_results, mom_results, allocations, names)
+    if sector_opt and not sector_opt.get("error"):
+        best = sector_opt["allocations"]
+        sh = next((a for a in best if a["label"] == "最大シャープ"), None)
+        cur = next((a for a in best if a["label"] == "現行設定"), None)
+        if sh:
+            interpretation.append(
+                "個別株スリーブ(サブセクター)の実測: "
+                + " / ".join(f"{s} 年率{v['cagrPct']}%(DD{v['maxDDPct']}%)" for s, v in sector_opt["sleeveStats"].items())
+                + f"。最大シャープ配分は {sh['weightsPct']}(CAGR{sh['cagrPct']}%・Sharpe{sh['sharpe']})"
+                + (f"、現行設定は CAGR{cur['cagrPct']}%・Sharpe{cur['sharpe']}" if cur else "")
+                + "。※現行の比率は『リターン最大化解』ではなく独占性・分散重視の設計値。過去最適はバックミラーである点に注意。")
     # 資産別×Tierの自動解釈
     ASSET_JP = {"gold": "金", "silver": "銀", "btc": "BTC", "eth": "ETH"}
     asset_lines = []
@@ -481,6 +569,7 @@ def main():
         "assetTiersHold": asset_tiers_hold,
         "momentum": mom_results,
         "momentumNoTP": mom_notp_results,
+        "sectorOpt": sector_opt,
         "sleeveStats": sleeve_stats,
         "allocations": allocations,
         "assumptions": ("Value: スコア閾値上抜けで買い→チャネル天井 or 120営業日で売り / "
