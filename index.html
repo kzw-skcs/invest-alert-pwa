@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f172a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>投資シグナル v2</title>
+<title>投資シグナル v3</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <style>
@@ -104,7 +104,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 </head>
 <body>
 <header>
-  <h1>📈 投資シグナル <span style="font-size:10px;color:var(--violet);font-weight:800">v2</span></h1>
+  <h1>📈 投資シグナル <span style="font-size:10px;color:var(--violet);font-weight:800">v3</span></h1>
   <span class="upd" id="updated">読み込み中…</span>
   <button class="btn sm" onclick="loadData(true)">🔄</button>
 </header>
@@ -339,7 +339,9 @@ let HOLD = LS.get('iv2.holdings', { tokutei: {}, nisa: {} });
 let CASH = LS.get('iv2.cash', { tokutei: 0, nisa: 0 });
 let CUSTOM = LS.get('iv2.custom', []);   // アプリで追加した銘柄
 let HIDDEN = LS.get('iv2.hidden', []);
-const saveAll = () => { LS.set('iv2.holdings', HOLD); LS.set('iv2.cash', CASH); LS.set('iv2.custom', CUSTOM); LS.set('iv2.hidden', HIDDEN); };
+let OVERRIDES = LS.get('iv2.overrides', {});  // ticker -> {tradePolicy} ユーザー設定(data.json再読込で消えない)
+let METALPX = LS.get('iv2.metalpx', {});      // {gold,silver} 現物の現在単価(円/g)手動上書き
+const saveAll = () => { LS.set('iv2.holdings', HOLD); LS.set('iv2.cash', CASH); LS.set('iv2.custom', CUSTOM); LS.set('iv2.hidden', HIDDEN); LS.set('iv2.overrides', OVERRIDES); LS.set('iv2.metalpx', METALPX); };
 
 const fmtY = (v) => v == null ? '—' : '¥' + Math.round(v).toLocaleString('ja-JP');
 const fmtN = (v, d = 2) => v == null ? '—' : Number(v).toLocaleString('ja-JP', { maximumFractionDigits: d });
@@ -361,6 +363,7 @@ async function loadData(manual) {
       }
     }
     migrateJitsubutsu();
+    applyOverrides();
     $('#updated').textContent = DATA.updatedJST || '';
     renderAll();
     if (manual) toast('データを更新しました');
@@ -687,12 +690,22 @@ function openChart(tk, klass) {
 function closeModal() { $('#chart-modal').classList.remove('act'); $('#chart-frame').src = 'about:blank'; $('#gen-modal').classList.remove('act'); }
 
 /* ---------------- 保有・損益 ---------------- */
-function instPriceJpy(inst, unit) {
-  const fx = usdjpy(); if (!fx || inst.price == null) return null;
-  let p = inst.price * fx;
-  if (inst.class === 'metal' && unit === 'g') p = p / OZ_G;
-  return p;
+function metalPxPerGram(key) {
+  // 現物金銀の現在単価(円/g)。優先順: 手動上書き > 日本マテリアル買取価格 > COMEX先物換算
+  if (METALPX[key] && METALPX[key] > 0) return { px: METALPX[key], manual: true, src: '手動' };
+  const mj = DATA.metalJpy;
+  if (mj && mj[key] && mj[key].buy) return { px: mj[key].buy, manual: false, src: `日本マテリアル買取(${mj.fetchedAt || ''})` };
+  const fx = usdjpy(); const inst = (DATA.instruments || []).find((i) => (i.key || i.ticker) === key);
+  if (!fx || !inst || inst.price == null) return { px: null, manual: false, src: '' };
+  return { px: inst.price * fx / OZ_G, manual: false, src: 'COMEX換算' };
 }
+function instPriceJpy(inst, unit) {
+  const fx = usdjpy(); if (inst.price == null) return null;
+  if (inst.class === 'metal') { const m = metalPxPerGram(inst.key || inst.ticker); return m.px; }  // 円/g
+  if (!fx) return null;
+  return inst.price * fx;
+}
+function setMetalPx(k, v) { const n = Number(v) || 0; if (n > 0) METALPX[k] = n; else delete METALPX[k]; saveAll(); renderAssets(); }
 const JITSU_KEYS = ['btc', 'eth', 'gold', 'silver'];
 function migrateJitsubutsu() {
   HOLD.jitsubutsu = HOLD.jitsubutsu || {};
@@ -816,20 +829,37 @@ function lotManagerHTML(k, name) {
   const lots = LOTS[k] || [];
   const h = (HOLD.jitsubutsu || {})[k];
   const rows = lots.map((l, idx) => `<tr><td>${l.d}</td><td style="text-align:right">${fmtN(l.qty, 3)}${l.unit}</td>
-    <td style="text-align:right">${fmtY(l.price)}/${l.unit}</td>
+    <td style="text-align:right">${fmtY(l.price)}/${l.unit}</td><td style="text-align:right">${fmtY(l.qty * l.price)}</td>
     <td><button class="btn sm" onclick="delLot('${k}',${idx})">×</button></td></tr>`).join('');
+  const m = metalPxPerGram(k);
+  let plBlock = '';
+  if (h && h.qty && m.px) {
+    const totalCost = h.qty * h.cost, curVal = h.qty * m.px, pl = curVal - totalCost;
+    plBlock = `<div class="tiny" style="margin-top:6px;line-height:1.7">
+      合計 <b>${fmtN(h.qty, 2)}g</b> / 平均取得 <b>${fmtY(h.cost)}/g</b><br>
+      取得総額 <b>${fmtY(totalCost)}</b> → 現在評価 <b>${fmtY(curVal)}</b>(現在単価 ${fmtY(m.px)}/g・${m.src})<br>
+      損益 <b class="${cls(pl)}">${fmtY(pl)} (${fmtP((curVal / totalCost - 1) * 100)})</b></div>`;
+  } else if (h && h.qty) {
+    plBlock = `<div class="tiny" style="margin-top:6px">合計 <b>${fmtN(h.qty, 2)}g</b> / 平均取得 <b>${fmtY(h.cost)}/g</b>(現在単価未取得)</div>`;
+  } else {
+    plBlock = '<div class="tiny" style="margin-top:6px">購入記録を追加すると平均取得単価と損益を計算します</div>';
+  }
   return `<div style="border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:10px">
     <b style="font-size:13px">${name} — 購入履歴(現物)</b>
-    ${h && h.qty ? `<div class="tiny">合計 <b>${fmtN(h.qty, 2)}g</b> / 平均取得単価 <b>${fmtY(h.cost)}/g</b></div>` : '<div class="tiny">購入記録を追加すると平均取得単価を自動計算します</div>'}
-    ${rows ? `<table style="margin-top:6px"><tr><th>購入日</th><th style="text-align:right">数量</th><th style="text-align:right">単価</th><th></th></tr>${rows}</table>` : ''}
+    ${plBlock}
+    ${rows ? `<table style="margin-top:6px"><tr><th>購入日</th><th style="text-align:right">数量</th><th style="text-align:right">単価</th><th style="text-align:right">金額</th><th></th></tr>${rows}</table>` : ''}
     <div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">
       <input type="date" id="lot-${k}-d" style="width:130px">
       <input type="number" id="lot-${k}-q" placeholder="数量" inputmode="decimal" style="width:70px">
       <select id="lot-${k}-u" style="width:60px"><option value="g">g</option><option value="oz">oz</option></select>
-      <input type="number" id="lot-${k}-p" placeholder="単価(円/1g)" inputmode="numeric" style="flex:1;min-width:110px">
+      <input type="number" id="lot-${k}-p" placeholder="単価(円/1単位)" inputmode="numeric" style="flex:1;min-width:110px">
       <button class="btn sm pri" onclick="addLot('${k}')">＋追加</button>
     </div>
-    <div class="tiny" style="margin-top:4px">💡購入時のスクショをClaudeに送れば、読み取ってこの入力値を作ってもらえます。</div>
+    <div class="row" style="gap:6px;margin-top:6px;align-items:center">
+      <span class="tiny" style="width:120px">現在単価(円/g)手動:</span>
+      <input type="number" placeholder="店頭価格 例 15600" value="${METALPX[k] || ''}" inputmode="numeric" style="flex:1" onchange="setMetalPx('${k}',this.value)">
+    </div>
+    <div class="tiny" style="margin-top:4px">💡現在単価は毎朝、日本マテリアルの店頭買取価格を自動取得します。手動入力すればそれが最優先(空欄に戻すと自動に復帰)。自動取得失敗時はCOMEX先物換算。購入スクショをClaudeに送れば入力値を作成します。</div>
   </div>`;
 }
 
@@ -1137,13 +1167,21 @@ function removePending(tk) {
   saveAll(); renderWatchlist(); renderDiscovery();
   toast(`${tk} の追加を取り消しました(次回同期で反映)`);
 }
+function applyOverrides() {
+  if (!DATA || !DATA.instruments) return;
+  for (const inst of DATA.instruments) {
+    const o = OVERRIDES[inst.ticker];
+    if (o && o.tradePolicy) inst.tradePolicy = o.tradePolicy;
+  }
+}
 function togglePolicy(tk, isTrade) {
+  const pol = isTrade ? 'trade' : 'hold';
   const inst = DATA.instruments.find((i) => i.ticker === tk);
-  if (inst) inst.tradePolicy = isTrade ? 'trade' : 'hold';
+  if (inst) inst.tradePolicy = pol;
+  OVERRIDES[tk] = Object.assign(OVERRIDES[tk] || {}, { tradePolicy: pol });  // 永続化(再読込で消えない)
   const c = CUSTOM.find((s) => s.ticker === tk);
-  if (c) c.tradePolicy = isTrade ? 'trade' : 'hold';
-  else CUSTOM.push({ ticker: tk, tradePolicy: isTrade ? 'trade' : 'hold' });
-  saveAll(); renderAll(); toast(`${tk} を${isTrade ? '短期売買' : '長期保有'}に変更(要同期)`);
+  if (c) c.tradePolicy = pol;
+  saveAll(); renderAll(); toast(`${tk} を${isTrade ? '短期売買' : '長期保有'}に変更(この設定は保持されます)`);
 }
 function hideTicker(tk) {
   if (!confirm(tk + ' を非表示にしますか?')) return;

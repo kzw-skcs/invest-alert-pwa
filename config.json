@@ -238,7 +238,7 @@
       "name": "AMD",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 3
     },
     {
@@ -247,7 +247,7 @@
       "name": "Palantir",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 3
     },
     {
@@ -258,6 +258,16 @@
       "subSector": "エネルギー",
       "tradePolicy": "hold",
       "conviction": 5
+    },
+    {
+      "ticker": "CVX",
+      "stooq": "cvx.us",
+      "name": "Chevron",
+      "sector": "エネルギー",
+      "subSector": "エネルギー",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "△スコア急変の要因確認まで様子見"
     },
     {
       "ticker": "NEE",
@@ -301,7 +311,7 @@
       "name": "Rocket Lab",
       "sector": "宇宙・防衛",
       "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 5
     },
     {
@@ -351,7 +361,7 @@
       "name": "Arista Networks",
       "sector": "ハイテク",
       "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 5,
       "held": true
     },
@@ -371,7 +381,7 @@
       "name": "Climb Global Solutions（小型株）",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2
     },
     {
@@ -748,7 +758,7 @@
       "name": "Burford Capital",
       "sector": "金融",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -758,7 +768,7 @@
       "name": "Pitney Bowes",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -768,7 +778,7 @@
       "name": "XPEL",
       "sector": "一般消費財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -778,7 +788,7 @@
       "name": "BK Technologies",
       "sector": "ハイテク",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -788,7 +798,7 @@
       "name": "Hawkins",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -798,7 +808,7 @@
       "name": "GPGI",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -808,7 +818,7 @@
       "name": "Badger Meter",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },

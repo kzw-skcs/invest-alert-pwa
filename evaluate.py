@@ -131,6 +131,50 @@ def fetch_history(entry):
     return None, None
 
 
+# ---------------------------------------------------------------- 日本マテリアル店頭価格
+
+def fetch_nihon_material():
+    """日本マテリアルの金・銀 店頭価格(円/g・税込)を取得。
+    ページ構造に依存しない近傍パース+妥当性チェック。失敗時はNone(COMEX換算にフォールバック)。
+    戻り: {"gold": {"sell": 小売, "buy": 買取}, "silver": {...}, "source", "fetchedAt"}"""
+    import re
+    SANE = {"gold": (8000, 80000), "silver": (80, 3000)}  # 円/g の妥当レンジ
+    for url in ("https://www.material.co.jp/market.php",
+                "https://www.material.co.jp/buy/price.php"):
+        html_text = http_text(url)
+        if not html_text or len(html_text) < 500:
+            continue
+        text = re.sub(r"<[^>]+>", " ", html_text)
+        text = re.sub(r"\s+", " ", text)
+        out = {}
+        for key, jp in (("gold", "金"), ("silver", "銀")):
+            # キーワード近傍(前後120文字)から「1,234円」形式の数値を収集
+            vals = []
+            for m in re.finditer(jp, text):
+                prev = text[m.start() - 1: m.start()]
+                if key == "gold" and prev in ("白", "料", "代", "資", "現"):
+                    continue  # 白金・料金・代金などの誤検出を除外
+                seg = text[m.start(): m.start() + 90]
+                if key == "gold" and ("プラチナ" in seg.split("銀")[0] and "円" not in seg.split("プラチナ")[0]):
+                    continue
+                for nm in re.finditer(r"([0-9][0-9,]{2,9})\s*円", seg):
+                    v = int(nm.group(1).replace(",", ""))
+                    lo, hi = SANE[key]
+                    if lo <= v <= hi:
+                        vals.append(v)
+            if vals:
+                # 小売(高い方)と買取(安い方)。1つしか無ければ両方に採用
+                out[key] = {"sell": max(vals), "buy": min(vals)}
+        if "gold" in out or "silver" in out:
+            out["source"] = "日本マテリアル"
+            out["url"] = url
+            out["fetchedAt"] = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
+            print(f"日本マテリアル価格: {out}")
+            return out
+    print("日本マテリアル価格: 取得失敗(COMEX換算にフォールバック)")
+    return None
+
+
 # ---------------------------------------------------------------- メイン
 
 def main():
@@ -226,6 +270,7 @@ def main():
         "targets": cfg.get("targets", {}),
         "vix": vix,
         "fx": {"usdjpy": usdjpy},
+        "metalJpy": fetch_nihon_material(),
         "instruments": instruments,
         "events": events,
         "alerts": alerts,
