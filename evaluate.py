@@ -134,13 +134,16 @@ def fetch_history(entry):
 # ---------------------------------------------------------------- 日本マテリアル店頭価格
 
 def fetch_nihon_material():
-    """日本マテリアルの金・銀 店頭価格(円/g・税込)を取得。
-    ページ構造に依存しない近傍パース+妥当性チェック。失敗時はNone(COMEX換算にフォールバック)。
-    戻り: {"gold": {"sell": 小売, "buy": 買取}, "silver": {...}, "source", "fetchedAt"}"""
+    """金・銀の店頭価格(円/g・税込)を取得。第1ソース: 田中貴金属(サーバーレンダリング・構造確認済み)、
+    予備: 日本マテリアル。損益計算には買取価格を使用。失敗時はNone(COMEX換算へフォールバック)。"""
     import re
-    SANE = {"gold": (8000, 80000), "silver": (80, 3000)}  # 円/g の妥当レンジ
-    for url in ("https://www.material.co.jp/market.php",
-                "https://www.material.co.jp/buy/price.php"):
+    SANE = {"gold": (8000.0, 80000.0), "silver": (80.0, 3000.0)}
+    SOURCES = (
+        ("https://gold.tanaka.co.jp/commodity/souba/index.php", "田中貴金属"),
+        ("https://www.material.co.jp/market.php", "日本マテリアル"),
+        ("https://www.material.co.jp/buy/price.php", "日本マテリアル"),
+    )
+    for url, source in SOURCES:
         html_text = http_text(url)
         if not html_text or len(html_text) < 500:
             continue
@@ -148,30 +151,38 @@ def fetch_nihon_material():
         text = re.sub(r"\s+", " ", text)
         out = {}
         for key, jp in (("gold", "金"), ("silver", "銀")):
-            # キーワード近傍(前後120文字)から「1,234円」形式の数値を収集
             vals = []
             for m in re.finditer(jp, text):
                 prev = text[m.start() - 1: m.start()]
-                if key == "gold" and prev in ("白", "料", "代", "資", "現"):
-                    continue  # 白金・料金・代金などの誤検出を除外
-                seg = text[m.start(): m.start() + 90]
-                if key == "gold" and ("プラチナ" in seg.split("銀")[0] and "円" not in seg.split("プラチナ")[0]):
-                    continue
-                for nm in re.finditer(r"([0-9][0-9,]{2,9})\s*円", seg):
-                    v = int(nm.group(1).replace(",", ""))
+                nxt = text[m.end(): m.end() + 1]
+                if key == "gold" and (prev in ("白", "料", "代", "資", "現", "貴", "純", "年")
+                                      or nxt in ("貨", "属", "融", "利")):
+                    continue  # 白金・金貨・貴金属・金融などの誤検出を除外
+                seg = text[m.end(): m.end() + 110]
+                # 他金属のセクションに食い込まないよう区切る
+                # 金はプラチナ価格(同レンジ)の混入を防ぐため区切る。銀は価格レンジで自然に分離されるため区切り不要
+                stops = ("プラチナ", "銀", "白金") if key == "gold" else ()
+                for sw in stops:
+                    pos = seg.find(sw)
+                    if pos > 0:
+                        seg = seg[:pos]
+                for nm in re.finditer(r"([0-9][0-9,]*(?:\.[0-9]+)?)\s*円", seg):
+                    try:
+                        v = float(nm.group(1).replace(",", ""))
+                    except ValueError:
+                        continue
                     lo, hi = SANE[key]
                     if lo <= v <= hi:
                         vals.append(v)
             if vals:
-                # 小売(高い方)と買取(安い方)。1つしか無ければ両方に採用
-                out[key] = {"sell": max(vals), "buy": min(vals)}
+                out[key] = {"sell": max(vals), "buy": min(vals)}  # 小売>買取
         if "gold" in out or "silver" in out:
-            out["source"] = "日本マテリアル"
+            out["source"] = source
             out["url"] = url
             out["fetchedAt"] = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
-            print(f"日本マテリアル価格: {out}")
+            print(f"金銀店頭価格({source}): {out.get('gold')} / {out.get('silver')}")
             return out
-    print("日本マテリアル価格: 取得失敗(COMEX換算にフォールバック)")
+    print("金銀店頭価格: 全ソース取得失敗(COMEX換算にフォールバック)")
     return None
 
 

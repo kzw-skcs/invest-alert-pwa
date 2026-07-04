@@ -245,6 +245,16 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 
 <!-- ================= ⚙️ 設定 ================= -->
 <div class="tab" id="tab-config">
+  <div class="card" style="border-color:var(--violet)">
+    <h3>🚀 すべて更新</h3>
+    <div class="tiny" style="margin-bottom:8px">①ウォッチリストをサーバーに同期 → ②品質スコア更新 → ③価格取得・判定 → ④再分析 を1つのジョブで順番に実行します(約15〜25分)。</div>
+    <label class="row" style="gap:8px;margin-bottom:8px;font-size:13px">
+      <input type="checkbox" id="all-backtest" style="width:18px;height:18px">
+      🧪 バックテストも実行する(+1〜2時間)
+    </label>
+    <button class="btn pri" style="width:100%;padding:12px" onclick="runAllInOne()">🚀 すべて更新のうえ再分析</button>
+    <div class="tiny" id="all-status" style="margin-top:6px"></div>
+  </div>
   <div class="card">
     <h3>🔎 ティッカー検索・追加</h3>
     <div class="row" style="gap:8px;flex-wrap:wrap">
@@ -1213,6 +1223,22 @@ async function syncServer(silent) {
     if (!j.ok && silent) toast(`同期失敗: ${j.error || ''}`);
     return !!j.ok;
   } catch (e) { toast('同期失敗: サーバー未設定(GH_TOKEN)。表示のみ変更されています。'); return false; }
+}
+async function runAllInOne() {
+  const st = $('#all-status');
+  const bt = $('#all-backtest').checked;
+  st.textContent = '① ウォッチリストを同期中…';
+  const synced = await syncServer(true);
+  st.textContent = synced ? '① 同期完了 → ② 一括ジョブを起動中…' : '① 同期スキップ(未設定) → ② 一括ジョブを起動中…';
+  try {
+    const r = await fetch('api/run', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ workflow: 'all', inputs: { run_backtest: bt ? 'true' : 'false' } }) });
+    const j = await r.json();
+    if (j.ok) {
+      st.innerHTML = `✅ 一括ジョブ開始(品質→判定→再分析${bt ? '→バックテスト' : ''})。完了目安: ${bt ? '1.5〜2.5時間' : '15〜25分'}後に🔄で反映されます。`;
+      toast('🚀 すべて更新を開始しました');
+    } else { st.textContent = '起動失敗: ' + (j.error || ''); }
+  } catch (e) { st.textContent = '起動失敗: サーバー未設定(GH_TOKEN)。'; }
 }
 async function runWorkflow(name, label) {
   toast(`${label} を起動中…`);

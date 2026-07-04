@@ -6,7 +6,8 @@ from http.server import BaseHTTPRequestHandler
 import json, os, urllib.request
 
 ALLOWED = {"daily": "daily.yml", "reanalyze": "reanalyze.yml",
-           "backtest": "backtest.yml", "fundamentals": "fundamentals.yml"}
+           "backtest": "backtest.yml", "fundamentals": "fundamentals.yml",
+           "all": "all.yml"}
 
 
 def gh_req(path, method="GET", body=None):
@@ -42,7 +43,13 @@ class handler(BaseHTTPRequestHandler):
             wf = ALLOWED.get(body.get("workflow", ""))
             if not wf:
                 return send_json(self, 400, {"ok": False, "error": f"workflowは{list(ALLOWED)}のいずれか"})
-            gh_req(f"/actions/workflows/{wf}/dispatches", "POST", {"ref": "main"})
+            payload = {"ref": "main"}
+            inputs = body.get("inputs")
+            if isinstance(inputs, dict):
+                safe = {k: str(v) for k, v in inputs.items() if k in ("run_backtest",)}
+                if safe:
+                    payload["inputs"] = safe
+            gh_req(f"/actions/workflows/{wf}/dispatches", "POST", payload)
             send_json(self, 200, {"ok": True, "message": f"{body['workflow']} を開始しました"})
         except Exception as e:
             send_json(self, 500, {"ok": False, "error": str(e)})

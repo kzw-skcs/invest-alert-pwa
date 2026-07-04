@@ -1,0 +1,45 @@
+name: all
+on:
+  workflow_dispatch:
+    inputs:
+      run_backtest:
+        description: 'バックテストも実行する(1〜2時間)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: install deps
+        run: pip install pywebpush numpy || true
+      - name: 1) 品質スコア更新(fundamentals)
+        continue-on-error: true
+        run: python fundamentals.py
+      - name: 2) 価格取得・判定(daily)
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_CLAIMS_EMAIL: ${{ secrets.VAPID_CLAIMS_EMAIL }}
+        run: python evaluate.py
+      - name: 3) 再分析(reanalyze)
+        continue-on-error: true
+        run: python reanalyze.py
+      - name: 4) バックテスト(任意)
+        if: ${{ github.event.inputs.run_backtest == 'true' }}
+        continue-on-error: true
+        run: python backtest.py
+      - name: commit
+        run: |
+          git config user.name "invest-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "all: 一括更新 $(date -u +%Y-%m-%d)"
+          git push
