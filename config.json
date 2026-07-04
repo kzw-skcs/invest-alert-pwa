@@ -910,6 +910,15 @@
       "tradePolicy": "hold",
       "conviction": 3,
       "stooq": "arm.us"
+    },
+    {
+      "ticker": "IONQ",
+      "name": "IONQ",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "ionq.us"
     }
   ],
   "discovery": [
