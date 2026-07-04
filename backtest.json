@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-05 03:18 JST",
+ "generated": "2026-07-05 07:48 JST",
  "interpretation": [
   "【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。",
   "Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。consider(65)は596回・勝率76.0%・平均6.4%に対し、absolute(90)は149回・勝率87.9%・平均13.87%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。",
@@ -275,7 +275,7 @@
    "consider(65)": {
     "trades": 11,
     "winRatePct": 54.5,
-    "avgRetPct": 0.57,
+    "avgRetPct": 0.55,
     "medianRetPct": 3.9,
     "bestPct": 29.5,
     "worstPct": -21.9,
@@ -289,7 +289,7 @@
      "btc 2025-10-17→2026-01-14 -9.0% (top)",
      "btc 2026-01-20→2026-04-05 -21.9% (top)",
      "btc 2026-06-06→2026-06-07 +3.9% (top)",
-     "btc 2026-06-25→2026-07-04 +5.9% (time)"
+     "btc 2026-06-25→2026-07-04 +5.7% (time)"
     ]
    },
    "strong(80)": {
@@ -429,24 +429,24 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 68.47,
-    "medianRetPct": 68.47,
+    "avgRetPct": 68.15,
+    "medianRetPct": 68.15,
     "avgAnnualizedPct": 7.3,
     "avgHoldDays": 1869.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 33.86,
-    "medianRetPct": 33.86,
+    "avgRetPct": 33.6,
+    "medianRetPct": 33.6,
     "avgAnnualizedPct": 4.5,
     "avgHoldDays": 1667.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 51.53,
-    "medianRetPct": 51.53,
+    "avgRetPct": 51.24,
+    "medianRetPct": 51.24,
     "avgAnnualizedPct": 6.6,
     "avgHoldDays": 1638.0
    }
@@ -455,25 +455,25 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -51.92,
-    "medianRetPct": -51.92,
-    "avgAnnualizedPct": -10.5,
+    "avgRetPct": -52.42,
+    "medianRetPct": -52.42,
+    "avgAnnualizedPct": -10.6,
     "avgHoldDays": 1663.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -51.51,
-    "medianRetPct": -51.51,
-    "avgAnnualizedPct": -10.5,
+    "avgRetPct": -52.02,
+    "medianRetPct": -52.02,
+    "avgAnnualizedPct": -10.6,
     "avgHoldDays": 1647.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -41.76,
-    "medianRetPct": -41.76,
-    "avgAnnualizedPct": -8.0,
+    "avgRetPct": -42.37,
+    "medianRetPct": -42.37,
+    "avgAnnualizedPct": -8.1,
     "avgHoldDays": 1638.0
    }
   }
