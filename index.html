@@ -115,6 +115,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
   <div class="seg" id="view-seg">
     <button class="act" data-v="value">📈 長期Value</button>
     <button data-v="momentum">⚡ 短期モメンタム</button>
+    <button data-v="hybrid">🔷 ハイブリッド</button>
   </div>
   <div class="card" id="mom-rules" style="display:none">
     <h3>⚡ モメンタム売買ルール(現物のみ・trade銘柄)</h3>
@@ -466,7 +467,7 @@ function renderAlerts() {
   }));
   const pos = positionAlerts();
   const every = [...pos, ...server];
-  const all = every.filter((a) => VIEW === 'momentum' ? (a.strat === 'mom' || a.strat === 'both') : a.strat !== 'mom')
+  const all = every.filter((a) => VIEW === 'hybrid' ? true : VIEW === 'momentum' ? (a.strat === 'mom' || a.strat === 'both') : a.strat !== 'mom')
     .sort((a, b) => a.p - b.p);
   $('#alert-count').textContent = all.length ? `${all.length}件` : '';
   const badge = $('#nav-badge');
@@ -503,6 +504,18 @@ function renderCycle() {
       <b style="font-size:13px">₿ 半減期サイクル</b>
       <span class="pill" style="background:${bh.phase === 'bottom' ? '#1e3a8a' : bh.phase === 'bull' ? '#14532d' : bh.phase === 'bear' ? '#374151' : '#374151'};color:#fff;margin-left:6px">${bh.phaseLabel}</span>
       <div class="tiny" style="margin-top:5px">前回半減期(${bh.lastHalving})から <b>+${bh.monthsSince}ヶ月</b> / 次回推定 ${bh.nextHalvingEst}(あと約${bh.weeksToNextHalving}週)</div>
+      ${(() => {
+        const zones = [[0, 6, '醸成', '#374151'], [6, 18, '🚀ブル', '#14532d'], [18, 26, '🧊弱気', '#7f1d1d'], [26, 32, '⛏️底=仕込み', '#1e3a8a'], [32, 48, '📈先回り', '#4b5563']];
+        const pos = Math.min(99, (bh.monthsSince / 48) * 100);
+        return `<div style="position:relative;margin:14px 0 4px">
+          <div class="row" style="gap:1px;height:26px">${zones.map(([a, b, nm, col]) => `
+            <div style="width:${(b - a) / 48 * 100}%;background:${col};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;opacity:.9">${nm}</div>`).join('')}</div>
+          <div style="position:absolute;left:${pos}%;top:-13px;transform:translateX(-50%);font-size:12px">📍</div>
+          <div style="position:absolute;left:${pos}%;top:0;height:26px;width:2px;background:#fff;transform:translateX(-50%)"></div>
+          <div class="row tiny" style="justify-content:space-between;margin-top:2px;color:var(--tx3)"><span>半減期</span><span>+12</span><span>+24</span><span>+36</span><span>+48ヶ月</span></div>
+          <div class="tiny" style="color:var(--tx3)">▲過去の天井: +12〜18ヶ月 / ▼過去の底: +26〜30ヶ月(標本3)</div>
+        </div>`;
+      })()}
       ${tc ? `<div class="tiny">今サイクル: 天井 <b>$${(tc.peakPrice).toLocaleString()}</b>(半減期+${tc.peakMonths}ヶ月・${tc.peakDate}) → 現在 <b>$${(tc.currentPrice).toLocaleString()}</b>(天井比 <b class="${cls(tc.ddFromPeakPct)}">${fmtP(tc.ddFromPeakPct)}</b>)</div>` : ''}
       <div class="alert-item ${bh.phase === 'bottom' ? 'p1' : 'p2'}" style="margin-top:6px"><div class="t">₿ リコメンド</div><div class="d">${bh.action}</div></div>
       <details><summary>過去サイクルの実績(標本3)</summary>
@@ -511,19 +524,51 @@ function renderCycle() {
         <div class="tiny" style="margin-top:4px">※標本3回のパターンであり「確率」と呼べる統計力はない。倍率は明確に逓減。ETHは独自の半減期を持たないがBTCサイクルに概ね連動してきた</div></details>
     </div>`;
   }
+  // 大統領選4年サイクル(現在地つき)
+  const yr = new Date().getFullYear(), ph = yr % 4, mNow = new Date().getMonth() + 1;
+  const phases = [['選挙年', '強', 0], ['1年目', '弱め', 1], ['中間選挙年', '最弱→秋底', 2], ['選挙前年', '最強', 3]];
+  html += `<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">🗳️ 大統領選4年サイクル(現在地)</b>
+    <div class="row" style="gap:3px;margin-top:4px">${phases.map(([nm, st, p]) => `
+      <div style="flex:1;text-align:center;border-radius:8px;padding:6px 2px 4px;font-size:10px;
+        background:${p === ph ? 'var(--violet)' : 'var(--bg3)'};${p === ph ? 'font-weight:800' : 'color:var(--tx3)'}">
+        ${p === ph ? '📍' : ''}${nm}<br><span style="font-size:9px">${st}</span>
+        ${p === ph ? `<div style="height:3px;background:rgba(255,255,255,.25);border-radius:2px;margin-top:3px"><div style="width:${Math.round(mNow / 12 * 100)}%;height:100%;background:#fff;border-radius:2px"></div></div>` : ''}</div>`).join('')}</div></div>`;
+  // 季節性12ヶ月(現在地つき)
+  const mCol = { 1: '#14532d', 2: '#374151', 3: '#374151', 4: '#14532d', 5: '#7c2d12', 6: '#7c2d12', 7: '#14532d', 8: '#7f1d1d', 9: '#7f1d1d', 10: '#1e3a8a', 11: '#14532d', 12: '#14532d' };
+  const mTag = { 1: '強', 2: '-', 3: '-', 4: '強', 5: '売5月', 6: '夏枯', 7: '反発', 8: '弱', 9: '最弱', 10: '仕込', 11: '強', 12: '強' };
+  html += `<div style="margin-top:8px"><b class="tiny" style="color:var(--tx2)">📅 季節性マップ(緑=強い月/赤=弱い月/青=仕込み月)</b>
+    <div class="row" style="gap:2px;margin-top:4px">${Array.from({ length: 12 }, (_, i) => i + 1).map((mm) => `
+      <div style="flex:1;text-align:center;border-radius:6px;padding:4px 0;font-size:9px;background:${mCol[mm]};
+        ${mm === mNow ? 'outline:2px solid #fff;font-weight:800' : 'opacity:.75'}">${mm === mNow ? '📍' : ''}${mm}月<br>${mTag[mm]}</div>`).join('')}</div></div>`;
   html += (c.calendar || []).map((k) => `<div class="tiny" style="margin-top:6px">📅 <b>${k.label}</b> — ${k.note}</div>`).join('');
   const secs = Object.entries(c.sectors || {});
   if (secs.length) {
-    html += `<details style="margin-top:8px"><summary>セクター相対強度(対S&P500)</summary>
-      <table style="margin-top:4px"><tr><th>サブセクター</th><th>3ヶ月RS</th><th>1ヶ月RS</th><th>資金フロー</th></tr>
-      ${secs.map(([s, v]) => `<tr><td>${s}</td><td class="${cls(v.rs63)}">${fmtP(v.rs63)}</td><td class="${cls(v.rs21)}">${fmtP(v.rs21)}</td>
-        <td>${v.trend === 'inflow' ? '🟢 流入' : v.trend === 'outflow' ? '🔴 流出' : '⚪ 中立'}</td></tr>`).join('')}</table></details>`;
+    // リーダー=3ヶ月RS最大 / 次候補=加速度(1ヶ月RS-3ヶ月RS/3)最大(リーダー以外)
+    const withCalc = secs.map(([s, v]) => ({ s, v, accel: (v.rs21 ?? 0) - (v.rs63 ?? 0) / 3 }));
+    const leader = withCalc.slice().sort((a, b) => (b.v.rs63 ?? -99) - (a.v.rs63 ?? -99))[0];
+    const next = withCalc.filter((x) => x !== leader && x.accel > 0).sort((a, b) => b.accel - a.accel)[0];
+    html += `<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">🔄 セクターローテーション表(毎朝更新)</b>
+      <table style="margin-top:4px"><tr><th>サブセクター</th><th>3ヶ月RS</th><th>1ヶ月RS</th><th>フロー</th><th></th></tr>
+      ${withCalc.sort((a, b) => (b.v.rs21 ?? -99) - (a.v.rs21 ?? -99)).map((x) => `<tr>
+        <td>${x.s}</td><td class="${cls(x.v.rs63)}">${fmtP(x.v.rs63)}</td><td class="${cls(x.v.rs21)}">${fmtP(x.v.rs21)}</td>
+        <td>${x.v.trend === 'inflow' ? '🟢流入' : x.v.trend === 'outflow' ? '🔴流出' : '⚪中立'}</td>
+        <td>${x === leader ? '👑現リーダー' : x === next ? '🔮次候補' : ''}</td></tr>`).join('')}</table>`;
+    if (next) {
+      const nextTickers = instruments().filter((i) => i.subSector === next.s && i.class === 'stock')
+        .sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0)).slice(0, 6);
+      html += `<div class="tiny" style="margin-top:6px"><b>🔮 次候補「${next.s}」の銘柄</b>(相対強度の加速から推定・保証ではない)</div>
+        <div class="row" style="gap:6px;flex-wrap:wrap;margin-top:4px">
+        ${nextTickers.map((i) => `<span class="pill" style="background:var(--bg3);cursor:pointer" onclick="openChart('${i.ticker}','${i.class}')">
+          ${i.emoji} <b>${i.ticker}</b> ${i.value && i.value.tier !== 'none' ? i.value.score : ''}</span>`).join('')}</div>`;
+    }
+    html += '</div>';
   }
   html += '<div class="tiny" style="margin-top:6px">※サイクル・季節性は統計的傾向であり、毎年再現される保証はありません。アクションは「検討」の提案です。</div>';
   el.innerHTML = html;
 }
 function renderRanking() {
   if (VIEW === 'momentum') { renderRankingMom(); return; }
+  if (VIEW === 'hybrid') { renderRankingHybrid(); return; }
   const list = instruments().filter((i) => i.tradePolicy !== 'trade' && i.value && i.value.score >= 50)
     .sort((a, b) => b.value.score - a.value.score).slice(0, 8);
   $('#ranking').innerHTML = list.length ? list.map((i) => `
@@ -539,6 +584,25 @@ function renderRanking() {
 }
 
 // モメンタム推奨ランキング: 購入(エントリー)と売却(手仕舞い)を明確に分離。逆張りValueは別枠。
+function renderRankingHybrid() {
+  const items = [];
+  for (const i of instruments()) {
+    if (i.state === 'NO_DATA') continue;
+    if (i.tradePolicy === 'trade' && i.momentum && i.momentum.momRec && i.momentum.momRec.action !== 'none') {
+      items.push({ i, kind: i.momentum.momRec.action === 'buy' ? '⚡買' : '⚡売', score: i.momentum.momRec.score, label: i.momentum.momRec.label });
+    }
+    if (i.tradePolicy !== 'trade' && i.value && i.value.score >= 50) {
+      items.push({ i, kind: '📈V', score: i.value.score, label: i.value.tierLabel });
+    }
+  }
+  items.sort((a, b) => b.score - a.score);
+  $('#ranking').innerHTML = items.length ? items.slice(0, 10).map((x) => `
+    <div class="amount-row" onclick="openChart('${x.i.ticker}','${x.i.class}')">
+      <div class="lbl"><span class="pill" style="background:${x.kind === '📈V' ? '#1e3a8a' : x.kind === '⚡買' ? '#14532d' : '#7f1d1d'};color:#fff">${x.kind}</span>
+        <b>${x.i.ticker}</b> <span class="tiny">${x.label || ''}</span></div>
+      <div style="text-align:right"><b>${x.score}</b></div>
+    </div>`).join('') : '<span class="muted">現在アクション推奨はありません</span>';
+}
 function renderRankingMom() {
   const trades = instruments().filter((i) => i.tradePolicy === 'trade' && i.momentum);
   const buys = trades.filter((i) => i.momentum.momSide === 'buy')
@@ -571,13 +635,20 @@ function renderRankingMom() {
 function renderCards() {
   const el = $('#cards');
   const mom = VIEW === 'momentum';
-  let list = instruments().filter((i) => mom ? i.tradePolicy === 'trade' : i.tradePolicy !== 'trade');
-  if (SIGFILTER === 'action') list = list.filter((i) => mom
+  const hyb = VIEW === 'hybrid';
+  const isMomCard = (i) => i.tradePolicy === 'trade' && (mom || hyb);
+  let list = instruments().filter((i) => hyb ? true : mom ? i.tradePolicy === 'trade' : i.tradePolicy !== 'trade');
+  if (SIGFILTER === 'action') list = list.filter((i) => isMomCard(i)
     ? (i.momentum && (i.momentum.momSide !== 'none' || i.momentum.contrarianValue))
     : i.actionable);
   if (SIGFILTER === 'stock') list = list.filter((i) => i.class === 'stock');
   if (SIGFILTER === 'other') list = list.filter((i) => i.class !== 'stock');
-  if (mom) {
+  if (hyb) {
+    const sc = (i) => isMomCard(i)
+      ? (i.momentum && i.momentum.momRec && i.momentum.momRec.action !== 'none' ? i.momentum.momRec.score : (i.rec ? i.rec.score - 30 : 0))
+      : (i.rec ? i.rec.score : 0);
+    list.sort((a, b) => sc(b) - sc(a));
+  } else if (mom) {
     // アクション優先: 買い(ENTRY)→売り(EXIT)→逆張りValue候補→保有継続→待機
     const rank = { ENTRY: 0, EXIT: 1, HOLD: 3, WAIT: 4, NODATA: 9 };
     const key = (i) => {
@@ -593,7 +664,7 @@ function renderCards() {
     list.sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0) || (order[a.state] ?? 5) - (order[b.state] ?? 5));
   }
   const fLabel = { all: 'すべて', action: 'アクションあり', stock: '株のみ', other: '暗号資産・金銀のみ' }[SIGFILTER] || '';
-  el.innerHTML = `<div class="tiny" style="margin:2px 0 8px">🔽 ${mom ? '⚡短期モメンタム' : '📈長期Value'} / ${fLabel}: <b>${list.length}銘柄</b>${list.length === 0 ? ' — 該当なし(フィルタを「すべて」に戻してください)' : ''}</div>` + list.map(mom ? momCardHTML : cardHTML).join('');
+  el.innerHTML = `<div class="tiny" style="margin:2px 0 8px">🔽 ${hyb ? '🔷ハイブリッド(Value+モメンタム)' : mom ? '⚡短期モメンタム' : '📈長期Value'} / ${fLabel}: <b>${list.length}銘柄</b>${list.length === 0 ? ' — 該当なし(フィルタを「すべて」に戻してください)' : ''}</div>` + list.map((i) => isMomCard(i) ? momCardHTML(i) : cardHTML(i)).join('');
   list.forEach((i) => drawSpark(i));
 }
 
@@ -895,7 +966,8 @@ function lotManagerHTML(k, name) {
   const lots = LOTS[k] || [];
   const h = (HOLD.jitsubutsu || {})[k];
   const rows = lots.map((l, idx) => `<tr><td>${l.d}</td><td style="text-align:right">${fmtN(l.qty, 3)}${l.unit}</td>
-    <td style="text-align:right">${fmtY(l.price)}/${l.unit}</td><td style="text-align:right">${fmtY(l.qty * l.price)}</td>
+    <td style="text-align:right">${fmtY(l.price)}<span class="tiny">/1${l.unit}</span>${l.unit === 'oz' ? `<br><span class="tiny">(≒${fmtY(l.price / OZ_G)}/1g)</span>` : ''}</td>
+    <td style="text-align:right">${fmtY(l.qty * l.price)}</td>
     <td><button class="btn sm" onclick="delLot('${k}',${idx})">×</button></td></tr>`).join('');
   const m = metalPxPerGram(k);
   let plBlock = '';
@@ -914,11 +986,12 @@ function lotManagerHTML(k, name) {
     <b style="font-size:13px">${name} — 購入履歴(現物)</b>
     ${plBlock}
     ${rows ? `<table style="margin-top:6px"><tr><th>購入日</th><th style="text-align:right">数量</th><th style="text-align:right">単価</th><th style="text-align:right">金額</th><th></th></tr>${rows}</table>` : ''}
-    <div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">
+    <div class="tiny" style="margin-top:8px;color:var(--cyan)">単価は「<b>1gあたり</b>」または「<b>1ozあたり</b>」の円。右の単位選択に合わせて入力(1oz=31.1035g)</div>
+    <div class="row" style="gap:6px;margin-top:4px;flex-wrap:wrap">
       <input type="date" id="lot-${k}-d" style="width:130px">
       <input type="number" id="lot-${k}-q" placeholder="数量" inputmode="decimal" style="width:70px">
-      <select id="lot-${k}-u" style="width:60px"><option value="g">g</option><option value="oz">oz</option></select>
-      <input type="number" id="lot-${k}-p" placeholder="単価(円/1単位)" inputmode="numeric" style="flex:1;min-width:110px">
+      <select id="lot-${k}-u" style="width:60px" onchange="$('#lot-${k}-p').placeholder='単価(円/1'+this.value+') 例 '+(this.value==='oz'?'820,000':'26,300')"><option value="g">g</option><option value="oz">oz</option></select>
+      <input type="number" id="lot-${k}-p" placeholder="単価(円/1g) 例 26,300" inputmode="numeric" style="flex:1;min-width:110px">
       <button class="btn sm pri" onclick="addLot('${k}')">＋追加</button>
     </div>
     <div class="row" style="gap:6px;margin-top:6px;align-items:center">
