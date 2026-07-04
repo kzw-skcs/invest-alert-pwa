@@ -398,7 +398,7 @@
       "name": "SpaceX",
       "sector": "宇宙・防衛",
       "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "新規上場・データ蓄積中"
     },
