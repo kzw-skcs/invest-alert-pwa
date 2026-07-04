@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-04T16:55:44.961372+00:00",
- "updatedJST": "2026-07-05 01:55 JST",
+ "updated": "2026-07-04T17:11:08.307761+00:00",
+ "updatedJST": "2026-07-05 02:11 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -116,16 +116,16 @@
  },
  "metalJpy": {
   "gold": {
-   "sell": 23411,
-   "buy": 23261
+   "sell": 74866.0,
+   "buy": 23565.0
   },
   "silver": {
-   "sell": 309,
-   "buy": 276
+   "sell": 376.64,
+   "buy": 343.64
   },
-  "source": "日本マテリアル",
-  "url": "https://www.material.co.jp/buy/price.php",
-  "fetchedAt": "2026-07-05 01:55 JST"
+  "source": "田中貴金属",
+  "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
+  "fetchedAt": "2026-07-05 02:11 JST"
  },
  "instruments": [
   {
@@ -6096,7 +6096,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -6773,7 +6773,7 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
+   "side": "none",
    "actionable": false,
    "value": {
     "score": 10,
@@ -6787,26 +6787,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 124.4,
-    "breakoutHigh": 580.91,
-    "volConfirmed": false,
-    "trailStop": 428.1545,
-    "atrPct": 6.93,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -6814,7 +6795,7 @@
     "note": ""
    },
    "rec": {
-    "score": 0,
+    "score": 10,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -6853,7 +6834,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 3,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -7531,7 +7512,7 @@
    "emoji": "🔻",
    "color": "#d97706",
    "side": "none",
-   "actionable": false,
+   "actionable": true,
    "value": {
     "score": 70,
     "tier": "consider",
@@ -7546,26 +7527,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -26.6,
-    "breakoutHigh": 160.65,
-    "volConfirmed": false,
-    "trailStop": 112.411,
-    "atrPct": 5.22,
-    "momState": "WAIT",
-    "momStateLabel": "⚪ 待機(モメンタム対象外)",
-    "momEmoji": "⚪",
-    "momColor": "#6b7280",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -7573,15 +7535,15 @@
     "note": ""
    },
    "rec": {
-    "score": 60,
+    "score": 70,
     "stars": 4,
-    "level": "C",
-    "action": "hold",
-    "expReturnPct": null,
-    "expDays": null,
-    "expPeriodLabel": null,
-    "annualizedPct": null,
-    "note": ""
+    "level": "B",
+    "action": "buy",
+    "expReturnPct": 19.11,
+    "expDays": 7,
+    "expPeriodLabel": "約7営業日",
+    "annualizedPct": 688.0,
+    "note": "🟦購入検討"
    },
    "quality": {
     "score": 76,
@@ -8345,728 +8307,6 @@
      "health": 8.9,
      "valuation": 18
     }
-   }
-  },
-  {
-   "key": "CVX",
-   "ticker": "CVX",
-   "name": "Chevron",
-   "sector": "エネルギー",
-   "subSector": "エネルギー",
-   "class": "stock",
-   "conviction": 2,
-   "tradePolicy": "hold",
-   "history": [
-    {
-     "d": "2025-11-11",
-     "c": 156.240005
-    },
-    {
-     "d": "2025-11-12",
-     "c": 153.320007
-    },
-    {
-     "d": "2025-11-13",
-     "c": 155.580002
-    },
-    {
-     "d": "2025-11-14",
-     "c": 157.619995
-    },
-    {
-     "d": "2025-11-17",
-     "c": 154.820007
-    },
-    {
-     "d": "2025-11-18",
-     "c": 153.619995
-    },
-    {
-     "d": "2025-11-19",
-     "c": 151.699997
-    },
-    {
-     "d": "2025-11-20",
-     "c": 150.309998
-    },
-    {
-     "d": "2025-11-21",
-     "c": 149.979996
-    },
-    {
-     "d": "2025-11-24",
-     "c": 149.75
-    },
-    {
-     "d": "2025-11-25",
-     "c": 148.529999
-    },
-    {
-     "d": "2025-11-26",
-     "c": 149.509995
-    },
-    {
-     "d": "2025-11-28",
-     "c": 151.130005
-    },
-    {
-     "d": "2025-12-01",
-     "c": 152.539993
-    },
-    {
-     "d": "2025-12-02",
-     "c": 150.25
-    },
-    {
-     "d": "2025-12-03",
-     "c": 151.589996
-    },
-    {
-     "d": "2025-12-04",
-     "c": 152.259995
-    },
-    {
-     "d": "2025-12-05",
-     "c": 150.0
-    },
-    {
-     "d": "2025-12-08",
-     "c": 148.710007
-    },
-    {
-     "d": "2025-12-09",
-     "c": 148.490005
-    },
-    {
-     "d": "2025-12-10",
-     "c": 151.410004
-    },
-    {
-     "d": "2025-12-11",
-     "c": 150.720001
-    },
-    {
-     "d": "2025-12-12",
-     "c": 149.990005
-    },
-    {
-     "d": "2025-12-15",
-     "c": 149.800003
-    },
-    {
-     "d": "2025-12-16",
-     "c": 146.75
-    },
-    {
-     "d": "2025-12-17",
-     "c": 149.520004
-    },
-    {
-     "d": "2025-12-18",
-     "c": 147.690002
-    },
-    {
-     "d": "2025-12-19",
-     "c": 147.75
-    },
-    {
-     "d": "2025-12-22",
-     "c": 149.800003
-    },
-    {
-     "d": "2025-12-23",
-     "c": 150.509995
-    },
-    {
-     "d": "2025-12-24",
-     "c": 150.5
-    },
-    {
-     "d": "2025-12-26",
-     "c": 150.020004
-    },
-    {
-     "d": "2025-12-29",
-     "c": 150.990005
-    },
-    {
-     "d": "2025-12-30",
-     "c": 152.309998
-    },
-    {
-     "d": "2025-12-31",
-     "c": 152.410004
-    },
-    {
-     "d": "2026-01-02",
-     "c": 155.899994
-    },
-    {
-     "d": "2026-01-05",
-     "c": 163.850006
-    },
-    {
-     "d": "2026-01-06",
-     "c": 156.539993
-    },
-    {
-     "d": "2026-01-07",
-     "c": 155.199997
-    },
-    {
-     "d": "2026-01-08",
-     "c": 159.25
-    },
-    {
-     "d": "2026-01-09",
-     "c": 162.110001
-    },
-    {
-     "d": "2026-01-12",
-     "c": 162.339996
-    },
-    {
-     "d": "2026-01-13",
-     "c": 163.869995
-    },
-    {
-     "d": "2026-01-14",
-     "c": 167.240005
-    },
-    {
-     "d": "2026-01-15",
-     "c": 166.160004
-    },
-    {
-     "d": "2026-01-16",
-     "c": 166.259995
-    },
-    {
-     "d": "2026-01-20",
-     "c": 165.300003
-    },
-    {
-     "d": "2026-01-21",
-     "c": 166.729996
-    },
-    {
-     "d": "2026-01-22",
-     "c": 166.660004
-    },
-    {
-     "d": "2026-01-23",
-     "c": 166.720001
-    },
-    {
-     "d": "2026-01-26",
-     "c": 167.5
-    },
-    {
-     "d": "2026-01-27",
-     "c": 169.050003
-    },
-    {
-     "d": "2026-01-28",
-     "c": 169.929993
-    },
-    {
-     "d": "2026-01-29",
-     "c": 171.190002
-    },
-    {
-     "d": "2026-01-30",
-     "c": 176.899994
-    },
-    {
-     "d": "2026-02-02",
-     "c": 174.029999
-    },
-    {
-     "d": "2026-02-03",
-     "c": 178.039993
-    },
-    {
-     "d": "2026-02-04",
-     "c": 181.229996
-    },
-    {
-     "d": "2026-02-05",
-     "c": 179.229996
-    },
-    {
-     "d": "2026-02-06",
-     "c": 180.860001
-    },
-    {
-     "d": "2026-02-09",
-     "c": 182.600006
-    },
-    {
-     "d": "2026-02-10",
-     "c": 182.259995
-    },
-    {
-     "d": "2026-02-11",
-     "c": 185.820007
-    },
-    {
-     "d": "2026-02-12",
-     "c": 182.399994
-    },
-    {
-     "d": "2026-02-13",
-     "c": 183.740005
-    },
-    {
-     "d": "2026-02-17",
-     "c": 180.550003
-    },
-    {
-     "d": "2026-02-18",
-     "c": 183.869995
-    },
-    {
-     "d": "2026-02-19",
-     "c": 184.779999
-    },
-    {
-     "d": "2026-02-20",
-     "c": 183.929993
-    },
-    {
-     "d": "2026-02-23",
-     "c": 184.910004
-    },
-    {
-     "d": "2026-02-24",
-     "c": 185.339996
-    },
-    {
-     "d": "2026-02-25",
-     "c": 184.220001
-    },
-    {
-     "d": "2026-02-26",
-     "c": 184.160004
-    },
-    {
-     "d": "2026-02-27",
-     "c": 186.759995
-    },
-    {
-     "d": "2026-03-02",
-     "c": 189.600006
-    },
-    {
-     "d": "2026-03-03",
-     "c": 188.770004
-    },
-    {
-     "d": "2026-03-04",
-     "c": 186.029999
-    },
-    {
-     "d": "2026-03-05",
-     "c": 189.899994
-    },
-    {
-     "d": "2026-03-06",
-     "c": 189.940002
-    },
-    {
-     "d": "2026-03-09",
-     "c": 189.440002
-    },
-    {
-     "d": "2026-03-10",
-     "c": 186.289993
-    },
-    {
-     "d": "2026-03-11",
-     "c": 191.789993
-    },
-    {
-     "d": "2026-03-12",
-     "c": 196.970001
-    },
-    {
-     "d": "2026-03-13",
-     "c": 196.820007
-    },
-    {
-     "d": "2026-03-16",
-     "c": 196.839996
-    },
-    {
-     "d": "2026-03-17",
-     "c": 197.970001
-    },
-    {
-     "d": "2026-03-18",
-     "c": 198.610001
-    },
-    {
-     "d": "2026-03-19",
-     "c": 201.440002
-    },
-    {
-     "d": "2026-03-20",
-     "c": 201.729996
-    },
-    {
-     "d": "2026-03-23",
-     "c": 205.210007
-    },
-    {
-     "d": "2026-03-24",
-     "c": 206.789993
-    },
-    {
-     "d": "2026-03-25",
-     "c": 205.149994
-    },
-    {
-     "d": "2026-03-26",
-     "c": 207.789993
-    },
-    {
-     "d": "2026-03-27",
-     "c": 211.149994
-    },
-    {
-     "d": "2026-03-30",
-     "c": 210.710007
-    },
-    {
-     "d": "2026-03-31",
-     "c": 206.899994
-    },
-    {
-     "d": "2026-04-01",
-     "c": 197.410004
-    },
-    {
-     "d": "2026-04-02",
-     "c": 198.970001
-    },
-    {
-     "d": "2026-04-06",
-     "c": 198.860001
-    },
-    {
-     "d": "2026-04-07",
-     "c": 201.539993
-    },
-    {
-     "d": "2026-04-08",
-     "c": 192.889999
-    },
-    {
-     "d": "2026-04-09",
-     "c": 190.360001
-    },
-    {
-     "d": "2026-04-10",
-     "c": 188.550003
-    },
-    {
-     "d": "2026-04-13",
-     "c": 191.779999
-    },
-    {
-     "d": "2026-04-14",
-     "c": 187.020004
-    },
-    {
-     "d": "2026-04-15",
-     "c": 184.910004
-    },
-    {
-     "d": "2026-04-16",
-     "c": 188.149994
-    },
-    {
-     "d": "2026-04-17",
-     "c": 183.990005
-    },
-    {
-     "d": "2026-04-20",
-     "c": 183.25
-    },
-    {
-     "d": "2026-04-21",
-     "c": 185.979996
-    },
-    {
-     "d": "2026-04-22",
-     "c": 186.320007
-    },
-    {
-     "d": "2026-04-23",
-     "c": 187.600006
-    },
-    {
-     "d": "2026-04-24",
-     "c": 185.210007
-    },
-    {
-     "d": "2026-04-27",
-     "c": 184.779999
-    },
-    {
-     "d": "2026-04-28",
-     "c": 188.360001
-    },
-    {
-     "d": "2026-04-29",
-     "c": 192.220001
-    },
-    {
-     "d": "2026-04-30",
-     "c": 193.309998
-    },
-    {
-     "d": "2026-05-01",
-     "c": 190.630005
-    },
-    {
-     "d": "2026-05-04",
-     "c": 192.279999
-    },
-    {
-     "d": "2026-05-05",
-     "c": 192.639999
-    },
-    {
-     "d": "2026-05-06",
-     "c": 185.160004
-    },
-    {
-     "d": "2026-05-07",
-     "c": 182.5
-    },
-    {
-     "d": "2026-05-08",
-     "c": 181.619995
-    },
-    {
-     "d": "2026-05-11",
-     "c": 184.740005
-    },
-    {
-     "d": "2026-05-12",
-     "c": 185.949997
-    },
-    {
-     "d": "2026-05-13",
-     "c": 186.0
-    },
-    {
-     "d": "2026-05-14",
-     "c": 186.639999
-    },
-    {
-     "d": "2026-05-15",
-     "c": 191.100006
-    },
-    {
-     "d": "2026-05-18",
-     "c": 196.119995
-    },
-    {
-     "d": "2026-05-19",
-     "c": 197.25
-    },
-    {
-     "d": "2026-05-20",
-     "c": 191.330002
-    },
-    {
-     "d": "2026-05-21",
-     "c": 191.009995
-    },
-    {
-     "d": "2026-05-22",
-     "c": 191.429993
-    },
-    {
-     "d": "2026-05-26",
-     "c": 184.710007
-    },
-    {
-     "d": "2026-05-27",
-     "c": 182.399994
-    },
-    {
-     "d": "2026-05-28",
-     "c": 183.029999
-    },
-    {
-     "d": "2026-05-29",
-     "c": 182.460007
-    },
-    {
-     "d": "2026-06-01",
-     "c": 185.830002
-    },
-    {
-     "d": "2026-06-02",
-     "c": 187.550003
-    },
-    {
-     "d": "2026-06-03",
-     "c": 189.710007
-    },
-    {
-     "d": "2026-06-04",
-     "c": 188.350006
-    },
-    {
-     "d": "2026-06-05",
-     "c": 187.309998
-    },
-    {
-     "d": "2026-06-08",
-     "c": 189.240005
-    },
-    {
-     "d": "2026-06-09",
-     "c": 186.759995
-    },
-    {
-     "d": "2026-06-10",
-     "c": 189.800003
-    },
-    {
-     "d": "2026-06-11",
-     "c": 185.820007
-    },
-    {
-     "d": "2026-06-12",
-     "c": 187.220001
-    },
-    {
-     "d": "2026-06-15",
-     "c": 180.399994
-    },
-    {
-     "d": "2026-06-16",
-     "c": 180.110001
-    },
-    {
-     "d": "2026-06-17",
-     "c": 177.580002
-    },
-    {
-     "d": "2026-06-18",
-     "c": 173.630005
-    },
-    {
-     "d": "2026-06-22",
-     "c": 175.059998
-    },
-    {
-     "d": "2026-06-23",
-     "c": 175.979996
-    },
-    {
-     "d": "2026-06-24",
-     "c": 171.449997
-    },
-    {
-     "d": "2026-06-25",
-     "c": 172.240005
-    },
-    {
-     "d": "2026-06-26",
-     "c": 171.059998
-    },
-    {
-     "d": "2026-06-29",
-     "c": 168.470001
-    },
-    {
-     "d": "2026-06-30",
-     "c": 165.759995
-    },
-    {
-     "d": "2026-07-01",
-     "c": 165.690002
-    },
-    {
-     "d": "2026-07-02",
-     "c": 169.199997
-    }
-   ],
-   "state": "BUY",
-   "price": 169.2,
-   "top": 200.1066,
-   "bottom": 186.3349,
-   "band": 0.4132,
-   "pctInRange": -124.4,
-   "distToBottomPct": -9.2,
-   "distToTopPct": 18.27,
-   "smaShort": 178.0565,
-   "smaLong": 184.0204,
-   "smaTrend": 172.4251,
-   "trend": "up",
-   "trend200DownDays": 0,
-   "cross": null,
-   "brokeAboveRecently": true,
-   "brokeBelowRecently": true,
-   "trendMethod": "pivot",
-   "cycleHalfDays": 7,
-   "rsi": 35.5,
-   "atr": 4.0126,
-   "atrPct": 2.37,
-   "high52w": 211.15,
-   "drawdownPct": 19.9,
-   "macroDriven": null,
-   "topLong": 173.4368,
-   "bottomLong": 165.6776,
-   "pctInRangeLong": 45.4,
-   "trendLong": "up",
-   "longRangeAvailable": true,
-   "longTermLow": true,
-   "counterTrend": false,
-   "stateLabel": "買い場",
-   "emoji": "🟦",
-   "color": "#2563eb",
-   "side": "buy",
-   "actionable": true,
-   "value": {
-    "score": 67,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
-    "factors": [
-     "1年レンジ下限圏(0%位置) +25",
-     "高値-20% +8",
-     "RSI36 +8",
-     "5年トレンド上向き +6",
-     "200日線上向き +4",
-     "買い場帯 +5"
-    ],
-    "scorePrev": 67
-   },
-   "momentum": {
-    "signal": "none",
-    "note": "hold銘柄"
-   },
-   "holdMgmt": {
-    "thesisBreak": false,
-    "trim": false,
-    "note": ""
-   },
-   "rec": {
-    "score": 67,
-    "stars": 4,
-    "level": "B",
-    "action": "buy",
-    "expReturnPct": 18.27,
-    "expDays": 7,
-    "expPeriodLabel": "約7営業日",
-    "annualizedPct": 657.7,
-    "note": "🟦購入検討"
    }
   },
   {
@@ -15758,7 +14998,7 @@
    "subSector": "電力・DCインフラ",
    "class": "stock",
    "conviction": 5,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -16450,26 +15690,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 12.6,
-    "breakoutHigh": 177.73,
-    "volConfirmed": false,
-    "trailStop": 137.2308,
-    "atrPct": 5.69,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -16477,7 +15698,7 @@
     "note": ""
    },
    "rec": {
-    "score": 9,
+    "score": 19,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -17257,7 +16478,7 @@
    "subSector": "AI・半導体/クラウド",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -17934,8 +17155,8 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
-   "actionable": false,
+   "side": "none",
+   "actionable": true,
    "value": {
     "score": 46,
     "tier": "none",
@@ -17949,35 +17170,16 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 1.8,
-    "breakoutHigh": 24.57,
-    "volConfirmed": false,
-    "trailStop": 20.6123,
-    "atrPct": 5.44,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
-    "thesisBreak": false,
+    "thesisBreak": true,
     "trim": false,
-    "note": ""
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 36,
-    "stars": 2,
+    "score": 46,
+    "stars": 3,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -19493,7 +18695,7 @@
    "subSector": "宇宙・防衛",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [],
    "state": "NO_DATA",
    "stateLabel": "データ不足",
@@ -44683,7 +43885,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -45360,8 +44562,8 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
-   "actionable": false,
+   "side": "none",
+   "actionable": true,
    "value": {
     "score": 36,
     "tier": "none",
@@ -45376,34 +44578,15 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -10.8,
-    "breakoutHigh": 5.3,
-    "volConfirmed": false,
-    "trailStop": 3.6635,
-    "atrPct": 5.6,
-    "momState": "WAIT",
-    "momStateLabel": "⚪ 待機(モメンタム対象外)",
-    "momEmoji": "⚪",
-    "momColor": "#6b7280",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
-    "thesisBreak": false,
+    "thesisBreak": true,
     "trim": false,
-    "note": ""
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス・FCF赤字"
    },
    "rec": {
-    "score": 26,
+    "score": 36,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -45445,7 +44628,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -46122,7 +45305,7 @@
    "stateLabel": "売り場",
    "emoji": "🟥",
    "color": "#dc2626",
-   "side": "sell",
+   "side": "none",
    "actionable": false,
    "value": {
     "score": 10,
@@ -46136,26 +45319,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": 38.8,
-    "breakoutHigh": 18.12,
-    "volConfirmed": false,
-    "trailStop": 15.2458,
-    "atrPct": 3.74,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -46163,7 +45327,7 @@
     "note": ""
    },
    "rec": {
-    "score": 0,
+    "score": 10,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -46201,7 +45365,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -46892,26 +46056,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -3.8,
-    "breakoutHigh": 49.6,
-    "volConfirmed": false,
-    "trailStop": 44.1188,
-    "atrPct": 3.63,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -46919,8 +46064,8 @@
     "note": ""
    },
    "rec": {
-    "score": 19,
-    "stars": 1,
+    "score": 29,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -46958,7 +46103,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -47636,7 +46781,7 @@
    "emoji": "🟦",
    "color": "#2563eb",
    "side": "buy",
-   "actionable": true,
+   "actionable": false,
    "value": {
     "score": 53,
     "tier": "none",
@@ -47652,27 +46797,8 @@
     "scorePrev": 53
    },
    "momentum": {
-    "signal": "exit_warning",
-    "note": "50日線割れ",
-    "relStrength3m": -12.7,
-    "breakoutHigh": 96.36,
-    "volConfirmed": false,
-    "trailStop": 76.0383,
-    "atrPct": 4.07,
-    "momState": "EXIT",
-    "momStateLabel": "🔴 売り場(手仕舞い検討)",
-    "momEmoji": "🔴",
-    "momColor": "#dc2626",
-    "momSide": "sell",
-    "momRec": {
-     "action": "sell",
-     "score": 67,
-     "stars": 4,
-     "label": "⚡ 手仕舞い(売り)推奨"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "signal": "none",
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -47680,15 +46806,15 @@
     "note": ""
    },
    "rec": {
-    "score": 65,
-    "stars": 4,
-    "level": "B",
-    "action": "sell_check",
+    "score": 53,
+    "stars": 3,
+    "level": "C",
+    "action": "hold",
     "expReturnPct": null,
     "expDays": null,
     "expPeriodLabel": null,
     "annualizedPct": null,
-    "note": "売り管理: 50日線割れ"
+    "note": ""
    },
    "quality": {
     "score": 85,
@@ -47719,7 +46845,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -48397,7 +47523,7 @@
    "emoji": "🔻",
    "color": "#d97706",
    "side": "none",
-   "actionable": false,
+   "actionable": true,
    "value": {
     "score": 69,
     "tier": "watch",
@@ -48414,42 +47540,23 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -22.3,
-    "breakoutHigh": 171.68,
-    "volConfirmed": false,
-    "trailStop": 120.498,
-    "atrPct": 5.2,
-    "momState": "WAIT",
-    "momStateLabel": "⚪ 待機(モメンタム対象外)",
-    "momEmoji": "⚪",
-    "momColor": "#6b7280",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
-    "thesisBreak": false,
+    "thesisBreak": true,
     "trim": false,
-    "note": ""
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 59,
-    "stars": 3,
-    "level": "C",
+    "score": 69,
+    "stars": 4,
+    "level": "B",
     "action": "hold",
-    "expReturnPct": null,
-    "expDays": null,
-    "expPeriodLabel": null,
-    "annualizedPct": null,
-    "note": ""
+    "expReturnPct": 13.28,
+    "expDays": 7,
+    "expPeriodLabel": "約7営業日",
+    "annualizedPct": 478.1,
+    "note": "🟦購入検討(品質低下により見送り)"
    },
    "quality": {
     "score": 36,
@@ -48480,7 +47587,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -49173,26 +48280,7 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -17.2,
-    "breakoutHigh": 17.46,
-    "volConfirmed": false,
-    "trailStop": 14.6645,
-    "atrPct": 4.98,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
     "thesisBreak": false,
@@ -49200,7 +48288,7 @@
     "note": ""
    },
    "rec": {
-    "score": 28,
+    "score": 38,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -49241,7 +48329,7 @@
    "subSector": "その他モート",
    "class": "stock",
    "conviction": 2,
-   "tradePolicy": "trade",
+   "tradePolicy": "hold",
    "history": [
     {
      "d": "2025-11-11",
@@ -49919,7 +49007,7 @@
    "emoji": "⭐🟢",
    "color": "#059669",
    "side": "buy",
-   "actionable": false,
+   "actionable": true,
    "value": {
     "score": 56,
     "tier": "watch",
@@ -49934,36 +49022,17 @@
    },
    "momentum": {
     "signal": "none",
-    "note": "",
-    "relStrength3m": -20.6,
-    "breakoutHigh": 148.38,
-    "volConfirmed": false,
-    "trailStop": 132.0665,
-    "atrPct": 3.79,
-    "momState": "HOLD",
-    "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
-    "momEmoji": "🟡",
-    "momColor": "#16a34a",
-    "momSide": "none",
-    "momRec": {
-     "action": "none",
-     "score": 0,
-     "stars": 0,
-     "label": "アクションなし(待機)"
-    },
-    "contrarianValue": false,
-    "contrarianLabel": null,
-    "contrarianScore": null
+    "note": "hold銘柄"
    },
    "holdMgmt": {
-    "thesisBreak": false,
+    "thesisBreak": true,
     "trim": false,
-    "note": ""
+    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
    },
    "rec": {
-    "score": 46,
+    "score": 56,
     "stars": 3,
-    "level": "-",
+    "level": "C",
     "action": "hold",
     "expReturnPct": null,
     "expDays": null,
@@ -58051,20 +57120,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 62856.859375
+     "c": 62858.238281
     }
    ],
    "state": "DOWN",
-   "price": 62856.8594,
+   "price": 62858.2383,
    "top": 63946.3102,
    "bottom": 55341.715,
    "band": 258.1379,
-   "pctInRange": 87.3,
+   "pctInRange": 87.4,
    "distToBottomPct": 13.58,
    "distToTopPct": 1.73,
-   "smaShort": 62131.8133,
-   "smaLong": 67040.4878,
-   "smaTrend": 74825.3808,
+   "smaShort": 62131.8822,
+   "smaLong": 67040.5154,
+   "smaTrend": 74825.3877,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58099,7 +57168,7 @@
      "高値-45%の暴落水準 +20",
      "5年トレンド上向き +6"
     ],
-    "scorePrev": 51
+    "scorePrev": 49
    },
    "momentum": {
     "signal": "none",
@@ -58770,20 +57839,20 @@
     },
     {
      "d": "2026-07-04",
-     "c": 1785.709961
+     "c": 1780.459961
     }
    ],
    "state": "SELL",
-   "price": 1785.71,
+   "price": 1780.46,
    "top": 1543.759,
    "bottom": 1423.3592,
    "band": 3.612,
-   "pctInRange": 301.0,
-   "distToBottomPct": 25.46,
-   "distToTopPct": -13.55,
-   "smaShort": 1676.1023,
-   "smaLong": 1816.4232,
-   "smaTrend": 2268.1096,
+   "pctInRange": 296.6,
+   "distToBottomPct": 25.09,
+   "distToTopPct": -13.29,
+   "smaShort": 1675.8398,
+   "smaLong": 1816.3182,
+   "smaTrend": 2268.0834,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -58791,15 +57860,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 57.6,
+   "rsi": 57.2,
    "atr": 79.3291,
-   "atrPct": 4.44,
+   "atrPct": 4.46,
    "high52w": 4157.9893,
-   "drawdownPct": 57.1,
+   "drawdownPct": 57.2,
    "macroDriven": null,
    "topLong": 3504.555,
    "bottomLong": 2982.2844,
-   "pctInRangeLong": -229.1,
+   "pctInRangeLong": -230.1,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -60520,11 +59589,32 @@
    "detail": "デッドクロス"
   },
   {
-   "type": "MOM_EXIT_WARN",
-   "ticker": "BKTI",
+   "type": "THESIS_REVIEW",
+   "ticker": "CLMB",
    "priority": 2,
-   "title": "⚠️ BKTI 売り管理シグナル",
-   "detail": "50日線割れ"
+   "title": "🧐 CLMB テーゼ見直し(新規)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "BUR",
+   "priority": 2,
+   "title": "🧐 BUR テーゼ見直し(新規)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス・FCF赤字"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "HWKN",
+   "priority": 2,
+   "title": "🧐 HWKN テーゼ見直し(新規)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "BMI",
+   "priority": 2,
+   "title": "🧐 BMI テーゼ見直し(新規)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
   },
   {
    "type": "BUY_CONSIDER",
@@ -60532,13 +59622,6 @@
    "priority": 3,
    "title": "🟦 PLTR 購入検討 (スコア70)",
    "detail": "5年レンジ下段(0%位置) +20 / 高値-38%の暴落水準 +20 / 5年トレンド上向き +6"
-  },
-  {
-   "type": "BUY_CONSIDER",
-   "ticker": "CVX",
-   "priority": 3,
-   "title": "🟦 CVX 購入検討 (スコア67)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 高値-20% +8 / RSI36 +8"
   },
   {
    "type": "BUY_CONSIDER",
@@ -60648,9 +59731,8 @@
   "SNPS": 2.4,
   "MU": 2.12,
   "ARM": 1.32,
-  "XOM": 7.7,
-  "CVX": 2.0,
-  "CCJ": 5.3,
+  "XOM": 8.89,
+  "CCJ": 6.11,
   "NEE": 1.29,
   "ANET": 2.53,
   "VRT": 2.91,
