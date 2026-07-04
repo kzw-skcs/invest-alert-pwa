@@ -238,7 +238,7 @@
       "name": "AMD",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 3
     },
     {
@@ -247,7 +247,7 @@
       "name": "Palantir",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 3
     },
     {
@@ -258,16 +258,6 @@
       "subSector": "エネルギー",
       "tradePolicy": "hold",
       "conviction": 5
-    },
-    {
-      "ticker": "CVX",
-      "stooq": "cvx.us",
-      "name": "Chevron",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "△スコア急変の要因確認まで様子見"
     },
     {
       "ticker": "NEE",
@@ -361,7 +351,7 @@
       "name": "Arista Networks",
       "sector": "ハイテク",
       "subSector": "電力・DCインフラ",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 5,
       "held": true
     },
@@ -381,7 +371,7 @@
       "name": "Climb Global Solutions（小型株）",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2
     },
     {
@@ -408,7 +398,7 @@
       "name": "SpaceX",
       "sector": "宇宙・防衛",
       "subSector": "宇宙・防衛",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "新規上場・データ蓄積中"
     },
@@ -758,7 +748,7 @@
       "name": "Burford Capital",
       "sector": "金融",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -768,7 +758,7 @@
       "name": "Pitney Bowes",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -778,7 +768,7 @@
       "name": "XPEL",
       "sector": "一般消費財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -788,7 +778,7 @@
       "name": "BK Technologies",
       "sector": "ハイテク",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -798,7 +788,7 @@
       "name": "Hawkins",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -808,7 +798,7 @@
       "name": "GPGI",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -818,7 +808,7 @@
       "name": "Badger Meter",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨"
     },
@@ -922,64 +912,22 @@
       "stooq": "arm.us"
     },
     {
-      "ticker": "COST",
-      "stooq": "cost.us",
-      "name": "Costco",
-      "sector": "生活必需品",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "会員制の複利モート。リスクオフ回転の受け皿(サイクル追加)"
-    },
-    {
-      "ticker": "WM",
-      "stooq": "wm.us",
-      "name": "Waste Management",
-      "sector": "資本財",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "廃棄物処理の地域寡占。景気非感応の有事耐性(サイクル追加)"
-    },
-    {
-      "ticker": "PANW",
-      "stooq": "panw.us",
-      "name": "Palo Alto Networks",
-      "sector": "ハイテク",
-      "subSector": "その他モート",
+      "ticker": "IONQ",
+      "name": "IONQ",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
       "tradePolicy": "hold",
       "conviction": 3,
-      "note": "サイバー防衛。地政学的有事でむしろ需要増(サイクル追加)"
+      "stooq": "ionq.us"
     },
     {
-      "ticker": "FNV",
-      "stooq": "fnv.us",
-      "name": "Franco-Nevada",
-      "sector": "素材",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "金ロイヤルティの独占モデル。鉱山リスクなしで金価格連動+探鉱アップサイド(金サイクル増幅)"
-    },
-    {
-      "ticker": "AEM",
-      "stooq": "aem.us",
-      "name": "Agnico Eagle",
-      "sector": "素材",
-      "subSector": "その他モート",
+      "ticker": "SNDK",
+      "name": "SNDK",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
       "tradePolicy": "hold",
       "conviction": 3,
-      "note": "金鉱最優良(低コスト・安定管轄)。金の約2倍ベータ(金サイクル増幅)"
-    },
-    {
-      "ticker": "COIN",
-      "stooq": "coin.us",
-      "name": "Coinbase",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "trade",
-      "conviction": 3,
-      "note": "暗号資産サイクルのequityベータ。半減期底→ブル期に出来高連動(半減期サイクル連動)"
+      "stooq": "sndk.us"
     }
   ],
   "discovery": [
