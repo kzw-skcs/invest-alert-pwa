@@ -492,6 +492,21 @@ function renderCycle() {
     html += '<div style="margin-top:8px"><b class="tiny" style="color:var(--tx2)">⏳ 今後の節目(準備の目安)</b>' +
       c.timeline.map((t) => `<div class="tiny" style="margin:4px 0 0 4px">・<b>あと約${t.weeksTo}週</b>(${t.date}) ${t.label} — <span style="color:var(--cyan)">それまでに: ${t.prep}</span></div>`).join('') + '</div>';
   }
+  const bh = c.btcHalving;
+  if (bh) {
+    const tc = bh.thisCycle;
+    html += `<div style="border:1px solid var(--line);border-radius:10px;padding:10px;margin-top:10px">
+      <b style="font-size:13px">₿ 半減期サイクル</b>
+      <span class="pill" style="background:${bh.phase === 'bottom' ? '#1e3a8a' : bh.phase === 'bull' ? '#14532d' : bh.phase === 'bear' ? '#374151' : '#374151'};color:#fff;margin-left:6px">${bh.phaseLabel}</span>
+      <div class="tiny" style="margin-top:5px">前回半減期(${bh.lastHalving})から <b>+${bh.monthsSince}ヶ月</b> / 次回推定 ${bh.nextHalvingEst}(あと約${bh.weeksToNextHalving}週)</div>
+      ${tc ? `<div class="tiny">今サイクル: 天井 <b>$${(tc.peakPrice).toLocaleString()}</b>(半減期+${tc.peakMonths}ヶ月・${tc.peakDate}) → 現在 <b>$${(tc.currentPrice).toLocaleString()}</b>(天井比 <b class="${cls(tc.ddFromPeakPct)}">${fmtP(tc.ddFromPeakPct)}</b>)</div>` : ''}
+      <div class="alert-item ${bh.phase === 'bottom' ? 'p1' : 'p2'}" style="margin-top:6px"><div class="t">₿ リコメンド</div><div class="d">${bh.action}</div></div>
+      <details><summary>過去サイクルの実績(標本3)</summary>
+        <table style="margin-top:4px"><tr><th>サイクル</th><th>天井時期</th><th>倍率</th><th>底時期</th><th>調整幅</th></tr>
+        ${(bh.stats || []).map((s) => `<tr><td>${s.cycle}</td><td>+${s.peakMonths}ヶ月</td><td>×${s.peakGainX}</td><td>+${s.bottomMonths}ヶ月</td><td>${s.ddPct}%</td></tr>`).join('')}</table>
+        <div class="tiny" style="margin-top:4px">※標本3回のパターンであり「確率」と呼べる統計力はない。倍率は明確に逓減。ETHは独自の半減期を持たないがBTCサイクルに概ね連動してきた</div></details>
+    </div>`;
+  }
   html += (c.calendar || []).map((k) => `<div class="tiny" style="margin-top:6px">📅 <b>${k.label}</b> — ${k.note}</div>`).join('');
   const secs = Object.entries(c.sectors || {});
   if (secs.length) {

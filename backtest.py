@@ -24,6 +24,7 @@ from datetime import datetime, timezone, timedelta
 
 import engine
 import evaluate
+import engine as eng
 
 try:
     import numpy as np
@@ -96,6 +97,79 @@ def backtest_value(instruments_data, threshold):
     return summarize_trades(trades)
 
 
+def build_cycle_context(stock_data, cfg, bench_hist):
+    """過去各時点のサイクル文脈(セクター資金フロー・ベンチ200日線状態)を前計算。
+    日付と価格のみから導出するため未来情報の混入なし。"""
+    import bisect
+    sub_map = {s["ticker"]: (s.get("subSector") or "その他モート") for s in cfg["stocks"]}
+    sec_ret = {}
+    for tk, (sig, closes, dates) in stock_data.items():
+        sec = sub_map.get(tk)
+        for i in range(1, len(closes)):
+            sec_ret.setdefault(sec, {}).setdefault(dates[i], []).append(closes[i] / closes[i - 1] - 1)
+    b_dates = [h["d"] for h in bench_hist] if bench_hist else []
+    b_close = [h["c"] for h in bench_hist] if bench_hist else []
+    b_pos = {d: i for i, d in enumerate(b_dates)}
+    below200 = set()
+    run = 0.0
+    for i, c in enumerate(b_close):
+        run += c
+        if i >= 200:
+            run -= b_close[i - 200]
+            if c < run / 200:
+                below200.add(b_dates[i])
+    trend_by_sec = {}
+    for sec, dd in sec_ret.items():
+        ds = sorted(dd.keys())
+        idx, v = [], 1.0
+        for d in ds:
+            v *= 1 + sum(dd[d]) / len(dd[d])
+            idx.append(v)
+        tmap = {}
+        for p in range(64, len(ds)):
+            bp = b_pos.get(ds[p])
+            if bp is None or bp < 64:
+                continue
+            r21 = (idx[p] / idx[p - 21] - b_close[bp] / b_close[bp - 21]) * 100
+            r63 = (idx[p] / idx[p - 63] - b_close[bp] / b_close[bp - 63]) * 100
+            tmap[ds[p]] = "inflow" if (r21 > 0.5 and r21 > r63 / 3) else \
+                          "outflow" if (r21 < -0.5 and r21 < r63 / 3) else "neutral"
+        trend_by_sec[sec] = tmap
+    return {"sub_map": sub_map, "trend": trend_by_sec, "below200": below200}
+
+
+def backtest_value_cycle(instruments_data, threshold, ctx):
+    """サイクル補正後スコアで閾値判定するValue変種(本番apply_cycleと同じ加減点)。"""
+    trades = []
+    for tk, (sig, closes, dates) in instruments_data.items():
+        sec = ctx["sub_map"].get(tk)
+        tmap = ctx["trend"].get(sec, {})
+        open_pos = None
+        prev_adj = None
+        for t in range(WARMUP + 1, len(closes)):
+            s_now = sig[t]
+            if s_now is None:
+                prev_adj = None
+                continue
+            y, m = int(dates[t][:4]), int(dates[t][5:7])
+            delta, _ = eng.value_cycle_delta(m, y, tmap.get(dates[t]))
+            adj = s_now["score"] + delta
+            if open_pos is None:
+                if adj >= threshold and (prev_adj is None or prev_adj < threshold):
+                    open_pos = {"entryT": t, "entry": closes[t]}
+            else:
+                held = t - open_pos["entryT"]
+                hit_top = s_now["top"] and closes[t] >= s_now["top"] - s_now["band"]
+                if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
+                    trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
+                                   "exitDate": dates[t], "days": held,
+                                   "retPct": (closes[t] / open_pos["entry"] - 1) * 100,
+                                   "reason": "top" if hit_top else "time"})
+                    open_pos = None
+            prev_adj = adj
+    return summarize_trades(trades)
+
+
 def backtest_value_hold(instruments_data, threshold):
     """比較用: 最初にスコアが閾値を超えた日に買い、そのまま検証期間末まで保有し続けた場合。"""
     rows = []
@@ -124,7 +198,7 @@ def backtest_value_hold(instruments_data, threshold):
 
 # ---------------------------------------------------------------- モメンタム戦略
 
-def backtest_momentum(instruments_data, trade_tickers, mp):
+def backtest_momentum(instruments_data, trade_tickers, mp, ctx=None):
     trades = []
     daily_ret = {}  # date -> list of position daily returns
     for tk in trade_tickers:
@@ -165,6 +239,10 @@ def backtest_momentum(instruments_data, trade_tickers, mp):
                                    "retPct": total * 100, "reason": reason})
                     pos = None
             elif s and s["momSignal"] == "entry":
+                if ctx is not None:
+                    sec = ctx["sub_map"].get(tk)
+                    if dates[t] in ctx["below200"] or ctx["trend"].get(sec, {}).get(dates[t]) == "outflow":
+                        continue  # サイクルゲート: リスクオフ/セクター流出時は新規見送り
                 stop0 = max(price * (1 - mp["stopInitPct"] / 100),
                             price - (s["atr"] or price * 0.03) * mp["atrMult"])
                 pos = {"entryT": t, "entry": price, "stop": stop0,
@@ -488,6 +566,11 @@ def main():
                                  for label, thr in TIER_THRESHOLDS.items()}
     print("モメンタム戦略 検証中…")
     mom_results, mom_daily = backtest_momentum(stock_data, trade_tickers, mp)
+    print("サイクル統合版 検証中…")
+    cycle_ctx = build_cycle_context(stock_data, cfg, bench_hist)
+    value_cycle_results = {label: backtest_value_cycle(stock_data, thr, cycle_ctx)
+                           for label, thr in TIER_THRESHOLDS.items()}
+    mom_cycle_results, _ = backtest_momentum(stock_data, trade_tickers, mp, cycle_ctx)
     # 比較用: 部分利確なし(トレーリングのみで勝ちを伸ばす)バリアント
     mp_notp = dict(mp); mp_notp["tp1GainPct"] = 10 ** 9; mp_notp["tp2GainPct"] = 10 ** 9
     mom_notp_results, _ = backtest_momentum(stock_data, trade_tickers, mp_notp)
@@ -552,6 +635,15 @@ def main():
             f"「最初のシグナルで買って以後ずっと保有」は平均{vh['avgRetPct']}%(平均{vh['avgHoldDays']}営業日保有・年率換算{vh['avgAnnualizedPct']}%)。"
             "年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。"
             "ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。")
+    vc = value_cycle_results.get("strong(80)", {})
+    vp_ = value_results.get("strong(80)", {})
+    if vc.get("trades") and vp_.get("trades"):
+        interpretation.append(
+            f"🧭サイクル統合の効果検証(スコア80基準): チャート単独は{vp_['trades']}回・勝率{vp_['winRatePct']}%・平均{vp_['avgRetPct']}%、"
+            f"サイクル統合版は{vc['trades']}回・勝率{vc['winRatePct']}%・平均{vc['avgRetPct']}%。"
+            f"モメンタムはフィルタなし{mom_results.get('trades')}回(勝率{mom_results.get('winRatePct')}%・平均{mom_results.get('avgRetPct')}%)に対し、"
+            f"サイクルゲート版{mom_cycle_results.get('trades')}回(勝率{mom_cycle_results.get('winRatePct')}%・平均{mom_cycle_results.get('avgRetPct')}%)。"
+            "改善していれば統合の価値が実証、悪化ならサイクル補正を弱める判断材料。一般に効果は平均改善より最悪トレード削減に出やすい。")
     if mom_results.get("trades") and mom_notp_results.get("trades"):
         interpretation.append(
             f"モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均{mom_results['avgRetPct']}%/勝率{mom_results['winRatePct']}%、"
@@ -565,6 +657,8 @@ def main():
                    "tradingDays": len(common)},
         "valueTiers": value_results,
         "valueTiersHold": value_hold_results,
+        "valueTiersCycle": value_cycle_results,
+        "momentumCycle": mom_cycle_results,
         "assetTiers": asset_tiers,
         "assetTiersHold": asset_tiers_hold,
         "momentum": mom_results,

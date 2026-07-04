@@ -878,6 +878,160 @@ def cycle_analysis(sector_idx, bench_closes, vix_value, today=None):
     return out
 
 
+# ---------------------------------------------------------------- サイクル補正(総合スコアv2)
+
+def _retier(v, vp):
+    s = v["score"]
+    if s >= vp["tierAbsolute"]:
+        v["tier"], v["tierLabel"] = "absolute", "🚨絶対的買い場"
+    elif s >= vp["tierStrong"]:
+        v["tier"], v["tierLabel"] = "strong", "🔥強い買い"
+    elif s >= vp["tierConsider"]:
+        v["tier"], v["tierLabel"] = "consider", "🟦購入検討"
+    elif s >= vp["tierWatch"]:
+        v["tier"], v["tierLabel"] = "watch", "👀監視"
+    else:
+        v["tier"], v["tierLabel"] = "none", "-"
+
+
+def value_cycle_delta(month, year, sector_trend):
+    """Value買いへのサイクル補正(株)。過去時点でも日付+価格から再現可能な要素のみ。"""
+    delta, factors = 0, []
+    if month in (9, 10):
+        delta += 4; factors.append("季節性: 歴史的最弱期の押し目=良い仕込み月 +4")
+    if year % 4 == 2 and month in (9, 10, 11):
+        delta += 3; factors.append("中間選挙前後の仕込み窓 +3")
+    if sector_trend == "inflow":
+        delta += 3; factors.append("セクター資金流入 +3")
+    elif sector_trend == "outflow":
+        delta -= 3; factors.append("セクター資金流出 -3")
+    return max(-8, min(8, delta)), factors
+
+
+def apply_cycle(inst, cycle, vp, today=None):
+    """サイクル文脈を総合スコアへ統合。
+    Value(hold/accumulate): 小幅な加減点(チャートが主・サイクルは従、±8上限)
+    モメンタム(trade): ゲート方式(リスクオフ60+/セクター流出時は新規エントリー見送り)"""
+    if inst.get("state") == "NO_DATA":
+        return
+    today = today or datetime.utcnow().date()
+    sec = inst.get("subSector")
+    strend = ((cycle.get("sectors") or {}).get(sec) or {}).get("trend")
+    v = inst.get("value")
+    delta, factors = 0, []
+    if inst.get("class") == "stock":
+        delta, factors = value_cycle_delta(today.month, today.year, strend)
+    elif inst.get("class") == "crypto":
+        bh = cycle.get("btcHalving") or {}
+        if bh.get("phase") == "bottom":
+            delta, factors = 5, ["半減期サイクル: 底形成ウィンドウ +5"]
+        elif bh.get("phase") == "bear":
+            delta, factors = -5, ["半減期サイクル: 弱気期(時間帯待ち) -5"]
+        elif bh.get("phase") == "bull" and (bh.get("monthsSince") or 0) > 15:
+            factors = ["半減期サイクル: 天井警戒ゾーン(部分利確検討)"]
+    if v is not None and delta:
+        v["score"] = max(0, min(100, v["score"] + delta))
+        v["factors"].extend(factors)
+        _retier(v, vp)
+        rec = inst.get("rec")
+        if rec:
+            rec["score"] = max(0, min(100, rec["score"] + delta))
+            rec["stars"] = min(1 + int(rec["score"] // 20), 5)
+            rec["level"] = ("S" if rec["score"] >= 90 else "A" if rec["score"] >= 80
+                            else "B" if rec["score"] >= 65 else "C" if rec["score"] >= 50 else "-")
+    elif v is not None and factors:
+        v["factors"].extend(factors)
+    # モメンタムのサイクルゲート
+    mom = inst.get("momentum") or {}
+    if inst.get("tradePolicy") == "trade" and mom.get("momState") == "ENTRY":
+        ro = (cycle.get("riskOff") or {}).get("score", 0)
+        gate = None
+        if ro >= 60:
+            gate = f"リスクオフ度{ro}"
+        elif strend == "outflow":
+            gate = "セクター資金流出中"
+        if gate:
+            mom.update({"momState": "WAIT", "momStateLabel": f"⚪ 見送り(サイクルフィルタ: {gate})",
+                        "momEmoji": "⚪", "momColor": "#6b7280", "momSide": "none",
+                        "momRec": {"action": "none", "score": 0, "stars": 0,
+                                   "label": f"入口条件成立もサイクルフィルタで見送り({gate})"}})
+            mom["cycleGated"] = gate
+        elif today.month in (8, 9) and mom.get("momRec"):
+            mom["momRec"]["score"] = max(0, mom["momRec"]["score"] - 10)
+            mom["note"] = (mom.get("note") or "") + "・季節性逆風(8-9月)"
+
+
+# ---------------------------------------------------------------- BTC半減期サイクル
+
+HALVINGS = [date(2012, 11, 28), date(2016, 7, 9), date(2020, 5, 11), date(2024, 4, 19)]
+NEXT_HALVING_EST = date(2028, 4, 15)  # 推定(ブロック生成ペースにより前後)
+
+# 過去サイクルの実績(半減期→天井→底)。標本3のため「確率」ではなく頻度として扱う
+HALVING_STATS = [
+    {"cycle": "2012→", "peakMonths": 12, "peakGainX": 95.0, "bottomMonths": 26, "ddPct": -83},
+    {"cycle": "2016→", "peakMonths": 17, "peakGainX": 30.0, "bottomMonths": 29, "ddPct": -84},
+    {"cycle": "2020→", "peakMonths": 18, "peakGainX": 7.9,  "bottomMonths": 30, "ddPct": -77},
+]
+
+
+def btc_halving_analysis(btc_hist, today=None):
+    """BTC半減期サイクルの現在地と過去サイクル比較。btc_hist: [{"d","c"}](約6年分)。"""
+    today = today or datetime.utcnow().date()
+    last_h = max(h for h in HALVINGS if h <= today)
+    months = round((today - last_h).days / 30.44, 1)
+    # フェーズ判定(過去3サイクルの実績窓に基づく)
+    if months < 6:
+        phase, plabel = "accumulation", "🌱 供給ショック醸成期(半減期直後)"
+        pnote = "歴史的には緩やかな上昇期。淡々と積立"
+    elif months < 19:
+        phase, plabel = "bull", "🚀 ブル本番期"
+        pnote = "過去3サイクルすべてで天井は半減期+12〜18ヶ月に出現。過熱時は段階利確も検討ゾーン"
+    elif months < 26:
+        phase, plabel = "bear", "🧊 弱気期"
+        pnote = "天井後の調整期(過去実績-77〜-84%)。ナイフは掴まず、底の時間帯を待つ"
+    elif months <= 32:
+        phase, plabel = "bottom", "⛏️ 底形成・仕込みウィンドウ"
+        pnote = "過去3サイクルの底はすべて半減期+26〜30ヶ月に出現。歴史的にはこの時間帯の分割買いが次サイクルの主リターン源"
+    else:
+        phase, plabel = "prehalving", "📈 次半減期への先回り期"
+        pnote = "底打ち後〜次半減期は歴史的に緩やかな回復上昇。積立継続"
+    out = {"lastHalving": last_h.isoformat(), "monthsSince": months,
+           "phase": phase, "phaseLabel": plabel, "note": pnote,
+           "nextHalvingEst": NEXT_HALVING_EST.isoformat(),
+           "weeksToNextHalving": max(0, round((NEXT_HALVING_EST - today).days / 7)),
+           "stats": HALVING_STATS}
+    # 今サイクルの実測(手元の価格データから動的算出)
+    if btc_hist and len(btc_hist) > 100:
+        seg = [h for h in btc_hist if h["d"] >= last_h.isoformat()]
+        if len(seg) > 30:
+            peak = max(seg, key=lambda x: x["c"])
+            cur = btc_hist[-1]["c"]
+            peak_d = datetime.strptime(peak["d"], "%Y-%m-%d").date()
+            out["thisCycle"] = {
+                "peakPrice": round(peak["c"]), "peakDate": peak["d"],
+                "peakMonths": round((peak_d - last_h).days / 30.44, 1),
+                "currentPrice": round(cur),
+                "ddFromPeakPct": round((cur / peak["c"] - 1) * 100, 1),
+            }
+    # アクション文(頻度ベース・確率と呼ばない)
+    freq = f"過去3サイクル中3回"
+    if phase == "bottom":
+        gains = [s["peakGainX"] for s in HALVING_STATS]
+        out["action"] = (f"現在は半減期+{months}ヶ月。{freq}、底はこの時間帯(+26〜30ヶ月)に出現し、"
+                         f"底値から次サイクル天井までの上昇は最小でも約{min(gains):.0f}倍だった(逓減傾向あり: 95→30→7.9倍)。"
+                         f"次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。"
+                         f"→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない")
+    elif phase == "bull":
+        out["action"] = (f"現在は半減期+{months}ヶ月。{freq}、天井は+12〜18ヶ月に出現。"
+                         f"このゾーンでは新規の大口買いを控え、過熱(前回天井比+50%超など)では段階利確を検討")
+    elif phase == "bear":
+        out["action"] = (f"現在は半減期+{months}ヶ月。{freq}、この時間帯は下落継続期だった。"
+                         f"+26ヶ月以降の仕込みウィンドウまで戦略キャッシュを温存")
+    else:
+        out["action"] = f"現在は半減期+{months}ヶ月({plabel})。{pnote}"
+    return out
+
+
 # ---------------------------------------------------------------- アラート集約(プッシュ用)
 
 def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):

@@ -155,7 +155,7 @@ def fetch_nihon_material():
             for m in re.finditer(jp, text):
                 prev = text[m.start() - 1: m.start()]
                 nxt = text[m.end(): m.end() + 1]
-                if key == "gold" and (prev in ("白", "料", "代", "資", "現", "貴", "純", "年")
+                if key == "gold" and (prev in ("白", "料", "代", "資", "現", "貴", "純", "年", "地", "課", "税")
                                       or nxt in ("貨", "属", "融", "利")):
                     continue  # 白金・金貨・貴金属・金融などの誤検出を除外
                 seg = text[m.end(): m.end() + 110]
@@ -213,6 +213,7 @@ def main():
     instruments = []
     stock_hist_map = {}
     gold_closes = None
+    btc_hist = None
     entries = []
     for st in cfg["stocks"]:
         e = dict(st); e["class"] = "stock"; e["key"] = st["ticker"]; entries.append(e)
@@ -236,6 +237,8 @@ def main():
             stock_hist_map[e["ticker"]] = hist
         if e.get("key") == "gold" and hist:
             gold_closes = [h["c"] for h in hist]
+        if e.get("key") == "btc" and hist:
+            btc_hist = hist
         time.sleep(0.4)  # レート制限予防
 
     # ファンダ品質の統合(fundamentals.jsonがあれば)
@@ -273,6 +276,14 @@ def main():
     if gold_closes:
         sector_idx["_gold"] = gold_closes
     cycle = engine.cycle_analysis(sector_idx, bench_closes, vix.get("value"))
+    cycle["btcHalving"] = engine.btc_halving_analysis(btc_hist)
+    print(f"BTC半減期: +{cycle['btcHalving']['monthsSince']}ヶ月 {cycle['btcHalving']['phaseLabel']}")
+    gated = 0
+    for inst in instruments:
+        engine.apply_cycle(inst, cycle, cfg["valueParams"])
+        if (inst.get("momentum") or {}).get("cycleGated"):
+            gated += 1
+    print(f"サイクル補正適用: モメンタム見送り{gated}件")
     print(f"サイクル分析: リスクオフ度{cycle['riskOff']['score']} / セクター{list(cycle['sectors'].keys())}")
 
     events = engine.analyze_events(cfg, instruments)
