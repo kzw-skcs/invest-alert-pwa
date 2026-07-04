@@ -253,7 +253,12 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
       🧪 バックテストも実行する(+1〜2時間)
     </label>
     <button class="btn pri" style="width:100%;padding:12px" onclick="runAllInOne()">🚀 すべて更新のうえ再分析</button>
-    <div class="tiny" id="all-status" style="margin-top:6px"></div>
+    <div id="all-status" class="tiny" style="margin-top:8px"></div>
+    <div id="all-progress" style="display:none;margin-top:8px">
+      <div id="all-closeok" style="background:#052e1a;border:1px solid #166534;border-radius:10px;padding:9px 11px;font-size:13px;font-weight:700;color:var(--green)">🟢 指示はサーバーに届きました — ここから画面を閉じてもOKです(処理は自動で継続)</div>
+      <div class="progress" style="margin-top:8px;height:10px"><div id="all-bar" style="width:5%;background:var(--violet)"></div></div>
+      <div class="tiny" id="all-step" style="margin-top:4px">—</div>
+    </div>
   </div>
   <div class="card">
     <h3>🔎 ティッカー検索・追加</h3>
@@ -1224,21 +1229,63 @@ async function syncServer(silent) {
     return !!j.ok;
   } catch (e) { toast('同期失敗: サーバー未設定(GH_TOKEN)。表示のみ変更されています。'); return false; }
 }
+let ALL_POLL = null;
+let ALL_DISPATCHED_AT = 0;
 async function runAllInOne() {
   const st = $('#all-status');
   const bt = $('#all-backtest').checked;
-  st.textContent = '① ウォッチリストを同期中…';
+  st.textContent = '⚠️ 送信中です。この表示の間だけは画面を閉じないでください… (① ウォッチリスト同期中)';
   const synced = await syncServer(true);
-  st.textContent = synced ? '① 同期完了 → ② 一括ジョブを起動中…' : '① 同期スキップ(未設定) → ② 一括ジョブを起動中…';
+  st.textContent = (synced ? '① 同期完了' : '① 同期スキップ') + ' → ② 一括ジョブ送信中…(まだ閉じないで)';
   try {
     const r = await fetch('api/run', { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ workflow: 'all', inputs: { run_backtest: bt ? 'true' : 'false' } }) });
     const j = await r.json();
     if (j.ok) {
-      st.innerHTML = `✅ 一括ジョブ開始(品質→判定→再分析${bt ? '→バックテスト' : ''})。完了目安: ${bt ? '1.5〜2.5時間' : '15〜25分'}後に🔄で反映されます。`;
+      st.textContent = '';
+      ALL_DISPATCHED_AT = Date.now();
+      $('#all-progress').style.display = '';
+      $('#all-bar').style.width = '5%';
+      $('#all-step').textContent = `起動待ち…(完了目安 ${bt ? '1.5〜2.5時間' : '15〜25分'})`;
+      startAllPoll();
       toast('🚀 すべて更新を開始しました');
     } else { st.textContent = '起動失敗: ' + (j.error || ''); }
   } catch (e) { st.textContent = '起動失敗: サーバー未設定(GH_TOKEN)。'; }
+}
+function startAllPoll() {
+  if (ALL_POLL) clearInterval(ALL_POLL);
+  pollAllStatus();
+  ALL_POLL = setInterval(pollAllStatus, 20000);
+}
+async function pollAllStatus() {
+  try {
+    const r = await fetch('api/status?workflow=all&t=' + Date.now());
+    const s = await r.json();
+    if (!s.ok || s.status === 'none') return;
+    const started = s.startedAt ? new Date(s.startedAt).getTime() : 0;
+    const bar = $('#all-bar'), step = $('#all-step'), prog = $('#all-progress');
+    if (ALL_DISPATCHED_AT && started && started < ALL_DISPATCHED_AT - 120000 && s.status === 'completed') {
+      step.textContent = '起動待ち…(GitHub側でジョブ生成中)'; return;  // まだ前回分を見ている
+    }
+    prog.style.display = '';
+    const mins = started ? Math.max(0, Math.round((Date.now() - started) / 60000)) : 0;
+    if (s.status === 'completed') {
+      clearInterval(ALL_POLL); ALL_POLL = null;
+      if (s.conclusion === 'success') {
+        bar.style.width = '100%'; bar.style.background = 'var(--green)';
+        step.innerHTML = '✅ すべて完了しました — 最新データを読み込みます…';
+        setTimeout(() => { loadData(true); step.textContent = '✅ 完了・反映済み'; }, 1500);
+      } else {
+        bar.style.width = '100%'; bar.style.background = 'var(--red)';
+        step.innerHTML = `❌ 一部失敗(${s.conclusion})。<a href="${s.htmlUrl}" target="_blank" style="color:var(--blue)">ログを見る</a>`;
+      }
+      return;
+    }
+    if (s.status === 'queued') { bar.style.width = '5%'; step.textContent = `⏳ 順番待ち…(${mins}分経過)`; return; }
+    const total = s.stepTotal || 5, done = s.stepDone || 0;
+    bar.style.width = Math.max(8, Math.round(done / total * 100)) + '%';
+    step.textContent = `▶ ${s.currentStep || '実行中'} (${done}/${total}ステップ完了・${mins}分経過)`;
+  } catch (e) { /* 通信失敗は次回ポーリングへ */ }
 }
 async function runWorkflow(name, label) {
   toast(`${label} を起動中…`);
@@ -1460,6 +1507,14 @@ const savedPlan = LS.get('iv2.plan', null);
 if (savedPlan && savedPlan.total) $('#plan-total').value = savedPlan.total;
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+// 起動時に一括ジョブが実行中なら進捗表示を自動再開
+(async () => {
+  try {
+    const r = await fetch('api/status?workflow=all&t=' + Date.now());
+    const s = await r.json();
+    if (s.ok && (s.status === 'in_progress' || s.status === 'queued')) startAllPoll();
+  } catch (e) {}
+})();
 loadData(false).then(() => {
   // 初回起動時のみ旧データを自動スキャン
   if (!LS.get('iv2.migrated', false)) {
