@@ -575,6 +575,7 @@ function renderCycle() {
         <td>${x.s}</td><td class="${cls(x.v.rs63)}">${fmtP(x.v.rs63)}</td><td class="${cls(x.v.rs21)}">${fmtP(x.v.rs21)}</td>
         <td>${x.v.trend === 'inflow' ? '🟢流入' : x.v.trend === 'outflow' ? '🔴流出' : '⚪中立'}</td>
         <td>${x === leader ? '👑現リーダー' : x === next ? '🔮次候補' : ''}</td></tr>`).join('')}</table>`;
+    html += `<div class="tiny" style="margin-top:4px;color:var(--tx3)">RS=対S&P500の超過リターン(+2%=S&Pより2pt勝ち)。3ヶ月RS=基調 / 1ヶ月RS=直近の勢い。基調マイナス×直近プラス転換=流入の兆候(🔮判定の根拠)</div>`;
     if (next) {
       const nextTickers = instruments().filter((i) => (i.rotSector || i.subSector) === next.s && i.class === 'stock')
         .sort((a, b) => (b.rec ? b.rec.score : 0) - (a.rec ? a.rec.score : 0)).slice(0, 6);
@@ -687,9 +688,28 @@ function renderCards() {
   }
   const fLabel = { all: 'すべて', action: 'アクションあり', stock: '株のみ', other: '暗号資産・金銀のみ' }[SIGFILTER] || '';
   el.innerHTML = `<div class="tiny" style="margin:2px 0 8px">🔽 ${hyb ? '🔷ハイブリッド(Value+モメンタム)' : mom ? '⚡短期モメンタム' : '📈長期Value'} / ${fLabel}: <b>${list.length}銘柄</b>${list.length === 0 ? ' — 該当なし(フィルタを「すべて」に戻してください)' : ''}</div>` + list.map((i) => isMomCard(i) ? momCardHTML(i) : cardHTML(i)).join('');
-  list.forEach((i) => drawSpark(i));
+  // チャートは画面に入った時だけ描画(89銘柄一括描画による重さを解消)
+  if (window._sparkIO) window._sparkIO.disconnect();
+  window._sparkIO = new IntersectionObserver((ents, io) => {
+    for (const en of ents) {
+      if (!en.isIntersecting) continue;
+      const tk = en.target.id.slice(3);
+      const inst = (DATA.instruments || []).find((x) => x.ticker === tk);
+      if (inst) drawSpark(inst);
+      io.unobserve(en.target);
+    }
+  }, { rootMargin: '300px' });
+  list.forEach((i) => { const cv = document.getElementById('sp-' + i.ticker); if (cv) window._sparkIO.observe(cv); });
 }
 
+function flowOf(sec) {
+  const s = DATA && DATA.cycle && DATA.cycle.sectors && DATA.cycle.sectors[sec];
+  return s ? (s.trend === 'inflow' ? '🟢' : s.trend === 'outflow' ? '🔴' : '⚪') : '';
+}
+function rotChip(i) {
+  if (!i.rotSector) return '';
+  return `<span class="pill" style="background:var(--bg3);color:var(--tx2);font-size:10px">${i.rotSector}${flowOf(i.rotSector)}</span>`;
+}
 function dispState(i) {
   // hold/accumulate銘柄は「売り」の言葉を使わず、買い手目線のラベルに変換
   const longSide = i.tradePolicy !== 'trade';
@@ -711,7 +731,7 @@ function cardHTML(i) {
   return `<div class="icard" data-tk="${i.ticker}">
     <div class="head" onclick="openChart('${i.ticker}','${i.class}')">
       <span style="font-size:17px">${i.emoji}</span>
-      <span class="tk">${i.ticker}</span><span class="nm">${i.name}</span>${pol}
+      <span class="tk">${i.ticker}</span><span class="nm">${i.name}</span>${rotChip(i)}${pol}
       <span class="st" style="color:${ds.color}">${ds.label}</span>
     </div>
     <div class="row">
@@ -760,7 +780,7 @@ function cardHTML(i) {
 function momCardHTML(i) {
   const m = i.momentum || {};
   if (i.state === 'NO_DATA' || m.momState === 'NODATA')
-    return `<div class="icard"><div class="head"><span class="tk">${i.ticker}</span><span class="nm">${i.name}</span><span class="st">❔ データ蓄積中</span></div></div>`;
+    return `<div class="icard"><div class="head"><span class="tk">${i.ticker}</span><span class="nm">${i.name}</span>${rotChip(i)}<span class="st">❔ データ蓄積中</span></div></div>`;
   const rec = m.momRec || { action: 'none', score: 0, label: '' };
   const price = fmtN(i.price);
   // 推奨(購入と売却は同時に立たない)
@@ -1148,6 +1168,7 @@ function renderModelPF() {
   }
   if (m.tickers && m.tickers.length) {
     html += `<details open style="margin-top:8px"><summary>コア銘柄ウェイト(株スリーブ内・上位15)</summary>
+      <div class="tiny" style="color:var(--tx3)">フロー: 🟢流入/🔴流出/⚪中立 — 🧭ローテーション表と同一判定</div>
       <table style="margin-top:4px"><tr><th>銘柄</th><th>比率</th><th>確信度</th><th>Q</th><th>現況</th><th>フロー</th></tr>
       ${m.tickers.map((r) => `<tr><td><b>${r.ticker}</b></td><td>${r.wPct}%</td><td>${'●'.repeat(r.conviction || 3)}</td>
         <td>${r.q ?? '—'}</td><td class="tiny">${r.tier || '-'}</td>
@@ -1356,7 +1377,7 @@ function renderWatchlist() {
   el.innerHTML = pendingHtml + instruments().filter((i) => i.class === 'stock').map((i) => `
     <div class="row" style="padding:7px 0;border-bottom:1px solid #24334a;gap:8px">
       <b style="width:58px">${i.ticker}</b>
-      <span class="tiny grow">${i.name}<br>${i.subSector || i.sector} / 確信度${'●'.repeat(i.conviction || 3)}</span>
+      <span class="tiny grow">${i.name}<br>${i.subSector || i.sector} / ${i.rotSector || ''}${flowOf(i.rotSector)} / 確信度${'●'.repeat(i.conviction || 3)}</span>
       <span class="tiny">${i.tradePolicy === 'trade' ? '短期' : '長期'}</span>
       <label class="switch"><input type="checkbox" ${i.tradePolicy === 'trade' ? 'checked' : ''} onchange="togglePolicy('${i.ticker}',this.checked)"><span></span></label>
       <button class="btn sm" onclick="hideTicker('${i.ticker}')">×</button>
