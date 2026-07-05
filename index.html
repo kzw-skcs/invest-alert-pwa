@@ -491,6 +491,17 @@ function renderCycle() {
       <div class="progress grow" style="height:10px"><div style="width:${ro.score}%;background:${roColor}"></div></div>
       <b style="color:${roColor}">${ro.score}</b></div>
     ${ro.factors && ro.factors.length ? `<div class="tiny" style="margin-top:3px">要因: ${ro.factors.join(' / ')}</div>` : ''}`;
+  if (c.macro && c.macro.length) {
+    html += '<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">📆 マーケットカレンダー(FOMC・雇用統計・CPI)</b>' +
+      c.macro.map((e) => `<div style="border:1px solid ${e.phase === 'imminent' ? 'var(--red)' : 'var(--line)'};border-radius:10px;padding:8px 10px;margin-top:6px">
+        <div class="row"><b style="font-size:13px">${e.icon} ${e.type}</b>
+          <span class="tiny grow" style="margin-left:6px">${e.date}${e.approx ? '(目安)' : ''}</span>
+          <span class="pill" style="background:${e.phase === 'imminent' ? '#7f1d1d' : e.phase === 'post' ? '#374151' : 'var(--bg3)'};color:#fff">
+            ${e.phase === 'post' ? '発表済み' : e.daysTo === 0 ? '本日!' : `あと${e.daysTo}日`}</span></div>
+        <div class="tiny" style="margin-top:3px">${e.guide}</div>
+        ${e.comment ? `<div class="tiny" style="margin-top:4px;border-left:3px solid var(--cyan);padding-left:8px;color:var(--cyan)">💬 Claude解釈: ${e.comment}</div>` : ''}
+      </div>`).join('') + '</div>';
+  }
   html += (c.actions || []).map((a) => `<div class="alert-item ${a.icon === '🛡️' ? 'p1' : a.icon === '⚠️' || a.icon === '🔄' ? 'p2' : 'p3'}" style="margin-top:8px">
       <div class="t">${a.icon} ${a.title}</div><div class="d">${a.note}${a.timing ? `<br><b style="color:var(--cyan)">⏱ ${a.timing}</b>` : ''}</div></div>`).join('');
   if (c.timeline && c.timeline.length) {

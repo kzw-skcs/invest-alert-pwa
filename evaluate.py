@@ -277,6 +277,11 @@ def main():
         sector_idx["_gold"] = gold_closes
     cycle = engine.cycle_analysis(sector_idx, bench_closes, vix.get("value"))
     cycle["btcHalving"] = engine.btc_halving_analysis(btc_hist)
+    cycle["macro"] = engine.macro_calendar(cfg)
+    for ev in cycle["macro"]:
+        if ev["phase"] == "imminent":
+            alerts_macro = f"{ev['icon']} {ev['type']}まであと{ev['daysTo']}日({ev['date']})"
+            print("マクロイベント接近:", alerts_macro)
     print(f"BTC半減期: +{cycle['btcHalving']['monthsSince']}ヶ月 {cycle['btcHalving']['phaseLabel']}")
     gated = 0
     for inst in instruments:
@@ -305,6 +310,11 @@ def main():
             inst["value"]["scorePrev"] = pv
     remind = datetime.now(JST).weekday() == 0
     alerts = engine.build_alerts(instruments, events, vix, cfg, prev_thesis, remind)
+    for ev in cycle.get("macro", []):
+        if ev["phase"] == "imminent" and ev["daysTo"] >= 0:
+            alerts.append({"type": "MACRO_EVENT", "ticker": ev["type"], "priority": 2,
+                           "title": f"{ev['icon']} {ev['type']}まであと{ev['daysTo']}日({ev['date']})",
+                           "detail": ev["guide"][:90] + "…"})
     if cycle["riskOff"]["score"] >= 60:
         alerts.insert(0, {"type": "CYCLE", "ticker": "MARKET", "priority": 1,
                           "title": f"🛡️ リスクオフ度{cycle['riskOff']['score']} — 有事への備えを",

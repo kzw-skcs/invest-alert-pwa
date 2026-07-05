@@ -962,6 +962,58 @@ def apply_cycle(inst, cycle, vp, today=None):
             mom["note"] = (mom.get("note") or "") + "・季節性逆風(8-9月)"
 
 
+# ---------------------------------------------------------------- マクロ経済カレンダー
+
+MACRO_GUIDE = {
+    "FOMC": {"icon": "🏛️", "pre": "政策金利決定+会見。金・BTC・グロース株が最も動くイベント。発表2日前〜当日は新規の大口買いを控える。発表直後30分の値動きはダマシが多く、追いかけない。ドットチャート(金利見通し)が想定よりタカ派ならグロース逆風/ハト派なら追い風",
+             "post": "通過。声明文の変化・会見トーンの解釈はブリーフィング参照(Claudeに『FOMCの解釈は?』と聞けば当日中に整理)"},
+    "雇用統計": {"icon": "👷", "pre": "毎月第1金曜(米東部8:30)。強すぎる雇用=利下げ観測後退=グロース逆風、弱すぎ=景気後退懸念。どちらに転んでもボラが出るため、前日までにtrade銘柄の損切りラインを確認",
+             "post": "通過。市場の初期反応が翌週に反転することも多い(過剰反応の修正)。数字の解釈はブリーフィング参照"},
+    "CPI": {"icon": "📊", "pre": "消費者物価(月中旬・目安)。インフレ再加速→金利高止まり→ハイテクPER圧縮の経路に注意。発表前の新規買いは控えめに、Valueの押し目リストを準備(下振れ時は好機になりやすい)",
+             "post": "通過。コア指数とスーパーコアの内訳が本丸。解釈はブリーフィング参照"},
+}
+
+
+def macro_calendar(cfg, today=None):
+    """FOMC(公表日程)・雇用統計(第1金曜)・CPI(月中旬目安)の直近イベントと行動指針。"""
+    today = today or datetime.utcnow().date()
+    events = []
+    for d in (cfg.get("macroCalendar") or {}).get("fomc", []):
+        try:
+            dt = datetime.strptime(d, "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if -2 <= (dt - today).days <= 60:
+            events.append(("FOMC", dt))
+    for add_m in (0, 1):
+        y, m = today.year, today.month + add_m
+        if m > 12:
+            y, m = y + 1, m - 12
+        # 第1金曜(雇用統計)
+        d1 = date(y, m, 1)
+        nfp = d1 + timedelta(days=(4 - d1.weekday()) % 7)
+        if -2 <= (nfp - today).days <= 45:
+            events.append(("雇用統計", nfp))
+        cpi = date(y, m, 13)  # 目安
+        if -2 <= (cpi - today).days <= 45:
+            events.append(("CPI", cpi))
+    events.sort(key=lambda x: x[1])
+    comments = (cfg.get("macroCalendar") or {}).get("comments", {})
+    out = []
+    for typ, dt in events[:5]:
+        days = (dt - today).days
+        g = MACRO_GUIDE[typ]
+        item = {"type": typ, "icon": g["icon"], "date": dt.isoformat(), "daysTo": days,
+                "phase": "post" if days < 0 else "imminent" if days <= 3 else "upcoming",
+                "guide": g["post"] if days < 0 else g["pre"],
+                "approx": typ == "CPI"}
+        c = comments.get(dt.isoformat()) or comments.get(f"{typ}:{dt.isoformat()}")
+        if c:
+            item["comment"] = c
+        out.append(item)
+    return out
+
+
 # ---------------------------------------------------------------- BTC半減期サイクル
 
 HALVINGS = [date(2012, 11, 28), date(2016, 7, 9), date(2020, 5, 11), date(2024, 4, 19)]
