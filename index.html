@@ -500,6 +500,7 @@ function renderCycle() {
             ${e.phase === 'post' ? '発表済み' : e.daysTo === 0 ? '本日!' : `あと${e.daysTo}日`}</span></div>
         <div class="tiny" style="margin-top:3px">${e.guide}</div>
         ${e.comment ? `<div class="tiny" style="margin-top:4px;border-left:3px solid var(--cyan);padding-left:8px;color:var(--cyan)">💬 Claude解釈: ${e.comment}</div>` : ''}
+        ${(e.phase === 'post' || e.daysTo === 0) && !e.comment ? `<button class="btn sm pri" style="margin-top:6px" onclick="interpretEvent('${e.type}','${e.date}',this)">🧠 今回の発表の解釈を生成</button><div class="tiny" id="interp-${e.date}"></div>` : ''}
       </div>`).join('') + '</div>';
   }
   html += (c.actions || []).map((a) => `<div class="alert-item ${a.icon === '🛡️' ? 'p1' : a.icon === '⚠️' || a.icon === '🔄' ? 'p2' : 'p3'}" style="margin-top:8px">
@@ -1470,6 +1471,26 @@ async function pollAllStatus() {
     bar.style.width = Math.max(8, Math.round(done / total * 100)) + '%';
     step.textContent = `▶ ${s.currentStep || '実行中'} (${done}/${total}ステップ完了・${mins}分経過)`;
   } catch (e) { /* 通信失敗は次回ポーリングへ */ }
+}
+async function interpretEvent(type, date, btn) {
+  const out = document.getElementById('interp-' + date);
+  btn.disabled = true; btn.textContent = '🧠 検索・解釈中…(30〜60秒)';
+  try {
+    const r = await fetch('api/interpret', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, date }) });
+    const j = await r.json();
+    if (j.ok) {
+      out.innerHTML = `<div style="margin-top:6px;border-left:3px solid var(--cyan);padding-left:8px;color:var(--cyan)">💬 Claude解釈: ${j.comment}</div>
+        <div class="tiny" style="color:var(--tx3)">${j.saved ? '保存済み — 次回の判定更新後はカードに常設されます' : '表示のみ(保存失敗)'}</div>`;
+      btn.style.display = 'none';
+    } else {
+      out.textContent = '失敗: ' + (j.error || '');
+      btn.disabled = false; btn.textContent = '🧠 今回の発表の解釈を生成';
+    }
+  } catch (err) {
+    out.textContent = '失敗: サーバー未設定(ANTHROPIC_API_KEY)';
+    btn.disabled = false; btn.textContent = '🧠 今回の発表の解釈を生成';
+  }
 }
 async function runWorkflow(name, label) {
   toast(`${label} を起動中…`);
