@@ -246,7 +246,7 @@
       "name": "AMD",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 3,
       "rotSector": "情報技術"
     },
@@ -256,7 +256,7 @@
       "name": "Palantir",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 3,
       "rotSector": "情報技術"
     },
@@ -268,17 +268,6 @@
       "subSector": "エネルギー",
       "tradePolicy": "hold",
       "conviction": 5,
-      "rotSector": "エネルギー"
-    },
-    {
-      "ticker": "CVX",
-      "stooq": "cvx.us",
-      "name": "Chevron",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "△スコア急変の要因確認まで様子見",
       "rotSector": "エネルギー"
     },
     {
@@ -382,7 +371,7 @@
       "name": "Arista Networks",
       "sector": "ハイテク",
       "subSector": "電力・DCインフラ",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 5,
       "held": true,
       "rotSector": "情報技術"
@@ -404,7 +393,7 @@
       "name": "Climb Global Solutions（小型株）",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "rotSector": "情報技術"
     },
@@ -434,7 +423,7 @@
       "name": "SpaceX",
       "sector": "宇宙・防衛",
       "subSector": "宇宙・防衛",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "新規上場・データ蓄積中",
       "rotSector": "資本財"
@@ -819,7 +808,7 @@
       "name": "Burford Capital",
       "sector": "金融",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "金融"
@@ -830,7 +819,7 @@
       "name": "Pitney Bowes",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
@@ -841,7 +830,7 @@
       "name": "XPEL",
       "sector": "一般消費財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "一般消費財"
@@ -852,7 +841,7 @@
       "name": "BK Technologies",
       "sector": "ハイテク",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "情報技術"
@@ -863,7 +852,7 @@
       "name": "Hawkins",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "素材"
@@ -874,7 +863,7 @@
       "name": "GPGI",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
@@ -885,7 +874,7 @@
       "name": "Badger Meter",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
@@ -1000,125 +989,22 @@
       "rotSector": "情報技術"
     },
     {
-      "ticker": "COST",
-      "stooq": "cost.us",
-      "name": "Costco",
-      "sector": "生活必需品",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "会員制の複利モート。リスクオフ回転の受け皿(サイクル追加)",
-      "rotSector": "生活必需品"
-    },
-    {
-      "ticker": "WM",
-      "stooq": "wm.us",
-      "name": "Waste Management",
-      "sector": "資本財",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "廃棄物処理の地域寡占。景気非感応の有事耐性(サイクル追加)",
-      "rotSector": "資本財"
-    },
-    {
-      "ticker": "PANW",
-      "stooq": "panw.us",
-      "name": "Palo Alto Networks",
-      "sector": "ハイテク",
-      "subSector": "その他モート",
+      "ticker": "IONQ",
+      "name": "IONQ",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
       "tradePolicy": "hold",
       "conviction": 3,
-      "note": "サイバー防衛。地政学的有事でむしろ需要増(サイクル追加)",
-      "rotSector": "情報技術"
+      "stooq": "ionq.us"
     },
     {
-      "ticker": "FNV",
-      "stooq": "fnv.us",
-      "name": "Franco-Nevada",
-      "sector": "素材",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "金ロイヤルティの独占モデル。鉱山リスクなしで金価格連動+探鉱アップサイド(金サイクル増幅)",
-      "rotSector": "素材"
-    },
-    {
-      "ticker": "AEM",
-      "stooq": "aem.us",
-      "name": "Agnico Eagle",
-      "sector": "素材",
-      "subSector": "その他モート",
+      "ticker": "SNDK",
+      "name": "SNDK",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
       "tradePolicy": "hold",
       "conviction": 3,
-      "note": "金鉱最優良(低コスト・安定管轄)。金の約2倍ベータ(金サイクル増幅)",
-      "rotSector": "素材"
-    },
-    {
-      "ticker": "COIN",
-      "stooq": "coin.us",
-      "name": "Coinbase",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "trade",
-      "conviction": 3,
-      "note": "暗号資産サイクルのequityベータ。半減期底→ブル期に出来高連動(半減期サイクル連動)",
-      "rotSector": "金融"
-    },
-    {
-      "ticker": "PG",
-      "stooq": "pg.us",
-      "name": "Procter & Gamble",
-      "sector": "生活必需品",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "rotSector": "生活必需品",
-      "note": "日用品ブランド群の複利モート。後退期の教科書的受け皿"
-    },
-    {
-      "ticker": "KO",
-      "stooq": "ko.us",
-      "name": "Coca-Cola",
-      "sector": "生活必需品",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "rotSector": "生活必需品",
-      "note": "ブランド独占の代表格。配当貴族・ディフェンシブ"
-    },
-    {
-      "ticker": "WMT",
-      "stooq": "wmt.us",
-      "name": "Walmart",
-      "sector": "生活必需品",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "rotSector": "生活必需品",
-      "note": "小売の規模独占。不況時にむしろ客数が増える逆景気連動"
-    },
-    {
-      "ticker": "LIN",
-      "stooq": "lin.us",
-      "name": "Linde",
-      "sector": "素材",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "rotSector": "素材",
-      "note": "産業ガスの世界複占。素材セクターの質の王様。景気後期の教科書銘柄"
-    },
-    {
-      "ticker": "FCX",
-      "stooq": "fcx.us",
-      "name": "Freeport-McMoRan",
-      "sector": "素材",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "rotSector": "素材",
-      "note": "銅最大手。AI・電化・送電網投資=構造的な銅需要(あなたのテーマと整合)"
+      "stooq": "sndk.us"
     }
   ],
   "discovery": [
