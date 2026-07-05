@@ -1005,6 +1005,15 @@
       "tradePolicy": "hold",
       "conviction": 3,
       "stooq": "sndk.us"
+    },
+    {
+      "ticker": "DRAM",
+      "name": "DRAM",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "dram.us"
     }
   ],
   "discovery": [
