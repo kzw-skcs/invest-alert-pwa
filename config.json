@@ -1014,6 +1014,15 @@
       "tradePolicy": "hold",
       "conviction": 3,
       "stooq": "dram.us"
+    },
+    {
+      "ticker": "HOOD",
+      "name": "HOOD",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "hood.us"
     }
   ],
   "discovery": [
