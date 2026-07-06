@@ -1528,15 +1528,37 @@ async function runReanalyze() {
     toast(j.ok ? '✅ ' + j.message : '失敗: ' + (j.error || ''));
   } catch (e) { toast('失敗: サーバー未設定。GitHub Actionsのreanalyzeを手動実行してください。'); }
 }
+function btSectorTable(b, tierKey) {
+  const p = (b.valueTiersBySector || {})[tierKey];
+  const c = (b.valueTiersCycleBySector || {})[tierKey];
+  if (!p || !p.sectors) return '';
+  const cell = (r) => (r && r.trades)
+    ? `<td>${r.trades}${r.lowN ? '<span class="tiny">⚠</span>' : ''}</td><td>${r.winRatePct}%</td><td>${r.avgRetPct}%</td>`
+    : '<td colspan="3" class="muted">—</td>';
+  const row = (name, pr, cr, bold) =>
+    `<tr${bold ? ' style="font-weight:700;background:rgba(125,125,125,.08)"' : ''}><td>${name}</td>${cell(pr)}${cell(cr)}</tr>`;
+  const rows = [];
+  Object.keys(p.groups || {}).forEach((g) =>
+    rows.push(row('▶ ' + g, p.groups[g], c && c.groups && c.groups[g], true)));
+  Object.keys(p.sectors || {}).forEach((s) =>
+    rows.push(row(s, p.sectors[s], c && c.sectors && c.sectors[s], false)));
+  return `<table><tr><th rowspan="2">セクター</th><th colspan="3">チャート単独</th><th colspan="3">🧭サイクル統合</th></tr>
+    <tr><th>回</th><th>勝率</th><th>平均</th><th>回</th><th>勝率</th><th>平均</th></tr>${rows.join('')}</table>`;
+}
 async function renderBacktest() {
   const el = $('#backtest-result'); if (!el) return;
   try {
     const r = await fetch('backtest.json?t=' + Date.now());
     if (!r.ok) throw 0;
     const b = await r.json();
-    const tierRows = Object.entries(b.valueTiers || {}).map(([k, v]) => v.trades
-      ? `<tr><td>${k}</td><td>${v.trades}</td><td>${v.winRatePct}%</td><td>${v.avgRetPct}%</td><td>${v.avgDays}日</td><td>${v.annualizedPerTradePct ?? '—'}%</td></tr>`
-      : `<tr><td>${k}</td><td colspan="5">シグナルなし</td></tr>`).join('');
+    const tierRows = Object.entries(b.valueTiers || {}).map(([k, v]) => {
+      const c = (b.valueTiersCycle || {})[k];
+      const cc = (c && c.trades) ? `<td>${c.trades}</td><td>${c.winRatePct}%</td><td>${c.avgRetPct}%</td>`
+        : '<td colspan="3" class="muted">—</td>';
+      return v.trades
+        ? `<tr><td>${k}</td><td>${v.trades}</td><td>${v.winRatePct}%</td><td>${v.avgRetPct}%</td><td>${v.avgDays}日</td><td>${v.annualizedPerTradePct ?? '—'}%</td>${cc}</tr>`
+        : `<tr><td>${k}</td><td colspan="5">シグナルなし</td>${cc}</tr>`;
+    }).join('');
     const m = b.momentum || {};
     const allocRows = (Array.isArray(b.allocations) ? b.allocations : []).map((a) =>
       `<tr><td>${a.label}</td><td>${Object.entries(a.weightsPct).filter(([,w])=>w>0).map(([n,w])=>`${n}${w}`).join(':')}</td><td>${a.cagrPct}%</td><td>${a.maxDDPct}%</td><td>${a.sharpe}</td></tr>`).join('');
@@ -1544,8 +1566,14 @@ async function renderBacktest() {
     el.innerHTML = `
       <div class="tiny">${b.period ? `検証期間 ${b.period.start}〜${b.period.end} (${b.period.tradingDays}営業日) / 生成 ${b.generated}` : ''}</div>
       ${interp ? `<h3 style="font-size:12px;margin:8px 0 4px">🧠 自動解釈(まずこれを読む)</h3>${interp}` : ''}
-      <h3 style="font-size:12px;margin:8px 0 4px">Value戦略(Tier別・1トレードあたり)</h3>
-      <table><tr><th>Tier</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th><th>年率換算</th></tr>${tierRows}</table>
+      <h3 style="font-size:12px;margin:8px 0 4px">Value戦略(Tier別・1トレードあたり) — 右3列は🧭サイクル統合版</h3>
+      <table><tr><th>Tier</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th><th>年率換算</th><th>回</th><th>勝率</th><th>平均</th></tr>${tierRows}</table>
+      ${b.valueTiersBySector ? `<h3 style="font-size:12px;margin:10px 0 4px">🧩 セクター別Tier成績(チャート単独 vs サイクル統合)</h3>
+      ${['consider(65)', 'strong(80)', 'absolute(90)'].map((tk) => {
+        const tbl = btSectorTable(b, tk);
+        return tbl ? `<details${tk === 'strong(80)' ? ' open' : ''}><summary class="tiny" style="cursor:pointer">${tk}</summary>${tbl}</details>` : '';
+      }).join('')}
+      <div class="tiny">⚠=15回未満(参考値)。太字はグループ集計。ディフェンシブ行がWMT/PG/KO型銘柄への現実的な期待値、グロース行がNVDA/半導体型への期待値。</div>` : ''}
       ${b.valueTiersHold ? `<h3 style="font-size:12px;margin:10px 0 4px">比較: 最初のシグナルで買い→期間末まで保有し続けた場合</h3>
       <table><tr><th>Tier</th><th>銘柄数</th><th>勝率</th><th>平均リターン</th><th>平均保有</th><th>年率換算</th></tr>
       ${Object.entries(b.valueTiersHold).map(([k, v]) => v.trades

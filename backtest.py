@@ -72,8 +72,8 @@ def precompute_signals(meta, history, bench_closes_by_date, cfg):
 
 # ---------------------------------------------------------------- Value戦略
 
-def backtest_value(instruments_data, threshold):
-    """全銘柄横断: スコアが閾値を上抜けた日の翌日始値(近似=当日終値)で買い。"""
+def value_trades(instruments_data, threshold):
+    """全銘柄横断: スコアが閾値を上抜けた日の翌日始値(近似=当日終値)で買い。生トレード一覧を返す。"""
     trades = []
     for tk, (sig, closes, dates) in instruments_data.items():
         open_pos = None
@@ -94,7 +94,46 @@ def backtest_value(instruments_data, threshold):
                                    "exitDate": dates[t], "days": held, "retPct": ret * 100,
                                    "reason": "top" if hit_top else "time"})
                     open_pos = None
-    return summarize_trades(trades)
+    return trades
+
+
+def backtest_value(instruments_data, threshold):
+    return summarize_trades(value_trades(instruments_data, threshold))
+
+
+# GICS準拠rotSector → 性格グループ(セクター別Tier分解用)
+GROUP_OF = {
+    "生活必需品": "ディフェンシブ", "ヘルスケア": "ディフェンシブ", "公益": "ディフェンシブ",
+    "情報技術": "グロース", "コミュニケーション": "グロース", "一般消費財": "グロース",
+    "資本財": "シクリカル", "素材": "シクリカル", "エネルギー": "シクリカル", "金融": "シクリカル",
+}
+LOW_N = 15  # これ未満のトレード数は統計的に参考値扱い
+
+
+def mini_summary(trades):
+    if not trades:
+        return {"trades": 0}
+    rets = [x["retPct"] for x in trades]
+    wins = len([r for r in rets if r > 0])
+    return {"trades": len(trades),
+            "winRatePct": round(wins / len(rets) * 100, 1),
+            "avgRetPct": round(sum(rets) / len(rets), 2),
+            "medianRetPct": round(sorted(rets)[len(rets) // 2], 2),
+            "avgDays": round(sum(x["days"] for x in trades) / len(trades), 1),
+            "lowN": len(trades) < LOW_N}
+
+
+def summarize_by_sector(trades, sub_map):
+    """トレード一覧をrotSector別＋性格グループ別に分解して集計。"""
+    by_sec, by_grp = {}, {}
+    for tr in trades:
+        sec = sub_map.get(tr["ticker"], "その他")
+        by_sec.setdefault(sec, []).append(tr)
+        by_grp.setdefault(GROUP_OF.get(sec, "その他"), []).append(tr)
+    return {"groups": {g: mini_summary(v) for g, v in
+                       sorted(by_grp.items(), key=lambda kv: -len(kv[1]))},
+            "sectors": {s: mini_summary(v) for s, v in
+                        sorted(by_sec.items(), key=lambda kv: -len(kv[1]))}}
 
 
 def build_cycle_context(stock_data, cfg, bench_hist):
@@ -138,8 +177,8 @@ def build_cycle_context(stock_data, cfg, bench_hist):
     return {"sub_map": sub_map, "trend": trend_by_sec, "below200": below200}
 
 
-def backtest_value_cycle(instruments_data, threshold, ctx):
-    """サイクル補正後スコアで閾値判定するValue変種(本番apply_cycleと同じ加減点)。"""
+def value_cycle_trades(instruments_data, threshold, ctx):
+    """サイクル補正後スコアで閾値判定するValue変種(本番apply_cycleと同じ加減点)。生トレード一覧。"""
     trades = []
     for tk, (sig, closes, dates) in instruments_data.items():
         sec = ctx["sub_map"].get(tk)
@@ -167,7 +206,11 @@ def backtest_value_cycle(instruments_data, threshold, ctx):
                                    "reason": "top" if hit_top else "time"})
                     open_pos = None
             prev_adj = adj
-    return summarize_trades(trades)
+    return trades
+
+
+def backtest_value_cycle(instruments_data, threshold, ctx):
+    return summarize_trades(value_cycle_trades(instruments_data, threshold, ctx))
 
 
 def backtest_value_hold(instruments_data, threshold):
@@ -547,8 +590,9 @@ def main():
     trade_tickers = [s["ticker"] for s in cfg["stocks"] if s.get("tradePolicy") == "trade"]
 
     print("Value戦略 検証中…")
-    value_results = {label: backtest_value(stock_data, thr)
-                     for label, thr in TIER_THRESHOLDS.items()}
+    v_trades = {label: value_trades(stock_data, thr)
+                for label, thr in TIER_THRESHOLDS.items()}
+    value_results = {label: summarize_trades(t) for label, t in v_trades.items()}
     value_hold_results = {label: backtest_value_hold(stock_data, thr)
                           for label, thr in TIER_THRESHOLDS.items()}
 
@@ -568,9 +612,15 @@ def main():
     mom_results, mom_daily = backtest_momentum(stock_data, trade_tickers, mp)
     print("サイクル統合版 検証中…")
     cycle_ctx = build_cycle_context(stock_data, cfg, bench_hist)
-    value_cycle_results = {label: backtest_value_cycle(stock_data, thr, cycle_ctx)
-                           for label, thr in TIER_THRESHOLDS.items()}
+    vc_trades = {label: value_cycle_trades(stock_data, thr, cycle_ctx)
+                 for label, thr in TIER_THRESHOLDS.items()}
+    value_cycle_results = {label: summarize_trades(t) for label, t in vc_trades.items()}
     mom_cycle_results, _ = backtest_momentum(stock_data, trade_tickers, mp, cycle_ctx)
+    # セクター別Tier分解(チャート単独版・サイクル統合版の両方)
+    print("セクター別Tier分解 集計中…")
+    sub_map = cycle_ctx["sub_map"]
+    value_by_sector = {label: summarize_by_sector(t, sub_map) for label, t in v_trades.items()}
+    value_cycle_by_sector = {label: summarize_by_sector(t, sub_map) for label, t in vc_trades.items()}
     # 比較用: 部分利確なし(トレーリングのみで勝ちを伸ばす)バリアント
     mp_notp = dict(mp); mp_notp["tp1GainPct"] = 10 ** 9; mp_notp["tp2GainPct"] = 10 ** 9
     mom_notp_results, _ = backtest_momentum(stock_data, trade_tickers, mp_notp)
@@ -644,6 +694,35 @@ def main():
             f"モメンタムはフィルタなし{mom_results.get('trades')}回(勝率{mom_results.get('winRatePct')}%・平均{mom_results.get('avgRetPct')}%)に対し、"
             f"サイクルゲート版{mom_cycle_results.get('trades')}回(勝率{mom_cycle_results.get('winRatePct')}%・平均{mom_cycle_results.get('avgRetPct')}%)。"
             "改善していれば統合の価値が実証、悪化ならサイクル補正を弱める判断材料。一般に効果は平均改善より最悪トレード削減に出やすい。")
+    # セクター別Tier80の自動解釈
+    sec80 = value_by_sector.get("strong(80)")
+    sec80c = value_cycle_by_sector.get("strong(80)")
+    if sec80 and sec80.get("groups"):
+        parts = []
+        for grp in ("グロース", "シクリカル", "ディフェンシブ"):
+            r = sec80["groups"].get(grp)
+            if r and r.get("trades"):
+                parts.append(f"{grp}={r['trades']}回・勝率{r['winRatePct']}%・平均{r['avgRetPct']:+.1f}%"
+                             + ("(参考値)" if r.get("lowN") else ""))
+        if parts:
+            interpretation.append(
+                "🧩セクター別Tier80分解(チャート単独): " + " ／ ".join(parts) +
+                "。全体平均(valueTiers)は値幅の大きいグロース/シクリカルに引っ張られやすい。"
+                "WMT・PG・KOのようなディフェンシブ銘柄に全体平均をそのまま適用せず、"
+                "ディフェンシブ行の数字を現実的な期待値として使うこと。15回未満のセルは統計的信頼度が低い。")
+        if sec80c and sec80c.get("groups"):
+            diffs = []
+            for grp, r in sec80["groups"].items():
+                rc = sec80c["groups"].get(grp)
+                if r.get("trades") and rc and rc.get("trades"):
+                    diffs.append(f"{grp}: 平均{r['avgRetPct']:+.1f}%→{rc['avgRetPct']:+.1f}%"
+                                 f"/勝率{r['winRatePct']}%→{rc['winRatePct']}%")
+            if diffs:
+                interpretation.append(
+                    "🧭サイクル統合×セクターの効果(Tier80・チャート単独→統合): " + " ／ ".join(diffs) +
+                    "。統合版で最も改善するグループが「サイクル情報が効く場所」。"
+                    "ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルは"
+                    "ディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。")
     if mom_results.get("trades") and mom_notp_results.get("trades"):
         interpretation.append(
             f"モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均{mom_results['avgRetPct']}%/勝率{mom_results['winRatePct']}%、"
@@ -658,6 +737,8 @@ def main():
         "valueTiers": value_results,
         "valueTiersHold": value_hold_results,
         "valueTiersCycle": value_cycle_results,
+        "valueTiersBySector": value_by_sector,
+        "valueTiersCycleBySector": value_cycle_by_sector,
         "momentumCycle": mom_cycle_results,
         "assetTiers": asset_tiers,
         "assetTiersHold": asset_tiers_hold,
