@@ -1,6 +1,6 @@
 {
  "latest": {
-  "date": "2026-07-06 07:45 JST",
+  "date": "2026-07-06 21:35 JST",
   "valueHitRate": null,
   "momentumHitRate": null,
   "valueResults": {
@@ -164,6 +164,24 @@
   },
   {
    "date": "2026-07-06 07:45 JST",
+   "valueHitRate": null,
+   "momentumHitRate": null,
+   "valueResults": {
+    "hit": 0,
+    "miss": 0,
+    "open": 2
+   },
+   "momentumResults": {
+    "hit": 0,
+    "miss": 0,
+    "open": 0
+   },
+   "totalSignals": 2,
+   "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
+   "adjustments": []
+  },
+  {
+   "date": "2026-07-06 21:35 JST",
    "valueHitRate": null,
    "momentumHitRate": null,
    "valueResults": {
