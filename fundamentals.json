@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07 09:48 JST",
+ "updated": "2026-07-07 11:21 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -219,27 +219,6 @@
     "fcfMargin": 0.0711,
     "trailPE": 20.3642,
     "psr": 1.7022,
-    "fyEnd": "2025-12-31"
-   }
-  },
-  "CVX": {
-   "score": 42,
-   "parts": {
-    "profit": 6.6,
-    "growth": 0.1,
-    "health": 23.0,
-    "valuation": 12
-   },
-   "warnings": [
-    "売上成長マイナス"
-   ],
-   "metrics": {
-    "roe": 0.066,
-    "revGrowth": -0.0464,
-    "epsGrowth": -0.3036,
-    "fcfMargin": 0.184,
-    "trailPE": 25.3545,
-    "psr": 1.8152,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1779,6 +1758,66 @@
     "fcfMargin": 0.2227,
     "trailPE": 21.0345,
     "psr": 3.4817,
+    "fyEnd": "2025-12-31"
+   }
+  },
+  "IONQ": {
+   "score": 27,
+   "parts": {
+    "profit": 0.0,
+    "growth": 25.0,
+    "health": 0.0,
+    "valuation": 2
+   },
+   "warnings": [
+    "FCF赤字"
+   ],
+   "metrics": {
+    "roe": -0.1343,
+    "opMargin": -4.8741,
+    "revGrowth": 2.0185,
+    "epsGrowth": 0.5389,
+    "fcfMargin": -2.3044,
+    "psr": 140.3035,
+    "fyEnd": "2025-12-31"
+   }
+  },
+  "SNDK": {
+   "score": 21,
+   "parts": {
+    "profit": 0.0,
+    "growth": 18.9,
+    "health": 0.0,
+    "valuation": 2
+   },
+   "warnings": [
+    "FCF赤字"
+   ],
+   "metrics": {
+    "roe": -0.1781,
+    "opMargin": -0.1872,
+    "revGrowth": 0.1039,
+    "epsGrowth": 1.442,
+    "fcfMargin": -0.0163,
+    "psr": 35.1233,
+    "fyEnd": "2025-06-27"
+   }
+  },
+  "HOOD": {
+   "score": 73,
+   "parts": {
+    "profit": 20.6,
+    "growth": 25.0,
+    "health": 25.0,
+    "valuation": 2
+   },
+   "warnings": [],
+   "metrics": {
+    "roe": 0.2058,
+    "revGrowth": 0.5158,
+    "epsGrowth": 0.3345,
+    "fcfMargin": 0.3662,
+    "trailPE": 57.3415,
     "fyEnd": "2025-12-31"
    }
   }
