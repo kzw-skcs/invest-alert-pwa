@@ -1196,6 +1196,9 @@ def model_portfolio(instruments, cycle, cfg, planner_w, bench_closes=None, vix_v
 
 # ---------------------------------------------------------------- アラート集約(プッシュ用)
 
+CONFIRM_STREAK_N = 3  # 買いシグナル確定に必要なTierスコア連続維持日数(バックテスト実測より)
+
+
 def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
     """サーバー発報アラート。位置情報(取得単価)依存のものはクライアント側で生成。
     prev_thesis: 前回すでにテーゼ見直しが出ていた銘柄集合。継続中の再通知は週1(remind=True)のみ。"""
@@ -1207,13 +1210,27 @@ def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
             continue
         v = i["value"]; m = i.get("momentum", {}); hm = i.get("holdMgmt", {})
         t = i["ticker"]
+        # 二段構え: バックテスト(持続性フィルタ)でN=3日連続が勝率・平均とも最良と実証されたため、
+        # Tier80/90はスコア維持日数で「⏳速報(少額の初動用)」と「✅確定(本隊投入用)」に分ける。
+        # streaks未生成(デプロイ直後の初回)は従来表記のまま。
+        streaks = v.get("streaks")
+
+        def stage(key):
+            if streaks is None:
+                return "", 0
+            n = int(streaks.get(key) or 0)
+            if n >= CONFIRM_STREAK_N:
+                return f" ✅確定({n}日連続)", 0
+            return f" ⏳速報({max(n,1)}/{CONFIRM_STREAK_N}日)", 1
         if v["tier"] == "absolute":
-            alerts.append({"type": "BUY_ABSOLUTE", "ticker": t, "priority": 1,
-                           "title": f"🚨 {t} 絶対的買い場 (スコア{v['score']})",
+            tag, demote = stage("90")
+            alerts.append({"type": "BUY_ABSOLUTE", "ticker": t, "priority": 1 + demote,
+                           "title": f"🚨 {t} 絶対的買い場 (スコア{v['score']}){tag}",
                            "detail": " / ".join(v["factors"][:4])})
         elif v["tier"] == "strong" and v["score"] >= min_score:
-            alerts.append({"type": "BUY_STRONG", "ticker": t, "priority": 2,
-                           "title": f"🔥 {t} 強い買い (スコア{v['score']})",
+            tag, demote = stage("80")
+            alerts.append({"type": "BUY_STRONG", "ticker": t, "priority": 2 + demote,
+                           "title": f"🔥 {t} 強い買い (スコア{v['score']}){tag}",
                            "detail": " / ".join(v["factors"][:3])})
         elif v["tier"] == "consider" and v["score"] >= min_score:
             alerts.append({"type": "BUY_CONSIDER", "ticker": t, "priority": 3,

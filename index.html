@@ -151,6 +151,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div class="muted">
       ⭐🟢超・買い場(下抜け後GC) / 🟦買い場 / 🟢上昇中 / ⬜レンジ内 / 🔻下落中 / 🟥売り場 / ⭐🔴超・売り場<br>
       Valueスコア: 🚨90+絶対的買い場 / 🔥80+強い買い / 🟦65+購入検討 / 👀50+監視<br>
+      二段構え: ⏳速報(1〜2日目)=少額の初動用 / ✅確定(3日連続)=本隊投入。バックテストで3日連続維持後の買いは勝率・平均とも改善(80点: 勝率81.7→85.1%・平均+9.5→+11.9%)<br>
       ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>品質Q(週次更新): ROE・利益率・成長率・財務健全性・PERの総合0-100。Q40未満は買いTierを1段階格下げ(「安いが質が悪い」を弾く)、Q70以上は+5点。⚠️警告(売上マイナス等)はテーゼ点検の材料。<br><b>⚡短期モメンタム画面の状態(上のValue用ラベルとは別物)</b>: 🟢買い場(エントリー成立=50日高値ブレイク等の入口条件クリア) / 🔴売り場(手仕舞い=50日線割れ・急落・デッドクロス) / 🟡保有継続(上昇中・新規は押し目待ち) / ⚪待機(モメンタム対象外) / 🩹逆張り(Value)候補(モメンタム買いは未成立だが暴落で割安)。<b>購入(エントリー)と売却(手仕舞い)が同時に出ることはありません。</b>推奨度もValueとは別軸のモメンタム推奨度です。モメンタムは50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
     </div>
   </div>
@@ -589,6 +590,16 @@ function renderCycle() {
   html += '<div class="tiny" style="margin-top:6px">※サイクル・季節性は統計的傾向であり、毎年再現される保証はありません。アクションは「検討」の提案です。</div>';
   el.innerHTML = html;
 }
+function streakBadge(v) {
+  // 二段構え: Tier80/90のスコア連続維持日数。3日連続で✅確定(本隊投入)、それまでは⏳速報(少額)。
+  if (!v || !v.streaks) return '';
+  const key = v.tier === 'absolute' ? '90' : v.tier === 'strong' ? '80' : null;
+  if (!key) return '';
+  const n = v.streaks[key] || 0;
+  return n >= 3
+    ? ` <span class="tiny" style="color:#22c55e;font-weight:700">✅確定${n}日</span>`
+    : ` <span class="tiny" style="opacity:.85">⏳速報${Math.max(n, 1)}/3日</span>`;
+}
 function renderRanking() {
   if (VIEW === 'momentum') { renderRankingMom(); return; }
   if (VIEW === 'hybrid') { renderRankingHybrid(); return; }
@@ -597,7 +608,7 @@ function renderRanking() {
   $('#ranking').innerHTML = list.length ? list.map((i) => `
     <div class="amount-row" onclick="openChart('${i.ticker}','${i.class}')">
       <div class="lbl">${i.emoji} <b>${i.ticker}</b>
-        <span class="tierpill tier-${i.value ? i.value.tier : 'watch'}">${i.value ? i.value.tierLabel : ''}</span>
+        <span class="tierpill tier-${i.value ? i.value.tier : 'watch'}">${i.value ? i.value.tierLabel : ''}</span>${streakBadge(i.value)}
       </div>
       <div style="text-align:right">
         <div class="stars">${'★'.repeat(i.rec.stars)}${'☆'.repeat(5 - i.rec.stars)} <b>${i.rec.score}</b></div>
@@ -742,7 +753,7 @@ function cardHTML(i) {
       </div>
       <div style="text-align:right;min-width:110px">
         <div style="font-weight:800;font-size:16px">${fmtN(i.price)}</div>
-        ${v.tier !== 'none' ? `<span class="tierpill tier-${v.tier}">${v.tierLabel} ${v.score}</span>` : `<span class="tiny">Value ${v.score ?? 0}</span>`}
+        ${v.tier !== 'none' ? `<span class="tierpill tier-${v.tier}">${v.tierLabel} ${v.score}</span>${streakBadge(v)}` : `<span class="tiny">Value ${v.score ?? 0}</span>`}
         ${v.scorePrev != null && Math.abs(v.scorePrev - v.score) >= 10 ? `<div class="tiny" style="color:var(--amber)">前日${v.scorePrev}→${v.score} ${v.score < v.scorePrev ? '(反発などで買い場条件が後退)' : '(条件成立が進行)'}</div>` : ''}
         <div class="stars" style="font-size:11px">${'★'.repeat(i.rec.stars)}${'☆'.repeat(5 - i.rec.stars)}</div>
       </div>

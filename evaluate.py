@@ -295,19 +295,40 @@ def main():
     # 前回data.jsonの読込: テーゼ重複抑制 + 前日スコア(スコア急変の透明化)
     prev_thesis = set()
     prev_scores = {}
+    prev_streaks = {}
+    prev_date = None
     try:
         with open(os.path.join(BASE, "data.json"), encoding="utf-8") as f:
-            for pi in json.load(f).get("instruments", []):
+            pdata = json.load(f)
+            prev_date = (pdata.get("updatedJST") or "")[:10] or None
+            for pi in pdata.get("instruments", []):
                 if pi.get("holdMgmt", {}).get("thesisBreak"):
                     prev_thesis.add(pi.get("ticker"))
                 if pi.get("value"):
                     prev_scores[pi.get("ticker")] = pi["value"].get("score")
+                    prev_streaks[pi.get("ticker")] = pi["value"].get("streaks") or {}
     except Exception:
         pass
+    # Tier連続日数トラッキング(持続性フィルタ実測でN=3日連続が最良と判明したため)
+    # 同日再実行(🚀ボタン等)では加算しない。欠測日はそのまま(営業日ベース近似)。
+    today_jst = datetime.now(JST).strftime("%Y-%m-%d")
+    same_day = (prev_date == today_jst)
     for inst in instruments:
+        v = inst.get("value")
+        if v is None:
+            continue
         pv = prev_scores.get(inst.get("ticker"))
-        if inst.get("value") is not None and pv is not None:
-            inst["value"]["scorePrev"] = pv
+        if pv is not None:
+            v["scorePrev"] = pv
+        ps = prev_streaks.get(inst.get("ticker"), {})
+        st = {}
+        for key, thr in (("65", 65), ("80", 80), ("90", 90)):
+            pn = int(ps.get(key) or 0)
+            if v.get("score", 0) >= thr:
+                st[key] = max(pn, 1) if same_day else pn + 1
+            else:
+                st[key] = 0
+        v["streaks"] = st
     remind = datetime.now(JST).weekday() == 0
     alerts = engine.build_alerts(instruments, events, vix, cfg, prev_thesis, remind)
     for ev in cycle.get("macro", []):
