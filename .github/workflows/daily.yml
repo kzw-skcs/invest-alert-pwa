@@ -1,7 +1,11 @@
 name: daily
 on:
   schedule:
-    - cron: '0 21 * * *'   # 毎朝 6:00 JST
+    # 米国市場の引け(夏時間=5:00 JST / 冬時間=6:00 JST)に合わせた2本立て。
+    # 4〜10月(米夏時間): 20:00 UTC = 5:00 JST
+    - cron: '0 20 * 4-10 *'
+    # 11〜3月(米冬時間): 21:00 UTC = 6:00 JST(これより早いと引け前の途中値になる)
+    - cron: '0 21 * 1-3,11,12 *'
   workflow_dispatch:
 
 permissions:
