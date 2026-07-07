@@ -1574,6 +1574,13 @@ async function renderBacktest() {
         return tbl ? `<details${tk === 'strong(80)' ? ' open' : ''}><summary class="tiny" style="cursor:pointer">${tk}</summary>${tbl}</details>` : '';
       }).join('')}
       <div class="tiny">⚠=15回未満(参考値)。太字はグループ集計。ディフェンシブ行がWMT/PG/KO型銘柄への現実的な期待値、グロース行がNVDA/半導体型への期待値。</div>` : ''}
+      ${b.valuePersistence ? `<h3 style="font-size:12px;margin:10px 0 4px">⏳ 持続性フィルタ(スコアが閾値以上をN日連続維持してから買った場合)</h3>
+      <table><tr><th>Tier</th><th>N日</th><th>回数</th><th>勝率</th><th>平均</th><th>平均保有</th><th>年率換算</th></tr>
+      ${Object.entries(b.valuePersistence).map(([tier, ns]) => Object.entries(ns).map(([n, v], i) =>
+        `<tr>${i === 0 ? `<td rowspan="${Object.keys(ns).length}">${tier}</td>` : ''}<td>${n}日</td>${v.trades
+          ? `<td>${v.trades}</td><td>${v.winRatePct}%</td><td>${v.avgRetPct}%</td><td>${v.avgDays}日</td><td>${v.annualizedPerTradePct ?? '—'}%</td>`
+          : `<td colspan="5">シグナルなし</td>`}</tr>`).join('')).join('')}</table>
+      <div class="tiny">N=1が現行ルール。勝率がNとともに上がる→瞬間タッチ(CVX型スコア急騰)はダマシが多い。平均がNとともに下がる→待つほど底値を逃すコスト。両者の積で判断。</div>` : ''}
       ${b.valueTiersHold ? `<h3 style="font-size:12px;margin:10px 0 4px">比較: 最初のシグナルで買い→期間末まで保有し続けた場合</h3>
       <table><tr><th>Tier</th><th>銘柄数</th><th>勝率</th><th>平均リターン</th><th>平均保有</th><th>年率換算</th></tr>
       ${Object.entries(b.valueTiersHold).map(([k, v]) => v.trades

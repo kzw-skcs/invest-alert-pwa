@@ -101,6 +101,37 @@ def backtest_value(instruments_data, threshold):
     return summarize_trades(value_trades(instruments_data, threshold))
 
 
+PERSIST_DAYS = (1, 3, 5, 10)  # 持続性フィルタ: スコアが閾値以上をN日連続で維持したら買い
+
+
+def value_trades_persist(instruments_data, threshold, n_days):
+    """スコアが閾値以上をn_days営業日連続で維持した日に買う変種(N=1は現行ルール相当)。
+    瞬間タッチ(1日だけ閾値超え)がダマシか最良の買い場かを実測するための実験。"""
+    trades = []
+    for tk, (sig, closes, dates) in instruments_data.items():
+        open_pos = None
+        streak = 0
+        for t in range(WARMUP + 1, len(closes)):
+            s_now = sig[t]
+            if s_now is None:
+                streak = 0
+                continue
+            streak = streak + 1 if s_now["score"] >= threshold else 0
+            if open_pos is None:
+                if streak == n_days:
+                    open_pos = {"entryT": t, "entry": closes[t]}
+            else:
+                held = t - open_pos["entryT"]
+                hit_top = s_now["top"] and closes[t] >= s_now["top"] - s_now["band"]
+                if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
+                    trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
+                                   "exitDate": dates[t], "days": held,
+                                   "retPct": (closes[t] / open_pos["entry"] - 1) * 100,
+                                   "reason": "top" if hit_top else "time"})
+                    open_pos = None
+    return trades
+
+
 # GICS準拠rotSector → 性格グループ(セクター別Tier分解用)
 GROUP_OF = {
     "生活必需品": "ディフェンシブ", "ヘルスケア": "ディフェンシブ", "公益": "ディフェンシブ",
@@ -621,6 +652,15 @@ def main():
     sub_map = cycle_ctx["sub_map"]
     value_by_sector = {label: summarize_by_sector(t, sub_map) for label, t in v_trades.items()}
     value_cycle_by_sector = {label: summarize_by_sector(t, sub_map) for label, t in vc_trades.items()}
+    # 持続性フィルタ: Tier×N日連続
+    print("持続性フィルタ 検証中…")
+    value_persistence = {}
+    for label, thr in TIER_THRESHOLDS.items():
+        value_persistence[label] = {}
+        for n in PERSIST_DAYS:
+            s = summarize_trades(value_trades_persist(stock_data, thr, n))
+            s.pop("recent", None)
+            value_persistence[label][str(n)] = s
     # 比較用: 部分利確なし(トレーリングのみで勝ちを伸ばす)バリアント
     mp_notp = dict(mp); mp_notp["tp1GainPct"] = 10 ** 9; mp_notp["tp2GainPct"] = 10 ** 9
     mom_notp_results, _ = backtest_momentum(stock_data, trade_tickers, mp_notp)
@@ -723,6 +763,25 @@ def main():
                     "。統合版で最も改善するグループが「サイクル情報が効く場所」。"
                     "ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルは"
                     "ディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。")
+    # 持続性フィルタの自動解釈(Tier80基準)
+    p80 = value_persistence.get("strong(80)", {})
+    p1, p_best_n, p_best = p80.get("1"), None, None
+    for n in PERSIST_DAYS:
+        r = p80.get(str(n))
+        if r and r.get("trades", 0) >= 10:
+            eff = r["winRatePct"] * r["avgRetPct"]  # 勝率×平均の簡易効率
+            if p_best is None or eff > p_best["winRatePct"] * p_best["avgRetPct"]:
+                p_best_n, p_best = n, r
+    if p1 and p1.get("trades"):
+        interpretation.append(
+            "⏳持続性フィルタ実験(Tier80がN日連続で初めて買う): "
+            + " ／ ".join(f"N={n}: {r['trades']}回・勝率{r['winRatePct']}%・平均{r['avgRetPct']:+.1f}%"
+                          for n in PERSIST_DAYS
+                          if (r := p80.get(str(n))) and r.get("trades"))
+            + f"。読み方: 勝率がNとともに上がるなら『1日だけの瞬間タッチ(CVX型のスコア急騰)はダマシが多い』、"
+              f"平均リターンがNとともに下がるなら『待つほど底値を逃すコスト』。両者の積で判断し、"
+            + (f"この期間の最適はN={p_best_n}日" if p_best_n else "有意差なし")
+            + "。ただしNを増やすほど回数が減り統計信頼度も落ちる点に注意。")
     if mom_results.get("trades") and mom_notp_results.get("trades"):
         interpretation.append(
             f"モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均{mom_results['avgRetPct']}%/勝率{mom_results['winRatePct']}%、"
@@ -739,6 +798,7 @@ def main():
         "valueTiersCycle": value_cycle_results,
         "valueTiersBySector": value_by_sector,
         "valueTiersCycleBySector": value_cycle_by_sector,
+        "valuePersistence": value_persistence,
         "momentumCycle": mom_cycle_results,
         "assetTiers": asset_tiers,
         "assetTiersHold": asset_tiers_hold,
