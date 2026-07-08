@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-07 11:21 JST",
+ "updated": "2026-07-08 14:38 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -17,8 +17,8 @@
     "revGrowth": 0.0643,
     "epsGrowth": 0.195,
     "fcfMargin": 0.2373,
-    "trailPE": 41.9115,
-    "psr": 11.0345,
+    "trailPE": 41.6434,
+    "psr": 10.964,
     "fyEnd": "2025-09-27"
    }
   },
@@ -37,8 +37,8 @@
     "revGrowth": 0.1493,
     "epsGrowth": 0.1554,
     "fcfMargin": 0.2542,
-    "trailPE": 28.3534,
-    "psr": 10.1975,
+    "trailPE": 28.5073,
+    "psr": 10.2528,
     "fyEnd": "2025-06-30"
    }
   },
@@ -57,7 +57,7 @@
     "revGrowth": 0.1509,
     "epsGrowth": 0.3201,
     "fcfMargin": 0.1819,
-    "trailPE": 33.9001,
+    "trailPE": 33.9528,
     "fyEnd": "2025-12-31"
    }
   },
@@ -76,8 +76,8 @@
     "revGrowth": 0.1238,
     "epsGrowth": 0.3109,
     "fcfMargin": 0.1852,
-    "trailPE": 34.053,
-    "psr": 3.6635,
+    "trailPE": 34.3068,
+    "psr": 3.6908,
     "fyEnd": "2025-12-31"
    }
   },
@@ -96,8 +96,8 @@
     "revGrowth": 0.2387,
     "epsGrowth": -0.5814,
     "fcfMargin": 0.4213,
-    "trailPE": 78.3857,
-    "psr": 27.8438,
+    "trailPE": 77.7317,
+    "psr": 27.6115,
     "fyEnd": "2025-11-02"
    }
   },
@@ -116,8 +116,8 @@
     "revGrowth": 0.6547,
     "epsGrowth": 0.6475,
     "fcfMargin": 0.475,
-    "trailPE": 39.9082,
-    "psr": 21.9151,
+    "trailPE": 40.1898,
+    "psr": 22.0698,
     "fyEnd": "2026-01-25"
    }
   },
@@ -136,7 +136,7 @@
     "revGrowth": 0.2217,
     "epsGrowth": -0.0305,
     "fcfMargin": 0.2294,
-    "trailPE": 25.5551,
+    "trailPE": 26.206,
     "fyEnd": "2025-12-31"
    }
   },
@@ -157,8 +157,8 @@
     "revGrowth": -0.0293,
     "epsGrowth": -0.465,
     "fcfMargin": 0.0656,
-    "trailPE": 388.6759,
-    "psr": 16.6254,
+    "trailPE": 373.0555,
+    "psr": 15.9573,
     "fyEnd": "2025-12-31"
    }
   },
@@ -177,8 +177,8 @@
     "revGrowth": 0.3434,
     "epsGrowth": 1.6417,
     "fcfMargin": 0.1944,
-    "trailPE": 208.3208,
-    "psr": 25.9873,
+    "trailPE": 194.7585,
+    "psr": 24.2954,
     "fyEnd": "2025-12-27"
    }
   },
@@ -197,7 +197,7 @@
     "revGrowth": 0.5618,
     "epsGrowth": 2.5159,
     "fcfMargin": 0.4694,
-    "trailPE": 210.3809,
+    "trailPE": 213.2857,
     "fyEnd": "2025-12-31"
    }
   },
@@ -217,8 +217,8 @@
     "revGrowth": -0.0496,
     "epsGrowth": -0.1436,
     "fcfMargin": 0.0711,
-    "trailPE": 20.3642,
-    "psr": 1.7022,
+    "trailPE": 21.1478,
+    "psr": 1.7677,
     "fyEnd": "2025-12-31"
    }
   },
@@ -239,8 +239,8 @@
     "revGrowth": -0.1218,
     "epsGrowth": -0.016,
     "fcfMargin": 3.6993,
-    "trailPE": 26.497,
-    "psr": 54.0273,
+    "trailPE": 26.8091,
+    "psr": 54.6638,
     "fyEnd": "2012-12-31"
    }
   },
@@ -259,8 +259,8 @@
     "revGrowth": 0.0564,
     "epsGrowth": -0.0598,
     "fcfMargin": 0.1015,
-    "trailPE": 25.0349,
-    "psr": 1.6529,
+    "trailPE": 24.913,
+    "psr": 1.6448,
     "fyEnd": "2025-12-31"
    }
   },
@@ -279,8 +279,8 @@
     "revGrowth": 0.0974,
     "epsGrowth": 0.4101,
     "fcfMargin": 0.0896,
-    "trailPE": 40.5988,
-    "psr": 3.0606,
+    "trailPE": 40.494,
+    "psr": 3.0527,
     "fyEnd": "2025-12-31"
    }
   },
@@ -299,8 +299,8 @@
     "revGrowth": 0.0224,
     "epsGrowth": 0.0019,
     "fcfMargin": 0.0788,
-    "trailPE": 18.836,
-    "psr": 1.8544,
+    "trailPE": 18.8803,
+    "psr": 1.8588,
     "fyEnd": "2025-12-31"
    }
   },
@@ -321,7 +321,7 @@
     "revGrowth": 0.3796,
     "epsGrowth": 0.0422,
     "fcfMargin": -0.5347,
-    "psr": 89.5248,
+    "psr": 80.2155,
     "fyEnd": "2025-12-31"
    }
   },
@@ -339,8 +339,8 @@
     "revGrowth": 0.0762,
     "epsGrowth": 0.7588,
     "fcfMargin": 0.1792,
-    "trailPE": 26.8147,
-    "psr": 4.1684,
+    "trailPE": 27.4064,
+    "psr": 4.2604,
     "fyEnd": "2025-12-31"
    }
   },
@@ -359,8 +359,8 @@
     "revGrowth": 0.1558,
     "epsGrowth": 0.2691,
     "fcfMargin": 0.3393,
-    "trailPE": 73.8596,
-    "psr": 21.5327,
+    "trailPE": 70.7115,
+    "psr": 20.6149,
     "fyEnd": "2025-12-31"
    }
   },
@@ -379,8 +379,8 @@
     "revGrowth": 0.3389,
     "epsGrowth": 0.36,
     "fcfMargin": 0.3006,
-    "trailPE": 10.1139,
-    "psr": 4.048,
+    "trailPE": 9.6837,
+    "psr": 3.8758,
     "fyEnd": "2024-12-31"
    }
   },
@@ -399,8 +399,8 @@
     "revGrowth": 0.4209,
     "epsGrowth": -4.0171,
     "fcfMargin": 0.1704,
-    "trailPE": 81.1954,
-    "psr": 26.6104,
+    "trailPE": 75.1466,
+    "psr": 24.628,
     "fyEnd": "2026-01-31"
    }
   },
@@ -419,8 +419,8 @@
     "revGrowth": 0.286,
     "epsGrowth": 0.2312,
     "fcfMargin": 0.4837,
-    "trailPE": 63.0109,
-    "psr": 24.2285,
+    "trailPE": 60.5309,
+    "psr": 23.2749,
     "fyEnd": "2025-12-31"
    }
   },
@@ -439,8 +439,8 @@
     "revGrowth": 0.2769,
     "epsGrowth": 1.6882,
     "fcfMargin": 0.1851,
-    "trailPE": 93.393,
-    "psr": 11.9578,
+    "trailPE": 89.6129,
+    "psr": 11.4738,
     "fyEnd": "2025-12-31"
    }
   },
@@ -459,8 +459,8 @@
     "revGrowth": 0.4014,
     "epsGrowth": 0.1462,
     "fcfMargin": 0.0254,
-    "trailPE": 5.2177,
-    "psr": 0.69,
+    "trailPE": 5.4784,
+    "psr": 0.7245,
     "fyEnd": "2025-12-31"
    }
   },
@@ -479,8 +479,8 @@
     "revGrowth": 0.0587,
     "epsGrowth": -0.0095,
     "fcfMargin": 0.1627,
-    "trailPE": 26.2717,
-    "psr": 2.1077,
+    "trailPE": 26.5599,
+    "psr": 2.1308,
     "fyEnd": "2025-12-31"
    }
   },
@@ -499,8 +499,8 @@
     "revGrowth": 0.1264,
     "epsGrowth": 0.1903,
     "fcfMargin": 0.0634,
-    "trailPE": 22.6362,
-    "psr": 1.2937,
+    "trailPE": 22.2832,
+    "psr": 1.2735,
     "fyEnd": "2025-06-30"
    }
   },
@@ -532,8 +532,8 @@
     "revGrowth": 0.0889,
     "epsGrowth": 0.1948,
     "fcfMargin": 0.3336,
-    "trailPE": 36.4872,
-    "psr": 11.2901,
+    "trailPE": 36.6123,
+    "psr": 11.3288,
     "fyEnd": "2025-12-31"
    }
   },
@@ -552,8 +552,8 @@
     "revGrowth": 0.0639,
     "epsGrowth": 0.0695,
     "fcfMargin": 0.3874,
-    "trailPE": 23.1489,
-    "psr": 5.8815,
+    "trailPE": 22.7295,
+    "psr": 5.7749,
     "fyEnd": "2025-12-31"
    }
   },
@@ -572,8 +572,8 @@
     "revGrowth": 0.0794,
     "epsGrowth": 0.1607,
     "fcfMargin": 0.364,
-    "trailPE": 30.5061,
-    "psr": 8.6318,
+    "trailPE": 30.2497,
+    "psr": 8.5592,
     "fyEnd": "2025-12-31"
    }
   },
@@ -592,7 +592,7 @@
     "revGrowth": 3.7444,
     "epsGrowth": 2.8721,
     "fcfMargin": 0.0753,
-    "trailPE": 47.4424,
+    "trailPE": 48.0737,
     "fyEnd": "2026-01-30"
    }
   },
@@ -611,8 +611,8 @@
     "revGrowth": 0.1053,
     "epsGrowth": 0.2824,
     "fcfMargin": 0.4145,
-    "trailPE": 13.0581,
-    "psr": 3.6469,
+    "trailPE": 13.2659,
+    "psr": 3.7049,
     "fyEnd": "2025-11-28"
    }
   },
@@ -631,8 +631,8 @@
     "revGrowth": 0.0824,
     "epsGrowth": -0.0158,
     "fcfMargin": 0.1223,
-    "trailPE": 26.7251,
-    "psr": 1.9623,
+    "trailPE": 26.8557,
+    "psr": 1.9719,
     "fyEnd": "2025-09-30"
    }
   },
@@ -651,18 +651,18 @@
     "revGrowth": 0.1642,
     "epsGrowth": -0.2912,
     "fcfMargin": 0.5233,
-    "trailPE": 32.27,
-    "psr": 1.992,
+    "trailPE": 32.1804,
+    "psr": 1.9865,
     "fyEnd": "2025-12-31"
    }
   },
   "HON": {
-   "score": 43,
+   "score": 47,
    "parts": {
     "profit": 12.5,
     "growth": 3.5,
     "health": 25.0,
-    "valuation": 2
+    "valuation": 6
    },
    "warnings": [],
    "metrics": {
@@ -671,7 +671,7 @@
     "revGrowth": 0.034,
     "epsGrowth": -1.063,
     "fcfMargin": 0.5556,
-    "psr": 15.0121,
+    "psr": 14.614,
     "fyEnd": "2025-12-31"
    }
   },
@@ -691,8 +691,8 @@
     "revGrowth": -0.0984,
     "epsGrowth": -0.4353,
     "fcfMargin": 0.0706,
-    "trailPE": 20.0648,
-    "psr": 0.8005,
+    "trailPE": 20.0046,
+    "psr": 0.7981,
     "fyEnd": "2025-05-31"
    }
   },
@@ -713,8 +713,8 @@
     "revGrowth": -0.1166,
     "epsGrowth": -0.292,
     "fcfMargin": 0.1335,
-    "trailPE": 34.3373,
-    "psr": 3.7535,
+    "trailPE": 32.6276,
+    "psr": 3.5666,
     "fyEnd": "2025-11-02"
    }
   },
@@ -735,8 +735,8 @@
     "revGrowth": -0.0074,
     "epsGrowth": -0.3566,
     "fcfMargin": 0.618,
-    "trailPE": 60.8711,
-    "psr": 4.9582,
+    "trailPE": 63.1733,
+    "psr": 5.1457,
     "fyEnd": "2025-08-31"
    }
   },
@@ -755,18 +755,18 @@
     "revGrowth": 0.0747,
     "epsGrowth": 0.2037,
     "fcfMargin": 0.3393,
-    "trailPE": 23.3813,
-    "psr": 6.0359,
+    "trailPE": 23.6482,
+    "psr": 6.1048,
     "fyEnd": "2025-12-31"
    }
   },
   "UNH": {
-   "score": 32,
+   "score": 26,
    "parts": {
     "profit": 8.1,
     "growth": 7.0,
     "health": 4.5,
-    "valuation": 12
+    "valuation": 6
    },
    "warnings": [],
    "metrics": {
@@ -775,8 +775,8 @@
     "revGrowth": 0.1181,
     "epsGrowth": -0.1631,
     "fcfMargin": 0.0359,
-    "trailPE": 31.5941,
-    "psr": 0.8481,
+    "trailPE": 32.3651,
+    "psr": 0.8688,
     "fyEnd": "2025-12-31"
    }
   },
@@ -795,7 +795,7 @@
     "revGrowth": 0.1134,
     "epsGrowth": 0.016,
     "fcfMargin": 0.5765,
-    "psr": 4.1913,
+    "psr": 4.132,
     "fyEnd": "2025-09-30"
    }
   },
@@ -813,8 +813,8 @@
     "revGrowth": 0.2342,
     "epsGrowth": 0.2035,
     "fcfMargin": 6.4799,
-    "trailPE": 43.2387,
-    "psr": 1.6614,
+    "trailPE": 42.5991,
+    "psr": 1.6368,
     "fyEnd": "2025-12-31"
    }
   },
@@ -833,8 +833,8 @@
     "revGrowth": 0.0826,
     "epsGrowth": -0.0661,
     "fcfMargin": 0.3182,
-    "trailPE": 13.7637,
-    "psr": 2.2895,
+    "trailPE": 14.3601,
+    "psr": 2.3887,
     "fyEnd": "2025-12-31"
    }
   },
@@ -855,7 +855,7 @@
     "revGrowth": -0.1268,
     "epsGrowth": 1.039,
     "fcfMargin": -0.0505,
-    "trailPE": 89.7143,
+    "trailPE": 89.3673,
     "fyEnd": "2025-12-31"
    }
   },
@@ -874,8 +874,8 @@
     "revGrowth": 0.0439,
     "epsGrowth": -0.0249,
     "fcfMargin": 0.2009,
-    "trailPE": 68.4515,
-    "psr": 16.5909,
+    "trailPE": 64.03,
+    "psr": 15.5193,
     "fyEnd": "2025-10-26"
    }
   },
@@ -894,8 +894,8 @@
     "revGrowth": 0.2368,
     "epsGrowth": 0.3998,
     "fcfMargin": 0.3349,
-    "trailPE": 84.3855,
-    "psr": 23.7557,
+    "trailPE": 78.5855,
+    "psr": 22.1229,
     "fyEnd": "2025-06-29"
    }
   },
@@ -914,8 +914,8 @@
     "revGrowth": 0.1828,
     "epsGrowth": 0.02,
     "fcfMargin": 0.1877,
-    "trailPE": 15.3108,
-    "psr": 2.834,
+    "trailPE": 15.7146,
+    "psr": 2.9088,
     "fyEnd": "2025-12-31"
    }
   },
@@ -933,8 +933,8 @@
     "revGrowth": 0.1632,
     "epsGrowth": 0.3335,
     "fcfMargin": 0.1962,
-    "trailPE": 12.0473,
-    "psr": 1.5441,
+    "trailPE": 12.1893,
+    "psr": 1.5623,
     "fyEnd": "2025-12-31"
    }
   },
@@ -952,8 +952,8 @@
     "revGrowth": 0.0708,
     "epsGrowth": 0.1778,
     "fcfMargin": 0.1017,
-    "trailPE": 14.7218,
-    "psr": 1.2238,
+    "trailPE": 14.9351,
+    "psr": 1.2416,
     "fyEnd": "2025-12-31"
    }
   },
@@ -973,7 +973,7 @@
     "revGrowth": -0.1104,
     "epsGrowth": -0.2294,
     "fcfMargin": 0.0145,
-    "psr": 4.427,
+    "psr": 4.3887,
     "fyEnd": "2025-12-31"
    }
   },
@@ -991,7 +991,7 @@
     "revGrowth": 1.0431,
     "epsGrowth": -0.9715,
     "fcfMargin": 0.8616,
-    "psr": 1.1413,
+    "psr": 1.1404,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1010,8 +1010,8 @@
     "revGrowth": 0.038,
     "epsGrowth": 0.0697,
     "fcfMargin": 0.062,
-    "trailPE": 24.5622,
-    "psr": 1.4432,
+    "trailPE": 23.9464,
+    "psr": 1.407,
     "fyEnd": "2025-07-31"
    }
   },
@@ -1030,8 +1030,8 @@
     "revGrowth": 0.0408,
     "epsGrowth": 0.3684,
     "fcfMargin": 0.0243,
-    "trailPE": 34.9864,
-    "psr": 0.5746,
+    "trailPE": 35.3707,
+    "psr": 0.5809,
     "fyEnd": "2025-12-27"
    }
   },
@@ -1049,8 +1049,8 @@
     "revGrowth": 0.0633,
     "epsGrowth": 0.1665,
     "fcfMargin": 0.3234,
-    "trailPE": 14.1373,
-    "psr": 3.0173,
+    "trailPE": 14.2151,
+    "psr": 3.0339,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1071,18 +1071,18 @@
     "revGrowth": -0.0738,
     "epsGrowth": -0.5963,
     "fcfMargin": 0.0562,
-    "trailPE": 21.1645,
-    "psr": 0.583,
+    "trailPE": 20.1594,
+    "psr": 0.5553,
     "fyEnd": "2025-12-31"
    }
   },
   "FTAI": {
-   "score": 27,
+   "score": 31,
    "parts": {
     "profit": 0.0,
     "growth": 25.0,
     "health": 0.0,
-    "valuation": 2
+    "valuation": 6
    },
    "warnings": [
     "FCF赤字"
@@ -1092,8 +1092,8 @@
     "revGrowth": 0.4453,
     "epsGrowth": 1.3316,
     "fcfMargin": -0.135,
-    "trailPE": 52.5087,
-    "psr": 9.8819,
+    "trailPE": 49.4674,
+    "psr": 9.3095,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1112,8 +1112,8 @@
     "revGrowth": 0.0542,
     "epsGrowth": -0.0484,
     "fcfMargin": 0.3159,
-    "trailPE": 23.0109,
-    "psr": 6.9797,
+    "trailPE": 23.607,
+    "psr": 7.1605,
     "fyEnd": "2025-05-31"
    }
   },
@@ -1132,8 +1132,8 @@
     "revGrowth": 0.0119,
     "epsGrowth": -0.1587,
     "fcfMargin": 0.1106,
-    "trailPE": 20.9971,
-    "psr": 1.9541,
+    "trailPE": 20.98,
+    "psr": 1.9525,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1152,7 +1152,7 @@
     "revGrowth": 0.5997,
     "epsGrowth": -1.2194,
     "fcfMargin": 0.2407,
-    "psr": 6.8109,
+    "psr": 6.6102,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1171,8 +1171,8 @@
     "revGrowth": 0.0431,
     "epsGrowth": -0.0047,
     "fcfMargin": 0.0477,
-    "trailPE": 14.6699,
-    "psr": 1.0209,
+    "trailPE": 14.7718,
+    "psr": 1.028,
     "fyEnd": "2025-12-27"
    }
   },
@@ -1191,8 +1191,8 @@
     "revGrowth": 0.0907,
     "epsGrowth": 0.2488,
     "fcfMargin": 0.5782,
-    "trailPE": 77.914,
-    "psr": 13.0105,
+    "trailPE": 77.0769,
+    "psr": 12.8707,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1214,8 +1214,8 @@
     "revGrowth": -0.2431,
     "epsGrowth": -0.5728,
     "fcfMargin": -0.0709,
-    "trailPE": 15.5357,
-    "psr": 2.3054,
+    "trailPE": 15.3571,
+    "psr": 2.2789,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1233,8 +1233,8 @@
     "revGrowth": 2.667,
     "epsGrowth": -4.8717,
     "fcfMargin": 0.1675,
-    "trailPE": 20.0,
-    "psr": 1.2023,
+    "trailPE": 20.2857,
+    "psr": 1.2194,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1253,8 +1253,8 @@
     "revGrowth": 0.1327,
     "epsGrowth": 0.1261,
     "fcfMargin": 0.1322,
-    "trailPE": 27.0541,
-    "psr": 2.8967,
+    "trailPE": 27.0486,
+    "psr": 2.8962,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1273,8 +1273,8 @@
     "revGrowth": 0.4542,
     "epsGrowth": 0.6193,
     "fcfMargin": 0.2484,
-    "trailPE": 24.8314,
-    "psr": 4.3165,
+    "trailPE": 23.6686,
+    "psr": 4.1144,
     "fyEnd": "2023-12-31"
    }
   },
@@ -1293,8 +1293,8 @@
     "revGrowth": 0.1121,
     "epsGrowth": -0.0332,
     "fcfMargin": 0.0794,
-    "trailPE": 35.6624,
-    "psr": 2.6851,
+    "trailPE": 34.8491,
+    "psr": 2.6239,
     "fyEnd": "2026-03-29"
    }
   },
@@ -1316,7 +1316,7 @@
     "revGrowth": -0.8578,
     "epsGrowth": 1.5318,
     "fcfMargin": -0.3825,
-    "psr": 82.369,
+    "psr": 76.7001,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1337,8 +1337,8 @@
     "revGrowth": -0.0634,
     "epsGrowth": -0.0428,
     "fcfMargin": 0.7688,
-    "trailPE": 131.3947,
-    "psr": 19.8078,
+    "trailPE": 129.0175,
+    "psr": 19.4495,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1357,8 +1357,8 @@
     "revGrowth": 0.2051,
     "epsGrowth": 0.2297,
     "fcfMargin": 0.3011,
-    "trailPE": 54.9975,
-    "psr": 15.2307,
+    "trailPE": 54.2948,
+    "psr": 15.0361,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1377,8 +1377,8 @@
     "revGrowth": 0.3347,
     "epsGrowth": -0.6694,
     "fcfMargin": 0.027,
-    "trailPE": 412.1523,
-    "psr": 18.0471,
+    "trailPE": 424.1457,
+    "psr": 18.5723,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1397,8 +1397,8 @@
     "revGrowth": 0.1512,
     "epsGrowth": -0.4114,
     "fcfMargin": 0.1913,
-    "trailPE": 55.0087,
-    "psr": 12.005,
+    "trailPE": 54.3072,
+    "psr": 11.8519,
     "fyEnd": "2025-10-31"
    }
   },
@@ -1417,8 +1417,8 @@
     "revGrowth": 0.1951,
     "epsGrowth": -0.3814,
     "fcfMargin": 0.0568,
-    "trailPE": 33.2257,
-    "psr": 3.9185,
+    "trailPE": 32.3932,
+    "psr": 3.8204,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1437,8 +1437,8 @@
     "revGrowth": 0.0897,
     "epsGrowth": 2.1469,
     "fcfMargin": 0.131,
-    "trailPE": 65.1238,
-    "psr": 8.1322,
+    "trailPE": 60.8864,
+    "psr": 7.6031,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1457,8 +1457,8 @@
     "revGrowth": 0.1914,
     "epsGrowth": -0.645,
     "fcfMargin": 0.0749,
-    "trailPE": 72.1193,
-    "psr": 3.0144,
+    "trailPE": 71.4358,
+    "psr": 2.9859,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1477,8 +1477,8 @@
     "revGrowth": 0.1104,
     "epsGrowth": 2.4307,
     "fcfMargin": 0.3089,
-    "trailPE": 72.2222,
-    "psr": 12.1936,
+    "trailPE": 70.1259,
+    "psr": 11.8396,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1499,8 +1499,8 @@
     "revGrowth": 0.1853,
     "epsGrowth": 0.3497,
     "fcfMargin": -0.0313,
-    "trailPE": 411.8462,
-    "psr": 7.4546,
+    "trailPE": 387.2308,
+    "psr": 7.009,
     "fyEnd": "2025-12-28"
    }
   },
@@ -1519,8 +1519,8 @@
     "revGrowth": 0.4885,
     "epsGrowth": 9.9756,
     "fcfMargin": 0.0446,
-    "trailPE": 129.7431,
-    "psr": 29.7547,
+    "trailPE": 123.6337,
+    "psr": 28.3536,
     "fyEnd": "2025-08-28"
    }
   },
@@ -1539,8 +1539,8 @@
     "revGrowth": 0.2279,
     "epsGrowth": 0.1414,
     "fcfMargin": 0.199,
-    "trailPE": 379.1059,
-    "psr": 69.6913,
+    "trailPE": 353.4471,
+    "psr": 64.9744,
     "fyEnd": "2026-03-31"
    }
   },
@@ -1559,8 +1559,8 @@
     "revGrowth": 0.0817,
     "epsGrowth": 0.0994,
     "fcfMargin": 0.0285,
-    "trailPE": 52.1829,
-    "psr": 1.5311,
+    "trailPE": 52.0319,
+    "psr": 1.5267,
     "fyEnd": "2025-08-31"
    }
   },
@@ -1579,8 +1579,8 @@
     "revGrowth": 0.1424,
     "epsGrowth": -0.0138,
     "fcfMargin": 0.1283,
-    "trailPE": 34.1761,
-    "psr": 3.6483,
+    "trailPE": 35.4045,
+    "psr": 3.7795,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1599,8 +1599,8 @@
     "revGrowth": 0.1487,
     "epsGrowth": -0.5601,
     "fcfMargin": 0.403,
-    "trailPE": 223.4562,
-    "psr": 31.5986,
+    "trailPE": 210.65,
+    "psr": 29.7877,
     "fyEnd": "2025-07-31"
    }
   },
@@ -1619,8 +1619,8 @@
     "revGrowth": 0.1062,
     "epsGrowth": 1.0143,
     "fcfMargin": 2.2093,
-    "trailPE": 36.9392,
-    "psr": 60.773,
+    "trailPE": 36.3889,
+    "psr": 59.8676,
     "fyEnd": "2017-12-31"
    }
   },
@@ -1639,8 +1639,8 @@
     "revGrowth": 0.4371,
     "epsGrowth": 1.3536,
     "fcfMargin": 0.3694,
-    "trailPE": 17.4876,
-    "psr": 6.5064,
+    "trailPE": 16.9673,
+    "psr": 6.3128,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1659,7 +1659,7 @@
     "revGrowth": 0.094,
     "epsGrowth": -0.5113,
     "fcfMargin": 0.3375,
-    "trailPE": 37.9483,
+    "trailPE": 36.7438,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1678,8 +1678,8 @@
     "revGrowth": 0.0029,
     "epsGrowth": 0.0736,
     "fcfMargin": 0.1666,
-    "trailPE": 22.9355,
-    "psr": 4.1251,
+    "trailPE": 23.4639,
+    "psr": 4.2202,
     "fyEnd": "2025-06-30"
    }
   },
@@ -1698,8 +1698,8 @@
     "revGrowth": 0.0187,
     "epsGrowth": 0.2329,
     "fcfMargin": 0.1105,
-    "trailPE": 27.2895,
-    "psr": 7.4453,
+    "trailPE": 27.648,
+    "psr": 7.5431,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1718,8 +1718,8 @@
     "revGrowth": 0.0473,
     "epsGrowth": 0.1264,
     "fcfMargin": 0.0211,
-    "trailPE": 40.5311,
-    "psr": 1.2465,
+    "trailPE": 40.8571,
+    "psr": 1.2566,
     "fyEnd": "2026-01-31"
    }
   },
@@ -1738,8 +1738,8 @@
     "revGrowth": 0.0297,
     "epsGrowth": 0.0507,
     "fcfMargin": 0.1497,
-    "trailPE": 36.9966,
-    "psr": 7.3573,
+    "trailPE": 36.8398,
+    "psr": 7.3261,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1756,8 +1756,8 @@
     "opMargin": 0.2588,
     "revGrowth": 0.0007,
     "fcfMargin": 0.2227,
-    "trailPE": 21.0345,
-    "psr": 3.4817,
+    "trailPE": 20.4586,
+    "psr": 3.3864,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1778,7 +1778,7 @@
     "revGrowth": 2.0185,
     "epsGrowth": 0.5389,
     "fcfMargin": -2.3044,
-    "psr": 140.3035,
+    "psr": 130.2265,
     "fyEnd": "2025-12-31"
    }
   },
@@ -1799,7 +1799,7 @@
     "revGrowth": 0.1039,
     "epsGrowth": 1.442,
     "fcfMargin": -0.0163,
-    "psr": 35.1233,
+    "psr": 32.5717,
     "fyEnd": "2025-06-27"
    }
   },
@@ -1817,7 +1817,7 @@
     "revGrowth": 0.5158,
     "epsGrowth": 0.3345,
     "fcfMargin": 0.3662,
-    "trailPE": 57.3415,
+    "trailPE": 55.0732,
     "fyEnd": "2025-12-31"
    }
   }

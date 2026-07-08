@@ -1,19 +1,19 @@
 {
  "latest": {
-  "date": "2026-07-07 11:22 JST",
-  "valueHitRate": null,
+  "date": "2026-07-08 14:39 JST",
+  "valueHitRate": 0.0,
   "momentumHitRate": null,
   "valueResults": {
    "hit": 0,
-   "miss": 0,
-   "open": 45
+   "miss": 2,
+   "open": 54
   },
   "momentumResults": {
    "hit": 0,
    "miss": 0,
    "open": 0
   },
-  "totalSignals": 45,
+  "totalSignals": 56,
   "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
   "adjustments": []
  },
@@ -249,6 +249,24 @@
     "open": 0
    },
    "totalSignals": 45,
+   "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
+   "adjustments": []
+  },
+  {
+   "date": "2026-07-08 14:39 JST",
+   "valueHitRate": 0.0,
+   "momentumHitRate": null,
+   "valueResults": {
+    "hit": 0,
+    "miss": 2,
+    "open": 54
+   },
+   "momentumResults": {
+    "hit": 0,
+    "miss": 0,
+    "open": 0
+   },
+   "totalSignals": 56,
    "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
    "adjustments": []
   }
