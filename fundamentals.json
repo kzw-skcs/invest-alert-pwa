@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-11 23:34 JST",
+ "updated": "2026-07-12 00:49 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -19,7 +19,48 @@
     "fcfMargin": 0.2373,
     "trailPE": 42.2681,
     "psr": 11.1284,
-    "fyEnd": "2025-09-27"
+    "fyEnd": "2025-09-27",
+    "netDebtEbitda": 0.2929,
+    "netCash": false,
+    "interestCoverage": 33.8291,
+    "currentRatio": 0.8933,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 98767000000,
+    "sharesChg5yPct": -13.0895,
+    "sbcToRev": 0.0309,
+    "goodwillToAssets": 0.0159,
+    "buybackToRev": 0.218,
+    "roicApprox": 0.6912
+   },
+   "alphas": {
+    "finance": 21.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 24.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 100.51,
+     "fairBase": 127.44,
+     "fairHigh": 178.97,
+     "buyCeiling": 95.58,
+     "safetyMarginPct": -147.4,
+     "impliedGrowthPct": 18.6,
+     "assumedBaseGrowthPct": 6.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "MSFT": {
@@ -39,7 +80,48 @@
     "fcfMargin": 0.2542,
     "trailPE": 28.2331,
     "psr": 10.1542,
-    "fyEnd": "2025-06-30"
+    "fyEnd": "2025-06-30",
+    "netDebtEbitda": 0.0771,
+    "netCash": false,
+    "interestCoverage": 53.8901,
+    "currentRatio": 1.3534,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 71611000000,
+    "sharesChg5yPct": -1.7771,
+    "sbcToRev": 0.0425,
+    "goodwillToAssets": 0.1931,
+    "buybackToRev": 0.0654,
+    "roicApprox": 0.2647
+   },
+   "alphas": {
+    "finance": 22.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 21.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 2,
+     "fairLow": 197.35,
+     "fairBase": 343.62,
+     "fairHigh": 616.71,
+     "buyCeiling": 257.72,
+     "safetyMarginPct": -12.1,
+     "impliedGrowthPct": 16.5,
+     "assumedBaseGrowthPct": 14.9,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "GOOGL": {
@@ -58,7 +140,38 @@
     "epsGrowth": 0.3201,
     "fcfMargin": 0.1819,
     "trailPE": 33.0416,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.1227,
+    "netCash": false,
+    "interestCoverage": 175.3247,
+    "currentRatio": 2.0053,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 73266000000,
+    "sharesChg5yPct": -7.0598,
+    "sbcToRev": 0.0619,
+    "goodwillToAssets": 0.0561,
+    "buybackToRev": 0.1135,
+    "roicApprox": 0.2207
+   },
+   "alphas": {
+    "finance": 23.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 22.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": null
    }
   },
   "AMZN": {
@@ -78,7 +191,48 @@
     "fcfMargin": 0.1852,
     "trailPE": 34.2176,
     "psr": 3.6812,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.1452,
+    "netCash": true,
+    "interestCoverage": 35.1693,
+    "currentRatio": 1.0508,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 139514000000,
+    "sharesChg5yPct": 2031.7856,
+    "sbcToRev": 0.0272,
+    "goodwillToAssets": 0.0284,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.1325
+   },
+   "alphas": {
+    "finance": 24.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 15.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 20,
+     "fairLow": 241.51,
+     "fairBase": 382.5,
+     "fairHigh": 639.24,
+     "buyCeiling": 286.87,
+     "safetyMarginPct": 35.9,
+     "impliedGrowthPct": 6.4,
+     "assumedBaseGrowthPct": 12.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "AVGO": {
@@ -98,7 +252,48 @@
     "fcfMargin": 0.4213,
     "trailPE": 83.8512,
     "psr": 29.7852,
-    "fyEnd": "2025-11-02"
+    "fyEnd": "2025-11-02",
+    "netDebtEbitda": 1.7974,
+    "netCash": false,
+    "interestCoverage": 7.9389,
+    "currentRatio": 1.7054,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 26914000000,
+    "sharesChg5yPct": 1065.7538,
+    "sbcToRev": 0.1185,
+    "goodwillToAssets": 0.5716,
+    "buybackToRev": 0.0383,
+    "roicApprox": 0.1405
+   },
+   "alphas": {
+    "finance": 19.0,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 8.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 139.81,
+     "fairBase": 292.88,
+     "fairHigh": 601.09,
+     "buyCeiling": 219.66,
+     "safetyMarginPct": -36.6,
+     "impliedGrowthPct": 24.3,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "NVDA": {
@@ -118,7 +313,48 @@
     "fcfMargin": 0.475,
     "trailPE": 43.0531,
     "psr": 23.6421,
-    "fyEnd": "2026-01-25"
+    "fyEnd": "2026-01-25",
+    "netDebtEbitda": -0.0235,
+    "netCash": true,
+    "interestCoverage": 503.4247,
+    "currentRatio": 3.9053,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 102718000000,
+    "sharesChg5yPct": 3819.3548,
+    "sbcToRev": 0.0296,
+    "goodwillToAssets": 0.1007,
+    "buybackToRev": 0.1856,
+    "roicApprox": 0.6252
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 5,
+     "fairLow": 104.9,
+     "fairBase": 219.75,
+     "fairHigh": 451.0,
+     "buyCeiling": 164.81,
+     "safetyMarginPct": 4.0,
+     "impliedGrowthPct": 19.4,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "META": {
@@ -137,7 +373,38 @@
     "epsGrowth": -0.0305,
     "fcfMargin": 0.2294,
     "trailPE": 28.4891,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.2245,
+    "netCash": false,
+    "interestCoverage": 71.4815,
+    "currentRatio": 2.5988,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 46109000000,
+    "sharesChg5yPct": -10.8726,
+    "sbcToRev": 0.1016,
+    "goodwillToAssets": 0.067,
+    "buybackToRev": 0.1306,
+    "roicApprox": 0.2384
+   },
+   "alphas": {
+    "finance": 23.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 21.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": null
    }
   },
   "TSLA": {
@@ -159,7 +426,47 @@
     "fcfMargin": 0.0656,
     "trailPE": 377.5556,
     "psr": 16.1498,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -1.9376,
+    "netCash": true,
+    "interestCoverage": 12.8846,
+    "currentRatio": 2.1644,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 6220000000,
+    "sharesChg5yPct": 290.938,
+    "sbcToRev": 0.0298,
+    "goodwillToAssets": 0.0019,
+    "roicApprox": 0.0388
+   },
+   "alphas": {
+    "finance": 22.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 11.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 19.57,
+     "fairBase": 19.57,
+     "fairHigh": 22.64,
+     "buyCeiling": 14.68,
+     "safetyMarginPct": -1983.4,
+     "impliedGrowthPct": 42.3,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "AMD": {
@@ -179,7 +486,48 @@
     "fcfMargin": 0.1944,
     "trailPE": 210.5245,
     "psr": 26.2622,
-    "fyEnd": "2025-12-27"
+    "fyEnd": "2025-12-27",
+    "netDebtEbitda": -0.8149,
+    "netCash": true,
+    "interestCoverage": 28.1985,
+    "currentRatio": 2.85,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 6735000000,
+    "sharesChg5yPct": 34.6023,
+    "sbcToRev": 0.0473,
+    "goodwillToAssets": 0.3266,
+    "buybackToRev": 0.038,
+    "roicApprox": 0.0447
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 8.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 102.08,
+     "fairBase": 213.84,
+     "fairHigh": 438.87,
+     "buyCeiling": 160.38,
+     "safetyMarginPct": -160.9,
+     "impliedGrowthPct": 33.4,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "PLTR": {
@@ -198,7 +546,38 @@
     "epsGrowth": 2.5159,
     "fcfMargin": 0.4694,
     "trailPE": 201.254,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.9886,
+    "netCash": true,
+    "interestCoverage": 407.4971,
+    "currentRatio": 7.1098,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 2100591000,
+    "sharesChg5yPct": 161.9339,
+    "sbcToRev": 0.1528,
+    "goodwillToAssets": 0.0043,
+    "buybackToRev": 0.0168,
+    "roicApprox": 0.1512
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 12.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": null
    }
   },
   "XOM": {
@@ -210,9 +589,32 @@
     "valuation": null
    },
    "warnings": [
+    "データ不足",
     "データ不足"
    ],
-   "metrics": {}
+   "metrics": {
+    "netCash": false,
+    "fcfYears": 0
+   },
+   "alphas": {
+    "finance": null,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": null,
+     "流動比率": null,
+     "FCFマージン": null
+    },
+    "mgmtQuant": null,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": null
+    },
+    "money": null
+   }
   },
   "NEE": {
    "score": 57,
@@ -223,7 +625,8 @@
     "valuation": 12
    },
    "warnings": [
-    "売上成長マイナス"
+    "売上成長マイナス",
+    "重警告: 純負債/EBITDA 5.8倍(過大な負債)"
    ],
    "metrics": {
     "roe": 0.1252,
@@ -233,7 +636,46 @@
     "fcfMargin": 3.6993,
     "trailPE": 26.6545,
     "psr": 54.3486,
-    "fyEnd": "2012-12-31"
+    "fyEnd": "2012-12-31",
+    "netDebtEbitda": 5.8374,
+    "netCash": false,
+    "currentRatio": 0.5953,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 12485000000,
+    "sharesChg5yPct": 6.3089,
+    "goodwillToAssets": 0.0228,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.0454
+   },
+   "alphas": {
+    "finance": 11.2,
+    "financeParts": {
+     "純負債/EBITDA": 0,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 10.7,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 1,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 70.75,
+     "fairBase": 70.75,
+     "fairHigh": 81.86,
+     "buyCeiling": 53.06,
+     "safetyMarginPct": -24.3,
+     "impliedGrowthPct": 3.0,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "LMT": {
@@ -253,7 +695,48 @@
     "fcfMargin": 0.1015,
     "trailPE": 24.3471,
     "psr": 1.6074,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.7425,
+    "netCash": false,
+    "interestCoverage": 6.915,
+    "currentRatio": 1.0869,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 8557000000,
+    "sharesChg5yPct": -17.8588,
+    "sbcToRev": 0.0041,
+    "goodwillToAssets": 0.1891,
+    "buybackToRev": 0.04,
+    "roicApprox": 0.2241
+   },
+   "alphas": {
+    "finance": 17.0,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 24.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 15,
+     "fairLow": 538.87,
+     "fairBase": 663.44,
+     "fairHigh": 909.92,
+     "buyCeiling": 497.58,
+     "safetyMarginPct": 21.1,
+     "impliedGrowthPct": 2.4,
+     "assumedBaseGrowthPct": 5.6,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "RTX": {
@@ -273,7 +756,48 @@
     "fcfMargin": 0.0896,
     "trailPE": 39.502,
     "psr": 2.978,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.9632,
+    "netCash": false,
+    "interestCoverage": 4.9946,
+    "currentRatio": 1.0263,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 7940000000,
+    "sharesChg5yPct": -0.1031,
+    "sbcToRev": 0.0059,
+    "goodwillToAssets": 0.3118,
+    "buybackToRev": 0.0006,
+    "roicApprox": 0.0738
+   },
+   "alphas": {
+    "finance": 17.0,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 99.58,
+     "fairBase": 142.94,
+     "fairHigh": 221.43,
+     "buyCeiling": 107.2,
+     "safetyMarginPct": -37.1,
+     "impliedGrowthPct": 14.0,
+     "assumedBaseGrowthPct": 9.7,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "NOC": {
@@ -293,7 +817,47 @@
     "fcfMargin": 0.0788,
     "trailPE": 18.5567,
     "psr": 1.8269,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.7983,
+    "netCash": false,
+    "currentRatio": 1.1012,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 3307000000,
+    "sharesChg5yPct": -14.8734,
+    "sbcToRev": 0.0028,
+    "goodwillToAssets": 0.3394,
+    "buybackToRev": 0.0387,
+    "roicApprox": 0.1119
+   },
+   "alphas": {
+    "finance": 16.9,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 18.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 298.57,
+     "fairBase": 324.11,
+     "fairHigh": 401.24,
+     "buyCeiling": 243.08,
+     "safetyMarginPct": -66.5,
+     "impliedGrowthPct": 9.1,
+     "assumedBaseGrowthPct": 2.2,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "RKLB": {
@@ -305,7 +869,9 @@
     "valuation": 2
    },
    "warnings": [
-    "FCF赤字"
+    "FCF赤字",
+    "重警告: インタレストカバレッジ-8.6倍",
+    "FCF赤字が常態(生存力に疑問)"
    ],
    "metrics": {
     "roe": -0.1151,
@@ -314,7 +880,36 @@
     "epsGrowth": 0.0422,
     "fcfMargin": -0.5347,
     "psr": 77.9363,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": true,
+    "interestCoverage": -8.639,
+    "currentRatio": 4.0826,
+    "fcfPosYears": 0,
+    "fcfYears": 5,
+    "fcfLatest": -321806000,
+    "sharesChg5yPct": 22.09,
+    "sbcToRev": 0.1181,
+    "goodwillToAssets": 0.0885,
+    "roicApprox": -0.1049
+   },
+   "alphas": {
+    "finance": 11.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 0,
+     "FCF黒字継続": 0,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 4.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 0
+    },
+    "money": null
    }
   },
   "IBM": {
@@ -333,7 +928,45 @@
     "fcfMargin": 0.1792,
     "trailPE": 25.744,
     "psr": 4.002,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "currentRatio": 0.9557,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 12102000000,
+    "sharesChg5yPct": 4.9732,
+    "sbcToRev": 0.0254,
+    "goodwillToAssets": 0.4459,
+    "buybackToRev": 0.0202
+   },
+   "alphas": {
+    "finance": 20.8,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 14.5,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 2,
+     "fairLow": 201.1,
+     "fairBase": 266.64,
+     "fairHigh": 388.03,
+     "buyCeiling": 199.98,
+     "safetyMarginPct": -7.8,
+     "impliedGrowthPct": 8.6,
+     "assumedBaseGrowthPct": 7.6,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "ASML": {
@@ -353,7 +986,48 @@
     "fcfMargin": 0.3393,
     "trailPE": 72.7365,
     "psr": 21.2053,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.828,
+    "netCash": true,
+    "interestCoverage": 95.5317,
+    "currentRatio": 1.2618,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 11084900000,
+    "sharesChg5yPct": -7.2059,
+    "sbcToRev": 0.0062,
+    "goodwillToAssets": 0.0907,
+    "buybackToRev": 0.1821,
+    "roicApprox": 0.4
+   },
+   "alphas": {
+    "finance": 24.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 25.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 603.21,
+     "fairBase": 1075.81,
+     "fairHigh": 1965.47,
+     "buyCeiling": 806.86,
+     "safetyMarginPct": -67.1,
+     "impliedGrowthPct": 22.6,
+     "assumedBaseGrowthPct": 15.6,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "TSM": {
@@ -373,7 +1047,45 @@
     "fcfMargin": 0.3006,
     "trailPE": 9.7182,
     "psr": 3.8896,
-    "fyEnd": "2024-12-31"
+    "fyEnd": "2024-12-31",
+    "netDebtEbitda": -1.6093,
+    "netCash": true,
+    "interestCoverage": 8766.9297,
+    "currentRatio": 2.3599,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 870170600000,
+    "sharesChg5yPct": 0.0083,
+    "roicApprox": 0.2461
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 19.1,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 829.29,
+     "fairBase": 1737.21,
+     "fairHigh": 3565.4,
+     "buyCeiling": 1302.91,
+     "safetyMarginPct": 75.0,
+     "impliedGrowthPct": 1.2,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "MRVL": {
@@ -393,7 +1105,48 @@
     "fcfMargin": 0.1704,
     "trailPE": 76.8111,
     "psr": 25.1735,
-    "fyEnd": "2026-01-31"
+    "fyEnd": "2026-01-31",
+    "netDebtEbitda": 0.8183,
+    "netCash": false,
+    "interestCoverage": 6.5296,
+    "currentRatio": 2.0061,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1396400000,
+    "sharesChg5yPct": 3.1257,
+    "sbcToRev": 0.0721,
+    "goodwillToAssets": 0.4964,
+    "buybackToRev": 0.249,
+    "roicApprox": 0.0572
+   },
+   "alphas": {
+    "finance": 20.5,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 8.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 39.45,
+     "fairBase": 82.64,
+     "fairHigh": 169.61,
+     "buyCeiling": 61.98,
+     "safetyMarginPct": -185.3,
+     "impliedGrowthPct": 34.7,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "ANET": {
@@ -413,7 +1166,48 @@
     "fcfMargin": 0.4837,
     "trailPE": 67.9855,
     "psr": 26.1413,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.4999,
+    "netCash": true,
+    "interestCoverage": 1427.6564,
+    "currentRatio": 3.0479,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 4371900000,
+    "sharesChg5yPct": 1546.1575,
+    "sbcToRev": 0.0488,
+    "goodwillToAssets": 0.0214,
+    "buybackToRev": 0.178,
+    "roicApprox": 0.2463
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 17.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 2,
+     "fairLow": 85.81,
+     "fairBase": 179.75,
+     "fairHigh": 368.91,
+     "buyCeiling": 134.81,
+     "safetyMarginPct": -4.0,
+     "impliedGrowthPct": 20.5,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "VRT": {
@@ -433,7 +1227,48 @@
     "fcfMargin": 0.1851,
     "trailPE": 93.5073,
     "psr": 11.9724,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.5442,
+    "netCash": false,
+    "interestCoverage": 21.2509,
+    "currentRatio": 1.5474,
+    "fcfPosYears": 4,
+    "fcfYears": 5,
+    "fcfLatest": 1893800000,
+    "sharesChg5yPct": 8.8657,
+    "sbcToRev": 0.0045,
+    "goodwillToAssets": 0.1665,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.2115
+   },
+   "alphas": {
+    "finance": 21.5,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 4.5,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 18.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 1,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 121.85,
+     "fairBase": 255.25,
+     "fairHigh": 523.88,
+     "buyCeiling": 191.44,
+     "safetyMarginPct": -24.9,
+     "impliedGrowthPct": 23.1,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "CLMB": {
@@ -453,7 +1288,47 @@
     "fcfMargin": 0.0254,
     "trailPE": 5.5453,
     "psr": 0.7333,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.9905,
+    "netCash": true,
+    "currentRatio": 1.1089,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 16604000,
+    "sharesChg5yPct": 4.4366,
+    "sbcToRev": 0.0073,
+    "goodwillToAssets": 0.08,
+    "buybackToRev": 0.0031,
+    "roicApprox": 0.1978
+   },
+   "alphas": {
+    "finance": 20.6,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 0.5
+    },
+    "mgmtQuant": 19.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 22.07,
+     "fairBase": 46.22,
+     "fairHigh": 94.87,
+     "buyCeiling": 34.67,
+     "safetyMarginPct": 44.3,
+     "impliedGrowthPct": 12.1,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "IQV": {
@@ -473,7 +1348,48 @@
     "fcfMargin": 0.1627,
     "trailPE": 26.5115,
     "psr": 2.1269,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 3.5791,
+    "netCash": false,
+    "interestCoverage": 2.9931,
+    "currentRatio": 0.7495,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 2654000000,
+    "sharesChg5yPct": -11.2825,
+    "sbcToRev": 0.0151,
+    "goodwillToAssets": 0.5549,
+    "buybackToRev": 0.0763,
+    "roicApprox": 0.0846
+   },
+   "alphas": {
+    "finance": 11.0,
+    "financeParts": {
+     "純負債/EBITDA": 1,
+     "利払い余力": 1,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 17.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 15,
+     "fairLow": 232.91,
+     "fairBase": 289.3,
+     "fairHigh": 399.62,
+     "buyCeiling": 216.97,
+     "safetyMarginPct": 28.2,
+     "impliedGrowthPct": 1.4,
+     "assumedBaseGrowthPct": 5.9,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "CACI": {
@@ -493,7 +1409,48 @@
     "fcfMargin": 0.0634,
     "trailPE": 21.7944,
     "psr": 1.2455,
-    "fyEnd": "2025-06-30"
+    "fyEnd": "2025-06-30",
+    "netDebtEbitda": 2.8594,
+    "netCash": false,
+    "interestCoverage": 4.8109,
+    "currentRatio": 1.4733,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 547009000,
+    "sharesChg5yPct": -12.3655,
+    "sbcToRev": 0.007,
+    "goodwillToAssets": 0.5807,
+    "buybackToRev": 0.0195,
+    "roicApprox": 0.0895
+   },
+   "alphas": {
+    "finance": 14.5,
+    "financeParts": {
+     "純負債/EBITDA": 3,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 17.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 20,
+     "fairLow": 465.54,
+     "fairBase": 744.48,
+     "fairHigh": 1253.37,
+     "buyCeiling": 558.36,
+     "safetyMarginPct": 34.7,
+     "impliedGrowthPct": 6.9,
+     "assumedBaseGrowthPct": 12.6,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "SPCX": {
@@ -505,9 +1462,32 @@
     "valuation": null
    },
    "warnings": [
+    "データ不足",
     "データ不足"
    ],
-   "metrics": {}
+   "metrics": {
+    "netCash": false,
+    "fcfYears": 0
+   },
+   "alphas": {
+    "finance": null,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": null,
+     "流動比率": null,
+     "FCFマージン": null
+    },
+    "mgmtQuant": null,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": null
+    },
+    "money": null
+   }
   },
   "MCO": {
    "score": 70,
@@ -517,7 +1497,9 @@
     "health": 25.0,
     "valuation": 6
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.6066,
     "opMargin": 0.4342,
@@ -526,7 +1508,45 @@
     "fcfMargin": 0.3336,
     "trailPE": 35.6459,
     "psr": 11.0298,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.2033,
+    "netCash": false,
+    "currentRatio": 1.7397,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 2575000000,
+    "sharesChg5yPct": -5.2378,
+    "sbcToRev": 0.0301,
+    "goodwillToAssets": 0.4023,
+    "buybackToRev": 0.2082,
+    "roicApprox": 0.2396
+   },
+   "alphas": {
+    "finance": 25,
+    "financeParts": {
+     "収益力(金融簡易)": 10,
+     "利益率": 8,
+     "利益成長": 7
+    },
+    "mgmtQuant": 21.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 241.23,
+     "fairBase": 335.38,
+     "fairHigh": 506.71,
+     "buyCeiling": 251.53,
+     "safetyMarginPct": -45.3,
+     "impliedGrowthPct": 13.9,
+     "assumedBaseGrowthPct": 8.9,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "AXP": {
@@ -537,7 +1557,9 @@
     "health": 25.0,
     "valuation": 12
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.3236,
     "opMargin": 0.0688,
@@ -546,7 +1568,45 @@
     "fcfMargin": 0.3874,
     "trailPE": 22.7945,
     "psr": 5.7914,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 3.0253,
+    "netCash": false,
+    "interestCoverage": 0.4148,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 16003000000,
+    "sharesChg5yPct": -14.7687,
+    "sbcToRev": 0.0133,
+    "goodwillToAssets": 0.0162,
+    "buybackToRev": 0.1408,
+    "roicApprox": 0.025
+   },
+   "alphas": {
+    "finance": 16,
+    "financeParts": {
+     "収益力(金融簡易)": 10,
+     "利益率": 2,
+     "利益成長": 4
+    },
+    "mgmtQuant": 19.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 15,
+     "fairLow": 350.02,
+     "fairBase": 443.14,
+     "fairHigh": 621.56,
+     "buyCeiling": 332.35,
+     "safetyMarginPct": 20.9,
+     "impliedGrowthPct": 3.2,
+     "assumedBaseGrowthPct": 6.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "SPGI": {
@@ -557,7 +1617,9 @@
     "health": 25.0,
     "valuation": 12
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.1436,
     "opMargin": 0.4224,
@@ -566,7 +1628,46 @@
     "fcfMargin": 0.364,
     "trailPE": 29.3656,
     "psr": 8.3091,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.3876,
+    "netCash": false,
+    "interestCoverage": 22.5714,
+    "currentRatio": 0.8244,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5651000000,
+    "sharesChg5yPct": 22.5595,
+    "sbcToRev": 0.0154,
+    "goodwillToAssets": 0.596,
+    "buybackToRev": 0.3261,
+    "roicApprox": 0.1177
+   },
+   "alphas": {
+    "finance": 25,
+    "financeParts": {
+     "収益力(金融簡易)": 10,
+     "利益率": 8,
+     "利益成長": 7
+    },
+    "mgmtQuant": 10.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 2,
+     "fairLow": 301.7,
+     "fairBase": 404.81,
+     "fairHigh": 594.72,
+     "buyCeiling": 303.61,
+     "safetyMarginPct": -6.3,
+     "impliedGrowthPct": 8.8,
+     "assumedBaseGrowthPct": 7.9,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "DELL": {
@@ -585,7 +1686,38 @@
     "epsGrowth": 2.8721,
     "fcfMargin": 0.0753,
     "trailPE": 50.1118,
-    "fyEnd": "2026-01-30"
+    "fyEnd": "2026-01-30",
+    "netDebtEbitda": 1.0722,
+    "netCash": false,
+    "interestCoverage": 5.2237,
+    "currentRatio": 0.9104,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 8552000000,
+    "sharesChg5yPct": -10.8214,
+    "sbcToRev": 0.0064,
+    "goodwillToAssets": 0.193,
+    "buybackToRev": 0.053,
+    "roicApprox": 0.3059
+   },
+   "alphas": {
+    "finance": 15.0,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 24.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": null
    }
   },
   "ADBE": {
@@ -605,7 +1737,48 @@
     "fcfMargin": 0.4145,
     "trailPE": 13.3916,
     "psr": 3.74,
-    "fyEnd": "2025-11-28"
+    "fyEnd": "2025-11-28",
+    "netDebtEbitda": 0.0818,
+    "netCash": false,
+    "interestCoverage": 33.1027,
+    "currentRatio": 0.9964,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 9852000000,
+    "sharesChg5yPct": -14.2469,
+    "sbcToRev": 0.0817,
+    "goodwillToAssets": 0.4359,
+    "buybackToRev": 0.4746,
+    "roicApprox": 0.3857
+   },
+   "alphas": {
+    "finance": 21.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 19.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 430.97,
+     "fairBase": 637.06,
+     "fairHigh": 1009.69,
+     "buyCeiling": 477.79,
+     "safetyMarginPct": 64.9,
+     "impliedGrowthPct": -3.8,
+     "assumedBaseGrowthPct": 10.5,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "BDX": {
@@ -625,7 +1798,48 @@
     "fcfMargin": 0.1223,
     "trailPE": 26.1065,
     "psr": 1.9169,
-    "fyEnd": "2025-09-30"
+    "fyEnd": "2025-09-30",
+    "netDebtEbitda": 3.3684,
+    "netCash": false,
+    "interestCoverage": 4.2072,
+    "currentRatio": 1.1133,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 2670000000,
+    "sharesChg5yPct": -1.5905,
+    "sbcToRev": 0.0118,
+    "goodwillToAssets": 0.481,
+    "buybackToRev": 0.0458,
+    "roicApprox": 0.0474
+   },
+   "alphas": {
+    "finance": 13.5,
+    "financeParts": {
+     "純負債/EBITDA": 1,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 13.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 15,
+     "fairLow": 154.82,
+     "fairBase": 210.06,
+     "fairHigh": 311.34,
+     "buyCeiling": 157.55,
+     "safetyMarginPct": 27.7,
+     "impliedGrowthPct": 3.9,
+     "assumedBaseGrowthPct": 8.2,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "MA": {
@@ -636,7 +1850,9 @@
     "health": 25.0,
     "valuation": 12
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.0805,
     "opMargin": 0.5763,
@@ -645,7 +1861,46 @@
     "fcfMargin": 0.5233,
     "trailPE": 31.885,
     "psr": 1.9683,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.3835,
+    "netCash": false,
+    "interestCoverage": 26.1731,
+    "currentRatio": 1.035,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 17159000000,
+    "sharesChg5yPct": -9.9404,
+    "sbcToRev": 0.0182,
+    "goodwillToAssets": 0.1765,
+    "buybackToRev": 0.3576,
+    "roicApprox": 0.5744
+   },
+   "alphas": {
+    "finance": 16,
+    "financeParts": {
+     "収益力(金融簡易)": 7,
+     "利益率": 8,
+     "利益成長": 1
+    },
+    "mgmtQuant": 24.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 3029.35,
+     "fairBase": 5570.71,
+     "fairHigh": 10409.27,
+     "buyCeiling": 4178.04,
+     "safetyMarginPct": 90.5,
+     "impliedGrowthPct": -17.0,
+     "assumedBaseGrowthPct": 16.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "HON": {
@@ -664,7 +1919,47 @@
     "epsGrowth": -1.063,
     "fcfMargin": 0.5556,
     "psr": 14.703,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.7403,
+    "netCash": false,
+    "currentRatio": 1.2978,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5422000000,
+    "sharesChg5yPct": -8.6018,
+    "sbcToRev": 0.0201,
+    "goodwillToAssets": 0.2861,
+    "buybackToRev": 0.3898,
+    "roicApprox": 0.1495
+   },
+   "alphas": {
+    "finance": 19.4,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 19.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 114.46,
+     "fairBase": 129.68,
+     "fairHigh": 166.26,
+     "buyCeiling": 97.26,
+     "safetyMarginPct": -74.6,
+     "impliedGrowthPct": 10.9,
+     "assumedBaseGrowthPct": 3.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "NKE": {
@@ -685,7 +1980,45 @@
     "fcfMargin": 0.0706,
     "trailPE": 20.5417,
     "psr": 0.8195,
-    "fyEnd": "2025-05-31"
+    "fyEnd": "2025-05-31",
+    "netCash": false,
+    "currentRatio": 2.2111,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 3268000000,
+    "sharesChg5yPct": -6.5343,
+    "sbcToRev": 0.0153,
+    "goodwillToAssets": 0.0066,
+    "buybackToRev": 0.0645
+   },
+   "alphas": {
+    "finance": 20.8,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 25.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 5,
+     "fairLow": 45.15,
+     "fairBase": 45.15,
+     "fairHigh": 52.24,
+     "buyCeiling": 33.86,
+     "safetyMarginPct": 1.7,
+     "impliedGrowthPct": -0.2,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "DE": {
@@ -707,7 +2040,47 @@
     "fcfMargin": 0.1335,
     "trailPE": 31.7222,
     "psr": 3.4676,
-    "fyEnd": "2025-11-02"
+    "fyEnd": "2025-11-02",
+    "netDebtEbitda": 2.1842,
+    "netCash": false,
+    "interestCoverage": 2.8514,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 6099000000,
+    "sharesChg5yPct": -13.6953,
+    "sbcToRev": 0.0033,
+    "goodwillToAssets": 0.0395,
+    "buybackToRev": 0.0249,
+    "roicApprox": 0.1214
+   },
+   "alphas": {
+    "finance": 13.6,
+    "financeParts": {
+     "純負債/EBITDA": 3,
+     "利払い余力": 1,
+     "FCF黒字継続": 6,
+     "流動比率": null,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 23.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 267.01,
+     "fairBase": 267.01,
+     "fairHigh": 308.93,
+     "buyCeiling": 200.26,
+     "safetyMarginPct": -119.8,
+     "impliedGrowthPct": 10.7,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "ACN": {
@@ -729,7 +2102,48 @@
     "fcfMargin": 0.618,
     "trailPE": 60.1022,
     "psr": 4.8956,
-    "fyEnd": "2025-08-31"
+    "fyEnd": "2025-08-31",
+    "netDebtEbitda": -1.845,
+    "netCash": true,
+    "interestCoverage": 8.968,
+    "currentRatio": 1.42,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 10874360000,
+    "sharesChg5yPct": -0.9738,
+    "sbcToRev": 0.119,
+    "goodwillToAssets": 0.3446,
+    "buybackToRev": 0.2625,
+    "roicApprox": 0.0447
+   },
+   "alphas": {
+    "finance": 23.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 10.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 20,
+     "fairLow": 201.73,
+     "fairBase": 201.73,
+     "fairHigh": 233.41,
+     "buyCeiling": 151.3,
+     "safetyMarginPct": 33.0,
+     "impliedGrowthPct": -5.6,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "ICE": {
@@ -740,7 +2154,9 @@
     "health": 25.0,
     "valuation": 12
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.1146,
     "opMargin": 0.39,
@@ -749,7 +2165,46 @@
     "fcfMargin": 0.3393,
     "trailPE": 23.4419,
     "psr": 6.0515,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 2.7388,
+    "netCash": false,
+    "interestCoverage": 6.1382,
+    "currentRatio": 1.0198,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 4289000000,
+    "sharesChg5yPct": 1.102,
+    "sbcToRev": 0.0188,
+    "goodwillToAssets": 0.2239,
+    "buybackToRev": 0.1024,
+    "roicApprox": 0.0819
+   },
+   "alphas": {
+    "finance": 22,
+    "financeParts": {
+     "収益力(金融簡易)": 7,
+     "利益率": 8,
+     "利益成長": 7
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 10,
+     "fairLow": 117.82,
+     "fairBase": 155.36,
+     "fairHigh": 225.1,
+     "buyCeiling": 116.52,
+     "safetyMarginPct": 12.9,
+     "impliedGrowthPct": 5.6,
+     "assumedBaseGrowthPct": 7.5,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "UNH": {
@@ -769,7 +2224,48 @@
     "fcfMargin": 0.0359,
     "trailPE": 32.0952,
     "psr": 0.8616,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 2.0559,
+    "netCash": false,
+    "interestCoverage": 4.7386,
+    "currentRatio": 0.7884,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 16075000000,
+    "sharesChg5yPct": -3.9821,
+    "sbcToRev": 0.0022,
+    "goodwillToAssets": 0.3569,
+    "buybackToRev": 0.0124,
+    "roicApprox": 0.0869
+   },
+   "alphas": {
+    "finance": 12.5,
+    "financeParts": {
+     "純負債/EBITDA": 3,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 10,
+     "fairLow": 322.8,
+     "fairBase": 500.63,
+     "fairHigh": 823.35,
+     "buyCeiling": 375.47,
+     "safetyMarginPct": 15.2,
+     "impliedGrowthPct": 9.6,
+     "assumedBaseGrowthPct": 11.8,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "V": {
@@ -780,7 +2276,9 @@
     "health": 25.0,
     "valuation": 14
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.5291,
     "opMargin": 0.5998,
@@ -788,7 +2286,45 @@
     "epsGrowth": 0.016,
     "fcfMargin": 0.5765,
     "psr": 4.0941,
-    "fyEnd": "2025-09-30"
+    "fyEnd": "2025-09-30",
+    "netDebtEbitda": 0.0967,
+    "netCash": false,
+    "interestCoverage": 40.7368,
+    "currentRatio": 1.0776,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 23059000000,
+    "sbcToRev": 0.0224,
+    "goodwillToAssets": 0.1995,
+    "buybackToRev": 0.4579,
+    "roicApprox": 0.3296
+   },
+   "alphas": {
+    "finance": 22,
+    "financeParts": {
+     "収益力(金融簡易)": 10,
+     "利益率": 8,
+     "利益成長": 4
+    },
+    "mgmtQuant": 22.2,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 880.49,
+     "fairBase": 1341.6,
+     "fairHigh": 2176.71,
+     "buyCeiling": 1006.2,
+     "safetyMarginPct": 74.0,
+     "impliedGrowthPct": -7.2,
+     "assumedBaseGrowthPct": 11.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "IBKR": {
@@ -799,7 +2335,9 @@
     "health": 25.0,
     "valuation": 6
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.0083,
     "revGrowth": 0.2342,
@@ -807,7 +2345,41 @@
     "fcfMargin": 6.4799,
     "trailPE": 42.3829,
     "psr": 1.6285,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": true,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 15811000000,
+    "sharesChg5yPct": 450.4285,
+    "sbcToRev": 0.0484,
+    "buybackToRev": 0.0
+   },
+   "alphas": {
+    "finance": 10,
+    "financeParts": {
+     "収益力(金融簡易)": 3,
+     "利益率": 0,
+     "利益成長": 7
+    },
+    "mgmtQuant": 11.7,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 9252.72,
+     "fairBase": 19382.74,
+     "fairHigh": 39780.47,
+     "buyCeiling": 14537.05,
+     "safetyMarginPct": 99.5,
+     "impliedGrowthPct": -50.0,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "GDDY": {
@@ -827,7 +2399,47 @@
     "fcfMargin": 0.3182,
     "trailPE": 14.2958,
     "psr": 2.378,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 2.158,
+    "netCash": false,
+    "interestCoverage": 7.4656,
+    "currentRatio": 0.6146,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1575500000,
+    "sbcToRev": 0.0642,
+    "goodwillToAssets": 0.4522,
+    "buybackToRev": 0.3235,
+    "roicApprox": 0.2237
+   },
+   "alphas": {
+    "finance": 14.5,
+    "financeParts": {
+     "純負債/EBITDA": 3,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 15.3,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 190.3,
+     "fairBase": 258.45,
+     "fairHigh": 383.36,
+     "buyCeiling": 193.84,
+     "safetyMarginPct": 65.6,
+     "impliedGrowthPct": -6.5,
+     "assumedBaseGrowthPct": 8.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "BN": {
@@ -840,7 +2452,8 @@
    },
    "warnings": [
     "売上成長マイナス",
-    "FCF赤字"
+    "FCF赤字",
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
    ],
    "metrics": {
     "roe": 0.0079,
@@ -848,7 +2461,29 @@
     "epsGrowth": 1.039,
     "fcfMargin": -0.0505,
     "trailPE": 89.2449,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": true,
+    "fcfPosYears": 2,
+    "fcfYears": 5,
+    "fcfLatest": -3794000000,
+    "goodwillToAssets": 0.0835
+   },
+   "alphas": {
+    "finance": 10,
+    "financeParts": {
+     "収益力(金融簡易)": 3,
+     "利益率": 0,
+     "利益成長": 7
+    },
+    "mgmtQuant": 18.8,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 2
+    },
+    "money": null
    }
   },
   "AMAT": {
@@ -868,7 +2503,48 @@
     "fcfMargin": 0.2009,
     "trailPE": 69.5727,
     "psr": 16.8627,
-    "fyEnd": "2025-10-26"
+    "fyEnd": "2025-10-26",
+    "netDebtEbitda": -0.0901,
+    "netCash": true,
+    "interestCoverage": 30.8141,
+    "currentRatio": 2.6105,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5698000000,
+    "sharesChg5yPct": -13.2774,
+    "sbcToRev": 0.0235,
+    "goodwillToAssets": 0.1021,
+    "buybackToRev": 0.1726,
+    "roicApprox": 0.2437
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 23.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 99.53,
+     "fairBase": 116.95,
+     "fairHigh": 154.47,
+     "buyCeiling": 87.72,
+     "safetyMarginPct": -415.2,
+     "impliedGrowthPct": 26.7,
+     "assumedBaseGrowthPct": 4.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "LRCX": {
@@ -888,7 +2564,48 @@
     "fcfMargin": 0.3349,
     "trailPE": 84.4169,
     "psr": 23.7645,
-    "fyEnd": "2025-06-29"
+    "fyEnd": "2025-06-29",
+    "netDebtEbitda": -0.4248,
+    "netCash": true,
+    "interestCoverage": 33.1137,
+    "currentRatio": 2.2101,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 6173264000,
+    "sharesChg5yPct": 769.0946,
+    "sbcToRev": 0.0186,
+    "goodwillToAssets": 0.075,
+    "buybackToRev": 0.1856,
+    "roicApprox": 0.3432
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 18.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 122.0,
+     "fairBase": 255.56,
+     "fairHigh": 524.51,
+     "buyCeiling": 191.67,
+     "safetyMarginPct": -37.1,
+     "impliedGrowthPct": 24.3,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "UBER": {
@@ -908,7 +2625,48 @@
     "fcfMargin": 0.1877,
     "trailPE": 15.759,
     "psr": 2.917,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.5436,
+    "netCash": false,
+    "interestCoverage": 12.6477,
+    "currentRatio": 1.1358,
+    "fcfPosYears": 4,
+    "fcfYears": 5,
+    "fcfLatest": 9763000000,
+    "sharesChg5yPct": 10.7605,
+    "sbcToRev": 0.0351,
+    "goodwillToAssets": 0.1445,
+    "buybackToRev": 0.1254,
+    "roicApprox": 0.117
+   },
+   "alphas": {
+    "finance": 19.5,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 4,
+     "FCF黒字継続": 4.5,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 13.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 1,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 111.19,
+     "fairBase": 218.87,
+     "fairHigh": 429.68,
+     "buyCeiling": 164.15,
+     "safetyMarginPct": 65.9,
+     "impliedGrowthPct": 3.7,
+     "assumedBaseGrowthPct": 18.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "PGR": {
@@ -919,7 +2677,9 @@
     "health": 24.5,
     "valuation": 25
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.3729,
     "revGrowth": 0.1632,
@@ -927,7 +2687,41 @@
     "fcfMargin": 0.1962,
     "trailPE": 11.9979,
     "psr": 1.5378,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 17200000000,
+    "sharesChg5yPct": 0.0271,
+    "goodwillToAssets": 0.0019,
+    "buybackToRev": 0.0022
+   },
+   "alphas": {
+    "finance": 17,
+    "financeParts": {
+     "収益力(金融簡易)": 10,
+     "利益率": 0,
+     "利益成長": 7
+    },
+    "mgmtQuant": 18.3,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 634.42,
+     "fairBase": 1162.42,
+     "fairHigh": 2166.31,
+     "buyCeiling": 871.82,
+     "safetyMarginPct": 80.2,
+     "impliedGrowthPct": -5.8,
+     "assumedBaseGrowthPct": 16.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "HCA": {
@@ -946,7 +2740,44 @@
     "fcfMargin": 0.1017,
     "trailPE": 14.3519,
     "psr": 1.1931,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "currentRatio": 0.9653,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 7692000000,
+    "sharesChg5yPct": -34.2128,
+    "sbcToRev": 0.0053,
+    "buybackToRev": 0.1332
+   },
+   "alphas": {
+    "finance": 18.8,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 25.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 530.83,
+     "fairBase": 689.66,
+     "fairHigh": 987.58,
+     "buyCeiling": 517.25,
+     "safetyMarginPct": 41.0,
+     "impliedGrowthPct": -0.1,
+     "assumedBaseGrowthPct": 7.1,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "KKR": {
@@ -958,7 +2789,8 @@
     "valuation": 14
    },
    "warnings": [
-    "売上成長マイナス"
+    "売上成長マイナス",
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
    ],
    "metrics": {
     "roe": 0.0767,
@@ -966,7 +2798,42 @@
     "epsGrowth": -0.2294,
     "fcfMargin": 0.0145,
     "psr": 4.4718,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "fcfPosYears": 2,
+    "fcfYears": 5,
+    "fcfLatest": 477760000,
+    "sharesChg5yPct": 54.6191,
+    "sbcToRev": 0.0371,
+    "goodwillToAssets": 0.0002,
+    "buybackToRev": 0.0002
+   },
+   "alphas": {
+    "finance": 4,
+    "financeParts": {
+     "収益力(金融簡易)": 3,
+     "利益率": 0,
+     "利益成長": 1
+    },
+    "mgmtQuant": 11.8,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 2
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 6.29,
+     "fairBase": 6.29,
+     "fairHigh": 7.28,
+     "buyCeiling": 4.72,
+     "safetyMarginPct": -1441.6,
+     "impliedGrowthPct": 37.8,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "JXN": {
@@ -977,14 +2844,50 @@
     "health": 25.0,
     "valuation": 22
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.0027,
     "revGrowth": 1.0431,
     "epsGrowth": -0.9715,
     "fcfMargin": 0.8616,
     "psr": 1.2185,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": true,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5758000000,
+    "sharesChg5yPct": -19.152,
+    "sbcToRev": 0.0198,
+    "buybackToRev": 0.1001
+   },
+   "alphas": {
+    "finance": 4,
+    "financeParts": {
+     "収益力(金融簡易)": 3,
+     "利益率": 0,
+     "利益成長": 1
+    },
+    "mgmtQuant": 25.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 2040.41,
+     "fairBase": 4274.29,
+     "fairHigh": 8772.41,
+     "buyCeiling": 3205.72,
+     "safetyMarginPct": 97.3,
+     "impliedGrowthPct": -36.6,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "FERG": {
@@ -1004,7 +2907,47 @@
     "fcfMargin": 0.062,
     "trailPE": 24.4056,
     "psr": 1.434,
-    "fyEnd": "2025-07-31"
+    "fyEnd": "2025-07-31",
+    "netDebtEbitda": 1.0332,
+    "netCash": false,
+    "interestCoverage": 14.5587,
+    "currentRatio": 1.6831,
+    "fcfPosYears": 4,
+    "fcfYears": 4,
+    "fcfLatest": 1908000000,
+    "sbcToRev": 0.0009,
+    "goodwillToAssets": 0.139,
+    "buybackToRev": 0.0308,
+    "roicApprox": 0.2148
+   },
+   "alphas": {
+    "finance": 17.0,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 4,
+     "FCF黒字継続": 4.5,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 23.6,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 133.55,
+     "fairBase": 153.58,
+     "fairHigh": 199.3,
+     "buyCeiling": 115.18,
+     "safetyMarginPct": -48.1,
+     "impliedGrowthPct": 9.1,
+     "assumedBaseGrowthPct": 3.8,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "USFD": {
@@ -1024,7 +2967,48 @@
     "fcfMargin": 0.0243,
     "trailPE": 34.3469,
     "psr": 0.5641,
-    "fyEnd": "2025-12-27"
+    "fyEnd": "2025-12-27",
+    "netDebtEbitda": 3.0235,
+    "netCash": false,
+    "interestCoverage": 3.9311,
+    "currentRatio": 1.1596,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 959000000,
+    "sharesChg5yPct": -0.2428,
+    "sbcToRev": 0.0021,
+    "goodwillToAssets": 0.4155,
+    "buybackToRev": 0.0235,
+    "roicApprox": 0.1011
+   },
+   "alphas": {
+    "finance": 10.5,
+    "financeParts": {
+     "純負債/EBITDA": 1,
+     "利払い余力": 1,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 0.5
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 59.73,
+     "fairBase": 69.4,
+     "fairHigh": 90.83,
+     "buyCeiling": 52.05,
+     "safetyMarginPct": -45.5,
+     "impliedGrowthPct": 9.1,
+     "assumedBaseGrowthPct": 4.1,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "RLI": {
@@ -1035,7 +3019,9 @@
     "health": 25.0,
     "valuation": 25
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.2268,
     "revGrowth": 0.0633,
@@ -1043,7 +3029,41 @@
     "fcfMargin": 0.3234,
     "trailPE": 13.8787,
     "psr": 2.9621,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 608698000,
+    "sharesChg5yPct": 103.5914,
+    "goodwillToAssets": 0.0075,
+    "buybackToRev": 0.0035
+   },
+   "alphas": {
+    "finance": 17,
+    "financeParts": {
+     "収益力(金融簡易)": 10,
+     "利益率": 0,
+     "利益成長": 7
+    },
+    "mgmtQuant": 13.3,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 98.61,
+     "fairBase": 124.58,
+     "fairHigh": 174.46,
+     "buyCeiling": 93.44,
+     "safetyMarginPct": 51.3,
+     "impliedGrowthPct": -3.5,
+     "assumedBaseGrowthPct": 6.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "BLDR": {
@@ -1065,7 +3085,48 @@
     "fcfMargin": 0.0562,
     "trailPE": 19.4576,
     "psr": 0.5359,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 3.0814,
+    "netCash": false,
+    "interestCoverage": 4.0703,
+    "currentRatio": 1.8587,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 853284000,
+    "sharesChg5yPct": -46.4205,
+    "sbcToRev": 0.0035,
+    "goodwillToAssets": 0.3682,
+    "buybackToRev": 0.0273,
+    "roicApprox": 0.0708
+   },
+   "alphas": {
+    "finance": 13.5,
+    "financeParts": {
+     "純負債/EBITDA": 1,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 18.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 10,
+     "fairLow": 93.75,
+     "fairBase": 93.75,
+     "fairHigh": 108.47,
+     "buyCeiling": 70.31,
+     "safetyMarginPct": 19.3,
+     "impliedGrowthPct": -3.0,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "FTAI": {
@@ -1077,7 +3138,8 @@
     "valuation": 6
    },
    "warnings": [
-    "FCF赤字"
+    "FCF赤字",
+    "FCF赤字が常態(生存力に疑問)"
    ],
    "metrics": {
     "roe": -0.1811,
@@ -1086,7 +3148,34 @@
     "fcfMargin": -0.135,
     "trailPE": 49.4239,
     "psr": 9.3013,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "currentRatio": 5.283,
+    "fcfPosYears": 1,
+    "fcfYears": 5,
+    "fcfLatest": -338457000,
+    "sharesChg5yPct": 19.7954,
+    "sbcToRev": 0.0087,
+    "goodwillToAssets": 0.0215
+   },
+   "alphas": {
+    "finance": 9.4,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": 1.5,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 10.5,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 0
+    },
+    "money": null
    }
   },
   "PAYX": {
@@ -1106,7 +3195,48 @@
     "fcfMargin": 0.3159,
     "trailPE": 23.4803,
     "psr": 7.1221,
-    "fyEnd": "2025-05-31"
+    "fyEnd": "2025-05-31",
+    "netDebtEbitda": 1.2079,
+    "netCash": false,
+    "interestCoverage": 20.9459,
+    "currentRatio": 1.2818,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1709100000,
+    "sharesChg5yPct": 0.4109,
+    "sbcToRev": 0.0207,
+    "goodwillToAssets": 0.2725,
+    "buybackToRev": 0.0193,
+    "roicApprox": 0.201
+   },
+   "alphas": {
+    "finance": 20.5,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 17.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 68.7,
+     "fairBase": 83.89,
+     "fairHigh": 114.3,
+     "buyCeiling": 62.92,
+     "safetyMarginPct": -28.2,
+     "impliedGrowthPct": 8.8,
+     "assumedBaseGrowthPct": 5.4,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "OTIS": {
@@ -1126,7 +3256,48 @@
     "fcfMargin": 0.1106,
     "trailPE": 20.8829,
     "psr": 1.9434,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 2.7211,
+    "netCash": false,
+    "interestCoverage": 9.8295,
+    "currentRatio": 0.8491,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1596000000,
+    "sharesChg5yPct": -10.3651,
+    "sbcToRev": 0.0055,
+    "goodwillToAssets": 0.1591,
+    "buybackToRev": 0.0561,
+    "roicApprox": 1.1174
+   },
+   "alphas": {
+    "finance": 16.0,
+    "financeParts": {
+     "純負債/EBITDA": 3,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 24.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 51.33,
+     "fairBase": 53.61,
+     "fairHigh": 64.29,
+     "buyCeiling": 40.21,
+     "safetyMarginPct": -36.3,
+     "impliedGrowthPct": 5.4,
+     "assumedBaseGrowthPct": 1.2,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "TLN": {
@@ -1137,7 +3308,10 @@
     "health": 25.0,
     "valuation": 14
    },
-   "warnings": [],
+   "warnings": [
+    "重警告: 純負債/EBITDA 32.2倍(過大な負債)",
+    "重警告: インタレストカバレッジ-0.4倍"
+   ],
    "metrics": {
     "roe": -0.2004,
     "opMargin": -0.0357,
@@ -1145,7 +3319,48 @@
     "epsGrowth": -1.2194,
     "fcfMargin": 0.2407,
     "psr": 6.9553,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 32.2381,
+    "netCash": false,
+    "interestCoverage": -0.4265,
+    "currentRatio": 1.2848,
+    "fcfPosYears": 4,
+    "fcfYears": 5,
+    "fcfLatest": 606000000,
+    "sharesChg5yPct": -64.4471,
+    "sbcToRev": 0.2089,
+    "goodwillToAssets": 0.0,
+    "buybackToRev": 0.0409,
+    "roicApprox": -0.009
+   },
+   "alphas": {
+    "finance": 9.5,
+    "financeParts": {
+     "純負債/EBITDA": 0,
+     "利払い余力": 0,
+     "FCF黒字継続": 4.5,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 15.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 329.92,
+     "fairBase": 691.13,
+     "fairHigh": 1418.45,
+     "buyCeiling": 518.35,
+     "safetyMarginPct": 44.2,
+     "impliedGrowthPct": 12.1,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "TSCO": {
@@ -1165,7 +3380,48 @@
     "fcfMargin": 0.0477,
     "trailPE": 14.7718,
     "psr": 1.028,
-    "fyEnd": "2025-12-27"
+    "fyEnd": "2025-12-27",
+    "netDebtEbitda": 0.8009,
+    "netCash": false,
+    "interestCoverage": 21.2222,
+    "currentRatio": 1.3417,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 740489000,
+    "sharesChg5yPct": 352.5735,
+    "sbcToRev": 0.0037,
+    "goodwillToAssets": 0.0317,
+    "buybackToRev": 0.0233,
+    "roicApprox": 0.2667
+   },
+   "alphas": {
+    "finance": 20.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 18.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 19.52,
+     "fairBase": 22.87,
+     "fairHigh": 30.14,
+     "buyCeiling": 17.15,
+     "safetyMarginPct": -33.0,
+     "impliedGrowthPct": 8.2,
+     "assumedBaseGrowthPct": 4.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "MSA": {
@@ -1185,7 +3441,47 @@
     "fcfMargin": 0.5782,
     "trailPE": 77.1991,
     "psr": 12.8911,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.9193,
+    "netCash": false,
+    "interestCoverage": 11.6928,
+    "currentRatio": 3.0057,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 295429000,
+    "sharesChg5yPct": -0.8045,
+    "sbcToRev": 0.0297,
+    "goodwillToAssets": 0.2864,
+    "roicApprox": 0.1514
+   },
+   "alphas": {
+    "finance": 22.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 17.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 5,
+     "fairLow": 126.07,
+     "fairBase": 176.44,
+     "fairHigh": 267.97,
+     "buyCeiling": 132.33,
+     "safetyMarginPct": 3.3,
+     "impliedGrowthPct": 8.6,
+     "assumedBaseGrowthPct": 9.1,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "BUR": {
@@ -1198,7 +3494,8 @@
    },
    "warnings": [
     "売上成長マイナス",
-    "FCF赤字"
+    "FCF赤字",
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
    ],
    "metrics": {
     "roe": 0.0256,
@@ -1208,7 +3505,35 @@
     "fcfMargin": -0.0709,
     "trailPE": 14.9643,
     "psr": 2.2206,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 6.5705,
+    "netCash": false,
+    "interestCoverage": 1.537,
+    "fcfPosYears": 1,
+    "fcfYears": 5,
+    "fcfLatest": -29298000,
+    "sharesChg5yPct": -0.0696,
+    "sbcToRev": 0.0335,
+    "goodwillToAssets": 0.0202,
+    "buybackToRev": 0.037,
+    "roicApprox": 0.0401
+   },
+   "alphas": {
+    "finance": 12,
+    "financeParts": {
+     "収益力(金融簡易)": 3,
+     "利益率": 8,
+     "利益成長": 1
+    },
+    "mgmtQuant": 12.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 0
+    },
+    "money": null
    }
   },
   "PBI": {
@@ -1227,7 +3552,45 @@
     "fcfMargin": 0.1675,
     "trailPE": 21.8214,
     "psr": 1.3117,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "currentRatio": 0.711,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 316979000,
+    "sharesChg5yPct": -13.4652,
+    "sbcToRev": 0.0075,
+    "goodwillToAssets": 0.2356,
+    "buybackToRev": 0.0528
+   },
+   "alphas": {
+    "finance": 18.8,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 23.7,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 57.84,
+     "fairBase": 121.16,
+     "fairHigh": 248.67,
+     "buyCeiling": 90.87,
+     "safetyMarginPct": 84.9,
+     "impliedGrowthPct": -5.8,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "XPEL": {
@@ -1247,7 +3610,48 @@
     "fcfMargin": 0.1322,
     "trailPE": 24.0486,
     "psr": 2.5749,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.8046,
+    "netCash": true,
+    "interestCoverage": 754.8072,
+    "currentRatio": 3.2493,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 62930000,
+    "sharesChg5yPct": -0.0305,
+    "sbcToRev": 0.0058,
+    "goodwillToAssets": 0.155,
+    "buybackToRev": 0.0063,
+    "roicApprox": 0.1763
+   },
+   "alphas": {
+    "finance": 24.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 20.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 20,
+     "fairLow": 43.95,
+     "fairBase": 71.97,
+     "fairHigh": 123.35,
+     "buyCeiling": 53.98,
+     "safetyMarginPct": 38.2,
+     "impliedGrowthPct": 6.8,
+     "assumedBaseGrowthPct": 13.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "BKTI": {
@@ -1258,7 +3662,9 @@
     "health": 25.0,
     "valuation": 12
    },
-   "warnings": [],
+   "warnings": [
+    "FCF赤字が常態(生存力に疑問)"
+   ],
    "metrics": {
     "roe": 0.3028,
     "opMargin": 0.2158,
@@ -1267,7 +3673,46 @@
     "fcfMargin": 0.2484,
     "trailPE": 24.7878,
     "psr": 4.309,
-    "fyEnd": "2023-12-31"
+    "fyEnd": "2023-12-31",
+    "netDebtEbitda": -1.1823,
+    "netCash": true,
+    "currentRatio": 4.2081,
+    "fcfPosYears": 2,
+    "fcfYears": 5,
+    "fcfLatest": 18402000,
+    "sharesChg5yPct": -69.7449,
+    "sbcToRev": 0.0027,
+    "buybackToRev": 0.0161,
+    "roicApprox": 0.2717
+   },
+   "alphas": {
+    "finance": 19.4,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 1.5,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 22.6,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 2
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 121.47,
+     "fairBase": 254.45,
+     "fairHigh": 522.22,
+     "buyCeiling": 190.84,
+     "safetyMarginPct": 66.5,
+     "impliedGrowthPct": 5.2,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "HWKN": {
@@ -1287,7 +3732,46 @@
     "fcfMargin": 0.0794,
     "trailPE": 34.2097,
     "psr": 2.5757,
-    "fyEnd": "2026-03-29"
+    "fyEnd": "2026-03-29",
+    "netDebtEbitda": 1.3811,
+    "netCash": false,
+    "currentRatio": 2.2077,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 86088000,
+    "sharesChg5yPct": -1.9644,
+    "sbcToRev": 0.0079,
+    "goodwillToAssets": 0.2261,
+    "roicApprox": 0.1232
+   },
+   "alphas": {
+    "finance": 18.1,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 20.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 73.58,
+     "fairBase": 111.58,
+     "fairHigh": 180.38,
+     "buyCeiling": 83.68,
+     "safetyMarginPct": -19.9,
+     "impliedGrowthPct": 13.7,
+     "assumedBaseGrowthPct": 11.2,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "GPGI": {
@@ -1300,7 +3784,8 @@
    },
    "warnings": [
     "売上成長マイナス",
-    "FCF赤字"
+    "FCF赤字",
+    "重警告: インタレストカバレッジ-8.1倍"
    ],
    "metrics": {
     "roe": -0.5594,
@@ -1309,7 +3794,35 @@
     "epsGrowth": 1.5318,
     "fcfMargin": -0.3825,
     "psr": 70.692,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "interestCoverage": -8.1345,
+    "currentRatio": 6.3318,
+    "fcfPosYears": 4,
+    "fcfYears": 5,
+    "fcfLatest": -22882000,
+    "sbcToRev": 0.0747,
+    "buybackToRev": 0.2047,
+    "roicApprox": -0.0254
+   },
+   "alphas": {
+    "finance": 11.0,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": 0,
+     "FCF黒字継続": 4.5,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 8.9,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": null
    }
   },
   "BMI": {
@@ -1331,7 +3844,47 @@
     "fcfMargin": 0.7688,
     "trailPE": 126.4737,
     "psr": 19.066,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.4753,
+    "netCash": true,
+    "currentRatio": 3.3645,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 169672000,
+    "sharesChg5yPct": 0.1242,
+    "sbcToRev": 0.0416,
+    "goodwillToAssets": 0.242,
+    "buybackToRev": 0.068,
+    "roicApprox": 0.2031
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 19.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 68.7,
+     "fairBase": 68.7,
+     "fairHigh": 79.49,
+     "buyCeiling": 51.53,
+     "safetyMarginPct": -109.9,
+     "impliedGrowthPct": 10.0,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "ISRG": {
@@ -1351,7 +3904,47 @@
     "fcfMargin": 0.3011,
     "trailPE": 51.6874,
     "psr": 14.314,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -1.1434,
+    "netCash": true,
+    "currentRatio": 4.8746,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 3030500000,
+    "sharesChg5yPct": 201.678,
+    "sbcToRev": 0.0783,
+    "goodwillToAssets": 0.0181,
+    "buybackToRev": 0.2281,
+    "roicApprox": 0.1306
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 13.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 5,
+     "fairLow": 211.48,
+     "fairBase": 443.0,
+     "fairHigh": 909.2,
+     "buyCeiling": 332.25,
+     "safetyMarginPct": 8.2,
+     "impliedGrowthPct": 18.8,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "AXON": {
@@ -1362,7 +3955,10 @@
     "health": 3.4,
     "valuation": 2
    },
-   "warnings": [],
+   "warnings": [
+    "重警告: 純負債/EBITDA 25.1倍(過大な負債)",
+    "重警告: インタレストカバレッジ-0.7倍"
+   ],
    "metrics": {
     "roe": 0.0384,
     "opMargin": -0.0223,
@@ -1371,7 +3967,48 @@
     "fcfMargin": 0.027,
     "trailPE": 374.702,
     "psr": 16.4073,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 25.09,
+    "netCash": false,
+    "interestCoverage": -0.6587,
+    "currentRatio": 2.5256,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 75081000,
+    "sharesChg5yPct": 26.0471,
+    "sbcToRev": 0.2282,
+    "goodwillToAssets": 0.1957,
+    "buybackToRev": 0.0,
+    "roicApprox": -0.0099
+   },
+   "alphas": {
+    "finance": 9.5,
+    "financeParts": {
+     "純負債/EBITDA": 0,
+     "利払い余力": 0,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 0.5
+    },
+    "mgmtQuant": 7.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 23.02,
+     "fairBase": 48.23,
+     "fairHigh": 98.98,
+     "buyCeiling": 36.17,
+     "safetyMarginPct": -1073.2,
+     "impliedGrowthPct": 56.4,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "SNPS": {
@@ -1382,7 +4019,9 @@
     "health": 23.9,
     "valuation": 2
    },
-   "warnings": [],
+   "warnings": [
+    "重警告: 純負債/EBITDA 6.7倍(過大な負債)"
+   ],
    "metrics": {
     "roe": 0.047,
     "opMargin": 0.1297,
@@ -1391,7 +4030,48 @@
     "fcfMargin": 0.1913,
     "trailPE": 55.4104,
     "psr": 12.0927,
-    "fyEnd": "2025-10-31"
+    "fyEnd": "2025-10-31",
+    "netDebtEbitda": 6.7124,
+    "netCash": false,
+    "interestCoverage": 2.0481,
+    "currentRatio": 1.6151,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1349154000,
+    "sharesChg5yPct": 25.018,
+    "sbcToRev": 0.1266,
+    "goodwillToAssets": 0.5578,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.0173
+   },
+   "alphas": {
+    "finance": 13.0,
+    "financeParts": {
+     "純負債/EBITDA": 0,
+     "利払い余力": 1,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 4.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 0,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 145.28,
+     "fairBase": 254.75,
+     "fairHigh": 459.63,
+     "buyCeiling": 191.07,
+     "safetyMarginPct": -74.9,
+     "impliedGrowthPct": 22.7,
+     "assumedBaseGrowthPct": 15.1,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "CEG": {
@@ -1402,7 +4082,9 @@
     "health": 7.1,
     "valuation": 6
    },
-   "warnings": [],
+   "warnings": [
+    "FCF赤字が常態(生存力に疑問)"
+   ],
    "metrics": {
     "roe": 0.1597,
     "opMargin": 0.1362,
@@ -1411,7 +4093,47 @@
     "fcfMargin": 0.0568,
     "trailPE": 33.9703,
     "psr": 4.0064,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.1695,
+    "netCash": false,
+    "interestCoverage": 6.0391,
+    "currentRatio": 1.5256,
+    "fcfPosYears": 1,
+    "fcfYears": 5,
+    "fcfLatest": 1288000000,
+    "sharesChg5yPct": 10.8143,
+    "goodwillToAssets": 0.0073,
+    "buybackToRev": 0.0176,
+    "roicApprox": 0.112
+   },
+   "alphas": {
+    "finance": 12.5,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 2.5,
+     "FCF黒字継続": 1.5,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 8.3,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 1,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 0
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 86.53,
+     "fairBase": 178.05,
+     "fairHigh": 360.83,
+     "buyCeiling": 133.54,
+     "safetyMarginPct": -41.2,
+     "impliedGrowthPct": 24.2,
+     "assumedBaseGrowthPct": 19.5,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "GEV": {
@@ -1431,7 +4153,46 @@
     "fcfMargin": 0.131,
     "trailPE": 61.7055,
     "psr": 7.7053,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -6.3746,
+    "netCash": true,
+    "currentRatio": 0.9815,
+    "fcfPosYears": 3,
+    "fcfYears": 4,
+    "fcfLatest": 4987000000,
+    "sharesChg5yPct": 0.7299,
+    "goodwillToAssets": 0.0704,
+    "buybackToRev": 0.0871,
+    "roicApprox": 0.0981
+   },
+   "alphas": {
+    "finance": 17.5,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 3,
+     "流動比率": 1,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 13.1,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 2
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 304.63,
+     "fairBase": 424.78,
+     "fairHigh": 643.3,
+     "buyCeiling": 318.59,
+     "safetyMarginPct": -157.0,
+     "impliedGrowthPct": 21.7,
+     "assumedBaseGrowthPct": 9.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "VST": {
@@ -1442,7 +4203,10 @@
     "health": 9.4,
     "valuation": 2
    },
-   "warnings": [],
+   "warnings": [
+    "重警告: 純負債/EBITDA 4.2倍(過大な負債)",
+    "重警告: インタレストカバレッジ1.6倍"
+   ],
    "metrics": {
     "roe": 0.1852,
     "opMargin": 0.1084,
@@ -1451,7 +4215,48 @@
     "fcfMargin": 0.0749,
     "trailPE": 72.8716,
     "psr": 3.0459,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 4.1773,
+    "netCash": false,
+    "interestCoverage": 1.6166,
+    "currentRatio": 0.777,
+    "fcfPosYears": 3,
+    "fcfYears": 5,
+    "fcfLatest": 1318000000,
+    "sharesChg5yPct": -30.3405,
+    "sbcToRev": 0.0064,
+    "goodwillToAssets": 0.0676,
+    "buybackToRev": 0.0585,
+    "roicApprox": 0.068
+   },
+   "alphas": {
+    "finance": 4.0,
+    "financeParts": {
+     "純負債/EBITDA": 0,
+     "利払い余力": 0,
+     "FCF黒字継続": 3,
+     "流動比率": 0,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 19.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 2
+    },
+    "money": {
+     "score": 10,
+     "fairLow": 93.56,
+     "fairBase": 189.99,
+     "fairHigh": 381.4,
+     "buyCeiling": 142.49,
+     "safetyMarginPct": 16.4,
+     "impliedGrowthPct": 16.7,
+     "assumedBaseGrowthPct": 19.1,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "CCJ": {
@@ -1471,7 +4276,45 @@
     "fcfMargin": 0.3089,
     "trailPE": 71.1037,
     "psr": 12.0047,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -1.2235,
+    "netCash": true,
+    "interestCoverage": 11.2265,
+    "currentRatio": 2.4661,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1075407000,
+    "sharesChg5yPct": 9.8912,
+    "roicApprox": 0.0707
+   },
+   "alphas": {
+    "finance": 24.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 10.3,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 1,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 43.76,
+     "fairBase": 65.94,
+     "fairHigh": 106.06,
+     "buyCeiling": 49.45,
+     "safetyMarginPct": -45.6,
+     "impliedGrowthPct": 16.1,
+     "assumedBaseGrowthPct": 11.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "KTOS": {
@@ -1483,7 +4326,8 @@
     "valuation": 2
    },
    "warnings": [
-    "FCF赤字"
+    "FCF赤字",
+    "FCF赤字が常態(生存力に疑問)"
    ],
    "metrics": {
     "roe": 0.011,
@@ -1493,7 +4337,38 @@
     "fcfMargin": -0.0313,
     "trailPE": 370.6923,
     "psr": 6.7097,
-    "fyEnd": "2025-12-28"
+    "fyEnd": "2025-12-28",
+    "netDebtEbitda": -7.7111,
+    "netCash": true,
+    "interestCoverage": 2.6667,
+    "currentRatio": 4.0608,
+    "fcfPosYears": 2,
+    "fcfYears": 4,
+    "fcfLatest": -42100000,
+    "sharesChg5yPct": 37.9596,
+    "sbcToRev": 0.0264,
+    "goodwillToAssets": 0.2414,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.0101
+   },
+   "alphas": {
+    "finance": 13.5,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 1,
+     "FCF黒字継続": 1.5,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 8.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 2
+    },
+    "money": null
    }
   },
   "MU": {
@@ -1513,7 +4388,48 @@
     "fcfMargin": 0.0446,
     "trailPE": 129.025,
     "psr": 29.59,
-    "fyEnd": "2025-08-28"
+    "fyEnd": "2025-08-28",
+    "netDebtEbitda": 0.1043,
+    "netCash": false,
+    "interestCoverage": 20.4822,
+    "currentRatio": 2.518,
+    "fcfPosYears": 4,
+    "fcfYears": 5,
+    "fcfLatest": 1668000000,
+    "sharesChg5yPct": 0.8304,
+    "sbcToRev": 0.026,
+    "goodwillToAssets": 0.0139,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.1175
+   },
+   "alphas": {
+    "finance": 19.5,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 4.5,
+     "流動比率": 3,
+     "FCFマージン": 1
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 36.5,
+     "fairBase": 76.46,
+     "fairHigh": 156.93,
+     "buyCeiling": 57.35,
+     "safetyMarginPct": -1180.8,
+     "impliedGrowthPct": 57.8,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "ARM": {
@@ -1533,7 +4449,46 @@
     "fcfMargin": 0.199,
     "trailPE": 380.4588,
     "psr": 69.94,
-    "fyEnd": "2026-03-31"
+    "fyEnd": "2026-03-31",
+    "netDebtEbitda": -2.3943,
+    "netCash": true,
+    "currentRatio": 5.9962,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 979000000,
+    "sharesChg5yPct": 4.1713,
+    "sbcToRev": 0.2138,
+    "goodwillToAssets": 0.1517,
+    "roicApprox": 0.0858
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 12.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 22.74,
+     "fairBase": 47.63,
+     "fairHigh": 97.76,
+     "buyCeiling": 35.73,
+     "safetyMarginPct": -578.9,
+     "impliedGrowthPct": 47.7,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "COST": {
@@ -1553,7 +4508,48 @@
     "fcfMargin": 0.0285,
     "trailPE": 50.3158,
     "psr": 1.4763,
-    "fyEnd": "2025-08-31"
+    "fyEnd": "2025-08-31",
+    "netDebtEbitda": -0.6595,
+    "netCash": true,
+    "interestCoverage": 67.4221,
+    "currentRatio": 1.0343,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 7837000000,
+    "sharesChg5yPct": 0.4422,
+    "sbcToRev": 0.0031,
+    "goodwillToAssets": 0.0129,
+    "buybackToRev": 0.0033,
+    "roicApprox": 0.2352
+   },
+   "alphas": {
+    "finance": 21.5,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 0.5
+    },
+    "mgmtQuant": 21.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 281.63,
+     "fairBase": 381.12,
+     "fairHigh": 563.7,
+     "buyCeiling": 285.84,
+     "safetyMarginPct": -140.4,
+     "impliedGrowthPct": 20.0,
+     "assumedBaseGrowthPct": 8.2,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "WM": {
@@ -1573,7 +4569,48 @@
     "fcfMargin": 0.1283,
     "trailPE": 34.8254,
     "psr": 3.7177,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 3.0672,
+    "netCash": false,
+    "interestCoverage": 8.616,
+    "currentRatio": 0.8888,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 6043000000,
+    "sharesChg5yPct": -4.6832,
+    "sbcToRev": 0.0067,
+    "goodwillToAssets": 0.3028,
+    "buybackToRev": 0.0104,
+    "roicApprox": 0.1057
+   },
+   "alphas": {
+    "finance": 14.0,
+    "financeParts": {
+     "純負債/EBITDA": 1,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 16.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 300.22,
+     "fairBase": 509.45,
+     "fairHigh": 896.95,
+     "buyCeiling": 382.09,
+     "safetyMarginPct": 54.2,
+     "impliedGrowthPct": 3.7,
+     "assumedBaseGrowthPct": 14.2,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "PANW": {
@@ -1593,7 +4630,48 @@
     "fcfMargin": 0.403,
     "trailPE": 203.6938,
     "psr": 28.8041,
-    "fyEnd": "2025-07-31"
+    "fyEnd": "2025-07-31",
+    "netDebtEbitda": -0.1747,
+    "netCash": true,
+    "interestCoverage": 414.3,
+    "currentRatio": 0.9418,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 3716000000,
+    "sharesChg5yPct": 594.0719,
+    "sbcToRev": 0.1404,
+    "goodwillToAssets": 0.1937,
+    "buybackToRev": 0.0,
+    "roicApprox": 0.1
+   },
+   "alphas": {
+    "finance": 23.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 9.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 93.14,
+     "fairBase": 161.82,
+     "fairHigh": 289.96,
+     "buyCeiling": 121.37,
+     "safetyMarginPct": -101.4,
+     "impliedGrowthPct": 24.4,
+     "assumedBaseGrowthPct": 14.9,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "FNV": {
@@ -1613,7 +4691,44 @@
     "fcfMargin": 2.2093,
     "trailPE": 35.6806,
     "psr": 58.7022,
-    "fyEnd": "2017-12-31"
+    "fyEnd": "2017-12-31",
+    "netDebtEbitda": -0.4039,
+    "netCash": true,
+    "currentRatio": 8.3041,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 1491300000,
+    "sharesChg5yPct": 0.9647,
+    "roicApprox": 0.1401
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 16.2,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": null,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 2,
+     "fairLow": 134.96,
+     "fairBase": 200.18,
+     "fairHigh": 318.11,
+     "buyCeiling": 150.13,
+     "safetyMarginPct": -2.7,
+     "impliedGrowthPct": 11.0,
+     "assumedBaseGrowthPct": 10.6,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "AEM": {
@@ -1633,7 +4748,48 @@
     "fcfMargin": 0.3694,
     "trailPE": 16.5767,
     "psr": 6.1675,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -0.6083,
+    "netCash": true,
+    "interestCoverage": 42.9851,
+    "currentRatio": 2.02,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 4398913000,
+    "sharesChg5yPct": 105.5257,
+    "sbcToRev": 0.0038,
+    "goodwillToAssets": 0.1206,
+    "buybackToRev": 0.0016,
+    "roicApprox": 0.0851
+   },
+   "alphas": {
+    "finance": 25.0,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 13.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 25,
+     "fairLow": 217.41,
+     "fairBase": 455.44,
+     "fairHigh": 934.72,
+     "buyCeiling": 341.58,
+     "safetyMarginPct": 67.8,
+     "impliedGrowthPct": 4.7,
+     "assumedBaseGrowthPct": 20.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "COIN": {
@@ -1644,7 +4800,9 @@
     "health": 25.0,
     "valuation": 6
    },
-   "warnings": [],
+   "warnings": [
+    "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+   ],
    "metrics": {
     "roe": 0.0852,
     "opMargin": 0.1999,
@@ -1652,7 +4810,36 @@
     "epsGrowth": -0.5113,
     "fcfMargin": 0.3375,
     "trailPE": 35.7461,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": -3.2936,
+    "netCash": true,
+    "interestCoverage": 16.8059,
+    "currentRatio": 2.3432,
+    "fcfPosYears": 4,
+    "fcfYears": 5,
+    "fcfLatest": 2426383000,
+    "sharesChg5yPct": 214.8911,
+    "sbcToRev": 0.1169,
+    "goodwillToAssets": 0.1405,
+    "buybackToRev": 0.11,
+    "roicApprox": 0.0547
+   },
+   "alphas": {
+    "finance": 13,
+    "financeParts": {
+     "収益力(金融簡易)": 7,
+     "利益率": 5,
+     "利益成長": 1
+    },
+    "mgmtQuant": 7.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": null
    }
   },
   "PG": {
@@ -1672,7 +4859,48 @@
     "fcfMargin": 0.1666,
     "trailPE": 22.5868,
     "psr": 4.0624,
-    "fyEnd": "2025-06-30"
+    "fyEnd": "2025-06-30",
+    "netDebtEbitda": 0.6627,
+    "netCash": false,
+    "interestCoverage": 22.548,
+    "currentRatio": 0.7042,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 14044000000,
+    "sharesChg5yPct": -5.7808,
+    "sbcToRev": 0.0056,
+    "goodwillToAssets": 0.3326,
+    "buybackToRev": 0.0771,
+    "roicApprox": 0.2091
+   },
+   "alphas": {
+    "finance": 20.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 22.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 6,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 72.03,
+     "fairBase": 72.8,
+     "fairHigh": 84.97,
+     "buyCeiling": 54.6,
+     "safetyMarginPct": -102.0,
+     "impliedGrowthPct": 9.8,
+     "assumedBaseGrowthPct": 0.3,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "KO": {
@@ -1692,7 +4920,48 @@
     "fcfMargin": 0.1105,
     "trailPE": 27.4638,
     "psr": 7.4928,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 2.1502,
+    "netCash": false,
+    "interestCoverage": 8.3204,
+    "currentRatio": 1.4588,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5296000000,
+    "sharesChg5yPct": -0.1993,
+    "sbcToRev": 0.0058,
+    "goodwillToAssets": 0.1478,
+    "buybackToRev": 0.0156,
+    "roicApprox": 0.1463
+   },
+   "alphas": {
+    "finance": 17.0,
+    "financeParts": {
+     "純負債/EBITDA": 3,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 20.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 15.57,
+     "fairBase": 16.67,
+     "fairHigh": 20.41,
+     "buyCeiling": 12.5,
+     "safetyMarginPct": -400.8,
+     "impliedGrowthPct": 23.7,
+     "assumedBaseGrowthPct": 1.9,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "WMT": {
@@ -1712,7 +4981,47 @@
     "fcfMargin": 0.0211,
     "trailPE": 41.7216,
     "psr": 1.2831,
-    "fyEnd": "2026-01-31"
+    "fyEnd": "2026-01-31",
+    "netDebtEbitda": 0.59,
+    "netCash": false,
+    "interestCoverage": 12.8667,
+    "currentRatio": 0.7898,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 14923000000,
+    "sharesChg5yPct": 183.0032,
+    "goodwillToAssets": 0.1009,
+    "buybackToRev": 0.0114,
+    "roicApprox": 0.1755
+   },
+   "alphas": {
+    "finance": 16.5,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 4,
+     "FCF黒字継続": 6,
+     "流動比率": 0,
+     "FCFマージン": 0.5
+    },
+    "mgmtQuant": 13.1,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 26.33,
+     "fairBase": 31.33,
+     "fairHigh": 41.81,
+     "buyCeiling": 23.5,
+     "safetyMarginPct": -263.5,
+     "impliedGrowthPct": 22.2,
+     "assumedBaseGrowthPct": 4.7,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "LIN": {
@@ -1732,7 +5041,48 @@
     "fcfMargin": 0.1497,
     "trailPE": 36.2621,
     "psr": 7.2112,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 1.2318,
+    "netCash": false,
+    "interestCoverage": 34.9922,
+    "currentRatio": 0.8768,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5089000000,
+    "sharesChg5yPct": -11.3692,
+    "sbcToRev": 0.0031,
+    "goodwillToAssets": 0.3217,
+    "buybackToRev": 0.1354,
+    "roicApprox": 0.1196
+   },
+   "alphas": {
+    "finance": 18.5,
+    "financeParts": {
+     "純負債/EBITDA": 4.5,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 1,
+     "FCFマージン": 2
+    },
+    "mgmtQuant": 18.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 7,
+     "ROIC(資本効率)": 2,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 144.87,
+     "fairBase": 161.54,
+     "fairHigh": 204.43,
+     "buyCeiling": 121.16,
+     "safetyMarginPct": -228.0,
+     "impliedGrowthPct": 19.0,
+     "assumedBaseGrowthPct": 3.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "FCX": {
@@ -1750,7 +5100,48 @@
     "fcfMargin": 0.2227,
     "trailPE": 21.2138,
     "psr": 3.5114,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netDebtEbitda": 0.5808,
+    "netCash": false,
+    "interestCoverage": 20.891,
+    "currentRatio": 2.2911,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 5610000000,
+    "sharesChg5yPct": -1.459,
+    "sbcToRev": 0.0048,
+    "goodwillToAssets": 0.0,
+    "buybackToRev": 0.0042,
+    "roicApprox": 0.1851
+   },
+   "alphas": {
+    "finance": 23.0,
+    "financeParts": {
+     "純負債/EBITDA": 6,
+     "利払い余力": 5,
+     "FCF黒字継続": 6,
+     "流動比率": 3,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 21.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 5,
+     "ROIC(資本効率)": 4,
+     "株式報酬の節度": 4,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 0,
+     "fairLow": 46.23,
+     "fairBase": 46.34,
+     "fairHigh": 53.73,
+     "buyCeiling": 34.76,
+     "safetyMarginPct": -32.7,
+     "impliedGrowthPct": 3.9,
+     "assumedBaseGrowthPct": 0.1,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   },
   "IONQ": {
@@ -1762,7 +5153,8 @@
     "valuation": 2
    },
    "warnings": [
-    "FCF赤字"
+    "FCF赤字",
+    "FCF赤字が常態(生存力に疑問)"
    ],
    "metrics": {
     "roe": -0.1343,
@@ -1771,7 +5163,35 @@
     "epsGrowth": 0.5389,
     "fcfMargin": -2.3044,
     "psr": 123.0491,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": true,
+    "currentRatio": 15.5039,
+    "fcfPosYears": 0,
+    "fcfYears": 5,
+    "fcfLatest": -299604000,
+    "sharesChg5yPct": 85.4798,
+    "sbcToRev": 2.4,
+    "goodwillToAssets": 0.2989,
+    "roicApprox": -0.1318
+   },
+   "alphas": {
+    "finance": 13.8,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 0,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 1.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 0
+    },
+    "money": null
    }
   },
   "SNDK": {
@@ -1783,7 +5203,9 @@
     "valuation": 2
    },
    "warnings": [
-    "FCF赤字"
+    "FCF赤字",
+    "重警告: インタレストカバレッジ-21.9倍",
+    "FCF赤字が常態(生存力に疑問)"
    ],
    "metrics": {
     "roe": -0.1781,
@@ -1792,7 +5214,35 @@
     "epsGrowth": 1.442,
     "fcfMargin": -0.0163,
     "psr": 38.5762,
-    "fyEnd": "2025-06-27"
+    "fyEnd": "2025-06-27",
+    "netCash": false,
+    "interestCoverage": -21.8571,
+    "currentRatio": 3.5641,
+    "fcfPosYears": 0,
+    "fcfYears": 3,
+    "fcfLatest": -120000000,
+    "sbcToRev": 0.0247,
+    "goodwillToAssets": 0.385,
+    "roicApprox": -0.0985
+   },
+   "alphas": {
+    "finance": 4.4,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": 0,
+     "FCF黒字継続": 0,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 5.6,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": null,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 3,
+     "買収規律(のれん比率)": 1,
+     "FCF創出の一貫性": 0
+    },
+    "money": null
    }
   },
   "HOOD": {
@@ -1803,14 +5253,102 @@
     "health": 25.0,
     "valuation": 2
    },
-   "warnings": [],
+   "warnings": [
+    "FCF赤字が常態(生存力に疑問)"
+   ],
    "metrics": {
     "roe": 0.2058,
     "revGrowth": 0.5158,
     "epsGrowth": 0.3345,
     "fcfMargin": 0.3662,
     "trailPE": 54.6195,
-    "fyEnd": "2025-12-31"
+    "fyEnd": "2025-12-31",
+    "netCash": true,
+    "currentRatio": 1.2619,
+    "fcfPosYears": 2,
+    "fcfYears": 5,
+    "fcfLatest": 1638000000,
+    "sharesChg5yPct": 275.017,
+    "sbcToRev": 0.0682,
+    "goodwillToAssets": 0.0101,
+    "buybackToRev": 0.146
+   },
+   "alphas": {
+    "finance": 18.1,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 1.5,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 9.2,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": 1,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 2
+    },
+    "money": null
+   }
+  },
+  "CVX": {
+   "score": 42,
+   "parts": {
+    "profit": 6.6,
+    "growth": 0.1,
+    "health": 23.0,
+    "valuation": 12
+   },
+   "warnings": [
+    "売上成長マイナス"
+   ],
+   "metrics": {
+    "roe": 0.066,
+    "revGrowth": -0.0464,
+    "epsGrowth": -0.3036,
+    "fcfMargin": 0.184,
+    "trailPE": 26.6063,
+    "psr": 1.9049,
+    "fyEnd": "2025-12-31",
+    "netCash": false,
+    "currentRatio": 1.1547,
+    "fcfPosYears": 5,
+    "fcfYears": 5,
+    "fcfLatest": 33939000000,
+    "sharesChg5yPct": 3.5823,
+    "goodwillToAssets": 0.0141,
+    "buybackToRev": 0.0655
+   },
+   "alphas": {
+    "finance": 22.9,
+    "financeParts": {
+     "純負債/EBITDA": null,
+     "利払い余力": null,
+     "FCF黒字継続": 6,
+     "流動比率": 2,
+     "FCFマージン": 3
+    },
+    "mgmtQuant": 18.3,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 3,
+     "ROIC(資本効率)": null,
+     "株式報酬の節度": null,
+     "買収規律(のれん比率)": 4,
+     "FCF創出の一貫性": 4
+    },
+    "money": {
+     "score": 10,
+     "fairLow": 201.38,
+     "fairBase": 201.38,
+     "fairHigh": 233.01,
+     "buyCeiling": 151.04,
+     "safetyMarginPct": 12.4,
+     "impliedGrowthPct": -1.8,
+     "assumedBaseGrowthPct": 0.0,
+     "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    }
    }
   }
  }
