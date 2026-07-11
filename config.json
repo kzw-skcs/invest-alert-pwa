@@ -18,7 +18,7 @@
     "vixAbsUrgent": 40,
     "rebalanceThresholdPct": 5,
     "hitThresholdPct": 3,
-    "minScoreToAlert": 60
+    "minScoreToAlert": 55
   },
   "valueParams": {
     "_comment": "Value買い判定(hold銘柄+accumulate資産)。スコア0-100を多因子で構成。",
