@@ -270,7 +270,8 @@ def value_cycle_trades(instruments_data, threshold, ctx):
                 prev_adj = None
                 continue
             y, m = int(dates[t][:4]), int(dates[t][5:7])
-            delta, _ = eng.value_cycle_delta(m, y, tmap.get(dates[t]))
+            delta, _ = eng.value_cycle_delta(m, y, tmap.get(dates[t]),
+                                             defensive=(sec in eng.DEFENSIVE_ROT))
             adj = s_now["score"] + delta
             if open_pos is None:
                 if adj >= threshold and (prev_adj is None or prev_adj < threshold):

@@ -905,7 +905,13 @@ def _retier(v, vp):
         v["tier"], v["tierLabel"] = "none", "-"
 
 
-def value_cycle_delta(month, year, sector_trend):
+# ディフェンシブ(生活必需品/ヘルスケア/公益)への資金流入はリスクオフ退避の反映であることが多く、
+# 絶対リターンに直結しない(バックテスト実測: サイクル統合でディフェンシブのみ勝率85.1→80.4%と悪化)。
+# → ディフェンシブには流入ボーナスを与えない(流出ペナルティは維持)。
+DEFENSIVE_ROT = ("生活必需品", "ヘルスケア", "公益")
+
+
+def value_cycle_delta(month, year, sector_trend, defensive=False):
     """Value買いへのサイクル補正(株)。過去時点でも日付+価格から再現可能な要素のみ。"""
     delta, factors = 0, []
     if month in (9, 10):
@@ -913,7 +919,10 @@ def value_cycle_delta(month, year, sector_trend):
     if year % 4 == 2 and month in (9, 10, 11):
         delta += 3; factors.append("中間選挙前後の仕込み窓 +3")
     if sector_trend == "inflow":
-        delta += 3; factors.append("セクター資金流入 +3")
+        if defensive:
+            factors.append("セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)")
+        else:
+            delta += 3; factors.append("セクター資金流入 +3")
     elif sector_trend == "outflow":
         delta -= 3; factors.append("セクター資金流出 -3")
     return max(-8, min(8, delta)), factors
@@ -931,7 +940,8 @@ def apply_cycle(inst, cycle, vp, today=None):
     v = inst.get("value")
     delta, factors = 0, []
     if inst.get("class") == "stock":
-        delta, factors = value_cycle_delta(today.month, today.year, strend)
+        delta, factors = value_cycle_delta(today.month, today.year, strend,
+                                           defensive=(sec in DEFENSIVE_ROT))
     elif inst.get("class") == "crypto":
         bh = cycle.get("btcHalving") or {}
         if bh.get("phase") == "bottom":
@@ -1232,17 +1242,19 @@ def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
             if n >= CONFIRM_STREAK_N:
                 return f" ✅確定({n}日連続)", 0
             return f" ⏳速報({max(n,1)}/{CONFIRM_STREAK_N}日)", 1
+        # 🩸底未確認は情報タグのみ(優先度は下げない)。バックテスト実測で「底確認を待つ」戦略は
+        # 全面劣化(310回79.7%→22回68.2%)——長期Valueは血が流れているうちに買うのが正しい。
+        # エントリー品質の管理は✅確定(3日連続)が担う。
         bottom = v.get("bottom")
-        b_tag = "" if bottom is None else ("" if bottom["ok"] else " 🩸底未確認")
-        b_demote = 1 if b_tag else 0
+        b_tag = "" if bottom is None else ("" if bottom["ok"] else " 🩸")
         if v["tier"] == "absolute":
             tag, demote = stage("90")
-            alerts.append({"type": "BUY_ABSOLUTE", "ticker": t, "priority": 1 + max(demote, b_demote),
+            alerts.append({"type": "BUY_ABSOLUTE", "ticker": t, "priority": 1 + demote,
                            "title": f"🚨 {t} 絶対的買い場 (スコア{v['score']}){tag}{b_tag}",
                            "detail": ((bottom["note"] + " / ") if bottom else "") + " / ".join(v["factors"][:3])})
         elif v["tier"] == "strong" and v["score"] >= min_score:
             tag, demote = stage("80")
-            alerts.append({"type": "BUY_STRONG", "ticker": t, "priority": 2 + max(demote, b_demote),
+            alerts.append({"type": "BUY_STRONG", "ticker": t, "priority": 2 + demote,
                            "title": f"🔥 {t} 強い買い (スコア{v['score']}){tag}{b_tag}",
                            "detail": ((bottom["note"] + " / ") if bottom else "") + " / ".join(v["factors"][:2])})
         elif v["tier"] == "consider" and v["score"] >= min_score:
