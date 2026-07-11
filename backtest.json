@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-11 15:37 JST",
+ "generated": "2026-07-11 16:48 JST",
  "interpretation": [
   "【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。",
   "Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。consider(65)は664回・勝率76.1%・平均6.5%に対し、absolute(90)は153回・勝率87.6%・平均13.37%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。",
@@ -8,12 +8,11 @@
   "現行推奨(CAGR18.2%・DD28.8%・Sharpe0.94)は、最大シャープ配分(CAGR42.5%・DD11.1%・Sharpe2.35)に全指標で劣後。見直し余地あり。ただし“最大CAGR”は過去に最も上がった資産へ寄るだけの過剰適合なので鵜呑みにしない。",
   "たたき台(現行と最大シャープの中間・5%丸め): value55 : momentum20 : btc5 : gold20。一括で動かさず、追加投資から新配分に寄せるのが税制上も心理上も安全。",
   "【限界】約5年という一つの時代の検証であり、手数料・税・スリッページ未考慮。この結果は“ルールが壊れていないことの確認”と“配分の相場観”に使い、将来の約束とは考えないこと。",
-  "個別株スリーブ(サブセクター)の実測: AI・半導体/クラウド 年率43.3%(DD44.9%) / 電力・DCインフラ 年率57.2%(DD41.3%) / エネルギー 年率37.1%(DD28.6%) / 宇宙・防衛 年率27.3%(DD27.7%) / その他モート 年率21.1%(DD24.6%)。最大シャープ配分は {'AI・半導体/クラウド': 10, '電力・DCインフラ': 50, 'エネルギー': 20, '宇宙・防衛': 20}(CAGR47.7%・Sharpe1.71)、現行設定は CAGR41.6%・Sharpe1.58。※現行の比率は『リターン最大化解』ではなく独占性・分散重視の設計値。過去最適はバックミラーである点に注意。",
   "資産別×推奨度Tier(売りルール版): 金＝65点:3回/勝率66.7%/平均+3.3%、80点:1回/勝率100.0%/平均+2.9%、90点:シグナルなし ／ 銀＝65点:6回/勝率83.3%/平均+9.6%、80点:2回/勝率100.0%/平均+12.4%、90点:2回/勝率100.0%/平均+15.5% ／ BTC＝65点:10回/勝率50.0%/平均-1.6%、80点:5回/勝率20.0%/平均-9.7%、90点:4回/勝率75.0%/平均+8.8% ／ ETH＝65点:9回/勝率33.3%/平均-11.1%、80点:5回/勝率40.0%/平均-15.0%、90点:4回/勝率50.0%/平均-4.5%。注意: 単一資産のためシグナル回数が少なく、株82銘柄の合算Tier統計より統計的な信頼度は低い。回数が数回しかないTierの勝率は参考程度に。accumulate方針(買い増し専用)の資産は保有継続版(assetTiersHold)も併せて見ること。",
   "売り時比較実験(スコア65基準): 「天井/120日で売る」方式は1回平均6.5%(年率換算37.1%)、「最初のシグナルで買って以後ずっと保有」は平均222.33%(平均1024.5営業日保有・年率換算44.3%)。年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。",
-  "🧭サイクル統合の効果検証(スコア80基準): チャート単独は310回・勝率79.7%・平均9.19%、サイクル統合版は340回・勝率79.7%・平均9.72%。モメンタムはフィルタなし23回(勝率69.6%・平均17.51%)に対し、サイクルゲート版19回(勝率68.4%・平均18.99%)。改善していれば統合の価値が実証、悪化ならサイクル補正を弱める判断材料。一般に効果は平均改善より最悪トレード削減に出やすい。",
+  "🧭サイクル統合の効果検証(スコア80基準): チャート単独は310回・勝率79.7%・平均9.19%、サイクル統合版は336回・勝率79.5%・平均9.6%。モメンタムはフィルタなし23回(勝率69.6%・平均17.51%)に対し、サイクルゲート版19回(勝率68.4%・平均18.99%)。改善していれば統合の価値が実証、悪化ならサイクル補正を弱める判断材料。一般に効果は平均改善より最悪トレード削減に出やすい。",
   "🧩セクター別Tier80分解(チャート単独): グロース=124回・勝率76.6%・平均+8.2% ／ シクリカル=136回・勝率80.1%・平均+9.7% ／ ディフェンシブ=47回・勝率85.1%・平均+8.4%。全体平均(valueTiers)は値幅の大きいグロース/シクリカルに引っ張られやすい。WMT・PG・KOのようなディフェンシブ銘柄に全体平均をそのまま適用せず、ディフェンシブ行の数字を現実的な期待値として使うこと。15回未満のセルは統計的信頼度が低い。",
-  "🧭サイクル統合×セクターの効果(Tier80・チャート単独→統合): シクリカル: 平均+9.7%→+10.8%/勝率80.1%→82.2% ／ グロース: 平均+8.2%→+8.1%/勝率76.6%→76.3% ／ ディフェンシブ: 平均+8.4%→+8.3%/勝率85.1%→80.4% ／ その他: 平均+38.6%→+42.3%/勝率100.0%→100.0%。統合版で最も改善するグループが「サイクル情報が効く場所」。ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルはディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。",
+  "🧭サイクル統合×セクターの効果(Tier80・チャート単独→統合): シクリカル: 平均+9.7%→+10.8%/勝率80.1%→82.2% ／ グロース: 平均+8.2%→+8.1%/勝率76.6%→76.3% ／ ディフェンシブ: 平均+8.4%→+7.3%/勝率85.1%→78.7% ／ その他: 平均+38.6%→+42.3%/勝率100.0%→100.0%。統合版で最も改善するグループが「サイクル情報が効く場所」。ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルはディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。",
   "🩸底確認実験(Tier80到達後、20日線上+上向きを待って買う): 即買い=310回・勝率79.7%・平均+9.2%に対し、底確認後=22回・勝率68.2%・平均+8.0%。勝率が上がるなら『鋭敏な点灯は下落継続中が多い』の実証。平均が下がるなら『底待ちで安値を逃すコスト』。持続性フィルタ(N日連続)と役割が近いので、良い方を採用すればよい(両方は過剰)。",
   "📊基準線: 同期間のS&P500買い持ちは年率11.9%・最大DD25.4%・Sharpe0.73。各スリーブ・配分案はこれを上回って初めて『銘柄選択の価値があった』ことになる。集中投資の高CAGRには銘柄選択リスク(生存者バイアス)が含まれる点を忘れずに。",
   "⏳持続性フィルタ実験(Tier80がN日連続で初めて買う): N=1: 310回・勝率79.7%・平均+9.2% ／ N=3: 185回・勝率83.8%・平均+11.9% ／ N=5: 125回・勝率84.0%・平均+11.3% ／ N=10: 50回・勝率84.0%・平均+14.3%。読み方: 勝率がNとともに上がるなら『1日だけの瞬間タッチ(CVX型のスコア急騰)はダマシが多い』、平均リターンがNとともに下がるなら『待つほど底値を逃すコスト』。両者の積で判断し、この期間の最適はN=10日。ただしNを増やすほど回数が減り統計信頼度も落ちる点に注意。",
@@ -114,10 +113,10 @@
  },
  "valueTiersCycle": {
   "consider(65)": {
-   "trades": 700,
-   "winRatePct": 75.1,
+   "trades": 697,
+   "winRatePct": 75.2,
    "avgRetPct": 6.37,
-   "medianRetPct": 5.58,
+   "medianRetPct": 5.53,
    "bestPct": 121.4,
    "worstPct": -61.6,
    "avgDays": 48.1,
@@ -134,14 +133,14 @@
    ]
   },
   "strong(80)": {
-   "trades": 340,
-   "winRatePct": 79.7,
-   "avgRetPct": 9.72,
-   "medianRetPct": 8.23,
+   "trades": 336,
+   "winRatePct": 79.5,
+   "avgRetPct": 9.6,
+   "medianRetPct": 8.34,
    "bestPct": 104.4,
    "worstPct": -33.1,
    "avgDays": 47.1,
-   "annualizedPerTradePct": 64.2,
+   "annualizedPerTradePct": 63.3,
    "recent": [
     "FCX 2024-07-30→2025-01-22 -10.9% (time)",
     "FCX 2025-01-23→2025-03-18 +3.5% (top)",
@@ -154,14 +153,14 @@
    ]
   },
   "absolute(90)": {
-   "trades": 185,
-   "winRatePct": 84.9,
-   "avgRetPct": 12.38,
-   "medianRetPct": 10.23,
+   "trades": 180,
+   "winRatePct": 86.1,
+   "avgRetPct": 12.63,
+   "medianRetPct": 10.35,
    "bestPct": 72.5,
    "worstPct": -28.8,
-   "avgDays": 45.9,
-   "annualizedPerTradePct": 89.8,
+   "avgDays": 45.5,
+   "annualizedPerTradePct": 93.1,
    "recent": [
     "FCX 2023-04-26→2023-07-31 +19.8% (top)",
     "FCX 2023-09-26→2023-11-28 +1.8% (top)",
@@ -574,11 +573,11 @@
      "lowN": false
     },
     "ディフェンシブ": {
-     "trades": 100,
-     "winRatePct": 73.0,
-     "avgRetPct": 5.92,
-     "medianRetPct": 4.22,
-     "avgDays": 51.5,
+     "trades": 97,
+     "winRatePct": 73.2,
+     "avgRetPct": 5.9,
+     "medianRetPct": 4.04,
+     "avgDays": 51.6,
      "lowN": false
     },
     "その他": {
@@ -624,11 +623,11 @@
      "lowN": false
     },
     "ヘルスケア": {
-     "trades": 46,
-     "winRatePct": 60.9,
-     "avgRetPct": 0.97,
-     "medianRetPct": 2.26,
-     "avgDays": 49.9,
+     "trades": 45,
+     "winRatePct": 64.4,
+     "avgRetPct": 0.77,
+     "medianRetPct": 1.41,
+     "avgDays": 50.8,
      "lowN": false
     },
     "素材": {
@@ -640,19 +639,11 @@
      "lowN": false
     },
     "生活必需品": {
-     "trades": 33,
-     "winRatePct": 81.8,
-     "avgRetPct": 7.42,
-     "medianRetPct": 5.39,
-     "avgDays": 53.4,
-     "lowN": false
-    },
-    "公益": {
-     "trades": 21,
-     "winRatePct": 85.7,
-     "avgRetPct": 14.4,
-     "medianRetPct": 7.0,
-     "avgDays": 52.2,
+     "trades": 32,
+     "winRatePct": 78.1,
+     "avgRetPct": 7.34,
+     "medianRetPct": 4.87,
+     "avgDays": 53.7,
      "lowN": false
     },
     "コミュニケーション": {
@@ -661,6 +652,14 @@
      "avgRetPct": 8.3,
      "medianRetPct": 7.01,
      "avgDays": 43.8,
+     "lowN": false
+    },
+    "公益": {
+     "trades": 20,
+     "winRatePct": 85.0,
+     "avgRetPct": 15.12,
+     "medianRetPct": 7.0,
+     "avgDays": 50.3,
      "lowN": false
     },
     "エネルギー": {
@@ -700,11 +699,11 @@
      "lowN": false
     },
     "ディフェンシブ": {
-     "trades": 51,
-     "winRatePct": 80.4,
-     "avgRetPct": 8.32,
+     "trades": 47,
+     "winRatePct": 78.7,
+     "avgRetPct": 7.31,
      "medianRetPct": 7.02,
-     "avgDays": 49.7,
+     "avgDays": 49.6,
      "lowN": false
     },
     "その他": {
@@ -741,20 +740,20 @@
      "avgDays": 44.4,
      "lowN": false
     },
-    "ヘルスケア": {
-     "trades": 26,
-     "winRatePct": 73.1,
-     "avgRetPct": 4.77,
-     "medianRetPct": 7.84,
-     "avgDays": 50.8,
-     "lowN": false
-    },
     "一般消費財": {
      "trades": 25,
      "winRatePct": 80.0,
      "avgRetPct": 7.8,
      "medianRetPct": 11.48,
      "avgDays": 46.8,
+     "lowN": false
+    },
+    "ヘルスケア": {
+     "trades": 25,
+     "winRatePct": 72.0,
+     "avgRetPct": 4.92,
+     "medianRetPct": 7.73,
+     "avgDays": 51.0,
      "lowN": false
     },
     "素材": {
@@ -766,19 +765,19 @@
      "lowN": false
     },
     "公益": {
-     "trades": 13,
-     "winRatePct": 84.6,
-     "avgRetPct": 18.31,
+     "trades": 11,
+     "winRatePct": 81.8,
+     "avgRetPct": 14.21,
      "medianRetPct": 11.4,
-     "avgDays": 52.8,
+     "avgDays": 56.1,
      "lowN": true
     },
     "生活必需品": {
-     "trades": 12,
-     "winRatePct": 91.7,
-     "avgRetPct": 5.18,
-     "medianRetPct": 6.26,
-     "avgDays": 44.2,
+     "trades": 11,
+     "winRatePct": 90.9,
+     "avgRetPct": 5.85,
+     "medianRetPct": 5.11,
+     "avgDays": 40.1,
      "lowN": true
     },
     "エネルギー": {
@@ -826,11 +825,11 @@
      "lowN": false
     },
     "ディフェンシブ": {
-     "trades": 25,
-     "winRatePct": 72.0,
-     "avgRetPct": 6.77,
-     "medianRetPct": 7.89,
-     "avgDays": 52.1,
+     "trades": 20,
+     "winRatePct": 80.0,
+     "avgRetPct": 7.58,
+     "medianRetPct": 8.5,
+     "avgDays": 50.5,
      "lowN": false
     },
     "その他": {
@@ -867,20 +866,20 @@
      "avgDays": 45.7,
      "lowN": false
     },
-    "ヘルスケア": {
-     "trades": 13,
-     "winRatePct": 61.5,
-     "avgRetPct": 1.27,
-     "medianRetPct": 2.01,
-     "avgDays": 56.8,
-     "lowN": true
-    },
     "素材": {
      "trades": 11,
      "winRatePct": 90.9,
      "avgRetPct": 10.85,
      "medianRetPct": 9.88,
      "avgDays": 48.0,
+     "lowN": true
+    },
+    "ヘルスケア": {
+     "trades": 10,
+     "winRatePct": 70.0,
+     "avgRetPct": 1.8,
+     "medianRetPct": 4.26,
+     "avgDays": 53.2,
      "lowN": true
     },
     "一般消費財": {
@@ -891,28 +890,28 @@
      "avgDays": 63.7,
      "lowN": true
     },
-    "公益": {
-     "trades": 6,
-     "winRatePct": 66.7,
-     "avgRetPct": 17.45,
-     "medianRetPct": 14.36,
-     "avgDays": 60.5,
-     "lowN": true
-    },
-    "生活必需品": {
-     "trades": 6,
-     "winRatePct": 100.0,
-     "avgRetPct": 7.99,
-     "medianRetPct": 8.65,
-     "avgDays": 33.5,
-     "lowN": true
-    },
     "エネルギー": {
      "trades": 5,
      "winRatePct": 100.0,
      "avgRetPct": 26.78,
      "medianRetPct": 25.5,
      "avgDays": 38.2,
+     "lowN": true
+    },
+    "公益": {
+     "trades": 5,
+     "winRatePct": 80.0,
+     "avgRetPct": 16.59,
+     "medianRetPct": 8.5,
+     "avgDays": 56.4,
+     "lowN": true
+    },
+    "生活必需品": {
+     "trades": 5,
+     "winRatePct": 100.0,
+     "avgRetPct": 10.14,
+     "medianRetPct": 9.7,
+     "avgDays": 39.0,
      "lowN": true
     },
     "コミュニケーション": {
@@ -1353,24 +1352,24 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 30.49,
-    "medianRetPct": 30.49,
+    "avgRetPct": 30.32,
+    "medianRetPct": 30.32,
     "avgAnnualizedPct": 4.1,
     "avgHoldDays": 1680.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 35.9,
-    "medianRetPct": 35.9,
+    "avgRetPct": 35.72,
+    "medianRetPct": 35.72,
     "avgAnnualizedPct": 4.7,
     "avgHoldDays": 1674.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 53.84,
-    "medianRetPct": 53.84,
+    "avgRetPct": 53.63,
+    "medianRetPct": 53.63,
     "avgAnnualizedPct": 6.8,
     "avgHoldDays": 1645.0
    }
@@ -1379,24 +1378,24 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -51.93,
-    "medianRetPct": -51.93,
+    "avgRetPct": -51.98,
+    "medianRetPct": -51.98,
     "avgAnnualizedPct": -10.5,
     "avgHoldDays": 1670.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -51.52,
-    "medianRetPct": -51.52,
-    "avgAnnualizedPct": -10.4,
+    "avgRetPct": -51.57,
+    "medianRetPct": -51.57,
+    "avgAnnualizedPct": -10.5,
     "avgHoldDays": 1654.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -41.77,
-    "medianRetPct": -41.77,
+    "avgRetPct": -41.83,
+    "medianRetPct": -41.83,
     "avgAnnualizedPct": -8.0,
     "avgHoldDays": 1645.0
    }
@@ -1443,85 +1442,7 @@
   ]
  },
  "sectorOpt": {
-  "period": {
-   "start": "2020-07-14",
-   "end": "2026-07-10",
-   "days": 1505
-  },
-  "sleeveStats": {
-   "AI・半導体/クラウド": {
-    "cagrPct": 43.3,
-    "maxDDPct": 44.9,
-    "sharpe": 1.31
-   },
-   "電力・DCインフラ": {
-    "cagrPct": 57.2,
-    "maxDDPct": 41.3,
-    "sharpe": 1.58
-   },
-   "エネルギー": {
-    "cagrPct": 37.1,
-    "maxDDPct": 28.6,
-    "sharpe": 1.15
-   },
-   "宇宙・防衛": {
-    "cagrPct": 27.3,
-    "maxDDPct": 27.7,
-    "sharpe": 1.08
-   },
-   "その他モート": {
-    "cagrPct": 21.1,
-    "maxDDPct": 24.6,
-    "sharpe": 1.18
-   }
-  },
-  "allocations": [
-   {
-    "label": "最大CAGR(過剰適合注意)",
-    "weightsPct": {
-     "電力・DCインフラ": 100
-    },
-    "cagrPct": 57.2,
-    "maxDDPct": 41.3,
-    "sharpe": 1.58
-   },
-   {
-    "label": "最大シャープ",
-    "weightsPct": {
-     "AI・半導体/クラウド": 10,
-     "電力・DCインフラ": 50,
-     "エネルギー": 20,
-     "宇宙・防衛": 20
-    },
-    "cagrPct": 47.7,
-    "maxDDPct": 31.2,
-    "sharpe": 1.71
-   },
-   {
-    "label": "最大CAGR(DD35%以内)",
-    "weightsPct": {
-     "AI・半導体/クラウド": 5,
-     "電力・DCインフラ": 65,
-     "エネルギー": 30
-    },
-    "cagrPct": 52.3,
-    "maxDDPct": 34.6,
-    "sharpe": 1.68
-   },
-   {
-    "label": "現行設定",
-    "weightsPct": {
-     "AI・半導体/クラウド": 45,
-     "電力・DCインフラ": 15,
-     "エネルギー": 15,
-     "宇宙・防衛": 15,
-     "その他モート": 10
-    },
-    "cagrPct": 41.6,
-    "maxDDPct": 26.5,
-    "sharpe": 1.58
-   }
-  ]
+  "error": "共通営業日不足(0日)"
  },
  "sleeveStats": {
   "value": {

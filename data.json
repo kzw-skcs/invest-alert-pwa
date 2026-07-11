@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-11T06:32:55.044212+00:00",
- "updatedJST": "2026-07-11 15:32 JST",
+ "updated": "2026-07-11T07:44:34.497750+00:00",
+ "updatedJST": "2026-07-11 16:44 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -72,11 +72,12 @@
   },
   "rebalanceThresholdPct": 5,
   "stockSectorTargets": {
-   "AI・半導体/クラウド": 45,
-   "電力・DCインフラ": 15,
-   "エネルギー": 15,
-   "宇宙・防衛": 15,
-   "その他モート": 10
+   "インデックス(コア)": 30,
+   "AI・半導体/クラウド": 35,
+   "電力・DCインフラ": 10,
+   "エネルギー": 10,
+   "宇宙・防衛": 10,
+   "その他モート": 5
   },
   "phasedEntry": {
    "_comment": "新規資金の段階的エントリー。tranche1=即時、tranche2=対象が高値から-10%、tranche3=-20%暴落時。",
@@ -125,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-11 15:32 JST"
+  "fetchedAt": "2026-07-11 16:44 JST"
  },
  "instruments": [
   {
@@ -138,6 +139,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -888,6 +890,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -1638,6 +1641,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -2389,6 +2393,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -3137,6 +3142,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -3886,6 +3892,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "trade",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -4654,6 +4661,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -5404,6 +5412,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "trade",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -6177,6 +6186,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -6925,6 +6935,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -7674,6 +7685,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -8407,6 +8419,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -9086,7 +9099,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 43,
+    "score": 40,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -9094,7 +9107,7 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": true,
@@ -9117,7 +9130,7 @@
     "note": ""
    },
    "rec": {
-    "score": 43,
+    "score": 40,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -9160,6 +9173,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -9913,6 +9927,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -10662,6 +10677,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -11414,6 +11430,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "trade",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -12188,6 +12205,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -12937,6 +12955,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -13686,6 +13705,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -14435,6 +14455,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -15185,6 +15206,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -15934,6 +15956,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -16685,6 +16708,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -17434,6 +17458,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -18113,13 +18138,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 15,
+    "score": 12,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "高値-15% +8",
      "200日線上向き +4",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": true,
@@ -18142,7 +18167,7 @@
     "note": ""
    },
    "rec": {
-    "score": 15,
+    "score": 12,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -18183,6 +18208,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -18936,6 +18962,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [],
    "state": "NO_DATA",
    "stateLabel": "データ不足",
@@ -18987,6 +19014,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -19736,6 +19764,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -20485,6 +20514,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -21236,6 +21266,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -21983,6 +22014,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -22732,6 +22764,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -23411,7 +23444,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 64,
+    "score": 61,
     "tier": "watch",
     "tierLabel": "👀監視",
     "factors": [
@@ -23420,7 +23453,7 @@
      "高値-18% +8",
      "200日線上向き +4",
      "⭐超・買い場(GC確認) +10",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": true,
@@ -23443,7 +23476,7 @@
     "note": ""
    },
    "rec": {
-    "score": 64,
+    "score": 61,
     "stars": 4,
     "level": "C",
     "action": "hold",
@@ -23484,6 +23517,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -24234,6 +24268,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -24983,6 +25018,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -25732,6 +25768,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -26483,6 +26520,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -27238,6 +27276,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -27991,6 +28030,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -28670,13 +28710,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 3,
+    "score": 0,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "200日線上向き +4",
      "品質スコア26(低) -10",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": true,
@@ -28699,7 +28739,7 @@
     "note": ""
    },
    "rec": {
-    "score": 3,
+    "score": 0,
     "stars": 1,
     "level": "-",
     "action": "hold",
@@ -28740,6 +28780,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -29488,6 +29529,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -30236,6 +30278,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -30986,6 +31029,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -31736,6 +31780,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -32485,6 +32530,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -33235,6 +33281,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -33986,6 +34033,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -34735,6 +34783,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -35414,7 +35463,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 73,
+    "score": 70,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -35423,7 +35472,7 @@
      "高値-25% +14",
      "5年トレンド上向き +6",
      "買い場帯 +5",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": true,
@@ -35446,7 +35495,7 @@
     "note": ""
    },
    "rec": {
-    "score": 73,
+    "score": 70,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -35486,6 +35535,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -36237,6 +36287,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -36984,6 +37035,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -37737,6 +37789,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": true,
    "history": [
     {
      "d": "2025-11-18",
@@ -38486,6 +38539,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -39236,6 +39290,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -39989,6 +40044,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -40743,6 +40799,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -41491,6 +41548,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -42242,6 +42300,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -42921,14 +42980,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 37,
+    "score": 34,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(4%位置) +19",
      "高値-14% +8",
      "5年トレンド上向き +6",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": false,
@@ -42951,7 +43010,7 @@
     "note": ""
    },
    "rec": {
-    "score": 37,
+    "score": 34,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -42991,6 +43050,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -43740,6 +43800,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -44490,6 +44551,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -45244,6 +45306,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -45992,6 +46055,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -46741,6 +46805,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -47493,6 +47558,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -48247,6 +48313,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -49002,6 +49069,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -49754,6 +49822,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -50433,7 +50502,7 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 79,
+    "score": 76,
     "tier": "consider",
     "tierLabel": "🟦購入検討",
     "factors": [
@@ -50442,7 +50511,7 @@
      "高値-31%の暴落水準 +20",
      "5年トレンド上向き +6",
      "買い場帯 +5",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": false,
@@ -50465,7 +50534,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 79,
+    "score": 76,
     "stars": 4,
     "level": "B",
     "action": "buy",
@@ -50506,6 +50575,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -51257,6 +51327,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -52006,6 +52077,7 @@
    "class": "stock",
    "conviction": 5,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -52685,9 +52757,9 @@
    "side": "buy",
    "actionable": true,
    "value": {
-    "score": 69,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
+    "score": 66,
+    "tier": "watch",
+    "tierLabel": "👀監視(質↓)",
     "factors": [
      "1年レンジ下限圏(1%位置) +25",
      "5年レンジ下段(0%位置) +20",
@@ -52695,7 +52767,7 @@
      "5年トレンド上向き +6",
      "買い場帯 +5",
      "品質スコア38(低) -10",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": false,
@@ -52718,7 +52790,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 69,
+    "score": 66,
     "stars": 4,
     "level": "B",
     "action": "hold",
@@ -52759,6 +52831,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -53509,6 +53582,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -54188,7 +54262,7 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 33,
+    "score": 30,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -54196,7 +54270,7 @@
      "高値-27% +14",
      "5年トレンド上向き +6",
      "品質スコア36(低) -10",
-     "セクター資金流入 +3"
+     "セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)"
     ],
     "bottom": {
      "ok": true,
@@ -54219,7 +54293,7 @@
     "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
    },
    "rec": {
-    "score": 33,
+    "score": 30,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -54260,6 +54334,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -55013,6 +55088,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -55770,6 +55846,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -56519,6 +56596,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -57268,6 +57346,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": true,
    "history": [
     {
      "d": "2025-11-18",
@@ -58022,6 +58101,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -58773,6 +58853,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -59521,6 +59602,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -60273,6 +60355,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -61027,6 +61110,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "trade",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -61795,6 +61879,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": true,
    "history": [
     {
      "d": "2025-11-18",
@@ -62544,6 +62629,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": true,
    "history": [
     {
      "d": "2025-11-18",
@@ -63292,6 +63378,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": true,
    "history": [
     {
      "d": "2025-11-18",
@@ -64045,6 +64132,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -64793,6 +64881,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -65543,6 +65632,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -66296,6 +66386,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -67046,6 +67137,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2026-04-02",
@@ -67407,6 +67499,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -68154,11 +68247,8 @@
    "class": "crypto",
    "conviction": 5,
    "tradePolicy": "accumulate",
+   "noAlloc": false,
    "history": [
-    {
-     "d": "2026-02-01",
-     "c": 76974.445312
-    },
     {
      "d": "2026-02-02",
      "c": 78688.765625
@@ -68792,21 +68882,25 @@
      "c": 63193.148438
     },
     {
+     "d": "2026-07-10",
+     "c": 64127.140625
+    },
+    {
      "d": "2026-07-11",
-     "c": 64196.671875
+     "c": 64129.25
     }
    ],
    "state": "SELL",
-   "price": 64196.6719,
-   "top": 63051.4537,
-   "bottom": 55258.965,
-   "band": 233.7747,
-   "pctInRange": 114.7,
-   "distToBottomPct": 16.17,
-   "distToTopPct": -1.78,
-   "smaShort": 61818.4914,
-   "smaLong": 65369.6142,
-   "smaTrend": 74103.1494,
+   "price": 64129.25,
+   "top": 62902.3109,
+   "bottom": 57061.0551,
+   "band": 175.2377,
+   "pctInRange": 121.0,
+   "distToBottomPct": 12.39,
+   "distToTopPct": -1.91,
+   "smaShort": 61859.6004,
+   "smaLong": 65141.0438,
+   "smaTrend": 73986.378,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -68814,15 +68908,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 54.0,
-   "atr": 2057.5128,
-   "atrPct": 3.21,
+   "rsi": 53.8,
+   "atr": 1977.5814,
+   "atrPct": 3.08,
    "high52w": 110639.625,
    "drawdownPct": 42.0,
    "macroDriven": null,
-   "topLong": 119302.9281,
-   "bottomLong": 100444.1014,
-   "pctInRangeLong": -192.2,
+   "topLong": 119377.8399,
+   "bottomLong": 100502.6322,
+   "pctInRangeLong": -192.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -68884,11 +68978,8 @@
    "class": "crypto",
    "conviction": 4,
    "tradePolicy": "accumulate",
+   "noAlloc": false,
    "history": [
-    {
-     "d": "2026-02-01",
-     "c": 2267.964844
-    },
     {
      "d": "2026-02-02",
      "c": 2344.356689
@@ -69522,21 +69613,25 @@
      "c": 1744.484619
     },
     {
+     "d": "2026-07-10",
+     "c": 1795.693237
+    },
+    {
      "d": "2026-07-11",
-     "c": 1799.689941
+     "c": 1799.180054
     }
    ],
    "state": "SELL",
-   "price": 1799.6899,
-   "top": 1494.2538,
-   "bottom": 1435.3345,
-   "band": 1.7676,
-   "pctInRange": 618.4,
-   "distToBottomPct": 25.38,
-   "distToTopPct": -16.97,
-   "smaShort": 1682.9125,
-   "smaLong": 1772.9231,
-   "smaTrend": 2233.1474,
+   "price": 1799.1801,
+   "top": 1486.0029,
+   "bottom": 1429.31,
+   "band": 1.7008,
+   "pctInRange": 652.4,
+   "distToBottomPct": 25.88,
+   "distToTopPct": -17.41,
+   "smaShort": 1687.4426,
+   "smaLong": 1767.5341,
+   "smaTrend": 2227.3064,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -69545,14 +69640,14 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 58.0,
-   "atr": 73.5236,
-   "atrPct": 4.09,
+   "atr": 70.2755,
+   "atrPct": 3.91,
    "high52w": 3911.0632,
    "drawdownPct": 54.0,
    "macroDriven": null,
-   "topLong": 3510.9693,
-   "bottomLong": 2976.1267,
-   "pctInRangeLong": -220.0,
+   "topLong": 3512.0383,
+   "bottomLong": 2976.9084,
+   "pctInRangeLong": -220.1,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -69614,6 +69709,7 @@
    "class": "metal",
    "conviction": 5,
    "tradePolicy": "accumulate",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -70307,7 +70403,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 60,
+    "scorePrev": 62,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -70345,6 +70441,7 @@
    "class": "metal",
    "conviction": 4,
    "tradePolicy": "accumulate",
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -71321,7 +71418,7 @@
    "type": "BUY_CONSIDER",
    "ticker": "HCA",
    "priority": 3,
-   "title": "🟦 HCA 購入検討 (スコア73)",
+   "title": "🟦 HCA 購入検討 (スコア70)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-25% +14"
   },
   {
@@ -71349,21 +71446,14 @@
    "type": "BUY_CONSIDER",
    "ticker": "ISRG",
    "priority": 3,
-   "title": "🟦 ISRG 購入検討 (スコア79)",
+   "title": "🟦 ISRG 購入検討 (スコア76)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-31%の暴落水準 +20"
-  },
-  {
-   "type": "BUY_CONSIDER",
-   "ticker": "CEG",
-   "priority": 3,
-   "title": "🟦 CEG 購入検討 (スコア69)",
-   "detail": "1年レンジ下限圏(1%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-38%の暴落水準 +20"
   },
   {
    "type": "BUY_STRONG",
    "ticker": "AEM",
    "priority": 3,
-   "title": "🔥 AEM 強い買い (スコア89) ⏳速報(2/3日) 🩸底未確認",
+   "title": "🔥 AEM 強い買い (スコア89) ⏳速報(2/3日) 🩸",
    "detail": "🩸 底未確認(20日線下または下向き=下落継続の可能性) / 1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(18%位置) +16"
   },
   {
@@ -71375,97 +71465,92 @@
   }
  ],
  "plannerWeights": {
-  "AAPL": 1.27,
-  "MSFT": 0.79,
-  "GOOGL": 3.01,
-  "AMZN": 1.86,
-  "AVGO": 2.85,
-  "NVDA": 2.71,
-  "META": 2.1,
-  "TSLA": 1.34,
-  "AMD": 1.19,
-  "PLTR": 1.53,
-  "IBM": 1.29,
-  "ASML": 2.74,
-  "TSM": 2.78,
-  "MRVL": 1.85,
-  "CLMB": 0.74,
-  "DELL": 1.19,
-  "ADBE": 1.43,
-  "AMAT": 1.89,
-  "LRCX": 1.97,
-  "SNPS": 2.15,
-  "MU": 1.89,
-  "ARM": 1.26,
-  "IONQ": 1.37,
-  "SNDK": 1.14,
-  "DRAM": 1.38,
-  "HOOD": 1.27,
-  "XOM": 8.31,
-  "CCJ": 6.69,
-  "NEE": 1.32,
-  "ANET": 2.51,
-  "VRT": 2.84,
-  "TLN": 1.98,
-  "CEG": 3.14,
-  "GEV": 1.95,
-  "VST": 1.26,
-  "LMT": 1.87,
-  "RTX": 2.38,
-  "NOC": 2.82,
-  "RKLB": 3.48,
-  "CACI": 1.73,
-  "KTOS": 2.71,
-  "IQV": 0.17,
-  "MCO": 0.28,
-  "AXP": 0.18,
-  "SPGI": 0.42,
-  "BDX": 0.21,
-  "MA": 0.3,
-  "HON": 0.2,
-  "NKE": 0.1,
-  "DE": 0.19,
-  "ACN": 0.11,
-  "ICE": 0.23,
-  "UNH": 0.17,
-  "V": 0.39,
-  "IBKR": 0.17,
-  "GDDY": 0.11,
-  "BN": 0.18,
-  "UBER": 0.2,
-  "PGR": 0.19,
-  "HCA": 0.22,
-  "KKR": 0.19,
-  "JXN": 0.1,
-  "FERG": 0.22,
-  "USFD": 0.09,
-  "RLI": 0.11,
-  "BLDR": 0.11,
-  "FTAI": 0.31,
-  "PAYX": 0.1,
-  "OTIS": 0.12,
-  "TSCO": 0.12,
-  "MSA": 0.11,
-  "BUR": 0.11,
-  "PBI": 0.09,
-  "XPEL": 0.1,
-  "BKTI": 0.11,
-  "HWKN": 0.12,
-  "GPGI": 0.12,
-  "BMI": 0.11,
-  "ISRG": 0.49,
-  "AXON": 0.3,
-  "COST": 0.31,
-  "WM": 0.3,
-  "PANW": 0.17,
-  "FNV": 0.32,
-  "AEM": 0.28,
-  "COIN": 0.2,
-  "PG": 0.3,
-  "KO": 0.17,
-  "WMT": 0.32,
-  "LIN": 0.26,
-  "FCX": 0.21
+  "AAPL": 0.99,
+  "MSFT": 0.61,
+  "GOOGL": 2.34,
+  "AMZN": 1.45,
+  "AVGO": 2.22,
+  "NVDA": 2.11,
+  "META": 1.64,
+  "TSLA": 1.04,
+  "AMD": 0.92,
+  "PLTR": 1.19,
+  "IBM": 1.01,
+  "ASML": 2.13,
+  "TSM": 2.16,
+  "MRVL": 1.44,
+  "CLMB": 0.57,
+  "DELL": 0.92,
+  "ADBE": 1.11,
+  "AMAT": 1.47,
+  "LRCX": 1.53,
+  "SNPS": 1.68,
+  "MU": 1.47,
+  "ARM": 0.98,
+  "IONQ": 1.06,
+  "SNDK": 0.89,
+  "DRAM": 1.07,
+  "HOOD": 0.99,
+  "XOM": 5.54,
+  "CCJ": 4.46,
+  "NEE": 0.87,
+  "ANET": 1.68,
+  "VRT": 1.9,
+  "TLN": 1.31,
+  "CEG": 2.08,
+  "GEV": 1.31,
+  "VST": 0.84,
+  "LMT": 1.25,
+  "RTX": 1.59,
+  "NOC": 1.88,
+  "RKLB": 2.32,
+  "CACI": 1.16,
+  "KTOS": 1.81,
+  "IQV": 0.1,
+  "MCO": 0.16,
+  "AXP": 0.1,
+  "SPGI": 0.24,
+  "BDX": 0.12,
+  "MA": 0.17,
+  "HON": 0.11,
+  "NKE": 0.06,
+  "DE": 0.11,
+  "ACN": 0.06,
+  "ICE": 0.13,
+  "UNH": 0.09,
+  "V": 0.22,
+  "IBKR": 0.1,
+  "GDDY": 0.06,
+  "BN": 0.1,
+  "UBER": 0.11,
+  "PGR": 0.11,
+  "HCA": 0.12,
+  "KKR": 0.11,
+  "JXN": 0.06,
+  "FERG": 0.12,
+  "RLI": 0.06,
+  "BLDR": 0.06,
+  "FTAI": 0.18,
+  "PAYX": 0.06,
+  "OTIS": 0.07,
+  "TSCO": 0.07,
+  "MSA": 0.06,
+  "BUR": 0.06,
+  "PBI": 0.05,
+  "XPEL": 0.06,
+  "BKTI": 0.06,
+  "HWKN": 0.07,
+  "GPGI": 0.07,
+  "BMI": 0.06,
+  "ISRG": 0.27,
+  "AXON": 0.17,
+  "WM": 0.17,
+  "PANW": 0.1,
+  "FNV": 0.18,
+  "AEM": 0.16,
+  "COIN": 0.12,
+  "LIN": 0.15,
+  "FCX": 0.12
  },
  "cycle": {
   "calendar": [
@@ -71615,8 +71700,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 64197,
-    "ddFromPeakPct": -48.5
+    "currentPrice": 64129,
+    "ddFromPeakPct": -48.6
    },
    "action": "現在は半減期+26.7ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
@@ -71691,7 +71776,7 @@
     "tier": "-",
     "sec": "エネルギー",
     "flow": "outflow",
-    "wPct": 6.3
+    "wPct": 6.0
    },
    {
     "ticker": "CCJ",
@@ -71700,7 +71785,7 @@
     "tier": "👀監視",
     "sec": "エネルギー",
     "flow": "outflow",
-    "wPct": 5.1
+    "wPct": 4.8
    },
    {
     "ticker": "GOOGL",
@@ -71709,7 +71794,7 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "inflow",
-    "wPct": 3.8
+    "wPct": 4.2
    },
    {
     "ticker": "VRT",
@@ -71718,7 +71803,7 @@
     "tier": "-",
     "sec": "電力・DCインフラ",
     "flow": "inflow",
-    "wPct": 3.6
+    "wPct": 3.4
    },
    {
     "ticker": "RKLB",
@@ -71727,25 +71812,7 @@
     "tier": "-",
     "sec": "宇宙・防衛",
     "flow": "inflow",
-    "wPct": 3.4
-   },
-   {
-    "ticker": "NOC",
-    "conviction": 4,
-    "q": 51,
-    "tier": "🟦購入検討",
-    "sec": "宇宙・防衛",
-    "flow": "inflow",
     "wPct": 3.2
-   },
-   {
-    "ticker": "CEG",
-    "conviction": 5,
-    "q": 38,
-    "tier": "🟦購入検討",
-    "sec": "電力・DCインフラ",
-    "flow": "inflow",
-    "wPct": 3.0
    },
    {
     "ticker": "ASML",
@@ -71754,7 +71821,7 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "neutral",
-    "wPct": 2.9
+    "wPct": 3.2
    },
    {
     "ticker": "TSM",
@@ -71763,7 +71830,7 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "neutral",
-    "wPct": 2.9
+    "wPct": 3.2
    },
    {
     "ticker": "NVDA",
@@ -71772,7 +71839,16 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "neutral",
-    "wPct": 2.8
+    "wPct": 3.1
+   },
+   {
+    "ticker": "NOC",
+    "conviction": 4,
+    "q": 51,
+    "tier": "🟦購入検討",
+    "sec": "宇宙・防衛",
+    "flow": "inflow",
+    "wPct": 3.1
    },
    {
     "ticker": "AVGO",
@@ -71781,16 +71857,7 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "neutral",
-    "wPct": 2.7
-   },
-   {
-    "ticker": "RTX",
-    "conviction": 4,
-    "q": 46,
-    "tier": "-",
-    "sec": "宇宙・防衛",
-    "flow": "inflow",
-    "wPct": 2.7
+    "wPct": 3.0
    },
    {
     "ticker": "META",
@@ -71798,6 +71865,24 @@
     "q": 74,
     "tier": "-",
     "sec": "AI・半導体/クラウド",
+    "flow": "inflow",
+    "wPct": 2.9
+   },
+   {
+    "ticker": "CEG",
+    "conviction": 5,
+    "q": 38,
+    "tier": "👀監視(質↓)",
+    "sec": "電力・DCインフラ",
+    "flow": "inflow",
+    "wPct": 2.9
+   },
+   {
+    "ticker": "RTX",
+    "conviction": 4,
+    "q": 46,
+    "tier": "-",
+    "sec": "宇宙・防衛",
     "flow": "inflow",
     "wPct": 2.6
    },
@@ -71808,7 +71893,7 @@
     "tier": "-",
     "sec": "電力・DCインフラ",
     "flow": "neutral",
-    "wPct": 2.6
+    "wPct": 2.5
    },
    {
     "ticker": "KTOS",
@@ -71817,7 +71902,7 @@
     "tier": "👀監視",
     "sec": "宇宙・防衛",
     "flow": "inflow",
-    "wPct": 2.6
+    "wPct": 2.5
    }
   ],
   "note": "基準PFにサイクル状況を自動上乗せした現時点の完全版。毎朝再計算。機械的計算値であり保証ではない"
