@@ -1,0 +1,222 @@
+{
+  "settings": {
+    "lookbackDays": 252,
+    "lookbackLongDays": 1260,
+    "longRangeMinDays": 504,
+    "longTermLowPct": 50,
+    "bandPctOfRange": 0.03,
+    "maShort": 20,
+    "maLong": 50,
+    "maTrend": 200,
+    "breakoutLookbackDays": 90,
+    "counterTrendFilter": true,
+    "vixWarnPct": 20,
+    "vixUrgentPct": 50,
+    "vixAbsWarn": 30,
+    "vixAbsUrgent": 40,
+    "rebalanceThresholdPct": 5,
+    "hitThresholdPct": 3,
+    "minScoreToAlert": 60
+  },
+  "valueParams": {
+    "_comment": "Value買い判定(hold銘柄+accumulate資産)。スコア0-100を多因子で構成。",
+    "rsiPeriod": 14,
+    "rsiOversold": 30,
+    "rsiOverbought": 75,
+    "ddConsider": 12,
+    "ddStrong": 20,
+    "ddAbsolute": 30,
+    "macroCorrWindow": 60,
+    "macroVixThreshold": 25,
+    "fallingKnifeSlopeDays": 20,
+    "tierWatch": 50,
+    "tierConsider": 65,
+    "tierStrong": 80,
+    "tierAbsolute": 90,
+    "trimChannelPos": 97,
+    "trimRsi": 75,
+    "thesisBreakDays": 20
+  },
+  "momentumParams": {
+    "_comment": "モメンタム売買(trade銘柄・現物のみ)。エントリー/損切り/部分利確/タイムストップ。",
+    "breakoutLookback": 50,
+    "volConfirmMult": 1.5,
+    "volAvgDays": 20,
+    "rsiMin": 50,
+    "rsiMax": 72,
+    "relStrengthWindow": 63,
+    "relStrengthMinPct": 0,
+    "stopInitPct": 8,
+    "atrPeriod": 14,
+    "atrMult": 2.5,
+    "tp1GainPct": 20,
+    "tp1SellPct": 33,
+    "tp2GainPct": 40,
+    "tp2SellPct": 33,
+    "timeStopWeeks": 8,
+    "gapDownAlertPct": 6,
+    "maxShareOfStocksPct": 20
+  },
+  "portfolio": {
+    "_comment": "推奨ポートフォリオ。cash=戦略キャッシュ(暴落時買付・IPO参加の待機資金)。比率は%。",
+    "targets": {
+      "stocks": 60,
+      "btc": 10,
+      "eth": 10,
+      "gold": 5,
+      "silver": 5,
+      "cash": 10
+    },
+    "rebalanceThresholdPct": 5,
+    "stockSectorTargets": {
+      "インデックス(コア)": 30,
+      "AI・半導体/クラウド": 35,
+      "電力・DCインフラ": 10,
+      "エネルギー": 10,
+      "宇宙・防衛": 10,
+      "その他モート": 5
+    },
+    "phasedEntry": {
+      "_comment": "新規資金の段階的エントリー。tranche1=即時、tranche2=対象が高値から-10%、tranche3=-20%暴落時。",
+      "tranches": [
+        40,
+        30,
+        30
+      ],
+      "dipTriggersPct": [
+        0,
+        10,
+        20
+      ]
+    },
+    "stockSplit": {
+      "_comment": "株スリーブ内訳(%)。value=長期Value、momentum=シグナル発生時に使う機動枠",
+      "value": 80,
+      "momentum": 20
+    }
+  },
+  "challenger": {
+    "enabled": true,
+    "label": "厳選アーム(閾値85/92・確定5日)",
+    "thresholds": {
+      "80": 85,
+      "90": 92
+    },
+    "confirmN": 5,
+    "startedAt": "2026-07-12",
+    "_comment": "Champion(現行80/90・確定3日)と同じスコア系列で並走する仮想運用。本番シグナルには無影響。50件+180日で対決判定"
+  },
+  "stocks": [
+    {
+      "ticker": "VOO",
+      "stooq": "voo.us",
+      "name": "Vanguard S&P500 ETF",
+      "sector": "インデックス",
+      "subSector": "インデックス(コア)",
+      "rotSector": "インデックス",
+      "tradePolicy": "accumulate",
+      "conviction": 5,
+      "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
+    },
+    {
+      "ticker": "NVDA",
+      "stooq": "nvda.us",
+      "name": "NVIDIA",
+      "sector": "ハイテク",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "trade",
+      "conviction": 5,
+      "held": true,
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "XOM",
+      "stooq": "xom.us",
+      "name": "ExxonMobil",
+      "sector": "エネルギー",
+      "subSector": "エネルギー",
+      "tradePolicy": "hold",
+      "conviction": 5,
+      "rotSector": "エネルギー"
+    },
+    {
+      "ticker": "TSM",
+      "stooq": "tsm.us",
+      "name": "TSMC (ADR)",
+      "sector": "ハイテク",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 5,
+      "held": true,
+      "note": "先端ファウンドリ寡占",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "ICE",
+      "stooq": "ice.us",
+      "name": "Intercontinental Exchange",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "WMT",
+      "stooq": "wmt.us",
+      "name": "Walmart",
+      "sector": "生活必需品",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "rotSector": "生活必需品",
+      "note": "小売の規模独占。不況時にむしろ客数が増える逆景気連動 【監視専用】ディフェンシブRSはリスクオフ判定の材料。防御役は金+現金グライドとVOO内包分が代替",
+      "noAlloc": true
+    }
+  ],
+  "crypto": [
+    {
+      "key": "btc",
+      "yahoo": "BTC-USD",
+      "coingeckoId": "bitcoin",
+      "name": "ビットコイン",
+      "tradePolicy": "accumulate",
+      "conviction": 5
+    },
+    {
+      "key": "eth",
+      "yahoo": "ETH-USD",
+      "coingeckoId": "ethereum",
+      "name": "イーサリアム",
+      "tradePolicy": "accumulate",
+      "conviction": 4
+    }
+  ],
+  "metals": [
+    {
+      "key": "gold",
+      "yahoo": "GC=F",
+      "stooq": "xauusd",
+      "name": "金 (COMEX先物 GC=F)",
+      "tradePolicy": "accumulate",
+      "conviction": 5
+    },
+    {
+      "key": "silver",
+      "yahoo": "SI=F",
+      "stooq": "xagusd",
+      "name": "銀 (COMEX先物 SI=F)",
+      "tradePolicy": "accumulate",
+      "conviction": 4
+    }
+  ],
+  "benchmark": {
+    "yahoo": "^GSPC",
+    "stooq": "^spx",
+    "name": "S&P500"
+  },
+  "events": [],
+  "discovery": [],
+  "_comment": "テスト専用の縮約config(ZIP単独でテスト完走用)。本番はconfig.json"
+}

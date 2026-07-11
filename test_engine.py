@@ -9,7 +9,10 @@ from datetime import date, timedelta
 import engine as E
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(BASE, "config.json"), encoding="utf-8") as f:
+_cfg_path = os.path.join(BASE, "config.json")
+if not os.path.exists(_cfg_path):
+    _cfg_path = os.path.join(BASE, "config.test.json")  # ZIP単独テスト用
+with open(_cfg_path, encoding="utf-8") as f:
     CFG = json.load(f)
 
 PASS = FAIL = 0

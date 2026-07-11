@@ -154,6 +154,7 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
       二段構え: ⏳速報(1〜2日目)=少額の初動用 / ✅確定(3日連続)=本隊投入。バックテストで3日連続維持後の買いは勝率・平均とも改善(80点: 勝率81.7→85.1%・平均+9.5→+11.9%)<br>
       底状態(参考情報): 🟢下げ止まり=20日線上+上向き / 🩸下落中。バックテスト実測では「底を待って買う」は全面劣化(310回79.7%→22回68.2%)——長期Valueは🩸のうちに買ってよい(出口が天井/120日と長いため)。買い判断の正式ゲートは✅確定(3日連続)のみ<br>
       PF構造: コア=インデックス枠30%(VOO・暴落時買い増し専用) / 少数精鋭Value / グライド(過熱→現金+金)。生活必需品(PG/KO/WMT/COST/USFD)は【監視専用】=配分ゼロ、ディフェンシブRSはリスクオフ判定の材料としてのみ使用<br>
+      🧬4α(何を買うかの評価・v3.28): 市場(Market)/経営(Management)/財務(Finance)/割安(Money)の各25点。財務・経営(資本配分)・割安(簡易DCF+購入上限価格+安全余裕)はSEC EDGARから週次自動算出、市場・経営(定性)は🧠ボタンでClaudeがWeb調査して生成。Valueスコア(チャート)は「いつ買うか」、4αは「何を買うか」——役割が違う2軸<br>
       ⚠️ 状態(買い場/売り場)はチャート上の位置の説明であり、長期保有(hold)銘柄には売り推奨を出しません。holdでは売り場の代わりに🟠高値圏/過熱後失速(=買い増しを控える帯)と表示します。<br>品質Q(週次更新): ROE・利益率・成長率・財務健全性・PERの総合0-100。Q40未満は買いTierを1段階格下げ(「安いが質が悪い」を弾く)、Q70以上は+5点。⚠️警告(売上マイナス等)はテーゼ点検の材料。<br><b>⚡短期モメンタム画面の状態(上のValue用ラベルとは別物)</b>: 🟢買い場(エントリー成立=50日高値ブレイク等の入口条件クリア) / 🔴売り場(手仕舞い=50日線割れ・急落・デッドクロス) / 🟡保有継続(上昇中・新規は押し目待ち) / ⚪待機(モメンタム対象外) / 🩹逆張り(Value)候補(モメンタム買いは未成立だが暴落で割安)。<b>購入(エントリー)と売却(手仕舞い)が同時に出ることはありません。</b>推奨度もValueとは別軸のモメンタム推奨度です。モメンタムは50日高値ブレイク+MA+RSI+相対強度+出来高でエントリー。初期損切りは-8%を上限にATR×2.5で自動設定。+20%で1/3利確、+40%でさらに1/3、残りはATRトレーリング。8週停滞でタイムストップ。
     </div>
   </div>
@@ -632,6 +633,49 @@ function renderCycle() {
   html += '<div class="tiny" style="margin-top:6px">※サイクル・季節性は統計的傾向であり、毎年再現される保証はありません。アクションは「検討」の提案です。</div>';
   el.innerHTML = html;
 }
+function alphaBlock(i) {
+  // v3.28: 4α表示。Finance/Mgmt定量/MoneyはSEC EDGARから自動、Market/Mgmt定性はClaudeレビュー(🧠)
+  const a = i.alphas;
+  if (!a && i.class === 'stock') {
+    return `<div class="tiny" style="margin-top:4px">4α: 次回の品質スコア更新(🏭)で自動算出されます
+      <button class="btn sm" onclick="runAlphaReview('${i.ticker}','${(i.name || '').replace(/'/g, '')}')">🧠 定性レビュー生成</button></div>`;
+  }
+  if (!a) return '';
+  const rv = a.review;
+  const money = a.money;
+  const parts = [];
+  if (rv) parts.push(`市場 <b>${rv.market}</b>`, `経営(定性) <b>${rv.mgmt}</b>`);
+  if (a.mgmtQuant != null) parts.push(`経営(資本配分) <b>${a.mgmtQuant}</b>`);
+  if (a.finance != null) parts.push(`財務 <b>${a.finance}</b>`);
+  if (money) parts.push(`割安(DCF) <b>${money.score}</b>`);
+  // 総合(4軸換算): Market / Mgmt(定性・定量の平均) / Finance / Money — 揃った軸のみで100点換算
+  const axes = [];
+  if (rv) axes.push(rv.market);
+  const mg = (rv && a.mgmtQuant != null) ? (rv.mgmt + a.mgmtQuant) / 2 : (a.mgmtQuant ?? (rv ? rv.mgmt : null));
+  if (mg != null) axes.push(mg);
+  if (a.finance != null) axes.push(a.finance);
+  if (money) axes.push(money.score);
+  const total = axes.length ? Math.round(axes.reduce((s, x) => s + x, 0) / (axes.length * 25) * 100) : null;
+  return `<details style="margin-top:4px"><summary>🧬 4α ${total != null ? `<b>${total}</b>/100` : ''}(${axes.length}/4軸)${rv && (rv.flags || []).length ? ' <span style="color:var(--amber)">⚠️</span>' : ''}</summary>
+    <div class="tiny">
+    ${parts.join(' / ')}(各25点)
+    ${money ? `<br>本質的価値(簡易DCF): $${money.fairLow}〜$${money.fairHigh}(基本$${money.fairBase}) / <b>購入上限 $${money.buyCeiling}</b> / 現在との安全余裕 <b class="${money.safetyMarginPct >= 0 ? 'up' : 'dn'}">${money.safetyMarginPct}%</b>${money.impliedGrowthPct != null ? ` / 市場が織り込むFCF成長 年${money.impliedGrowthPct}%(前提${money.assumedBaseGrowthPct}%)` : ''}` : '<br>割安(DCF): FCF赤字またはデータ不足のため判定不能'}
+    ${rv ? `<br>🧠 ${rv.marketNote || ''} / ${rv.mgmtNote || ''}${(rv.flags || []).length ? `<br><span style="color:var(--amber)">⚠️ ${rv.flags.join('・')}</span>` : ''} <span class="muted">(${rv.date || ''}・確度${rv.confidence || '?'})</span>` : `<br><button class="btn sm" onclick="runAlphaReview('${i.ticker}','${(i.name || '').replace(/'/g, '')}')">🧠 定性レビュー生成(市場・経営陣をWeb調査)</button>`}
+    <br><span class="muted">※DCFは割引率10%・終端3%の簡易版=参考値。4αは「何を買うか」、Valueスコアは「いつ買うか」の別軸</span>
+    </div></details>`;
+}
+async function runAlphaReview(tk, name) {
+  toast(`🧠 ${tk} の定性レビューを生成中(Web検索・30〜90秒)…`);
+  try {
+    const r = await fetch('api/alpha_review', { method: 'POST', headers: apiHeaders(),
+      body: JSON.stringify({ ticker: tk, name }) });
+    const j = await r.json();
+    if (j.ok) {
+      const rv = j.review;
+      toast(`✅ ${tk}: 市場${rv.market}/25・経営${rv.mgmt}/25 ${j.saved ? '(保存済み。📈実行後にカードへ反映)' : '(保存失敗: ' + (rv.saveError || '') + ')'}`);
+    } else toast(`失敗: ${j.error || ''}`);
+  } catch (e) { toast('失敗: サーバー未設定またはネットワークエラー'); }
+}
 function streakBadge(v) {
   // 二段構え: Tier80/90のスコア連続維持日数。3日連続で✅確定(本隊投入)、それまでは⏳速報(少額)。
   if (!v || !v.streaks) return '';
@@ -833,6 +877,7 @@ function cardHTML(i) {
         .map(([n2, v2, mul, u]) => `${n2} <b>${fmtN(v2 * mul, 1)}${u}</b>`).join(' / ')}
       ${i.quality.parts ? `<br>内訳: 収益性${i.quality.parts.profit ?? '—'} / 成長性${i.quality.parts.growth ?? '—'} / 財務健全${i.quality.parts.health ?? '—'} / 価格妥当${i.quality.parts.valuation ?? '—'} (各25点満点)` : ''}
     </div></details>` : ''}
+    ${alphaBlock(i)}
     <canvas class="spark" id="sp-${i.ticker}" style="width:100%;height:56px"></canvas>
   </div>`;
 }

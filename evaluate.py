@@ -378,11 +378,19 @@ def main():
         with open(os.path.join(BASE, "fundamentals.json"), encoding="utf-8") as f:
             fund = json.load(f).get("tickers", {})
         applied = 0
+        review_map = {s["ticker"]: s.get("alphaReview") for s in cfg["stocks"] if s.get("alphaReview")}
         for inst in instruments:
             q = fund.get(inst.get("ticker"))
             if q:
                 engine.apply_quality(inst, q, cfg["valueParams"])
+                # v3.28: 4α定量スコア(Finance/Mgmt定量/Money)を銘柄に添付
+                if q.get("alphas"):
+                    inst["alphas"] = q["alphas"]
                 applied += 1
+            # 定性レビュー(Claude生成・config保存)があれば合流
+            rv = review_map.get(inst.get("ticker"))
+            if rv:
+                inst.setdefault("alphas", {})["review"] = rv
         print(f"品質スコア統合: {applied}銘柄")
     except FileNotFoundError:
         print("fundamentals.json なし(品質補正スキップ)")

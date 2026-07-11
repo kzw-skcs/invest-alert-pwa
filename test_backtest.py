@@ -112,7 +112,8 @@ check("正規化100", abs(sum(w2.values()) - 100) < 0.01)
 
 print("[production_replay(v3.27)]")
 import json as _json
-cfg = _json.load(open("config.json"))
+import os as _os
+cfg = _json.load(open("config.json" if _os.path.exists("config.json") else "config.test.json"))
 d0 = date(2022, 1, 3)
 N = 320
 days = [(d0 + timedelta(days=int(i * 1.4))).isoformat() for i in range(N)]
