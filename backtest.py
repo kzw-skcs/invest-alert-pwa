@@ -249,16 +249,11 @@ def summarize_by_sector(trades, sub_map):
                         sorted(by_sec.items(), key=lambda kv: -len(kv[1]))}}
 
 
-def build_cycle_context(stock_data, cfg, bench_hist):
+def build_cycle_context(stock_data, cfg, bench_hist, etf_hists=None):
     """過去各時点のサイクル文脈(セクター資金フロー・ベンチ200日線状態)を前計算。
-    日付と価格のみから導出するため未来情報の混入なし。"""
-    import bisect
+    日付と価格のみから導出するため未来情報の混入なし。
+    v3.31: セクターETF(etf_hists)を一次ソースに(本番evaluate.pyと同基準)。欠損は銘柄平均で補完。"""
     sub_map = {s["ticker"]: (s.get("rotSector") or s.get("subSector") or "その他") for s in cfg["stocks"]}
-    sec_ret = {}
-    for tk, (sig, closes, dates, opens) in stock_data.items():
-        sec = sub_map.get(tk)
-        for i in range(1, len(closes)):
-            sec_ret.setdefault(sec, {}).setdefault(dates[i], []).append(closes[i] / closes[i - 1] - 1)
     b_dates = [h["d"] for h in bench_hist] if bench_hist else []
     b_close = [h["c"] for h in bench_hist] if bench_hist else []
     b_pos = {d: i for i, d in enumerate(b_dates)}
@@ -270,13 +265,8 @@ def build_cycle_context(stock_data, cfg, bench_hist):
             run -= b_close[i - 200]
             if c < run / 200:
                 below200.add(b_dates[i])
-    trend_by_sec = {}
-    for sec, dd in sec_ret.items():
-        ds = sorted(dd.keys())
-        idx, v = [], 1.0
-        for d in ds:
-            v *= 1 + sum(dd[d]) / len(dd[d])
-            idx.append(v)
+
+    def trend_map(ds, idx):
         tmap = {}
         for p in range(64, len(ds)):
             bp = b_pos.get(ds[p])
@@ -286,7 +276,26 @@ def build_cycle_context(stock_data, cfg, bench_hist):
             r63 = (idx[p] / idx[p - 63] - b_close[bp] / b_close[bp - 63]) * 100
             tmap[ds[p]] = "inflow" if (r21 > 0.5 and r21 > r63 / 3) else \
                           "outflow" if (r21 < -0.5 and r21 < r63 / 3) else "neutral"
-        trend_by_sec[sec] = tmap
+        return tmap
+
+    trend_by_sec = {}
+    for sec, hist in (etf_hists or {}).items():
+        if hist and len(hist) > 130:
+            trend_by_sec[sec] = trend_map([h["d"] for h in hist], [h["c"] for h in hist])
+    sec_ret = {}
+    for tk, (sig, closes, dates, opens) in stock_data.items():
+        sec = sub_map.get(tk)
+        if sec in trend_by_sec:
+            continue
+        for i in range(1, len(closes)):
+            sec_ret.setdefault(sec, {}).setdefault(dates[i], []).append(closes[i] / closes[i - 1] - 1)
+    for sec, dd in sec_ret.items():
+        ds = sorted(dd.keys())
+        idx, v = [], 1.0
+        for d in ds:
+            v *= 1 + sum(dd[d]) / len(dd[d])
+            idx.append(v)
+        trend_by_sec[sec] = trend_map(ds, idx)
     return {"sub_map": sub_map, "trend": trend_by_sec, "below200": below200}
 
 
@@ -865,8 +874,14 @@ def main():
                                  for label, thr in TIER_THRESHOLDS.items()}
     print("モメンタム戦略 検証中…")
     mom_results, mom_daily = backtest_momentum(stock_data, trade_tickers, mp)
-    print("サイクル統合版 検証中…")
-    cycle_ctx = build_cycle_context(stock_data, cfg, bench_hist)
+    print("サイクル統合版 検証中…(セクターETF取得)")
+    etf_hists = {}
+    for sec, sym in evaluate.SECTOR_ETFS.items():
+        h, _src = evaluate.fetch_history({"yahoo": sym, "stooq": sym.lower() + ".us"})
+        if h:
+            etf_hists[sec] = h
+    print(f"セクターETF: {len(etf_hists)}/{len(evaluate.SECTOR_ETFS)}本(欠損は銘柄平均で補完)")
+    cycle_ctx = build_cycle_context(stock_data, cfg, bench_hist, etf_hists)
     vc_trades = {label: value_cycle_trades(stock_data, thr, cycle_ctx)
                  for label, thr in TIER_THRESHOLDS.items()}
     value_cycle_results = {label: summarize_trades(t) for label, t in vc_trades.items()}

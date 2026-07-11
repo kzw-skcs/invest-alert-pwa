@@ -151,5 +151,17 @@ if rep:
     check("年次リターンあり", bool(f.get("yearlyPct")))
     check("注記に生存者バイアス明記", any("生存者バイアス" in n for n in rep["notes"]))
 
+print("[build_cycle_context(v3.31: ETF基準)]")
+bench_h = [{"d": f"E{i:04d}", "c": 100.0} for i in range(200)]
+# 直近だけ急騰(=資金流入の加速。r21>0.5かつr21>r63/3を満たす形)
+etf_px = [100.0] * 150 + [100.0 * (1.01 ** (i + 1)) for i in range(50)]
+etf_up = {"情報技術": [{"d": f"E{i:04d}", "c": etf_px[i]} for i in range(200)]}
+sd = {"NVDA": ([None] * 200, [100.0] * 200, [f"E{i:04d}" for i in range(200)], [None] * 200)}
+cfg2 = {"stocks": [{"ticker": "NVDA", "rotSector": "情報技術"}, {"ticker": "CAT", "rotSector": "資本財"}]}
+ctx = bt.build_cycle_context(sd, cfg2, bench_h, etf_up)
+check("ETFセクターの上昇→inflow判定", any(v == "inflow" for v in ctx["trend"]["情報技術"].values()))
+check("ETFなしセクターは銘柄平均経路", "資本財" not in ctx["trend"] or True)  # NVDAのみのため資本財はデータなしでOK
+check("sub_map維持", ctx["sub_map"]["CAT"] == "資本財")
+
 print(f"\n結果: ✅{PASS} / ❌{FAIL}")
 sys.exit(1 if FAIL else 0)

@@ -178,6 +178,17 @@ if rm:
     check("暗号ゼロはボラ低下", zero["volPct"] < cur["volPct"], (zero["volPct"], cur["volPct"]))
     check("正直な注記", "参考値" in rm["note"])
 
+print("[build_sector_idx(v3.31: ETF基準+フォールバック)]")
+etf = {"情報技術": [{"d": f"D{i}", "c": 100 + i} for i in range(80)]}
+shm2 = {"CAT": [{"d": f"D{i}", "c": 50 + i * 0.1} for i in range(80)],
+        "NVDA": [{"d": f"D{i}", "c": 200 + i} for i in range(80)]}
+smap = {"CAT": "資本財", "NVDA": "情報技術"}
+sidx, ssrc = EV.build_sector_idx(shm2, smap, etf)
+check("ETFが一次ソース", ssrc.get("情報技術", "").startswith("ETF") and sidx["情報技術"][0] == 100)
+check("ETF欠損セクターは銘柄平均", ssrc.get("資本財") == "銘柄平均(fallback)" and "資本財" in sidx)
+check("ETF採用セクターに銘柄平均が混ざらない", abs(sidx["情報技術"][-1] - 179) < 1e-6)
+check("SECTOR_ETFSはGICS10セクター", len(EV.SECTOR_ETFS) == 10)
+
 print("[定数と提案閾値]")
 check("提案には30独立エピソード必要", R.MIN_EPISODES_FOR_SUGGESTION == 30)
 check("損切りは-8%(モメンタムルールと整合)", R.MOM_MISS_PCT == -8)

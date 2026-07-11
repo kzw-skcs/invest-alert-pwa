@@ -616,7 +616,7 @@ function renderCycle() {
       overheat: ['エネルギー', '素材', '資本財'],
       downtrend: ['生活必需品', 'ヘルスケア', '公益'],
     }[regime] || [];
-    html += `<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">🔄 セクターローテーション表(GICS準拠・毎朝更新)</b>
+    html += `<div style="margin-top:10px"><b class="tiny" style="color:var(--tx2)">🔄 セクターローテーション表(GICS準拠・セクターETF基準・毎朝更新)</b>
       ${textbook.length ? `<div class="tiny" style="margin-top:3px">📖 教科書的な現局面(${regime === 'recovery' ? '回復' : regime === 'overheat' ? '景気後期' : regime === 'downtrend' ? '後退' : '拡大'})の追い風: <b>${textbook.join('・')}</b> — 下の実測フローと一致するかを確認</div>` : ''}
       <table style="margin-top:4px"><tr><th>セクター</th><th>3ヶ月RS</th><th>1ヶ月RS</th><th>フロー</th><th></th></tr>
       ${withCalc.sort((a, b) => (b.v.rs21 ?? -99) - (a.v.rs21 ?? -99)).map((x) => `<tr>

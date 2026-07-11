@@ -193,6 +193,46 @@ EPISODE_CONFIRM_N = 3      # ✅確定に必要な連続日数(engine.CONFIRM_ST
 EPISODE_MAX_CAL_DAYS = 190  # エピソード自動クローズ(暦日≒130営業日。Value出口120営業日+余裕)
 
 
+# v3.31: セクターローテーション判定の基準をGICSセクターETFに変更(GPT5.6レビュー反映)。
+# 自己選択銘柄の平均は「自分のPFの偏り」がセクターの姿を歪める(自己参照バイアス)ため、
+# 市場標準のETFを一次ソースにする。取得失敗セクターのみ従来の銘柄平均へフォールバック。
+# 副次効果: 監視専用銘柄(PG等)がローテーション/リスクオフ判定のセンサー役から解放され、
+# ウォッチリスト編集がサイクル判定を壊さなくなる。
+SECTOR_ETFS = {
+    "情報技術": "XLK", "コミュニケーション": "XLC", "一般消費財": "XLY",
+    "生活必需品": "XLP", "ヘルスケア": "XLV", "金融": "XLF",
+    "資本財": "XLI", "エネルギー": "XLE", "素材": "XLB", "公益": "XLU",
+}
+
+
+def build_sector_idx(stock_hist_map, sub_map, etf_hist_map):
+    """セクター指数の構築。ETF終値を一次ソース、欠損セクターは銘柄等ウェイト平均で補完。
+    戻り値: (sector_idx, sources)  sources: {セクター: "ETF(XLK)" | "銘柄平均"}"""
+    sector_idx, sources = {}, {}
+    for sec, sym in SECTOR_ETFS.items():
+        h = (etf_hist_map or {}).get(sec)
+        if h and len(h) >= 70:
+            sector_idx[sec] = [x["c"] for x in h]
+            sources[sec] = f"ETF({sym})"
+    # フォールバック: 銘柄平均(ETF取得失敗 or ETF未定義のセクター)
+    sec_ret = {}
+    for tk, hist in stock_hist_map.items():
+        sec = sub_map.get(tk)
+        if not sec or sec in sector_idx or len(hist) < 70:
+            continue
+        for i in range(1, len(hist)):
+            sec_ret.setdefault(sec, {}).setdefault(hist[i]["d"], []).append(
+                hist[i]["c"] / hist[i - 1]["c"] - 1)
+    for sec, dd in sec_ret.items():
+        idx, v = [], 1.0
+        for d in sorted(dd.keys()):
+            v *= 1 + sum(dd[d]) / len(dd[d])
+            idx.append(v)
+        sector_idx[sec] = idx
+        sources[sec] = "銘柄平均(fallback)"
+    return sector_idx, sources
+
+
 def risk_model(stock_hist_map, asset_hist_map, targets):
     """資産クラスの実測ボラ・相関・リスク寄与・候補配分の実測統計(v3.30・純Python)。
     設計思想: 期待リターンの推定は誤差が支配的で不可能(特に暗号資産はファンダ概念がない)。
@@ -493,25 +533,21 @@ def main():
     except Exception as e:
         print(f"品質統合エラー(スキップ): {e}")
 
-    # サイクル&ローテーション分析(サブセクター等ウェイト指数を構築)
+    # サイクル&ローテーション分析(v3.31: セクターETF基準・失敗時は銘柄平均フォールバック)
     sub_map = {s["ticker"]: (s.get("rotSector") or s.get("subSector") or "その他") for s in cfg["stocks"]}
-    sec_ret = {}
-    for tk, hist in stock_hist_map.items():
-        sec = sub_map.get(tk)
-        if not sec or len(hist) < 70:
-            continue
-        for i in range(1, len(hist)):
-            sec_ret.setdefault(sec, {}).setdefault(hist[i]["d"], []).append(hist[i]["c"] / hist[i - 1]["c"] - 1)
-    sector_idx = {}
-    for sec, dd in sec_ret.items():
-        idx, v = [], 1.0
-        for d in sorted(dd.keys()):
-            v *= 1 + sum(dd[d]) / len(dd[d])
-            idx.append(v)
-        sector_idx[sec] = idx
+    etf_hist_map = {}
+    for sec, sym in SECTOR_ETFS.items():
+        h, src_name = fetch_history({"yahoo": sym, "stooq": sym.lower() + ".us"})
+        if h:
+            etf_hist_map[sec] = h
+        time.sleep(0.3)
+    sector_idx, sec_sources = build_sector_idx(stock_hist_map, sub_map, etf_hist_map)
+    n_etf = sum(1 for v in sec_sources.values() if v.startswith("ETF"))
+    print(f"セクター指数: ETF{n_etf}/{len(SECTOR_ETFS)} + フォールバック{len(sec_sources) - n_etf}")
     if gold_closes:
         sector_idx["_gold"] = gold_closes
     cycle = engine.cycle_analysis(sector_idx, bench_closes, vix.get("value"))
+    cycle["sectorSources"] = sec_sources
     cycle["btcHalving"] = engine.btc_halving_analysis(btc_hist)
     cycle["macro"] = engine.macro_calendar(cfg)
     for ev in cycle["macro"]:
