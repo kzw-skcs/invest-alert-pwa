@@ -69,6 +69,12 @@ class handler(BaseHTTPRequestHandler):
                 base.setdefault("stooq", t.lower() + ".us")
                 if not s.get("hidden"):
                     merged.append(base)
+            # v3.28.1: アプリ側がまだ知らないサーバー追加銘柄(VOO等・config直接追加分)を保持する。
+            # 削除はアプリが明示的にhidden指定した場合のみ(過去にVOOが同期で消えた事故の再発防止)。
+            incoming_tickers = set(incoming.keys())
+            for t, s in existing.items():
+                if t not in incoming_tickers:
+                    merged.append(s)
             cfg["stocks"] = merged
             put_file("config.json", cfg, sha, "app: ウォッチリスト同期")
             send_json(self, 200, {"ok": True, "count": len(merged)})
