@@ -67,6 +67,18 @@ def precompute_signals(meta, history, bench_closes_by_date, cfg):
             "atr": inst.get("atr"),
             "momSignal": inst.get("momentum", {}).get("signal"),
         })
+    # 底確認フラグ(20日線上+20日線上向き)を後付け
+    ma20 = [None] * n
+    run = 0.0
+    for t in range(n):
+        run += closes[t]
+        if t >= 20:
+            run -= closes[t - 20]
+        if t >= 19:
+            ma20[t] = run / 20
+    for t in range(n):
+        if out[t] is not None and ma20[t] is not None and t >= 24 and ma20[t - 5] is not None:
+            out[t]["confirm"] = closes[t] > ma20[t] and ma20[t] >= ma20[t - 5]
     return out, closes, dates
 
 
@@ -99,6 +111,42 @@ def value_trades(instruments_data, threshold):
 
 def backtest_value(instruments_data, threshold):
     return summarize_trades(value_trades(instruments_data, threshold))
+
+
+def value_trades_confirm(instruments_data, threshold, grace=5):
+    """底確認変種: スコアが閾値到達で「待機」に入り、底確認(20日線上+上向き)が
+    成立した日に初めて買う。スコアが閾値-grace を割ったら待機解除(そのエピソードは見送り)。
+    「下落継続中の鋭敏な点灯」と「間違いのない底」の差を実測するための実験。"""
+    trades = []
+    for tk, (sig, closes, dates) in instruments_data.items():
+        open_pos = None
+        armed = False
+        prev_score = None
+        for t in range(WARMUP + 1, len(closes)):
+            s = sig[t]
+            if s is None:
+                prev_score = None
+                continue
+            if open_pos is not None:
+                held = t - open_pos["entryT"]
+                hit_top = s["top"] and closes[t] >= s["top"] - s["band"]
+                if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
+                    trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
+                                   "exitDate": dates[t], "days": held,
+                                   "retPct": (closes[t] / open_pos["entry"] - 1) * 100,
+                                   "reason": "top" if hit_top else "time"})
+                    open_pos = None
+                    armed = False
+            else:
+                if s["score"] >= threshold and (prev_score is None or prev_score < threshold):
+                    armed = True
+                if s["score"] < threshold - grace:
+                    armed = False
+                if armed and s.get("confirm"):
+                    open_pos = {"entryT": t, "entry": closes[t]}
+                    armed = False
+            prev_score = s["score"]
+    return trades
 
 
 PERSIST_DAYS = (1, 3, 5, 10)  # 持続性フィルタ: スコアが閾値以上をN日連続で維持したら買い
@@ -652,6 +700,13 @@ def main():
     sub_map = cycle_ctx["sub_map"]
     value_by_sector = {label: summarize_by_sector(t, sub_map) for label, t in v_trades.items()}
     value_cycle_by_sector = {label: summarize_by_sector(t, sub_map) for label, t in vc_trades.items()}
+    # 底確認変種: Tier到達後、20日線上+上向きを待って買う
+    print("底確認変種 検証中…")
+    value_confirm_results = {}
+    for label, thr in TIER_THRESHOLDS.items():
+        s = summarize_trades(value_trades_confirm(stock_data, thr))
+        s.pop("recent", None)
+        value_confirm_results[label] = s
     # 持続性フィルタ: Tier×N日連続
     print("持続性フィルタ 検証中…")
     value_persistence = {}
@@ -686,6 +741,14 @@ def main():
     for i, nm in enumerate(names):
         sleeve_stats[nm] = stats_from_series([sleeve_daily[d][i] for d in common])
     allocations = optimize_allocation(sleeve_daily, names) if common else {"error": "共通期間なし"}
+
+    # S&P500買い持ちベンチマーク(戦略比較の基準線)
+    spx_stats = None
+    if bench_hist:
+        spx_daily = buyhold_series(bench_hist)
+        spx_common = [d for d in common if d in spx_daily]
+        if spx_common:
+            spx_stats = stats_from_series([spx_daily[d] for d in spx_common])
 
     print("サブセクター配分 最適化中…")
     sector_opt = optimize_sector_sleeves(stock_data, cfg)
@@ -763,6 +826,21 @@ def main():
                     "。統合版で最も改善するグループが「サイクル情報が効く場所」。"
                     "ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルは"
                     "ディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。")
+    # 底確認変種の自動解釈(Tier80基準)
+    cf80 = value_confirm_results.get("strong(80)", {})
+    pl80 = value_results.get("strong(80)", {})
+    if cf80.get("trades") and pl80.get("trades"):
+        interpretation.append(
+            f"🩸底確認実験(Tier80到達後、20日線上+上向きを待って買う): "
+            f"即買い={pl80['trades']}回・勝率{pl80['winRatePct']}%・平均{pl80['avgRetPct']:+.1f}%に対し、"
+            f"底確認後={cf80['trades']}回・勝率{cf80['winRatePct']}%・平均{cf80['avgRetPct']:+.1f}%。"
+            "勝率が上がるなら『鋭敏な点灯は下落継続中が多い』の実証。平均が下がるなら『底待ちで安値を逃すコスト』。"
+            "持続性フィルタ(N日連続)と役割が近いので、良い方を採用すればよい(両方は過剰)。")
+    if spx_stats:
+        interpretation.append(
+            f"📊基準線: 同期間のS&P500買い持ちは年率{spx_stats['cagrPct']}%・最大DD{spx_stats['maxDDPct']}%・"
+            f"Sharpe{spx_stats['sharpe']}。各スリーブ・配分案はこれを上回って初めて『銘柄選択の価値があった』ことになる。"
+            "集中投資の高CAGRには銘柄選択リスク(生存者バイアス)が含まれる点を忘れずに。")
     # 持続性フィルタの自動解釈(Tier80基準)
     p80 = value_persistence.get("strong(80)", {})
     p1, p_best_n, p_best = p80.get("1"), None, None
@@ -799,6 +877,8 @@ def main():
         "valueTiersBySector": value_by_sector,
         "valueTiersCycleBySector": value_cycle_by_sector,
         "valuePersistence": value_persistence,
+        "valueTiersConfirm": value_confirm_results,
+        "spxBuyHold": spx_stats,
         "momentumCycle": mom_cycle_results,
         "assetTiers": asset_tiers,
         "assetTiersHold": asset_tiers_hold,

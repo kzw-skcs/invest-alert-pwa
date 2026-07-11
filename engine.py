@@ -615,6 +615,16 @@ def analyze_instrument(meta, history, bench_closes, vix_value, cfg):
 
     policy = out["tradePolicy"]
     val = value_score(calc, vp)
+    # 底確認レイヤー(長期Value専用・スコア自体は変えない=透明性維持):
+    # Valueスコアは「安さ」に鋭敏でマクロ下落の途中でも点灯するため、
+    # 「20日線の上 かつ 20日線が上向き」で短期の下げ止まりを別軸で判定する。
+    ma20_now = sma(closes, 20)
+    ma20_ago = sma(closes, 20, n - 6)  # 5営業日前の20日線
+    if ma20_now is not None and ma20_ago is not None:
+        b_ok = price > ma20_now and ma20_now >= ma20_ago
+        val["bottom"] = {"ok": b_ok,
+                         "note": "🟢 底確認(20日線上・上向き)" if b_ok
+                         else "🩸 底未確認(20日線下または下向き=下落継続の可能性)"}
     mom = momentum_signal(history, closes, calc, bench_closes, mp) \
         if policy == "trade" else {"signal": "none", "note": "hold銘柄"}
     hm = hold_management(calc, vp) if policy in ("hold", "accumulate") else \
@@ -1222,16 +1232,19 @@ def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
             if n >= CONFIRM_STREAK_N:
                 return f" ✅確定({n}日連続)", 0
             return f" ⏳速報({max(n,1)}/{CONFIRM_STREAK_N}日)", 1
+        bottom = v.get("bottom")
+        b_tag = "" if bottom is None else ("" if bottom["ok"] else " 🩸底未確認")
+        b_demote = 1 if b_tag else 0
         if v["tier"] == "absolute":
             tag, demote = stage("90")
-            alerts.append({"type": "BUY_ABSOLUTE", "ticker": t, "priority": 1 + demote,
-                           "title": f"🚨 {t} 絶対的買い場 (スコア{v['score']}){tag}",
-                           "detail": " / ".join(v["factors"][:4])})
+            alerts.append({"type": "BUY_ABSOLUTE", "ticker": t, "priority": 1 + max(demote, b_demote),
+                           "title": f"🚨 {t} 絶対的買い場 (スコア{v['score']}){tag}{b_tag}",
+                           "detail": ((bottom["note"] + " / ") if bottom else "") + " / ".join(v["factors"][:3])})
         elif v["tier"] == "strong" and v["score"] >= min_score:
             tag, demote = stage("80")
-            alerts.append({"type": "BUY_STRONG", "ticker": t, "priority": 2 + demote,
-                           "title": f"🔥 {t} 強い買い (スコア{v['score']}){tag}",
-                           "detail": " / ".join(v["factors"][:3])})
+            alerts.append({"type": "BUY_STRONG", "ticker": t, "priority": 2 + max(demote, b_demote),
+                           "title": f"🔥 {t} 強い買い (スコア{v['score']}){tag}{b_tag}",
+                           "detail": ((bottom["note"] + " / ") if bottom else "") + " / ".join(v["factors"][:2])})
         elif v["tier"] == "consider" and v["score"] >= min_score:
             alerts.append({"type": "BUY_CONSIDER", "ticker": t, "priority": 3,
                            "title": f"🟦 {t} 購入検討 (スコア{v['score']})",
