@@ -465,13 +465,34 @@ function positionAlerts() {
   return out;
 }
 
+function rebalanceAlerts() {
+  // リバランス乖離の端末側アラート(保有はlocalStorageのみ=サーバーpush不可のため、開いた時に通知欄へ)
+  try {
+    if (!DATA) return [];
+    const t = targetsPct();
+    const thr = (DATA.portfolio && DATA.portfolio.rebalanceThresholdPct) || 5;
+    const pf = portfolioValue('all');
+    const total = pf.total + pf.cash;
+    if (!total) return [];
+    const cur = { ...pf.byClass, cash: pf.cash };
+    const names = { stocks: '📈個別株', btc: '₿BTC', eth: 'ΞETH', gold: '🥇金', silver: '🥈銀', cash: '💵現金' };
+    const moves = [];
+    for (const k of Object.keys(t)) {
+      const dev = (cur[k] || 0) / total * 100 - t[k];
+      if (Math.abs(dev) > thr) moves.push(`${names[k] || k} ${dev >= 0 ? '+' : ''}${dev.toFixed(1)}%`);
+    }
+    if (!moves.length) return [];
+    return [{ p: 2, strat: 'both', t: `⚖️ リバランス乖離が閾値(±${thr}%)超え`,
+      d: moves.join(' / ') + '。詳細は💼資産タブ(合算)の⚖️リバランス。新規資金での調整が税制上有利(売却益課税の回避)' }];
+  } catch (e) { return []; }
+}
 function renderAlerts() {
   const server = (DATA.alerts || []).map((a) => ({
     p: a.priority, t: a.title, d: a.detail,
     strat: (a.type === 'MOM_ENTRY' || a.type === 'MOM_EXIT_WARN') ? 'mom' : (a.type === 'VIX' ? 'both' : 'val'),
   }));
   const pos = positionAlerts();
-  const every = [...pos, ...server];
+  const every = [...pos, ...rebalanceAlerts(), ...server];
   const all = every.filter((a) => VIEW === 'hybrid' ? true : VIEW === 'momentum' ? (a.strat === 'mom' || a.strat === 'both') : a.strat !== 'mom')
     .sort((a, b) => a.p - b.p);
   $('#alert-count').textContent = all.length ? `${all.length}件` : '';
