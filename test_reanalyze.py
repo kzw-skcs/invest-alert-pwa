@@ -148,6 +148,36 @@ s_, t_ = R.challenger_verdict({"win": 45, "loss": 8, "expired": 7, "winRatePct":
                               "2026-01-01", "2026-08-01")
 check("劣後ならChampion維持", s_ == "champion_wins")
 
+print("[risk_model(v3.30)]")
+import random
+random.seed(3)
+from datetime import date as _date, timedelta as _td
+d0 = _date(2023, 1, 2)
+dates = [(d0 + _td(days=i)).isoformat() for i in range(800)]
+def synth_hist(vol_daily, drift=0.0004):
+    px, out = 100.0, []
+    for d in dates:
+        px *= 1 + random.gauss(drift, vol_daily)
+        out.append({"d": d, "c": px})
+    return out
+shm = {f"S{i}": synth_hist(0.015) for i in range(6)}
+ahm = {"btc": synth_hist(0.04), "eth": synth_hist(0.05),
+       "gold": synth_hist(0.008), "silver": synth_hist(0.018)}
+rm = EV.risk_model(shm, ahm, {"stocks": 60, "btc": 10, "eth": 10, "gold": 5, "silver": 5, "cash": 10})
+check("リスクモデル出力あり", rm is not None and rm["windowDays"] >= 200)
+if rm:
+    v = rm["volPct"]
+    check("ボラ序列(ETH>BTC>銀>金)", v["eth"] > v["btc"] > v["silver"] > v["gold"], v)
+    cur = next(c for c in rm["candidates"] if c["label"] == "現行目標")
+    rc = cur["riskContribPct"]
+    check("リスク寄与合計≈100", abs(sum(rc.values()) - 100) < 1.5, sum(rc.values()))
+    check("暗号のリスク寄与>資本比率", rc["btc"] + rc["eth"] > 20, rc)
+    check("候補6種+DD/CAGR算出", len(rm["candidates"]) == 6 and all(
+        0 <= c["maxDDPct"] <= 100 and c.get("cagrPct") is not None for c in rm["candidates"]))
+    zero = next(c for c in rm["candidates"] if c["label"] == "暗号ゼロ")
+    check("暗号ゼロはボラ低下", zero["volPct"] < cur["volPct"], (zero["volPct"], cur["volPct"]))
+    check("正直な注記", "参考値" in rm["note"])
+
 print("[定数と提案閾値]")
 check("提案には30独立エピソード必要", R.MIN_EPISODES_FOR_SUGGESTION == 30)
 check("損切りは-8%(モメンタムルールと整合)", R.MOM_MISS_PCT == -8)

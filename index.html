@@ -208,6 +208,10 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
     <div id="model-pf" class="muted">—</div>
   </div>
   <div class="card">
+    <h3>⚖️ リスク寄与 <span class="tiny">資本の%とリスクの%は別物</span></h3>
+    <div id="risk-view" class="muted">次回の📈実行から表示されます</div>
+  </div>
+  <div class="card">
     <h3>💰 フル配分プラン</h3>
     <div class="muted" style="margin-bottom:8px">運用可能総資産額(円)を入力すると、推奨ポートフォリオ・確信度・現在のシグナルに基づき「どこに・いくら」を機械的に算出します。</div>
     <div class="row" style="gap:8px">
@@ -430,7 +434,7 @@ function renderAll() {
   if (!DATA) return;
   for (const f of [renderStale, renderVix, renderAlerts, renderRanking, renderCards,
                    renderAssets, renderTargetPF, renderEvents, renderDiscovery, renderBriefing, renderCycle, renderModelPF,
-                   renderWatchlist, renderSettingsView, renderAnalysis]) {
+                   renderRiskView, renderWatchlist, renderSettingsView, renderAnalysis]) {
     try { f(); } catch (e) { console.error(f.name, e); }
   }
   if ($('#plan-total').value) renderFullPlan();
@@ -675,6 +679,40 @@ async function runAlphaReview(tk, name) {
       toast(`✅ ${tk}: 市場${rv.market}/25・経営${rv.mgmt}/25 ${j.saved ? '(保存済み。📈実行後にカードへ反映)' : '(保存失敗: ' + (rv.saveError || '') + ')'}`);
     } else toast(`失敗: ${j.error || ''}`);
   } catch (e) { toast('失敗: サーバー未設定またはネットワークエラー'); }
+}
+function renderRiskView() {
+  const el = $('#risk-view'); if (!el) return;
+  const rm = DATA && DATA.riskModel;
+  if (!rm) { el.textContent = '次回の📈実行から表示されます'; return; }
+  const NAMES = { stocks: '📈株', btc: '₿BTC', eth: 'ΞETH', gold: '🥇金', silver: '🥈銀', cash: '💵現金' };
+  const cur = (rm.candidates || []).find((c) => c.label === '現行目標') || rm.candidates[0];
+  const rc = cur.riskContribPct || {};
+  const rows = Object.keys(NAMES).map((k) => {
+    const cap = (cur.weights || {})[k] ?? 0;
+    const risk = k === 'cash' ? 0 : (rc[k] ?? 0);
+    const hot = risk > cap * 1.8 && risk > 15;
+    return `<div class="amount-row"><div class="lbl">${NAMES[k]}<span class="tiny"> vol ${k === 'cash' ? '0' : (rm.volPct[k] ?? '—')}%</span></div>
+      <div style="text-align:right"><span class="tiny">資本</span> <b>${cap}%</b> → <span class="tiny">リスク</span> <b style="color:${hot ? 'var(--amber)' : 'inherit'}">${risk}%</b></div></div>
+      <div class="progress"><div style="width:${Math.min(risk, 100)}%;background:${hot ? 'var(--amber)' : 'var(--blue)'}"></div></div>`;
+  }).join('');
+  const tol = Number(localStorage.getItem('iv2.ddtol') || 25);
+  const cands = (rm.candidates || []).map((c) => {
+    const ok = c.maxDDPct <= tol;
+    const w = Object.entries(c.weights).filter(([, v]) => v > 0).map(([k, v]) => `${(NAMES[k] || k).replace(/📈|₿|Ξ|🥇|🥈|💵/, '')}${v}`).join(':');
+    const cryptoRisk = c.riskContribPct ? Math.round((c.riskContribPct.btc || 0) + (c.riskContribPct.eth || 0)) : null;
+    return `<div class="amount-row"><div class="lbl">${ok ? '✅' : '⚠️'} ${c.label}<span class="tiny"> ${w}</span></div>
+      <div style="text-align:right" class="tiny">DD<b style="color:${ok ? 'inherit' : 'var(--red)'}">${c.maxDDPct}%</b> / vol${c.volPct}% / 過去${c.cagrPct}%${cryptoRisk != null ? ` / 暗号リスク${cryptoRisk}%` : ''}</div></div>`;
+  }).join('');
+  el.innerHTML = `
+    <div class="tiny" style="margin-bottom:6px">現行目標のリスク寄与(直近${rm.windowDays}営業日の実測ボラ・相関ベース)。期待リターンの予測は原理的に不可能(特に暗号資産)なので、配分は「どの資産にリスクを何%割り当てるか」で考える。</div>
+    ${rows}
+    <div style="margin-top:10px"><b class="tiny">🎯 あなたが耐えられる最大DD:</b>
+      <input type="number" id="dd-tol" value="${tol}" min="5" max="80" style="width:60px" onchange="localStorage.setItem('iv2.ddtol', this.value); renderRiskView();">%
+      <span class="tiny">(この範囲に収まった候補に✅)</span></div>
+    <div style="margin-top:6px">${cands}</div>
+    <div class="tiny" style="margin-top:6px">${rm.note || ''}<br>
+    🥇🥈 現物金銀の比率調整は<b>売却でなく「追加購入の停止/再開」で行う</b>(現物の流動性・スプレッド・税務を考慮。売却は最後の手段)。<br>
+    結論はシンプル: <b>耐えられるDDの範囲で固定比率を選び、心理状態によらず維持する</b>。リバランス自体が高ボラ資産からリターンを収穫する(安く買い高く削るのを機械が強制するため)。</div>`;
 }
 function streakBadge(v) {
   // 二段構え: Tier80/90のスコア連続維持日数。3日連続で✅確定(本隊投入)、それまでは⏳速報(少額)。

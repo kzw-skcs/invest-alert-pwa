@@ -193,6 +193,82 @@ EPISODE_CONFIRM_N = 3      # ✅確定に必要な連続日数(engine.CONFIRM_ST
 EPISODE_MAX_CAL_DAYS = 190  # エピソード自動クローズ(暦日≒130営業日。Value出口120営業日+余裕)
 
 
+def risk_model(stock_hist_map, asset_hist_map, targets):
+    """資産クラスの実測ボラ・相関・リスク寄与・候補配分の実測統計(v3.30・純Python)。
+    設計思想: 期待リターンの推定は誤差が支配的で不可能(特に暗号資産はファンダ概念がない)。
+    比較的安定して推定できるのは vol と相関のみ → 配分は「リスクを何%ずつ割り当てるか」で考える。
+    候補配分の CAGR は過去実測の参考値であり将来を約束しない。"""
+    def ret_map(hist):
+        return {hist[i]["d"]: hist[i]["c"] / hist[i - 1]["c"] - 1 for i in range(1, len(hist))}
+    stock_rets = {}
+    for tk, h in stock_hist_map.items():
+        for d, r in ret_map(h).items():
+            stock_rets.setdefault(d, []).append(r)
+    series = {"stocks": {d: sum(v) / len(v) for d, v in stock_rets.items() if len(v) >= 5}}
+    for k, h in asset_hist_map.items():
+        series[k] = ret_map(h)
+    names = ["stocks", "btc", "eth", "gold", "silver"]
+    if any(n not in series or not series[n] for n in names):
+        return None
+    common = sorted(set.intersection(*[set(series[n]) for n in names]))[-750:]
+    if len(common) < 200:
+        return None
+    R = {n: [series[n][d] for d in common] for n in names}
+    T = len(common)
+
+    def mean(x):
+        return sum(x) / len(x)
+    mu = {n: mean(R[n]) for n in names}
+    cov = {}
+    for a in names:
+        for b in names:
+            cov[(a, b)] = sum((R[a][i] - mu[a]) * (R[b][i] - mu[b]) for i in range(T)) / T
+    vol = {n: (cov[(n, n)] ** 0.5) * (252 ** 0.5) * 100 for n in names}
+    corr = {a: {b: round(cov[(a, b)] / ((cov[(a, a)] * cov[(b, b)]) ** 0.5 + 1e-18), 2)
+                for b in names} for a in names}
+
+    def port_stats(w_pct):
+        w = {k: w_pct.get(k, 0) / 100.0 for k in names}
+        var = sum(w[a] * w[b] * cov[(a, b)] for a in names for b in names)
+        rc = None
+        if var > 0:
+            rc = {a: round(w[a] * sum(w[b] * cov[(a, b)] for b in names) / var * 100, 1)
+                  for a in names}
+        eq, peak, mdd = 1.0, 1.0, 0.0
+        for i in range(T):
+            eq *= 1 + sum(w[n] * R[n][i] for n in names)
+            if eq > peak:
+                peak = eq
+            dd = 1 - eq / peak
+            if dd > mdd:
+                mdd = dd
+        yrs = T / 252
+        return {"volPct": round((var ** 0.5) * (252 ** 0.5) * 100, 1) if var > 0 else 0.0,
+                "maxDDPct": round(mdd * 100, 1),
+                "cagrPct": round((eq ** (1 / yrs) - 1) * 100, 1),
+                "riskContribPct": rc}
+
+    # 1/volリスク均等風(現金10固定・5%丸め)
+    inv = {n: 1.0 / max(vol[n], 1e-9) for n in names}
+    tot = sum(inv.values())
+    rp = {n: round(inv[n] / tot * 90 / 5) * 5 for n in names}
+    rp["cash"] = 100 - sum(rp.values())
+    presets = [
+        ("現行目標", {k: targets.get(k, 0) for k in ("stocks", "btc", "eth", "gold", "silver", "cash")}),
+        ("暗号控えめ(BTC7/ETH3)", {"stocks": 60, "btc": 7, "eth": 3, "gold": 10, "silver": 5, "cash": 15}),
+        ("暗号ゼロ", {"stocks": 60, "btc": 0, "eth": 0, "gold": 15, "silver": 5, "cash": 20}),
+        ("効率重視(株70/金20/現金10)", {"stocks": 70, "btc": 0, "eth": 0, "gold": 20, "silver": 0, "cash": 10}),
+        ("リスク均等風(1/vol)", rp),
+        ("攻撃型(現金ゼロ)", {"stocks": 70, "btc": 12, "eth": 8, "gold": 5, "silver": 5, "cash": 0}),
+    ]
+    return {"windowDays": T,
+            "volPct": {n: round(vol[n], 1) for n in names},
+            "corr": corr,
+            "candidates": [{"label": lb, "weights": w, **port_stats(w)} for lb, w in presets],
+            "note": ("実測ボラ・相関・DDは直近約3年の共通営業日窓。将来のDDはこれより深くなり得る。"
+                     "CAGRは過去実測=参考値(リターン予測には使わない)。現金はリスク0と仮定")}
+
+
 def compute_streaks(score, bar, prev_map, prev_bar):
     """Tier連続日数を価格バー(営業日)基準で更新する(v3.29)。
     新しいバーが出た時だけ+1 / 同じバーなら維持 / スコア剥落は即0。
@@ -361,6 +437,7 @@ def main():
     # 全銘柄
     instruments = []
     stock_hist_map = {}
+    asset_hist_map = {}
     gold_closes = None
     btc_hist = None
     entries = []
@@ -388,6 +465,8 @@ def main():
             gold_closes = [h["c"] for h in hist]
         if e.get("key") == "btc" and hist:
             btc_hist = hist
+        if e.get("class") in ("crypto", "metal") and hist:
+            asset_hist_map[e["key"]] = hist
         time.sleep(0.4)  # レート制限予防
 
     # ファンダ品質の統合(fundamentals.jsonがあれば)
@@ -502,6 +581,8 @@ def main():
                           "detail": " / ".join(cycle["riskOff"]["factors"]) + "。現金比率引き上げ・新規買い減速を検討"})
     weights = engine.planner_weights(instruments, cfg)
     model_pf = engine.model_portfolio(instruments, cycle, cfg, weights, bench_closes, vix.get("value"))
+    risk = risk_model(stock_hist_map, asset_hist_map, cfg["portfolio"]["targets"])
+    print(f"リスクモデル: {'OK' if risk else 'データ不足'}")
     print(f"モデルPF: assets={model_pf['assets']} tilts={len(model_pf['tilts'])}件")
 
     now = datetime.now(timezone.utc)
@@ -523,6 +604,7 @@ def main():
         "plannerWeights": weights,
         "cycle": cycle,
         "modelPortfolio": model_pf,
+        "riskModel": risk,
         "discovery": cfg.get("discovery", []),
     }
     with open(os.path.join(BASE, "data.json"), "w", encoding="utf-8") as f:
