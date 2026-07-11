@@ -533,6 +533,7 @@ def analyze_instrument(meta, history, bench_closes, vix_value, cfg):
         "class": meta.get("class", "stock"),
         "conviction": meta.get("conviction", 3),
         "tradePolicy": meta.get("tradePolicy", "hold"),
+        "noAlloc": bool(meta.get("noAlloc")),
         "history": [{"d": h["d"], "c": h["c"]} for h in history[-160:]],
     }
     if n < 60:
@@ -695,7 +696,10 @@ def apply_quality(inst, q, vp):
 def planner_weights(instruments, cfg):
     """銘柄別の推奨ウェイト(株スリーブ内%)。conviction×サブセクター枠×シグナル係数。"""
     sec_t = cfg["portfolio"]["stockSectorTargets"]
-    stocks = [i for i in instruments if i.get("class") == "stock" and i.get("state") != "NO_DATA"]
+    # noAlloc=監視専用銘柄(純ディフェンシブ等)。シグナル・リスクオフ判定には使うが資金は配分しない。
+    # 根拠: ディフェンシブの防御役は金+現金グライドとS&P500コア(内包2割)が代替済み。
+    stocks = [i for i in instruments if i.get("class") == "stock" and i.get("state") != "NO_DATA"
+              and not i.get("noAlloc")]
     by_sec = {}
     for i in stocks:
         by_sec.setdefault(i.get("subSector") or "その他モート", []).append(i)
