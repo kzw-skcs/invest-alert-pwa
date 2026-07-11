@@ -62,12 +62,22 @@ def save_comment(event_date, text):
            {"message": f"interpret: {event_date} 解釈追加", "content": content, "sha": j["sha"]})
 
 
+
+def auth_ok(h):
+    """APP_SECRET(Vercel環境変数)設定時のみ、X-App-Keyヘッダの一致を要求。
+    未設定なら従来通り許可(移行期の互換)。設定を強く推奨。"""
+    secret = os.environ.get("APP_SECRET")
+    return (not secret) or (h.headers.get("X-App-Key", "") == secret)
+
+
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         ok = bool(os.environ.get("ANTHROPIC_API_KEY"))
-        self._json(200, {"ok": True, "endpoint": "interpret", "apiKeyConfigured": ok})
+        self._json(200, {"ok": True, "authEnabled": bool(os.environ.get("APP_SECRET")), "endpoint": "interpret", "apiKeyConfigured": ok})
 
     def do_POST(self):
+        if not auth_ok(self):
+            return self._json(401, {"ok": False, "error": "認証エラー: ⚙️設定の🔐アプリキーがサーバーのAPP_SECRETと不一致(未入力ならキーを設定)"})
         try:
             length = int(self.headers.get("Content-Length", 0))
             body = json.loads(self.rfile.read(length) or b"{}")

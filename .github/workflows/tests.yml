@@ -1,0 +1,43 @@
+name: tests
+on:
+  push:
+    branches: [main]
+    paths: ['**.py', '**.html', '**.js', 'config.json']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Python構文チェック
+        run: python -m py_compile *.py api/*.py
+      - name: config.json検証
+        run: python -c "import json; cfg=json.load(open('config.json')); assert sum(cfg['portfolio']['stockSectorTargets'].values())==100; assert sum(cfg['portfolio']['targets'].values())==100; print('config OK:', len(cfg['stocks']), '銘柄')"
+      - name: engine単体テスト
+        run: python test_engine.py
+      - name: reanalyzeテスト
+        run: python test_reanalyze.py
+      - name: JS構文チェック(index.htmlのscriptブロック抽出)
+        run: |
+          python - <<'EOF'
+          import re
+          html = open("index.html").read()
+          blocks = re.findall(r"<script>(.*?)</script>", html, re.S)
+          assert blocks, "scriptブロックなし"
+          for i, b in enumerate(blocks):
+              open(f"/tmp/blk{i}.js", "w").write(b)
+          print(f"{len(blocks)} blocks extracted")
+          EOF
+          for f in /tmp/blk*.js; do node --check "$f"; done
+          echo "JS OK"

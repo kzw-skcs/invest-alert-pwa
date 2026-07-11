@@ -257,6 +257,13 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
 
 <!-- ================= ⚙️ 設定 ================= -->
 <div class="tab" id="tab-config">
+  <div class="card">
+    <h3>🔐 セキュリティ(アプリキー)</h3>
+    <div class="tiny" style="margin-bottom:6px">書き込み系API(同期・実行・解釈)を保護します。VercelのEnvironment Variablesに <b>APP_SECRET</b> を追加し(任意の長い文字列)、同じ値をここに入力してください。サーバー側未設定の間は従来通り動作します(設定推奨)。</div>
+    <input type="password" id="appkey-input" placeholder="APP_SECRETと同じ値" style="width:70%">
+    <button class="btn sm pri" onclick="saveAppKey($('#appkey-input').value)">保存</button>
+    <button class="btn sm" onclick="$('#appkey-input').value='';saveAppKey('')">削除</button>
+  </div>
   <div class="card" style="border-color:var(--violet)">
     <h3>🚀 すべて更新</h3>
     <div class="tiny" style="margin-bottom:8px">①ウォッチリストをサーバーに同期 → ②品質スコア更新 → ③価格取得・判定 → ④再分析 を1つのジョブで順番に実行します(約15〜25分)。</div>
@@ -376,6 +383,16 @@ const fmtP = (v, d = 1) => v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(d
 const cls = (v) => v == null ? '' : v >= 0 ? 'pos' : 'neg';
 
 /* ---------------- データ読込 ---------------- */
+function apiHeaders() {
+  const h = { 'Content-Type': 'application/json' };
+  const k = localStorage.getItem('iv2.appkey');
+  if (k) h['X-App-Key'] = k;
+  return h;
+}
+function saveAppKey(v) {
+  if (v) localStorage.setItem('iv2.appkey', v.trim()); else localStorage.removeItem('iv2.appkey');
+  toast(v ? '🔐 アプリキーを保存しました(この端末のみ)' : 'アプリキーを削除しました');
+}
 async function loadData(manual) {
   if (manual) $('#updated').textContent = '🔄 取得中…';
   try {
@@ -1472,7 +1489,7 @@ async function syncServer(silent) {
     stocks.push({ ticker: c.ticker, name: c.name || c.ticker, sector: 'その他', subSector: c.subSector || 'その他モート', tradePolicy: c.tradePolicy || 'hold', conviction: c.conviction || 3 });
   }
   try {
-    const r = await fetch('api/sync', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ stocks }) });
+    const r = await fetch('api/sync', { method: 'POST', headers: apiHeaders(), body: JSON.stringify({ stocks }) });
     const j = await r.json();
     if (!silent) toast(j.ok ? `✅ 同期完了(${j.count}銘柄)。翌朝の判定から反映されます。` : `同期失敗: ${j.error || ''}`);
     if (!j.ok && silent) toast(`同期失敗: ${j.error || ''}`);
@@ -1488,7 +1505,7 @@ async function runAllInOne() {
   const synced = await syncServer(true);
   st.textContent = (synced ? '① 同期完了' : '① 同期スキップ') + ' → ② 一括ジョブ送信中…(まだ閉じないで)';
   try {
-    const r = await fetch('api/run', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch('api/run', { method: 'POST', headers: apiHeaders(),
       body: JSON.stringify({ workflow: 'all', inputs: { run_backtest: bt ? 'true' : 'false' } }) });
     const j = await r.json();
     if (j.ok) {
@@ -1541,7 +1558,7 @@ async function interpretEvent(type, date, btn) {
   const out = document.getElementById('interp-' + date);
   btn.disabled = true; btn.textContent = '🧠 検索・解釈中…(30〜60秒)';
   try {
-    const r = await fetch('api/interpret', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch('api/interpret', { method: 'POST', headers: apiHeaders(),
       body: JSON.stringify({ type, date }) });
     const j = await r.json();
     if (j.ok) {
@@ -1560,14 +1577,14 @@ async function interpretEvent(type, date, btn) {
 async function runWorkflow(name, label) {
   toast(`${label} を起動中…`);
   try {
-    const r = await fetch('api/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ workflow: name }) });
+    const r = await fetch('api/run', { method: 'POST', headers: apiHeaders(), body: JSON.stringify({ workflow: name }) });
     const j = await r.json();
     toast(j.ok ? `✅ ${label} を開始しました。${name === 'backtest' ? '20〜60分後' : '2〜5分後'}に🔄更新で反映されます。` : `失敗: ${j.error || ''}`);
   } catch (e) { toast(`失敗: サーバー未設定(GH_TOKEN)。GitHub → Actions から手動実行してください。`); }
 }
 async function runReanalyze() {
   try {
-    const r = await fetch('api/reanalyze', { method: 'POST' });
+    const r = await fetch('api/reanalyze', { method: 'POST', headers: apiHeaders() });
     const j = await r.json();
     toast(j.ok ? '✅ ' + j.message : '失敗: ' + (j.error || ''));
   } catch (e) { toast('失敗: サーバー未設定。GitHub Actionsのreanalyzeを手動実行してください。'); }
@@ -1700,7 +1717,7 @@ async function subscribePush() {
     try { vapid = (await (await fetch('vapid.json')).json()).publicKey; } catch (e) {}
     if (!vapid) { st.textContent = 'VAPID未設定です。README手順でvapid.jsonとSecretsを設定してください。'; return; }
     const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64(vapid) });
-    const r = await fetch('api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(sub.toJSON()) });
+    const r = await fetch('api/subscribe', { method: 'POST', headers: apiHeaders(), body: JSON.stringify(sub.toJSON()) });
     const j = await r.json();
     st.textContent = j.ok ? '✅ 通知有効。毎朝6時の判定で重要アラートが届きます。' : '登録失敗: ' + (j.error || '');
   } catch (e) { st.textContent = '登録失敗: ' + e.message; }
