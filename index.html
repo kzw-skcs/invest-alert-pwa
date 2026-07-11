@@ -375,8 +375,9 @@ const cls = (v) => v == null ? '' : v >= 0 ? 'pos' : 'neg';
 
 /* ---------------- データ読込 ---------------- */
 async function loadData(manual) {
+  if (manual) $('#updated').textContent = '🔄 取得中…';
   try {
-    const r = await fetch('data.json?t=' + Date.now());
+    const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
     DATA = await r.json();
     // 旧data.json互換: momState未生成でも旧signalから状態を合成(表示矛盾の防止)
     for (const inst of DATA.instruments || []) {
@@ -391,7 +392,7 @@ async function loadData(manual) {
     applyOverrides();
     $('#updated').textContent = DATA.updatedJST || '';
     renderAll();
-    if (manual) toast('データを更新しました');
+    if (manual) toast(`データを更新しました(${DATA.updatedJST || '時刻不明'}時点)。時刻が古いままなら配信側が未更新 → 🚀すべて更新で解消できます`);
   } catch (e) {
     $('#updated').textContent = '読込失敗';
     $('#stale-banner').innerHTML = '<div class="banner warn">⚠️ data.json を読み込めません。GitHub Actions「daily」を一度実行してください。</div>';
@@ -419,8 +420,9 @@ function renderAll() {
 function renderStale() {
   const el = $('#stale-banner'); el.innerHTML = '';
   if (!DATA.updated) return;
-  const age = (Date.now() - new Date(DATA.updated).getTime()) / 864e5;
-  if (age > 3) el.innerHTML = `<div class="banner warn">⚠️ データが${Math.floor(age)}日前のものです。GitHub Actionsの「daily」実行状況を確認してください。</div>`;
+  const ageH = (Date.now() - new Date(DATA.updated).getTime()) / 36e5;
+  // dailyは毎日走るので30時間超は異常。原因は①GitHub cronスキップ ②Vercelデプロイ失敗のどちらか。
+  if (ageH > 30) el.innerHTML = `<div class="banner warn">⚠️ データが約${Math.round(ageH)}時間前のものです。原因は「dailyのcronスキップ」か「Vercelデプロイ失敗」— 🚀すべて更新を1回実行すれば両方とも解消します。</div>`;
   if (DATA.version !== 2) el.innerHTML += '<div class="banner info">ℹ️ 旧形式データを表示中。次回のdaily実行でv2形式に切り替わります。</div>';
 }
 
