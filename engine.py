@@ -916,17 +916,19 @@ DEFENSIVE_ROT = ("生活必需品", "ヘルスケア", "公益")
 
 
 def value_cycle_delta(month, year, sector_trend, defensive=False):
-    """Value買いへのサイクル補正(株)。過去時点でも日付+価格から再現可能な要素のみ。"""
+    """Value買いへのサイクル補正(株)。過去時点でも日付+価格から再現可能な要素のみ。
+    ディフェンシブは補正完全ゼロ(v3.27.1): 実測2回とも(流入ボーナス除去後も)サイクル統合で
+    ディフェンシブのみ悪化(勝率85.1→78.7%)。原因は季節加点が閾値クロスを早め下落途中の
+    高値で入らせるため。→ ディフェンシブは純チャート判定とする。"""
+    if defensive:
+        return 0, ["ディフェンシブ銘柄: サイクル補正なし(純チャート判定・実測に基づく)"]
     delta, factors = 0, []
     if month in (9, 10):
         delta += 4; factors.append("季節性: 歴史的最弱期の押し目=良い仕込み月 +4")
     if year % 4 == 2 and month in (9, 10, 11):
         delta += 3; factors.append("中間選挙前後の仕込み窓 +3")
     if sector_trend == "inflow":
-        if defensive:
-            factors.append("セクター資金流入(ディフェンシブ=リスクオフ退避の可能性、加点なし)")
-        else:
-            delta += 3; factors.append("セクター資金流入 +3")
+        delta += 3; factors.append("セクター資金流入 +3")
     elif sector_trend == "outflow":
         delta -= 3; factors.append("セクター資金流出 -3")
     return max(-8, min(8, delta)), factors
