@@ -54,6 +54,7 @@ print("[エピソードのライフサイクル(evaluate.update_episodes)]")
 def inst(tk, score, streaks, mom_state=None, price=100.0):
     m = {"momState": mom_state} if mom_state else {}
     return {"ticker": tk, "state": "OK", "price": price, "rotSector": "情報技術",
+            "history": [{"d": "BX", "c": price}],
             "value": {"score": score, "streaks": streaks}, "momentum": m, "quality": {"score": 70}}
 cyc = {"riskOff": {"score": 30}, "sectors": {"情報技術": {"trend": "inflow"}}}
 mpf = {"regime": {"regime": "neutral", "label": "巡航"}}
@@ -86,44 +87,66 @@ check("mom EXITでクローズ", not any(e["strat"] == "mom" for e in store["ope
 EV.update_episodes([], cyc, mpf, "2026-07-26", store)
 check("リスト外はremovedでクローズ", len(store["open"]) == 0)
 
-print("[Champion/Challenger(v3.26)]")
+print("[compute_streaks(v3.29: 営業日バー基準)]")
+# 新バーで+1
+s = EV.compute_streaks(85, "2026-07-10", {"65": 5, "80": 2, "90": 0}, "2026-07-09")
+check("新バーで+1", s["80"] == 3 and s["65"] == 6)
+# 同じバー(週末・祝日・JST跨ぎ・再実行)は維持
+s = EV.compute_streaks(85, "2026-07-10", {"80": 2, "65": 5}, "2026-07-10")
+check("同一バーは維持(週末水増しなし)", s["80"] == 2)
+# 剥落は即0
+s = EV.compute_streaks(75, "2026-07-11", {"80": 5}, "2026-07-10")
+check("剥落で0", s["80"] == 0)
+# 新規到達は1(バー同一でも品質更新等でスコアが動いた場合)
+s = EV.compute_streaks(85, "2026-07-10", {"80": 0}, "2026-07-10")
+check("新規到達は1", s["80"] == 1)
+
+print("[Champion/Challenger(v3.26/v3.29バー基準)]")
 CHAL = {"enabled": True, "label": "厳選", "thresholds": {"80": 85, "90": 92}, "confirmN": 5}
+def inst2(tk, score, streaks, bar, mom_state=None, price=100.0):
+    m = {"momState": mom_state} if mom_state else {}
+    return {"ticker": tk, "state": "OK", "price": price, "rotSector": "情報技術",
+            "history": [{"d": bar, "c": price}],
+            "value": {"score": score, "streaks": streaks}, "momentum": m, "quality": {"score": 70}}
 st2 = {"open": [], "closed": []}
-# スコア83: Champion(80)は開始、Challenger(85)は未達
-EV.update_episodes([inst("NVDA", 83, {"65": 5, "80": 1, "90": 0})], cyc, mpf, "2026-08-01", st2, CHAL)
+# バーB1: 83点→Championのみ
+EV.update_episodes([inst2("NVDA", 83, {"65": 5, "80": 1, "90": 0}, "B1")], cyc, mpf, "2026-08-01", st2, CHAL)
 arms = [(e["strat"], e.get("arm")) for e in st2["open"]]
-check("83点: Championのみ開始", ("value80", "champion") in arms and ("value80", "challenger") not in arms, arms)
-# スコア86: Challengerも開始
-EV.update_episodes([inst("NVDA", 86, {"65": 6, "80": 2, "90": 0})], cyc, mpf, "2026-08-02", st2, CHAL)
-arms = [(e["strat"], e.get("arm")) for e in st2["open"]]
-check("86点: Challenger開始", ("value80", "challenger") in arms, arms)
-# 同日再実行: Challengerストリークが二重加算されない
-EV.update_episodes([inst("NVDA", 86, {"65": 6, "80": 2, "90": 0})], cyc, mpf, "2026-08-02", st2, CHAL)
-check("Challenger同日ガード", st2["chalStreaks"]["NVDA"]["80"] == 1, st2["chalStreaks"])
-# 5日連続でChallenger確定(Championは3日で確定済みのはず)
-for d in ("03", "04", "05", "06"):
-    EV.update_episodes([inst("NVDA", 87, {"65": 9, "80": 9, "90": 0})], cyc, mpf, f"2026-08-{d}", st2, CHAL)
+check("83点: Championのみ開始", ("value80", "champion") in arms and ("value80", "challenger") not in arms)
+# バーB2: 86点→Challenger開始(st=1)
+EV.update_episodes([inst2("NVDA", 86, {"65": 6, "80": 2, "90": 0}, "B2")], cyc, mpf, "2026-08-02", st2, CHAL)
+check("86点: Challenger開始", any(a == ("value80", "challenger") for a in
+      [(e["strat"], e.get("arm")) for e in st2["open"]]))
+check("Chalストリーク=1", st2["chalStreaks"]["NVDA"]["80"] == 1)
+# 週末: 日付は進むがバーはB2のまま → 加算されない(今回の修正の核心)
+EV.update_episodes([inst2("NVDA", 86, {"65": 6, "80": 2, "90": 0}, "B2")], cyc, mpf, "2026-08-03", st2, CHAL)
+EV.update_episodes([inst2("NVDA", 86, {"65": 6, "80": 2, "90": 0}, "B2")], cyc, mpf, "2026-08-04", st2, CHAL)
+check("週末(同一バー)は加算なし", st2["chalStreaks"]["NVDA"]["80"] == 1, st2["chalStreaks"]["NVDA"])
+# 新バーが4本→計5バーで確定
+for n, b in enumerate(("B3", "B4", "B5", "B6")):
+    EV.update_episodes([inst2("NVDA", 87, {"65": 9, "80": 9, "90": 0}, b)], cyc, mpf, f"2026-08-0{5 + n}", st2, CHAL)
 chal_ep = next(e for e in st2["open"] if e.get("arm") == "challenger")
-check("Challenger確定は5日目", chal_ep.get("confirmDate") == "2026-08-06", chal_ep.get("confirmDate"))
-# 84点に低下: Challenger(85未満)だけ剥落クローズ、Champion(80以上)は継続
-EV.update_episodes([inst("NVDA", 84, {"65": 9, "80": 9, "90": 0})], cyc, mpf, "2026-08-07", st2, CHAL)
+check("Challenger確定は5バー目", chal_ep.get("confirmDate") == "2026-08-08" and st2["chalStreaks"]["NVDA"]["80"] == 5,
+      (chal_ep.get("confirmDate"), st2["chalStreaks"]["NVDA"]))
+# 84点に低下: Challengerのみクローズ
+EV.update_episodes([inst2("NVDA", 84, {"65": 9, "80": 9, "90": 0}, "B7")], cyc, mpf, "2026-08-09", st2, CHAL)
 arms = [(e["strat"], e.get("arm")) for e in st2["open"]]
-check("84点: Challengerのみクローズ", ("value80", "champion") in arms and ("value80", "challenger") not in arms, arms)
+check("84点: Challengerのみクローズ", ("value80", "champion") in arms and ("value80", "challenger") not in arms)
 
 print("[challenger_verdict]")
 champ_agg = {"win": 40, "loss": 12, "expired": 8, "winRatePct": 76.9, "expectancyPct": 2.5}
 chal_agg = {"win": 45, "loss": 8, "expired": 7, "winRatePct": 84.9, "expectancyPct": 3.8}
-s, t = R.challenger_verdict(champ_agg, chal_agg, "2026-01-01", "2026-08-01")
-check("条件充足でChallenger勝ち", s == "challenger_wins", s)
-s, t = R.challenger_verdict(champ_agg, chal_agg, "2026-07-01", "2026-08-01")
-check("180日未満は蓄積中", s == "accumulating", s)
-s, t = R.challenger_verdict(champ_agg, {"win": 5, "loss": 2, "expired": 1, "winRatePct": 71, "expectancyPct": 5.0},
-                            "2026-01-01", "2026-08-01")
-check("50件未満は蓄積中", s == "accumulating", s)
-s, t = R.challenger_verdict({"win": 45, "loss": 8, "expired": 7, "winRatePct": 84.9, "expectancyPct": 3.8},
-                            {"win": 40, "loss": 12, "expired": 8, "winRatePct": 76.9, "expectancyPct": 2.5},
-                            "2026-01-01", "2026-08-01")
-check("劣後ならChampion維持", s == "champion_wins", s)
+s_, t_ = R.challenger_verdict(champ_agg, chal_agg, "2026-01-01", "2026-08-01")
+check("条件充足でChallenger勝ち", s_ == "challenger_wins")
+s_, t_ = R.challenger_verdict(champ_agg, chal_agg, "2026-07-01", "2026-08-01")
+check("180日未満は蓄積中", s_ == "accumulating")
+s_, t_ = R.challenger_verdict(champ_agg, {"win": 5, "loss": 2, "expired": 1, "winRatePct": 71, "expectancyPct": 5.0},
+                              "2026-01-01", "2026-08-01")
+check("50件未満は蓄積中", s_ == "accumulating")
+s_, t_ = R.challenger_verdict({"win": 45, "loss": 8, "expired": 7, "winRatePct": 84.9, "expectancyPct": 3.8},
+                              {"win": 40, "loss": 12, "expired": 8, "winRatePct": 76.9, "expectancyPct": 2.5},
+                              "2026-01-01", "2026-08-01")
+check("劣後ならChampion維持", s_ == "champion_wins")
 
 print("[定数と提案閾値]")
 check("提案には30独立エピソード必要", R.MIN_EPISODES_FOR_SUGGESTION == 30)

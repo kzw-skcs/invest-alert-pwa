@@ -193,6 +193,22 @@ EPISODE_CONFIRM_N = 3      # ✅確定に必要な連続日数(engine.CONFIRM_ST
 EPISODE_MAX_CAL_DAYS = 190  # エピソード自動クローズ(暦日≒130営業日。Value出口120営業日+余裕)
 
 
+def compute_streaks(score, bar, prev_map, prev_bar):
+    """Tier連続日数を価格バー(営業日)基準で更新する(v3.29)。
+    新しいバーが出た時だけ+1 / 同じバーなら維持 / スコア剥落は即0。
+    これにより週末・祝日・JST日付跨ぎ(米1セッション=JST2日)・同日再実行の
+    すべてで水増しが起きない。暗号資産は週末もバーが出るため自然に毎日カウントされる。"""
+    st = {}
+    new_bar = bool(bar) and bar != prev_bar
+    for key, thr in (("65", 65), ("80", 80), ("90", 90)):
+        pn = int((prev_map or {}).get(key) or 0)
+        if (score or 0) >= thr:
+            st[key] = 1 if pn == 0 else (pn + 1 if new_bar else pn)
+        else:
+            st[key] = 0
+    return st
+
+
 def update_episodes(instruments, cycle, model_pf, today, store, challenger=None):
     """シグナルを「エピソード」として追跡する(v3.24)。
     1エピソード = Tier閾値到達(streak=1)〜スコアが閾値を割る(streak=0)まで。
@@ -214,9 +230,6 @@ def update_episodes(instruments, cycle, model_pf, today, store, challenger=None)
     chal_thr = (challenger or {}).get("thresholds") or {"80": 85, "90": 92}
     chal_n = int((challenger or {}).get("confirmN") or 5)
     cs = store.setdefault("chalStreaks", {})
-    chal_new_day = store.get("chalDate") != today
-    if chal_on:
-        store["chalDate"] = today
 
     def close_ep(ep, price, reason):
         ep["endDate"] = today
@@ -261,6 +274,8 @@ def update_episodes(instruments, cycle, model_pf, today, store, challenger=None)
         # Challenger(v3.26): 同一スコア系列に厳しい閾値を適用した仮想アーム。本番へは無影響
         if chal_on:
             tcs = cs.setdefault(tk, {})
+            bar_c = (i.get("history") or [{}])[-1].get("d")
+            new_bar_c = bool(bar_c) and bar_c != tcs.get("_bar")
             for base in ("80", "90"):
                 thr_c = int(chal_thr.get(base) or 0)
                 if not thr_c:
@@ -270,7 +285,7 @@ def update_episodes(instruments, cycle, model_pf, today, store, challenger=None)
                 prev_n = int(tcs.get(base) or 0)
                 score = v.get("score") or 0
                 if score >= thr_c:
-                    st_c = (prev_n + 1) if chal_new_day else max(prev_n, 1)
+                    st_c = 1 if prev_n == 0 else (prev_n + 1 if new_bar_c else prev_n)
                 else:
                     st_c = 0
                 tcs[base] = st_c
@@ -292,6 +307,8 @@ def update_episodes(instruments, cycle, model_pf, today, store, challenger=None)
                         if st_c >= chal_n and not ep.get("confirmDate"):
                             ep["confirmDate"] = today
                             ep["confirmPrice"] = price
+            if bar_c:
+                tcs["_bar"] = bar_c
         # モメンタム(trade銘柄): ENTRY成立〜EXIT/対象外化まで
         mm = i.get("momentum") or {}
         strat = "mom"
@@ -436,6 +453,7 @@ def main():
     prev_thesis = set()
     prev_scores = {}
     prev_streaks = {}
+    prev_bars = {}
     prev_date = None
     try:
         with open(os.path.join(BASE, "data.json"), encoding="utf-8") as f:
@@ -447,28 +465,30 @@ def main():
                 if pi.get("value"):
                     prev_scores[pi.get("ticker")] = pi["value"].get("score")
                     prev_streaks[pi.get("ticker")] = pi["value"].get("streaks") or {}
+                    prev_bars[pi.get("ticker")] = pi["value"].get("streakBar")
     except Exception:
         pass
-    # Tier連続日数トラッキング(持続性フィルタ実測でN=3日連続が最良と判明したため)
-    # 同日再実行(🚀ボタン等)では加算しない。欠測日はそのまま(営業日ベース近似)。
-    today_jst = datetime.now(JST).strftime("%Y-%m-%d")
-    same_day = (prev_date == today_jst)
+    # Tier連続日数トラッキング(v3.29: 価格バー=営業日基準。週末・祝日・JST跨ぎの水増しなし)
+    migrating = prev_streaks and not any(b for b in prev_bars.values())  # 旧JST日付方式からの初回
     for inst in instruments:
         v = inst.get("value")
         if v is None:
             continue
-        pv = prev_scores.get(inst.get("ticker"))
+        tk = inst.get("ticker")
+        pv = prev_scores.get(tk)
         if pv is not None:
             v["scorePrev"] = pv
-        ps = prev_streaks.get(inst.get("ticker"), {})
-        st = {}
-        for key, thr in (("65", 65), ("80", 80), ("90", 90)):
-            pn = int(ps.get(key) or 0)
-            if v.get("score", 0) >= thr:
-                st[key] = max(pn, 1) if same_day else pn + 1
-            else:
-                st[key] = 0
-        v["streaks"] = st
+        bar = (inst.get("history") or [{}])[-1].get("d")
+        v["streaks"] = compute_streaks(v.get("score"), bar,
+                                       prev_streaks.get(tk), prev_bars.get(tk))
+        v["streakBar"] = bar
+        if migrating:
+            # 一回限りの較正: 旧方式は週末+JST跨ぎで最大2日水増しされたため保守側に控除
+            for key in ("65", "80", "90"):
+                if v["streaks"][key] >= 2:
+                    v["streaks"][key] = max(1, v["streaks"][key] - 2)
+    if migrating:
+        print("ストリーク較正: 旧JST日付方式の水増し分を控除(一回限り)")
     remind = datetime.now(JST).weekday() == 0
     alerts = engine.build_alerts(instruments, events, vix, cfg, prev_thesis, remind)
     for ev in cycle.get("macro", []):
@@ -550,6 +570,20 @@ def main():
         except Exception:
             pass
     update_episodes(instruments, cycle, model_pf, today, store, cfg.get("challenger"))
+    if migrating:
+        # 較正に伴い、水増しストリークで押された✅確定印を取り消す(実態が3日未満のもの)
+        smap = {i2["ticker"]: ((i2.get("value") or {}).get("streaks") or {}) for i2 in instruments}
+        fixed = 0
+        for ep in store.get("open", []):
+            if (ep.get("confirmDate") and ep.get("arm", "champion") == "champion"
+                    and ep.get("strat", "").startswith("value")):
+                key = ep["strat"].replace("value", "")
+                if int(smap.get(ep["ticker"], {}).get(key) or 0) < EPISODE_CONFIRM_N:
+                    ep.pop("confirmDate", None)
+                    ep.pop("confirmPrice", None)
+                    fixed += 1
+        if fixed:
+            print(f"確定印の取り消し: {fixed}件(較正後3日未満)")
     with open(ep_path, "w", encoding="utf-8") as f:
         json.dump(store, f, ensure_ascii=False, indent=1)
     print(f"episodes.json: 進行中{len(store['open'])} / 完了{len(store['closed'])}")
