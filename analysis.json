@@ -1,23 +1,42 @@
 {
  "latest": {
-  "date": "2026-07-11 16:44 JST",
-  "valueHitRate": 80.0,
+  "date": "2026-07-11 23:00 JST",
+  "episodeStats": {
+   "value80": {
+    "速報": {
+     "n": 0,
+     "win": 0,
+     "loss": 0,
+     "expired": 0,
+     "open": 1,
+     "winRatePct": null,
+     "expectancyPct": null,
+     "avgWinPct": null,
+     "avgLossPct": null,
+     "profitFactor": null
+    }
+   }
+  },
+  "episodeCount": 1,
+  "legacyStats": {
+   "value": {
+    "n": 10,
+    "win": 8,
+    "loss": 2,
+    "expired": 0,
+    "open": 92,
+    "winRatePct": 80.0,
+    "expectancyPct": 2.64,
+    "avgWinPct": 5.56,
+    "avgLossPct": -9.05,
+    "profitFactor": 2.46
+   }
+  },
+  "valueHitRate": null,
   "momentumHitRate": null,
-  "valueResults": {
-   "hit": 8,
-   "miss": 2,
-   "open": 82
-  },
-  "momentumResults": {
-   "hit": 0,
-   "miss": 0,
-   "open": 0
-  },
-  "totalSignals": 92,
-  "note": "シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。",
-  "adjustments": [
-   "minScoreToAlert 60→55 (Value的中率80.0%)"
-  ]
+  "note": "独立エピソード評価済み0件。30件未満の間は統計は参考値。",
+  "suggestions": [],
+  "adjustments": []
  },
  "history": [
   {
@@ -331,6 +350,45 @@
    "adjustments": [
     "minScoreToAlert 60→55 (Value的中率80.0%)"
    ]
+  },
+  {
+   "date": "2026-07-11 23:00 JST",
+   "episodeStats": {
+    "value80": {
+     "速報": {
+      "n": 0,
+      "win": 0,
+      "loss": 0,
+      "expired": 0,
+      "open": 1,
+      "winRatePct": null,
+      "expectancyPct": null,
+      "avgWinPct": null,
+      "avgLossPct": null,
+      "profitFactor": null
+     }
+    }
+   },
+   "episodeCount": 1,
+   "legacyStats": {
+    "value": {
+     "n": 10,
+     "win": 8,
+     "loss": 2,
+     "expired": 0,
+     "open": 92,
+     "winRatePct": 80.0,
+     "expectancyPct": 2.64,
+     "avgWinPct": 5.56,
+     "avgLossPct": -9.05,
+     "profitFactor": 2.46
+    }
+   },
+   "valueHitRate": null,
+   "momentumHitRate": null,
+   "note": "独立エピソード評価済み0件。30件未満の間は統計は参考値。",
+   "suggestions": [],
+   "adjustments": []
   }
  ]
 }

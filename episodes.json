@@ -1,0 +1,20 @@
+{
+ "open": [
+  {
+   "id": "AEM-value80-2026-07-11",
+   "ticker": "AEM",
+   "strat": "value80",
+   "startDate": "2026-07-11",
+   "startPrice": 146.87,
+   "startScore": 89,
+   "startStreak": 2,
+   "maxScore": 89,
+   "q": 89,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": "素材",
+   "sectorTrend": "neutral"
+  }
+ ],
+ "closed": []
+}

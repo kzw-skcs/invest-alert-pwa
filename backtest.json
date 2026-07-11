@@ -1,22 +1,24 @@
 {
- "generated": "2026-07-11 16:48 JST",
+ "generated": "2026-07-11 23:03 JST",
  "interpretation": [
+  "⚠️ v3.25から約定モデルが現実仕様(t+1営業日始値で約定+往復コスト控除: 株0.2%/暗号0.6%/金銀2.0%)。旧バージョンの表示値より全体に低めに出るのは劣化ではなく正直になった分。",
   "【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。",
-  "Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。consider(65)は664回・勝率76.1%・平均6.5%に対し、absolute(90)は153回・勝率87.6%・平均13.37%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。",
-  "モメンタム戦略: 勝率69.6%と“半分は負ける”が、平均17.51%がプラスなのは損切り(-8%上限)で負けを小さく、利確ルールで勝ちを大きくする非対称性が機能した証拠。勝率の低さに動揺してルールを破らないことが最重要。",
+  "Value戦略: 閾値を上げるほど回数は減るが精度が上がる設計通りの結果。consider(65)は663回・勝率75.1%・平均6.57%に対し、absolute(90)は153回・勝率86.3%・平均13.91%。実務指針:「65で監視を始め、80以上で本気の買い、90は戦略キャッシュ出動」。年率換算は“シグナルが常に連続してあれば”の理論値で、実際はシグナル待ち期間があるため下振れする点に注意。",
+  "モメンタム戦略: 勝率63.6%と“半分は負ける”が、平均16.94%がプラスなのは損切り(-8%上限)で負けを小さく、利確ルールで勝ちを大きくする非対称性が機能した証拠。勝率の低さに動揺してルールを破らないことが最重要。",
   "配分の読み方: どの参考配分もモメンタム枠を上限近くまで使っており、この期間はルール通りのモメンタム売買が最も効率的な稼ぎ手だった。金銀の比率が高いのは検証期間が貴金属の強気相場だったため(将来も続く保証はない)。BTC/ETHが小さいのは“上がらなかった”からではなく、この期間は下落の深さ(DD)に対してリターンが見合わなかったため。長期テーゼで持つ判断と過去最適化は別物。",
-  "現行推奨(CAGR18.2%・DD28.8%・Sharpe0.94)は、最大シャープ配分(CAGR42.5%・DD11.1%・Sharpe2.35)に全指標で劣後。見直し余地あり。ただし“最大CAGR”は過去に最も上がった資産へ寄るだけの過剰適合なので鵜呑みにしない。",
+  "現行推奨(CAGR18.2%・DD28.8%・Sharpe0.94)は、最大シャープ配分(CAGR38.6%・DD11.1%・Sharpe2.14)に全指標で劣後。見直し余地あり。ただし“最大CAGR”は過去に最も上がった資産へ寄るだけの過剰適合なので鵜呑みにしない。",
   "たたき台(現行と最大シャープの中間・5%丸め): value55 : momentum20 : btc5 : gold20。一括で動かさず、追加投資から新配分に寄せるのが税制上も心理上も安全。",
   "【限界】約5年という一つの時代の検証であり、手数料・税・スリッページ未考慮。この結果は“ルールが壊れていないことの確認”と“配分の相場観”に使い、将来の約束とは考えないこと。",
-  "資産別×推奨度Tier(売りルール版): 金＝65点:3回/勝率66.7%/平均+3.3%、80点:1回/勝率100.0%/平均+2.9%、90点:シグナルなし ／ 銀＝65点:6回/勝率83.3%/平均+9.6%、80点:2回/勝率100.0%/平均+12.4%、90点:2回/勝率100.0%/平均+15.5% ／ BTC＝65点:10回/勝率50.0%/平均-1.6%、80点:5回/勝率20.0%/平均-9.7%、90点:4回/勝率75.0%/平均+8.8% ／ ETH＝65点:9回/勝率33.3%/平均-11.1%、80点:5回/勝率40.0%/平均-15.0%、90点:4回/勝率50.0%/平均-4.5%。注意: 単一資産のためシグナル回数が少なく、株82銘柄の合算Tier統計より統計的な信頼度は低い。回数が数回しかないTierの勝率は参考程度に。accumulate方針(買い増し専用)の資産は保有継続版(assetTiersHold)も併せて見ること。",
-  "売り時比較実験(スコア65基準): 「天井/120日で売る」方式は1回平均6.5%(年率換算37.1%)、「最初のシグナルで買って以後ずっと保有」は平均222.33%(平均1024.5営業日保有・年率換算44.3%)。年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。",
-  "🧭サイクル統合の効果検証(スコア80基準): チャート単独は310回・勝率79.7%・平均9.19%、サイクル統合版は336回・勝率79.5%・平均9.6%。モメンタムはフィルタなし23回(勝率69.6%・平均17.51%)に対し、サイクルゲート版19回(勝率68.4%・平均18.99%)。改善していれば統合の価値が実証、悪化ならサイクル補正を弱める判断材料。一般に効果は平均改善より最悪トレード削減に出やすい。",
-  "🧩セクター別Tier80分解(チャート単独): グロース=124回・勝率76.6%・平均+8.2% ／ シクリカル=136回・勝率80.1%・平均+9.7% ／ ディフェンシブ=47回・勝率85.1%・平均+8.4%。全体平均(valueTiers)は値幅の大きいグロース/シクリカルに引っ張られやすい。WMT・PG・KOのようなディフェンシブ銘柄に全体平均をそのまま適用せず、ディフェンシブ行の数字を現実的な期待値として使うこと。15回未満のセルは統計的信頼度が低い。",
-  "🧭サイクル統合×セクターの効果(Tier80・チャート単独→統合): シクリカル: 平均+9.7%→+10.8%/勝率80.1%→82.2% ／ グロース: 平均+8.2%→+8.1%/勝率76.6%→76.3% ／ ディフェンシブ: 平均+8.4%→+7.3%/勝率85.1%→78.7% ／ その他: 平均+38.6%→+42.3%/勝率100.0%→100.0%。統合版で最も改善するグループが「サイクル情報が効く場所」。ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルはディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。",
-  "🩸底確認実験(Tier80到達後、20日線上+上向きを待って買う): 即買い=310回・勝率79.7%・平均+9.2%に対し、底確認後=22回・勝率68.2%・平均+8.0%。勝率が上がるなら『鋭敏な点灯は下落継続中が多い』の実証。平均が下がるなら『底待ちで安値を逃すコスト』。持続性フィルタ(N日連続)と役割が近いので、良い方を採用すればよい(両方は過剰)。",
+  "個別株スリーブ(サブセクター)の実測: AI・半導体/クラウド 年率43.3%(DD44.9%) / 電力・DCインフラ 年率57.2%(DD41.3%) / エネルギー 年率37.1%(DD28.6%) / 宇宙・防衛 年率27.3%(DD27.7%) / その他モート 年率21.1%(DD24.6%)。最大シャープ配分は {'AI・半導体/クラウド': 10, '電力・DCインフラ': 50, 'エネルギー': 20, '宇宙・防衛': 20}(CAGR47.7%・Sharpe1.71)、現行設定は CAGR41.6%・Sharpe1.58。※現行の比率は『リターン最大化解』ではなく独占性・分散重視の設計値。過去最適はバックミラーである点に注意。",
+  "資産別×推奨度Tier(売りルール版): 金＝65点:3回/勝率66.7%/平均+2.6%、80点:1回/勝率100.0%/平均+0.9%、90点:シグナルなし ／ 銀＝65点:6回/勝率83.3%/平均+7.9%、80点:2回/勝率100.0%/平均+9.4%、90点:2回/勝率100.0%/平均+12.0% ／ BTC＝65点:10回/勝率50.0%/平均-2.0%、80点:5回/勝率20.0%/平均-10.2%、90点:4回/勝率75.0%/平均+8.2% ／ ETH＝65点:9回/勝率33.3%/平均-11.9%、80点:5回/勝率40.0%/平均-15.9%、90点:4回/勝率50.0%/平均-4.2%。注意: 単一資産のためシグナル回数が少なく、株82銘柄の合算Tier統計より統計的な信頼度は低い。回数が数回しかないTierの勝率は参考程度に。accumulate方針(買い増し専用)の資産は保有継続版(assetTiersHold)も併せて見ること。",
+  "売り時比較実験(スコア65基準): 「天井/120日で売る」方式は1回平均6.57%(年率換算37.5%)、「最初のシグナルで買って以後ずっと保有」は平均226.03%(平均1034.9営業日保有・年率換算25.4%)。年率換算同士を比べ、保有継続が上なら“hold銘柄は売らない”方針が過去データでも正しかったことになる。ただし回転売買の年率は“次のシグナルが常にある”前提の理論値なので、実際は保有継続に分があることが多い。",
+  "🧭サイクル統合の効果検証(スコア80基準): チャート単独は309回・勝率79.9%・平均9.32%、サイクル統合版は335回・勝率79.4%・平均9.74%。モメンタムはフィルタなし22回(勝率63.6%・平均16.94%)に対し、サイクルゲート版19回(勝率68.4%・平均19.12%)。改善していれば統合の価値が実証、悪化ならサイクル補正を弱める判断材料。一般に効果は平均改善より最悪トレード削減に出やすい。",
+  "🧩セクター別Tier80分解(チャート単独): グロース=123回・勝率75.6%・平均+8.2% ／ シクリカル=136回・勝率81.6%・平均+10.0% ／ ディフェンシブ=47回・勝率85.1%・平均+8.6%。全体平均(valueTiers)は値幅の大きいグロース/シクリカルに引っ張られやすい。WMT・PG・KOのようなディフェンシブ銘柄に全体平均をそのまま適用せず、ディフェンシブ行の数字を現実的な期待値として使うこと。15回未満のセルは統計的信頼度が低い。",
+  "🧭サイクル統合×セクターの効果(Tier80・チャート単独→統合): シクリカル: 平均+10.0%→+11.3%/勝率81.6%→82.9% ／ グロース: 平均+8.2%→+8.0%/勝率75.6%→75.4% ／ ディフェンシブ: 平均+8.6%→+7.2%/勝率85.1%→78.7% ／ その他: 平均+37.9%→+44.9%/勝率100.0%→100.0%。統合版で最も改善するグループが「サイクル情報が効く場所」。ディフェンシブで改善が小さい/悪化するなら、ローテーション流入シグナルはディフェンシブでは絶対リターンに直結しない(リスクオフ退避の反映)という解釈が妥当。",
+  "🩸底確認実験(Tier80到達後、20日線上+上向きを待って買う): 即買い=309回・勝率79.9%・平均+9.3%に対し、底確認後=22回・勝率68.2%・平均+7.5%。勝率が上がるなら『鋭敏な点灯は下落継続中が多い』の実証。平均が下がるなら『底待ちで安値を逃すコスト』。持続性フィルタ(N日連続)と役割が近いので、良い方を採用すればよい(両方は過剰)。",
   "📊基準線: 同期間のS&P500買い持ちは年率11.9%・最大DD25.4%・Sharpe0.73。各スリーブ・配分案はこれを上回って初めて『銘柄選択の価値があった』ことになる。集中投資の高CAGRには銘柄選択リスク(生存者バイアス)が含まれる点を忘れずに。",
-  "⏳持続性フィルタ実験(Tier80がN日連続で初めて買う): N=1: 310回・勝率79.7%・平均+9.2% ／ N=3: 185回・勝率83.8%・平均+11.9% ／ N=5: 125回・勝率84.0%・平均+11.3% ／ N=10: 50回・勝率84.0%・平均+14.3%。読み方: 勝率がNとともに上がるなら『1日だけの瞬間タッチ(CVX型のスコア急騰)はダマシが多い』、平均リターンがNとともに下がるなら『待つほど底値を逃すコスト』。両者の積で判断し、この期間の最適はN=10日。ただしNを増やすほど回数が減り統計信頼度も落ちる点に注意。",
-  "モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均17.51%/勝率69.6%、部分利確なし(トレーリングのみ)は平均21.94%/勝率65.2%(最大202.3%・最悪-9.8%)。利確なしの方が平均が高ければ“爆発力を殺していた”証拠になり、低ければ“利確が正解だった”ことになる。数字で判断を。"
+  "⏳持続性フィルタ実験(Tier80がN日連続で初めて買う): N=1: 309回・勝率79.9%・平均+9.3% ／ N=3: 185回・勝率83.8%・平均+11.6% ／ N=5: 125回・勝率84.0%・平均+11.5% ／ N=10: 50回・勝率84.0%・平均+14.3%。読み方: 勝率がNとともに上がるなら『1日だけの瞬間タッチ(CVX型のスコア急騰)はダマシが多い』、平均リターンがNとともに下がるなら『待つほど底値を逃すコスト』。両者の積で判断し、この期間の最適はN=10日。ただしNを増やすほど回数が減り統計信頼度も落ちる点に注意。",
+  "モメンタム比較実験: 現行ルール(+20/40%で部分利確)は平均16.94%/勝率63.6%、部分利確なし(トレーリングのみ)は平均22.35%/勝率59.1%(最大195.7%・最悪-12.7%)。利確なしの方が平均が高ければ“爆発力を殺していた”証拠になり、低ければ“利確が正解だった”ことになる。数字で判断を。"
  ],
  "period": {
   "start": "2021-12-06",
@@ -25,151 +27,169 @@
  },
  "valueTiers": {
   "consider(65)": {
-   "trades": 664,
-   "winRatePct": 76.1,
-   "avgRetPct": 6.5,
-   "medianRetPct": 5.96,
-   "bestPct": 150.6,
-   "worstPct": -61.6,
-   "avgDays": 50.3,
-   "annualizedPerTradePct": 37.1,
+   "trades": 663,
+   "winRatePct": 75.1,
+   "avgRetPct": 6.57,
+   "avgWinPct": 12.72,
+   "avgLossPct": -11.97,
+   "profitFactor": 3.21,
+   "medianRetPct": 5.98,
+   "bestPct": 128.1,
+   "worstPct": -58.6,
+   "avgDays": 50.4,
+   "annualizedPerTradePct": 37.5,
    "recent": [
-    "IONQ 2024-08-05→2024-08-06 +9.7% (top)",
-    "IONQ 2025-03-10→2025-05-22 +150.6% (top)",
-    "IONQ 2026-02-04→2026-05-11 +61.0% (top)",
-    "HOOD 2022-12-27→2023-01-12 +17.4% (top)",
-    "HOOD 2023-09-26→2023-12-06 +18.3% (top)",
-    "HOOD 2024-08-08→2024-10-11 +48.2% (top)",
-    "HOOD 2025-03-10→2025-05-12 +61.2% (top)",
-    "HOOD 2026-02-04→2026-06-12 +15.6% (top)"
+    "IONQ 2024-08-06→2024-08-07 +7.1% (top)",
+    "IONQ 2025-03-11→2025-05-23 +128.1% (top)",
+    "IONQ 2026-02-05→2026-05-12 +68.6% (top)",
+    "HOOD 2022-12-28→2023-01-13 +16.2% (top)",
+    "HOOD 2023-09-27→2023-12-07 +14.6% (top)",
+    "HOOD 2024-08-09→2024-10-14 +50.9% (top)",
+    "HOOD 2025-03-11→2025-05-13 +62.6% (top)",
+    "HOOD 2026-02-05→2026-06-15 +26.9% (top)"
    ]
   },
   "strong(80)": {
-   "trades": 310,
-   "winRatePct": 79.7,
-   "avgRetPct": 9.19,
-   "medianRetPct": 8.76,
-   "bestPct": 87.0,
-   "worstPct": -33.1,
-   "avgDays": 48.0,
-   "annualizedPerTradePct": 58.6,
+   "trades": 309,
+   "winRatePct": 79.9,
+   "avgRetPct": 9.32,
+   "avgWinPct": 14.32,
+   "avgLossPct": -10.6,
+   "profitFactor": 5.38,
+   "medianRetPct": 8.02,
+   "bestPct": 94.8,
+   "worstPct": -34.0,
+   "avgDays": 48.1,
+   "annualizedPerTradePct": 59.4,
    "recent": [
-    "FCX 2023-08-21→2023-11-28 -3.9% (top)",
-    "FCX 2024-07-30→2025-01-22 -10.9% (time)",
-    "FCX 2025-01-24→2025-03-18 +5.4% (top)",
-    "FCX 2025-04-03→2025-05-06 +13.2% (top)",
-    "FCX 2025-09-25→2025-10-09 +22.6% (top)",
-    "IONQ 2024-04-17→2024-07-05 +1.8% (top)",
-    "IONQ 2026-02-05→2026-05-11 +87.0% (top)",
-    "HOOD 2026-03-13→2026-06-12 +27.0% (top)"
+    "FCX 2023-08-22→2023-11-29 -5.5% (top)",
+    "FCX 2024-07-31→2025-01-24 -16.0% (time)",
+    "FCX 2025-01-27→2025-03-19 +6.7% (top)",
+    "FCX 2025-04-04→2025-05-07 +20.2% (top)",
+    "FCX 2025-09-26→2025-10-10 +22.8% (top)",
+    "IONQ 2024-04-18→2024-07-08 +3.1% (top)",
+    "IONQ 2026-02-06→2026-05-12 +79.3% (top)",
+    "HOOD 2026-03-16→2026-06-15 +31.3% (top)"
    ]
   },
   "absolute(90)": {
    "trades": 153,
-   "winRatePct": 87.6,
-   "avgRetPct": 13.37,
-   "medianRetPct": 11.85,
-   "bestPct": 70.5,
-   "worstPct": -30.6,
+   "winRatePct": 86.3,
+   "avgRetPct": 13.91,
+   "avgWinPct": 17.95,
+   "avgLossPct": -11.44,
+   "profitFactor": 9.86,
+   "medianRetPct": 11.93,
+   "bestPct": 80.3,
+   "worstPct": -32.1,
    "avgDays": 44.5,
-   "annualizedPerTradePct": 103.4,
+   "annualizedPerTradePct": 109.0,
    "recent": [
-    "LIN 2025-04-07→2025-05-27 +9.9% (top)",
-    "FCX 2022-09-02→2022-10-26 +17.8% (top)",
-    "FCX 2023-09-26→2023-11-28 +1.8% (top)",
-    "FCX 2024-08-08→2025-01-31 -12.6% (time)",
-    "FCX 2025-03-10→2025-03-18 +15.5% (top)",
-    "FCX 2025-04-03→2025-05-06 +13.2% (top)",
-    "IONQ 2024-04-17→2024-07-05 +1.8% (top)",
-    "HOOD 2026-03-20→2026-06-12 +31.5% (top)"
+    "LIN 2025-04-08→2025-05-28 +8.0% (top)",
+    "FCX 2022-09-06→2022-10-27 +16.4% (top)",
+    "FCX 2023-09-27→2023-11-29 +1.6% (top)",
+    "FCX 2024-08-09→2025-02-04 -13.6% (time)",
+    "FCX 2025-03-11→2025-03-19 +14.3% (top)",
+    "FCX 2025-04-04→2025-05-07 +20.2% (top)",
+    "IONQ 2024-04-18→2024-07-08 +3.1% (top)",
+    "HOOD 2026-03-23→2026-06-15 +37.2% (top)"
    ]
   }
  },
  "valueTiersHold": {
   "consider(65)": {
-   "trades": 89,
-   "winRatePct": 87.6,
-   "avgRetPct": 222.33,
-   "medianRetPct": 89.77,
-   "avgAnnualizedPct": 44.3,
-   "avgHoldDays": 1024.5
+   "trades": 88,
+   "winRatePct": 87.5,
+   "avgRetPct": 226.03,
+   "medianRetPct": 96.41,
+   "avgAnnualizedPct": 25.4,
+   "avgHoldDays": 1034.9
   },
   "strong(80)": {
    "trades": 85,
    "winRatePct": 85.9,
-   "avgRetPct": 225.75,
-   "medianRetPct": 85.83,
-   "avgAnnualizedPct": 53.0,
-   "avgHoldDays": 837.8
+   "avgRetPct": 227.18,
+   "medianRetPct": 84.69,
+   "avgAnnualizedPct": 53.2,
+   "avgHoldDays": 836.8
   },
   "absolute(90)": {
    "trades": 70,
    "winRatePct": 81.4,
-   "avgRetPct": 216.19,
-   "medianRetPct": 76.64,
-   "avgAnnualizedPct": 36.2,
-   "avgHoldDays": 738.6
+   "avgRetPct": 216.55,
+   "medianRetPct": 74.61,
+   "avgAnnualizedPct": 35.9,
+   "avgHoldDays": 737.6
   }
  },
  "valueTiersCycle": {
   "consider(65)": {
-   "trades": 697,
-   "winRatePct": 75.2,
-   "avgRetPct": 6.37,
-   "medianRetPct": 5.53,
-   "bestPct": 121.4,
-   "worstPct": -61.6,
-   "avgDays": 48.1,
-   "annualizedPerTradePct": 38.3,
+   "trades": 695,
+   "winRatePct": 74.5,
+   "avgRetPct": 6.33,
+   "avgWinPct": 12.21,
+   "avgLossPct": -10.86,
+   "profitFactor": 3.29,
+   "medianRetPct": 5.55,
+   "bestPct": 113.8,
+   "worstPct": -58.6,
+   "avgDays": 48.2,
+   "annualizedPerTradePct": 37.9,
    "recent": [
-    "IONQ 2024-04-17→2024-07-05 +1.8% (top)",
-    "IONQ 2024-08-05→2024-08-06 +9.7% (top)",
-    "IONQ 2025-04-04→2025-05-22 +121.4% (top)",
-    "IONQ 2026-02-05→2026-05-11 +87.0% (top)",
-    "HOOD 2022-12-27→2023-01-12 +17.4% (top)",
-    "HOOD 2023-09-26→2023-12-06 +18.3% (top)",
-    "HOOD 2025-03-10→2025-05-12 +61.2% (top)",
-    "HOOD 2026-02-04→2026-06-12 +15.6% (top)"
+    "IONQ 2024-04-25→2024-07-08 -4.9% (top)",
+    "IONQ 2024-08-06→2024-08-07 +7.1% (top)",
+    "IONQ 2025-04-07→2025-05-23 +113.8% (top)",
+    "IONQ 2026-02-06→2026-05-12 +79.3% (top)",
+    "HOOD 2022-12-28→2023-01-13 +16.2% (top)",
+    "HOOD 2023-09-27→2023-12-07 +14.6% (top)",
+    "HOOD 2025-03-11→2025-05-13 +62.6% (top)",
+    "HOOD 2026-02-05→2026-06-15 +26.9% (top)"
    ]
   },
   "strong(80)": {
-   "trades": 336,
-   "winRatePct": 79.5,
-   "avgRetPct": 9.6,
-   "medianRetPct": 8.34,
-   "bestPct": 104.4,
-   "worstPct": -33.1,
-   "avgDays": 47.1,
-   "annualizedPerTradePct": 63.3,
+   "trades": 335,
+   "winRatePct": 79.4,
+   "avgRetPct": 9.74,
+   "avgWinPct": 14.83,
+   "avgLossPct": -9.91,
+   "profitFactor": 5.77,
+   "medianRetPct": 7.44,
+   "bestPct": 130.9,
+   "worstPct": -34.0,
+   "avgDays": 47.0,
+   "annualizedPerTradePct": 64.5,
    "recent": [
-    "FCX 2024-07-30→2025-01-22 -10.9% (time)",
-    "FCX 2025-01-23→2025-03-18 +3.5% (top)",
-    "FCX 2025-04-03→2025-05-06 +13.2% (top)",
-    "FCX 2025-09-25→2025-10-09 +22.6% (top)",
-    "IONQ 2024-04-17→2024-07-05 +1.8% (top)",
-    "IONQ 2026-03-13→2026-05-11 +72.5% (top)",
-    "HOOD 2025-04-08→2025-05-12 +68.1% (top)",
-    "HOOD 2026-03-13→2026-06-12 +27.0% (top)"
+    "FCX 2024-07-31→2025-01-24 -16.0% (time)",
+    "FCX 2025-03-04→2025-03-19 +12.2% (top)",
+    "FCX 2025-04-04→2025-05-07 +20.2% (top)",
+    "FCX 2025-09-26→2025-10-10 +22.8% (top)",
+    "IONQ 2024-04-18→2024-07-08 +3.1% (top)",
+    "IONQ 2026-03-16→2026-05-12 +70.6% (top)",
+    "HOOD 2025-04-09→2025-05-13 +74.6% (top)",
+    "HOOD 2026-03-16→2026-06-15 +31.3% (top)"
    ]
   },
   "absolute(90)": {
    "trades": 180,
-   "winRatePct": 86.1,
-   "avgRetPct": 12.63,
-   "medianRetPct": 10.35,
-   "bestPct": 72.5,
-   "worstPct": -28.8,
+   "winRatePct": 85.0,
+   "avgRetPct": 12.99,
+   "avgWinPct": 17.23,
+   "avgLossPct": -11.09,
+   "profitFactor": 8.81,
+   "medianRetPct": 11.23,
+   "bestPct": 80.3,
+   "worstPct": -32.1,
    "avgDays": 45.5,
-   "annualizedPerTradePct": 93.1,
+   "annualizedPerTradePct": 96.5,
    "recent": [
-    "FCX 2023-04-26→2023-07-31 +19.8% (top)",
-    "FCX 2023-09-26→2023-11-28 +1.8% (top)",
-    "FCX 2024-07-30→2025-01-22 -10.9% (time)",
-    "FCX 2025-01-27→2025-03-18 +8.6% (top)",
-    "FCX 2025-04-03→2025-05-06 +13.2% (top)",
-    "IONQ 2024-04-17→2024-07-05 +1.8% (top)",
-    "IONQ 2026-03-13→2026-05-11 +72.5% (top)",
-    "HOOD 2026-03-20→2026-06-12 +31.5% (top)"
+    "FCX 2023-04-27→2023-08-01 +17.3% (top)",
+    "FCX 2023-09-27→2023-11-29 +1.6% (top)",
+    "FCX 2024-07-31→2025-01-24 -16.0% (time)",
+    "FCX 2025-01-28→2025-03-19 +7.7% (top)",
+    "FCX 2025-04-04→2025-05-07 +20.2% (top)",
+    "IONQ 2024-04-18→2024-07-08 +3.1% (top)",
+    "IONQ 2026-03-16→2026-05-12 +70.6% (top)",
+    "HOOD 2026-03-23→2026-06-15 +37.2% (top)"
    ]
   }
  },
@@ -177,34 +197,34 @@
   "consider(65)": {
    "groups": {
     "シクリカル": {
-     "trades": 298,
-     "winRatePct": 76.5,
-     "avgRetPct": 6.09,
-     "medianRetPct": 6.28,
-     "avgDays": 50.1,
+     "trades": 297,
+     "winRatePct": 75.4,
+     "avgRetPct": 6.37,
+     "medianRetPct": 6.36,
+     "avgDays": 50.2,
      "lowN": false
     },
     "グロース": {
      "trades": 260,
      "winRatePct": 75.0,
-     "avgRetPct": 5.94,
-     "medianRetPct": 6.28,
-     "avgDays": 49.2,
+     "avgRetPct": 5.84,
+     "medianRetPct": 6.11,
+     "avgDays": 49.3,
      "lowN": false
     },
     "ディフェンシブ": {
      "trades": 96,
-     "winRatePct": 76.0,
-     "avgRetPct": 6.19,
-     "medianRetPct": 4.5,
+     "winRatePct": 72.9,
+     "avgRetPct": 6.17,
+     "medianRetPct": 4.11,
      "avgDays": 53.7,
      "lowN": false
     },
     "その他": {
      "trades": 10,
      "winRatePct": 90.0,
-     "avgRetPct": 36.26,
-     "medianRetPct": 18.26,
+     "avgRetPct": 35.49,
+     "medianRetPct": 26.9,
      "avgDays": 50.8,
      "lowN": true
     }
@@ -212,89 +232,89 @@
    "sectors": {
     "情報技術": {
      "trades": 199,
-     "winRatePct": 75.4,
-     "avgRetPct": 6.53,
-     "medianRetPct": 5.58,
-     "avgDays": 47.1,
+     "winRatePct": 75.9,
+     "avgRetPct": 6.48,
+     "medianRetPct": 5.85,
+     "avgDays": 47.2,
      "lowN": false
     },
     "資本財": {
      "trades": 138,
-     "winRatePct": 73.2,
-     "avgRetPct": 6.4,
-     "medianRetPct": 6.23,
-     "avgDays": 52.2,
+     "winRatePct": 72.5,
+     "avgRetPct": 6.92,
+     "medianRetPct": 6.57,
+     "avgDays": 52.3,
      "lowN": false
     },
     "金融": {
-     "trades": 114,
-     "winRatePct": 78.9,
-     "avgRetPct": 5.17,
-     "medianRetPct": 6.1,
-     "avgDays": 46.6,
+     "trades": 113,
+     "winRatePct": 77.9,
+     "avgRetPct": 5.07,
+     "medianRetPct": 5.73,
+     "avgDays": 46.9,
      "lowN": false
     },
     "ヘルスケア": {
      "trades": 43,
      "winRatePct": 67.4,
-     "avgRetPct": 1.26,
-     "medianRetPct": 2.84,
+     "avgRetPct": 1.54,
+     "medianRetPct": 3.05,
      "avgDays": 55.0,
      "lowN": false
     },
     "一般消費財": {
      "trades": 42,
      "winRatePct": 71.4,
-     "avgRetPct": 2.74,
-     "medianRetPct": 7.74,
-     "avgDays": 59.6,
+     "avgRetPct": 2.32,
+     "medianRetPct": 8.88,
+     "avgDays": 59.9,
      "lowN": false
     },
     "生活必需品": {
      "trades": 32,
-     "winRatePct": 78.1,
-     "avgRetPct": 7.4,
-     "medianRetPct": 4.87,
-     "avgDays": 54.7,
+     "winRatePct": 75.0,
+     "avgRetPct": 6.93,
+     "medianRetPct": 4.08,
+     "avgDays": 54.8,
      "lowN": false
     },
     "素材": {
      "trades": 30,
      "winRatePct": 76.7,
-     "avgRetPct": 5.11,
-     "medianRetPct": 6.66,
-     "avgDays": 52.0,
+     "avgRetPct": 5.34,
+     "medianRetPct": 7.17,
+     "avgDays": 52.1,
      "lowN": false
     },
     "公益": {
      "trades": 21,
-     "winRatePct": 90.5,
-     "avgRetPct": 14.44,
-     "medianRetPct": 6.81,
+     "winRatePct": 81.0,
+     "avgRetPct": 14.49,
+     "medianRetPct": 6.68,
      "avgDays": 49.2,
      "lowN": false
     },
     "コミュニケーション": {
      "trades": 19,
-     "winRatePct": 78.9,
-     "avgRetPct": 6.81,
-     "medianRetPct": 5.44,
+     "winRatePct": 73.7,
+     "avgRetPct": 6.93,
+     "medianRetPct": 5.85,
      "avgDays": 48.4,
      "lowN": false
     },
     "エネルギー": {
      "trades": 16,
-     "winRatePct": 87.5,
-     "avgRetPct": 11.74,
-     "medianRetPct": 12.06,
+     "winRatePct": 81.2,
+     "avgRetPct": 12.78,
+     "medianRetPct": 14.8,
      "avgDays": 52.8,
      "lowN": false
     },
     "AI・半導体/クラウド": {
      "trades": 10,
      "winRatePct": 90.0,
-     "avgRetPct": 36.26,
-     "medianRetPct": 18.26,
+     "avgRetPct": 35.49,
+     "medianRetPct": 26.9,
      "avgDays": 50.8,
      "lowN": true
     }
@@ -304,33 +324,33 @@
    "groups": {
     "シクリカル": {
      "trades": 136,
-     "winRatePct": 80.1,
-     "avgRetPct": 9.7,
-     "medianRetPct": 9.24,
+     "winRatePct": 81.6,
+     "avgRetPct": 9.99,
+     "medianRetPct": 8.03,
      "avgDays": 47.7,
      "lowN": false
     },
     "グロース": {
-     "trades": 124,
-     "winRatePct": 76.6,
-     "avgRetPct": 8.21,
-     "medianRetPct": 9.11,
-     "avgDays": 47.4,
+     "trades": 123,
+     "winRatePct": 75.6,
+     "avgRetPct": 8.15,
+     "medianRetPct": 8.88,
+     "avgDays": 47.8,
      "lowN": false
     },
     "ディフェンシブ": {
      "trades": 47,
      "winRatePct": 85.1,
-     "avgRetPct": 8.44,
-     "medianRetPct": 7.89,
-     "avgDays": 49.6,
+     "avgRetPct": 8.63,
+     "medianRetPct": 7.76,
+     "avgDays": 49.5,
      "lowN": false
     },
     "その他": {
      "trades": 3,
      "winRatePct": 100.0,
-     "avgRetPct": 38.57,
-     "medianRetPct": 26.98,
+     "avgRetPct": 37.87,
+     "medianRetPct": 31.25,
      "avgDays": 60.7,
      "lowN": true
     }
@@ -339,88 +359,88 @@
     "情報技術": {
      "trades": 94,
      "winRatePct": 74.5,
-     "avgRetPct": 8.06,
-     "medianRetPct": 8.23,
-     "avgDays": 47.0,
+     "avgRetPct": 8.19,
+     "medianRetPct": 7.01,
+     "avgDays": 47.1,
      "lowN": false
     },
     "資本財": {
      "trades": 58,
-     "winRatePct": 70.7,
-     "avgRetPct": 7.76,
-     "medianRetPct": 6.72,
-     "avgDays": 50.8,
+     "winRatePct": 72.4,
+     "avgRetPct": 8.05,
+     "medianRetPct": 5.81,
+     "avgDays": 50.7,
      "lowN": false
     },
     "金融": {
      "trades": 54,
      "winRatePct": 88.9,
-     "avgRetPct": 10.97,
-     "medianRetPct": 10.37,
+     "avgRetPct": 11.33,
+     "medianRetPct": 10.42,
      "avgDays": 44.3,
      "lowN": false
     },
     "ヘルスケア": {
      "trades": 25,
-     "winRatePct": 80.0,
-     "avgRetPct": 4.43,
-     "medianRetPct": 5.63,
+     "winRatePct": 84.0,
+     "avgRetPct": 4.76,
+     "medianRetPct": 5.79,
      "avgDays": 52.4,
      "lowN": false
     },
     "一般消費財": {
-     "trades": 24,
-     "winRatePct": 79.2,
-     "avgRetPct": 7.79,
-     "medianRetPct": 11.98,
-     "avgDays": 47.4,
+     "trades": 23,
+     "winRatePct": 78.3,
+     "avgRetPct": 6.66,
+     "medianRetPct": 11.58,
+     "avgDays": 49.3,
      "lowN": false
     },
     "素材": {
      "trades": 17,
-     "winRatePct": 76.5,
-     "avgRetPct": 7.72,
-     "medianRetPct": 8.77,
+     "winRatePct": 82.4,
+     "avgRetPct": 7.76,
+     "medianRetPct": 8.01,
      "avgDays": 50.4,
      "lowN": false
     },
     "公益": {
      "trades": 12,
-     "winRatePct": 83.3,
-     "avgRetPct": 16.76,
-     "medianRetPct": 12.11,
+     "winRatePct": 75.0,
+     "avgRetPct": 16.98,
+     "medianRetPct": 11.8,
      "avgDays": 61.8,
      "lowN": true
     },
     "生活必需品": {
      "trades": 10,
      "winRatePct": 100.0,
-     "avgRetPct": 8.51,
-     "medianRetPct": 8.65,
-     "avgDays": 27.6,
+     "avgRetPct": 8.29,
+     "medianRetPct": 8.2,
+     "avgDays": 27.5,
      "lowN": true
     },
     "エネルギー": {
      "trades": 7,
      "winRatePct": 100.0,
-     "avgRetPct": 20.66,
-     "medianRetPct": 20.08,
+     "avgRetPct": 21.09,
+     "medianRetPct": 24.04,
      "avgDays": 42.6,
      "lowN": true
     },
     "コミュニケーション": {
      "trades": 6,
-     "winRatePct": 100.0,
-     "avgRetPct": 12.35,
-     "medianRetPct": 6.16,
+     "winRatePct": 83.3,
+     "avgRetPct": 13.19,
+     "medianRetPct": 6.65,
      "avgDays": 53.8,
      "lowN": true
     },
     "AI・半導体/クラウド": {
      "trades": 3,
      "winRatePct": 100.0,
-     "avgRetPct": 38.57,
-     "medianRetPct": 26.98,
+     "avgRetPct": 37.87,
+     "medianRetPct": 31.25,
      "avgDays": 60.7,
      "lowN": true
     }
@@ -430,33 +450,33 @@
    "groups": {
     "グロース": {
      "trades": 72,
-     "winRatePct": 81.9,
-     "avgRetPct": 11.26,
-     "medianRetPct": 11.32,
-     "avgDays": 45.1,
+     "winRatePct": 80.6,
+     "avgRetPct": 11.99,
+     "medianRetPct": 12.07,
+     "avgDays": 45.2,
      "lowN": false
     },
     "シクリカル": {
      "trades": 60,
      "winRatePct": 96.7,
      "avgRetPct": 16.41,
-     "medianRetPct": 13.16,
+     "medianRetPct": 13.43,
      "avgDays": 42.1,
      "lowN": false
     },
     "ディフェンシブ": {
      "trades": 19,
-     "winRatePct": 78.9,
-     "avgRetPct": 11.42,
-     "medianRetPct": 10.72,
-     "avgDays": 48.7,
+     "winRatePct": 73.7,
+     "avgRetPct": 12.65,
+     "medianRetPct": 9.26,
+     "avgDays": 48.6,
      "lowN": false
     },
     "その他": {
      "trades": 2,
      "winRatePct": 100.0,
-     "avgRetPct": 16.62,
-     "medianRetPct": 31.46,
+     "avgRetPct": 20.15,
+     "medianRetPct": 37.21,
      "avgDays": 56.0,
      "lowN": true
     }
@@ -464,89 +484,89 @@
    "sectors": {
     "情報技術": {
      "trades": 58,
-     "winRatePct": 82.8,
-     "avgRetPct": 11.75,
-     "medianRetPct": 11.32,
-     "avgDays": 43.9,
+     "winRatePct": 81.0,
+     "avgRetPct": 12.63,
+     "medianRetPct": 12.07,
+     "avgDays": 44.0,
      "lowN": false
     },
     "金融": {
      "trades": 26,
      "winRatePct": 100.0,
-     "avgRetPct": 18.01,
-     "medianRetPct": 14.26,
+     "avgRetPct": 17.35,
+     "medianRetPct": 13.71,
      "avgDays": 45.6,
      "lowN": false
     },
     "資本財": {
      "trades": 23,
      "winRatePct": 95.7,
-     "avgRetPct": 15.53,
-     "medianRetPct": 11.55,
-     "avgDays": 38.8,
+     "avgRetPct": 15.94,
+     "medianRetPct": 11.82,
+     "avgDays": 38.7,
      "lowN": false
     },
     "一般消費財": {
      "trades": 10,
      "winRatePct": 70.0,
-     "avgRetPct": 10.01,
-     "medianRetPct": 17.21,
-     "avgDays": 53.4,
+     "avgRetPct": 10.19,
+     "medianRetPct": 18.82,
+     "avgDays": 53.5,
      "lowN": true
     },
     "ヘルスケア": {
      "trades": 9,
      "winRatePct": 66.7,
-     "avgRetPct": 2.41,
-     "medianRetPct": 6.46,
-     "avgDays": 51.4,
+     "avgRetPct": 2.9,
+     "medianRetPct": 5.83,
+     "avgDays": 51.3,
      "lowN": true
     },
     "素材": {
      "trades": 7,
      "winRatePct": 85.7,
-     "avgRetPct": 8.15,
-     "medianRetPct": 11.58,
-     "avgDays": 40.7,
+     "avgRetPct": 8.06,
+     "medianRetPct": 9.49,
+     "avgDays": 40.9,
      "lowN": true
     },
     "公益": {
      "trades": 6,
-     "winRatePct": 83.3,
-     "avgRetPct": 23.22,
-     "medianRetPct": 15.93,
-     "avgDays": 52.2,
+     "winRatePct": 66.7,
+     "avgRetPct": 26.38,
+     "medianRetPct": 14.18,
+     "avgDays": 52.0,
      "lowN": true
     },
     "コミュニケーション": {
      "trades": 4,
      "winRatePct": 100.0,
-     "avgRetPct": 7.3,
-     "medianRetPct": 8.19,
+     "avgRetPct": 7.21,
+     "medianRetPct": 7.72,
      "avgDays": 41.5,
      "lowN": true
     },
     "エネルギー": {
      "trades": 4,
      "winRatePct": 100.0,
-     "avgRetPct": 25.52,
-     "medianRetPct": 25.5,
+     "avgRetPct": 27.68,
+     "medianRetPct": 25.7,
      "avgDays": 41.8,
      "lowN": true
     },
     "生活必需品": {
      "trades": 4,
      "winRatePct": 100.0,
-     "avgRetPct": 14.0,
-     "medianRetPct": 14.05,
+     "avgRetPct": 13.99,
+     "medianRetPct": 14.42,
      "avgDays": 37.2,
      "lowN": true
     },
     "AI・半導体/クラウド": {
      "trades": 2,
      "winRatePct": 100.0,
-     "avgRetPct": 16.62,
-     "medianRetPct": 31.46,
+     "avgRetPct": 20.15,
+     "medianRetPct": 37.21,
      "avgDays": 56.0,
      "lowN": true
     }
@@ -557,18 +577,18 @@
   "consider(65)": {
    "groups": {
     "シクリカル": {
-     "trades": 323,
-     "winRatePct": 77.1,
-     "avgRetPct": 6.02,
-     "medianRetPct": 6.09,
-     "avgDays": 47.6,
+     "trades": 321,
+     "winRatePct": 76.0,
+     "avgRetPct": 6.18,
+     "medianRetPct": 5.98,
+     "avgDays": 47.8,
      "lowN": false
     },
     "グロース": {
      "trades": 267,
      "winRatePct": 73.0,
-     "avgRetPct": 6.11,
-     "medianRetPct": 5.58,
+     "avgRetPct": 5.85,
+     "medianRetPct": 5.85,
      "avgDays": 47.2,
      "lowN": false
     },
@@ -576,16 +596,16 @@
      "trades": 97,
      "winRatePct": 73.2,
      "avgRetPct": 5.9,
-     "medianRetPct": 4.04,
+     "medianRetPct": 3.69,
      "avgDays": 51.6,
      "lowN": false
     },
     "その他": {
      "trades": 10,
-     "winRatePct": 90.0,
-     "avgRetPct": 29.34,
-     "medianRetPct": 17.4,
-     "avgDays": 53.3,
+     "winRatePct": 80.0,
+     "avgRetPct": 28.48,
+     "medianRetPct": 16.23,
+     "avgDays": 52.9,
      "lowN": true
     }
    },
@@ -593,89 +613,89 @@
     "情報技術": {
      "trades": 201,
      "winRatePct": 74.6,
-     "avgRetPct": 7.05,
-     "medianRetPct": 5.86,
-     "avgDays": 45.7,
+     "avgRetPct": 6.9,
+     "medianRetPct": 6.01,
+     "avgDays": 45.8,
      "lowN": false
     },
     "資本財": {
      "trades": 154,
      "winRatePct": 74.7,
-     "avgRetPct": 6.02,
-     "medianRetPct": 5.9,
+     "avgRetPct": 6.37,
+     "medianRetPct": 5.58,
      "avgDays": 49.5,
      "lowN": false
     },
     "金融": {
-     "trades": 118,
-     "winRatePct": 79.7,
-     "avgRetPct": 5.67,
-     "medianRetPct": 6.09,
-     "avgDays": 45.2,
+     "trades": 116,
+     "winRatePct": 77.6,
+     "avgRetPct": 5.5,
+     "medianRetPct": 5.73,
+     "avgDays": 45.8,
      "lowN": false
     },
     "一般消費財": {
      "trades": 46,
      "winRatePct": 65.2,
-     "avgRetPct": 1.01,
-     "medianRetPct": 4.99,
-     "avgDays": 55.0,
+     "avgRetPct": 0.26,
+     "medianRetPct": 4.62,
+     "avgDays": 55.2,
      "lowN": false
     },
     "ヘルスケア": {
      "trades": 45,
      "winRatePct": 64.4,
-     "avgRetPct": 0.77,
-     "medianRetPct": 1.41,
+     "avgRetPct": 0.95,
+     "medianRetPct": 2.21,
      "avgDays": 50.8,
      "lowN": false
     },
     "素材": {
      "trades": 34,
-     "winRatePct": 76.5,
-     "avgRetPct": 5.05,
-     "medianRetPct": 6.18,
-     "avgDays": 47.3,
+     "winRatePct": 73.5,
+     "avgRetPct": 4.94,
+     "medianRetPct": 7.17,
+     "avgDays": 47.4,
      "lowN": false
     },
     "生活必需品": {
      "trades": 32,
-     "winRatePct": 78.1,
-     "avgRetPct": 7.34,
-     "medianRetPct": 4.87,
+     "winRatePct": 75.0,
+     "avgRetPct": 6.81,
+     "medianRetPct": 4.02,
      "avgDays": 53.7,
      "lowN": false
     },
     "コミュニケーション": {
      "trades": 20,
      "winRatePct": 75.0,
-     "avgRetPct": 8.3,
-     "medianRetPct": 7.01,
-     "avgDays": 43.8,
+     "avgRetPct": 8.13,
+     "medianRetPct": 6.7,
+     "avgDays": 43.9,
      "lowN": false
     },
     "公益": {
      "trades": 20,
-     "winRatePct": 85.0,
-     "avgRetPct": 15.12,
-     "medianRetPct": 7.0,
+     "winRatePct": 90.0,
+     "avgRetPct": 15.59,
+     "medianRetPct": 6.68,
      "avgDays": 50.3,
      "lowN": false
     },
     "エネルギー": {
      "trades": 17,
      "winRatePct": 82.4,
-     "avgRetPct": 10.42,
-     "medianRetPct": 8.68,
-     "avgDays": 46.7,
+     "avgRetPct": 11.62,
+     "medianRetPct": 11.19,
+     "avgDays": 46.6,
      "lowN": false
     },
     "AI・半導体/クラウド": {
      "trades": 10,
-     "winRatePct": 90.0,
-     "avgRetPct": 29.34,
-     "medianRetPct": 17.4,
-     "avgDays": 53.3,
+     "winRatePct": 80.0,
+     "avgRetPct": 28.48,
+     "medianRetPct": 16.23,
+     "avgDays": 52.9,
      "lowN": true
     }
    }
@@ -684,33 +704,33 @@
    "groups": {
     "シクリカル": {
      "trades": 146,
-     "winRatePct": 82.2,
-     "avgRetPct": 10.83,
-     "medianRetPct": 9.24,
-     "avgDays": 48.2,
+     "winRatePct": 82.9,
+     "avgRetPct": 11.26,
+     "medianRetPct": 8.99,
+     "avgDays": 48.0,
      "lowN": false
     },
     "グロース": {
-     "trades": 139,
-     "winRatePct": 76.3,
-     "avgRetPct": 8.13,
-     "medianRetPct": 8.11,
-     "avgDays": 45.0,
+     "trades": 138,
+     "winRatePct": 75.4,
+     "avgRetPct": 7.98,
+     "medianRetPct": 7.09,
+     "avgDays": 45.2,
      "lowN": false
     },
     "ディフェンシブ": {
      "trades": 47,
      "winRatePct": 78.7,
-     "avgRetPct": 7.31,
-     "medianRetPct": 7.02,
+     "avgRetPct": 7.2,
+     "medianRetPct": 5.81,
      "avgDays": 49.6,
      "lowN": false
     },
     "その他": {
      "trades": 4,
      "winRatePct": 100.0,
-     "avgRetPct": 42.33,
-     "medianRetPct": 68.07,
+     "avgRetPct": 44.88,
+     "medianRetPct": 70.59,
      "avgDays": 45.0,
      "lowN": true
     }
@@ -719,88 +739,88 @@
     "情報技術": {
      "trades": 108,
      "winRatePct": 75.0,
-     "avgRetPct": 8.01,
-     "medianRetPct": 7.47,
-     "avgDays": 44.1,
+     "avgRetPct": 8.02,
+     "medianRetPct": 6.19,
+     "avgDays": 44.0,
      "lowN": false
     },
     "資本財": {
      "trades": 67,
-     "winRatePct": 74.6,
-     "avgRetPct": 10.54,
-     "medianRetPct": 7.23,
-     "avgDays": 52.0,
+     "winRatePct": 76.1,
+     "avgRetPct": 11.39,
+     "medianRetPct": 7.36,
+     "avgDays": 51.9,
      "lowN": false
     },
     "金融": {
      "trades": 54,
      "winRatePct": 90.7,
-     "avgRetPct": 10.98,
-     "medianRetPct": 10.86,
+     "avgRetPct": 10.75,
+     "medianRetPct": 10.42,
      "avgDays": 44.4,
-     "lowN": false
-    },
-    "一般消費財": {
-     "trades": 25,
-     "winRatePct": 80.0,
-     "avgRetPct": 7.8,
-     "medianRetPct": 11.48,
-     "avgDays": 46.8,
      "lowN": false
     },
     "ヘルスケア": {
      "trades": 25,
-     "winRatePct": 72.0,
-     "avgRetPct": 4.92,
-     "medianRetPct": 7.73,
+     "winRatePct": 76.0,
+     "avgRetPct": 4.88,
+     "medianRetPct": 5.81,
      "avgDays": 51.0,
+     "lowN": false
+    },
+    "一般消費財": {
+     "trades": 24,
+     "winRatePct": 79.2,
+     "avgRetPct": 6.75,
+     "medianRetPct": 11.58,
+     "avgDays": 48.6,
      "lowN": false
     },
     "素材": {
      "trades": 18,
      "winRatePct": 77.8,
-     "avgRetPct": 7.03,
-     "medianRetPct": 7.11,
-     "avgDays": 47.7,
+     "avgRetPct": 7.76,
+     "medianRetPct": 8.43,
+     "avgDays": 46.2,
      "lowN": false
     },
     "公益": {
      "trades": 11,
-     "winRatePct": 81.8,
-     "avgRetPct": 14.21,
-     "medianRetPct": 11.4,
-     "avgDays": 56.1,
+     "winRatePct": 72.7,
+     "avgRetPct": 14.15,
+     "medianRetPct": 11.26,
+     "avgDays": 56.0,
      "lowN": true
     },
     "生活必需品": {
      "trades": 11,
      "winRatePct": 90.9,
-     "avgRetPct": 5.85,
-     "medianRetPct": 5.11,
-     "avgDays": 40.1,
+     "avgRetPct": 5.53,
+     "medianRetPct": 4.37,
+     "avgDays": 40.0,
      "lowN": true
     },
     "エネルギー": {
      "trades": 7,
      "winRatePct": 100.0,
-     "avgRetPct": 22.18,
-     "medianRetPct": 24.0,
+     "avgRetPct": 22.91,
+     "medianRetPct": 24.75,
      "avgDays": 43.3,
      "lowN": true
     },
     "コミュニケーション": {
      "trades": 6,
-     "winRatePct": 83.3,
-     "avgRetPct": 11.72,
-     "medianRetPct": 7.35,
+     "winRatePct": 66.7,
+     "avgRetPct": 12.06,
+     "medianRetPct": 5.57,
      "avgDays": 54.7,
      "lowN": true
     },
     "AI・半導体/クラウド": {
      "trades": 4,
      "winRatePct": 100.0,
-     "avgRetPct": 42.33,
-     "medianRetPct": 68.07,
+     "avgRetPct": 44.88,
+     "medianRetPct": 70.59,
      "avgDays": 45.0,
      "lowN": true
     }
@@ -810,33 +830,33 @@
    "groups": {
     "グロース": {
      "trades": 81,
-     "winRatePct": 81.5,
-     "avgRetPct": 11.31,
-     "medianRetPct": 10.23,
-     "avgDays": 45.5,
+     "winRatePct": 80.2,
+     "avgRetPct": 11.83,
+     "medianRetPct": 10.79,
+     "avgDays": 45.6,
      "lowN": false
     },
     "シクリカル": {
      "trades": 76,
      "winRatePct": 92.1,
-     "avgRetPct": 14.47,
-     "medianRetPct": 12.82,
-     "avgDays": 44.1,
+     "avgRetPct": 14.56,
+     "medianRetPct": 12.51,
+     "avgDays": 44.0,
      "lowN": false
     },
     "ディフェンシブ": {
      "trades": 20,
-     "winRatePct": 80.0,
-     "avgRetPct": 7.58,
-     "medianRetPct": 8.5,
-     "avgDays": 50.5,
+     "winRatePct": 75.0,
+     "avgRetPct": 8.09,
+     "medianRetPct": 8.66,
+     "avgDays": 50.4,
      "lowN": false
     },
     "その他": {
      "trades": 3,
      "winRatePct": 100.0,
-     "avgRetPct": 35.25,
-     "medianRetPct": 31.46,
+     "avgRetPct": 36.97,
+     "medianRetPct": 37.21,
      "avgDays": 50.7,
      "lowN": true
     }
@@ -844,89 +864,89 @@
    "sectors": {
     "情報技術": {
      "trades": 68,
-     "winRatePct": 82.4,
-     "avgRetPct": 11.38,
-     "medianRetPct": 10.07,
-     "avgDays": 43.5,
+     "winRatePct": 80.9,
+     "avgRetPct": 11.9,
+     "medianRetPct": 10.79,
+     "avgDays": 43.6,
      "lowN": false
     },
     "資本財": {
      "trades": 31,
-     "winRatePct": 83.9,
-     "avgRetPct": 12.05,
-     "medianRetPct": 11.04,
-     "avgDays": 42.1,
+     "winRatePct": 87.1,
+     "avgRetPct": 12.85,
+     "medianRetPct": 11.82,
+     "avgDays": 42.0,
      "lowN": false
     },
     "金融": {
      "trades": 29,
-     "winRatePct": 100.0,
-     "avgRetPct": 16.3,
-     "medianRetPct": 13.48,
+     "winRatePct": 96.6,
+     "avgRetPct": 15.84,
+     "medianRetPct": 12.51,
      "avgDays": 45.7,
      "lowN": false
     },
     "素材": {
      "trades": 11,
      "winRatePct": 90.9,
-     "avgRetPct": 10.85,
-     "medianRetPct": 9.88,
-     "avgDays": 48.0,
+     "avgRetPct": 10.07,
+     "medianRetPct": 8.85,
+     "avgDays": 48.1,
      "lowN": true
     },
     "ヘルスケア": {
      "trades": 10,
      "winRatePct": 70.0,
-     "avgRetPct": 1.8,
-     "medianRetPct": 4.26,
-     "avgDays": 53.2,
+     "avgRetPct": 2.1,
+     "medianRetPct": 2.58,
+     "avgDays": 53.1,
      "lowN": true
     },
     "一般消費財": {
      "trades": 9,
      "winRatePct": 66.7,
-     "avgRetPct": 11.23,
-     "medianRetPct": 15.33,
-     "avgDays": 63.7,
+     "avgRetPct": 11.42,
+     "medianRetPct": 18.82,
+     "avgDays": 63.9,
      "lowN": true
     },
     "エネルギー": {
      "trades": 5,
      "winRatePct": 100.0,
-     "avgRetPct": 26.78,
-     "medianRetPct": 25.5,
+     "avgRetPct": 27.69,
+     "medianRetPct": 25.7,
      "avgDays": 38.2,
      "lowN": true
     },
     "公益": {
      "trades": 5,
-     "winRatePct": 80.0,
-     "avgRetPct": 16.59,
-     "medianRetPct": 8.5,
-     "avgDays": 56.4,
+     "winRatePct": 60.0,
+     "avgRetPct": 18.42,
+     "medianRetPct": 9.47,
+     "avgDays": 56.2,
      "lowN": true
     },
     "生活必需品": {
      "trades": 5,
      "winRatePct": 100.0,
-     "avgRetPct": 10.14,
-     "medianRetPct": 9.7,
+     "avgRetPct": 9.76,
+     "medianRetPct": 9.26,
      "avgDays": 39.0,
      "lowN": true
     },
     "コミュニケーション": {
      "trades": 4,
      "winRatePct": 100.0,
-     "avgRetPct": 10.2,
-     "medianRetPct": 12.43,
+     "avgRetPct": 11.51,
+     "medianRetPct": 13.55,
      "avgDays": 38.2,
      "lowN": true
     },
     "AI・半導体/クラウド": {
      "trades": 3,
      "winRatePct": 100.0,
-     "avgRetPct": 35.25,
-     "medianRetPct": 31.46,
+     "avgRetPct": 36.97,
+     "medianRetPct": 37.21,
      "avgDays": 50.7,
      "lowN": true
     }
@@ -936,128 +956,164 @@
  "valuePersistence": {
   "consider(65)": {
    "1": {
-    "trades": 664,
-    "winRatePct": 76.1,
-    "avgRetPct": 6.49,
-    "medianRetPct": 5.96,
-    "bestPct": 150.6,
-    "worstPct": -61.6,
-    "avgDays": 50.3,
-    "annualizedPerTradePct": 37.0
+    "trades": 663,
+    "winRatePct": 75.1,
+    "avgRetPct": 6.57,
+    "avgWinPct": 12.71,
+    "avgLossPct": -11.99,
+    "profitFactor": 3.2,
+    "medianRetPct": 5.98,
+    "bestPct": 128.1,
+    "worstPct": -58.6,
+    "avgDays": 50.4,
+    "annualizedPerTradePct": 37.4
    },
    "3": {
     "trades": 467,
-    "winRatePct": 76.2,
-    "avgRetPct": 7.03,
-    "medianRetPct": 6.94,
-    "bestPct": 70.6,
-    "worstPct": -59.9,
-    "avgDays": 53.6,
-    "annualizedPerTradePct": 37.6
+    "winRatePct": 74.3,
+    "avgRetPct": 6.87,
+    "avgWinPct": 13.31,
+    "avgLossPct": -11.77,
+    "profitFactor": 3.27,
+    "medianRetPct": 6.82,
+    "bestPct": 73.4,
+    "worstPct": -55.7,
+    "avgDays": 53.7,
+    "annualizedPerTradePct": 36.6
    },
    "5": {
     "trades": 373,
-    "winRatePct": 75.1,
-    "avgRetPct": 7.81,
-    "medianRetPct": 7.01,
-    "bestPct": 78.0,
-    "worstPct": -53.9,
+    "winRatePct": 74.8,
+    "avgRetPct": 7.94,
+    "avgWinPct": 14.29,
+    "avgLossPct": -10.92,
+    "profitFactor": 3.88,
+    "medianRetPct": 7.13,
+    "bestPct": 94.8,
+    "worstPct": -54.2,
     "avgDays": 53.0,
-    "annualizedPerTradePct": 43.0
+    "annualizedPerTradePct": 43.8
    },
    "10": {
     "trades": 231,
-    "winRatePct": 76.6,
-    "avgRetPct": 8.12,
-    "medianRetPct": 8.4,
+    "winRatePct": 74.9,
+    "avgRetPct": 7.9,
+    "avgWinPct": 13.56,
+    "avgLossPct": -8.97,
+    "profitFactor": 4.51,
+    "medianRetPct": 8.18,
     "bestPct": 77.9,
-    "worstPct": -39.9,
+    "worstPct": -39.7,
     "avgDays": 48.2,
-    "annualizedPerTradePct": 50.4
+    "annualizedPerTradePct": 48.9
    }
   },
   "strong(80)": {
    "1": {
-    "trades": 310,
-    "winRatePct": 79.7,
-    "avgRetPct": 9.19,
-    "medianRetPct": 8.76,
-    "bestPct": 87.0,
-    "worstPct": -33.1,
-    "avgDays": 48.0,
-    "annualizedPerTradePct": 58.6
+    "trades": 309,
+    "winRatePct": 79.9,
+    "avgRetPct": 9.32,
+    "avgWinPct": 14.32,
+    "avgLossPct": -10.6,
+    "profitFactor": 5.38,
+    "medianRetPct": 8.02,
+    "bestPct": 94.8,
+    "worstPct": -34.0,
+    "avgDays": 48.1,
+    "annualizedPerTradePct": 59.4
    },
    "3": {
     "trades": 185,
     "winRatePct": 83.8,
-    "avgRetPct": 11.86,
-    "medianRetPct": 10.53,
-    "bestPct": 82.3,
-    "worstPct": -31.5,
+    "avgRetPct": 11.6,
+    "avgWinPct": 15.89,
+    "avgLossPct": -10.54,
+    "profitFactor": 7.79,
+    "medianRetPct": 10.88,
+    "bestPct": 80.7,
+    "worstPct": -30.5,
     "avgDays": 48.0,
-    "annualizedPerTradePct": 80.2
+    "annualizedPerTradePct": 78.0
    },
    "5": {
     "trades": 125,
     "winRatePct": 84.0,
-    "avgRetPct": 11.28,
-    "medianRetPct": 10.89,
-    "bestPct": 61.7,
-    "worstPct": -28.3,
-    "avgDays": 46.6,
-    "annualizedPerTradePct": 78.3
+    "avgRetPct": 11.47,
+    "avgWinPct": 15.36,
+    "avgLossPct": -8.99,
+    "profitFactor": 8.97,
+    "medianRetPct": 10.54,
+    "bestPct": 71.0,
+    "worstPct": -27.5,
+    "avgDays": 46.5,
+    "annualizedPerTradePct": 80.0
    },
    "10": {
     "trades": 50,
     "winRatePct": 84.0,
-    "avgRetPct": 14.27,
-    "medianRetPct": 12.23,
-    "bestPct": 86.2,
-    "worstPct": -24.1,
-    "avgDays": 42.3,
-    "annualizedPerTradePct": 121.3
+    "avgRetPct": 14.32,
+    "avgWinPct": 18.45,
+    "avgLossPct": -7.36,
+    "profitFactor": 13.16,
+    "medianRetPct": 11.79,
+    "bestPct": 90.2,
+    "worstPct": -21.9,
+    "avgDays": 42.4,
+    "annualizedPerTradePct": 121.7
    }
   },
   "absolute(90)": {
    "1": {
     "trades": 153,
-    "winRatePct": 87.6,
-    "avgRetPct": 13.37,
-    "medianRetPct": 11.85,
-    "bestPct": 70.5,
-    "worstPct": -30.6,
+    "winRatePct": 86.3,
+    "avgRetPct": 13.91,
+    "avgWinPct": 17.95,
+    "avgLossPct": -11.44,
+    "profitFactor": 9.86,
+    "medianRetPct": 11.93,
+    "bestPct": 80.3,
+    "worstPct": -32.1,
     "avgDays": 44.5,
-    "annualizedPerTradePct": 103.4
+    "annualizedPerTradePct": 109.0
    },
    "3": {
     "trades": 80,
-    "winRatePct": 86.2,
-    "avgRetPct": 16.39,
-    "medianRetPct": 14.48,
-    "bestPct": 73.9,
-    "worstPct": -29.0,
-    "avgDays": 43.5,
-    "annualizedPerTradePct": 140.6
+    "winRatePct": 85.0,
+    "avgRetPct": 15.4,
+    "avgWinPct": 19.41,
+    "avgLossPct": -7.32,
+    "profitFactor": 15.03,
+    "medianRetPct": 14.39,
+    "bestPct": 70.7,
+    "worstPct": -27.0,
+    "avgDays": 43.6,
+    "annualizedPerTradePct": 128.9
    },
    "5": {
     "trades": 40,
     "winRatePct": 92.5,
-    "avgRetPct": 15.42,
-    "medianRetPct": 14.14,
-    "bestPct": 61.7,
-    "worstPct": -11.3,
+    "avgRetPct": 16.16,
+    "avgWinPct": 18.23,
+    "avgLossPct": -9.32,
+    "profitFactor": 24.13,
+    "medianRetPct": 13.85,
+    "bestPct": 71.0,
+    "worstPct": -12.1,
     "avgDays": 44.9,
-    "annualizedPerTradePct": 123.9
+    "annualizedPerTradePct": 131.7
    },
    "10": {
     "trades": 7,
     "winRatePct": 85.7,
-    "avgRetPct": 27.94,
-    "medianRetPct": 21.37,
-    "bestPct": 86.2,
-    "worstPct": -3.9,
-    "avgDays": 61.7,
-    "annualizedPerTradePct": 173.5
+    "avgRetPct": 29.23,
+    "avgWinPct": 34.53,
+    "avgLossPct": -2.54,
+    "profitFactor": 81.49,
+    "medianRetPct": 22.21,
+    "bestPct": 90.2,
+    "worstPct": -2.5,
+    "avgDays": 61.9,
+    "annualizedPerTradePct": 184.2
    }
   }
  },
@@ -1065,22 +1121,28 @@
   "consider(65)": {
    "trades": 180,
    "winRatePct": 73.3,
-   "avgRetPct": 6.04,
-   "medianRetPct": 6.24,
+   "avgRetPct": 5.91,
+   "avgWinPct": 11.89,
+   "avgLossPct": -10.53,
+   "profitFactor": 3.11,
+   "medianRetPct": 5.85,
    "bestPct": 73.6,
-   "worstPct": -44.1,
+   "worstPct": -43.8,
    "avgDays": 42.4,
-   "annualizedPerTradePct": 41.7
+   "annualizedPerTradePct": 40.7
   },
   "strong(80)": {
    "trades": 22,
    "winRatePct": 68.2,
-   "avgRetPct": 7.98,
-   "medianRetPct": 11.1,
-   "bestPct": 59.5,
-   "worstPct": -20.9,
+   "avgRetPct": 7.48,
+   "avgWinPct": 15.55,
+   "avgLossPct": -9.81,
+   "profitFactor": 3.4,
+   "medianRetPct": 7.01,
+   "bestPct": 69.9,
+   "worstPct": -20.1,
    "avgDays": 39.6,
-   "annualizedPerTradePct": 63.0
+   "annualizedPerTradePct": 58.3
   },
   "absolute(90)": {
    "trades": 0
@@ -1095,21 +1157,24 @@
  "momentumCycle": {
   "trades": 19,
   "winRatePct": 68.4,
-  "avgRetPct": 18.99,
-  "medianRetPct": 15.81,
-  "bestPct": 95.4,
-  "worstPct": -9.2,
-  "avgDays": 28.2,
-  "annualizedPerTradePct": 372.6,
+  "avgRetPct": 19.12,
+  "avgWinPct": 32.4,
+  "avgLossPct": -9.67,
+  "profitFactor": 7.26,
+  "medianRetPct": 16.51,
+  "bestPct": 91.1,
+  "worstPct": -12.7,
+  "avgDays": 29.5,
+  "annualizedPerTradePct": 346.2,
   "recent": [
-   "RKLB 2025-05-28→2025-06-02 -8.1% (stop)",
-   "RKLB 2025-06-09→2025-06-10 -8.3% (stop)",
-   "RKLB 2025-06-20→2025-07-29 +36.7% (stop)",
-   "RKLB 2025-10-03→2025-11-04 +7.5% (stop)",
-   "COIN 2023-11-09→2024-01-02 +46.0% (stop)",
-   "COIN 2024-02-27→2024-04-15 +24.7% (stop)",
-   "COIN 2024-11-06→2024-12-18 +15.8% (stop)",
-   "COIN 2025-05-16→2025-06-05 -8.4% (stop)"
+   "RKLB 2025-05-29→2025-05-30 -10.0% (stop)",
+   "RKLB 2025-06-10→2025-06-10 -8.3% (stop)",
+   "RKLB 2025-06-23→2025-07-29 +41.8% (stop)",
+   "RKLB 2025-10-06→2025-11-04 +6.7% (stop)",
+   "COIN 2023-11-10→2024-01-02 +43.5% (stop)",
+   "COIN 2024-02-28→2024-04-15 +11.7% (stop)",
+   "COIN 2024-11-07→2024-12-18 +19.7% (stop)",
+   "COIN 2025-05-19→2025-08-01 +32.4% (stop)"
   ]
  },
  "assetTiers": {
@@ -1117,29 +1182,35 @@
    "consider(65)": {
     "trades": 3,
     "winRatePct": 66.7,
-    "avgRetPct": 3.27,
-    "medianRetPct": 1.57,
-    "bestPct": 8.9,
-    "worstPct": -0.6,
-    "avgDays": 46.0,
-    "annualizedPerTradePct": 19.3,
+    "avgRetPct": 2.6,
+    "avgWinPct": 4.9,
+    "avgLossPct": -2.01,
+    "profitFactor": 4.88,
+    "medianRetPct": 1.15,
+    "bestPct": 8.7,
+    "worstPct": -2.0,
+    "avgDays": 45.7,
+    "annualizedPerTradePct": 15.2,
     "recent": [
-     "gold 2022-07-12→2022-11-10 +1.6% (top)",
-     "gold 2023-09-29→2023-11-27 +8.9% (top)",
-     "gold 2026-06-23→2026-07-10 -0.6% (time)"
+     "gold 2022-07-13→2022-11-11 +1.1% (top)",
+     "gold 2023-10-02→2023-11-28 +8.7% (top)",
+     "gold 2026-06-24→2026-07-10 -2.0% (time)"
     ]
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 2.85,
-    "medianRetPct": 2.85,
-    "bestPct": 2.9,
-    "worstPct": 2.9,
-    "avgDays": 11.0,
-    "annualizedPerTradePct": 90.4,
+    "avgRetPct": 0.9,
+    "avgWinPct": 0.9,
+    "avgLossPct": null,
+    "profitFactor": null,
+    "medianRetPct": 0.9,
+    "bestPct": 0.9,
+    "worstPct": 0.9,
+    "avgDays": 10.0,
+    "annualizedPerTradePct": 25.4,
     "recent": [
-     "gold 2026-06-24→2026-07-10 +2.9% (time)"
+     "gold 2026-06-25→2026-07-10 +0.9% (time)"
     ]
    },
    "absolute(90)": {
@@ -1150,47 +1221,56 @@
    "consider(65)": {
     "trades": 6,
     "winRatePct": 83.3,
-    "avgRetPct": 9.59,
-    "medianRetPct": 14.66,
-    "bestPct": 18.7,
-    "worstPct": -15.6,
-    "avgDays": 38.8,
-    "annualizedPerTradePct": 81.1,
+    "avgRetPct": 7.94,
+    "avgWinPct": 13.3,
+    "avgLossPct": -18.84,
+    "profitFactor": 3.53,
+    "medianRetPct": 12.24,
+    "bestPct": 18.6,
+    "worstPct": -18.8,
+    "avgDays": 38.7,
+    "annualizedPerTradePct": 64.6,
     "recent": [
-     "silver 2022-07-14→2022-10-03 +12.9% (top)",
-     "silver 2022-10-14→2022-11-04 +15.4% (top)",
-     "silver 2023-03-07→2023-03-17 +11.5% (top)",
-     "silver 2023-10-02→2023-11-24 +14.7% (top)",
-     "silver 2025-04-04→2025-06-02 +18.7% (top)",
-     "silver 2026-03-19→2026-07-10 -15.6% (time)"
+     "silver 2022-07-15→2022-10-04 +12.2% (top)",
+     "silver 2022-10-17→2022-11-07 +8.5% (top)",
+     "silver 2023-03-08→2023-03-20 +11.0% (top)",
+     "silver 2023-10-03→2023-11-27 +16.2% (top)",
+     "silver 2025-04-07→2025-06-03 +18.6% (top)",
+     "silver 2026-03-20→2026-07-10 -18.8% (time)"
     ]
    },
    "strong(80)": {
     "trades": 2,
     "winRatePct": 100.0,
-    "avgRetPct": 12.45,
-    "medianRetPct": 15.4,
-    "bestPct": 15.4,
-    "worstPct": 9.5,
+    "avgRetPct": 9.44,
+    "avgWinPct": 9.44,
+    "avgLossPct": null,
+    "profitFactor": null,
+    "medianRetPct": 10.42,
+    "bestPct": 10.4,
+    "worstPct": 8.5,
     "avgDays": 20.0,
-    "annualizedPerTradePct": 338.5,
+    "annualizedPerTradePct": 211.8,
     "recent": [
-     "silver 2022-08-26→2022-10-03 +9.5% (top)",
-     "silver 2022-10-14→2022-11-04 +15.4% (top)"
+     "silver 2022-08-29→2022-10-04 +10.4% (top)",
+     "silver 2022-10-17→2022-11-07 +8.5% (top)"
     ]
    },
    "absolute(90)": {
     "trades": 2,
     "winRatePct": 100.0,
-    "avgRetPct": 15.46,
-    "medianRetPct": 15.52,
+    "avgRetPct": 12.0,
+    "avgWinPct": 12.0,
+    "avgLossPct": null,
+    "profitFactor": null,
+    "medianRetPct": 15.53,
     "bestPct": 15.5,
-    "worstPct": 15.4,
+    "worstPct": 8.5,
     "avgDays": 18.5,
-    "annualizedPerTradePct": 608.9,
+    "annualizedPerTradePct": 368.1,
     "recent": [
-     "silver 2022-08-31→2022-10-03 +15.5% (top)",
-     "silver 2022-10-14→2022-11-04 +15.4% (top)"
+     "silver 2022-09-01→2022-10-04 +15.5% (top)",
+     "silver 2022-10-17→2022-11-07 +8.5% (top)"
     ]
    }
   },
@@ -1198,54 +1278,63 @@
    "consider(65)": {
     "trades": 10,
     "winRatePct": 50.0,
-    "avgRetPct": -1.6,
-    "medianRetPct": 3.9,
-    "bestPct": 29.5,
-    "worstPct": -21.9,
-    "avgDays": 66.4,
-    "annualizedPerTradePct": -5.9,
+    "avgRetPct": -2.04,
+    "avgWinPct": 11.85,
+    "avgLossPct": -15.94,
+    "profitFactor": 0.74,
+    "medianRetPct": 3.31,
+    "bestPct": 28.9,
+    "worstPct": -22.5,
+    "avgDays": 66.5,
+    "annualizedPerTradePct": -7.5,
     "recent": [
-     "btc 2022-06-11→2022-07-27 -19.1% (top)",
-     "btc 2023-06-05→2023-10-03 +6.5% (time)",
-     "btc 2024-08-04→2024-10-14 +13.6% (top)",
-     "btc 2025-02-27→2025-05-21 +29.5% (top)",
-     "btc 2025-10-17→2026-01-14 -9.0% (top)",
-     "btc 2026-01-20→2026-04-05 -21.9% (top)",
-     "btc 2026-06-06→2026-06-07 +3.9% (top)",
-     "btc 2026-06-25→2026-07-06 +7.2% (top)"
+     "btc 2022-06-12→2022-07-28 -19.8% (top)",
+     "btc 2023-06-06→2023-10-05 +7.4% (time)",
+     "btc 2024-08-05→2024-10-15 +13.1% (top)",
+     "btc 2025-02-28→2025-05-22 +28.9% (top)",
+     "btc 2025-10-18→2026-01-15 -9.6% (top)",
+     "btc 2026-01-21→2026-04-06 -22.5% (top)",
+     "btc 2026-06-07→2026-06-08 +3.3% (top)",
+     "btc 2026-06-26→2026-07-07 +6.6% (top)"
     ]
    },
    "strong(80)": {
     "trades": 5,
     "winRatePct": 20.0,
-    "avgRetPct": -9.66,
-    "medianRetPct": -14.23,
-    "bestPct": 1.4,
-    "worstPct": -20.3,
+    "avgRetPct": -10.25,
+    "avgWinPct": 0.84,
+    "avgLossPct": -13.02,
+    "profitFactor": 0.02,
+    "medianRetPct": -14.82,
+    "bestPct": 0.8,
+    "worstPct": -20.9,
     "avgDays": 62.8,
-    "annualizedPerTradePct": -33.5,
+    "annualizedPerTradePct": -35.2,
     "recent": [
-     "btc 2021-12-10→2022-03-27 -0.9% (top)",
-     "btc 2022-05-05→2022-06-06 -14.2% (top)",
-     "btc 2022-06-12→2022-07-27 -14.3% (top)",
-     "btc 2025-11-15→2026-01-14 +1.4% (top)",
-     "btc 2026-01-25→2026-04-05 -20.3% (top)"
+     "btc 2021-12-11→2022-03-28 -1.5% (top)",
+     "btc 2022-05-06→2022-06-07 -14.8% (top)",
+     "btc 2022-06-13→2022-07-28 -14.8% (top)",
+     "btc 2025-11-16→2026-01-15 +0.8% (top)",
+     "btc 2026-01-26→2026-04-06 -20.9% (top)"
     ]
    },
    "absolute(90)": {
     "trades": 4,
     "winRatePct": 75.0,
-    "avgRetPct": 8.75,
-    "medianRetPct": 14.51,
-    "bestPct": 20.6,
-    "worstPct": -12.3,
+    "avgRetPct": 8.17,
+    "avgWinPct": 15.18,
+    "avgLossPct": -12.86,
+    "profitFactor": 3.54,
+    "medianRetPct": 13.91,
+    "bestPct": 20.0,
+    "worstPct": -12.9,
     "avgDays": 58.5,
-    "annualizedPerTradePct": 43.5,
+    "annualizedPerTradePct": 40.2,
     "recent": [
-     "btc 2022-01-08→2022-03-27 +12.2% (top)",
-     "btc 2022-06-18→2022-07-27 +20.6% (top)",
-     "btc 2025-11-22→2026-01-14 +14.5% (top)",
-     "btc 2026-01-31→2026-04-05 -12.3% (top)"
+     "btc 2022-01-09→2022-03-28 +11.6% (top)",
+     "btc 2022-06-19→2022-07-28 +20.0% (top)",
+     "btc 2025-11-23→2026-01-15 +13.9% (top)",
+     "btc 2026-02-01→2026-04-06 -12.9% (top)"
     ]
    }
   },
@@ -1253,54 +1342,63 @@
    "consider(65)": {
     "trades": 9,
     "winRatePct": 33.3,
-    "avgRetPct": -11.06,
-    "medianRetPct": -2.14,
-    "bestPct": 8.7,
-    "worstPct": -50.2,
-    "avgDays": 74.0,
-    "annualizedPerTradePct": -32.9,
+    "avgRetPct": -11.87,
+    "avgWinPct": 5.71,
+    "avgLossPct": -20.66,
+    "profitFactor": 0.14,
+    "medianRetPct": -2.72,
+    "bestPct": 8.1,
+    "worstPct": -50.8,
+    "avgDays": 74.2,
+    "annualizedPerTradePct": -34.9,
     "recent": [
-     "eth 2022-04-06→2022-07-18 -50.2% (top)",
-     "eth 2023-05-24→2023-09-21 -12.0% (time)",
-     "eth 2024-08-04→2024-10-14 -2.1% (top)",
-     "eth 2025-02-08→2025-05-13 +1.8% (top)",
-     "eth 2025-05-15→2025-05-19 -0.7% (top)",
-     "eth 2025-06-22→2025-06-23 +8.7% (top)",
-     "eth 2025-10-11→2026-02-08 -44.3% (time)",
-     "eth 2026-02-11→2026-03-31 +8.5% (top)"
+     "eth 2022-04-07→2022-07-19 -50.8% (top)",
+     "eth 2023-05-25→2023-09-23 -12.1% (time)",
+     "eth 2024-08-05→2024-10-15 -2.7% (top)",
+     "eth 2025-02-09→2025-05-14 +1.2% (top)",
+     "eth 2025-05-16→2025-05-20 -1.3% (top)",
+     "eth 2025-06-23→2025-06-24 +8.1% (top)",
+     "eth 2025-10-12→2026-02-10 -44.5% (time)",
+     "eth 2026-02-12→2026-04-01 +7.8% (top)"
     ]
    },
    "strong(80)": {
     "trades": 5,
     "winRatePct": 40.0,
-    "avgRetPct": -15.01,
-    "medianRetPct": -8.4,
-    "bestPct": 6.6,
-    "worstPct": -43.8,
-    "avgDays": 87.6,
-    "annualizedPerTradePct": -37.4,
+    "avgRetPct": -15.91,
+    "avgWinPct": 5.76,
+    "avgLossPct": -30.35,
+    "profitFactor": 0.13,
+    "medianRetPct": -9.0,
+    "bestPct": 6.0,
+    "worstPct": -44.4,
+    "avgDays": 87.8,
+    "annualizedPerTradePct": -39.2,
     "recent": [
-     "eth 2021-12-30→2022-03-29 -8.4% (top)",
-     "eth 2022-04-26→2022-07-18 -43.8% (top)",
-     "eth 2023-08-17→2023-10-24 +5.9% (top)",
-     "eth 2025-02-24→2025-05-13 +6.6% (top)",
-     "eth 2025-11-04→2026-03-04 -35.4% (time)"
+     "eth 2021-12-31→2022-03-30 -9.0% (top)",
+     "eth 2022-04-27→2022-07-19 -44.4% (top)",
+     "eth 2023-08-18→2023-10-25 +5.5% (top)",
+     "eth 2025-02-25→2025-05-14 +6.0% (top)",
+     "eth 2025-11-05→2026-03-06 -37.7% (time)"
     ]
    },
    "absolute(90)": {
     "trades": 4,
     "winRatePct": 50.0,
-    "avgRetPct": -4.53,
-    "medianRetPct": 10.03,
-    "bestPct": 20.9,
-    "worstPct": -25.8,
-    "avgDays": 84.5,
-    "annualizedPerTradePct": -12.9,
+    "avgRetPct": -4.23,
+    "avgWinPct": 14.87,
+    "avgLossPct": -23.34,
+    "profitFactor": 0.64,
+    "medianRetPct": 9.42,
+    "bestPct": 20.3,
+    "worstPct": -23.8,
+    "avgDays": 84.8,
+    "annualizedPerTradePct": -12.1,
     "recent": [
-     "eth 2022-01-08→2022-03-29 +10.0% (top)",
-     "eth 2022-05-14→2022-07-18 -23.2% (top)",
-     "eth 2025-03-01→2025-05-13 +20.9% (top)",
-     "eth 2025-11-22→2026-03-22 -25.8% (time)"
+     "eth 2022-01-09→2022-03-30 +9.4% (top)",
+     "eth 2022-05-15→2022-07-19 -23.8% (top)",
+     "eth 2025-03-02→2025-05-14 +20.3% (top)",
+     "eth 2025-11-23→2026-03-24 -22.8% (time)"
     ]
    }
   }
@@ -1310,10 +1408,10 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 138.15,
-    "medianRetPct": 138.15,
-    "avgAnnualizedPct": 24.3,
-    "avgHoldDays": 1004.0
+    "avgRetPct": 139.91,
+    "medianRetPct": 139.91,
+    "avgAnnualizedPct": 24.6,
+    "avgHoldDays": 1003.0
    },
    "strong(80)": {
     "trades": 0
@@ -1326,62 +1424,62 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 229.18,
-    "medianRetPct": 229.18,
+    "avgRetPct": 228.07,
+    "medianRetPct": 228.07,
     "avgAnnualizedPct": 34.9,
-    "avgHoldDays": 1002.0
+    "avgHoldDays": 1001.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 219.15,
-    "medianRetPct": 219.15,
-    "avgAnnualizedPct": 35.1,
-    "avgHoldDays": 971.0
+    "avgRetPct": 222.84,
+    "medianRetPct": 222.84,
+    "avgAnnualizedPct": 35.6,
+    "avgHoldDays": 970.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 236.72,
-    "medianRetPct": 236.72,
-    "avgAnnualizedPct": 37.2,
-    "avgHoldDays": 968.0
+    "avgRetPct": 237.52,
+    "medianRetPct": 237.52,
+    "avgAnnualizedPct": 37.3,
+    "avgHoldDays": 967.0
    }
   },
   "btc": {
    "consider(65)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 30.32,
-    "medianRetPct": 30.32,
+    "avgRetPct": 30.41,
+    "medianRetPct": 30.41,
     "avgAnnualizedPct": 4.1,
-    "avgHoldDays": 1680.0
+    "avgHoldDays": 1679.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 35.72,
-    "medianRetPct": 35.72,
+    "avgRetPct": 35.76,
+    "medianRetPct": 35.76,
     "avgAnnualizedPct": 4.7,
-    "avgHoldDays": 1674.0
+    "avgHoldDays": 1673.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 53.63,
-    "medianRetPct": 53.63,
+    "avgRetPct": 53.76,
+    "medianRetPct": 53.76,
     "avgAnnualizedPct": 6.8,
-    "avgHoldDays": 1645.0
+    "avgHoldDays": 1644.0
    }
   },
   "eth": {
    "consider(65)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -51.98,
-    "medianRetPct": -51.98,
-    "avgAnnualizedPct": -10.5,
-    "avgHoldDays": 1670.0
+    "avgRetPct": -53.44,
+    "medianRetPct": -53.44,
+    "avgAnnualizedPct": -10.9,
+    "avgHoldDays": 1669.0
    },
    "strong(80)": {
     "trades": 1,
@@ -1389,60 +1487,144 @@
     "avgRetPct": -51.57,
     "medianRetPct": -51.57,
     "avgAnnualizedPct": -10.5,
-    "avgHoldDays": 1654.0
+    "avgHoldDays": 1653.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -41.83,
-    "medianRetPct": -41.83,
+    "avgRetPct": -41.81,
+    "medianRetPct": -41.81,
     "avgAnnualizedPct": -8.0,
-    "avgHoldDays": 1645.0
+    "avgHoldDays": 1644.0
    }
   }
  },
  "momentum": {
-  "trades": 23,
-  "winRatePct": 69.6,
-  "avgRetPct": 17.51,
-  "medianRetPct": 15.81,
-  "bestPct": 95.4,
-  "worstPct": -9.8,
-  "avgDays": 26.8,
-  "annualizedPerTradePct": 355.4,
+  "trades": 22,
+  "winRatePct": 63.6,
+  "avgRetPct": 16.94,
+  "avgWinPct": 32.09,
+  "avgLossPct": -9.56,
+  "profitFactor": 5.87,
+  "medianRetPct": 16.51,
+  "bestPct": 91.1,
+  "worstPct": -12.7,
+  "avgDays": 26.6,
+  "annualizedPerTradePct": 339.6,
   "recent": [
-   "RKLB 2025-06-20→2025-07-29 +36.7% (stop)",
-   "RKLB 2025-10-03→2025-11-04 +7.5% (stop)",
-   "RKLB 2026-05-08→2026-06-01 +27.9% (stop)",
-   "COIN 2023-11-09→2024-01-02 +46.0% (stop)",
-   "COIN 2024-02-27→2024-04-15 +24.7% (stop)",
-   "COIN 2024-11-06→2024-12-18 +15.8% (stop)",
-   "COIN 2025-05-16→2025-06-05 -8.4% (stop)",
-   "COIN 2025-06-18→2025-08-01 +22.9% (stop)"
+   "RKLB 2025-06-10→2025-06-10 -8.3% (stop)",
+   "RKLB 2025-06-23→2025-07-29 +41.8% (stop)",
+   "RKLB 2025-10-06→2025-11-04 +6.7% (stop)",
+   "RKLB 2026-05-11→2026-06-01 +28.0% (stop)",
+   "COIN 2023-11-10→2024-01-02 +43.5% (stop)",
+   "COIN 2024-02-28→2024-04-15 +11.7% (stop)",
+   "COIN 2024-11-07→2024-12-18 +19.7% (stop)",
+   "COIN 2025-05-19→2025-08-01 +32.4% (stop)"
   ]
  },
  "momentumNoTP": {
-  "trades": 23,
-  "winRatePct": 65.2,
-  "avgRetPct": 21.94,
-  "medianRetPct": 8.9,
-  "bestPct": 202.3,
-  "worstPct": -9.8,
-  "avgDays": 26.8,
-  "annualizedPerTradePct": 544.4,
+  "trades": 22,
+  "winRatePct": 59.1,
+  "avgRetPct": 22.35,
+  "avgWinPct": 43.76,
+  "avgLossPct": -8.58,
+  "profitFactor": 7.37,
+  "medianRetPct": 12.88,
+  "bestPct": 195.7,
+  "worstPct": -12.7,
+  "avgDays": 26.6,
+  "annualizedPerTradePct": 574.1,
   "recent": [
-   "RKLB 2025-06-20→2025-07-29 +45.8% (stop)",
-   "RKLB 2025-10-03→2025-11-04 +0.7% (stop)",
-   "RKLB 2026-05-08→2026-06-01 +16.0% (stop)",
-   "COIN 2023-11-09→2024-01-02 +68.9% (stop)",
-   "COIN 2024-02-27→2024-04-15 +12.1% (stop)",
-   "COIN 2024-11-06→2024-12-18 +10.0% (stop)",
-   "COIN 2025-05-16→2025-06-05 -8.4% (stop)",
-   "COIN 2025-06-18→2025-08-01 +6.6% (stop)"
+   "RKLB 2025-06-10→2025-06-10 -8.3% (stop)",
+   "RKLB 2025-06-23→2025-07-29 +51.2% (stop)",
+   "RKLB 2025-10-06→2025-11-04 -0.7% (stop)",
+   "RKLB 2026-05-11→2026-06-01 +16.1% (stop)",
+   "COIN 2023-11-10→2024-01-02 +66.0% (stop)",
+   "COIN 2024-02-28→2024-04-15 +6.5% (stop)",
+   "COIN 2024-11-07→2024-12-18 +13.7% (stop)",
+   "COIN 2025-05-19→2025-08-01 +20.9% (stop)"
   ]
  },
  "sectorOpt": {
-  "error": "共通営業日不足(0日)"
+  "period": {
+   "start": "2020-07-14",
+   "end": "2026-07-10",
+   "days": 1505
+  },
+  "sleeveStats": {
+   "AI・半導体/クラウド": {
+    "cagrPct": 43.3,
+    "maxDDPct": 44.9,
+    "sharpe": 1.31
+   },
+   "電力・DCインフラ": {
+    "cagrPct": 57.2,
+    "maxDDPct": 41.3,
+    "sharpe": 1.58
+   },
+   "エネルギー": {
+    "cagrPct": 37.1,
+    "maxDDPct": 28.6,
+    "sharpe": 1.15
+   },
+   "宇宙・防衛": {
+    "cagrPct": 27.3,
+    "maxDDPct": 27.7,
+    "sharpe": 1.08
+   },
+   "その他モート": {
+    "cagrPct": 21.1,
+    "maxDDPct": 24.6,
+    "sharpe": 1.18
+   }
+  },
+  "allocations": [
+   {
+    "label": "最大CAGR(過剰適合注意)",
+    "weightsPct": {
+     "電力・DCインフラ": 100
+    },
+    "cagrPct": 57.2,
+    "maxDDPct": 41.3,
+    "sharpe": 1.58
+   },
+   {
+    "label": "最大シャープ",
+    "weightsPct": {
+     "AI・半導体/クラウド": 10,
+     "電力・DCインフラ": 50,
+     "エネルギー": 20,
+     "宇宙・防衛": 20
+    },
+    "cagrPct": 47.7,
+    "maxDDPct": 31.2,
+    "sharpe": 1.71
+   },
+   {
+    "label": "最大CAGR(DD35%以内)",
+    "weightsPct": {
+     "AI・半導体/クラウド": 5,
+     "電力・DCインフラ": 65,
+     "エネルギー": 30
+    },
+    "cagrPct": 52.3,
+    "maxDDPct": 34.6,
+    "sharpe": 1.68
+   },
+   {
+    "label": "現行設定",
+    "weightsPct": {
+     "AI・半導体/クラウド": 45,
+     "電力・DCインフラ": 15,
+     "エネルギー": 15,
+     "宇宙・防衛": 15,
+     "その他モート": 10
+    },
+    "cagrPct": 41.6,
+    "maxDDPct": 26.5,
+    "sharpe": 1.58
+   }
+  ]
  },
  "sleeveStats": {
   "value": {
@@ -1452,10 +1634,10 @@
    "sharpe": 1.04
   },
   "momentum": {
-   "cagrPct": 72.5,
-   "maxDDPct": 24.9,
-   "volPct": 29.4,
-   "sharpe": 2.0
+   "cagrPct": 60.6,
+   "maxDDPct": 25.9,
+   "volPct": 30.3,
+   "sharpe": 1.71
   },
   "btc": {
    "cagrPct": -2.9,
@@ -1493,9 +1675,9 @@
     "gold": 0,
     "silver": 40
    },
-   "cagrPct": 46.1,
+   "cagrPct": 42.1,
    "maxDDPct": 18.4,
-   "sharpe": 1.85
+   "sharpe": 1.71
   },
   {
    "label": "最大シャープ(リスク効率)",
@@ -1507,9 +1689,9 @@
     "gold": 35,
     "silver": 0
    },
-   "cagrPct": 42.5,
+   "cagrPct": 38.6,
    "maxDDPct": 11.1,
-   "sharpe": 2.35
+   "sharpe": 2.14
   },
   {
    "label": "最大CAGR(最大DD40%以内)",
@@ -1521,9 +1703,9 @@
     "gold": 0,
     "silver": 40
    },
-   "cagrPct": 46.1,
+   "cagrPct": 42.1,
    "maxDDPct": 18.4,
-   "sharpe": 1.85
+   "sharpe": 1.71
   },
   {
    "label": "最大CAGR(最大DD25%以内)",
@@ -1535,9 +1717,9 @@
     "gold": 0,
     "silver": 40
    },
-   "cagrPct": 46.1,
+   "cagrPct": 42.1,
    "maxDDPct": 18.4,
-   "sharpe": 1.85
+   "sharpe": 1.71
   },
   {
    "label": "現行推奨(株60:BTC10:ETH5:金10:銀5:現金10)",
@@ -1554,6 +1736,6 @@
    "sharpe": 0.94
   }
  ],
- "assumptions": "Value: スコア閾値上抜けで買い→チャネル天井 or 120営業日で売り / モメンタム: ルール完全再現(初期-8%上限,ATR×2.5,TP20/40%,タイムストップ40日) / 配分: 日次リバランス近似・現金金利0% / 手数料・税・スリッページ未考慮",
+ "assumptions": "約定: t日終値シグナル→t+1営業日始値(v3.25現実仕様) / コスト: 往復 株0.2%・暗号0.6%・金銀2.0%を控除(買い持ちは片道) / Value: 閾値上抜け→チャネル天井 or 120営業日 / モメンタム: 初期-8%上限,ATR×2.5,TP20/40%,タイムストップ40日 / 配分: 日次リバランス近似・現金金利0%・税は未考慮",
  "warning": "過去データへの機械的検証であり将来を保証しない。特に最大CAGR配分は過剰適合を含むため、シャープ最大やDD制約付きを実務の参考にすること。"
 }

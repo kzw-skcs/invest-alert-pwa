@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-11T07:44:34.497750+00:00",
- "updatedJST": "2026-07-11 16:44 JST",
+ "updated": "2026-07-11T14:00:29.990268+00:00",
+ "updatedJST": "2026-07-11 23:00 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -72,12 +72,11 @@
   },
   "rebalanceThresholdPct": 5,
   "stockSectorTargets": {
-   "インデックス(コア)": 30,
-   "AI・半導体/クラウド": 35,
-   "電力・DCインフラ": 10,
-   "エネルギー": 10,
-   "宇宙・防衛": 10,
-   "その他モート": 5
+   "AI・半導体/クラウド": 45,
+   "電力・DCインフラ": 15,
+   "エネルギー": 15,
+   "宇宙・防衛": 15,
+   "その他モート": 10
   },
   "phasedEntry": {
    "_comment": "新規資金の段階的エントリー。tranche1=即時、tranche2=対象が高値から-10%、tranche3=-20%暴落時。",
@@ -126,7 +125,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-11 16:44 JST"
+  "fetchedAt": "2026-07-11 23:00 JST"
  },
  "instruments": [
   {
@@ -9113,7 +9112,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 43,
+    "scorePrev": 40,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -18150,7 +18149,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 15,
+    "scorePrev": 12,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -23459,7 +23458,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 64,
+    "scorePrev": 61,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -28722,7 +28721,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 3,
+    "scorePrev": 0,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -35478,7 +35477,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 73,
+    "scorePrev": 70,
     "streaks": {
      "65": 5,
      "80": 0,
@@ -37789,7 +37788,7 @@
    "class": "stock",
    "conviction": 2,
    "tradePolicy": "hold",
-   "noAlloc": true,
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -42993,7 +42992,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 37,
+    "scorePrev": 34,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -50517,7 +50516,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 79,
+    "scorePrev": 76,
     "streaks": {
      "65": 5,
      "80": 0,
@@ -52773,7 +52772,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 69,
+    "scorePrev": 66,
     "streaks": {
      "65": 5,
      "80": 0,
@@ -54276,7 +54275,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 33,
+    "scorePrev": 30,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -57346,7 +57345,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
-   "noAlloc": true,
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -61879,7 +61878,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
-   "noAlloc": true,
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -62629,7 +62628,7 @@
    "class": "stock",
    "conviction": 3,
    "tradePolicy": "hold",
-   "noAlloc": true,
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -63378,7 +63377,7 @@
    "class": "stock",
    "conviction": 4,
    "tradePolicy": "hold",
-   "noAlloc": true,
+   "noAlloc": false,
    "history": [
     {
      "d": "2025-11-18",
@@ -68887,20 +68886,20 @@
     },
     {
      "d": "2026-07-11",
-     "c": 64129.25
+     "c": 64194.101562
     }
    ],
    "state": "SELL",
-   "price": 64129.25,
+   "price": 64194.1016,
    "top": 62902.3109,
    "bottom": 57061.0551,
    "band": 175.2377,
-   "pctInRange": 121.0,
-   "distToBottomPct": 12.39,
-   "distToTopPct": -1.91,
-   "smaShort": 61859.6004,
-   "smaLong": 65141.0438,
-   "smaTrend": 73986.378,
+   "pctInRange": 122.1,
+   "distToBottomPct": 12.5,
+   "distToTopPct": -2.01,
+   "smaShort": 61862.843,
+   "smaLong": 65142.3408,
+   "smaTrend": 73986.7022,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -68908,15 +68907,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 53.8,
-   "atr": 1977.5814,
+   "rsi": 54.1,
+   "atr": 1978.9545,
    "atrPct": 3.08,
    "high52w": 110639.625,
    "drawdownPct": 42.0,
    "macroDriven": null,
    "topLong": 119377.8399,
    "bottomLong": 100502.6322,
-   "pctInRangeLong": -192.7,
+   "pctInRangeLong": -192.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -69618,20 +69617,20 @@
     },
     {
      "d": "2026-07-11",
-     "c": 1799.180054
+     "c": 1801.030029
     }
    ],
    "state": "SELL",
-   "price": 1799.1801,
+   "price": 1801.03,
    "top": 1486.0029,
    "bottom": 1429.31,
    "band": 1.7008,
-   "pctInRange": 652.4,
-   "distToBottomPct": 25.88,
-   "distToTopPct": -17.41,
-   "smaShort": 1687.4426,
-   "smaLong": 1767.5341,
-   "smaTrend": 2227.3064,
+   "pctInRange": 655.7,
+   "distToBottomPct": 26.01,
+   "distToTopPct": -17.49,
+   "smaShort": 1687.5351,
+   "smaLong": 1767.5711,
+   "smaTrend": 2227.3157,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -69639,15 +69638,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 58.0,
-   "atr": 70.2755,
+   "rsi": 58.2,
+   "atr": 70.4232,
    "atrPct": 3.91,
    "high52w": 3911.0632,
    "drawdownPct": 54.0,
    "macroDriven": null,
    "topLong": 3512.0383,
    "bottomLong": 2976.9084,
-   "pctInRangeLong": -220.1,
+   "pctInRangeLong": -219.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -71465,92 +71464,97 @@
   }
  ],
  "plannerWeights": {
-  "AAPL": 0.99,
-  "MSFT": 0.61,
-  "GOOGL": 2.34,
-  "AMZN": 1.45,
-  "AVGO": 2.22,
-  "NVDA": 2.11,
-  "META": 1.64,
-  "TSLA": 1.04,
-  "AMD": 0.92,
-  "PLTR": 1.19,
-  "IBM": 1.01,
-  "ASML": 2.13,
-  "TSM": 2.16,
-  "MRVL": 1.44,
-  "CLMB": 0.57,
-  "DELL": 0.92,
-  "ADBE": 1.11,
-  "AMAT": 1.47,
-  "LRCX": 1.53,
-  "SNPS": 1.68,
-  "MU": 1.47,
-  "ARM": 0.98,
-  "IONQ": 1.06,
-  "SNDK": 0.89,
-  "DRAM": 1.07,
-  "HOOD": 0.99,
-  "XOM": 5.54,
-  "CCJ": 4.46,
-  "NEE": 0.87,
-  "ANET": 1.68,
-  "VRT": 1.9,
-  "TLN": 1.31,
-  "CEG": 2.08,
-  "GEV": 1.31,
-  "VST": 0.84,
-  "LMT": 1.25,
-  "RTX": 1.59,
-  "NOC": 1.88,
-  "RKLB": 2.32,
-  "CACI": 1.16,
-  "KTOS": 1.81,
-  "IQV": 0.1,
-  "MCO": 0.16,
-  "AXP": 0.1,
-  "SPGI": 0.24,
-  "BDX": 0.12,
-  "MA": 0.17,
-  "HON": 0.11,
-  "NKE": 0.06,
-  "DE": 0.11,
-  "ACN": 0.06,
-  "ICE": 0.13,
-  "UNH": 0.09,
-  "V": 0.22,
-  "IBKR": 0.1,
-  "GDDY": 0.06,
-  "BN": 0.1,
-  "UBER": 0.11,
-  "PGR": 0.11,
-  "HCA": 0.12,
-  "KKR": 0.11,
-  "JXN": 0.06,
-  "FERG": 0.12,
-  "RLI": 0.06,
-  "BLDR": 0.06,
-  "FTAI": 0.18,
-  "PAYX": 0.06,
-  "OTIS": 0.07,
-  "TSCO": 0.07,
-  "MSA": 0.06,
-  "BUR": 0.06,
-  "PBI": 0.05,
-  "XPEL": 0.06,
-  "BKTI": 0.06,
-  "HWKN": 0.07,
-  "GPGI": 0.07,
-  "BMI": 0.06,
-  "ISRG": 0.27,
-  "AXON": 0.17,
-  "WM": 0.17,
-  "PANW": 0.1,
-  "FNV": 0.18,
-  "AEM": 0.16,
-  "COIN": 0.12,
-  "LIN": 0.15,
-  "FCX": 0.12
+  "AAPL": 1.27,
+  "MSFT": 0.79,
+  "GOOGL": 3.01,
+  "AMZN": 1.86,
+  "AVGO": 2.85,
+  "NVDA": 2.71,
+  "META": 2.1,
+  "TSLA": 1.34,
+  "AMD": 1.19,
+  "PLTR": 1.53,
+  "IBM": 1.29,
+  "ASML": 2.74,
+  "TSM": 2.78,
+  "MRVL": 1.85,
+  "CLMB": 0.74,
+  "DELL": 1.19,
+  "ADBE": 1.43,
+  "AMAT": 1.89,
+  "LRCX": 1.97,
+  "SNPS": 2.15,
+  "MU": 1.89,
+  "ARM": 1.26,
+  "IONQ": 1.37,
+  "SNDK": 1.14,
+  "DRAM": 1.38,
+  "HOOD": 1.27,
+  "XOM": 8.31,
+  "CCJ": 6.69,
+  "NEE": 1.31,
+  "ANET": 2.52,
+  "VRT": 2.85,
+  "TLN": 1.97,
+  "CEG": 3.12,
+  "GEV": 1.97,
+  "VST": 1.26,
+  "LMT": 1.87,
+  "RTX": 2.38,
+  "NOC": 2.82,
+  "RKLB": 3.48,
+  "CACI": 1.73,
+  "KTOS": 2.71,
+  "IQV": 0.17,
+  "MCO": 0.28,
+  "AXP": 0.18,
+  "SPGI": 0.42,
+  "BDX": 0.21,
+  "MA": 0.3,
+  "HON": 0.2,
+  "NKE": 0.11,
+  "DE": 0.19,
+  "ACN": 0.11,
+  "ICE": 0.23,
+  "UNH": 0.16,
+  "V": 0.39,
+  "IBKR": 0.17,
+  "GDDY": 0.11,
+  "BN": 0.18,
+  "UBER": 0.2,
+  "PGR": 0.19,
+  "HCA": 0.22,
+  "KKR": 0.19,
+  "JXN": 0.1,
+  "FERG": 0.22,
+  "USFD": 0.09,
+  "RLI": 0.11,
+  "BLDR": 0.11,
+  "FTAI": 0.31,
+  "PAYX": 0.1,
+  "OTIS": 0.12,
+  "TSCO": 0.12,
+  "MSA": 0.11,
+  "BUR": 0.11,
+  "PBI": 0.09,
+  "XPEL": 0.11,
+  "BKTI": 0.11,
+  "HWKN": 0.12,
+  "GPGI": 0.12,
+  "BMI": 0.11,
+  "ISRG": 0.48,
+  "AXON": 0.3,
+  "COST": 0.31,
+  "WM": 0.3,
+  "PANW": 0.17,
+  "FNV": 0.32,
+  "AEM": 0.28,
+  "COIN": 0.2,
+  "PG": 0.3,
+  "KO": 0.17,
+  "WMT": 0.32,
+  "LIN": 0.26,
+  "FCX": 0.21
  },
  "cycle": {
   "calendar": [
@@ -71700,8 +71704,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 64129,
-    "ddFromPeakPct": -48.6
+    "currentPrice": 64194,
+    "ddFromPeakPct": -48.5
    },
    "action": "現在は半減期+26.7ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
@@ -71776,7 +71780,7 @@
     "tier": "-",
     "sec": "エネルギー",
     "flow": "outflow",
-    "wPct": 6.0
+    "wPct": 6.3
    },
    {
     "ticker": "CCJ",
@@ -71785,7 +71789,7 @@
     "tier": "👀監視",
     "sec": "エネルギー",
     "flow": "outflow",
-    "wPct": 4.8
+    "wPct": 5.1
    },
    {
     "ticker": "GOOGL",
@@ -71794,7 +71798,7 @@
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "inflow",
-    "wPct": 4.2
+    "wPct": 3.8
    },
    {
     "ticker": "VRT",
@@ -71803,7 +71807,7 @@
     "tier": "-",
     "sec": "電力・DCインフラ",
     "flow": "inflow",
-    "wPct": 3.4
+    "wPct": 3.6
    },
    {
     "ticker": "RKLB",
@@ -71812,34 +71816,7 @@
     "tier": "-",
     "sec": "宇宙・防衛",
     "flow": "inflow",
-    "wPct": 3.2
-   },
-   {
-    "ticker": "ASML",
-    "conviction": 5,
-    "q": 72,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "neutral",
-    "wPct": 3.2
-   },
-   {
-    "ticker": "TSM",
-    "conviction": 5,
-    "q": 100,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "neutral",
-    "wPct": 3.2
-   },
-   {
-    "ticker": "NVDA",
-    "conviction": 5,
-    "q": 81,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "neutral",
-    "wPct": 3.1
+    "wPct": 3.4
    },
    {
     "ticker": "NOC",
@@ -71848,25 +71825,7 @@
     "tier": "🟦購入検討",
     "sec": "宇宙・防衛",
     "flow": "inflow",
-    "wPct": 3.1
-   },
-   {
-    "ticker": "AVGO",
-    "conviction": 5,
-    "q": 55,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "neutral",
-    "wPct": 3.0
-   },
-   {
-    "ticker": "META",
-    "conviction": 4,
-    "q": 74,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "inflow",
-    "wPct": 2.9
+    "wPct": 3.2
    },
    {
     "ticker": "CEG",
@@ -71875,7 +71834,43 @@
     "tier": "👀監視(質↓)",
     "sec": "電力・DCインフラ",
     "flow": "inflow",
+    "wPct": 3.0
+   },
+   {
+    "ticker": "ASML",
+    "conviction": 5,
+    "q": 72,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "neutral",
     "wPct": 2.9
+   },
+   {
+    "ticker": "TSM",
+    "conviction": 5,
+    "q": 100,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "neutral",
+    "wPct": 2.9
+   },
+   {
+    "ticker": "NVDA",
+    "conviction": 5,
+    "q": 81,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "neutral",
+    "wPct": 2.8
+   },
+   {
+    "ticker": "AVGO",
+    "conviction": 5,
+    "q": 55,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "neutral",
+    "wPct": 2.7
    },
    {
     "ticker": "RTX",
@@ -71883,6 +71878,15 @@
     "q": 46,
     "tier": "-",
     "sec": "宇宙・防衛",
+    "flow": "inflow",
+    "wPct": 2.7
+   },
+   {
+    "ticker": "META",
+    "conviction": 4,
+    "q": 74,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
     "flow": "inflow",
     "wPct": 2.6
    },
@@ -71893,7 +71897,7 @@
     "tier": "-",
     "sec": "電力・DCインフラ",
     "flow": "neutral",
-    "wPct": 2.5
+    "wPct": 2.6
    },
    {
     "ticker": "KTOS",
@@ -71902,7 +71906,7 @@
     "tier": "👀監視",
     "sec": "宇宙・防衛",
     "flow": "inflow",
-    "wPct": 2.5
+    "wPct": 2.6
    }
   ],
   "note": "基準PFにサイクル状況を自動上乗せした現時点の完全版。毎朝再計算。機械的計算値であり保証ではない"
