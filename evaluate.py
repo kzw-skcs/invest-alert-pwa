@@ -188,6 +188,91 @@ def fetch_nihon_material():
 
 # ---------------------------------------------------------------- メイン
 
+EPISODE_CONFIRM_N = 3      # ✅確定に必要な連続日数(engine.CONFIRM_STREAK_Nと同義)
+EPISODE_MAX_CAL_DAYS = 190  # エピソード自動クローズ(暦日≒130営業日。Value出口120営業日+余裕)
+
+
+def update_episodes(instruments, cycle, model_pf, today, store):
+    """シグナルを「エピソード」として追跡する(v3.24)。
+    1エピソード = Tier閾値到達(streak=1)〜スコアが閾値を割る(streak=0)まで。
+    日次行の重複計上を排し、再分析の1サンプル=1独立局面にする。storeを直接更新する。
+    同日再実行では streak が変わらないため二重開始しない(open_byキーで防止)。"""
+    from datetime import date as _date
+    open_eps = store.setdefault("open", [])
+    closed = store.setdefault("closed", [])
+    reg = (model_pf or {}).get("regime") or {}
+    regime = reg.get("regime") or "unknown"
+    risk_off = ((cycle or {}).get("riskOff") or {}).get("score")
+    open_by = {(e["ticker"], e["strat"]): e for e in open_eps}
+
+    def close_ep(ep, price, reason):
+        ep["endDate"] = today
+        ep["endPrice"] = price
+        ep["endReason"] = reason
+        open_eps.remove(ep)
+        closed.append(ep)
+
+    seen = set()
+    for i in instruments:
+        if i.get("state") == "NO_DATA":
+            continue
+        tk = i["ticker"]
+        price = i.get("price")
+        v = i.get("value") or {}
+        streaks = v.get("streaks") or {}
+        sec = i.get("rotSector") or i.get("subSector")
+        strend = (((cycle or {}).get("sectors") or {}).get(sec) or {}).get("trend")
+        # Value 80/90
+        for thr in (80, 90):
+            strat = f"value{thr}"
+            seen.add((tk, strat))
+            st = int(streaks.get(str(thr)) or 0)
+            ep = open_by.get((tk, strat))
+            if ep is None and st >= 1:
+                ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat,
+                      "startDate": today, "startPrice": price, "startScore": v.get("score"),
+                      "startStreak": st,  # 導入初日は既に連続中の可能性(>1なら開始日は概算)
+                      "maxScore": v.get("score"), "q": (i.get("quality") or {}).get("score"),
+                      "regime": regime, "riskOff": risk_off, "rotSector": sec, "sectorTrend": strend}
+                open_eps.append(ep)
+                open_by[(tk, strat)] = ep
+            elif ep is not None:
+                if st == 0:
+                    close_ep(ep, price, "tierExit")
+                    open_by.pop((tk, strat), None)
+                else:
+                    ep["maxScore"] = max(ep.get("maxScore") or 0, v.get("score") or 0)
+                    if st >= EPISODE_CONFIRM_N and not ep.get("confirmDate"):
+                        ep["confirmDate"] = today
+                        ep["confirmPrice"] = price
+        # モメンタム(trade銘柄): ENTRY成立〜EXIT/対象外化まで
+        mm = i.get("momentum") or {}
+        strat = "mom"
+        seen.add((tk, strat))
+        state = mm.get("momState") or ("ENTRY" if mm.get("signal") == "entry" else None)
+        ep = open_by.get((tk, strat))
+        if ep is None and state == "ENTRY":
+            ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat,
+                  "startDate": today, "startPrice": price,
+                  "startScore": (mm.get("momRec") or {}).get("score"),
+                  "regime": regime, "riskOff": risk_off, "rotSector": sec, "sectorTrend": strend}
+            open_eps.append(ep)
+            open_by[(tk, strat)] = ep
+        elif ep is not None and state in ("EXIT", "WAIT"):
+            close_ep(ep, price, "momExit" if state == "EXIT" else "momWait")
+            open_by.pop((tk, strat), None)
+    # 銘柄がウォッチリストから消えた/長期化したエピソードを整理
+    t_now = _date.fromisoformat(today)
+    for ep in list(open_eps):
+        age = (t_now - _date.fromisoformat(ep["startDate"])).days
+        if (ep["ticker"], ep["strat"]) not in seen:
+            close_ep(ep, ep.get("endPrice") or ep.get("startPrice"), "removed")
+        elif age > EPISODE_MAX_CAL_DAYS:
+            close_ep(ep, None, "maxDays")  # 終値は再分析側が取得
+    store["closed"] = closed[-2000:]
+    return store
+
+
 def main():
     with open(os.path.join(BASE, "config.json"), encoding="utf-8") as f:
         cfg = json.load(f)
@@ -399,6 +484,20 @@ def main():
     with open(log_path, "w", encoding="utf-8") as f:
         json.dump(log, f, ensure_ascii=False)
     print(f"signals_log.json: {len(log)}件")
+
+    # エピソードログ(v3.24): Tier到達〜剥落を1件として記録(日次重複の排除・前向き検証の主データ)
+    ep_path = os.path.join(BASE, "episodes.json")
+    store = {"open": [], "closed": []}
+    if os.path.exists(ep_path):
+        try:
+            with open(ep_path, encoding="utf-8") as f:
+                store = json.load(f)
+        except Exception:
+            pass
+    update_episodes(instruments, cycle, model_pf, today, store)
+    with open(ep_path, "w", encoding="utf-8") as f:
+        json.dump(store, f, ensure_ascii=False, indent=1)
+    print(f"episodes.json: 進行中{len(store['open'])} / 完了{len(store['closed'])}")
 
     # Web Push(VAPID設定時のみ)
     send_push(alerts)

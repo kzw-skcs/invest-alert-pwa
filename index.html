@@ -1690,12 +1690,23 @@ async function renderAnalysis() {
     if (!r.ok) throw 0;
     const a = await r.json();
     const l = a.latest || {};
+    const es = l.episodeStats || {};
+    const STRAT_JP = { value80: 'Value80', value90: 'Value90', mom: 'モメンタム' };
+    const cell = (s) => s && s.n
+      ? `<td>${s.n}</td><td>${s.win}/${s.loss}/${s.expired}</td><td>${s.winRatePct ?? '—'}%</td><td>${s.expectancyPct ?? '—'}%</td><td>${s.profitFactor ?? '—'}</td>`
+      : `<td colspan="5" class="muted">蓄積中</td>`;
+    const epRows = Object.entries(es).map(([strat, kinds]) =>
+      ['速報', '確定'].filter((k) => kinds[k]).map((k, i, arr) =>
+        `<tr>${i === 0 ? `<td rowspan="${arr.length}">${STRAT_JP[strat] || strat}</td>` : ''}<td>${k}</td>${cell(kinds[k])}</tr>`
+      ).join('')).join('');
+    const lg = l.legacyStats || {};
     $('#analysis-result').innerHTML = `
-      Value的中率: <b>${l.valueHitRate != null ? l.valueHitRate + '%' : '算出前'}</b> /
-      Momentum的中率: <b>${l.momentumHitRate != null ? l.momentumHitRate + '%' : '算出前'}</b>
-      <span class="tiny">(${l.date || ''})</span><br>
+      <div class="tiny" style="margin-bottom:4px">エピソード方式(1局面=1件・Triple Barrier: +5%/-8%/40日。時間切れは勝敗と別集計) <span class="tiny">(${l.date || ''} / 全${l.episodeCount ?? 0}エピソード)</span></div>
+      ${epRows ? `<table><tr><th>戦略</th><th>起点</th><th>n</th><th>勝/負/切</th><th>勝率</th><th>期待値</th><th>PF</th></tr>${epRows}</table>` : '<div class="muted">エピソード蓄積中(毎朝のdailyで自動記録されます)</div>'}
+      ${(l.suggestions || []).map((x) => `<div class="alert-item p3" style="margin-top:6px"><div class="d">💡 ${x}</div></div>`).join('')}
       ${(l.adjustments || []).map((x) => '🔧 ' + x).join('<br>')}
-      <span class="tiny">${l.note || ''}</span>`;
+      ${lg.value || lg.momentum ? `<div class="tiny" style="margin-top:6px">参考(旧・日次方式、重複計上のため水増し傾向): Value ${lg.value ? `勝率${lg.value.winRatePct ?? '—'}%/期待値${lg.value.expectancyPct ?? '—'}%` : '—'} / Mom ${lg.momentum ? `勝率${lg.momentum.winRatePct ?? '—'}%/期待値${lg.momentum.expectancyPct ?? '—'}%` : '—'}</div>` : ''}
+      <span class="tiny">${l.note || ''} ※パラメータの自動変更は廃止(過剰適合防止)。変更は💡提案を見て手動で。</span>`;
   } catch (e) { $('#analysis-result').textContent = '再分析結果はまだありません(数ヶ月のシグナル蓄積後に有意になります)。'; }
 }
 function renderSettingsView() {

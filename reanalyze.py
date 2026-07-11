@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-reanalyze.py v2 — 過去シグナルの的中率検証 + パラメータ自動調整
-週1(日曜)+手動実行。signals_log.json の各シグナルについて、
-その後の実際の値動きと突き合わせて戦略別(value/momentum)の的中率を計算し、
-結果に応じて判定パラメータを安全な範囲内で自動調整、analysis.jsonに記録する。
-※あなたが実際に売買したかは無関係(シグナル自体の品質評価)。
+reanalyze.py v3 (v3.24) — 前向き検証: エピソード単位のTriple Barrier評価
+
+変更点(GPT5.6レビュー反映):
+ 1. 主データを episodes.json(1エピソード=1独立局面)に変更。日次重複の水増しを排除。
+ 2. 判定を Triple Barrier に統一: 上+5% / 下-8% / 40営業日。
+    「時間切れ」は勝敗に混ぜず別集計(旧版の『40日後プラスなら的中』の水増しを廃止)。
+ 3. 勝率だけでなく期待値(1エピソード平均リターン)・平均利益/平均損失・Profit Factorを算出。
+ 4. パラメータ自動変更を廃止 → 「提案のみ」(suggestions)。独立エピソード30件未満は提案もしない。
+ 5. 速報(開始日)と確定(3日連続日)の両起点で評価し、二段構えの前向き検証を兼ねる。
+旧signals_log.json(日次)も参考値として併記(過去との連続性のため)。
 """
 import json
 import os
@@ -15,15 +20,17 @@ import evaluate  # fetch関数を再利用
 BASE = os.path.dirname(os.path.abspath(__file__))
 JST = timezone(timedelta(hours=9))
 
-# 的中定義
-VALUE_HORIZON_DAYS = 40    # 営業日: value買いシグナル後この期間内に
-VALUE_HIT_PCT = 5          # +5%以上上昇すれば的中、-8%以下なら失敗
+# Triple Barrier定義
+VALUE_HORIZON_DAYS = 40
+VALUE_HIT_PCT = 5
 VALUE_MISS_PCT = -8
 MOM_HORIZON_DAYS = 40
-MOM_HIT_PCT = 8            # モメンタムは+8%で的中、-8%(初期損切り相当)で失敗
+MOM_HIT_PCT = 8
 MOM_MISS_PCT = -8
 
-# 自動調整の安全範囲
+MIN_EPISODES_FOR_SUGGESTION = 30   # 提案を出す最低独立エピソード数
+
+# 参考: 提案の際に言及する安全範囲(自動変更はしない)
 BOUNDS = {
     "bandPctOfRange": (0.02, 0.06),
     "minScoreToAlert": (50, 75),
@@ -31,20 +38,147 @@ BOUNDS = {
 }
 
 
+def triple_barrier(hist, entry_date, entry_price, up_pct, dn_pct, horizon):
+    """終値ベースのTriple Barrier判定。
+    戻り値: (outcome, retPct, daysUsed)
+      outcome: "win"(先に上側) / "loss"(先に下側) / "expired"(期間満了) / "open"(データ不足・進行中)
+    注意: 日足終値のみのため日中の到達順序は不明。1日で両バリアを飛び越えるギャップは
+    終値の符号で判定される(保守的な日中OHLC判定はv3.25で対応予定)。"""
+    if not hist or not entry_price:
+        return "open", None, 0
+    idx = None
+    for i, h in enumerate(hist):
+        if h["d"] >= entry_date:
+            idx = i
+            break
+    if idx is None:
+        return "open", None, 0
+    window = hist[idx: idx + horizon + 1]
+    for n, h in enumerate(window):
+        chg = (h["c"] / entry_price - 1) * 100
+        if chg <= dn_pct:
+            return "loss", round(chg, 2), n
+        if chg >= up_pct:
+            return "win", round(chg, 2), n
+    if len(window) >= horizon:
+        return "expired", round((window[-1]["c"] / entry_price - 1) * 100, 2), len(window)
+    return "open", (round((window[-1]["c"] / entry_price - 1) * 100, 2) if window else None), len(window)
+
+
+def barrier_params(strat):
+    if strat == "mom":
+        return MOM_HIT_PCT, MOM_MISS_PCT, MOM_HORIZON_DAYS
+    return VALUE_HIT_PCT, VALUE_MISS_PCT, VALUE_HORIZON_DAYS
+
+
+def aggregate(rows):
+    """rows: [(outcome, retPct)] → 統計。時間切れは勝率に含めず、期待値には含める。"""
+    closed = [(o, r) for o, r in rows if o in ("win", "loss", "expired") and r is not None]
+    wins = [r for o, r in closed if o == "win"]
+    losses = [r for o, r in closed if o == "loss"]
+    expired = [r for o, r in closed if o == "expired"]
+    n_wl = len(wins) + len(losses)
+    out = {"n": len(closed), "win": len(wins), "loss": len(losses), "expired": len(expired),
+           "open": len([1 for o, _ in rows if o == "open"]),
+           "winRatePct": round(len(wins) / n_wl * 100, 1) if n_wl else None,
+           "expectancyPct": round(sum(r for _, r in closed) / len(closed), 2) if closed else None,
+           "avgWinPct": round(sum(wins) / len(wins), 2) if wins else None,
+           "avgLossPct": round(sum(losses) / len(losses), 2) if losses else None,
+           "profitFactor": None}
+    gross_win = sum(wins) + sum(r for r in expired if r > 0)
+    gross_loss = abs(sum(losses) + sum(r for r in expired if r < 0))
+    if gross_loss > 0:
+        out["profitFactor"] = round(gross_win / gross_loss, 2)
+    return out
+
+
+def evaluate_episodes(episodes, price_map):
+    """エピソードを速報(開始日)/確定(3日連続日)の両起点で評価。"""
+    stats = {}
+    for ep in episodes:
+        hist = price_map.get(ep["ticker"])
+        if not hist:
+            continue
+        up, dn, hz = barrier_params("mom" if ep["strat"] == "mom" else "value")
+        for entry_kind, dkey, pkey in (("速報", "startDate", "startPrice"),
+                                        ("確定", "confirmDate", "confirmPrice")):
+            if not ep.get(dkey) or not ep.get(pkey):
+                continue
+            o, r, _ = triple_barrier(hist, ep[dkey], ep[pkey], up, dn, hz)
+            stats.setdefault(ep["strat"], {}).setdefault(entry_kind, []).append((o, r))
+    return {strat: {kind: aggregate(rows) for kind, rows in kinds.items()}
+            for strat, kinds in stats.items()}
+
+
+def build_suggestions(ep_stats, cfg):
+    """自動変更はしない。独立エピソードが十分溜まった項目のみ提案文を作る。"""
+    sug = []
+    s = cfg["settings"]; mp = cfg["momentumParams"]
+    v80 = (ep_stats.get("value80") or {}).get("速報")
+    if v80 and v80["win"] + v80["loss"] >= MIN_EPISODES_FOR_SUGGESTION:
+        if v80["winRatePct"] is not None and v80["winRatePct"] < 45:
+            sug.append(f"Value80速報の勝率{v80['winRatePct']}%(n={v80['n']})が低迷。minScoreToAlert "
+                       f"{s['minScoreToAlert']}→{min(BOUNDS['minScoreToAlert'][1], s['minScoreToAlert'] + 5)} への引き上げを検討"
+                       "(configを手動変更。自動変更は過剰適合防止のため廃止)")
+        elif v80["winRatePct"] is not None and v80["winRatePct"] > 70 and (v80["expectancyPct"] or 0) > 3:
+            sug.append(f"Value80速報が好調(勝率{v80['winRatePct']}%・期待値{v80['expectancyPct']}%、n={v80['n']})。"
+                       f"minScoreToAlert {s['minScoreToAlert']}→{max(BOUNDS['minScoreToAlert'][0], s['minScoreToAlert'] - 5)} で機会を増やす選択肢あり")
+    mom = (ep_stats.get("mom") or {}).get("速報")
+    if mom and mom["win"] + mom["loss"] >= MIN_EPISODES_FOR_SUGGESTION:
+        if mom["winRatePct"] is not None and mom["winRatePct"] < 40:
+            sug.append(f"モメンタム勝率{mom['winRatePct']}%(n={mom['n']})。stopInitPct "
+                       f"{mp['stopInitPct']}→{min(BOUNDS['stopInitPct'][1], mp['stopInitPct'] + 1)} (損切り緩和)を検討")
+    # 二段構えの前向き比較
+    v80c = (ep_stats.get("value80") or {}).get("確定")
+    if v80 and v80c and v80c["n"] >= 10:
+        sug.append(f"二段構え前向き検証: 速報 期待値{v80['expectancyPct']}%/勝率{v80['winRatePct']}% vs "
+                   f"確定 期待値{v80c['expectancyPct']}%/勝率{v80c['winRatePct']}%(バックテストでは確定優位。実運用で逆転したら要再検討)")
+    return sug
+
+
+def legacy_stats(log, price_map):
+    """旧・日次ログの参考統計(重複あり=水増し傾向。連続性のためのみ保持)。"""
+    rows = {"value": [], "momentum": []}
+    for sig in log:
+        hist = price_map.get(sig["ticker"])
+        if not hist:
+            continue
+        for typ in sig.get("types", []):
+            strat = "momentum" if typ == "mom_entry" else "value"
+            up, dn, hz = barrier_params("mom" if strat == "momentum" else "value")
+            o, r, _ = triple_barrier(hist, sig["date"], sig.get("price"), up, dn, hz)
+            rows[strat].append((o, r))
+    return {k: aggregate(v) for k, v in rows.items() if v}
+
+
 def main():
     with open(os.path.join(BASE, "config.json"), encoding="utf-8") as f:
         cfg = json.load(f)
+
+    episodes = []
+    ep_path = os.path.join(BASE, "episodes.json")
+    if os.path.exists(ep_path):
+        try:
+            with open(ep_path, encoding="utf-8") as f:
+                st = json.load(f)
+            episodes = (st.get("closed") or []) + (st.get("open") or [])
+        except Exception:
+            pass
+    log = []
     log_path = os.path.join(BASE, "signals_log.json")
-    if not os.path.exists(log_path):
-        print("signals_log.json なし。データ蓄積待ち。")
+    if os.path.exists(log_path):
+        try:
+            with open(log_path, encoding="utf-8") as f:
+                log = json.load(f)
+        except Exception:
+            pass
+    if not episodes and not log:
+        print("エピソード・ログなし。データ蓄積待ち。")
         write_analysis({"note": "シグナルログなし。データ蓄積待ち。"}, [])
         return
-    with open(log_path, encoding="utf-8") as f:
-        log = json.load(f)
 
     # 価格キャッシュ
-    tickers = sorted({x["ticker"] for x in log})
-    price_map = {}
+    tickers = sorted({e["ticker"] for e in episodes} | {x["ticker"] for x in log})
     all_entries = ([dict(s, key=s["ticker"]) for s in cfg["stocks"]]
                    + cfg["crypto"] + cfg["metals"])
     entry_map = {}
@@ -52,6 +186,7 @@ def main():
         entry_map[e.get("ticker") or e.get("key")] = e
         if e.get("key"):
             entry_map[e["key"]] = e
+    price_map = {}
     for t in tickers:
         e = entry_map.get(t)
         if not e:
@@ -60,95 +195,28 @@ def main():
         if hist:
             price_map[t] = hist
 
-    results = {"value": {"hit": 0, "miss": 0, "open": 0},
-               "momentum": {"hit": 0, "miss": 0, "open": 0}}
-    details = []
-    for sig in log:
-        hist = price_map.get(sig["ticker"])
-        if not hist:
-            continue
-        dates = [h["d"] for h in hist]
-        try:
-            idx = next(i for i, d in enumerate(dates) if d >= sig["date"])
-        except StopIteration:
-            continue
-        p0 = sig["price"]
-        for typ in sig["types"]:
-            strat = "momentum" if typ == "mom_entry" else "value"
-            horizon = MOM_HORIZON_DAYS if strat == "momentum" else VALUE_HORIZON_DAYS
-            hit_pct = MOM_HIT_PCT if strat == "momentum" else VALUE_HIT_PCT
-            miss_pct = MOM_MISS_PCT if strat == "momentum" else VALUE_MISS_PCT
-            window = hist[idx: idx + horizon + 1]
-            outcome = "open"
-            for h in window:
-                chg = (h["c"] / p0 - 1) * 100
-                if chg <= miss_pct:
-                    outcome = "miss"; break
-                if chg >= hit_pct:
-                    outcome = "hit"; break
-            else:
-                if len(window) >= horizon:
-                    last_chg = (window[-1]["c"] / p0 - 1) * 100
-                    outcome = "hit" if last_chg > 0 else "miss"
-            results[strat][outcome] += 1
-            details.append({"date": sig["date"], "ticker": sig["ticker"],
-                            "type": typ, "outcome": outcome})
+    ep_stats = evaluate_episodes(episodes, price_map)
+    lg = legacy_stats(log, price_map)
+    suggestions = build_suggestions(ep_stats, cfg)
+    n_ep = len(episodes)
+    n_closed = sum(v.get("速報", {}).get("n", 0) for v in ep_stats.values())
 
-    def rate(r):
-        closed = r["hit"] + r["miss"]
-        return round(r["hit"] / closed * 100, 1) if closed else None
-
-    v_rate, m_rate = rate(results["value"]), rate(results["momentum"])
-    print(f"Value的中率: {v_rate}% {results['value']}")
-    print(f"Momentum的中率: {m_rate}% {results['momentum']}")
-
-    # ---- パラメータ自動調整(安全範囲内・小刻み) ----
-    adjustments = []
-    s = cfg["settings"]; mp = cfg["momentumParams"]
-    closed_v = results["value"]["hit"] + results["value"]["miss"]
-    closed_m = results["momentum"]["hit"] + results["momentum"]["miss"]
-    if closed_v >= 10 and v_rate is not None:
-        if v_rate < 45:  # 精度不足 → 足切りを厳しく・帯を狭く
-            new = min(BOUNDS["minScoreToAlert"][1], s["minScoreToAlert"] + 5)
-            if new != s["minScoreToAlert"]:
-                adjustments.append(f"minScoreToAlert {s['minScoreToAlert']}→{new} (Value的中率{v_rate}%)")
-                s["minScoreToAlert"] = new
-            new_b = max(BOUNDS["bandPctOfRange"][0], round(s["bandPctOfRange"] - 0.005, 3))
-            if new_b != s["bandPctOfRange"]:
-                adjustments.append(f"bandPctOfRange {s['bandPctOfRange']}→{new_b}")
-                s["bandPctOfRange"] = new_b
-        elif v_rate > 65:  # 精度十分 → 機会を増やす
-            new = max(BOUNDS["minScoreToAlert"][0], s["minScoreToAlert"] - 5)
-            if new != s["minScoreToAlert"]:
-                adjustments.append(f"minScoreToAlert {s['minScoreToAlert']}→{new} (Value的中率{v_rate}%)")
-                s["minScoreToAlert"] = new
-    if closed_m >= 10 and m_rate is not None:
-        if m_rate < 40:
-            new = min(BOUNDS["stopInitPct"][1], mp["stopInitPct"] + 1)
-            if new != mp["stopInitPct"]:
-                adjustments.append(f"stopInitPct {mp['stopInitPct']}→{new} (Momentum的中率{m_rate}%)")
-                mp["stopInitPct"] = new
-        elif m_rate > 60:
-            new = max(BOUNDS["stopInitPct"][0], mp["stopInitPct"] - 1)
-            if new != mp["stopInitPct"]:
-                adjustments.append(f"stopInitPct {mp['stopInitPct']}→{new} (Momentum的中率{m_rate}%)")
-                mp["stopInitPct"] = new
-
-    if adjustments:
-        with open(os.path.join(BASE, "config.json"), "w", encoding="utf-8") as f:
-            json.dump(cfg, f, ensure_ascii=False, indent=2)
-        print("config.json 調整:", adjustments)
+    print("エピソード統計:", json.dumps(ep_stats, ensure_ascii=False)[:600])
+    print("提案:", suggestions or "なし")
 
     write_analysis({
-        "valueHitRate": v_rate, "momentumHitRate": m_rate,
-        "valueResults": results["value"], "momentumResults": results["momentum"],
-        "totalSignals": len(details),
-        "note": ("シグナル数が少ないため参考値。数ヶ月の蓄積後に意味を持ちます。"
-                 if (closed_v + closed_m) < 20 else ""),
-    }, adjustments)
+        "episodeStats": ep_stats,
+        "episodeCount": n_ep,
+        "legacyStats": lg,
+        # 旧UI互換フィールド(値はエピソードベースの速報勝率)
+        "valueHitRate": ((ep_stats.get("value80") or {}).get("速報") or {}).get("winRatePct"),
+        "momentumHitRate": ((ep_stats.get("mom") or {}).get("速報") or {}).get("winRatePct"),
+        "note": (f"独立エピソード評価済み{n_closed}件。30件未満の間は統計は参考値。"
+                 if n_closed < MIN_EPISODES_FOR_SUGGESTION else ""),
+    }, suggestions)
 
 
-def write_analysis(summary, adjustments):
+def write_analysis(summary, suggestions):
     path = os.path.join(BASE, "analysis.json")
     prev = {"history": []}
     if os.path.exists(path):
@@ -158,7 +226,8 @@ def write_analysis(summary, adjustments):
         except Exception:
             pass
     now = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
-    entry = {"date": now, **summary, "adjustments": adjustments}
+    entry = {"date": now, **summary, "suggestions": suggestions,
+             "adjustments": []}  # 旧UI互換(自動変更は廃止)
     hist = prev.get("history", [])
     hist.append(entry)
     with open(path, "w", encoding="utf-8") as f:

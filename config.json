@@ -71,12 +71,11 @@
     },
     "rebalanceThresholdPct": 5,
     "stockSectorTargets": {
-      "インデックス(コア)": 30,
-      "AI・半導体/クラウド": 35,
-      "電力・DCインフラ": 10,
-      "エネルギー": 10,
-      "宇宙・防衛": 10,
-      "その他モート": 5
+      "AI・半導体/クラウド": 45,
+      "電力・DCインフラ": 15,
+      "エネルギー": 15,
+      "宇宙・防衛": 15,
+      "その他モート": 10
     },
     "phasedEntry": {
       "_comment": "新規資金の段階的エントリー。tranche1=即時、tranche2=対象が高値から-10%、tranche3=-20%暴落時。",
@@ -157,17 +156,6 @@
     "name": "S&P500"
   },
   "stocks": [
-    {
-      "ticker": "VOO",
-      "stooq": "voo.us",
-      "name": "Vanguard S&P500 ETF",
-      "sector": "インデックス",
-      "subSector": "インデックス(コア)",
-      "rotSector": "インデックス",
-      "tradePolicy": "accumulate",
-      "conviction": 5,
-      "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
-    },
     {
       "ticker": "AAPL",
       "stooq": "aapl.us",
@@ -734,9 +722,8 @@
       "subSector": "その他モート",
       "tradePolicy": "hold",
       "conviction": 2,
-      "note": "アルファ・インベスター推奨 【監視専用】ディフェンシブRSはリスクオフ判定の材料。防御役は金+現金グライドとVOO内包分が代替",
-      "rotSector": "生活必需品",
-      "noAlloc": true
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "生活必需品"
     },
     {
       "ticker": "RLI",
@@ -1020,9 +1007,8 @@
       "subSector": "その他モート",
       "tradePolicy": "hold",
       "conviction": 4,
-      "note": "会員制の複利モート。リスクオフ回転の受け皿(サイクル追加) 【監視専用】ディフェンシブRSはリスクオフ判定の材料。防御役は金+現金グライドとVOO内包分が代替",
-      "rotSector": "生活必需品",
-      "noAlloc": true
+      "note": "会員制の複利モート。リスクオフ回転の受け皿(サイクル追加)",
+      "rotSector": "生活必需品"
     },
     {
       "ticker": "WM",
@@ -1088,8 +1074,7 @@
       "tradePolicy": "hold",
       "conviction": 4,
       "rotSector": "生活必需品",
-      "note": "日用品ブランド群の複利モート。後退期の教科書的受け皿 【監視専用】ディフェンシブRSはリスクオフ判定の材料。防御役は金+現金グライドとVOO内包分が代替",
-      "noAlloc": true
+      "note": "日用品ブランド群の複利モート。後退期の教科書的受け皿"
     },
     {
       "ticker": "KO",
@@ -1100,8 +1085,7 @@
       "tradePolicy": "hold",
       "conviction": 3,
       "rotSector": "生活必需品",
-      "note": "ブランド独占の代表格。配当貴族・ディフェンシブ 【監視専用】ディフェンシブRSはリスクオフ判定の材料。防御役は金+現金グライドとVOO内包分が代替",
-      "noAlloc": true
+      "note": "ブランド独占の代表格。配当貴族・ディフェンシブ"
     },
     {
       "ticker": "WMT",
@@ -1112,8 +1096,7 @@
       "tradePolicy": "hold",
       "conviction": 4,
       "rotSector": "生活必需品",
-      "note": "小売の規模独占。不況時にむしろ客数が増える逆景気連動 【監視専用】ディフェンシブRSはリスクオフ判定の材料。防御役は金+現金グライドとVOO内包分が代替",
-      "noAlloc": true
+      "note": "小売の規模独占。不況時にむしろ客数が増える逆景気連動"
     },
     {
       "ticker": "LIN",
