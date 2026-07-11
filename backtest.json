@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-12 00:54 JST",
+ "generated": "2026-07-12 02:08 JST",
  "interpretation": [
   "⚠️ v3.25から約定モデルが現実仕様(t+1営業日始値で約定+往復コスト控除: 株0.2%/暗号0.6%/金銀2.0%)。旧バージョンの表示値より全体に低めに出るのは劣化ではなく正直になった分。",
   "【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。",
@@ -1499,24 +1499,24 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 30.11,
-    "medianRetPct": 30.11,
-    "avgAnnualizedPct": 4.0,
+    "avgRetPct": 30.33,
+    "medianRetPct": 30.33,
+    "avgAnnualizedPct": 4.1,
     "avgHoldDays": 1679.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 35.45,
-    "medianRetPct": 35.45,
+    "avgRetPct": 35.67,
+    "medianRetPct": 35.67,
     "avgAnnualizedPct": 4.7,
     "avgHoldDays": 1673.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 100.0,
-    "avgRetPct": 53.41,
-    "medianRetPct": 53.41,
+    "avgRetPct": 53.66,
+    "medianRetPct": 53.66,
     "avgAnnualizedPct": 6.8,
     "avgHoldDays": 1644.0
    }
@@ -1525,25 +1525,25 @@
    "consider(65)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -53.22,
-    "medianRetPct": -53.22,
+    "avgRetPct": -52.97,
+    "medianRetPct": -52.97,
     "avgAnnualizedPct": -10.8,
     "avgHoldDays": 1669.0
    },
    "strong(80)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -51.34,
-    "medianRetPct": -51.34,
-    "avgAnnualizedPct": -10.4,
+    "avgRetPct": -51.08,
+    "medianRetPct": -51.08,
+    "avgAnnualizedPct": -10.3,
     "avgHoldDays": 1653.0
    },
    "absolute(90)": {
     "trades": 1,
     "winRatePct": 0.0,
-    "avgRetPct": -41.54,
-    "medianRetPct": -41.54,
-    "avgAnnualizedPct": -7.9,
+    "avgRetPct": -41.22,
+    "medianRetPct": -41.22,
+    "avgAnnualizedPct": -7.8,
     "avgHoldDays": 1644.0
    }
   }

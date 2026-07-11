@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-11T15:50:12.432661+00:00",
- "updatedJST": "2026-07-12 00:50 JST",
+ "updated": "2026-07-11T17:04:51.106127+00:00",
+ "updatedJST": "2026-07-12 02:04 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-12 00:50 JST"
+  "fetchedAt": "2026-07-12 02:04 JST"
  },
  "instruments": [
   {
@@ -837,7 +837,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -1629,7 +1630,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -2423,7 +2425,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -3202,7 +3205,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -3993,7 +3997,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -4784,7 +4789,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -5596,7 +5602,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -6379,7 +6386,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -7189,7 +7197,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -7978,10 +7987,11 @@
     },
     "scorePrev": 71,
     "streaks": {
-     "65": 4,
+     "65": 3,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -8765,7 +8775,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -9516,7 +9527,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -10309,10 +10321,11 @@
     },
     "scorePrev": 79,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -11103,7 +11116,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -11894,10 +11908,11 @@
     },
     "scorePrev": 73,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -12692,7 +12707,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "exit_warning",
@@ -13494,7 +13510,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -14281,7 +14298,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -15072,7 +15090,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -15861,7 +15880,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -16652,7 +16672,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -17445,7 +17466,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -18236,7 +18258,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -19026,7 +19049,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -19821,7 +19845,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -19945,7 +19970,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": null
    },
    "momentum": {
     "signal": "none",
@@ -20683,7 +20709,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -21473,7 +21500,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -22265,7 +22293,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -23055,7 +23084,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -23835,7 +23865,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -24629,7 +24660,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -25421,7 +25453,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -26213,7 +26246,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -27001,7 +27035,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -27790,7 +27825,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -28586,7 +28622,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -29380,10 +29417,11 @@
     },
     "scorePrev": 78,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -30174,7 +30212,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -30965,7 +31004,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -31754,7 +31794,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -32540,7 +32581,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -33330,7 +33372,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -34104,7 +34147,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -34896,7 +34940,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -35689,7 +35734,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -36481,7 +36527,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -37266,10 +37313,11 @@
     },
     "scorePrev": 70,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -38057,7 +38105,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -38843,7 +38892,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -39628,10 +39678,11 @@
     },
     "scorePrev": 69,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -40422,7 +40473,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -41215,7 +41267,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -42002,7 +42055,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -42799,7 +42853,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -43577,7 +43632,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -44367,10 +44423,11 @@
     },
     "scorePrev": 65,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -45162,7 +45219,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -45955,7 +46013,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -46747,7 +46806,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -47539,7 +47599,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -48321,7 +48382,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -49108,7 +49170,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -49902,7 +49965,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -50698,7 +50762,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -51488,10 +51553,11 @@
     },
     "scorePrev": 70,
     "streaks": {
-     "65": 4,
+     "65": 3,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -52273,7 +52339,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -53065,10 +53132,11 @@
     },
     "scorePrev": 76,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -53860,7 +53928,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -54654,7 +54723,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -55448,10 +55518,11 @@
     },
     "scorePrev": 66,
     "streaks": {
-     "65": 6,
+     "65": 5,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -56244,7 +56315,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -57035,7 +57107,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -57833,7 +57906,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -58627,7 +58701,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -59411,7 +59486,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -60202,7 +60278,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -60997,7 +61074,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -61790,7 +61868,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -62580,7 +62659,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -63374,7 +63454,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -64163,10 +64244,11 @@
     },
     "scorePrev": 89,
     "streaks": {
-     "65": 5,
-     "80": 3,
+     "65": 4,
+     "80": 2,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -64247,6 +64329,17 @@
      "impliedGrowthPct": 4.7,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
+    },
+    "review": {
+     "market": 14,
+     "mgmt": 18,
+     "marketNote": "金鉱業は生産量CAGR1%未満と成長鈍いが金価格高騰・地政学リスクが追い風、代替リスクは低い",
+     "mgmtNote": "CEO Al-Joundi氏(2022年就任、AEM在籍歴長い)は増配・自社株買いなど資本規律を継続し業績堅調",
+     "flags": [
+      "経営陣の直接持株比率データが古く低水準(0.01%)で最新の確認が必要"
+     ],
+     "confidence": "medium",
+     "date": "2026-07-11"
     }
    }
   },
@@ -64958,7 +65051,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -65758,7 +65852,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -66549,7 +66644,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -67345,7 +67441,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -68134,7 +68231,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -68928,7 +69026,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -69720,7 +69819,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -70500,7 +70600,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -70913,7 +71014,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -71643,7 +71745,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -72415,11 +72518,13 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
+    "scorePrev": 15,
     "streaks": {
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -73148,11 +73253,13 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
+    "scorePrev": 30,
     "streaks": {
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -73883,20 +73990,20 @@
     },
     {
      "d": "2026-07-11",
-     "c": 64021.589844
+     "c": 64141.570312
     }
    ],
    "state": "SELL",
-   "price": 64021.5898,
+   "price": 64141.5703,
    "top": 62902.3109,
    "bottom": 57061.0551,
    "band": 175.2377,
-   "pctInRange": 119.2,
-   "distToBottomPct": 12.2,
-   "distToTopPct": -1.75,
-   "smaShort": 61854.2174,
-   "smaLong": 65138.8905,
-   "smaTrend": 73985.8397,
+   "pctInRange": 121.2,
+   "distToBottomPct": 12.41,
+   "distToTopPct": -1.93,
+   "smaShort": 61860.2164,
+   "smaLong": 65141.2902,
+   "smaTrend": 73986.4396,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -73904,15 +74011,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 53.3,
+   "rsi": 53.9,
    "atr": 1993.0624,
    "atrPct": 3.11,
    "high52w": 110639.625,
-   "drawdownPct": 42.1,
+   "drawdownPct": 42.0,
    "macroDriven": null,
    "topLong": 119377.8399,
    "bottomLong": 100502.6322,
-   "pctInRangeLong": -193.3,
+   "pctInRangeLong": -192.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -73941,7 +74048,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-11"
    },
    "momentum": {
     "signal": "none",
@@ -74614,20 +74722,20 @@
     },
     {
      "d": "2026-07-11",
-     "c": 1809.640015
+     "c": 1820.160034
     }
    ],
    "state": "SELL",
-   "price": 1809.64,
+   "price": 1820.16,
    "top": 1486.0029,
    "bottom": 1429.31,
    "band": 1.7008,
-   "pctInRange": 670.9,
-   "distToBottomPct": 26.61,
-   "distToTopPct": -17.88,
-   "smaShort": 1687.9656,
-   "smaLong": 1767.7433,
-   "smaTrend": 2227.3587,
+   "pctInRange": 689.4,
+   "distToBottomPct": 27.35,
+   "distToTopPct": -18.36,
+   "smaShort": 1688.4916,
+   "smaLong": 1767.9537,
+   "smaTrend": 2227.4113,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -74635,15 +74743,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 59.0,
+   "rsi": 59.9,
    "atr": 72.0187,
-   "atrPct": 3.98,
+   "atrPct": 3.96,
    "high52w": 3911.0632,
-   "drawdownPct": 53.7,
+   "drawdownPct": 53.5,
    "macroDriven": null,
    "topLong": 3512.0383,
    "bottomLong": 2976.9084,
-   "pctInRangeLong": -218.1,
+   "pctInRangeLong": -216.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -74672,7 +74780,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-11"
    },
    "momentum": {
     "signal": "none",
@@ -75404,7 +75513,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -76138,7 +76248,8 @@
      "65": 0,
      "80": 0,
      "90": 0
-    }
+    },
+    "streakBar": "2026-07-10"
    },
    "momentum": {
     "signal": "none",
@@ -76383,13 +76494,6 @@
    "detail": "デッドクロス"
   },
   {
-   "type": "BUY_STRONG",
-   "ticker": "AEM",
-   "priority": 2,
-   "title": "🔥 AEM 強い買い (スコア89) ✅確定(3日連続) 🩸",
-   "detail": "🩸 底未確認(20日線下または下向き=下落継続の可能性) / 1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(18%位置) +16"
-  },
-  {
    "type": "BUY_CONSIDER",
    "ticker": "PLTR",
    "priority": 3,
@@ -76451,6 +76555,13 @@
    "priority": 3,
    "title": "🟦 ISRG 購入検討 (スコア76)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-31%の暴落水準 +20"
+  },
+  {
+   "type": "BUY_STRONG",
+   "ticker": "AEM",
+   "priority": 3,
+   "title": "🔥 AEM 強い買い (スコア89) ⏳速報(2/3日) 🩸",
+   "detail": "🩸 底未確認(20日線下または下向き=下落継続の可能性) / 1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(18%位置) +16"
   },
   {
    "type": "MACRO_EVENT",
@@ -76703,8 +76814,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 64022,
-    "ddFromPeakPct": -48.7
+    "currentPrice": 64142,
+    "ddFromPeakPct": -48.6
    },
    "action": "現在は半減期+26.7ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
@@ -76909,6 +77020,182 @@
    }
   ],
   "note": "基準PFにサイクル状況を自動上乗せした現時点の完全版。毎朝再計算。機械的計算値であり保証ではない"
+ },
+ "riskModel": {
+  "windowDays": 750,
+  "volPct": {
+   "stocks": 19.2,
+   "btc": 43.5,
+   "eth": 59.7,
+   "gold": 20.7,
+   "silver": 44.6
+  },
+  "corr": {
+   "stocks": {
+    "stocks": 1.0,
+    "btc": 0.42,
+    "eth": 0.46,
+    "gold": 0.18,
+    "silver": 0.26
+   },
+   "btc": {
+    "stocks": 0.42,
+    "btc": 1.0,
+    "eth": 0.81,
+    "gold": 0.08,
+    "silver": 0.12
+   },
+   "eth": {
+    "stocks": 0.46,
+    "btc": 0.81,
+    "eth": 1.0,
+    "gold": 0.08,
+    "silver": 0.14
+   },
+   "gold": {
+    "stocks": 0.18,
+    "btc": 0.08,
+    "eth": 0.08,
+    "gold": 1.0,
+    "silver": 0.77
+   },
+   "silver": {
+    "stocks": 0.26,
+    "btc": 0.12,
+    "eth": 0.14,
+    "gold": 0.77,
+    "silver": 1.0
+   }
+  },
+  "candidates": [
+   {
+    "label": "現行目標",
+    "weights": {
+     "stocks": 60,
+     "btc": 10,
+     "eth": 10,
+     "gold": 5,
+     "silver": 5,
+     "cash": 10
+    },
+    "volPct": 19.2,
+    "maxDDPct": 19.2,
+    "cagrPct": 28.5,
+    "riskContribPct": {
+     "stocks": 52.4,
+     "btc": 17.0,
+     "eth": 24.6,
+     "gold": 1.6,
+     "silver": 4.4
+    }
+   },
+   {
+    "label": "暗号控えめ(BTC7/ETH3)",
+    "weights": {
+     "stocks": 60,
+     "btc": 7,
+     "eth": 3,
+     "gold": 10,
+     "silver": 5,
+     "cash": 15
+    },
+    "volPct": 15.6,
+    "maxDDPct": 15.8,
+    "cagrPct": 29.7,
+    "riskContribPct": {
+     "stocks": 68.4,
+     "btc": 12.2,
+     "eth": 7.4,
+     "gold": 5.3,
+     "silver": 6.8
+    }
+   },
+   {
+    "label": "暗号ゼロ",
+    "weights": {
+     "stocks": 60,
+     "btc": 0,
+     "eth": 0,
+     "gold": 15,
+     "silver": 5,
+     "cash": 20
+    },
+    "volPct": 13.6,
+    "maxDDPct": 13.4,
+    "cagrPct": 29.3,
+    "riskContribPct": {
+     "stocks": 79.0,
+     "btc": 0.0,
+     "eth": 0.0,
+     "gold": 11.7,
+     "silver": 9.2
+    }
+   },
+   {
+    "label": "効率重視(株70/金20/現金10)",
+    "weights": {
+     "stocks": 70,
+     "btc": 0,
+     "eth": 0,
+     "gold": 20,
+     "silver": 0,
+     "cash": 10
+    },
+    "volPct": 14.7,
+    "maxDDPct": 14.9,
+    "cagrPct": 32.7,
+    "riskContribPct": {
+     "stocks": 87.4,
+     "btc": 0.0,
+     "eth": 0.0,
+     "gold": 12.6,
+     "silver": 0.0
+    }
+   },
+   {
+    "label": "リスク均等風(1/vol)",
+    "weights": {
+     "stocks": 30,
+     "btc": 15,
+     "eth": 10,
+     "gold": 25,
+     "silver": 10,
+     "cash": 10
+    },
+    "volPct": 19.2,
+    "maxDDPct": 17.5,
+    "cagrPct": 26.4,
+    "riskContribPct": {
+     "stocks": 20.8,
+     "btc": 26.1,
+     "eth": 24.2,
+     "gold": 15.0,
+     "silver": 13.9
+    }
+   },
+   {
+    "label": "攻撃型(現金ゼロ)",
+    "weights": {
+     "stocks": 70,
+     "btc": 12,
+     "eth": 8,
+     "gold": 5,
+     "silver": 5,
+     "cash": 0
+    },
+    "volPct": 20.6,
+    "maxDDPct": 20.6,
+    "cagrPct": 33.2,
+    "riskContribPct": {
+     "stocks": 58.5,
+     "btc": 18.5,
+     "eth": 17.5,
+     "gold": 1.5,
+     "silver": 4.1
+    }
+   }
+  ],
+  "note": "実測ボラ・相関・DDは直近約3年の共通営業日窓。将来のDDはこれより深くなり得る。CAGRは過去実測=参考値(リターン予測には使わない)。現金はリスク0と仮定"
  },
  "discovery": [
   {
