@@ -93,21 +93,49 @@ def aggregate(rows):
 
 
 def evaluate_episodes(episodes, price_map):
-    """エピソードを速報(開始日)/確定(3日連続日)の両起点で評価。"""
+    """エピソードを速報(開始日)/確定(連続確認日)の両起点で評価。arm(champion/challenger)別。"""
     stats = {}
     for ep in episodes:
         hist = price_map.get(ep["ticker"])
         if not hist:
             continue
+        arm = ep.get("arm", "champion")
         up, dn, hz = barrier_params("mom" if ep["strat"] == "mom" else "value")
         for entry_kind, dkey, pkey in (("速報", "startDate", "startPrice"),
                                         ("確定", "confirmDate", "confirmPrice")):
             if not ep.get(dkey) or not ep.get(pkey):
                 continue
             o, r, _ = triple_barrier(hist, ep[dkey], ep[pkey], up, dn, hz)
-            stats.setdefault(ep["strat"], {}).setdefault(entry_kind, []).append((o, r))
-    return {strat: {kind: aggregate(rows) for kind, rows in kinds.items()}
-            for strat, kinds in stats.items()}
+            stats.setdefault(arm, {}).setdefault(ep["strat"], {}).setdefault(entry_kind, []).append((o, r))
+    return {arm: {strat: {kind: aggregate(rows) for kind, rows in kinds.items()}
+                  for strat, kinds in strats.items()}
+            for arm, strats in stats.items()}
+
+
+def challenger_verdict(champ, chal, started_date, today,
+                       min_n=50, min_days=180):
+    """Champion vs Challenger の昇格判定(純関数・提案のみ)。
+    champ/chal: aggregate()の出力(速報起点)。started_date/today: "YYYY-MM-DD"。
+    戻り値: (status, text)  status: accumulating / champion_wins / challenger_wins / tie"""
+    if not champ or not chal:
+        return "accumulating", "比較データ不足"
+    n = chal.get("win", 0) + chal.get("loss", 0) + chal.get("expired", 0)
+    try:
+        from datetime import date as _d
+        days = (_d.fromisoformat(today) - _d.fromisoformat(started_date)).days
+    except Exception:
+        days = 0
+    if n < min_n or days < min_days:
+        return "accumulating", f"蓄積中(独立エピソード{n}/{min_n}件・経過{days}/{min_days}日)。判定はまだ。"
+    ce, he = chal.get("expectancyPct"), champ.get("expectancyPct")
+    if ce is None or he is None:
+        return "accumulating", "期待値が算出不能"
+    if ce > he + 0.5 and (chal.get("winRatePct") or 0) >= (champ.get("winRatePct") or 0) - 5:
+        return "challenger_wins", (f"Challenger優位: 期待値{ce}% vs {he}%(勝率{chal.get('winRatePct')}% vs "
+                                   f"{champ.get('winRatePct')}%)。昇格を検討(config手動変更)。")
+    if he > ce + 0.5:
+        return "champion_wins", f"Champion(現行)優位: 期待値{he}% vs {ce}%。現行ルール維持が妥当。"
+    return "tie", f"有意差なし(期待値{he}% vs {ce}%)。現行ルール維持(変更コストに見合わない)。"
 
 
 def build_suggestions(ep_stats, cfg):
@@ -195,17 +223,39 @@ def main():
         if hist:
             price_map[t] = hist
 
-    ep_stats = evaluate_episodes(episodes, price_map)
+    all_stats = evaluate_episodes(episodes, price_map)
+    ep_stats = all_stats.get("champion", {})
+    chal_stats = all_stats.get("challenger", {})
     lg = legacy_stats(log, price_map)
     suggestions = build_suggestions(ep_stats, cfg)
+
+    # Champion vs Challenger 対決判定(v3.26・提案のみ)
+    chal_cfg = cfg.get("challenger") or {}
+    verdict = None
+    if chal_cfg.get("enabled") and chal_stats:
+        chal_eps = [e for e in episodes if e.get("arm") == "challenger"]
+        started = min((e["startDate"] for e in chal_eps), default=None)
+        today_s = datetime.now(JST).strftime("%Y-%m-%d")
+        status, text = challenger_verdict(
+            (ep_stats.get("value80") or {}).get("速報"),
+            (chal_stats.get("value80") or {}).get("速報"),
+            started or today_s, today_s)
+        verdict = {"status": status, "text": text, "started": started,
+                   "label": chal_cfg.get("label", "")}
+        if status == "challenger_wins":
+            suggestions.append("🏆 " + text)
+
     n_ep = len(episodes)
     n_closed = sum(v.get("速報", {}).get("n", 0) for v in ep_stats.values())
 
-    print("エピソード統計:", json.dumps(ep_stats, ensure_ascii=False)[:600])
+    print("Champion統計:", json.dumps(ep_stats, ensure_ascii=False)[:400])
+    print("Challenger統計:", json.dumps(chal_stats, ensure_ascii=False)[:400])
     print("提案:", suggestions or "なし")
 
     write_analysis({
         "episodeStats": ep_stats,
+        "challengerStats": chal_stats,
+        "challengerVerdict": verdict,
         "episodeCount": n_ep,
         "legacyStats": lg,
         # 旧UI互換フィールド(値はエピソードベースの速報勝率)

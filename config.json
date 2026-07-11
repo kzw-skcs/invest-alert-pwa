@@ -246,7 +246,7 @@
       "name": "AMD",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 3,
       "rotSector": "情報技術"
     },
@@ -256,7 +256,7 @@
       "name": "Palantir",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 3,
       "rotSector": "情報技術"
     },
@@ -268,6 +268,17 @@
       "subSector": "エネルギー",
       "tradePolicy": "hold",
       "conviction": 5,
+      "rotSector": "エネルギー"
+    },
+    {
+      "ticker": "CVX",
+      "stooq": "cvx.us",
+      "name": "Chevron",
+      "sector": "エネルギー",
+      "subSector": "エネルギー",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "△スコア急変の要因確認まで様子見",
       "rotSector": "エネルギー"
     },
     {
@@ -371,7 +382,7 @@
       "name": "Arista Networks",
       "sector": "ハイテク",
       "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 5,
       "held": true,
       "rotSector": "情報技術"
@@ -393,7 +404,7 @@
       "name": "Climb Global Solutions（小型株）",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "rotSector": "情報技術"
     },
@@ -423,7 +434,7 @@
       "name": "SpaceX",
       "sector": "宇宙・防衛",
       "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "新規上場・データ蓄積中",
       "rotSector": "資本財"
@@ -808,7 +819,7 @@
       "name": "Burford Capital",
       "sector": "金融",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "金融"
@@ -819,7 +830,7 @@
       "name": "Pitney Bowes",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
@@ -830,7 +841,7 @@
       "name": "XPEL",
       "sector": "一般消費財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "一般消費財"
@@ -841,7 +852,7 @@
       "name": "BK Technologies",
       "sector": "ハイテク",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "情報技術"
@@ -852,7 +863,7 @@
       "name": "Hawkins",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "素材"
@@ -863,7 +874,7 @@
       "name": "GPGI",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
@@ -874,7 +885,7 @@
       "name": "Badger Meter",
       "sector": "資本財",
       "subSector": "その他モート",
-      "tradePolicy": "hold",
+      "tradePolicy": "trade",
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
@@ -1108,42 +1119,6 @@
       "conviction": 3,
       "rotSector": "素材",
       "note": "銅最大手。AI・電化・送電網投資=構造的な銅需要(あなたのテーマと整合)"
-    },
-    {
-      "ticker": "IONQ",
-      "name": "IONQ",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "ionq.us"
-    },
-    {
-      "ticker": "SNDK",
-      "name": "SNDK",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "sndk.us"
-    },
-    {
-      "ticker": "DRAM",
-      "name": "DRAM",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "dram.us"
-    },
-    {
-      "ticker": "HOOD",
-      "name": "HOOD",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "hood.us"
     }
   ],
   "discovery": [
@@ -1463,5 +1438,16 @@
       "2027-12-08"
     ],
     "comments": {}
+  },
+  "challenger": {
+    "enabled": true,
+    "label": "厳選アーム(閾値85/92・確定5日)",
+    "thresholds": {
+      "80": 85,
+      "90": 92
+    },
+    "confirmN": 5,
+    "startedAt": "2026-07-11",
+    "_comment": "Champion(現行80/90・確定3日)と同じスコア系列で並走する仮想運用。本番シグナルには無影響。50件+180日で対決判定"
   }
 }

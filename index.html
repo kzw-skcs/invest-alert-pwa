@@ -1701,8 +1701,20 @@ async function renderAnalysis() {
       ).join('')).join('');
     const lg = l.legacyStats || {};
     $('#analysis-result').innerHTML = `
-      <div class="tiny" style="margin-bottom:4px">エピソード方式(1局面=1件・Triple Barrier: +5%/-8%/40日。時間切れは勝敗と別集計) <span class="tiny">(${l.date || ''} / 全${l.episodeCount ?? 0}エピソード)</span></div>
+      <div class="tiny" style="margin-bottom:4px">🛡️ Champion(現行ルール)— エピソード方式(1局面=1件・Triple Barrier: +5%/-8%/40日。時間切れは勝敗と別集計) <span class="tiny">(${l.date || ''} / 全${l.episodeCount ?? 0}エピソード)</span></div>
       ${epRows ? `<table><tr><th>戦略</th><th>起点</th><th>n</th><th>勝/負/切</th><th>勝率</th><th>期待値</th><th>PF</th></tr>${epRows}</table>` : '<div class="muted">エピソード蓄積中(毎朝のdailyで自動記録されます)</div>'}
+      ${l.challengerStats && Object.keys(l.challengerStats).length ? (() => {
+        const cs = l.challengerStats;
+        const rows = Object.entries(cs).map(([strat, kinds]) =>
+          ['速報', '確定'].filter((k) => kinds[k]).map((k, i, arr) =>
+            `<tr>${i === 0 ? `<td rowspan="${arr.length}">${STRAT_JP[strat] || strat}</td>` : ''}<td>${k}</td>${cell(kinds[k])}</tr>`
+          ).join('')).join('');
+        const v = l.challengerVerdict || {};
+        return `<h3 style="font-size:12px;margin:10px 0 4px">🥊 Challenger仮想運用${v.label ? `: ${v.label}` : ''}</h3>
+        <table><tr><th>戦略</th><th>起点</th><th>n</th><th>勝/負/切</th><th>勝率</th><th>期待値</th><th>PF</th></tr>${rows}</table>
+        ${v.text ? `<div class="tiny" style="margin-top:4px">${v.status === 'challenger_wins' ? '🏆' : v.status === 'champion_wins' ? '🛡️' : '⏳'} ${v.text}${v.started ? ` (開始${v.started})` : ''}</div>` : ''}
+        <div class="tiny">Challengerは仮想運用(本番シグナル無影響)。上のChampion表と同じ相場・同じ判定基準で比較。</div>`;
+      })() : ''}
       ${(l.suggestions || []).map((x) => `<div class="alert-item p3" style="margin-top:6px"><div class="d">💡 ${x}</div></div>`).join('')}
       ${(l.adjustments || []).map((x) => '🔧 ' + x).join('<br>')}
       ${lg.value || lg.momentum ? `<div class="tiny" style="margin-top:6px">参考(旧・日次方式、重複計上のため水増し傾向): Value ${lg.value ? `勝率${lg.value.winRatePct ?? '—'}%/期待値${lg.value.expectancyPct ?? '—'}%` : '—'} / Mom ${lg.momentum ? `勝率${lg.momentum.winRatePct ?? '—'}%/期待値${lg.momentum.expectancyPct ?? '—'}%` : '—'}</div>` : ''}

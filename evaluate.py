@@ -193,18 +193,30 @@ EPISODE_CONFIRM_N = 3      # ✅確定に必要な連続日数(engine.CONFIRM_ST
 EPISODE_MAX_CAL_DAYS = 190  # エピソード自動クローズ(暦日≒130営業日。Value出口120営業日+余裕)
 
 
-def update_episodes(instruments, cycle, model_pf, today, store):
+def update_episodes(instruments, cycle, model_pf, today, store, challenger=None):
     """シグナルを「エピソード」として追跡する(v3.24)。
     1エピソード = Tier閾値到達(streak=1)〜スコアが閾値を割る(streak=0)まで。
     日次行の重複計上を排し、再分析の1サンプル=1独立局面にする。storeを直接更新する。
-    同日再実行では streak が変わらないため二重開始しない(open_byキーで防止)。"""
+    同日再実行では streak が変わらないため二重開始しない(open_byキーで防止)。
+
+    challenger(v3.26): {"enabled":true,"label":str,"thresholds":{"80":85,"90":92},"confirmN":5}
+    本番(Champion)と同じスコア系列から、より厳しい閾値のエピソードを arm="challenger" で並走記録。
+    Championルールには一切影響しない(仮想運用)。ChallengerのストリークはstoreのchalStreaksで管理。"""
     from datetime import date as _date
     open_eps = store.setdefault("open", [])
     closed = store.setdefault("closed", [])
     reg = (model_pf or {}).get("regime") or {}
     regime = reg.get("regime") or "unknown"
     risk_off = ((cycle or {}).get("riskOff") or {}).get("score")
-    open_by = {(e["ticker"], e["strat"]): e for e in open_eps}
+    # armキー付きで管理(旧エピソードはarmなし=champion扱い)
+    open_by = {(e["ticker"], e["strat"], e.get("arm", "champion")): e for e in open_eps}
+    chal_on = bool(challenger and challenger.get("enabled"))
+    chal_thr = (challenger or {}).get("thresholds") or {"80": 85, "90": 92}
+    chal_n = int((challenger or {}).get("confirmN") or 5)
+    cs = store.setdefault("chalStreaks", {})
+    chal_new_day = store.get("chalDate") != today
+    if chal_on:
+        store["chalDate"] = today
 
     def close_ep(ep, price, reason):
         ep["endDate"] = today
@@ -223,50 +235,84 @@ def update_episodes(instruments, cycle, model_pf, today, store):
         streaks = v.get("streaks") or {}
         sec = i.get("rotSector") or i.get("subSector")
         strend = (((cycle or {}).get("sectors") or {}).get(sec) or {}).get("trend")
-        # Value 80/90
+        # Value 80/90 (Champion=本番ルール)
         for thr in (80, 90):
             strat = f"value{thr}"
-            seen.add((tk, strat))
+            seen.add((tk, strat, "champion"))
             st = int(streaks.get(str(thr)) or 0)
-            ep = open_by.get((tk, strat))
+            ep = open_by.get((tk, strat, "champion"))
             if ep is None and st >= 1:
-                ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat,
+                ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat, "arm": "champion",
                       "startDate": today, "startPrice": price, "startScore": v.get("score"),
                       "startStreak": st,  # 導入初日は既に連続中の可能性(>1なら開始日は概算)
                       "maxScore": v.get("score"), "q": (i.get("quality") or {}).get("score"),
                       "regime": regime, "riskOff": risk_off, "rotSector": sec, "sectorTrend": strend}
                 open_eps.append(ep)
-                open_by[(tk, strat)] = ep
+                open_by[(tk, strat, "champion")] = ep
             elif ep is not None:
                 if st == 0:
                     close_ep(ep, price, "tierExit")
-                    open_by.pop((tk, strat), None)
+                    open_by.pop((tk, strat, "champion"), None)
                 else:
                     ep["maxScore"] = max(ep.get("maxScore") or 0, v.get("score") or 0)
                     if st >= EPISODE_CONFIRM_N and not ep.get("confirmDate"):
                         ep["confirmDate"] = today
                         ep["confirmPrice"] = price
+        # Challenger(v3.26): 同一スコア系列に厳しい閾値を適用した仮想アーム。本番へは無影響
+        if chal_on:
+            tcs = cs.setdefault(tk, {})
+            for base in ("80", "90"):
+                thr_c = int(chal_thr.get(base) or 0)
+                if not thr_c:
+                    continue
+                strat = f"value{base}"
+                seen.add((tk, strat, "challenger"))
+                prev_n = int(tcs.get(base) or 0)
+                score = v.get("score") or 0
+                if score >= thr_c:
+                    st_c = (prev_n + 1) if chal_new_day else max(prev_n, 1)
+                else:
+                    st_c = 0
+                tcs[base] = st_c
+                ep = open_by.get((tk, strat, "challenger"))
+                if ep is None and st_c >= 1:
+                    ep = {"id": f"{tk}-{strat}-chal-{today}", "ticker": tk, "strat": strat,
+                          "arm": "challenger", "startDate": today, "startPrice": price,
+                          "startScore": score, "startStreak": st_c, "maxScore": score,
+                          "q": (i.get("quality") or {}).get("score"),
+                          "regime": regime, "riskOff": risk_off, "rotSector": sec, "sectorTrend": strend}
+                    open_eps.append(ep)
+                    open_by[(tk, strat, "challenger")] = ep
+                elif ep is not None:
+                    if st_c == 0:
+                        close_ep(ep, price, "tierExit")
+                        open_by.pop((tk, strat, "challenger"), None)
+                    else:
+                        ep["maxScore"] = max(ep.get("maxScore") or 0, score)
+                        if st_c >= chal_n and not ep.get("confirmDate"):
+                            ep["confirmDate"] = today
+                            ep["confirmPrice"] = price
         # モメンタム(trade銘柄): ENTRY成立〜EXIT/対象外化まで
         mm = i.get("momentum") or {}
         strat = "mom"
-        seen.add((tk, strat))
+        seen.add((tk, strat, "champion"))
         state = mm.get("momState") or ("ENTRY" if mm.get("signal") == "entry" else None)
-        ep = open_by.get((tk, strat))
+        ep = open_by.get((tk, strat, "champion"))
         if ep is None and state == "ENTRY":
-            ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat,
+            ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat, "arm": "champion",
                   "startDate": today, "startPrice": price,
                   "startScore": (mm.get("momRec") or {}).get("score"),
                   "regime": regime, "riskOff": risk_off, "rotSector": sec, "sectorTrend": strend}
             open_eps.append(ep)
-            open_by[(tk, strat)] = ep
+            open_by[(tk, strat, "champion")] = ep
         elif ep is not None and state in ("EXIT", "WAIT"):
             close_ep(ep, price, "momExit" if state == "EXIT" else "momWait")
-            open_by.pop((tk, strat), None)
+            open_by.pop((tk, strat, "champion"), None)
     # 銘柄がウォッチリストから消えた/長期化したエピソードを整理
     t_now = _date.fromisoformat(today)
     for ep in list(open_eps):
         age = (t_now - _date.fromisoformat(ep["startDate"])).days
-        if (ep["ticker"], ep["strat"]) not in seen:
+        if (ep["ticker"], ep["strat"], ep.get("arm", "champion")) not in seen:
             close_ep(ep, ep.get("endPrice") or ep.get("startPrice"), "removed")
         elif age > EPISODE_MAX_CAL_DAYS:
             close_ep(ep, None, "maxDays")  # 終値は再分析側が取得
@@ -495,7 +541,7 @@ def main():
                 store = json.load(f)
         except Exception:
             pass
-    update_episodes(instruments, cycle, model_pf, today, store)
+    update_episodes(instruments, cycle, model_pf, today, store, cfg.get("challenger"))
     with open(ep_path, "w", encoding="utf-8") as f:
         json.dump(store, f, ensure_ascii=False, indent=1)
     print(f"episodes.json: 進行中{len(store['open'])} / 完了{len(store['closed'])}")

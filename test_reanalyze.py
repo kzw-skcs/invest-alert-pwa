@@ -86,6 +86,45 @@ check("mom EXITでクローズ", not any(e["strat"] == "mom" for e in store["ope
 EV.update_episodes([], cyc, mpf, "2026-07-26", store)
 check("リスト外はremovedでクローズ", len(store["open"]) == 0)
 
+print("[Champion/Challenger(v3.26)]")
+CHAL = {"enabled": True, "label": "厳選", "thresholds": {"80": 85, "90": 92}, "confirmN": 5}
+st2 = {"open": [], "closed": []}
+# スコア83: Champion(80)は開始、Challenger(85)は未達
+EV.update_episodes([inst("NVDA", 83, {"65": 5, "80": 1, "90": 0})], cyc, mpf, "2026-08-01", st2, CHAL)
+arms = [(e["strat"], e.get("arm")) for e in st2["open"]]
+check("83点: Championのみ開始", ("value80", "champion") in arms and ("value80", "challenger") not in arms, arms)
+# スコア86: Challengerも開始
+EV.update_episodes([inst("NVDA", 86, {"65": 6, "80": 2, "90": 0})], cyc, mpf, "2026-08-02", st2, CHAL)
+arms = [(e["strat"], e.get("arm")) for e in st2["open"]]
+check("86点: Challenger開始", ("value80", "challenger") in arms, arms)
+# 同日再実行: Challengerストリークが二重加算されない
+EV.update_episodes([inst("NVDA", 86, {"65": 6, "80": 2, "90": 0})], cyc, mpf, "2026-08-02", st2, CHAL)
+check("Challenger同日ガード", st2["chalStreaks"]["NVDA"]["80"] == 1, st2["chalStreaks"])
+# 5日連続でChallenger確定(Championは3日で確定済みのはず)
+for d in ("03", "04", "05", "06"):
+    EV.update_episodes([inst("NVDA", 87, {"65": 9, "80": 9, "90": 0})], cyc, mpf, f"2026-08-{d}", st2, CHAL)
+chal_ep = next(e for e in st2["open"] if e.get("arm") == "challenger")
+check("Challenger確定は5日目", chal_ep.get("confirmDate") == "2026-08-06", chal_ep.get("confirmDate"))
+# 84点に低下: Challenger(85未満)だけ剥落クローズ、Champion(80以上)は継続
+EV.update_episodes([inst("NVDA", 84, {"65": 9, "80": 9, "90": 0})], cyc, mpf, "2026-08-07", st2, CHAL)
+arms = [(e["strat"], e.get("arm")) for e in st2["open"]]
+check("84点: Challengerのみクローズ", ("value80", "champion") in arms and ("value80", "challenger") not in arms, arms)
+
+print("[challenger_verdict]")
+champ_agg = {"win": 40, "loss": 12, "expired": 8, "winRatePct": 76.9, "expectancyPct": 2.5}
+chal_agg = {"win": 45, "loss": 8, "expired": 7, "winRatePct": 84.9, "expectancyPct": 3.8}
+s, t = R.challenger_verdict(champ_agg, chal_agg, "2026-01-01", "2026-08-01")
+check("条件充足でChallenger勝ち", s == "challenger_wins", s)
+s, t = R.challenger_verdict(champ_agg, chal_agg, "2026-07-01", "2026-08-01")
+check("180日未満は蓄積中", s == "accumulating", s)
+s, t = R.challenger_verdict(champ_agg, {"win": 5, "loss": 2, "expired": 1, "winRatePct": 71, "expectancyPct": 5.0},
+                            "2026-01-01", "2026-08-01")
+check("50件未満は蓄積中", s == "accumulating", s)
+s, t = R.challenger_verdict({"win": 45, "loss": 8, "expired": 7, "winRatePct": 84.9, "expectancyPct": 3.8},
+                            {"win": 40, "loss": 12, "expired": 8, "winRatePct": 76.9, "expectancyPct": 2.5},
+                            "2026-01-01", "2026-08-01")
+check("劣後ならChampion維持", s == "champion_wins", s)
+
 print("[定数と提案閾値]")
 check("提案には30独立エピソード必要", R.MIN_EPISODES_FOR_SUGGESTION == 30)
 check("損切りは-8%(モメンタムルールと整合)", R.MOM_MISS_PCT == -8)
