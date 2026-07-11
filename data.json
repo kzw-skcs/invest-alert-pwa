@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-11T17:04:51.106127+00:00",
- "updatedJST": "2026-07-12 02:04 JST",
+ "updated": "2026-07-11T18:01:04.079093+00:00",
+ "updatedJST": "2026-07-12 03:01 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-12 02:04 JST"
+  "fetchedAt": "2026-07-12 03:01 JST"
  },
  "instruments": [
   {
@@ -2405,7 +2405,7 @@
    "side": "buy",
    "actionable": false,
    "value": {
-    "score": 48,
+    "score": 45,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
@@ -2413,8 +2413,7 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア75(高) +5",
-     "セクター資金流入 +3"
+     "品質スコア75(高) +5"
     ],
     "bottom": {
      "ok": false,
@@ -2438,7 +2437,7 @@
     "note": ""
    },
    "rec": {
-    "score": 48,
+    "score": 45,
     "stars": 3,
     "level": "-",
     "action": "hold",
@@ -5583,15 +5582,14 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 42,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
      "高値-15% +8",
      "5年トレンド上向き +6",
-     "品質スコア74(高) +5",
-     "セクター資金流入 +3"
+     "品質スコア74(高) +5"
     ],
     "bottom": {
      "ok": true,
@@ -5615,8 +5613,8 @@
     "note": ""
    },
    "rec": {
-    "score": 42,
-    "stars": 3,
+    "score": 39,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -73990,20 +73988,20 @@
     },
     {
      "d": "2026-07-11",
-     "c": 64141.570312
+     "c": 64260.121094
     }
    ],
    "state": "SELL",
-   "price": 64141.5703,
+   "price": 64260.1211,
    "top": 62902.3109,
    "bottom": 57061.0551,
    "band": 175.2377,
-   "pctInRange": 121.2,
-   "distToBottomPct": 12.41,
-   "distToTopPct": -1.93,
-   "smaShort": 61860.2164,
-   "smaLong": 65141.2902,
-   "smaTrend": 73986.4396,
+   "pctInRange": 123.2,
+   "distToBottomPct": 12.62,
+   "distToTopPct": -2.11,
+   "smaShort": 61866.1439,
+   "smaLong": 65143.6612,
+   "smaTrend": 73987.0323,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -74011,15 +74009,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 53.9,
+   "rsi": 54.3,
    "atr": 1993.0624,
-   "atrPct": 3.11,
+   "atrPct": 3.1,
    "high52w": 110639.625,
-   "drawdownPct": 42.0,
+   "drawdownPct": 41.9,
    "macroDriven": null,
    "topLong": 119377.8399,
    "bottomLong": 100502.6322,
-   "pctInRangeLong": -192.6,
+   "pctInRangeLong": -192.0,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -74722,20 +74720,20 @@
     },
     {
      "d": "2026-07-11",
-     "c": 1820.160034
+     "c": 1823.619995
     }
    ],
    "state": "SELL",
-   "price": 1820.16,
+   "price": 1823.62,
    "top": 1486.0029,
    "bottom": 1429.31,
    "band": 1.7008,
-   "pctInRange": 689.4,
-   "distToBottomPct": 27.35,
-   "distToTopPct": -18.36,
-   "smaShort": 1688.4916,
-   "smaLong": 1767.9537,
-   "smaTrend": 2227.4113,
+   "pctInRange": 695.5,
+   "distToBottomPct": 27.59,
+   "distToTopPct": -18.51,
+   "smaShort": 1688.6646,
+   "smaLong": 1768.0229,
+   "smaTrend": 2227.4286,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -74743,15 +74741,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 59.9,
-   "atr": 72.0187,
-   "atrPct": 3.96,
+   "rsi": 60.3,
+   "atr": 72.0511,
+   "atrPct": 3.95,
    "high52w": 3911.0632,
-   "drawdownPct": 53.5,
+   "drawdownPct": 53.4,
    "macroDriven": null,
    "topLong": 3512.0383,
    "bottomLong": 2976.9084,
-   "pctInRangeLong": -216.2,
+   "pctInRangeLong": -215.5,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -74767,7 +74765,7 @@
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-54%の暴落水準 +20",
+     "高値-53%の暴落水準 +20",
      "5年トレンド上向き +6",
      "半減期サイクル: 底形成ウィンドウ +5"
     ],
@@ -76311,7 +76309,7 @@
      "state": "買い場",
      "emoji": "🟦",
      "valueTier": "-",
-     "valueScore": 48,
+     "valueScore": 45,
      "price": 357.18,
      "inWatchlist": true
     },
@@ -76574,25 +76572,25 @@
  "plannerWeights": {
   "AAPL": 0.99,
   "MSFT": 0.61,
-  "GOOGL": 2.34,
+  "GOOGL": 2.32,
   "AMZN": 1.45,
   "AVGO": 2.22,
   "NVDA": 2.11,
-  "META": 1.64,
-  "TSLA": 1.04,
+  "META": 1.62,
+  "TSLA": 1.05,
   "AMD": 0.92,
   "PLTR": 1.19,
   "IBM": 1.01,
-  "ASML": 2.13,
-  "TSM": 2.16,
+  "ASML": 2.14,
+  "TSM": 2.17,
   "MRVL": 1.44,
   "CLMB": 0.57,
   "DELL": 0.92,
   "ADBE": 1.11,
-  "AMAT": 1.47,
-  "LRCX": 1.53,
+  "AMAT": 1.48,
+  "LRCX": 1.54,
   "SNPS": 1.68,
-  "MU": 1.47,
+  "MU": 1.48,
   "ARM": 0.98,
   "IONQ": 1.06,
   "SNDK": 0.89,
@@ -76681,54 +76679,54 @@
   ],
   "sectors": {
    "情報技術": {
-    "rs63": 27.51,
-    "rs21": 2.89,
+    "rs63": 19.77,
+    "rs21": 0.22,
     "trend": "neutral"
    },
    "コミュニケーション": {
-    "rs63": -0.78,
-    "rs21": 3.65,
-    "trend": "inflow"
-   },
-   "一般消費財": {
-    "rs63": -14.05,
-    "rs21": -1.8,
+    "rs63": -13.3,
+    "rs21": -2.41,
     "trend": "neutral"
    },
-   "エネルギー": {
-    "rs63": -21.52,
-    "rs21": -8.35,
-    "trend": "outflow"
+   "一般消費財": {
+    "rs63": -7.01,
+    "rs21": -1.37,
+    "trend": "neutral"
    },
-   "公益": {
-    "rs63": -8.36,
-    "rs21": 2.62,
-    "trend": "inflow"
-   },
-   "資本財": {
-    "rs63": -9.52,
-    "rs21": 1.16,
-    "trend": "inflow"
+   "生活必需品": {
+    "rs63": -10.2,
+    "rs21": -2.53,
+    "trend": "neutral"
    },
    "ヘルスケア": {
-    "rs63": -6.42,
-    "rs21": 1.12,
+    "rs63": -3.29,
+    "rs21": 1.5,
     "trend": "inflow"
    },
    "金融": {
-    "rs63": -3.94,
-    "rs21": 3.13,
+    "rs63": -2.47,
+    "rs21": 3.64,
     "trend": "inflow"
    },
-   "生活必需品": {
-    "rs63": -12.26,
-    "rs21": -1.63,
-    "trend": "neutral"
+   "資本財": {
+    "rs63": -5.35,
+    "rs21": 1.04,
+    "trend": "inflow"
+   },
+   "エネルギー": {
+    "rs63": -14.92,
+    "rs21": -6.58,
+    "trend": "outflow"
    },
    "素材": {
-    "rs63": -23.88,
-    "rs21": -7.73,
+    "rs63": -12.51,
+    "rs21": -2.32,
     "trend": "neutral"
+   },
+   "公益": {
+    "rs63": -14.69,
+    "rs21": 0.7,
+    "trend": "inflow"
    },
    "AI・半導体/クラウド": {
     "rs63": 76.69,
@@ -76749,7 +76747,7 @@
    {
     "icon": "🔄",
     "title": "セクターローテーションの兆候",
-    "note": "資金流入の兆候: コミュニケーション・公益・資本財・ヘルスケア・金融 / 流出の兆候: エネルギー。→ 流出セクターの高値圏銘柄は部分利確を検討、流入セクターの押し目(Tier65+)を優先検討",
+    "note": "資金流入の兆候: ヘルスケア・金融・資本財・公益 / 流出の兆候: エネルギー。→ 流出セクターの高値圏銘柄は部分利確を検討、流入セクターの押し目(Tier65+)を優先検討",
     "timing": "目安: この兆候が2〜3週間継続したら本格シフト(1週間だけの動きは追わない)"
    },
    {
@@ -76779,6 +76777,20 @@
     "prep": "Value出動リストを最終化。戦略キャッシュを満タンに"
    }
   ],
+  "sectorSources": {
+   "情報技術": "ETF(XLK)",
+   "コミュニケーション": "ETF(XLC)",
+   "一般消費財": "ETF(XLY)",
+   "生活必需品": "ETF(XLP)",
+   "ヘルスケア": "ETF(XLV)",
+   "金融": "ETF(XLF)",
+   "資本財": "ETF(XLI)",
+   "エネルギー": "ETF(XLE)",
+   "素材": "ETF(XLB)",
+   "公益": "ETF(XLU)",
+   "AI・半導体/クラウド": "銘柄平均(fallback)",
+   "インデックス": "銘柄平均(fallback)"
+  },
   "btcHalving": {
    "lastHalving": "2024-04-19",
    "monthsSince": 26.7,
@@ -76814,8 +76826,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 64142,
-    "ddFromPeakPct": -48.6
+    "currentPrice": 64260,
+    "ddFromPeakPct": -48.5
    },
    "action": "現在は半減期+26.7ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
@@ -76890,7 +76902,7 @@
     "tier": "-",
     "sec": "インデックス(コア)",
     "flow": "neutral",
-    "wPct": 28.9
+    "wPct": 29.2
    },
    {
     "ticker": "XOM",
@@ -76902,15 +76914,6 @@
     "wPct": 3.8
    },
    {
-    "ticker": "GOOGL",
-    "conviction": 5,
-    "q": 75,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "inflow",
-    "wPct": 3.0
-   },
-   {
     "ticker": "CCJ",
     "conviction": 4,
     "q": 59,
@@ -76920,6 +76923,15 @@
     "wPct": 3.0
    },
    {
+    "ticker": "GOOGL",
+    "conviction": 5,
+    "q": 75,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "neutral",
+    "wPct": 2.5
+   },
+   {
     "ticker": "VRT",
     "conviction": 5,
     "q": 72,
@@ -76927,6 +76939,15 @@
     "sec": "電力・DCインフラ",
     "flow": "inflow",
     "wPct": 2.4
+   },
+   {
+    "ticker": "NVDA",
+    "conviction": 5,
+    "q": 81,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "neutral",
+    "wPct": 2.3
    },
    {
     "ticker": "RKLB",
@@ -76956,9 +76977,9 @@
     "wPct": 2.3
    },
    {
-    "ticker": "NVDA",
+    "ticker": "AVGO",
     "conviction": 5,
-    "q": 81,
+    "q": 55,
     "tier": "-",
     "sec": "AI・半導体/クラウド",
     "flow": "neutral",
@@ -76974,31 +76995,13 @@
     "wPct": 2.2
    },
    {
-    "ticker": "AVGO",
-    "conviction": 5,
-    "q": 55,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "neutral",
-    "wPct": 2.1
-   },
-   {
-    "ticker": "META",
-    "conviction": 4,
-    "q": 74,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "inflow",
-    "wPct": 2.1
-   },
-   {
     "ticker": "CEG",
     "conviction": 5,
     "q": 38,
     "tier": "👀監視(質↓)",
     "sec": "電力・DCインフラ",
     "flow": "inflow",
-    "wPct": 2.0
+    "wPct": 2.1
    },
    {
     "ticker": "RTX",
@@ -77007,7 +77010,7 @@
     "tier": "-",
     "sec": "宇宙・防衛",
     "flow": "inflow",
-    "wPct": 1.8
+    "wPct": 1.9
    },
    {
     "ticker": "ANET",
@@ -77016,6 +77019,15 @@
     "tier": "-",
     "sec": "電力・DCインフラ",
     "flow": "neutral",
+    "wPct": 1.8
+   },
+   {
+    "ticker": "KTOS",
+    "conviction": 4,
+    "q": 26,
+    "tier": "👀監視",
+    "sec": "宇宙・防衛",
+    "flow": "inflow",
     "wPct": 1.8
    }
   ],
