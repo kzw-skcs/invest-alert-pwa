@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: 依存インストール(バックテスト系テスト用)
+        run: pip install numpy
       - name: Python構文チェック
         run: python -m py_compile *.py api/*.py
       - name: config.json検証
