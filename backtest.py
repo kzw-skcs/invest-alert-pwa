@@ -629,6 +629,128 @@ def optimize_sector_sleeves(stock_data, cfg):
             "sleeveStats": sleeve_stats, "allocations": out}
 
 
+# ---------------------------------------------------------------- 完全版リプレイ(v3.27)
+
+REPLAY_COST_ONEWAY = {"stocks": 0.1, "btc": 0.3, "eth": 0.3, "gold": 1.0, "silver": 1.0, "cash": 0.0}
+
+
+def replay_weights(dt, bench_prefix, base_targets):
+    """その日時点の情報のみで本番のグライドを再現(point-in-time安全な要素のみ)。
+    再現: 市場レジームチルト(engine.market_regimeと同一規則) + 半減期底ウィンドウ(日付のみで決定)。
+    非再現(要日中文脈のため除外・注記): リスクオフ度チルト / セクターフロー / モメンタム枠縮小。"""
+    t = dict(base_targets)
+    regime = eng.market_regime(bench_prefix, None)
+    if regime.get("tilt"):
+        move = regime["tilt"]
+        t["stocks"] = max(40, t["stocks"] + move)
+        back = -move
+        t["cash"] = max(5, t["cash"] + round(back * 2 / 3))
+        t["gold"] = max(3, t["gold"] + (back - round(back * 2 / 3)))
+    last_h = max((h for h in eng.HALVINGS if h <= dt), default=None)
+    if last_h:
+        months = (dt - last_h).days / 30.44
+        if 26 < months <= 32:  # 底形成ウィンドウ(本番と同じ+2/+1/-3)
+            t["btc"] = t.get("btc", 0) + 2
+            t["eth"] = t.get("eth", 0) + 1
+            t["cash"] = max(5, t.get("cash", 0) - 3)
+    tot = sum(t.values()) or 100
+    return {k: v * 100.0 / tot for k, v in t.items()}, regime.get("regime", "unknown")
+
+
+def production_replay(stock_data, sleeves, common, bench_by_date, cfg):
+    """完全版PF(グライド込み)を日次で過去再現し、VOO100% / VOO+金+現金(静的) と比較する。
+    株スリーブ = インデックス枠30%(VOO) + 70%等ウェイト(配分対象銘柄)。回転コストは重み変化×片道コストで控除。"""
+    from datetime import date as _date
+    if np is None or len(common) < 260:
+        return None
+    no_alloc = {s["ticker"] for s in cfg["stocks"] if s.get("noAlloc")}
+    eligible = [tk for tk in stock_data.keys() if tk not in no_alloc and tk != "VOO"]
+    # 日次リターンマップ
+    ret_map = {}
+    for tk, (sig, closes, dates, opens) in stock_data.items():
+        m = {}
+        for i in range(1, len(closes)):
+            m[dates[i]] = closes[i] / closes[i - 1] - 1
+        ret_map[tk] = m
+    voo = ret_map.get("VOO")
+    bench_ret = {}
+    prev = None
+    for d in sorted(bench_by_date.keys()):
+        cl = bench_by_date[d]
+        if prev is not None and len(cl) >= 2:
+            bench_ret[d] = cl[-1] / cl[-2] - 1
+        prev = d
+    voo_src = "VOO実データ" if voo else "^GSPC近似(VOOデータなし・配当未考慮)"
+    core = voo or bench_ret
+
+    def stock_sleeve_ret(d):
+        eq = [ret_map[tk][d] for tk in eligible if d in ret_map[tk]]
+        eq_r = sum(eq) / len(eq) if eq else 0.0
+        core_r = core.get(d, 0.0)
+        return 0.30 * core_r + 0.70 * eq_r
+
+    base_targets = dict(cfg["portfolio"]["targets"])
+    names = ["stocks", "btc", "eth", "gold", "silver", "cash"]
+
+    def sleeve_ret(k, d):
+        if k == "stocks":
+            return stock_sleeve_ret(d)
+        if k == "cash":
+            return 0.0
+        return float(sleeves.get(k, {}).get(d, 0.0))
+
+    # 3ポートフォリオの日次系列
+    full_rets, static_rets, voo_rets = [], [], []
+    regime_days = {}
+    prev_w = None
+    static_w = {"stocks": 0, "btc": 0, "eth": 0, "gold": 20, "silver": 0, "cash": 10}
+    for d in common:
+        dt = _date.fromisoformat(d)
+        w, regime = replay_weights(dt, bench_by_date.get(d), base_targets)
+        regime_days[regime] = regime_days.get(regime, 0) + 1
+        r = sum(w.get(k, 0) / 100 * sleeve_ret(k, d) for k in names)
+        if prev_w is not None:
+            turn_cost = sum(abs(w.get(k, 0) - prev_w.get(k, 0)) / 100 * REPLAY_COST_ONEWAY[k] / 100
+                            for k in names)
+            r -= turn_cost
+        prev_w = w
+        full_rets.append(r)
+        voo_r = core.get(d, 0.0)
+        voo_rets.append(voo_r)
+        static_rets.append(0.70 * voo_r + 0.20 * sleeve_ret("gold", d))  # 現金10%=0%
+
+    def pack(rets):
+        st = stats_from_series(rets)
+        if not st:
+            return None
+        eq = 1.0
+        yearly = {}
+        for d, r in zip(common, rets):
+            eq *= 1 + r
+            y = d[:4]
+            yearly[y] = yearly.get(y, 1.0) * (1 + r)
+        st["finalMultiple"] = round(eq, 2)
+        st["yearlyPct"] = {y: round((v - 1) * 100, 1) for y, v in yearly.items()}
+        return st
+
+    return {
+        "period": {"start": common[0], "end": common[-1], "days": len(common)},
+        "portfolios": {
+            "full": pack(full_rets),
+            "voo100": pack(voo_rets),
+            "vooGoldCash": pack(static_rets),
+        },
+        "regimeDays": regime_days,
+        "coreSource": voo_src,
+        "notes": [
+            "株スリーブ=インデックス30%+配分対象銘柄の等ウェイト70%(現在のユニバース=生存者バイアスあり)",
+            "再現済みチルト: 市場レジームグライド・半減期底ウィンドウ(いずれも日付と価格のみから決定)",
+            "未再現: リスクオフ度チルト/セクターフロー/モメンタム枠/個別トリム(要当時文脈のため。実運用はこの分だけ結果が変わり得る)",
+            "コスト: 日次の重み変化×片道コスト(株0.1/暗号0.3/金銀1.0%)を控除。VOO100%は無コスト・配当は" + ("含む(調整済終値)" if voo else "未考慮"),
+        ],
+    }
+
+
 # ---------------------------------------------------------------- 自動解釈
 
 def build_interpretation(value_results, mom, allocations, names):
@@ -804,6 +926,9 @@ def main():
         if spx_common:
             spx_stats = stats_from_series([spx_daily[d] for d in spx_common])
 
+    print("完全版リプレイ 実行中…")
+    replay = production_replay(stock_data, sleeves, common, bench_by_date, cfg)
+
     print("サブセクター配分 最適化中…")
     sector_opt = optimize_sector_sleeves(stock_data, cfg)
     interpretation = build_interpretation(value_results, mom_results, allocations, names)
@@ -895,6 +1020,23 @@ def main():
             f"📊基準線: 同期間のS&P500買い持ちは年率{spx_stats['cagrPct']}%・最大DD{spx_stats['maxDDPct']}%・"
             f"Sharpe{spx_stats['sharpe']}。各スリーブ・配分案はこれを上回って初めて『銘柄選択の価値があった』ことになる。"
             "集中投資の高CAGRには銘柄選択リスク(生存者バイアス)が含まれる点を忘れずに。")
+    # 完全版リプレイの自動解釈
+    if replay and replay.get("portfolios", {}).get("full"):
+        p = replay["portfolios"]
+        f, v1, v2 = p["full"], p.get("voo100"), p.get("vooGoldCash")
+        if f and v1:
+            diff = round(f["cagrPct"] - v1["cagrPct"], 1)
+            interpretation.append(
+                f"🎬完全版リプレイ({replay['period']['start']}〜{replay['period']['end']}): "
+                f"完全版システム=年率{f['cagrPct']}%・DD{f['maxDDPct']}%・Sharpe{f['sharpe']}({f['finalMultiple']}倍) / "
+                f"VOO100%={v1['cagrPct']}%・DD{v1['maxDDPct']}%・Sharpe{v1['sharpe']} / "
+                f"VOO70+金20+現金10={v2['cagrPct']}%・DD{v2['maxDDPct']}%・Sharpe{v2['sharpe']}。"
+                + (f"完全版はVOOを年率{diff}pt上回った——銘柄選択+グライドに価値があった証拠。"
+                   if diff > 1 else
+                   f"完全版のVOO超過は{diff}ptに留まる——現時点では銘柄選択の付加価値は限定的で、"
+                   "インデックス比率を上げる選択も合理的。" if diff > -1 else
+                   f"完全版はVOOに年率{-diff}pt劣後——この期間は銘柄選択が逆効果だった。コアのVOO枠が保険として機能。")
+                + "※株スリーブは現ユニバース等ウェイト(生存者バイアス)・リスクオフ/フローチルト未再現の近似值。")
     # 持続性フィルタの自動解釈(Tier80基準)
     p80 = value_persistence.get("strong(80)", {})
     p1, p_best_n, p_best = p80.get("1"), None, None
@@ -939,6 +1081,7 @@ def main():
         "momentum": mom_results,
         "momentumNoTP": mom_notp_results,
         "sectorOpt": sector_opt,
+        "replay": replay,
         "sleeveStats": sleeve_stats,
         "allocations": allocations,
         "assumptions": ("約定: t日終値シグナル→t+1営業日始値(v3.25現実仕様) / "

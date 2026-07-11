@@ -1649,6 +1649,20 @@ async function renderBacktest() {
         : `<tr><td>${k}</td><td colspan="5">シグナルなし</td></tr>`).join('')}</table>
       <div class="tiny">上のValue戦略表(即買い)と比較。持続性フィルタ(N日連続)と役割が近いため、成績の良い方を採用する。</div>` : ''}
       ${b.spxBuyHold ? `<div class="tiny" style="margin-top:8px">📊 基準線: 同期間のS&P500買い持ち = 年率${b.spxBuyHold.cagrPct}% / 最大DD${b.spxBuyHold.maxDDPct}% / Sharpe${b.spxBuyHold.sharpe}(これを上回って初めて銘柄選択の価値あり)</div>` : ''}
+      ${b.replay && b.replay.portfolios ? (() => {
+        const P = b.replay.portfolios;
+        const NAMES = { full: '🎬 完全版(グライド込み)', voo100: 'VOO 100%', vooGoldCash: 'VOO70+金20+現金10' };
+        const keys = Object.keys(NAMES).filter((k) => P[k]);
+        const rows = keys.map((k) => { const s = P[k];
+          return `<tr><td>${NAMES[k]}</td><td>${s.cagrPct}%</td><td>${s.maxDDPct}%</td><td>${s.sharpe}</td><td>${s.finalMultiple}倍</td></tr>`; }).join('');
+        const years = P.full ? Object.keys(P.full.yearlyPct || {}) : [];
+        const yrRows = years.length ? keys.map((k) =>
+          `<tr><td>${NAMES[k]}</td>${years.map((y) => `<td>${(P[k].yearlyPct || {})[y] ?? '—'}</td>`).join('')}</tr>`).join('') : '';
+        return `<h3 style="font-size:12px;margin:10px 0 4px">🎬 完全版リプレイ(本番の資産グライドを過去に再現・${b.replay.period.start}〜${b.replay.period.end})</h3>
+        <table><tr><th>ポートフォリオ</th><th>年率</th><th>最大DD</th><th>Sharpe</th><th>倍率</th></tr>${rows}</table>
+        ${yrRows ? `<table style="margin-top:6px"><tr><th>年次%</th>${years.map((y) => `<th>${y}</th>`).join('')}</tr>${yrRows}</table>` : ''}
+        <div class="tiny">${(b.replay.notes || []).join(' / ')}</div>`;
+      })() : ''}
       ${b.valueTiersHold ? `<h3 style="font-size:12px;margin:10px 0 4px">比較: 最初のシグナルで買い→期間末まで保有し続けた場合</h3>
       <table><tr><th>Tier</th><th>銘柄数</th><th>勝率</th><th>平均リターン</th><th>平均保有</th><th>年率換算</th></tr>
       ${Object.entries(b.valueTiersHold).map(([k, v]) => v.trades

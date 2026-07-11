@@ -100,5 +100,55 @@ expect_stop = (100.6 / 104.0 - 1) * 100 - bt.COST_RT_PCT["stock"]
 check("エントリー翌日始値104が基点(ギャップ分でストップ)", res.get("trades", 0) >= 1 and
       abs(res["worstPct"] - expect_stop) < 0.15, f"{res.get('worstPct')} vs {expect_stop:.2f}")
 
+print("[replay_weights(v3.27)]")
+from datetime import date, timedelta
+# ベンチ不足→レジームunknown・チルトなし → 基準配分のまま
+w, reg = bt.replay_weights(date(2023, 5, 1), [100.0] * 50, {"stocks": 60, "btc": 10, "eth": 10, "gold": 5, "silver": 5, "cash": 10})
+check("データ不足はチルトなし", abs(w["stocks"] - 60) < 0.01 and reg == "unknown")
+# 半減期底ウィンドウ(2020-05-11の+27ヶ月≒2022-08) → BTC+2/ETH+1/現金-3
+w2, _ = bt.replay_weights(date(2022, 8, 15), [100.0] * 50, {"stocks": 60, "btc": 10, "eth": 10, "gold": 5, "silver": 5, "cash": 10})
+check("半減期底でBTC+2/ETH+1", abs(w2["btc"] - 12) < 0.01 and abs(w2["eth"] - 11) < 0.01 and abs(w2["cash"] - 7) < 0.01, w2)
+check("正規化100", abs(sum(w2.values()) - 100) < 0.01)
+
+print("[production_replay(v3.27)]")
+import json as _json
+cfg = _json.load(open("config.json"))
+d0 = date(2022, 1, 3)
+N = 320
+days = [(d0 + timedelta(days=int(i * 1.4))).isoformat() for i in range(N)]
+def series(rate):
+    px, out, rets = 100.0, {}, {}
+    prev = None
+    for d in days:
+        if prev is not None:
+            rets[d] = rate
+        px *= 1 + rate
+        prev = d
+    return rets
+def mkstock(rate):
+    closes = [100.0]
+    for _ in range(N - 1):
+        closes.append(closes[-1] * (1 + rate))
+    sig = [None] * N
+    return (sig, closes, days, [None] * N)
+stock_data = {"VOO": mkstock(0.0004), "AAA": mkstock(0.001), "BBB": mkstock(0.0006),
+              "WMT": mkstock(0.0002)}
+# WMTをnoAlloc扱いに(cfg上そうなっている前提を確認)
+assert any(s["ticker"] == "WMT" and s.get("noAlloc") for s in cfg["stocks"])
+sleeves = {"btc": series(0.002), "eth": series(0.001), "gold": series(0.0005), "silver": series(0.0003)}
+bench_by_date = {}
+acc = []
+for d in days:
+    acc.append(100.0)
+    bench_by_date[d] = list(acc)
+rep = bt.production_replay(stock_data, sleeves, days, bench_by_date, cfg)
+check("リプレイ出力あり", rep is not None and rep["portfolios"]["full"] is not None)
+if rep:
+    f, v = rep["portfolios"]["full"], rep["portfolios"]["voo100"]
+    check("3PF揃う", all(rep["portfolios"].get(k) for k in ("full", "voo100", "vooGoldCash")))
+    check("倍率>0", f["finalMultiple"] > 0 and v["finalMultiple"] > 0)
+    check("年次リターンあり", bool(f.get("yearlyPct")))
+    check("注記に生存者バイアス明記", any("生存者バイアス" in n for n in rep["notes"]))
+
 print(f"\n結果: ✅{PASS} / ❌{FAIL}")
 sys.exit(1 if FAIL else 0)
