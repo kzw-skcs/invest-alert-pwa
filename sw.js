@@ -1,5 +1,5 @@
 /* sw.js v2 — network-first。旧キャッシュは activate で全削除して強制更新 */
-const CACHE = 'invest-alert-v3-20';
+const CACHE = 'invest-alert-v3-21';
 const ASSETS = ['./index.html', './manifest.json'];
 
 self.addEventListener('install', (e) => {
