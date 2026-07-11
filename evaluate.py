@@ -65,6 +65,7 @@ def fetch_yahoo(symbol, range_="6y"):
             hist.append({
                 "d": datetime.fromtimestamp(t, tz=timezone.utc).strftime("%Y-%m-%d"),
                 "c": round(float(c), 6),
+                "o": round(float(q["open"][i]), 6) if q.get("open") and q["open"][i] else None,
                 "h": round(float(q["high"][i]), 6) if q["high"][i] else None,
                 "l": round(float(q["low"][i]), 6) if q["low"][i] else None,
                 "v": int(q["volume"][i]) if q["volume"][i] else None,
@@ -84,7 +85,7 @@ def fetch_stooq(symbol):
         if len(p) < 5:
             continue
         try:
-            hist.append({"d": p[0], "c": float(p[4]),
+            hist.append({"d": p[0], "c": float(p[4]), "o": float(p[1]),
                          "h": float(p[2]), "l": float(p[3]),
                          "v": int(float(p[5])) if len(p) > 5 and p[5] else None})
         except ValueError:

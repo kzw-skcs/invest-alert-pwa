@@ -42,6 +42,22 @@ TIER_THRESHOLDS = {"consider(65)": 65, "strong(80)": 80, "absolute(90)": 90}
 GRID_STEP = 5                # 配分グリッド刻み%
 MOM_MAX = 40                 # モメンタム配分上限%(現物・株スリーブ内制約の近似)
 
+# v3.25: 現実的な約定モデル
+# シグナルはt日終値で確定(実運用は引け後5:07 JSTに判定)→ 約定はt+1営業日の始値。
+# 売買コスト(往復・スプレッド+手数料+スリッページの保守見積り)を控除する。
+COST_RT_PCT = {"stock": 0.2, "crypto": 0.6, "metal": 2.0}
+
+
+def next_fill(opens, closes, t):
+    """t日シグナル→t+1始値で約定。t+1が存在しなければ(None, None)=取引不可。
+    open欠損時(コインゲッコー等)はt+1終値で近似。"""
+    if t + 1 >= len(closes):
+        return None, None
+    o = None
+    if opens and t + 1 < len(opens):
+        o = opens[t + 1]
+    return (o if o else closes[t + 1]), t + 1
+
 
 # ---------------------------------------------------------------- シグナル前計算
 
@@ -79,15 +95,18 @@ def precompute_signals(meta, history, bench_closes_by_date, cfg):
     for t in range(n):
         if out[t] is not None and ma20[t] is not None and t >= 24 and ma20[t - 5] is not None:
             out[t]["confirm"] = closes[t] > ma20[t] and ma20[t] >= ma20[t - 5]
-    return out, closes, dates
+    opens = [h.get("o") for h in history]
+    return out, closes, dates, opens
 
 
 # ---------------------------------------------------------------- Value戦略
 
-def value_trades(instruments_data, threshold):
-    """全銘柄横断: スコアが閾値を上抜けた日の翌日始値(近似=当日終値)で買い。生トレード一覧を返す。"""
+def value_trades(instruments_data, threshold, cost=None):
+    """全銘柄横断: t日終値でスコア閾値上抜けを確定→t+1営業日始値で買い(v3.25現実約定)。
+    売り条件成立もt日終値判定→t+1始値で決済。往復コストを控除した生トレード一覧を返す。"""
+    cost = COST_RT_PCT["stock"] if cost is None else cost
     trades = []
-    for tk, (sig, closes, dates) in instruments_data.items():
+    for tk, (sig, closes, dates, opens) in instruments_data.items():
         open_pos = None
         for t in range(WARMUP + 1, len(closes)):
             s_now, s_prev = sig[t], sig[t - 1]
@@ -96,21 +115,26 @@ def value_trades(instruments_data, threshold):
             if open_pos is None:
                 crossed = s_now["score"] >= threshold and (s_prev is None or s_prev["score"] < threshold)
                 if crossed:
-                    open_pos = {"entryT": t, "entry": closes[t]}
+                    px, te = next_fill(opens, closes, t)
+                    if px:
+                        open_pos = {"entryT": te, "entry": px}
             else:
                 held = t - open_pos["entryT"]
                 hit_top = s_now["top"] and closes[t] >= s_now["top"] - s_now["band"]
                 if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
-                    ret = closes[t] / open_pos["entry"] - 1
+                    ex_px, ex_t = next_fill(opens, closes, t)
+                    if ex_px is None or t == len(closes) - 1:
+                        ex_px, ex_t = closes[t], t
                     trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
-                                   "exitDate": dates[t], "days": held, "retPct": ret * 100,
+                                   "exitDate": dates[ex_t], "days": ex_t - open_pos["entryT"],
+                                   "retPct": (ex_px / open_pos["entry"] - 1) * 100 - cost,
                                    "reason": "top" if hit_top else "time"})
                     open_pos = None
     return trades
 
 
-def backtest_value(instruments_data, threshold):
-    return summarize_trades(value_trades(instruments_data, threshold))
+def backtest_value(instruments_data, threshold, cost=None):
+    return summarize_trades(value_trades(instruments_data, threshold, cost=cost))
 
 
 def value_trades_confirm(instruments_data, threshold, grace=5):
@@ -118,7 +142,7 @@ def value_trades_confirm(instruments_data, threshold, grace=5):
     成立した日に初めて買う。スコアが閾値-grace を割ったら待機解除(そのエピソードは見送り)。
     「下落継続中の鋭敏な点灯」と「間違いのない底」の差を実測するための実験。"""
     trades = []
-    for tk, (sig, closes, dates) in instruments_data.items():
+    for tk, (sig, closes, dates, opens) in instruments_data.items():
         open_pos = None
         armed = False
         prev_score = None
@@ -131,9 +155,12 @@ def value_trades_confirm(instruments_data, threshold, grace=5):
                 held = t - open_pos["entryT"]
                 hit_top = s["top"] and closes[t] >= s["top"] - s["band"]
                 if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
+                    ex_px, ex_t = next_fill(opens, closes, t)
+                    if ex_px is None or t == len(closes) - 1:
+                        ex_px, ex_t = closes[t], t
                     trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
-                                   "exitDate": dates[t], "days": held,
-                                   "retPct": (closes[t] / open_pos["entry"] - 1) * 100,
+                                   "exitDate": dates[ex_t], "days": ex_t - open_pos["entryT"],
+                                   "retPct": (ex_px / open_pos["entry"] - 1) * 100 - COST_RT_PCT["stock"],
                                    "reason": "top" if hit_top else "time"})
                     open_pos = None
                     armed = False
@@ -143,7 +170,9 @@ def value_trades_confirm(instruments_data, threshold, grace=5):
                 if s["score"] < threshold - grace:
                     armed = False
                 if armed and s.get("confirm"):
-                    open_pos = {"entryT": t, "entry": closes[t]}
+                    px, te = next_fill(opens, closes, t)
+                    if px:
+                        open_pos = {"entryT": te, "entry": px}
                     armed = False
             prev_score = s["score"]
     return trades
@@ -156,7 +185,7 @@ def value_trades_persist(instruments_data, threshold, n_days):
     """スコアが閾値以上をn_days営業日連続で維持した日に買う変種(N=1は現行ルール相当)。
     瞬間タッチ(1日だけ閾値超え)がダマシか最良の買い場かを実測するための実験。"""
     trades = []
-    for tk, (sig, closes, dates) in instruments_data.items():
+    for tk, (sig, closes, dates, opens) in instruments_data.items():
         open_pos = None
         streak = 0
         for t in range(WARMUP + 1, len(closes)):
@@ -167,14 +196,19 @@ def value_trades_persist(instruments_data, threshold, n_days):
             streak = streak + 1 if s_now["score"] >= threshold else 0
             if open_pos is None:
                 if streak == n_days:
-                    open_pos = {"entryT": t, "entry": closes[t]}
+                    px, te = next_fill(opens, closes, t)
+                    if px:
+                        open_pos = {"entryT": te, "entry": px}
             else:
                 held = t - open_pos["entryT"]
                 hit_top = s_now["top"] and closes[t] >= s_now["top"] - s_now["band"]
                 if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
+                    ex_px, ex_t = next_fill(opens, closes, t)
+                    if ex_px is None or t == len(closes) - 1:
+                        ex_px, ex_t = closes[t], t
                     trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
-                                   "exitDate": dates[t], "days": held,
-                                   "retPct": (closes[t] / open_pos["entry"] - 1) * 100,
+                                   "exitDate": dates[ex_t], "days": ex_t - open_pos["entryT"],
+                                   "retPct": (ex_px / open_pos["entry"] - 1) * 100 - COST_RT_PCT["stock"],
                                    "reason": "top" if hit_top else "time"})
                     open_pos = None
     return trades
@@ -221,7 +255,7 @@ def build_cycle_context(stock_data, cfg, bench_hist):
     import bisect
     sub_map = {s["ticker"]: (s.get("rotSector") or s.get("subSector") or "その他") for s in cfg["stocks"]}
     sec_ret = {}
-    for tk, (sig, closes, dates) in stock_data.items():
+    for tk, (sig, closes, dates, opens) in stock_data.items():
         sec = sub_map.get(tk)
         for i in range(1, len(closes)):
             sec_ret.setdefault(sec, {}).setdefault(dates[i], []).append(closes[i] / closes[i - 1] - 1)
@@ -259,7 +293,7 @@ def build_cycle_context(stock_data, cfg, bench_hist):
 def value_cycle_trades(instruments_data, threshold, ctx):
     """サイクル補正後スコアで閾値判定するValue変種(本番apply_cycleと同じ加減点)。生トレード一覧。"""
     trades = []
-    for tk, (sig, closes, dates) in instruments_data.items():
+    for tk, (sig, closes, dates, opens) in instruments_data.items():
         sec = ctx["sub_map"].get(tk)
         tmap = ctx["trend"].get(sec, {})
         open_pos = None
@@ -275,14 +309,19 @@ def value_cycle_trades(instruments_data, threshold, ctx):
             adj = s_now["score"] + delta
             if open_pos is None:
                 if adj >= threshold and (prev_adj is None or prev_adj < threshold):
-                    open_pos = {"entryT": t, "entry": closes[t]}
+                    px, te = next_fill(opens, closes, t)
+                    if px:
+                        open_pos = {"entryT": te, "entry": px}
             else:
                 held = t - open_pos["entryT"]
                 hit_top = s_now["top"] and closes[t] >= s_now["top"] - s_now["band"]
                 if hit_top or held >= VALUE_EXIT_DAYS or t == len(closes) - 1:
+                    ex_px, ex_t = next_fill(opens, closes, t)
+                    if ex_px is None or t == len(closes) - 1:
+                        ex_px, ex_t = closes[t], t
                     trades.append({"ticker": tk, "entryDate": dates[open_pos["entryT"]],
-                                   "exitDate": dates[t], "days": held,
-                                   "retPct": (closes[t] / open_pos["entry"] - 1) * 100,
+                                   "exitDate": dates[ex_t], "days": ex_t - open_pos["entryT"],
+                                   "retPct": (ex_px / open_pos["entry"] - 1) * 100 - COST_RT_PCT["stock"],
                                    "reason": "top" if hit_top else "time"})
                     open_pos = None
             prev_adj = adj
@@ -296,14 +335,17 @@ def backtest_value_cycle(instruments_data, threshold, ctx):
 def backtest_value_hold(instruments_data, threshold):
     """比較用: 最初にスコアが閾値を超えた日に買い、そのまま検証期間末まで保有し続けた場合。"""
     rows = []
-    for tk, (sig, closes, dates) in instruments_data.items():
+    for tk, (sig, closes, dates, opens) in instruments_data.items():
         for t in range(WARMUP + 1, len(closes)):
             s_now, s_prev = sig[t], sig[t - 1]
             if s_now and s_now["score"] >= threshold and (s_prev is None or s_prev["score"] < threshold):
-                days = len(closes) - 1 - t
+                px, te = next_fill(opens, closes, t)
+                if px is None:
+                    break
+                days = len(closes) - 1 - te
                 if days < 20:
                     break
-                ret = closes[-1] / closes[t] - 1
+                ret = closes[-1] / px - 1 - COST_RT_PCT["stock"] / 200  # 買い持ちは片道コストのみ
                 ann = ((1 + ret) ** (252 / days) - 1) * 100
                 rows.append({"ticker": tk, "retPct": ret * 100, "days": days, "annPct": ann})
                 break  # 最初のシグナルで買ってずっと保有
@@ -327,14 +369,15 @@ def backtest_momentum(instruments_data, trade_tickers, mp, ctx=None):
     for tk in trade_tickers:
         if tk not in instruments_data:
             continue
-        sig, closes, dates = instruments_data[tk]
+        sig, closes, dates, opens = instruments_data[tk]
         pos = None
         for t in range(WARMUP + 1, len(closes)):
             s = sig[t]
             price = closes[t]
             if pos:
-                # 日次リターン記録(サイズ加重)
-                r = (price / closes[t - 1] - 1) * pos["size"]
+                # 日次リターン記録(サイズ加重)。約定日はエントリー価格(始値)基点
+                base = pos["entry"] if t == pos["entryT"] else closes[t - 1]
+                r = (price / base - 1) * pos["size"]
                 daily_ret.setdefault(dates[t], []).append(r)
                 # トレーリング更新
                 if s and s["atr"]:
@@ -359,16 +402,19 @@ def backtest_momentum(instruments_data, trade_tickers, mp, ctx=None):
                     total = pos["realized"] + (price / pos["entry"] - 1) * pos["size"]
                     trades.append({"ticker": tk, "entryDate": dates[pos["entryT"]],
                                    "exitDate": dates[t], "days": t - pos["entryT"],
-                                   "retPct": total * 100, "reason": reason})
+                                   "retPct": total * 100 - COST_RT_PCT["stock"], "reason": reason})
                     pos = None
             elif s and s["momSignal"] == "entry":
                 if ctx is not None:
                     sec = ctx["sub_map"].get(tk)
                     if dates[t] in ctx["below200"] or ctx["trend"].get(sec, {}).get(dates[t]) == "outflow":
                         continue  # サイクルゲート: リスクオフ/セクター流出時は新規見送り
-                stop0 = max(price * (1 - mp["stopInitPct"] / 100),
-                            price - (s["atr"] or price * 0.03) * mp["atrMult"])
-                pos = {"entryT": t, "entry": price, "stop": stop0,
+                px, te = next_fill(opens, closes, t)
+                if px is None:
+                    continue
+                stop0 = max(px * (1 - mp["stopInitPct"] / 100),
+                            px - (s["atr"] or px * 0.03) * mp["atrMult"])
+                pos = {"entryT": te, "entry": px, "stop": stop0,
                        "size": 1.0, "realized": 0.0, "tp1": False, "tp2": False}
     return summarize_trades(trades), daily_ret
 
@@ -382,10 +428,15 @@ def summarize_trades(trades):
     avg_ret = sum(rets) / len(rets)
     avg_days = sum(days) / len(days)
     ann = ((1 + avg_ret / 100) ** (252 / max(avg_days, 1)) - 1) * 100 if avg_days > 0 else None
+    losses = [r for r in rets if r <= 0]
+    pf = round(sum(wins) / abs(sum(losses)), 2) if losses and sum(losses) < 0 else None
     return {
         "trades": len(trades),
         "winRatePct": round(len(wins) / len(rets) * 100, 1),
         "avgRetPct": round(avg_ret, 2),
+        "avgWinPct": round(sum(wins) / len(wins), 2) if wins else None,
+        "avgLossPct": round(sum(losses) / len(losses), 2) if losses else None,
+        "profitFactor": pf,
         "medianRetPct": round(sorted(rets)[len(rets) // 2], 2),
         "bestPct": round(max(rets), 1), "worstPct": round(min(rets), 1),
         "avgDays": round(avg_days, 1),
@@ -400,7 +451,7 @@ def summarize_trades(trades):
 def value_sleeve_series(instruments_data, threshold=65):
     """Value戦略のポジション平均日次リターン系列(date->ret)。ノーポジ日は0(現金)。"""
     daily = {}
-    for tk, (sig, closes, dates) in instruments_data.items():
+    for tk, (sig, closes, dates, opens) in instruments_data.items():
         pos_entry_t = None
         for t in range(WARMUP + 1, len(closes)):
             s_now, s_prev = sig[t], sig[t - 1]
@@ -514,7 +565,7 @@ def optimize_sector_sleeves(stock_data, cfg):
     targets = cfg["portfolio"].get("stockSectorTargets", {})
     secs = list(targets.keys()) or sorted(set(sub_map.values()))
     daily = {}
-    for tk, (sig, closes, dates) in stock_data.items():
+    for tk, (sig, closes, dates, opens) in stock_data.items():
         sec = sub_map.get(tk)
         if sec not in secs:
             continue
@@ -583,6 +634,7 @@ def optimize_sector_sleeves(stock_data, cfg):
 def build_interpretation(value_results, mom, allocations, names):
     """結果を平易な日本語に自動翻訳する。表示はUIの先頭。"""
     L = []
+    L.append("⚠️ v3.25から約定モデルが現実仕様(t+1営業日始値で約定+往復コスト控除: 株0.2%/暗号0.6%/金銀2.0%)。旧バージョンの表示値より全体に低めに出るのは劣化ではなく正直になった分。")
     L.append("【まず用語】CAGR＝年平均リターン(複利)。最大DD＝期間中に資産が一番へこんだ瞬間の下落率(これに耐えられるかが配分選びの本質)。Sharpe＝リターン÷値動きの荒さ＝リスク1単位あたりの効率(1.0以上で良好、2.0は優秀)。")
     # Value Tier
     tiers = [(k, v) for k, v in value_results.items() if v.get("trades")]
@@ -660,8 +712,8 @@ def main():
             print(f"{key}: データ不足でスキップ")
             continue
         print(f"{key}: {len(hist)}本 ({src}) シグナル前計算…")
-        sig, closes, dates = precompute_signals(e, hist, bench_by_date, cfg)
-        instruments_data[key] = (sig, closes, dates)
+        sig, closes, dates, opens = precompute_signals(e, hist, bench_by_date, cfg)
+        instruments_data[key] = (sig, closes, dates, opens)
         class_hist[key] = (e.get("class"), hist)
 
     stock_data = {k: v for k, v in instruments_data.items() if class_hist[k][0] == "stock"}
@@ -684,7 +736,8 @@ def main():
         if key not in asset_data:
             continue
         single = {key: asset_data[key]}
-        asset_tiers[key] = {label: backtest_value(single, thr)
+        a_cost = COST_RT_PCT["crypto"] if key in ("btc", "eth") else COST_RT_PCT["metal"]
+        asset_tiers[key] = {label: backtest_value(single, thr, cost=a_cost)
                             for label, thr in TIER_THRESHOLDS.items()}
         asset_tiers_hold[key] = {label: backtest_value_hold(single, thr)
                                  for label, thr in TIER_THRESHOLDS.items()}
@@ -888,9 +941,11 @@ def main():
         "sectorOpt": sector_opt,
         "sleeveStats": sleeve_stats,
         "allocations": allocations,
-        "assumptions": ("Value: スコア閾値上抜けで買い→チャネル天井 or 120営業日で売り / "
-                        "モメンタム: ルール完全再現(初期-8%上限,ATR×2.5,TP20/40%,タイムストップ40日) / "
-                        "配分: 日次リバランス近似・現金金利0% / 手数料・税・スリッページ未考慮"),
+        "assumptions": ("約定: t日終値シグナル→t+1営業日始値(v3.25現実仕様) / "
+                        "コスト: 往復 株0.2%・暗号0.6%・金銀2.0%を控除(買い持ちは片道) / "
+                        "Value: 閾値上抜け→チャネル天井 or 120営業日 / "
+                        "モメンタム: 初期-8%上限,ATR×2.5,TP20/40%,タイムストップ40日 / "
+                        "配分: 日次リバランス近似・現金金利0%・税は未考慮"),
         "warning": "過去データへの機械的検証であり将来を保証しない。特に最大CAGR配分は過剰適合を含むため、シャープ最大やDD制約付きを実務の参考にすること。",
     }
     with open(os.path.join(BASE, "backtest.json"), "w", encoding="utf-8") as f:

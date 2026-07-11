@@ -28,6 +28,8 @@ jobs:
         run: python test_engine.py
       - name: reanalyzeテスト
         run: python test_reanalyze.py
+      - name: backtestテスト(約定モデル)
+        run: python test_backtest.py
       - name: JS構文チェック(index.htmlのscriptブロック抽出)
         run: |
           python - <<'EOF'
