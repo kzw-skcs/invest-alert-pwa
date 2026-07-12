@@ -282,26 +282,6 @@
       "rotSector": "資本財"
     },
     {
-      "ticker": "RTX",
-      "stooq": "rtx.us",
-      "name": "RTX (Raytheon)",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "rotSector": "資本財"
-    },
-    {
-      "ticker": "NOC",
-      "stooq": "noc.us",
-      "name": "Northrop Grumman",
-      "sector": "宇宙・防衛",
-      "subSector": "宇宙・防衛",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "rotSector": "資本財"
-    },
-    {
       "ticker": "RKLB",
       "stooq": "rklb.us",
       "name": "Rocket Lab",
@@ -618,39 +598,6 @@
       "rotSector": "公益"
     },
     {
-      "ticker": "GEV",
-      "stooq": "gev.us",
-      "name": "GE Vernova",
-      "sector": "資本財",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "タービン/送電網・コア採用",
-      "rotSector": "資本財"
-    },
-    {
-      "ticker": "VST",
-      "stooq": "vst.us",
-      "name": "Vistra",
-      "sector": "エネルギー",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "独立系電力",
-      "rotSector": "公益"
-    },
-    {
-      "ticker": "CCJ",
-      "stooq": "ccj.us",
-      "name": "Cameco",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "西側最大ウラン・コア採用",
-      "rotSector": "エネルギー"
-    },
-    {
       "ticker": "MU",
       "stooq": "mu.us",
       "name": "Micron",
@@ -703,6 +650,17 @@
       "stooq": "ionq.us"
     },
     {
+      "ticker": "VOO",
+      "stooq": "voo.us",
+      "name": "Vanguard S&P500 ETF",
+      "sector": "インデックス",
+      "subSector": "インデックス(コア)",
+      "rotSector": "インデックス",
+      "tradePolicy": "accumulate",
+      "conviction": 5,
+      "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
+    },
+    {
       "ticker": "SNDK",
       "name": "SNDK",
       "sector": "その他",
@@ -730,15 +688,57 @@
       "stooq": "hood.us"
     },
     {
-      "ticker": "VOO",
-      "stooq": "voo.us",
-      "name": "Vanguard S&P500 ETF",
-      "sector": "インデックス",
-      "subSector": "インデックス(コア)",
-      "rotSector": "インデックス",
-      "tradePolicy": "accumulate",
-      "conviction": 5,
-      "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
+      "ticker": "RTX",
+      "stooq": "rtx.us",
+      "name": "RTX (Raytheon)",
+      "sector": "宇宙・防衛",
+      "subSector": "宇宙・防衛",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "rotSector": "資本財"
+    },
+    {
+      "ticker": "NOC",
+      "stooq": "noc.us",
+      "name": "Northrop Grumman",
+      "sector": "宇宙・防衛",
+      "subSector": "宇宙・防衛",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "rotSector": "資本財"
+    },
+    {
+      "ticker": "GEV",
+      "stooq": "gev.us",
+      "name": "GE Vernova",
+      "sector": "資本財",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "タービン/送電網・コア採用",
+      "rotSector": "資本財"
+    },
+    {
+      "ticker": "VST",
+      "stooq": "vst.us",
+      "name": "Vistra",
+      "sector": "エネルギー",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "独立系電力",
+      "rotSector": "公益"
+    },
+    {
+      "ticker": "CCJ",
+      "stooq": "ccj.us",
+      "name": "Cameco",
+      "sector": "エネルギー",
+      "subSector": "エネルギー",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "西側最大ウラン・コア採用",
+      "rotSector": "エネルギー"
     },
     {
       "ticker": "NEE",
