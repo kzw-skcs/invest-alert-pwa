@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-12T07:14:12.176581+00:00",
- "updatedJST": "2026-07-12 16:14 JST",
+ "updated": "2026-07-12T21:04:32.625475+00:00",
+ "updatedJST": "2026-07-13 06:04 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -113,7 +113,7 @@
   "reason": null
  },
  "fx": {
-  "usdjpy": 161.671997
+  "usdjpy": 161.677994
  },
  "metalJpy": {
   "gold": {
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-12 16:14 JST"
+  "fetchedAt": "2026-07-13 06:04 JST"
  },
  "instruments": [
   {
@@ -73931,20 +73931,20 @@
     },
     {
      "d": "2026-07-12",
-     "c": 63762.730469
+     "c": 64182.421875
     }
    ],
    "state": "SELL",
-   "price": 63762.7305,
+   "price": 64182.4219,
    "top": 62753.1682,
    "bottom": 56939.4816,
    "band": 174.4106,
-   "pctInRange": 117.4,
-   "distToBottomPct": 11.98,
-   "distToTopPct": -1.58,
-   "smaShort": 61833.7705,
-   "smaLong": 64876.2866,
-   "smaTrend": 73865.4957,
+   "pctInRange": 124.6,
+   "distToBottomPct": 12.72,
+   "distToTopPct": -2.23,
+   "smaShort": 61854.7551,
+   "smaLong": 64884.6804,
+   "smaTrend": 73867.5942,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -73952,15 +73952,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 52.2,
-   "atr": 1902.2626,
-   "atrPct": 2.98,
+   "rsi": 53.9,
+   "atr": 1904.6976,
+   "atrPct": 2.97,
    "high52w": 106547.5234,
-   "drawdownPct": 40.2,
+   "drawdownPct": 39.8,
    "macroDriven": null,
    "topLong": 119452.7516,
    "bottomLong": 100561.163,
-   "pctInRangeLong": -194.8,
+   "pctInRangeLong": -192.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -74663,20 +74663,20 @@
     },
     {
      "d": "2026-07-12",
-     "c": 1796.449951
+     "c": 1821.410034
     }
    ],
    "state": "SELL",
-   "price": 1796.45,
+   "price": 1821.41,
    "top": 1560.4406,
    "bottom": 1423.2855,
    "band": 4.1147,
-   "pctInRange": 272.1,
-   "distToBottomPct": 26.22,
-   "distToTopPct": -13.14,
-   "smaShort": 1690.3856,
-   "smaLong": 1760.9224,
-   "smaTrend": 2221.5053,
+   "pctInRange": 290.3,
+   "distToBottomPct": 27.97,
+   "distToTopPct": -14.33,
+   "smaShort": 1691.6336,
+   "smaLong": 1761.4216,
+   "smaTrend": 2221.6301,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -74684,15 +74684,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 57.5,
-   "atr": 69.2288,
+   "rsi": 60.0,
+   "atr": 70.1648,
    "atrPct": 3.85,
    "high52w": 3602.3081,
-   "drawdownPct": 50.1,
+   "drawdownPct": 49.4,
    "macroDriven": null,
    "topLong": 3427.231,
    "bottomLong": 2977.69,
-   "pctInRangeLong": -262.8,
+   "pctInRangeLong": -257.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -74708,7 +74708,7 @@
     "tierLabel": "👀監視",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-50%の暴落水準 +20",
+     "高値-49%の暴落水準 +20",
      "5年トレンド上向き +6",
      "半減期サイクル: 底形成ウィンドウ +5"
     ],
@@ -75449,7 +75449,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 62,
+    "scorePrev": 61,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -76428,6 +76428,167 @@
  ],
  "alerts": [
   {
+   "type": "THESIS_REVIEW",
+   "ticker": "MSFT",
+   "priority": 2,
+   "title": "🧐 MSFT テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "PLTR",
+   "priority": 2,
+   "title": "🧐 PLTR テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "CLMB",
+   "priority": 2,
+   "title": "🧐 CLMB テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "ADBE",
+   "priority": 2,
+   "title": "🧐 ADBE テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "ICE",
+   "priority": 2,
+   "title": "🧐 ICE テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "PAYX",
+   "priority": 2,
+   "title": "🧐 PAYX テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "BUR",
+   "priority": 2,
+   "title": "🧐 BUR テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス・FCF赤字・金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "ISRG",
+   "priority": 2,
+   "title": "🧐 ISRG テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "CEG",
+   "priority": 2,
+   "title": "🧐 CEG テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: FCF赤字が常態(生存力に疑問)"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "NOC",
+   "priority": 2,
+   "title": "🧐 NOC テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "VST",
+   "priority": 2,
+   "title": "🧐 VST テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 重警告: 純負債/EBITDA 4.2倍(過大な負債)・重警告: インタレストカバレッジ1.6倍"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "ACN",
+   "priority": 2,
+   "title": "🧐 ACN テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "GDDY",
+   "priority": 2,
+   "title": "🧐 GDDY テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "UBER",
+   "priority": 2,
+   "title": "🧐 UBER テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "KKR",
+   "priority": 2,
+   "title": "🧐 KKR テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス・金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "BLDR",
+   "priority": 2,
+   "title": "🧐 BLDR テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "OTIS",
+   "priority": 2,
+   "title": "🧐 OTIS テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "TSCO",
+   "priority": 2,
+   "title": "🧐 TSCO テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "HWKN",
+   "priority": 2,
+   "title": "🧐 HWKN テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "BMI",
+   "priority": 2,
+   "title": "🧐 BMI テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 売上成長マイナス"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "KTOS",
+   "priority": 2,
+   "title": "🧐 KTOS テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: FCF赤字・FCF赤字が常態(生存力に疑問)"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "btc",
+   "priority": 2,
+   "title": "🧐 btc テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
+   "type": "THESIS_REVIEW",
+   "ticker": "eth",
+   "priority": 2,
+   "title": "🧐 eth テーゼ見直し(継続中・週次リマインド)",
+   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
+  },
+  {
    "type": "BUY_CONSIDER",
    "ticker": "PLTR",
    "priority": 3,
@@ -76762,8 +76923,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 63763,
-    "ddFromPeakPct": -48.9
+    "currentPrice": 64182,
+    "ddFromPeakPct": -48.6
    },
    "action": "現在は半減期+26.7ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
