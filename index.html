@@ -1272,9 +1272,18 @@ function stockSplitPct() {
   if (DATA && DATA.modelPortfolio && DATA.modelPortfolio.stockSplit) return DATA.modelPortfolio.stockSplit;
   return (DATA && DATA.portfolio && DATA.portfolio.stockSplit) || { value: 80, momentum: 20 };
 }
+function visibleWeights(wsrc) {
+  // 非表示(×)銘柄を除外し、残りへ比率を再配分(合計は元と同じ)
+  const ent = Object.entries(wsrc || {}).filter(([t]) => !HIDDEN.includes(t));
+  const totAll = Object.values(wsrc || {}).reduce((s, v) => s + v, 0);
+  const totVis = ent.reduce((s, [, v]) => s + v, 0);
+  if (!totVis) return {};
+  const k = totAll / totVis;
+  return Object.fromEntries(ent.map(([t, v]) => [t, v * k]));
+}
 function tickerPlan(stockBudget) {
-  // plannerWeights(株スリーブ内%) → 金額・概算株数
-  const w = (DATA && DATA.plannerWeights) || {};
+  // plannerWeights(株スリーブ内%) → 金額・概算株数(非表示銘柄は除外・再配分)
+  const w = visibleWeights((DATA && DATA.plannerWeights) || {});
   const fx = usdjpy();
   const rows = [];
   for (const inst of instruments()) {
@@ -1312,10 +1321,15 @@ function renderModelPF() {
     html += '<div class="tiny" style="margin-top:6px">チルトなし(基準PF通り)</div>';
   }
   if (m.tickers && m.tickers.length) {
-    html += `<details open style="margin-top:8px"><summary>コア銘柄ウェイト(株スリーブ内・上位15)</summary>
-      <div class="tiny" style="color:var(--tx3)">フロー: 🟢流入/🔴流出/⚪中立 — 🧭ローテーション表と同一判定</div>
+    const vis = m.tickers.filter((r) => !HIDDEN.includes(r.ticker));
+    const hiddenN = m.tickers.length - vis.length;
+    const sumAll = m.tickers.reduce((s, r) => s + (r.wPct || 0), 0);
+    const sumVis = vis.reduce((s, r) => s + (r.wPct || 0), 0);
+    const k = (hiddenN && sumVis) ? sumAll / sumVis : 1;
+    html += `<details open style="margin-top:8px"><summary>コア銘柄ウェイト(株スリーブ内・上位${vis.length})</summary>
+      <div class="tiny" style="color:var(--tx3)">フロー: 🟢流入/🔴流出/⚪中立 — 🧭ローテーション表と同一判定${hiddenN ? `<br>👁️ 非表示${hiddenN}銘柄を除外し、比率を再配分して表示中(☁️同期すると翌朝からサーバー計算にも反映)` : ''}</div>
       <table style="margin-top:4px"><tr><th>銘柄</th><th>比率</th><th>確信度</th><th>Q</th><th>現況</th><th>フロー</th></tr>
-      ${m.tickers.map((r) => `<tr><td><b>${r.ticker}</b></td><td>${r.wPct}%</td><td>${'●'.repeat(r.conviction || 3)}</td>
+      ${vis.map((r) => `<tr><td><b>${r.ticker}</b></td><td>${(r.wPct * k).toFixed(1)}%</td><td>${'●'.repeat(r.conviction || 3)}</td>
         <td>${r.q ?? '—'}</td><td class="tiny">${r.tier || '-'}</td>
         <td>${r.flow === 'inflow' ? '🟢' : r.flow === 'outflow' ? '🔴' : '⚪'}</td></tr>`).join('')}</table></details>`;
   }
@@ -1385,7 +1399,7 @@ function renderAddPlan() {
   }
   // 株分の銘柄提案: シグナル優先→アンダーウェイト
   if (alloc.stocks > 1000) {
-    const w = DATA.plannerWeights || {};
+    const w = visibleWeights(DATA.plannerWeights || {});
     const merged = mergedHoldings('all'); const fx = usdjpy();
     const cands = instruments().filter((i) => i.class === 'stock' && w[i.ticker]);
     const stockTotalAfter = totalAfter * t.stocks / 100;
