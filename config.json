@@ -215,7 +215,7 @@
       "name": "NVIDIA",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 5,
       "held": true,
       "rotSector": "情報技術"
@@ -237,7 +237,7 @@
       "name": "Tesla",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 3,
       "rotSector": "一般消費財"
     },
@@ -270,16 +270,6 @@
       "tradePolicy": "hold",
       "conviction": 5,
       "rotSector": "エネルギー"
-    },
-    {
-      "ticker": "NEE",
-      "stooq": "nee.us",
-      "name": "NextEra Energy",
-      "sector": "エネルギー",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "rotSector": "公益"
     },
     {
       "ticker": "LMT",
@@ -317,7 +307,7 @@
       "name": "Rocket Lab",
       "sector": "宇宙・防衛",
       "subSector": "宇宙・防衛",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 5,
       "rotSector": "資本財"
     },
@@ -441,28 +431,6 @@
       "rotSector": "金融"
     },
     {
-      "ticker": "AXP",
-      "stooq": "axp.us",
-      "name": "American Express",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "金融"
-    },
-    {
-      "ticker": "SPGI",
-      "stooq": "spgi.us",
-      "name": "S&P Global",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "金融"
-    },
-    {
       "ticker": "DELL",
       "stooq": "dell.us",
       "name": "Dell Technologies",
@@ -483,6 +451,326 @@
       "conviction": 3,
       "note": "アルファ・インベスター推奨",
       "rotSector": "情報技術"
+    },
+    {
+      "ticker": "ICE",
+      "stooq": "ice.us",
+      "name": "Intercontinental Exchange",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "V",
+      "stooq": "v.us",
+      "name": "Visa",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 5,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "BN",
+      "stooq": "bn.us",
+      "name": "Brookfield",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "AMAT",
+      "stooq": "amat.us",
+      "name": "Applied Materials",
+      "sector": "ハイテク",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "LRCX",
+      "stooq": "lrcx.us",
+      "name": "Lam Research",
+      "sector": "ハイテク",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "RLI",
+      "stooq": "rli.us",
+      "name": "RLI Corp",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "ミズラヒ中小型推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "FTAI",
+      "stooq": "ftai.us",
+      "name": "FTAI Aviation",
+      "sector": "資本財",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "ミズラヒ中小型推奨",
+      "rotSector": "資本財"
+    },
+    {
+      "ticker": "PAYX",
+      "stooq": "payx.us",
+      "name": "Paychex",
+      "sector": "ハイテク",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "ミズラヒ中小型推奨",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "TLN",
+      "stooq": "tln.us",
+      "name": "Talen Energy",
+      "sector": "エネルギー",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "ミズラヒ中小型推奨",
+      "rotSector": "公益"
+    },
+    {
+      "ticker": "BUR",
+      "stooq": "bur.us",
+      "name": "Burford Capital",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "ミズラヒ超小型推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "XPEL",
+      "stooq": "xpel.us",
+      "name": "XPEL",
+      "sector": "一般消費財",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "ミズラヒ超小型推奨",
+      "rotSector": "一般消費財"
+    },
+    {
+      "ticker": "GPGI",
+      "stooq": "gpgi.us",
+      "name": "GPGI",
+      "sector": "資本財",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 2,
+      "note": "ミズラヒ超小型推奨",
+      "rotSector": "資本財"
+    },
+    {
+      "ticker": "ISRG",
+      "stooq": "isrg.us",
+      "name": "Intuitive Surgical",
+      "sector": "ヘルスケア",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 5,
+      "note": "手術ロボ独占・コア採用",
+      "rotSector": "ヘルスケア"
+    },
+    {
+      "ticker": "SNPS",
+      "stooq": "snps.us",
+      "name": "Synopsys",
+      "sector": "ハイテク",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "EDA複占・コア採用",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "CEG",
+      "stooq": "ceg.us",
+      "name": "Constellation Energy",
+      "sector": "エネルギー",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 5,
+      "note": "原子力PPA・コア採用",
+      "rotSector": "公益"
+    },
+    {
+      "ticker": "GEV",
+      "stooq": "gev.us",
+      "name": "GE Vernova",
+      "sector": "資本財",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "タービン/送電網・コア採用",
+      "rotSector": "資本財"
+    },
+    {
+      "ticker": "VST",
+      "stooq": "vst.us",
+      "name": "Vistra",
+      "sector": "エネルギー",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "独立系電力",
+      "rotSector": "公益"
+    },
+    {
+      "ticker": "CCJ",
+      "stooq": "ccj.us",
+      "name": "Cameco",
+      "sector": "エネルギー",
+      "subSector": "エネルギー",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "西側最大ウラン・コア採用",
+      "rotSector": "エネルギー"
+    },
+    {
+      "ticker": "MU",
+      "stooq": "mu.us",
+      "name": "Micron",
+      "sector": "ハイテク",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "HBM寡占・押し目限定",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "ARM",
+      "name": "ARM",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "arm.us",
+      "rotSector": "情報技術"
+    },
+    {
+      "ticker": "AEM",
+      "stooq": "aem.us",
+      "name": "Agnico Eagle",
+      "sector": "素材",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "金鉱最優良(低コスト・安定管轄)。金の約2倍ベータ(金サイクル増幅)",
+      "rotSector": "素材",
+      "alphaReview": {
+        "market": 14,
+        "mgmt": 18,
+        "marketNote": "金鉱業は生産量CAGR1%未満と成長鈍いが金価格高騰・地政学リスクが追い風、代替リスクは低い",
+        "mgmtNote": "CEO Al-Joundi氏(2022年就任、AEM在籍歴長い)は増配・自社株買いなど資本規律を継続し業績堅調",
+        "flags": [
+          "経営陣の直接持株比率データが古く低水準(0.01%)で最新の確認が必要"
+        ],
+        "confidence": "medium",
+        "date": "2026-07-11"
+      }
+    },
+    {
+      "ticker": "IONQ",
+      "name": "IONQ",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "ionq.us"
+    },
+    {
+      "ticker": "SNDK",
+      "name": "SNDK",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "sndk.us"
+    },
+    {
+      "ticker": "DRAM",
+      "name": "DRAM",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "dram.us"
+    },
+    {
+      "ticker": "HOOD",
+      "name": "HOOD",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "hood.us"
+    },
+    {
+      "ticker": "VOO",
+      "stooq": "voo.us",
+      "name": "Vanguard S&P500 ETF",
+      "sector": "インデックス",
+      "subSector": "インデックス(コア)",
+      "rotSector": "インデックス",
+      "tradePolicy": "accumulate",
+      "conviction": 5,
+      "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
+    },
+    {
+      "ticker": "NEE",
+      "stooq": "nee.us",
+      "name": "NextEra Energy",
+      "sector": "エネルギー",
+      "subSector": "電力・DCインフラ",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "rotSector": "公益"
+    },
+    {
+      "ticker": "AXP",
+      "stooq": "axp.us",
+      "name": "American Express",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "金融"
+    },
+    {
+      "ticker": "SPGI",
+      "stooq": "spgi.us",
+      "name": "S&P Global",
+      "sector": "金融",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 5,
+      "note": "アルファ・インベスター推奨",
+      "rotSector": "金融"
     },
     {
       "ticker": "BDX",
@@ -551,17 +839,6 @@
       "rotSector": "情報技術"
     },
     {
-      "ticker": "ICE",
-      "stooq": "ice.us",
-      "name": "Intercontinental Exchange",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "金融"
-    },
-    {
       "ticker": "UNH",
       "stooq": "unh.us",
       "name": "UnitedHealth",
@@ -571,17 +848,6 @@
       "conviction": 3,
       "note": "アルファ・インベスター推奨",
       "rotSector": "ヘルスケア"
-    },
-    {
-      "ticker": "V",
-      "stooq": "v.us",
-      "name": "Visa",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "金融"
     },
     {
       "ticker": "IBKR",
@@ -602,39 +868,6 @@
       "subSector": "その他モート",
       "tradePolicy": "hold",
       "conviction": 2,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "情報技術"
-    },
-    {
-      "ticker": "BN",
-      "stooq": "bn.us",
-      "name": "Brookfield",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "金融"
-    },
-    {
-      "ticker": "AMAT",
-      "stooq": "amat.us",
-      "name": "Applied Materials",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "アルファ・インベスター推奨",
-      "rotSector": "情報技術"
-    },
-    {
-      "ticker": "LRCX",
-      "stooq": "lrcx.us",
-      "name": "Lam Research",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4,
       "note": "アルファ・インベスター推奨",
       "rotSector": "情報技術"
     },
@@ -717,17 +950,6 @@
       "noAlloc": true
     },
     {
-      "ticker": "RLI",
-      "stooq": "rli.us",
-      "name": "RLI Corp",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "ミズラヒ中小型推奨",
-      "rotSector": "金融"
-    },
-    {
       "ticker": "BLDR",
       "stooq": "bldr.us",
       "name": "Builders FirstSource",
@@ -739,28 +961,6 @@
       "rotSector": "資本財"
     },
     {
-      "ticker": "FTAI",
-      "stooq": "ftai.us",
-      "name": "FTAI Aviation",
-      "sector": "資本財",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "ミズラヒ中小型推奨",
-      "rotSector": "資本財"
-    },
-    {
-      "ticker": "PAYX",
-      "stooq": "payx.us",
-      "name": "Paychex",
-      "sector": "ハイテク",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "ミズラヒ中小型推奨",
-      "rotSector": "情報技術"
-    },
-    {
       "ticker": "OTIS",
       "stooq": "otis.us",
       "name": "Otis Worldwide",
@@ -770,17 +970,6 @@
       "conviction": 2,
       "note": "ミズラヒ中小型推奨",
       "rotSector": "資本財"
-    },
-    {
-      "ticker": "TLN",
-      "stooq": "tln.us",
-      "name": "Talen Energy",
-      "sector": "エネルギー",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "ミズラヒ中小型推奨",
-      "rotSector": "公益"
     },
     {
       "ticker": "TSCO",
@@ -805,17 +994,6 @@
       "rotSector": "資本財"
     },
     {
-      "ticker": "BUR",
-      "stooq": "bur.us",
-      "name": "Burford Capital",
-      "sector": "金融",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "ミズラヒ超小型推奨",
-      "rotSector": "金融"
-    },
-    {
       "ticker": "PBI",
       "stooq": "pbi.us",
       "name": "Pitney Bowes",
@@ -825,17 +1003,6 @@
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
-    },
-    {
-      "ticker": "XPEL",
-      "stooq": "xpel.us",
-      "name": "XPEL",
-      "sector": "一般消費財",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "ミズラヒ超小型推奨",
-      "rotSector": "一般消費財"
     },
     {
       "ticker": "BKTI",
@@ -860,17 +1027,6 @@
       "rotSector": "素材"
     },
     {
-      "ticker": "GPGI",
-      "stooq": "gpgi.us",
-      "name": "GPGI",
-      "sector": "資本財",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 2,
-      "note": "ミズラヒ超小型推奨",
-      "rotSector": "資本財"
-    },
-    {
       "ticker": "BMI",
       "stooq": "bmi.us",
       "name": "Badger Meter",
@@ -880,17 +1036,6 @@
       "conviction": 2,
       "note": "ミズラヒ超小型推奨",
       "rotSector": "資本財"
-    },
-    {
-      "ticker": "ISRG",
-      "stooq": "isrg.us",
-      "name": "Intuitive Surgical",
-      "sector": "ヘルスケア",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "note": "手術ロボ独占・コア採用",
-      "rotSector": "ヘルスケア"
     },
     {
       "ticker": "AXON",
@@ -904,61 +1049,6 @@
       "rotSector": "資本財"
     },
     {
-      "ticker": "SNPS",
-      "stooq": "snps.us",
-      "name": "Synopsys",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "EDA複占・コア採用",
-      "rotSector": "情報技術"
-    },
-    {
-      "ticker": "CEG",
-      "stooq": "ceg.us",
-      "name": "Constellation Energy",
-      "sector": "エネルギー",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 5,
-      "note": "原子力PPA・コア採用",
-      "rotSector": "公益"
-    },
-    {
-      "ticker": "GEV",
-      "stooq": "gev.us",
-      "name": "GE Vernova",
-      "sector": "資本財",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "タービン/送電網・コア採用",
-      "rotSector": "資本財"
-    },
-    {
-      "ticker": "VST",
-      "stooq": "vst.us",
-      "name": "Vistra",
-      "sector": "エネルギー",
-      "subSector": "電力・DCインフラ",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "独立系電力",
-      "rotSector": "公益"
-    },
-    {
-      "ticker": "CCJ",
-      "stooq": "ccj.us",
-      "name": "Cameco",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "西側最大ウラン・コア採用",
-      "rotSector": "エネルギー"
-    },
-    {
       "ticker": "KTOS",
       "stooq": "ktos.us",
       "name": "Kratos Defense",
@@ -968,27 +1058,6 @@
       "conviction": 4,
       "note": "無人機・コア採用",
       "rotSector": "資本財"
-    },
-    {
-      "ticker": "MU",
-      "stooq": "mu.us",
-      "name": "Micron",
-      "sector": "ハイテク",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "HBM寡占・押し目限定",
-      "rotSector": "情報技術"
-    },
-    {
-      "ticker": "ARM",
-      "name": "ARM",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "arm.us",
-      "rotSector": "情報技術"
     },
     {
       "ticker": "COST",
@@ -1034,28 +1103,6 @@
       "conviction": 4,
       "note": "金ロイヤルティの独占モデル。鉱山リスクなしで金価格連動+探鉱アップサイド(金サイクル増幅)",
       "rotSector": "素材"
-    },
-    {
-      "ticker": "AEM",
-      "stooq": "aem.us",
-      "name": "Agnico Eagle",
-      "sector": "素材",
-      "subSector": "その他モート",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "note": "金鉱最優良(低コスト・安定管轄)。金の約2倍ベータ(金サイクル増幅)",
-      "rotSector": "素材",
-      "alphaReview": {
-        "market": 14,
-        "mgmt": 18,
-        "marketNote": "金鉱業は生産量CAGR1%未満と成長鈍いが金価格高騰・地政学リスクが追い風、代替リスクは低い",
-        "mgmtNote": "CEO Al-Joundi氏(2022年就任、AEM在籍歴長い)は増配・自社株買いなど資本規律を継続し業績堅調",
-        "flags": [
-          "経営陣の直接持株比率データが古く低水準(0.01%)で最新の確認が必要"
-        ],
-        "confidence": "medium",
-        "date": "2026-07-11"
-      }
     },
     {
       "ticker": "COIN",
@@ -1125,53 +1172,6 @@
       "conviction": 3,
       "rotSector": "素材",
       "note": "銅最大手。AI・電化・送電網投資=構造的な銅需要(あなたのテーマと整合)"
-    },
-    {
-      "ticker": "IONQ",
-      "name": "IONQ",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "ionq.us"
-    },
-    {
-      "ticker": "SNDK",
-      "name": "SNDK",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "sndk.us"
-    },
-    {
-      "ticker": "DRAM",
-      "name": "DRAM",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "dram.us"
-    },
-    {
-      "ticker": "HOOD",
-      "name": "HOOD",
-      "sector": "その他",
-      "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "hold",
-      "conviction": 3,
-      "stooq": "hood.us"
-    },
-    {
-      "ticker": "VOO",
-      "stooq": "voo.us",
-      "name": "Vanguard S&P500 ETF",
-      "sector": "インデックス",
-      "subSector": "インデックス(コア)",
-      "rotSector": "インデックス",
-      "tradePolicy": "accumulate",
-      "conviction": 5,
-      "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
     },
     {
       "ticker": "CVX",
