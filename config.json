@@ -297,7 +297,7 @@
       "name": "IBM",
       "sector": "ハイテク",
       "subSector": "AI・半導体/クラウド",
-      "tradePolicy": "trade",
+      "tradePolicy": "hold",
       "conviction": 3,
       "held": true,
       "rotSector": "情報技術"
