@@ -172,7 +172,8 @@ summary{font-size:12px;color:var(--tx2);cursor:pointer}
   <div class="card" id="pl-card">
     <h3>📈 資産推移 <span class="tiny" id="pfchart-title"></span></h3>
     <div id="pfchart-ranges" class="tiny" style="margin-bottom:6px"></div>
-    <canvas id="pfchart" style="width:100%;height:150px"></canvas>
+    <canvas id="pfchart" style="width:100%;height:150px;touch-action:none"></canvas>
+    <div id="pfchart-hover" class="tiny" style="min-height:16px;font-weight:700"></div>
     <div id="pfchart-info" class="tiny"></div>
   </div>
   <div class="card">
@@ -515,13 +516,31 @@ function rebalanceAlerts() {
       d: moves.join(' / ') + '。詳細は💼資産タブ(合算)の⚖️リバランス。新規資金での調整が税制上有利(売却益課税の回避)' }];
   } catch (e) { return []; }
 }
+function hybridMomAlerts() {
+  // ハイブリッド表示時のみ: hold銘柄の短期シグナルを「参考」として通知欄に合成(v3.33)。
+  // サーバーアラート(push対象)はtrade銘柄のみ=規律は不変。これは画面上の情報表示。
+  if (VIEW !== 'hybrid' || !DATA) return [];
+  const out = [];
+  for (const i of instruments()) {
+    if (i.class !== 'stock' || i.tradePolicy === 'trade') continue;
+    const m = i.momentum || {};
+    if (m.momState === 'ENTRY') {
+      out.push({ p: 3, strat: 'mom', t: `⚡ ${i.ticker} 短期エントリー条件成立(参考)`,
+        d: `hold銘柄のため売買推奨ではない。50日高値ブレイク等の短期条件を満たした=勢いの確認材料。長期の買い増し判断は📈Value側(Tier+✅確定)で` });
+    } else if (m.momState === 'EXIT') {
+      out.push({ p: 3, strat: 'mom', t: `⚡ ${i.ticker} 短期失速シグナル(参考)`,
+        d: `hold銘柄のため売り推奨ではない(長期テーゼで保有継続が原則)。短期の勢いが失われた事実の共有のみ` });
+    }
+  }
+  return out;
+}
 function renderAlerts() {
   const server = (DATA.alerts || []).map((a) => ({
     p: a.priority, t: a.title, d: a.detail,
     strat: (a.type === 'MOM_ENTRY' || a.type === 'MOM_EXIT_WARN') ? 'mom' : (a.type === 'VIX' ? 'both' : 'val'),
   }));
   const pos = positionAlerts();
-  const every = [...pos, ...rebalanceAlerts(), ...server];
+  const every = [...pos, ...rebalanceAlerts(), ...hybridMomAlerts(), ...server];
   const all = every.filter((a) => VIEW === 'hybrid' ? true : VIEW === 'momentum' ? (a.strat === 'mom' || a.strat === 'both') : a.strat !== 'mom')
     .sort((a, b) => a.p - b.p);
   $('#alert-count').textContent = all.length ? `${all.length}件` : '';
@@ -758,27 +777,33 @@ function renderRanking() {
 
 // モメンタム推奨ランキング: 購入(エントリー)と売却(手仕舞い)を明確に分離。逆張りValueは別枠。
 function renderRankingHybrid() {
-  // v3.32: 全銘柄が両軸の対象。📈V=Valueスコア50以上(policy不問) / ⚡=ENTRY・EXIT状態(hold銘柄は参考マーク)
-  const items = [];
-  for (const i of instruments()) {
-    if (i.state === 'NO_DATA') continue;
-    const m = i.momentum || {};
-    if (m.momState === 'ENTRY' || m.momState === 'EXIT') {
-      const ref = i.tradePolicy === 'trade' ? '' : '(参考)';
-      items.push({ i, kind: (m.momState === 'ENTRY' ? '⚡買' : '⚡売') + ref,
-                   score: (m.momRec || {}).score || 0, label: (m.momRec || {}).label || m.momStateLabel });
-    }
-    if (i.value && i.value.score >= 50) {
-      items.push({ i, kind: '📈V', score: i.value.score, label: i.value.tierLabel });
-    }
-  }
-  items.sort((a, b) => b.score - a.score);
-  $('#ranking').innerHTML = items.length ? items.slice(0, 10).map((x) => `
-    <div class="amount-row" onclick="openChart('${x.i.ticker}','${x.i.class}')">
-      <div class="lbl"><span class="pill" style="background:${x.kind === '📈V' ? '#1e3a8a' : x.kind.startsWith('⚡買') ? '#14532d' : '#7f1d1d'};color:#fff">${x.kind}</span>
-        <b>${x.i.ticker}</b> <span class="tiny">${x.label || ''}</span></div>
-      <div style="text-align:right"><b>${x.score}</b></div>
-    </div>`).join('') : '<span class="muted">現在アクション推奨はありません</span>';
+  // v3.33: ハイブリッド=全銘柄を「長期」かつ「短期」として扱う2セクション構成。
+  const stocks = instruments().filter((i) => i.state !== 'NO_DATA');
+  const row = (i, mid, right) => `<div class="amount-row" onclick="openChart('${i.ticker}','${i.class}')">
+      <div class="lbl"><b>${i.ticker}</b> <span class="tiny">${mid || ''}</span></div>
+      <div style="text-align:right">${right}</div></div>`;
+  let html = `<div class="tiny" style="margin:2px 0 4px;color:var(--blue);font-weight:700">📈 長期Value上位(全銘柄)</div>`;
+  const vals = stocks.filter((i) => i.value && i.value.score >= 50)
+    .sort((a, b) => b.value.score - a.value.score).slice(0, 8);
+  html += vals.length ? vals.map((i) => row(i,
+      `${i.value.tierLabel}${streakBadge(i.value)}${bottomBadge(i.value)}`,
+      `<b>${i.value.score}</b>${i.rec && i.rec.expReturnPct != null ? `<div class="tiny">見込み${fmtP(i.rec.expReturnPct)}</div>` : ''}`)).join('')
+    : '<div class="muted tiny">Valueスコア50以上の銘柄なし。待つのも投資です。</div>';
+  const buys = stocks.filter((i) => (i.momentum || {}).momState === 'ENTRY')
+    .sort((a, b) => ((b.momentum.momRec || {}).score || 0) - ((a.momentum.momRec || {}).score || 0));
+  const sells = stocks.filter((i) => (i.momentum || {}).momState === 'EXIT')
+    .sort((a, b) => ((b.momentum.momRec || {}).score || 0) - ((a.momentum.momRec || {}).score || 0));
+  html += `<div class="tiny" style="margin:12px 0 4px;color:var(--green);font-weight:700">⚡ 短期モメンタム買い(全銘柄・holdは参考)</div>`;
+  html += buys.length ? buys.map((i) => row(i,
+      i.tradePolicy === 'trade' ? `損切り-${i.momentum.stopPct}% / TP1 ${fmtN(i.momentum.tp1)}` : '(参考: hold銘柄)',
+      `<b>${(i.momentum.momRec || {}).score || '—'}</b>`)).join('')
+    : '<div class="muted tiny">エントリー条件成立なし</div>';
+  html += `<div class="tiny" style="margin:12px 0 4px;color:var(--red);font-weight:700">⚡ 短期モメンタム売り/失速(全銘柄・holdは参考)</div>`;
+  html += sells.length ? sells.map((i) => row(i,
+      i.tradePolicy === 'trade' ? (i.momentum.note || '手仕舞い検討') : '(参考: hold銘柄は保有継続)',
+      `<b>${(i.momentum.momRec || {}).score || '—'}</b>`)).join('')
+    : '<div class="muted tiny">手仕舞い/失速シグナルなし</div>';
+  $('#ranking').innerHTML = html;
 }
 function renderRankingMom() {
   const trades = instruments().filter((i) => i.tradePolicy === 'trade' && i.momentum);
@@ -1186,15 +1211,48 @@ function renderPfChart() {
   const titles = { all: '合算', nisa: 'NISA', tokutei: '特定', jitsubutsu: '現物・暗号資産' };
   $('#pfchart-title').textContent = `${titles[ACCT] || ACCT}`;
   const info = $('#pfchart-info');
-  const ctx = cv.getContext && cv.getContext('2d');
+  const hover = $('#pfchart-hover');
   const s = pfSeries(ACCT, PFRANGE);
+  window._pfc = s;  // タップ表示用の系列ステート
+  if (hover) hover.textContent = '';
   if (!s) {
-    if (ctx) { cv.width = cv.width; }
+    const ctx0 = cv.getContext && cv.getContext('2d');
+    if (ctx0) { cv.width = cv.width; }
     info.innerHTML = ['1Y', '3Y', '5Y', 'ALL'].includes(PFRANGE)
       ? '<span class="muted">長期表示用の週次履歴は次回の📈実行から利用可能になります(1M/3M/6Mは今すぐ表示可)</span>'
       : '<span class="muted">💼保有を入力すると推移が表示されます</span>';
     return;
   }
+  drawPfChart(null);
+  const lo = Math.min(...s.vals), hi = Math.max(...s.vals);
+  const chg = (s.vals[s.vals.length - 1] / s.vals[0] - 1) * 100;
+  info.innerHTML = `${s.dates[0]}〜${s.dates[s.dates.length - 1]}: <b>${fmtY(s.vals[0])}</b> → <b>${fmtY(s.vals[s.vals.length - 1])}</b>`
+    + ` (<b class="${chg >= 0 ? 'up' : 'dn'}">${chg >= 0 ? '+' : ''}${chg.toFixed(1)}%</b>) / 高値${fmtY(hi)}・安値${fmtY(lo)}`
+    + `<br><span class="muted">👆 チャートをタップ/なぞるとその時点の評価額を表示。※現在の保有数量×過去価格の近似(過去の売買は反映されない)。現金は現在値で一定。金銀はCOMEX×為替換算(店頭プレミアム除く)</span>`;
+  if (!cv._pfBound) {
+    cv._pfBound = true;
+    const pick = (e) => {
+      const st = window._pfc; if (!st) return;
+      const rect = cv.getBoundingClientRect();
+      const cx = (e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX) - rect.left;
+      const k = Math.max(0, Math.min(st.vals.length - 1, Math.round(cx / rect.width * (st.vals.length - 1))));
+      drawPfChart(k);
+      const v = st.vals[k];
+      const c0 = (v / st.vals[0] - 1) * 100;
+      const h = $('#pfchart-hover');
+      if (h) h.innerHTML = `📍 ${st.dates[k]}: <b>${fmtY(v)}</b> <span class="tiny ${c0 >= 0 ? 'up' : 'dn'}">(期間初日比 ${c0 >= 0 ? '+' : ''}${c0.toFixed(1)}%)</span>`;
+      if (e.cancelable) e.preventDefault();
+    };
+    cv.addEventListener('pointerdown', pick);
+    cv.addEventListener('pointermove', (e) => { if (e.buttons || e.pointerType === 'touch') pick(e); });
+    cv.addEventListener('touchstart', pick, { passive: false });
+    cv.addEventListener('touchmove', pick, { passive: false });
+  }
+}
+function drawPfChart(hiIdx) {
+  const cv = $('#pfchart'); const s = window._pfc;
+  if (!cv || !s) return;
+  const ctx = cv.getContext && cv.getContext('2d'); if (!ctx) return;
   const dpr = window.devicePixelRatio || 1;
   const W = (cv.clientWidth || 320) * dpr, H = (cv.clientHeight || 150) * dpr;
   cv.width = W; cv.height = H;
@@ -1202,7 +1260,6 @@ function renderPfChart() {
   const pad = (hi - lo) * 0.08 || 1;
   const yf = (v) => H - ((v - lo + pad) / (hi - lo + 2 * pad)) * H;
   const xf = (k) => (k / (s.vals.length - 1)) * W;
-  if (!ctx) return;
   ctx.clearRect(0, 0, W, H);
   const up = s.vals[s.vals.length - 1] >= s.vals[0];
   ctx.beginPath();
@@ -1210,10 +1267,14 @@ function renderPfChart() {
   ctx.strokeStyle = up ? '#22c55e' : '#ef4444'; ctx.lineWidth = 2 * dpr; ctx.stroke();
   ctx.lineTo(W, H); ctx.lineTo(0, H); ctx.closePath();
   ctx.fillStyle = up ? 'rgba(34,197,94,.12)' : 'rgba(239,68,68,.12)'; ctx.fill();
-  const chg = (s.vals[s.vals.length - 1] / s.vals[0] - 1) * 100;
-  info.innerHTML = `${s.dates[0]}〜${s.dates[s.dates.length - 1]}: <b>${fmtY(s.vals[0])}</b> → <b>${fmtY(s.vals[s.vals.length - 1])}</b>`
-    + ` (<b class="${chg >= 0 ? 'up' : 'dn'}">${chg >= 0 ? '+' : ''}${chg.toFixed(1)}%</b>) / 高値${fmtY(hi)}・安値${fmtY(lo)}`
-    + `<br><span class="muted">※現在の保有数量×過去価格の近似(過去の売買は反映されない)。現金は現在値で一定。金銀はCOMEX×為替換算(店頭プレミアム除く)。為替は週次実勢で換算</span>`;
+  if (hiIdx != null) {
+    const x = xf(hiIdx), y = yf(s.vals[hiIdx]);
+    ctx.strokeStyle = 'rgba(148,163,184,.9)'; ctx.lineWidth = 1 * dpr;
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    ctx.beginPath(); ctx.arc(x, y, 4 * dpr, 0, Math.PI * 2);
+    ctx.fillStyle = up ? '#22c55e' : '#ef4444'; ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.stroke();
+  }
 }
 function renderAssets() {
   const titles = { all: '合算', nisa: 'NISA口座', tokutei: '特定口座', jitsubutsu: '現物・暗号資産' };
