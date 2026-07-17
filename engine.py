@@ -626,13 +626,20 @@ def analyze_instrument(meta, history, bench_closes, vix_value, cfg):
         val["bottom"] = {"ok": b_ok,
                          "note": "🟢 底確認(20日線上・上向き)" if b_ok
                          else "🩸 底未確認(20日線下または下向き=下落継続の可能性)"}
-    mom = momentum_signal(history, closes, calc, bench_closes, mp) \
-        if policy == "trade" else {"signal": "none", "note": "hold銘柄"}
+    # v3.32: モメンタム判定は全stock銘柄で常時計算(ハイブリッド=全銘柄2軸表示のため)。
+    # ただし売買アラート・エピソード記録・推奨(rec)への影響はtrade銘柄のみ(従来通り)。
+    if out["class"] == "stock":
+        mom = momentum_signal(history, closes, calc, bench_closes, mp)
+        if policy != "trade":
+            mom["note"] = (mom.get("note") or "") + " [hold銘柄: 短期動向の参考表示のみ]"
+    else:
+        mom = {"signal": "none", "note": "hold銘柄"}
     hm = hold_management(calc, vp) if policy in ("hold", "accumulate") else \
         {"thesisBreak": False, "trim": False, "note": ""}
     rec = build_rec(calc, val, mom, policy, vp)
-    if policy == "trade":
+    if out["class"] == "stock":
         mom.update(momentum_status(calc, mom, val, rec))  # モメンタム画面用の状態・推奨(購入/売却分離)
+    mom["isTradePolicy"] = policy == "trade"
 
     meta_s = STATE_META.get(state, STATE_META["NEUTRAL"])
     side = meta_s["side"]
@@ -1267,12 +1274,12 @@ def build_alerts(instruments, events, vix, cfg, prev_thesis=None, remind=False):
             alerts.append({"type": "BUY_CONSIDER", "ticker": t, "priority": 3,
                            "title": f"🟦 {t} 購入検討 (スコア{v['score']})",
                            "detail": " / ".join(v["factors"][:3])})
-        if m.get("signal") == "entry":
+        if m.get("signal") == "entry" and i.get("tradePolicy") == "trade":
             alerts.append({"type": "MOM_ENTRY", "ticker": t, "priority": 2,
                            "title": f"🚀 {t} モメンタム・エントリー",
                            "detail": f"{m.get('note','')} 損切り目安{m.get('stopSuggest')} "
                                      f"(-{m.get('stopPct')}%) TP1 {m.get('tp1')} / TP2 {m.get('tp2')}"})
-        if m.get("signal") == "exit_warning":
+        if m.get("signal") == "exit_warning" and i.get("tradePolicy") == "trade":
             alerts.append({"type": "MOM_EXIT_WARN", "ticker": t, "priority": 2,
                            "title": f"⚠️ {t} 売り管理シグナル", "detail": m.get("note", "")})
         if hm.get("thesisBreak") and (t not in prev_thesis or remind):

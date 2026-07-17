@@ -233,6 +233,26 @@ def build_sector_idx(stock_hist_map, sub_map, etf_hist_map):
     return sector_idx, sources
 
 
+def weekly_series(hist, max_points=270):
+    """週次サンプリング(各ISO週の最終バー)。資産推移チャートの長期表示用(約5年で260点)。
+    日次全履歴をdata.jsonに載せるとサイズが数MBになるため週次に間引く。"""
+    if not hist:
+        return []
+    from datetime import date as _date
+    by_week = {}
+    order = []
+    for h in hist:
+        try:
+            d = _date.fromisoformat(h["d"])
+        except Exception:
+            continue
+        wk = f"{d.isocalendar()[0]}-{d.isocalendar()[1]:02d}"
+        if wk not in by_week:
+            order.append(wk)
+        by_week[wk] = {"d": h["d"], "c": round(float(h["c"]), 4)}
+    return [by_week[w] for w in order][-max_points:]
+
+
 def risk_model(stock_hist_map, asset_hist_map, targets):
     """資産クラスの実測ボラ・相関・リスク寄与・候補配分の実測統計(v3.30・純Python)。
     設計思想: 期待リターンの推定は誤差が支配的で不可能(特に暗号資産はファンダ概念がない)。
@@ -429,7 +449,9 @@ def update_episodes(instruments, cycle, model_pf, today, store, challenger=None)
         mm = i.get("momentum") or {}
         strat = "mom"
         seen.add((tk, strat, "champion"))
-        state = mm.get("momState") or ("ENTRY" if mm.get("signal") == "entry" else None)
+        state = None
+        if i.get("tradePolicy") == "trade":  # hold銘柄の参考モメンタムはエピソード対象外
+            state = mm.get("momState") or ("ENTRY" if mm.get("signal") == "entry" else None)
         ep = open_by.get((tk, strat, "champion"))
         if ep is None and state == "ENTRY":
             ep = {"id": f"{tk}-{strat}-{today}", "ticker": tk, "strat": strat, "arm": "champion",
@@ -498,6 +520,7 @@ def main():
             print(f"{name}: {len(hist)}本 ({src})")
         inst = engine.analyze_instrument(e, hist, bench_closes,
                                          vix.get("value"), cfg)
+        inst["histW"] = weekly_series(hist)  # 資産推移の長期表示用(週次・約5年)
         instruments.append(inst)
         if e.get("class") == "stock" and hist:
             stock_hist_map[e["ticker"]] = hist
@@ -641,6 +664,7 @@ def main():
         "cycle": cycle,
         "modelPortfolio": model_pf,
         "riskModel": risk,
+        "fxHistW": weekly_series(fx_hist or []),
         "discovery": cfg.get("discovery", []),
     }
     with open(os.path.join(BASE, "data.json"), "w", encoding="utf-8") as f:
@@ -664,7 +688,7 @@ def main():
         entry_types = []
         if i["value"]["tier"] in ("consider", "strong", "absolute"):
             entry_types.append("value_" + i["value"]["tier"])
-        if i.get("momentum", {}).get("signal") == "entry":
+        if i.get("momentum", {}).get("signal") == "entry" and i.get("tradePolicy") == "trade":
             entry_types.append("mom_entry")
         if not entry_types:
             continue

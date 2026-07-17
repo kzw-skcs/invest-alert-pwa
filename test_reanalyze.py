@@ -55,6 +55,7 @@ def inst(tk, score, streaks, mom_state=None, price=100.0):
     m = {"momState": mom_state} if mom_state else {}
     return {"ticker": tk, "state": "OK", "price": price, "rotSector": "情報技術",
             "history": [{"d": "BX", "c": price}],
+            "tradePolicy": "trade" if mom_state else "hold",  # v3.32: momエピソードはtrade銘柄のみ
             "value": {"score": score, "streaks": streaks}, "momentum": m, "quality": {"score": 70}}
 cyc = {"riskOff": {"score": 30}, "sectors": {"情報技術": {"trend": "inflow"}}}
 mpf = {"regime": {"regime": "neutral", "label": "巡航"}}
