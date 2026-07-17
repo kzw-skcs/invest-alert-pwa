@@ -15,6 +15,22 @@
    "riskOff": 20,
    "rotSector": "エネルギー",
    "sectorTrend": "inflow"
+  },
+  {
+   "id": "CACI-value80-2026-07-18",
+   "ticker": "CACI",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-07-18",
+   "startPrice": 461.56,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": 53,
+   "regime": "strong",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "neutral"
   }
  ],
  "closed": [
