@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-07-18T21:03:13.933279+00:00",
- "updatedJST": "2026-07-19 06:03 JST",
+ "updated": "2026-07-18T22:04:09.167846+00:00",
+ "updatedJST": "2026-07-19 07:04 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-07-19 06:03 JST"
+  "fetchedAt": "2026-07-19 07:04 JST"
  },
  "instruments": [
   {
@@ -61446,7 +61446,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 31,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -172919,20 +172919,20 @@
     },
     {
      "d": "2026-07-18",
-     "c": 64644.039062
+     "c": 64731.199219
     }
    ],
    "state": "SELL",
-   "price": 64644.0391,
+   "price": 64731.1992,
    "top": 63596.1205,
    "bottom": 57678.0846,
    "band": 177.5411,
-   "pctInRange": 117.7,
-   "distToBottomPct": 12.08,
-   "distToTopPct": -1.62,
-   "smaShort": 62901.8797,
-   "smaLong": 63534.1927,
-   "smaTrend": 73157.9629,
+   "pctInRange": 119.2,
+   "distToBottomPct": 12.23,
+   "distToTopPct": -1.75,
+   "smaShort": 62906.2377,
+   "smaLong": 63535.9359,
+   "smaTrend": 73158.3987,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -172940,15 +172940,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 54.7,
-   "atr": 1817.036,
-   "atrPct": 2.81,
+   "rsi": 55.0,
+   "atr": 1824.2762,
+   "atrPct": 2.82,
    "high52w": 105996.5938,
-   "drawdownPct": 39.0,
+   "drawdownPct": 38.9,
    "macroDriven": null,
    "topLong": 119902.2222,
    "bottomLong": 98909.2563,
-   "pctInRangeLong": -163.2,
+   "pctInRangeLong": -162.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -174080,7 +174080,7 @@
     },
     {
      "d": "2026-07-18",
-     "c": 64644.0391
+     "c": 64731.1992
     }
    ]
   },
@@ -174734,20 +174734,20 @@
     },
     {
      "d": "2026-07-18",
-     "c": 1855.869995
+     "c": 1860.73999
     }
    ],
    "state": "SELL",
-   "price": 1855.87,
+   "price": 1860.74,
    "top": 1536.1386,
    "bottom": 1471.4399,
    "band": 1.941,
-   "pctInRange": 594.2,
-   "distToBottomPct": 26.13,
-   "distToTopPct": -17.23,
-   "smaShort": 1769.4141,
-   "smaLong": 1737.4697,
-   "smaTrend": 2189.0927,
+   "pctInRange": 601.7,
+   "distToBottomPct": 26.46,
+   "distToTopPct": -17.44,
+   "smaShort": 1769.6576,
+   "smaLong": 1737.5671,
+   "smaTrend": 2189.117,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": "golden",
@@ -174755,15 +174755,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 58.2,
-   "atr": 71.1389,
+   "rsi": 58.7,
+   "atr": 71.2027,
    "atrPct": 3.83,
    "high52w": 3582.6213,
-   "drawdownPct": 48.2,
+   "drawdownPct": 48.1,
    "macroDriven": null,
    "topLong": 3418.3145,
    "bottomLong": 2916.8422,
-   "pctInRangeLong": -211.6,
+   "pctInRangeLong": -210.6,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -175895,7 +175895,7 @@
     },
     {
      "d": "2026-07-18",
-     "c": 1855.87
+     "c": 1860.74
     }
    ]
   },
@@ -180107,8 +180107,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 64644,
-    "ddFromPeakPct": -48.2
+    "currentPrice": 64731,
+    "ddFromPeakPct": -48.1
    },
    "action": "現在は半減期+26.9ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
