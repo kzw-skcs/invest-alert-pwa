@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-18 08:42 JST",
+ "updated": "2026-07-19 18:27 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -250,8 +250,8 @@
     "revGrowth": 0.2387,
     "epsGrowth": -0.5814,
     "fcfMargin": 0.4213,
-    "trailPE": 77.7411,
-    "psr": 27.6148,
+    "trailPE": 77.7421,
+    "psr": 27.6152,
     "fyEnd": "2025-11-02",
     "netDebtEbitda": 1.7974,
     "netCash": false,
@@ -2232,8 +2232,8 @@
     "revGrowth": 0.1512,
     "epsGrowth": -0.4114,
     "fcfMargin": 0.1913,
-    "trailPE": 47.7954,
-    "psr": 10.4308,
+    "trailPE": 47.796,
+    "psr": 10.4309,
     "fyEnd": "2025-10-31",
     "netDebtEbitda": 6.7124,
     "netCash": false,
@@ -2567,6 +2567,56 @@
      "株式報酬の節度": 0,
      "買収規律(のれん比率)": 1,
      "FCF創出の一貫性": 0
+    },
+    "money": null
+   }
+  },
+  "CEVA": {
+   "score": 26,
+   "parts": {
+    "profit": 0.0,
+    "growth": 19.9,
+    "health": 0.0,
+    "valuation": 6
+   },
+   "warnings": [
+    "FCF赤字"
+   ],
+   "metrics": {
+    "roe": -0.0316,
+    "opMargin": -0.1297,
+    "revGrowth": 0.2045,
+    "epsGrowth": 0.2108,
+    "fcfMargin": -0.0717,
+    "psr": 12.0884,
+    "fyEnd": "2017-12-31",
+    "netCash": true,
+    "currentRatio": 9.9305,
+    "fcfPosYears": 3,
+    "fcfYears": 5,
+    "fcfLatest": -6277000,
+    "sharesChg5yPct": 21.6975,
+    "sbcToRev": 0.2262,
+    "goodwillToAssets": 0.1502,
+    "buybackToRev": 0.0817,
+    "roicApprox": -0.0266
+   },
+   "alphas": {
+    "finance": 17.5,
+    "financeParts": {
+     "純負債/EBITDA": 8.0,
+     "利払い余力": null,
+     "FCF黒字継続": 3,
+     "流動比率": 3,
+     "FCFマージン": 0
+    },
+    "mgmtQuant": 5.0,
+    "mgmtParts": {
+     "自社株買いvs希薄化(5年)": 0,
+     "ROIC(資本効率)": 0,
+     "株式報酬の節度": 0,
+     "買収規律(のれん比率)": 3,
+     "FCF創出の一貫性": 2
     },
     "money": null
    }
