@@ -661,6 +661,15 @@
       "note": "外れない土台。暴落時(Tier80+✅確定)に厚く買い増し、売らない。選択リスクゼロの保険"
     },
     {
+      "ticker": "CEVA",
+      "name": "CEVA",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "ceva.us"
+    },
+    {
       "ticker": "SNDK",
       "name": "SNDK",
       "sector": "その他",
