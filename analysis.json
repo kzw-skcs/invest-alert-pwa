@@ -1,6 +1,6 @@
 {
  "latest": {
-  "date": "2026-07-20 07:38 JST",
+  "date": "2026-07-21 20:02 JST",
   "episodeStats": {
    "value80": {
     "速報": {
@@ -20,7 +20,7 @@
      "win": 0,
      "loss": 1,
      "expired": 0,
-     "open": 0,
+     "open": 1,
      "winRatePct": 0.0,
      "expectancyPct": -14.15,
      "avgWinPct": null,
@@ -47,23 +47,23 @@
   },
   "challengerVerdict": {
    "status": "accumulating",
-   "text": "蓄積中(独立エピソード1/50件・経過8/180日)。判定はまだ。",
+   "text": "蓄積中(独立エピソード1/50件・経過9/180日)。判定はまだ。",
    "started": "2026-07-12",
    "label": "厳選アーム(閾値85/92・確定5日)"
   },
   "episodeCount": 8,
   "legacyStats": {
    "value": {
-    "n": 61,
+    "n": 65,
     "win": 26,
-    "loss": 35,
+    "loss": 39,
     "expired": 0,
-    "open": 146,
-    "winRatePct": 42.6,
-    "expectancyPct": -3.96,
+    "open": 155,
+    "winRatePct": 40.0,
+    "expectancyPct": -4.26,
     "avgWinPct": 5.76,
-    "avgLossPct": -11.18,
-    "profitFactor": 0.38
+    "avgLossPct": -10.95,
+    "profitFactor": 0.35
    }
   },
   "valueHitRate": 100.0,
@@ -1456,6 +1456,79 @@
      "avgWinPct": 5.76,
      "avgLossPct": -11.18,
      "profitFactor": 0.38
+    }
+   },
+   "valueHitRate": 100.0,
+   "momentumHitRate": null,
+   "note": "独立エピソード評価済み2件。30件未満の間は統計は参考値。",
+   "suggestions": [],
+   "adjustments": []
+  },
+  {
+   "date": "2026-07-21 20:02 JST",
+   "episodeStats": {
+    "value80": {
+     "速報": {
+      "n": 2,
+      "win": 2,
+      "loss": 0,
+      "expired": 0,
+      "open": 4,
+      "winRatePct": 100.0,
+      "expectancyPct": 6.05,
+      "avgWinPct": 6.05,
+      "avgLossPct": null,
+      "profitFactor": null
+     },
+     "確定": {
+      "n": 1,
+      "win": 0,
+      "loss": 1,
+      "expired": 0,
+      "open": 1,
+      "winRatePct": 0.0,
+      "expectancyPct": -14.15,
+      "avgWinPct": null,
+      "avgLossPct": -14.15,
+      "profitFactor": 0.0
+     }
+    }
+   },
+   "challengerStats": {
+    "value80": {
+     "速報": {
+      "n": 1,
+      "win": 0,
+      "loss": 1,
+      "expired": 0,
+      "open": 1,
+      "winRatePct": 0.0,
+      "expectancyPct": -11.47,
+      "avgWinPct": null,
+      "avgLossPct": -11.47,
+      "profitFactor": 0.0
+     }
+    }
+   },
+   "challengerVerdict": {
+    "status": "accumulating",
+    "text": "蓄積中(独立エピソード1/50件・経過9/180日)。判定はまだ。",
+    "started": "2026-07-12",
+    "label": "厳選アーム(閾値85/92・確定5日)"
+   },
+   "episodeCount": 8,
+   "legacyStats": {
+    "value": {
+     "n": 65,
+     "win": 26,
+     "loss": 39,
+     "expired": 0,
+     "open": 155,
+     "winRatePct": 40.0,
+     "expectancyPct": -4.26,
+     "avgWinPct": 5.76,
+     "avgLossPct": -10.95,
+     "profitFactor": 0.35
     }
    },
    "valueHitRate": 100.0,
