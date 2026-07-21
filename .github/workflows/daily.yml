@@ -34,4 +34,13 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || git commit -m "daily: data.json更新 $(date -u +%Y-%m-%d)"
-          git push
+          # v3.33.1: 同時書き込み(アプリ同期・🧠レビュー保存・並行workflow)との衝突時は
+          # リモートを取り込んで再push(最大5回)。-X theirs=再生側(この実行の生成データ)を優先
+          n=0
+          until git push; do
+            n=$((n+1))
+            if [ "$n" -ge 5 ]; then echo "push失敗(5回衝突)"; exit 1; fi
+            echo "push衝突: リモートを取り込んで再試行($n/5)"
+            git pull --rebase -X theirs origin main || { git rebase --abort || true; git pull --no-rebase -X ours origin main; }
+            sleep 5
+          done
