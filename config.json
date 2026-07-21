@@ -670,6 +670,17 @@
       "stooq": "ceva.us"
     },
     {
+      "ticker": "CCJ",
+      "stooq": "ccj.us",
+      "name": "Cameco",
+      "sector": "エネルギー",
+      "subSector": "エネルギー",
+      "tradePolicy": "hold",
+      "conviction": 4,
+      "note": "西側最大ウラン・コア採用",
+      "rotSector": "エネルギー"
+    },
+    {
       "ticker": "SNDK",
       "name": "SNDK",
       "sector": "その他",
@@ -737,17 +748,6 @@
       "conviction": 3,
       "note": "独立系電力",
       "rotSector": "公益"
-    },
-    {
-      "ticker": "CCJ",
-      "stooq": "ccj.us",
-      "name": "Cameco",
-      "sector": "エネルギー",
-      "subSector": "エネルギー",
-      "tradePolicy": "hold",
-      "conviction": 4,
-      "note": "西側最大ウラン・コア採用",
-      "rotSector": "エネルギー"
     },
     {
       "ticker": "NEE",
