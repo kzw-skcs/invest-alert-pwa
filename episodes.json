@@ -15,6 +15,22 @@
    "riskOff": 20,
    "rotSector": "素材",
    "sectorTrend": "neutral"
+  },
+  {
+   "id": "UBER-value80-2026-07-25",
+   "ticker": "UBER",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-07-25",
+   "startPrice": 65.94,
+   "startScore": 80,
+   "startStreak": 1,
+   "maxScore": 80,
+   "q": 78,
+   "regime": "strong",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
   }
  ],
  "closed": [
