@@ -690,6 +690,15 @@
       "stooq": "xers.us"
     },
     {
+      "ticker": "SMH",
+      "name": "SMH",
+      "sector": "その他",
+      "subSector": "AI・半導体/クラウド",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "smh.us"
+    },
+    {
       "ticker": "SNDK",
       "name": "SNDK",
       "sector": "その他",
