@@ -681,6 +681,15 @@
       "rotSector": "エネルギー"
     },
     {
+      "ticker": "XERS",
+      "name": "XERS",
+      "sector": "その他",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "xers.us"
+    },
+    {
       "ticker": "SNDK",
       "name": "SNDK",
       "sector": "その他",
