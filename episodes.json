@@ -1,24 +1,5 @@
 {
- "open": [
-  {
-   "id": "ISRG-value80-2026-08-08",
-   "ticker": "ISRG",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-08-08",
-   "startPrice": 378.81,
-   "startScore": 81,
-   "startStreak": 1,
-   "maxScore": 81,
-   "q": 72,
-   "regime": "overheat",
-   "riskOff": 40,
-   "rotSector": "ヘルスケア",
-   "sectorTrend": "outflow",
-   "confirmDate": "2026-08-12",
-   "confirmPrice": 401.23
-  }
- ],
+ "open": [],
  "closed": [
   {
    "id": "AEM-value80-2026-07-11",
@@ -405,6 +386,27 @@
    "sectorTrend": "inflow",
    "endDate": "2026-08-05",
    "endPrice": 93.09,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "ISRG-value80-2026-08-08",
+   "ticker": "ISRG",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-08-08",
+   "startPrice": 378.81,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": 72,
+   "regime": "overheat",
+   "riskOff": 40,
+   "rotSector": "ヘルスケア",
+   "sectorTrend": "outflow",
+   "confirmDate": "2026-08-12",
+   "confirmPrice": 401.23,
+   "endDate": "2026-08-16",
+   "endPrice": 394.51,
    "endReason": "tierExit"
   }
  ],
@@ -877,12 +879,12 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-08-14"
+   "_bar": "2026-08-15"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-08-14"
+   "_bar": "2026-08-15"
   },
   "gold": {
    "80": 0,
