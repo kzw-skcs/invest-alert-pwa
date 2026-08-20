@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-08-20T20:42:36.268387+00:00",
- "updatedJST": "2026-08-21 05:42 JST",
+ "updated": "2026-08-20T21:39:48.964469+00:00",
+ "updatedJST": "2026-08-21 06:39 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -113,7 +113,7 @@
   "reason": null
  },
  "fx": {
-  "usdjpy": 159.085999
+  "usdjpy": 159.033005
  },
  "metalJpy": {
   "gold": {
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-08-21 05:42 JST"
+  "fetchedAt": "2026-08-21 06:39 JST"
  },
  "instruments": [
   {
@@ -832,7 +832,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 20,
+    "scorePrev": 26,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -2726,7 +2726,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 17,
+    "scorePrev": 19,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -6505,7 +6505,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 10,
+    "scorePrev": 11,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -8403,7 +8403,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 61,
+    "scorePrev": 76,
     "streaks": {
      "65": 1,
      "80": 0,
@@ -10298,7 +10298,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 28,
+    "scorePrev": 19,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -14081,7 +14081,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 53,
+    "scorePrev": 56,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -19758,7 +19758,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 27,
+    "scorePrev": 25,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -21611,7 +21611,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 20,
+    "scorePrev": 29,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -25396,7 +25396,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 54,
+    "scorePrev": 55,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -27290,7 +27290,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 42,
+    "scorePrev": 50,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -31080,7 +31080,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 33,
+    "scorePrev": 30,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -32976,7 +32976,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 12,
+    "scorePrev": 20,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -34875,7 +34875,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 47,
+    "scorePrev": 41,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -42764,7 +42764,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 27,
+    "scorePrev": 20,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -44658,7 +44658,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 7,
+    "scorePrev": 18,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -48438,7 +48438,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 43,
+    "scorePrev": 38,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -50333,7 +50333,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 15,
+    "scorePrev": 12,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -52230,7 +52230,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 41,
+    "scorePrev": 59,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -57905,7 +57905,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 35,
+    "scorePrev": 32,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -61682,7 +61682,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 11,
+    "scorePrev": 10,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -63580,7 +63580,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 53,
+    "scorePrev": 55,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -65073,7 +65073,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 30,
+    "scorePrev": 27,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -66957,7 +66957,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 20,
+    "scorePrev": 23,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -68855,7 +68855,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 40,
+    "scorePrev": 42,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -72638,7 +72638,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 66,
+    "scorePrev": 73,
     "streaks": {
      "65": 4,
      "80": 0,
@@ -74536,7 +74536,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 47,
+    "scorePrev": 37,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -76312,7 +76312,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 38,
+    "scorePrev": 29,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -79641,7 +79641,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 32,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -81548,7 +81548,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 35,
+    "scorePrev": 39,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -83430,7 +83430,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 12,
+    "scorePrev": 17,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -87154,7 +87154,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 62,
+    "scorePrev": 67,
     "streaks": {
      "65": 1,
      "80": 0,
@@ -89045,7 +89045,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 3,
+    "scorePrev": 11,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -93651,7 +93651,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 30,
+    "scorePrev": 20,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -94489,7 +94489,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 19,
+    "scorePrev": 34,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -96350,7 +96350,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 7,
+    "scorePrev": 11,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -98245,7 +98245,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 43,
+    "scorePrev": 58,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -98258,7 +98258,7 @@
     "note": " [hold銘柄: 短期動向の参考表示のみ]",
     "relStrength3m": -1.0,
     "breakoutHigh": 589.14,
-    "volConfirmed": false,
+    "volConfirmed": true,
     "trailStop": 526.7992,
     "atrPct": 2.63,
     "momState": "HOLD",
@@ -100142,7 +100142,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 58,
+    "scorePrev": 61,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -101462,7 +101462,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 32,
+    "scorePrev": 45,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -103362,7 +103362,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 43,
+    "scorePrev": 51,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -105258,7 +105258,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 28,
+    "scorePrev": 42,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -107153,7 +107153,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 39,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -110940,7 +110940,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 18,
+    "scorePrev": 19,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -112839,7 +112839,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 62,
+    "scorePrev": 51,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -116620,7 +116620,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 53,
+    "scorePrev": 24,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -120415,7 +120415,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 2,
+    "scorePrev": 7,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -127990,7 +127990,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 39,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -128003,7 +128003,7 @@
     "note": "デッドクロス [hold銘柄: 短期動向の参考表示のみ]",
     "relStrength3m": 5.4,
     "breakoutHigh": 234.48,
-    "volConfirmed": false,
+    "volConfirmed": true,
     "trailStop": 206.1012,
     "atrPct": 2.58,
     "momState": "EXIT",
@@ -129881,7 +129881,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 64,
+    "scorePrev": 69,
     "streaks": {
      "65": 1,
      "80": 0,
@@ -131772,7 +131772,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 30,
+    "scorePrev": 27,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -133661,7 +133661,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 10,
+    "scorePrev": 7,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -135508,7 +135508,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 22,
+    "scorePrev": 29,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -139298,7 +139298,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 34,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -141195,7 +141195,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 40,
+    "scorePrev": 41,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -150674,7 +150674,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 62,
+    "scorePrev": 69,
     "streaks": {
      "65": 1,
      "80": 0,
@@ -152567,7 +152567,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 30,
+    "scorePrev": 47,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -154464,7 +154464,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 12,
+    "scorePrev": 23,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -156364,7 +156364,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 41,
+    "scorePrev": 55,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -160151,7 +160151,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 47,
+    "scorePrev": 48,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -163941,7 +163941,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 30,
+    "scorePrev": 28,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -165832,7 +165832,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 46,
+    "scorePrev": 43,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -167718,7 +167718,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 53,
+    "scorePrev": 63,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -171512,7 +171512,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 58,
+    "scorePrev": 79,
     "streaks": {
      "65": 1,
      "80": 0,
@@ -175305,7 +175305,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 38,
+    "scorePrev": 34,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -179036,20 +179036,20 @@
     },
     {
      "d": "2026-08-20",
-     "c": 72701.742188
+     "c": 72798.21875
     }
    ],
    "state": "SELL",
-   "price": 72701.7422,
+   "price": 72798.2188,
    "top": 61398.1583,
    "bottom": 56468.5842,
    "band": 147.8872,
-   "pctInRange": 329.3,
-   "distToBottomPct": 28.75,
-   "distToTopPct": -15.55,
-   "smaShort": 64574.6039,
-   "smaLong": 64226.938,
-   "smaTrend": 68973.7057,
+   "pctInRange": 331.3,
+   "distToBottomPct": 28.92,
+   "distToTopPct": -15.66,
+   "smaShort": 64579.4277,
+   "smaLong": 64228.8675,
+   "smaTrend": 68974.1881,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -179057,15 +179057,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 80.0,
+   "rsi": 80.1,
    "atr": 1728.2057,
-   "atrPct": 2.38,
+   "atrPct": 2.37,
    "high52w": 96929.3281,
-   "drawdownPct": 25.0,
+   "drawdownPct": 24.9,
    "macroDriven": null,
    "topLong": 112889.2512,
    "bottomLong": 98332.7056,
-   "pctInRangeLong": -176.1,
+   "pctInRangeLong": -175.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -179103,9 +179103,9 @@
     "isTradePolicy": false
    },
    "holdMgmt": {
-    "thesisBreak": true,
+    "thesisBreak": false,
     "trim": true,
-    "note": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
+    "note": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
     "score": 45,
@@ -180197,7 +180197,7 @@
     },
     {
      "d": "2026-08-20",
-     "c": 72701.7422
+     "c": 72798.2188
     }
    ]
   },
@@ -180851,20 +180851,20 @@
     },
     {
      "d": "2026-08-20",
-     "c": 2318.310059
+     "c": 2319.26001
     }
    ],
    "state": "SELL",
-   "price": 2318.3101,
+   "price": 2319.26,
    "top": 1607.561,
    "bottom": 1577.2198,
    "band": 0.9102,
-   "pctInRange": 2442.5,
-   "distToBottomPct": 46.99,
-   "distToTopPct": -30.66,
-   "smaShort": 1927.3685,
-   "smaLong": 1877.0055,
-   "smaTrend": 2003.5191,
+   "pctInRange": 2445.7,
+   "distToBottomPct": 47.05,
+   "distToTopPct": -30.69,
+   "smaShort": 1927.416,
+   "smaLong": 1877.0245,
+   "smaTrend": 2003.5238,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -180880,7 +180880,7 @@
    "macroDriven": null,
    "topLong": 3200.7869,
    "bottomLong": 2736.2688,
-   "pctInRangeLong": -90.0,
+   "pctInRangeLong": -89.8,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -182012,7 +182012,7 @@
     },
     {
      "d": "2026-08-20",
-     "c": 2318.3101
+     "c": 2319.26
     }
    ]
   },
@@ -182666,20 +182666,20 @@
     },
     {
      "d": "2026-08-20",
-     "c": 4575.5
+     "c": 4575.100098
     }
    ],
    "state": "SUPER_BUY",
-   "price": 4575.5,
+   "price": 4575.1001,
    "top": 4568.9133,
    "bottom": 4189.4236,
    "band": 11.3847,
-   "pctInRange": 101.7,
-   "distToBottomPct": 9.22,
+   "pctInRange": 101.6,
+   "distToBottomPct": 9.21,
    "distToTopPct": -0.14,
-   "smaShort": 4253.315,
-   "smaLong": 4166.81,
-   "smaTrend": 4495.847,
+   "smaShort": 4253.295,
+   "smaLong": 4166.802,
+   "smaTrend": 4495.845,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": "golden",
@@ -182689,13 +182689,13 @@
    "cycleHalfDays": 7,
    "rsi": 71.7,
    "atr": 85.7866,
-   "atrPct": 1.87,
+   "atrPct": 1.88,
    "high52w": 5318.3999,
    "drawdownPct": 14.0,
    "macroDriven": null,
    "topLong": 4327.3334,
    "bottomLong": 4010.3717,
-   "pctInRangeLong": 178.3,
+   "pctInRangeLong": 178.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -183827,7 +183827,7 @@
     },
     {
      "d": "2026-08-20",
-     "c": 4575.5
+     "c": 4575.1001
     }
    ]
   },
@@ -184481,19 +184481,19 @@
     },
     {
      "d": "2026-08-20",
-     "c": 68.125
+     "c": 68.129997
     }
    ],
    "state": "SUPER_BUY",
-   "price": 68.125,
+   "price": 68.13,
    "top": 83.6178,
    "bottom": 68.2118,
    "band": 0.4622,
-   "pctInRange": -0.6,
-   "distToBottomPct": -0.13,
-   "distToTopPct": 22.74,
-   "smaShort": 62.1249,
-   "smaLong": 61.5482,
+   "pctInRange": -0.5,
+   "distToBottomPct": -0.12,
+   "distToTopPct": 22.73,
+   "smaShort": 62.1251,
+   "smaLong": 61.5483,
    "smaTrend": 70.9414,
    "trend": "up",
    "trend200DownDays": 0,
@@ -184558,10 +184558,10 @@
     "stars": 4,
     "level": "B",
     "action": "buy",
-    "expReturnPct": 22.74,
+    "expReturnPct": 22.73,
     "expDays": 8,
     "expPeriodLabel": "約8営業日",
-    "annualizedPct": 716.3,
+    "annualizedPct": 716.0,
     "note": "🟦購入検討"
    },
    "histW": [
@@ -185643,7 +185643,7 @@
     },
     {
      "d": "2026-08-20",
-     "c": 68.125
+     "c": 68.13
     }
    ]
   }
@@ -185867,13 +185867,6 @@
  ],
  "alerts": [
   {
-   "type": "THESIS_REVIEW",
-   "ticker": "NKE",
-   "priority": 2,
-   "title": "🧐 NKE テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨"
-  },
-  {
    "type": "IPO_EVENT",
    "ticker": "Anthropic IPO",
    "priority": 2,
@@ -185962,7 +185955,7 @@
    "ticker": "btc",
    "priority": 3,
    "title": "✂️ btc 部分利確検討",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
+   "detail": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
   },
   {
    "type": "TRIM",
@@ -186248,8 +186241,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 72702,
-    "ddFromPeakPct": -41.7
+    "currentPrice": 72798,
+    "ddFromPeakPct": -41.6
    },
    "action": "現在は半減期+28.0ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
@@ -187703,7 +187696,7 @@
   },
   {
    "d": "2026-08-20",
-   "c": 159.086
+   "c": 159.033
   }
  ],
  "discovery": [
