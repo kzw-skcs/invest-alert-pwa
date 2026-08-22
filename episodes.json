@@ -1,5 +1,22 @@
 {
- "open": [],
+ "open": [
+  {
+   "id": "ISRG-value80-2026-08-23",
+   "ticker": "ISRG",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-08-23",
+   "startPrice": 378.81,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": 72,
+   "regime": "strong",
+   "riskOff": 40,
+   "rotSector": "ヘルスケア",
+   "sectorTrend": "neutral"
+  }
+ ],
  "closed": [
   {
    "id": "AEM-value80-2026-07-11",
@@ -879,12 +896,12 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-08-21"
+   "_bar": "2026-08-22"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-08-21"
+   "_bar": "2026-08-22"
   },
   "gold": {
    "80": 0,
