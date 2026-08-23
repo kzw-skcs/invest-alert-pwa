@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-08-23T20:36:25.413769+00:00",
- "updatedJST": "2026-08-24 05:36 JST",
+ "updated": "2026-08-23T21:33:52.640569+00:00",
+ "updatedJST": "2026-08-24 06:33 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -113,7 +113,7 @@
   "reason": null
  },
  "fx": {
-  "usdjpy": 158.992996
+  "usdjpy": 158.727997
  },
  "metalJpy": {
   "gold": {
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-08-24 05:36 JST"
+  "fetchedAt": "2026-08-24 06:33 JST"
  },
  "instruments": [
   {
@@ -179051,20 +179051,20 @@
     },
     {
      "d": "2026-08-23",
-     "c": 77390.429688
+     "c": 78023.5
     }
    ],
    "state": "SELL",
-   "price": 77390.4297,
+   "price": 78023.5,
    "top": 61034.0064,
    "bottom": 58484.8399,
    "band": 76.475,
-   "pctInRange": 741.6,
-   "distToBottomPct": 32.33,
-   "distToTopPct": -21.13,
-   "smaShort": 66746.2953,
-   "smaLong": 65147.3828,
-   "smaTrend": 69002.6958,
+   "pctInRange": 766.5,
+   "distToBottomPct": 33.41,
+   "distToTopPct": -21.77,
+   "smaShort": 66777.9488,
+   "smaLong": 65160.0442,
+   "smaTrend": 69005.8612,
    "trend": "down",
    "trend200DownDays": 60,
    "cross": null,
@@ -179072,15 +179072,15 @@
    "brokeBelowRecently": false,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 80.5,
-   "atr": 2091.9146,
-   "atrPct": 2.7,
+   "rsi": 81.2,
+   "atr": 2114.568,
+   "atrPct": 2.71,
    "high52w": 96929.3281,
-   "drawdownPct": 20.2,
+   "drawdownPct": 19.5,
    "macroDriven": null,
    "topLong": 113081.3475,
    "bottomLong": 96650.6762,
-   "pctInRangeLong": -117.2,
+   "pctInRangeLong": -113.4,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -179091,12 +179091,12 @@
    "side": "none",
    "actionable": true,
    "value": {
-    "score": 45,
+    "score": 39,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-20% +14",
+     "高値-20% +8",
      "5年トレンド上向き +6",
      "半減期サイクル: 底形成ウィンドウ +5"
     ],
@@ -179120,11 +179120,11 @@
    "holdMgmt": {
     "thesisBreak": false,
     "trim": true,
-    "note": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
+    "note": "1年チャネル上限+RSI81過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
-    "score": 45,
-    "stars": 3,
+    "score": 39,
+    "stars": 2,
     "level": "-",
     "action": "hold",
     "expReturnPct": null,
@@ -180212,7 +180212,7 @@
     },
     {
      "d": "2026-08-23",
-     "c": 77390.4297
+     "c": 78023.5
     }
    ]
   },
@@ -180866,20 +180866,20 @@
     },
     {
      "d": "2026-08-23",
-     "c": 2446.77002
+     "c": 2483.810059
     }
    ],
    "state": "SELL",
-   "price": 2446.77,
+   "price": 2483.8101,
    "top": 1646.45,
    "bottom": 1590.4019,
    "band": 1.6814,
-   "pctInRange": 1527.9,
-   "distToBottomPct": 53.85,
-   "distToTopPct": -32.71,
-   "smaShort": 2017.8776,
-   "smaLong": 1920.2186,
-   "smaTrend": 2006.9139,
+   "pctInRange": 1594.0,
+   "distToBottomPct": 56.17,
+   "distToTopPct": -33.71,
+   "smaShort": 2019.7296,
+   "smaLong": 1920.9594,
+   "smaTrend": 2007.0991,
    "trend": "down",
    "trend200DownDays": 0,
    "cross": null,
@@ -180887,15 +180887,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 78.8,
-   "atr": 91.2119,
-   "atrPct": 3.73,
+   "rsi": 79.8,
+   "atr": 91.4036,
+   "atrPct": 3.68,
    "high52w": 3354.7227,
-   "drawdownPct": 27.1,
+   "drawdownPct": 26.0,
    "macroDriven": null,
    "topLong": 3202.5868,
    "bottomLong": 2695.3138,
-   "pctInRangeLong": -49.0,
+   "pctInRangeLong": -41.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -180911,7 +180911,7 @@
     "tierLabel": "-",
     "factors": [
      "5年レンジ下段(0%位置) +20",
-     "高値-27% +14",
+     "高値-26% +14",
      "5年トレンド上向き +6",
      "半減期サイクル: 底形成ウィンドウ +5"
     ],
@@ -180935,7 +180935,7 @@
    "holdMgmt": {
     "thesisBreak": false,
     "trim": true,
-    "note": "1年チャネル上限+RSI79過熱。目標比率超過分の部分利確(10-20%)検討"
+    "note": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
    },
    "rec": {
     "score": 45,
@@ -182027,7 +182027,7 @@
     },
     {
      "d": "2026-08-23",
-     "c": 2446.77
+     "c": 2483.8101
     }
    ]
   },
@@ -186110,14 +186110,14 @@
    "ticker": "btc",
    "priority": 3,
    "title": "✂️ btc 部分利確検討",
-   "detail": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
+   "detail": "1年チャネル上限+RSI81過熱。目標比率超過分の部分利確(10-20%)検討"
   },
   {
    "type": "TRIM",
    "ticker": "eth",
    "priority": 3,
    "title": "✂️ eth 部分利確検討",
-   "detail": "1年チャネル上限+RSI79過熱。目標比率超過分の部分利確(10-20%)検討"
+   "detail": "1年チャネル上限+RSI80過熱。目標比率超過分の部分利確(10-20%)検討"
   },
   {
    "type": "TRIM",
@@ -186396,8 +186396,8 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 77390,
-    "ddFromPeakPct": -38.0
+    "currentPrice": 78024,
+    "ddFromPeakPct": -37.5
    },
    "action": "現在は半減期+28.1ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
@@ -187851,7 +187851,7 @@
   },
   {
    "d": "2026-08-23",
-   "c": 158.993
+   "c": 158.728
   }
  ],
  "discovery": [
