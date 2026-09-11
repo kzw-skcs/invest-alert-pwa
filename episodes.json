@@ -119,6 +119,22 @@
    "riskOff": 0,
    "rotSector": "素材",
    "sectorTrend": "outflow"
+  },
+  {
+   "id": "HWKN-value80-2026-09-11",
+   "ticker": "HWKN",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-09-11",
+   "startPrice": 122.63,
+   "startScore": 80,
+   "startStreak": 1,
+   "maxScore": 80,
+   "q": 42,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": "素材",
+   "sectorTrend": "outflow"
   }
  ],
  "closed": [
