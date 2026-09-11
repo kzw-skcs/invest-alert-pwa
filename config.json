@@ -699,6 +699,15 @@
       "stooq": "smh.us"
     },
     {
+      "ticker": "BSX",
+      "name": "BSX",
+      "sector": "その他",
+      "subSector": "その他モート",
+      "tradePolicy": "hold",
+      "conviction": 3,
+      "stooq": "bsx.us"
+    },
+    {
       "ticker": "SNDK",
       "name": "SNDK",
       "sector": "その他",
