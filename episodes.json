@@ -117,6 +117,38 @@
    "riskOff": 0,
    "rotSector": "資本財",
    "sectorTrend": "outflow"
+  },
+  {
+   "id": "CCJ-value80-2026-09-29",
+   "ticker": "CCJ",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-09-29",
+   "startPrice": 88.07,
+   "startScore": 80,
+   "startStreak": 1,
+   "maxScore": 80,
+   "q": 59,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": "エネルギー",
+   "sectorTrend": "neutral"
+  },
+  {
+   "id": "gold-value80-2026-09-29",
+   "ticker": "gold",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-09-29",
+   "startPrice": 4153.2002,
+   "startScore": 82,
+   "startStreak": 1,
+   "maxScore": 82,
+   "q": null,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": null,
+   "sectorTrend": null
   }
  ],
  "closed": [
@@ -1856,22 +1888,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-09-27"
+   "_bar": "2026-09-29"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-09-27"
+   "_bar": "2026-09-29"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-09-27"
+   "_bar": "2026-09-29"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-09-27"
+   "_bar": "2026-09-29"
   },
   "CEVA": {
    "80": 0,
