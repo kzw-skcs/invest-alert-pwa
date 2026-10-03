@@ -1,7 +1,7 @@
 {
  "version": 2,
- "updated": "2026-10-02T23:45:21.356672+00:00",
- "updatedJST": "2026-10-03 08:45 JST",
+ "updated": "2026-10-03T22:52:13.624620+00:00",
+ "updatedJST": "2026-10-04 07:52 JST",
  "settings": {
   "lookbackDays": 252,
   "lookbackLongDays": 1260,
@@ -126,7 +126,7 @@
   },
   "source": "田中貴金属",
   "url": "https://gold.tanaka.co.jp/commodity/souba/index.php",
-  "fetchedAt": "2026-10-03 08:45 JST"
+  "fetchedAt": "2026-10-04 07:52 JST"
  },
  "instruments": [
   {
@@ -834,7 +834,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 24,
+    "scorePrev": 23,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -1973,8 +1973,8 @@
      "revGrowth": 0.0643,
      "epsGrowth": 0.195,
      "fcfMargin": 0.2373,
-     "trailPE": 45.0295,
-     "psr": 11.7802,
+     "trailPE": 44.2788,
+     "psr": 11.5839,
      "fyEnd": "2025-09-27",
      "netDebtEbitda": 0.2929,
      "netCash": false,
@@ -2019,8 +2019,8 @@
      "fairBase": 128.25,
      "fairHigh": 180.11,
      "buyCeiling": 96.19,
-     "safetyMarginPct": -161.9,
-     "impliedGrowthPct": 19.4,
+     "safetyMarginPct": -157.6,
+     "impliedGrowthPct": 19.2,
      "assumedBaseGrowthPct": 6.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3870,8 +3870,8 @@
      "revGrowth": 0.1779,
      "epsGrowth": 0.3134,
      "fcfMargin": 0.2019,
-     "trailPE": 27.7398,
-     "psr": 11.1422,
+     "trailPE": 28.5682,
+     "psr": 11.4749,
      "fyEnd": "2026-06-30",
      "netDebtEbitda": 0.0653,
      "netCash": false,
@@ -3916,8 +3916,8 @@
      "fairBase": 397.07,
      "fairHigh": 769.55,
      "buyCeiling": 297.8,
-     "safetyMarginPct": -25.4,
-     "impliedGrowthPct": 20.9,
+     "safetyMarginPct": -29.1,
+     "impliedGrowthPct": 21.3,
      "assumedBaseGrowthPct": 17.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -5770,7 +5770,7 @@
      "revGrowth": 0.1509,
      "epsGrowth": 0.3201,
      "fcfMargin": 0.1819,
-     "trailPE": 31.6707,
+     "trailPE": 31.2895,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.1227,
      "netCash": false,
@@ -6484,7 +6484,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 9,
    "rsi": 48.6,
-   "atr": 5.6343,
+   "atr": 5.6345,
    "atrPct": 2.24,
    "high52w": 284.02,
    "drawdownPct": 11.4,
@@ -6516,7 +6516,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 46,
+    "scorePrev": 31,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -6530,7 +6530,7 @@
     "relStrength3m": -0.7,
     "breakoutHigh": 284.02,
     "volConfirmed": false,
-    "trailStop": 237.4343,
+    "trailStop": 237.4338,
     "atrPct": 2.24,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -7655,8 +7655,8 @@
      "revGrowth": 0.1238,
      "epsGrowth": 0.3109,
      "fcfMargin": 0.1852,
-     "trailPE": 34.781,
-     "psr": 3.752,
+     "trailPE": 34.6206,
+     "psr": 3.7347,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.1452,
      "netCash": true,
@@ -7701,8 +7701,8 @@
      "fairBase": 381.46,
      "fairHigh": 637.51,
      "buyCeiling": 286.1,
-     "safetyMarginPct": 34.6,
-     "impliedGrowthPct": 6.7,
+     "safetyMarginPct": 34.9,
+     "impliedGrowthPct": 6.6,
      "assumedBaseGrowthPct": 12.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -8380,7 +8380,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 5,
    "rsi": 47.6,
-   "atr": 10.8763,
+   "atr": 10.876,
    "atrPct": 3.06,
    "high52w": 481.57,
    "drawdownPct": 26.3,
@@ -8415,7 +8415,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 86,
+    "scorePrev": 78,
     "streaks": {
      "65": 14,
      "80": 0,
@@ -8429,7 +8429,7 @@
     "relStrength3m": -7.1,
     "breakoutHigh": 427.76,
     "volConfirmed": false,
-    "trailStop": 327.9493,
+    "trailStop": 327.95,
     "atrPct": 3.06,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -9554,8 +9554,8 @@
      "revGrowth": 0.2387,
      "epsGrowth": -0.5814,
      "fcfMargin": 0.4213,
-     "trailPE": 73.4507,
-     "psr": 26.1789,
+     "trailPE": 72.0419,
+     "psr": 25.6767,
      "fyEnd": "2025-11-02",
      "netDebtEbitda": 1.7974,
      "netCash": false,
@@ -9600,8 +9600,8 @@
      "fairBase": 291.89,
      "fairHigh": 599.07,
      "buyCeiling": 218.92,
-     "safetyMarginPct": -20.0,
-     "impliedGrowthPct": 22.5,
+     "safetyMarginPct": -17.7,
+     "impliedGrowthPct": 22.2,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -10279,7 +10279,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 62.9,
-   "atr": 5.9094,
+   "atr": 5.9101,
    "atrPct": 2.53,
    "high52w": 235.74,
    "drawdownPct": 0.8,
@@ -10326,7 +10326,7 @@
     "relStrength3m": 15.9,
     "breakoutHigh": 230.86,
     "volConfirmed": false,
-    "trailStop": 219.1765,
+    "trailStop": 219.1747,
     "atrPct": 2.53,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -11451,8 +11451,8 @@
      "revGrowth": 0.6547,
      "epsGrowth": 0.6475,
      "fcfMargin": 0.475,
-     "trailPE": 45.8327,
-     "psr": 25.0645,
+     "trailPE": 47.1143,
+     "psr": 25.7654,
      "fyEnd": "2026-01-25",
      "netDebtEbitda": -0.0235,
      "netCash": true,
@@ -11497,8 +11497,8 @@
      "fairBase": 220.66,
      "fairHigh": 452.87,
      "buyCeiling": 165.49,
-     "safetyMarginPct": -1.8,
-     "impliedGrowthPct": 20.2,
+     "safetyMarginPct": -4.6,
+     "impliedGrowthPct": 20.6,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -12194,12 +12194,13 @@
    "side": "none",
    "actionable": false,
    "value": {
-    "score": 28,
+    "score": 33,
     "tier": "none",
     "tierLabel": "-",
     "factors": [
      "5年トレンド上向き +6",
      "200日線上向き +4",
+     "品質スコア74(高) +5",
      "季節性: 歴史的最弱期の押し目=良い仕込み月 +4",
      "中間選挙前後の仕込み窓 +3",
      "セクター資金流出 -3"
@@ -12246,7 +12247,7 @@
     "note": ""
    },
    "rec": {
-    "score": 28,
+    "score": 33,
     "stars": 2,
     "level": "-",
     "action": "hold",
@@ -13339,7 +13340,7 @@
     }
    ],
    "quality": {
-    "score": 68,
+    "score": 74,
     "warnings": [],
     "metrics": {
      "roe": 0.2783,
@@ -13347,7 +13348,7 @@
      "revGrowth": 0.2217,
      "epsGrowth": -0.0305,
      "fcfMargin": 0.2294,
-     "trailPE": 33.103,
+     "trailPE": 30.9038,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.2245,
      "netCash": false,
@@ -13366,7 +13367,7 @@
      "profit": 25.0,
      "growth": 12.0,
      "health": 25.0,
-     "valuation": 6
+     "valuation": 12
     }
    },
    "alphas": {
@@ -14094,7 +14095,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 42,
+    "scorePrev": 22,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -15235,8 +15236,8 @@
      "revGrowth": -0.0293,
      "epsGrowth": -0.465,
      "fcfMargin": 0.0656,
-     "trailPE": 349.9444,
-     "psr": 15.7412,
+     "trailPE": 327.8796,
+     "psr": 14.7487,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -1.9376,
      "netCash": true,
@@ -15280,8 +15281,8 @@
      "fairBase": 18.61,
      "fairHigh": 21.53,
      "buyCeiling": 13.96,
-     "safetyMarginPct": -1930.7,
-     "impliedGrowthPct": 41.9,
+     "safetyMarginPct": -1802.7,
+     "impliedGrowthPct": 40.9,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -17131,8 +17132,8 @@
      "revGrowth": 0.3434,
      "epsGrowth": 1.6417,
      "fcfMargin": 0.1944,
-     "trailPE": 237.4566,
-     "psr": 29.6559,
+     "trailPE": 232.3509,
+     "psr": 29.0183,
      "fyEnd": "2025-12-27",
      "netDebtEbitda": -0.8149,
      "netCash": true,
@@ -17177,8 +17178,8 @@
      "fairBase": 213.59,
      "fairHigh": 438.37,
      "buyCeiling": 160.19,
-     "safetyMarginPct": -194.6,
-     "impliedGrowthPct": 35.2,
+     "safetyMarginPct": -188.3,
+     "impliedGrowthPct": 34.9,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -17856,7 +17857,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 61.2,
-   "atr": 6.2732,
+   "atr": 6.2733,
    "atrPct": 3.32,
    "high52w": 207.18,
    "drawdownPct": 8.9,
@@ -17903,7 +17904,7 @@
     "relStrength3m": 37.6,
     "breakoutHigh": 192.59,
     "volConfirmed": false,
-    "trailStop": 173.067,
+    "trailStop": 173.0668,
     "atrPct": 3.32,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -19028,7 +19029,7 @@
      "revGrowth": 0.5618,
      "epsGrowth": 2.5159,
      "fcfMargin": 0.4694,
-     "trailPE": 305.6984,
+     "trailPE": 301.6508,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.9886,
      "netCash": true,
@@ -22772,8 +22773,8 @@
      "revGrowth": 0.0564,
      "epsGrowth": -0.0598,
      "fcfMargin": 0.1015,
-     "trailPE": 24.3695,
-     "psr": 1.6105,
+     "trailPE": 23.5226,
+     "psr": 1.5545,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.7425,
      "netCash": false,
@@ -22818,8 +22819,8 @@
      "fairBase": 662.79,
      "fairHigh": 909.03,
      "buyCeiling": 497.09,
-     "safetyMarginPct": 21.0,
-     "impliedGrowthPct": 2.4,
+     "safetyMarginPct": 23.7,
+     "impliedGrowthPct": 2.0,
      "assumedBaseGrowthPct": 5.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -23530,7 +23531,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 57,
+    "scorePrev": 48,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -24673,7 +24674,7 @@
      "revGrowth": 0.3796,
      "epsGrowth": 0.0422,
      "fcfMargin": -0.5347,
-     "psr": 73.1882,
+     "psr": 70.0562,
      "fyEnd": "2025-12-31",
      "netCash": true,
      "interestCoverage": -8.639,
@@ -25385,7 +25386,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 41.5,
-   "atr": 6.8489,
+   "atr": 6.8492,
    "atrPct": 3.08,
    "high52w": 329.23,
    "drawdownPct": 32.4,
@@ -25419,7 +25420,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 69,
+    "scorePrev": 71,
     "streaks": {
      "65": 6,
      "80": 0,
@@ -25433,7 +25434,7 @@
     "relStrength3m": -30.2,
     "breakoutHigh": 249.09,
     "volConfirmed": false,
-    "trailStop": 205.5177,
+    "trailStop": 205.517,
     "atrPct": 3.08,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -26557,8 +26558,8 @@
      "revGrowth": 0.0762,
      "epsGrowth": 0.7588,
      "fcfMargin": 0.1792,
-     "trailPE": 20.3277,
-     "psr": 3.1676,
+     "trailPE": 20.1987,
+     "psr": 3.1475,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "currentRatio": 0.9557,
@@ -26600,8 +26601,8 @@
      "fairBase": 266.0,
      "fairHigh": 387.11,
      "buyCeiling": 199.5,
-     "safetyMarginPct": 14.6,
-     "impliedGrowthPct": 5.5,
+     "safetyMarginPct": 15.2,
+     "impliedGrowthPct": 5.4,
      "assumedBaseGrowthPct": 7.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -27313,7 +27314,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 45,
+    "scorePrev": 50,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -28452,8 +28453,8 @@
      "revGrowth": 0.1558,
      "epsGrowth": 0.2691,
      "fcfMargin": 0.3393,
-     "trailPE": 69.7086,
-     "psr": 20.3225,
+     "trailPE": 73.1886,
+     "psr": 21.3371,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.828,
      "netCash": true,
@@ -28498,8 +28499,8 @@
      "fairBase": 1075.81,
      "fairHigh": 1965.47,
      "buyCeiling": 806.86,
-     "safetyMarginPct": -60.1,
-     "impliedGrowthPct": 22.0,
+     "safetyMarginPct": -68.1,
+     "impliedGrowthPct": 22.7,
      "assumedBaseGrowthPct": 15.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -29210,7 +29211,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 33,
+    "scorePrev": 26,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -30349,8 +30350,8 @@
      "revGrowth": 0.3389,
      "epsGrowth": 0.36,
      "fcfMargin": 0.3006,
-     "trailPE": 10.0996,
-     "psr": 4.0422,
+     "trailPE": 10.2798,
+     "psr": 4.1144,
      "fyEnd": "2024-12-31",
      "netDebtEbitda": -1.6093,
      "netCash": true,
@@ -30392,8 +30393,8 @@
      "fairBase": 1737.21,
      "fairHigh": 3565.4,
      "buyCeiling": 1302.91,
-     "safetyMarginPct": 74.0,
-     "impliedGrowthPct": 1.8,
+     "safetyMarginPct": 73.6,
+     "impliedGrowthPct": 2.0,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -31104,7 +31105,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 38,
+    "scorePrev": 39,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -32243,8 +32244,8 @@
      "revGrowth": 0.4209,
      "epsGrowth": -4.0171,
      "fcfMargin": 0.1704,
-     "trailPE": 84.3485,
-     "psr": 27.7101,
+     "trailPE": 87.3225,
+     "psr": 28.6871,
      "fyEnd": "2026-01-31",
      "netDebtEbitda": 0.8183,
      "netCash": false,
@@ -32289,8 +32290,8 @@
      "fairBase": 82.44,
      "fairHigh": 169.2,
      "buyCeiling": 61.83,
-     "safetyMarginPct": -214.1,
-     "impliedGrowthPct": 36.1,
+     "safetyMarginPct": -225.2,
+     "impliedGrowthPct": 36.6,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -32968,7 +32969,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 60.2,
-   "atr": 6.8601,
+   "atr": 6.86,
    "atrPct": 3.31,
    "high52w": 210.5,
    "drawdownPct": 1.5,
@@ -33015,7 +33016,7 @@
     "relStrength3m": 21.6,
     "breakoutHigh": 210.5,
     "volConfirmed": false,
-    "trailStop": 190.1998,
+    "trailStop": 190.2,
     "atrPct": 3.31,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -34140,8 +34141,8 @@
      "revGrowth": 0.286,
      "epsGrowth": 0.2312,
      "fcfMargin": 0.4837,
-     "trailPE": 74.8,
-     "psr": 28.8077,
+     "trailPE": 74.36,
+     "psr": 28.6383,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.4999,
      "netCash": true,
@@ -34186,8 +34187,8 @@
      "fairBase": 179.46,
      "fairHigh": 368.32,
      "buyCeiling": 134.6,
-     "safetyMarginPct": -14.6,
-     "impliedGrowthPct": 21.9,
+     "safetyMarginPct": -13.9,
+     "impliedGrowthPct": 21.8,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -34900,7 +34901,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 76,
+    "scorePrev": 73,
     "streaks": {
      "65": 11,
      "80": 0,
@@ -36039,8 +36040,8 @@
      "revGrowth": 0.2769,
      "epsGrowth": 1.6882,
      "fcfMargin": 0.1851,
-     "trailPE": 71.9355,
-     "psr": 9.2315,
+     "trailPE": 72.176,
+     "psr": 9.2624,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.5442,
      "netCash": false,
@@ -36085,7 +36086,7 @@
      "fairBase": 254.67,
      "fairHigh": 522.68,
      "buyCeiling": 191.0,
-     "safetyMarginPct": 3.7,
+     "safetyMarginPct": 3.4,
      "impliedGrowthPct": 19.5,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -36796,7 +36797,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 19,
+    "scorePrev": 20,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -37935,8 +37936,8 @@
      "revGrowth": 0.4014,
      "epsGrowth": 0.1462,
      "fcfMargin": 0.0254,
-     "trailPE": 6.7155,
-     "psr": 0.8911,
+     "trailPE": 7.125,
+     "psr": 0.9454,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.9905,
      "netCash": true,
@@ -37975,13 +37976,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 20,
+     "score": 15,
      "fairLow": 21.99,
      "fairBase": 46.07,
      "fairHigh": 94.54,
      "buyCeiling": 34.55,
-     "safetyMarginPct": 32.4,
-     "impliedGrowthPct": 14.7,
+     "safetyMarginPct": 28.2,
+     "impliedGrowthPct": 15.5,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -39827,8 +39828,8 @@
      "revGrowth": 0.0587,
      "epsGrowth": -0.0095,
      "fcfMargin": 0.1627,
-     "trailPE": 35.0791,
-     "psr": 2.8143,
+     "trailPE": 33.2551,
+     "psr": 2.6679,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 3.5791,
      "netCash": false,
@@ -39873,8 +39874,8 @@
      "fairBase": 289.3,
      "fairHigh": 399.62,
      "buyCeiling": 216.97,
-     "safetyMarginPct": 4.9,
-     "impliedGrowthPct": 5.2,
+     "safetyMarginPct": 9.9,
+     "impliedGrowthPct": 4.5,
      "assumedBaseGrowthPct": 5.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -41724,8 +41725,8 @@
      "revGrowth": 0.1089,
      "epsGrowth": 0.072,
      "fcfMargin": 0.0927,
-     "trailPE": 25.5306,
-     "psr": 1.4247,
+     "trailPE": 25.9545,
+     "psr": 1.4484,
      "fyEnd": "2026-06-30",
      "netDebtEbitda": 4.6751,
      "netCash": false,
@@ -41770,8 +41771,8 @@
      "fairBase": 1059.81,
      "fairHigh": 1697.62,
      "buyCeiling": 794.86,
-     "safetyMarginPct": 41.8,
-     "impliedGrowthPct": 3.6,
+     "safetyMarginPct": 40.8,
+     "impliedGrowthPct": 3.8,
      "assumedBaseGrowthPct": 10.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -42151,7 +42152,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 27,
+    "scorePrev": 21,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -42998,7 +42999,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 72,
+    "scorePrev": 68,
     "streaks": {
      "65": 4,
      "80": 0,
@@ -44139,8 +44140,8 @@
      "revGrowth": 0.0889,
      "epsGrowth": 0.1948,
      "fcfMargin": 0.3336,
-     "trailPE": 34.188,
-     "psr": 10.4878,
+     "trailPE": 32.7257,
+     "psr": 10.0392,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.2033,
      "netCash": false,
@@ -44182,8 +44183,8 @@
      "fairBase": 338.28,
      "fairHigh": 511.1,
      "buyCeiling": 253.71,
-     "safetyMarginPct": -38.2,
-     "impliedGrowthPct": 13.2,
+     "safetyMarginPct": -32.2,
+     "impliedGrowthPct": 12.6,
      "assumedBaseGrowthPct": 8.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -44861,7 +44862,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 58.2,
-   "atr": 28.9581,
+   "atr": 28.9582,
    "atrPct": 5.15,
    "high52w": 588.4,
    "drawdownPct": 4.4,
@@ -44907,7 +44908,7 @@
     "relStrength3m": 31.9,
     "breakoutHigh": 588.4,
     "volConfirmed": false,
-    "trailStop": 490.1248,
+    "trailStop": 490.1245,
     "atrPct": 5.15,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -46032,7 +46033,7 @@
      "revGrowth": 3.7444,
      "epsGrowth": 2.8721,
      "fcfMargin": 0.0753,
-     "trailPE": 61.7535,
+     "trailPE": 62.4124,
      "fyEnd": "2026-01-30",
      "netDebtEbitda": 1.0722,
      "netCash": false,
@@ -47919,8 +47920,8 @@
      "revGrowth": 0.1053,
      "epsGrowth": 0.2824,
      "fcfMargin": 0.4145,
-     "trailPE": 14.3072,
-     "psr": 3.9123,
+     "trailPE": 14.4479,
+     "psr": 3.9508,
      "fyEnd": "2025-11-28",
      "netDebtEbitda": 0.0818,
      "netCash": false,
@@ -47965,8 +47966,8 @@
      "fairBase": 650.64,
      "fairHigh": 1031.22,
      "buyCeiling": 487.98,
-     "safetyMarginPct": 63.3,
-     "impliedGrowthPct": -3.1,
+     "safetyMarginPct": 62.9,
+     "impliedGrowthPct": -3.0,
      "assumedBaseGrowthPct": 10.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -48679,7 +48680,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 55,
+    "scorePrev": 64,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -49820,8 +49821,8 @@
      "revGrowth": 0.0747,
      "epsGrowth": 0.2037,
      "fcfMargin": 0.3393,
-     "trailPE": 27.1976,
-     "psr": 6.9699,
+     "trailPE": 26.2513,
+     "psr": 6.7274,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 2.7388,
      "netCash": false,
@@ -49859,13 +49860,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 2,
+     "score": 5,
      "fairLow": 118.68,
      "fairBase": 156.49,
      "fairHigh": 226.76,
      "buyCeiling": 117.37,
-     "safetyMarginPct": -0.3,
-     "impliedGrowthPct": 7.5,
+     "safetyMarginPct": 3.2,
+     "impliedGrowthPct": 7.0,
      "assumedBaseGrowthPct": 7.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -50543,7 +50544,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 41.2,
-   "atr": 5.7329,
+   "atr": 5.7347,
    "atrPct": 1.59,
    "high52w": 384.14,
    "drawdownPct": 6.1,
@@ -50576,7 +50577,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 44,
+    "scorePrev": 34,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -50590,7 +50591,7 @@
     "relStrength3m": -0.5,
     "breakoutHigh": 384.14,
     "volConfirmed": false,
-    "trailStop": 346.3278,
+    "trailStop": 346.3233,
     "atrPct": 1.59,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -51717,7 +51718,7 @@
      "revGrowth": 0.1134,
      "epsGrowth": 0.016,
      "fcfMargin": 0.5765,
-     "psr": 4.3171,
+     "psr": 4.2218,
      "fyEnd": "2025-09-30",
      "netDebtEbitda": 0.0967,
      "netCash": false,
@@ -51759,8 +51760,8 @@
      "fairBase": 1341.6,
      "fairHigh": 2176.71,
      "buyCeiling": 1006.2,
-     "safetyMarginPct": 72.6,
-     "impliedGrowthPct": -6.4,
+     "safetyMarginPct": 73.2,
+     "impliedGrowthPct": -6.7,
      "assumedBaseGrowthPct": 11.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -53617,7 +53618,7 @@
      "revGrowth": -0.1268,
      "epsGrowth": 1.039,
      "fcfMargin": -0.0505,
-     "trailPE": 74.7551,
+     "trailPE": 74.5714,
      "fyEnd": "2025-12-31",
      "netCash": true,
      "fcfPosYears": 2,
@@ -54355,7 +54356,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 50,
+    "scorePrev": 48,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -55494,8 +55495,8 @@
      "revGrowth": 0.0439,
      "epsGrowth": -0.0249,
      "fcfMargin": 0.2009,
-     "trailPE": 54.7633,
-     "psr": 13.2672,
+     "trailPE": 61.1201,
+     "psr": 14.8072,
      "fyEnd": "2025-10-26",
      "netDebtEbitda": -0.0901,
      "netCash": true,
@@ -55540,8 +55541,8 @@
      "fairBase": 117.01,
      "fairHigh": 154.54,
      "buyCeiling": 87.76,
-     "safetyMarginPct": -305.3,
-     "impliedGrowthPct": 23.3,
+     "safetyMarginPct": -352.4,
+     "impliedGrowthPct": 24.9,
      "assumedBaseGrowthPct": 4.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -56253,7 +56254,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 54,
+    "scorePrev": 45,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -57392,8 +57393,8 @@
      "revGrowth": 0.2602,
      "epsGrowth": 0.3559,
      "fcfMargin": 0.2521,
-     "trailPE": 53.3264,
-     "psr": 16.5437,
+     "trailPE": 59.0451,
+     "psr": 18.3179,
      "fyEnd": "2026-06-28",
      "netDebtEbitda": -0.2149,
      "netCash": true,
@@ -57438,8 +57439,8 @@
      "fairBase": 242.35,
      "fairHigh": 497.4,
      "buyCeiling": 181.77,
-     "safetyMarginPct": -26.7,
-     "impliedGrowthPct": 23.3,
+     "safetyMarginPct": -40.3,
+     "impliedGrowthPct": 24.7,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -58117,8 +58118,8 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 32.0,
-   "atr": 1.364,
-   "atrPct": 2.44,
+   "atr": 1.3683,
+   "atrPct": 2.45,
    "high52w": 66.62,
    "drawdownPct": 16.0,
    "macroDriven": false,
@@ -58153,7 +58154,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 52,
+    "scorePrev": 53,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -58167,8 +58168,8 @@
     "relStrength3m": -12.9,
     "breakoutHigh": 66.62,
     "volConfirmed": false,
-    "trailStop": 52.53,
-    "atrPct": 2.44,
+    "trailStop": 52.5192,
+    "atrPct": 2.45,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
     "momEmoji": "🔴",
@@ -59293,8 +59294,8 @@
      "revGrowth": 0.0633,
      "epsGrowth": 0.1665,
      "fcfMargin": 0.3234,
-     "trailPE": 12.849,
-     "psr": 2.7374,
+     "trailPE": 12.8558,
+     "psr": 2.7389,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "fcfPosYears": 5,
@@ -60011,7 +60012,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 35.1,
-   "atr": 8.5879,
+   "atr": 8.588,
    "atrPct": 5.14,
    "high52w": 310.04,
    "drawdownPct": 46.1,
@@ -60049,7 +60050,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 85,
+    "scorePrev": 70,
     "streaks": {
      "65": 14,
      "80": 0,
@@ -60063,7 +60064,7 @@
     "relStrength3m": -29.5,
     "breakoutHigh": 227.43,
     "volConfirmed": false,
-    "trailStop": 145.5602,
+    "trailStop": 145.56,
     "atrPct": 5.14,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -61190,8 +61191,8 @@
      "revGrowth": 0.4453,
      "epsGrowth": 1.3316,
      "fcfMargin": -0.135,
-     "trailPE": 37.9413,
-     "psr": 7.149,
+     "trailPE": 36.3739,
+     "psr": 6.8537,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "currentRatio": 5.283,
@@ -61901,7 +61902,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 25.2,
-   "atr": 3.0475,
+   "atr": 3.0488,
    "atrPct": 3.08,
    "high52w": 128.59,
    "drawdownPct": 23.1,
@@ -61951,7 +61952,7 @@
     "relStrength3m": -11.4,
     "breakoutHigh": 127.34,
     "volConfirmed": false,
-    "trailStop": 91.3213,
+    "trailStop": 91.318,
     "atrPct": 3.08,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -63076,8 +63077,8 @@
      "revGrowth": 0.1647,
      "epsGrowth": 0.062,
      "fcfMargin": 0.3685,
-     "trailPE": 20.7751,
-     "psr": 5.7393,
+     "trailPE": 20.6217,
+     "psr": 5.697,
      "fyEnd": "2026-05-31",
      "netDebtEbitda": 1.1743,
      "netCash": false,
@@ -63122,8 +63123,8 @@
      "fairBase": 260.51,
      "fairHigh": 487.5,
      "buyCeiling": 195.38,
-     "safetyMarginPct": 61.0,
-     "impliedGrowthPct": 3.8,
+     "safetyMarginPct": 61.3,
+     "impliedGrowthPct": 3.7,
      "assumedBaseGrowthPct": 16.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -63832,7 +63833,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 55,
+    "scorePrev": 56,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -64594,7 +64595,7 @@
      "revGrowth": 0.5997,
      "epsGrowth": -1.2194,
      "fcfMargin": 0.2407,
-     "psr": 5.7088,
+     "psr": 6.148,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 32.2381,
      "netCash": false,
@@ -64639,8 +64640,8 @@
      "fairBase": 654.79,
      "fairHigh": 1343.87,
      "buyCeiling": 491.09,
-     "safetyMarginPct": 54.2,
-     "impliedGrowthPct": 9.4,
+     "safetyMarginPct": 50.7,
+     "impliedGrowthPct": 10.4,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -65353,7 +65354,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 19,
+    "scorePrev": 27,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -66496,8 +66497,8 @@
      "revGrowth": -0.2431,
      "epsGrowth": -0.5728,
      "fcfMargin": -0.0709,
-     "trailPE": 12.9643,
-     "psr": 1.9283,
+     "trailPE": 13.6429,
+     "psr": 2.0293,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 6.5705,
      "netCash": false,
@@ -68380,8 +68381,8 @@
      "revGrowth": 0.1327,
      "epsGrowth": 0.1261,
      "fcfMargin": 0.1322,
-     "trailPE": 23.6486,
-     "psr": 2.533,
+     "trailPE": 24.0865,
+     "psr": 2.5799,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.8046,
      "netCash": true,
@@ -68426,8 +68427,8 @@
      "fairBase": 71.94,
      "fairHigh": 123.31,
      "buyCeiling": 53.96,
-     "safetyMarginPct": 39.2,
-     "impliedGrowthPct": 6.6,
+     "safetyMarginPct": 38.1,
+     "impliedGrowthPct": 6.8,
      "assumedBaseGrowthPct": 13.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -69138,7 +69139,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 40,
+    "scorePrev": 43,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -70281,7 +70282,7 @@
      "revGrowth": -0.8578,
      "epsGrowth": 1.5318,
      "fcfMargin": -0.3825,
-     "psr": 57.8094,
+     "psr": 58.3909,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "interestCoverage": -8.1345,
@@ -70992,7 +70993,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 51.2,
-   "atr": 11.2586,
+   "atr": 11.2593,
    "atrPct": 2.87,
    "high52w": 592.85,
    "drawdownPct": 33.9,
@@ -71038,7 +71039,7 @@
     "relStrength3m": -11.2,
     "breakoutHigh": 414.79,
     "volConfirmed": false,
-    "trailStop": 363.8035,
+    "trailStop": 363.8018,
     "atrPct": 2.87,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -72163,8 +72164,8 @@
      "revGrowth": 0.2051,
      "epsGrowth": 0.2297,
      "fcfMargin": 0.3011,
-     "trailPE": 50.7649,
-     "psr": 14.0234,
+     "trailPE": 50.9835,
+     "psr": 14.0838,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -1.1434,
      "netCash": true,
@@ -72203,12 +72204,12 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 10,
+     "score": 5,
      "fairLow": 212.0,
      "fairBase": 444.11,
      "fairHigh": 911.48,
      "buyCeiling": 333.08,
-     "safetyMarginPct": 10.0,
+     "safetyMarginPct": 9.7,
      "impliedGrowthPct": 18.6,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -72887,8 +72888,8 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 74.1,
-   "atr": 19.031,
-   "atrPct": 3.88,
+   "atr": 19.0506,
+   "atrPct": 3.89,
    "high52w": 534.56,
    "drawdownPct": 8.4,
    "macroDriven": null,
@@ -72934,8 +72935,8 @@
     "relStrength3m": 9.3,
     "breakoutHigh": 490.54,
     "volConfirmed": false,
-    "trailStop": 442.3225,
-    "atrPct": 3.88,
+    "trailStop": 442.2735,
+    "atrPct": 3.89,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
     "momEmoji": "🟡",
@@ -74061,8 +74062,8 @@
      "revGrowth": 0.1512,
      "epsGrowth": -0.4114,
      "fcfMargin": 0.1913,
-     "trailPE": 52.8495,
-     "psr": 11.5433,
+     "trailPE": 61.0124,
+     "psr": 13.3262,
      "fyEnd": "2025-10-31",
      "netDebtEbitda": 6.7124,
      "netCash": false,
@@ -74107,8 +74108,8 @@
      "fairBase": 254.54,
      "fairHigh": 459.25,
      "buyCeiling": 190.91,
-     "safetyMarginPct": -66.9,
-     "impliedGrowthPct": 22.1,
+     "safetyMarginPct": -92.7,
+     "impliedGrowthPct": 24.1,
      "assumedBaseGrowthPct": 15.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -74786,7 +74787,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 42.1,
-   "atr": 10.5753,
+   "atr": 10.5896,
    "atrPct": 4.11,
    "high52w": 403.95,
    "drawdownPct": 36.3,
@@ -74818,7 +74819,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 21,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -74832,7 +74833,7 @@
     "relStrength3m": 4.5,
     "breakoutHigh": 299.05,
     "volConfirmed": false,
-    "trailStop": 231.0517,
+    "trailStop": 231.016,
     "atrPct": 4.11,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -75863,8 +75864,8 @@
      "revGrowth": 0.1951,
      "epsGrowth": -0.3814,
      "fcfMargin": 0.0568,
-     "trailPE": 35.3541,
-     "psr": 4.0901,
+     "trailPE": 34.9892,
+     "psr": 4.0479,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.1695,
      "netCash": false,
@@ -75908,8 +75909,8 @@
      "fairBase": 181.51,
      "fairHigh": 367.84,
      "buyCeiling": 136.13,
-     "safetyMarginPct": -44.1,
-     "impliedGrowthPct": 24.5,
+     "safetyMarginPct": -42.6,
+     "impliedGrowthPct": 24.4,
      "assumedBaseGrowthPct": 19.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -76587,7 +76588,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 59.3,
-   "atr": 46.4743,
+   "atr": 46.4846,
    "atrPct": 4.32,
    "high52w": 1213.5601,
    "drawdownPct": 11.4,
@@ -76619,7 +76620,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 29,
+    "scorePrev": 33,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -76633,7 +76634,7 @@
     "relStrength3m": 11.6,
     "breakoutHigh": 1097.39,
     "volConfirmed": false,
-    "trailStop": 958.7043,
+    "trailStop": 958.6785,
     "atrPct": 4.32,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -77758,8 +77759,8 @@
      "revGrowth": 0.4885,
      "epsGrowth": 9.9756,
      "fcfMargin": 0.0446,
-     "trailPE": 142.3623,
-     "psr": 32.6487,
+     "trailPE": 144.5837,
+     "psr": 33.1581,
      "fyEnd": "2025-08-28",
      "netDebtEbitda": 0.1043,
      "netCash": false,
@@ -77804,8 +77805,8 @@
      "fairBase": 76.46,
      "fairHigh": 156.93,
      "buyCeiling": 57.35,
-     "safetyMarginPct": -1313.2,
-     "impliedGrowthPct": 59.5,
+     "safetyMarginPct": -1335.2,
+     "impliedGrowthPct": 59.7,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -78517,7 +78518,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 68,
+    "scorePrev": 63,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -79216,8 +79217,8 @@
      "revGrowth": 0.2279,
      "epsGrowth": 0.1414,
      "fcfMargin": 0.199,
-     "trailPE": 360.4,
-     "psr": 66.2526,
+     "trailPE": 343.9294,
+     "psr": 63.2248,
      "fyEnd": "2026-03-31",
      "netDebtEbitda": -2.3943,
      "netCash": true,
@@ -79260,8 +79261,8 @@
      "fairBase": 47.63,
      "fairHigh": 97.76,
      "buyCeiling": 35.73,
-     "safetyMarginPct": -543.1,
-     "impliedGrowthPct": 46.9,
+     "safetyMarginPct": -513.7,
+     "impliedGrowthPct": 46.2,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -79974,7 +79975,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 62,
+    "scorePrev": 35,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -81113,8 +81114,8 @@
      "revGrowth": 0.4371,
      "epsGrowth": 1.3536,
      "fcfMargin": 0.3694,
-     "trailPE": 21.8826,
-     "psr": 8.1416,
+     "trailPE": 20.3826,
+     "psr": 7.5835,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.6083,
      "netCash": true,
@@ -81159,8 +81160,8 @@
      "fairBase": 455.44,
      "fairHigh": 934.72,
      "buyCeiling": 341.58,
-     "safetyMarginPct": 57.4,
-     "impliedGrowthPct": 8.5,
+     "safetyMarginPct": 60.3,
+     "impliedGrowthPct": 7.5,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     },
@@ -83024,7 +83025,7 @@
      "revGrowth": 2.0185,
      "epsGrowth": 0.5389,
      "fcfMargin": -2.3044,
-     "psr": 131.8106,
+     "psr": 128.9095,
      "fyEnd": "2025-12-31",
      "netCash": true,
      "currentRatio": 15.5039,
@@ -83735,7 +83736,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 54.0,
-   "atr": 6.271,
+   "atr": 6.2756,
    "atrPct": 0.89,
    "high52w": 714.95,
    "drawdownPct": 1.0,
@@ -83766,7 +83767,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 38,
+    "scorePrev": 33,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -83780,7 +83781,7 @@
     "relStrength3m": 0.1,
     "breakoutHigh": 714.95,
     "volConfirmed": false,
-    "trailStop": 691.8625,
+    "trailStop": 691.851,
     "atrPct": 0.89,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -85603,7 +85604,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 38,
+    "scorePrev": 44,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -86744,7 +86745,7 @@
      "revGrowth": 0.2045,
      "epsGrowth": 0.2108,
      "fcfMargin": -0.0717,
-     "psr": 11.087,
+     "psr": 11.428,
      "fyEnd": "2017-12-31",
      "netCash": true,
      "currentRatio": 9.9305,
@@ -88632,8 +88633,8 @@
      "revGrowth": 0.1104,
      "epsGrowth": 2.4307,
      "fcfMargin": 0.3089,
-     "trailPE": 65.2741,
-     "psr": 11.0205,
+     "trailPE": 63.4741,
+     "psr": 10.7166,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -1.2235,
      "netCash": true,
@@ -88675,8 +88676,8 @@
      "fairBase": 65.94,
      "fairHigh": 106.06,
      "buyCeiling": 49.45,
-     "safetyMarginPct": -33.6,
-     "impliedGrowthPct": 14.9,
+     "safetyMarginPct": -30.0,
+     "impliedGrowthPct": 14.6,
      "assumedBaseGrowthPct": 11.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -90530,7 +90531,7 @@
      "revGrowth": 0.4372,
      "epsGrowth": -1.0101,
      "fcfMargin": 0.0944,
-     "psr": 5.5912,
+     "psr": 5.7786,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 4.1701,
      "netCash": false,
@@ -90574,8 +90575,8 @@
      "fairBase": 8.13,
      "fairHigh": 16.68,
      "buyCeiling": 6.1,
-     "safetyMarginPct": -10.1,
-     "impliedGrowthPct": 21.3,
+     "safetyMarginPct": -13.8,
+     "impliedGrowthPct": 21.8,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -91286,7 +91287,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 43,
+    "scorePrev": 39,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -93124,7 +93125,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 48,
+    "scorePrev": 63,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -94261,8 +94262,8 @@
      "opMargin": 0.18,
      "revGrowth": 0.1987,
      "fcfMargin": 0.1822,
-     "trailPE": 23.0309,
-     "psr": 3.2256,
+     "trailPE": 22.2835,
+     "psr": 3.121,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.8414,
      "netCash": false,
@@ -94307,8 +94308,8 @@
      "fairBase": 129.4,
      "fairHigh": 264.68,
      "buyCeiling": 97.05,
-     "safetyMarginPct": 65.5,
-     "impliedGrowthPct": 5.5,
+     "safetyMarginPct": 66.6,
+     "impliedGrowthPct": 5.1,
      "assumedBaseGrowthPct": 19.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -95021,7 +95022,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 55,
+    "scorePrev": 61,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -95426,8 +95427,8 @@
      "revGrowth": 1.753,
      "epsGrowth": -7.9671,
      "fcfMargin": 0.5677,
-     "trailPE": 23.7747,
-     "psr": 12.6809,
+     "trailPE": 24.2366,
+     "psr": 12.9273,
      "fyEnd": "2026-07-03",
      "netDebtEbitda": -0.3798,
      "netCash": true,
@@ -95471,8 +95472,8 @@
      "fairBase": 4064.13,
      "fairHigh": 8341.08,
      "buyCeiling": 3048.1,
-     "safetyMarginPct": 56.9,
-     "impliedGrowthPct": 8.6,
+     "safetyMarginPct": 56.0,
+     "impliedGrowthPct": 8.9,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -96880,7 +96881,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 49.8,
-   "atr": 6.2608,
+   "atr": 6.2615,
    "atrPct": 5.55,
    "high52w": 152.46,
    "drawdownPct": 26.1,
@@ -96927,7 +96928,7 @@
     "relStrength3m": -3.1,
     "breakoutHigh": 124.72,
     "volConfirmed": false,
-    "trailStop": 97.088,
+    "trailStop": 97.0862,
     "atrPct": 5.55,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -98053,7 +98054,7 @@
      "revGrowth": 0.5158,
      "epsGrowth": 0.3345,
      "fcfMargin": 0.3662,
-     "trailPE": 58.9366,
+     "trailPE": 54.2195,
      "fyEnd": "2025-12-31",
      "netCash": true,
      "currentRatio": 1.2619,
@@ -98799,7 +98800,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 71,
+    "scorePrev": 72,
     "streaks": {
      "65": 4,
      "80": 0,
@@ -99938,8 +99939,8 @@
      "revGrowth": 0.0974,
      "epsGrowth": 0.4101,
      "fcfMargin": 0.0896,
-     "trailPE": 38.0262,
-     "psr": 2.869,
+     "trailPE": 37.3004,
+     "psr": 2.8142,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.9632,
      "netCash": false,
@@ -99984,8 +99985,8 @@
      "fairBase": 142.83,
      "fairHigh": 221.25,
      "buyCeiling": 107.12,
-     "safetyMarginPct": -32.1,
-     "impliedGrowthPct": 13.5,
+     "safetyMarginPct": -29.5,
+     "impliedGrowthPct": 13.2,
      "assumedBaseGrowthPct": 9.7,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -101837,8 +101838,8 @@
      "revGrowth": 0.0224,
      "epsGrowth": 0.0019,
      "fcfMargin": 0.0788,
-     "trailPE": 17.5028,
-     "psr": 1.7235,
+     "trailPE": 16.575,
+     "psr": 1.6321,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.7983,
      "netCash": false,
@@ -101882,8 +101883,8 @@
      "fairBase": 324.04,
      "fairHigh": 401.16,
      "buyCeiling": 243.03,
-     "safetyMarginPct": -57.1,
-     "impliedGrowthPct": 8.4,
+     "safetyMarginPct": -48.7,
+     "impliedGrowthPct": 7.6,
      "assumedBaseGrowthPct": 2.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -102561,7 +102562,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 57.8,
-   "atr": 36.9381,
+   "atr": 36.938,
    "atrPct": 3.74,
    "high52w": 1174.86,
    "drawdownPct": 15.8,
@@ -102610,7 +102611,7 @@
     "relStrength3m": -11.1,
     "breakoutHigh": 1079.0,
     "volConfirmed": false,
-    "trailStop": 896.3548,
+    "trailStop": 896.355,
     "atrPct": 3.74,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -103183,8 +103184,8 @@
      "revGrowth": 0.0897,
      "epsGrowth": 2.1469,
      "fcfMargin": 0.131,
-     "trailPE": 53.9876,
-     "psr": 6.6817,
+     "trailPE": 55.8197,
+     "psr": 6.9085,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -6.3746,
      "netCash": true,
@@ -103227,8 +103228,8 @@
      "fairBase": 428.59,
      "fairHigh": 649.07,
      "buyCeiling": 321.44,
-     "safetyMarginPct": -122.8,
-     "impliedGrowthPct": 19.8,
+     "safetyMarginPct": -130.4,
+     "impliedGrowthPct": 20.3,
      "assumedBaseGrowthPct": 9.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -103906,7 +103907,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 46.8,
-   "atr": 4.9379,
+   "atr": 4.9394,
    "atrPct": 3.53,
    "high52w": 210.85,
    "drawdownPct": 33.6,
@@ -103938,7 +103939,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 47,
+    "scorePrev": 46,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -103952,7 +103953,7 @@
     "relStrength3m": -13.0,
     "breakoutHigh": 168.98,
     "volConfirmed": true,
-    "trailStop": 127.6753,
+    "trailStop": 127.6715,
     "atrPct": 3.53,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -105080,8 +105081,8 @@
      "revGrowth": 0.1914,
      "epsGrowth": -0.645,
      "fcfMargin": 0.0749,
-     "trailPE": 63.2752,
-     "psr": 2.6326,
+     "trailPE": 64.1055,
+     "psr": 2.6672,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 4.1773,
      "netCash": false,
@@ -105126,8 +105127,8 @@
      "fairBase": 190.86,
      "fairHigh": 383.16,
      "buyCeiling": 143.15,
-     "safetyMarginPct": 27.7,
-     "impliedGrowthPct": 14.7,
+     "safetyMarginPct": 26.8,
+     "impliedGrowthPct": 14.9,
      "assumedBaseGrowthPct": 19.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -105805,7 +105806,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 32.8,
-   "atr": 1.343,
+   "atr": 1.3431,
    "atrPct": 1.75,
    "high52w": 97.88,
    "drawdownPct": 21.5,
@@ -105839,7 +105840,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 85,
+    "scorePrev": 77,
     "streaks": {
      "65": 9,
      "80": 0,
@@ -105853,7 +105854,7 @@
     "relStrength3m": -16.1,
     "breakoutHigh": 89.79,
     "volConfirmed": false,
-    "trailStop": 73.4725,
+    "trailStop": 73.4723,
     "atrPct": 1.75,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -106981,8 +106982,8 @@
      "revGrowth": -0.1218,
      "epsGrowth": -0.016,
      "fcfMargin": 3.6993,
-     "trailPE": 22.9152,
-     "psr": 46.724,
+     "trailPE": 23.1364,
+     "psr": 47.1751,
      "fyEnd": "2012-12-31",
      "netDebtEbitda": 5.8374,
      "netCash": false,
@@ -107025,8 +107026,8 @@
      "fairBase": 70.75,
      "fairHigh": 81.86,
      "buyCeiling": 53.06,
-     "safetyMarginPct": -6.9,
-     "impliedGrowthPct": 0.9,
+     "safetyMarginPct": -7.9,
+     "impliedGrowthPct": 1.0,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -107704,8 +107705,8 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 32.8,
-   "atr": 5.7889,
-   "atrPct": 1.91,
+   "atr": 5.8046,
+   "atrPct": 1.92,
    "high52w": 384.89,
    "drawdownPct": 21.3,
    "macroDriven": null,
@@ -107754,8 +107755,8 @@
     "relStrength3m": -16.3,
     "breakoutHigh": 348.99,
     "volConfirmed": false,
-    "trailStop": 288.3077,
-    "atrPct": 1.91,
+    "trailStop": 288.2685,
+    "atrPct": 1.92,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
     "momEmoji": "⚪",
@@ -108881,8 +108882,8 @@
      "revGrowth": 0.0639,
      "epsGrowth": 0.0695,
      "fcfMargin": 0.3874,
-     "trailPE": 19.8739,
-     "psr": 4.9975,
+     "trailPE": 19.6417,
+     "psr": 4.9391,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 3.0253,
      "netCash": false,
@@ -108924,8 +108925,8 @@
      "fairBase": 447.74,
      "fairHigh": 628.02,
      "buyCeiling": 335.8,
-     "safetyMarginPct": 31.7,
-     "impliedGrowthPct": 1.2,
+     "safetyMarginPct": 32.5,
+     "impliedGrowthPct": 1.0,
      "assumedBaseGrowthPct": 6.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -109603,7 +109604,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 31.8,
-   "atr": 9.569,
+   "atr": 9.5954,
    "atrPct": 2.48,
    "high52w": 516.8874,
    "drawdownPct": 25.3,
@@ -109653,7 +109654,7 @@
     "relStrength3m": -15.8,
     "breakoutHigh": 450.58,
     "volConfirmed": false,
-    "trailStop": 362.3475,
+    "trailStop": 362.2815,
     "atrPct": 2.48,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -110780,8 +110781,8 @@
      "revGrowth": 0.0794,
      "epsGrowth": 0.1607,
      "fcfMargin": 0.364,
-     "trailPE": 27.5068,
-     "psr": 7.7831,
+     "trailPE": 26.4775,
+     "psr": 7.4919,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.3876,
      "netCash": false,
@@ -110824,8 +110825,8 @@
      "fairBase": 404.81,
      "fairHigh": 594.72,
      "buyCeiling": 303.61,
-     "safetyMarginPct": 0.4,
-     "impliedGrowthPct": 7.9,
+     "safetyMarginPct": 4.1,
+     "impliedGrowthPct": 7.4,
      "assumedBaseGrowthPct": 7.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -111503,7 +111504,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 42.2,
-   "atr": 3.7669,
+   "atr": 3.7711,
    "atrPct": 2.13,
    "high52w": 192.0,
    "drawdownPct": 7.9,
@@ -111546,7 +111547,7 @@
     "relStrength3m": 10.2,
     "breakoutHigh": 192.0,
     "volConfirmed": false,
-    "trailStop": 167.3828,
+    "trailStop": 167.3723,
     "atrPct": 2.13,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -112671,8 +112672,8 @@
      "revGrowth": 0.0824,
      "epsGrowth": -0.0158,
      "fcfMargin": 0.1223,
-     "trailPE": 30.7955,
-     "psr": 2.2353,
+     "trailPE": 30.5962,
+     "psr": 2.2209,
      "fyEnd": "2025-09-30",
      "netDebtEbitda": 3.3684,
      "netCash": false,
@@ -112717,7 +112718,7 @@
      "fairBase": 212.49,
      "fairHigh": 314.94,
      "buyCeiling": 159.37,
-     "safetyMarginPct": 15.7,
+     "safetyMarginPct": 16.2,
      "impliedGrowthPct": 5.9,
      "assumedBaseGrowthPct": 8.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -113396,7 +113397,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 38.9,
-   "atr": 9.2807,
+   "atr": 9.2829,
    "atrPct": 1.68,
    "high52w": 599.86,
    "drawdownPct": 7.9,
@@ -113444,7 +113445,7 @@
     "relStrength3m": 1.0,
     "breakoutHigh": 599.86,
     "volConfirmed": false,
-    "trailStop": 529.0583,
+    "trailStop": 529.0528,
     "atrPct": 1.68,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -114571,8 +114572,8 @@
      "revGrowth": 0.1642,
      "epsGrowth": -0.2912,
      "fcfMargin": 0.5233,
-     "trailPE": 34.2663,
-     "psr": 2.1153,
+     "trailPE": 33.293,
+     "psr": 2.0552,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.3835,
      "netCash": false,
@@ -114615,8 +114616,8 @@
      "fairBase": 5570.71,
      "fairHigh": 10409.27,
      "buyCeiling": 4178.04,
-     "safetyMarginPct": 89.8,
-     "impliedGrowthPct": -15.8,
+     "safetyMarginPct": 90.1,
+     "impliedGrowthPct": -16.3,
      "assumedBaseGrowthPct": 16.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -115294,7 +115295,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 52.5,
-   "atr": 4.3343,
+   "atr": 4.3379,
    "atrPct": 2.03,
    "high52w": 260.1364,
    "drawdownPct": 17.7,
@@ -115343,7 +115344,7 @@
     "relStrength3m": -7.8,
     "breakoutHigh": 248.79,
     "volConfirmed": false,
-    "trailStop": 203.1543,
+    "trailStop": 203.1453,
     "atrPct": 2.03,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -116468,7 +116469,7 @@
      "revGrowth": 0.034,
      "epsGrowth": -1.063,
      "fcfMargin": 0.5556,
-     "psr": 6.8789,
+     "psr": 6.9442,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.7403,
      "netCash": false,
@@ -116512,8 +116513,8 @@
      "fairBase": 259.27,
      "fairHigh": 332.39,
      "buyCeiling": 194.45,
-     "safetyMarginPct": 18.3,
-     "impliedGrowthPct": 0.6,
+     "safetyMarginPct": 17.5,
+     "impliedGrowthPct": 0.8,
      "assumedBaseGrowthPct": 3.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -117225,7 +117226,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 52,
+    "scorePrev": 44,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -118363,8 +118364,8 @@
      "revGrowth": 0.0019,
      "epsGrowth": -0.0345,
      "fcfMargin": 0.0471,
-     "trailPE": 17.1381,
-     "psr": 0.6635,
+     "trailPE": 16.7381,
+     "psr": 0.648,
      "fyEnd": "2026-05-31",
      "netCash": true,
      "currentRatio": 1.9609,
@@ -118401,13 +118402,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 0,
+     "score": 2,
      "fairLow": 30.39,
      "fairBase": 30.6,
      "fairHigh": 35.61,
      "buyCeiling": 22.95,
-     "safetyMarginPct": -17.6,
-     "impliedGrowthPct": 2.4,
+     "safetyMarginPct": -14.9,
+     "impliedGrowthPct": 2.1,
      "assumedBaseGrowthPct": 0.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -119116,7 +119117,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 30,
+    "scorePrev": 22,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -120257,8 +120258,8 @@
      "revGrowth": -0.1166,
      "epsGrowth": -0.292,
      "fcfMargin": 0.1335,
-     "trailPE": 37.5643,
-     "psr": 4.1015,
+     "trailPE": 36.0681,
+     "psr": 3.9381,
      "fyEnd": "2025-11-02",
      "netDebtEbitda": 2.1842,
      "netCash": false,
@@ -120302,8 +120303,8 @@
      "fairBase": 267.32,
      "fairHigh": 309.29,
      "buyCeiling": 200.49,
-     "safetyMarginPct": -160.0,
-     "impliedGrowthPct": 12.9,
+     "safetyMarginPct": -149.6,
+     "impliedGrowthPct": 12.4,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -120981,7 +120982,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 59.1,
-   "atr": 9.9633,
+   "atr": 9.9643,
    "atrPct": 5.01,
    "high52w": 288.54,
    "drawdownPct": 31.1,
@@ -121014,7 +121015,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 32,
+    "scorePrev": 38,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -121028,7 +121029,7 @@
     "relStrength3m": 37.0,
     "breakoutHigh": 212.3,
     "volConfirmed": true,
-    "trailStop": 173.9917,
+    "trailStop": 173.9892,
     "atrPct": 5.01,
     "momState": "EXIT",
     "momStateLabel": "🔴 売り場(手仕舞い検討)",
@@ -122155,8 +122156,8 @@
      "revGrowth": -0.0074,
      "epsGrowth": -0.3566,
      "fcfMargin": 0.618,
-     "trailPE": 78.8489,
-     "psr": 6.4226,
+     "trailPE": 94.3556,
+     "psr": 7.6856,
      "fyEnd": "2025-08-31",
      "netDebtEbitda": -1.845,
      "netCash": true,
@@ -122196,13 +122197,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 10,
+     "score": 2,
      "fairLow": 201.73,
      "fairBase": 201.73,
      "fairHigh": 233.41,
      "buyCeiling": 151.3,
-     "safetyMarginPct": 12.1,
-     "impliedGrowthPct": -1.8,
+     "safetyMarginPct": -5.2,
+     "impliedGrowthPct": 0.7,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -122880,7 +122881,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 40.4,
-   "atr": 8.6081,
+   "atr": 8.6085,
    "atrPct": 2.31,
    "high52w": 436.35,
    "drawdownPct": 14.8,
@@ -122913,7 +122914,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 49,
+    "scorePrev": 36,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -122927,7 +122928,7 @@
     "relStrength3m": -16.1,
     "breakoutHigh": 428.79,
     "volConfirmed": false,
-    "trailStop": 350.3797,
+    "trailStop": 350.3787,
     "atrPct": 2.31,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -124052,8 +124053,8 @@
      "revGrowth": 0.1181,
      "epsGrowth": -0.1631,
      "fcfMargin": 0.0359,
-     "trailPE": 28.3454,
-     "psr": 0.7521,
+     "trailPE": 27.6039,
+     "psr": 0.7324,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 2.0559,
      "netCash": false,
@@ -124098,8 +124099,8 @@
      "fairBase": 506.51,
      "fairHigh": 833.03,
      "buyCeiling": 379.88,
-     "safetyMarginPct": 26.0,
-     "impliedGrowthPct": 7.8,
+     "safetyMarginPct": 27.9,
+     "impliedGrowthPct": 7.4,
      "assumedBaseGrowthPct": 11.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -124811,7 +124812,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 60,
+    "scorePrev": 44,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -125951,8 +125952,8 @@
      "revGrowth": 0.2342,
      "epsGrowth": 0.2035,
      "fcfMargin": 6.4799,
-     "trailPE": 40.4595,
-     "psr": 1.5546,
+     "trailPE": 38.6532,
+     "psr": 1.4852,
      "fyEnd": "2025-12-31",
      "netCash": true,
      "fcfPosYears": 5,
@@ -125990,7 +125991,7 @@
      "fairBase": 19382.74,
      "fairHigh": 39780.47,
      "buyCeiling": 14537.05,
-     "safetyMarginPct": 99.5,
+     "safetyMarginPct": 99.6,
      "impliedGrowthPct": -50.0,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -126669,7 +126670,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 49.9,
-   "atr": 4.6438,
+   "atr": 4.6505,
    "atrPct": 4.78,
    "high52w": 137.19,
    "drawdownPct": 29.1,
@@ -126717,7 +126718,7 @@
     "relStrength3m": 5.9,
     "breakoutHigh": 105.1,
     "volConfirmed": false,
-    "trailStop": 85.6005,
+    "trailStop": 85.5837,
     "atrPct": 4.78,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -127842,8 +127843,8 @@
      "revGrowth": 0.0826,
      "epsGrowth": -0.0661,
      "fcfMargin": 0.3182,
-     "trailPE": 16.2074,
-     "psr": 2.5787,
+     "trailPE": 15.5916,
+     "psr": 2.4807,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 2.158,
      "netCash": false,
@@ -127887,8 +127888,8 @@
      "fairBase": 270.21,
      "fairHigh": 400.8,
      "buyCeiling": 202.66,
-     "safetyMarginPct": 62.7,
-     "impliedGrowthPct": -5.3,
+     "safetyMarginPct": 64.1,
+     "impliedGrowthPct": -5.8,
      "assumedBaseGrowthPct": 8.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -128601,7 +128602,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 60,
+    "scorePrev": 58,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -129740,8 +129741,8 @@
      "revGrowth": 0.1828,
      "epsGrowth": 0.02,
      "fcfMargin": 0.1877,
-     "trailPE": 14.6342,
-     "psr": 2.7181,
+     "trailPE": 14.351,
+     "psr": 2.6655,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.5436,
      "netCash": false,
@@ -129786,8 +129787,8 @@
      "fairBase": 218.12,
      "fairHigh": 428.22,
      "buyCeiling": 163.59,
-     "safetyMarginPct": 68.3,
-     "impliedGrowthPct": 2.8,
+     "safetyMarginPct": 68.9,
+     "impliedGrowthPct": 2.5,
      "assumedBaseGrowthPct": 18.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -130499,7 +130500,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 56,
+    "scorePrev": 57,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -131639,8 +131640,8 @@
      "revGrowth": 0.1632,
      "epsGrowth": 0.3335,
      "fcfMargin": 0.1962,
-     "trailPE": 10.5133,
-     "psr": 1.3406,
+     "trailPE": 10.9704,
+     "psr": 1.3989,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "fcfPosYears": 5,
@@ -131678,8 +131679,8 @@
      "fairBase": 1168.35,
      "fairHigh": 2177.36,
      "buyCeiling": 876.26,
-     "safetyMarginPct": 82.7,
-     "impliedGrowthPct": -7.8,
+     "safetyMarginPct": 81.9,
+     "impliedGrowthPct": -7.1,
      "assumedBaseGrowthPct": 16.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -132357,8 +132358,8 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 52.4,
-   "atr": 12.0938,
-   "atrPct": 2.83,
+   "atr": 12.1024,
+   "atrPct": 2.84,
    "high52w": 545.13,
    "drawdownPct": 21.7,
    "macroDriven": null,
@@ -132402,8 +132403,8 @@
     "relStrength3m": -2.1,
     "breakoutHigh": 438.12,
     "volConfirmed": false,
-    "trailStop": 396.4555,
-    "atrPct": 2.83,
+    "trailStop": 396.434,
+    "atrPct": 2.84,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
     "momEmoji": "🟡",
@@ -133526,8 +133527,8 @@
      "revGrowth": 0.0708,
      "epsGrowth": 0.1778,
      "fcfMargin": 0.1017,
-     "trailPE": 14.9481,
-     "psr": 1.2427,
+     "trailPE": 14.9449,
+     "psr": 1.2424,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "currentRatio": 0.9653,
@@ -134283,7 +134284,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 48,
+    "scorePrev": 57,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -135424,7 +135425,7 @@
      "revGrowth": -0.1104,
      "epsGrowth": -0.2294,
      "fcfMargin": 0.0145,
-     "psr": 4.4106,
+     "psr": 4.2077,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "fcfPosYears": 2,
@@ -135463,8 +135464,8 @@
      "fairBase": 6.29,
      "fairHigh": 7.28,
      "buyCeiling": 4.72,
-     "safetyMarginPct": -1420.6,
-     "impliedGrowthPct": 37.6,
+     "safetyMarginPct": -1350.6,
+     "impliedGrowthPct": 36.9,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -136174,7 +136175,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 29,
+    "scorePrev": 24,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -137298,7 +137299,7 @@
      "revGrowth": 1.0431,
      "epsGrowth": -0.9715,
      "fcfMargin": 0.8616,
-     "psr": 1.319,
+     "psr": 1.3122,
      "fyEnd": "2025-12-31",
      "netCash": true,
      "fcfPosYears": 5,
@@ -137336,8 +137337,8 @@
      "fairBase": 4401.42,
      "fairHigh": 9033.32,
      "buyCeiling": 3301.06,
-     "safetyMarginPct": 97.0,
-     "impliedGrowthPct": -34.7,
+     "safetyMarginPct": 97.1,
+     "impliedGrowthPct": -34.9,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -138047,7 +138048,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 63,
+    "scorePrev": 61,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -139186,8 +139187,8 @@
      "revGrowth": 0.038,
      "epsGrowth": 0.0697,
      "fcfMargin": 0.062,
-     "trailPE": 23.6234,
-     "psr": 1.3846,
+     "trailPE": 23.765,
+     "psr": 1.3929,
      "fyEnd": "2025-07-31",
      "netDebtEbitda": 1.0332,
      "netCash": false,
@@ -139231,8 +139232,8 @@
      "fairBase": 153.96,
      "fairHigh": 199.8,
      "buyCeiling": 115.47,
-     "safetyMarginPct": -43.0,
-     "impliedGrowthPct": 8.6,
+     "safetyMarginPct": -43.9,
+     "impliedGrowthPct": 8.7,
      "assumedBaseGrowthPct": 3.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -139943,7 +139944,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 46,
+    "scorePrev": 48,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -141082,8 +141083,8 @@
      "revGrowth": 0.0408,
      "epsGrowth": 0.3684,
      "fcfMargin": 0.0243,
-     "trailPE": 31.9116,
-     "psr": 0.5148,
+     "trailPE": 31.949,
+     "psr": 0.5154,
      "fyEnd": "2025-12-27",
      "netDebtEbitda": 3.0235,
      "netCash": false,
@@ -141128,7 +141129,7 @@
      "fairBase": 70.65,
      "fairHigh": 92.47,
      "buyCeiling": 52.99,
-     "safetyMarginPct": -32.8,
+     "safetyMarginPct": -32.9,
      "impliedGrowthPct": 7.9,
      "assumedBaseGrowthPct": 4.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -141807,7 +141808,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 10,
    "rsi": 34.0,
-   "atr": 2.5794,
+   "atr": 2.5826,
    "atrPct": 4.59,
    "high52w": 129.54,
    "drawdownPct": 56.6,
@@ -141841,7 +141842,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 77,
+    "scorePrev": 62,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -141855,7 +141856,7 @@
     "relStrength3m": -31.2,
     "breakoutHigh": 75.86,
     "volConfirmed": false,
-    "trailStop": 49.8015,
+    "trailStop": 49.7935,
     "atrPct": 4.59,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -142982,8 +142983,8 @@
      "revGrowth": -0.0738,
      "epsGrowth": -0.5963,
      "fcfMargin": 0.0562,
-     "trailPE": 14.982,
-     "psr": 0.4128,
+     "trailPE": 14.7429,
+     "psr": 0.4062,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 3.0814,
      "netCash": false,
@@ -143028,8 +143029,8 @@
      "fairBase": 93.72,
      "fairHigh": 108.43,
      "buyCeiling": 70.29,
-     "safetyMarginPct": 37.8,
-     "impliedGrowthPct": -6.7,
+     "safetyMarginPct": 38.8,
+     "impliedGrowthPct": -6.9,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -143707,7 +143708,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 31.1,
-   "atr": 1.5121,
+   "atr": 1.5122,
    "atrPct": 2.36,
    "high52w": 93.62,
    "drawdownPct": 31.6,
@@ -143743,7 +143744,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 91,
+    "scorePrev": 76,
     "streaks": {
      "65": 6,
      "80": 0,
@@ -143757,7 +143758,7 @@
     "relStrength3m": -15.7,
     "breakoutHigh": 73.99,
     "volConfirmed": false,
-    "trailStop": 60.2698,
+    "trailStop": 60.2695,
     "atrPct": 2.36,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -144882,8 +144883,8 @@
      "revGrowth": 0.0119,
      "epsGrowth": -0.1587,
      "fcfMargin": 0.1106,
-     "trailPE": 19.0514,
-     "psr": 1.7589,
+     "trailPE": 18.4229,
+     "psr": 1.7009,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 2.7211,
      "netCash": false,
@@ -144928,8 +144929,8 @@
      "fairBase": 54.04,
      "fairHigh": 64.8,
      "buyCeiling": 40.53,
-     "safetyMarginPct": -23.4,
-     "impliedGrowthPct": 4.1,
+     "safetyMarginPct": -19.3,
+     "impliedGrowthPct": 3.6,
      "assumedBaseGrowthPct": 1.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -145641,7 +145642,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 50,
+    "scorePrev": 58,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -146780,8 +146781,8 @@
      "revGrowth": 0.0431,
      "epsGrowth": -0.0047,
      "fcfMargin": 0.0477,
-     "trailPE": 15.2621,
-     "psr": 1.0552,
+     "trailPE": 15.4029,
+     "psr": 1.065,
      "fyEnd": "2025-12-27",
      "netDebtEbitda": 0.8009,
      "netCash": false,
@@ -146826,8 +146827,8 @@
      "fairBase": 23.02,
      "fairHigh": 30.33,
      "buyCeiling": 17.27,
-     "safetyMarginPct": -36.6,
-     "impliedGrowthPct": 8.5,
+     "safetyMarginPct": -37.8,
+     "impliedGrowthPct": 8.6,
      "assumedBaseGrowthPct": 4.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -147536,7 +147537,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 54,
+    "scorePrev": 46,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -148675,8 +148676,8 @@
      "revGrowth": 0.0907,
      "epsGrowth": 0.2488,
      "fcfMargin": 0.5782,
-     "trailPE": 82.4027,
-     "psr": 13.7509,
+     "trailPE": 81.009,
+     "psr": 13.5183,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.9193,
      "netCash": false,
@@ -148720,8 +148721,8 @@
      "fairBase": 176.56,
      "fairHigh": 268.15,
      "buyCeiling": 132.42,
-     "safetyMarginPct": -3.1,
-     "impliedGrowthPct": 9.5,
+     "safetyMarginPct": -1.4,
+     "impliedGrowthPct": 9.3,
      "assumedBaseGrowthPct": 9.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -149399,8 +149400,8 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 49.4,
-   "atr": 0.4833,
-   "atrPct": 2.88,
+   "atr": 0.484,
+   "atrPct": 2.89,
    "high52w": 18.51,
    "drawdownPct": 9.5,
    "macroDriven": null,
@@ -149446,8 +149447,8 @@
     "relStrength3m": -4.6,
     "breakoutHigh": 18.39,
     "volConfirmed": false,
-    "trailStop": 15.5518,
-    "atrPct": 2.88,
+    "trailStop": 15.55,
+    "atrPct": 2.89,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
     "momEmoji": "⚪",
@@ -150570,8 +150571,8 @@
      "revGrowth": 2.667,
      "epsGrowth": -4.8717,
      "fcfMargin": 0.1675,
-     "trailPE": 19.4762,
-     "psr": 1.185,
+     "trailPE": 19.7738,
+     "psr": 1.2031,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "currentRatio": 0.711,
@@ -150613,8 +150614,8 @@
      "fairBase": 119.71,
      "fairHigh": 245.68,
      "buyCeiling": 89.78,
-     "safetyMarginPct": 86.3,
-     "impliedGrowthPct": -7.2,
+     "safetyMarginPct": 86.1,
+     "impliedGrowthPct": -7.0,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -152469,8 +152470,8 @@
      "revGrowth": 0.4542,
      "epsGrowth": 0.6193,
      "fcfMargin": 0.2484,
-     "trailPE": 21.7645,
-     "psr": 3.8089,
+     "trailPE": 21.8023,
+     "psr": 3.8155,
      "fyEnd": "2023-12-31",
      "netDebtEbitda": -1.1823,
      "netCash": true,
@@ -152513,7 +152514,7 @@
      "fairBase": 252.75,
      "fairHigh": 518.73,
      "buyCeiling": 189.56,
-     "safetyMarginPct": 70.4,
+     "safetyMarginPct": 70.3,
      "impliedGrowthPct": 3.6,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -153227,7 +153228,7 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 70,
+    "scorePrev": 57,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -154366,8 +154367,8 @@
      "revGrowth": 0.1121,
      "epsGrowth": -0.0332,
      "fcfMargin": 0.0794,
-     "trailPE": 32.3836,
-     "psr": 2.4391,
+     "trailPE": 32.5294,
+     "psr": 2.45,
      "fyEnd": "2026-03-29",
      "netDebtEbitda": 1.3811,
      "netCash": false,
@@ -154410,8 +154411,8 @@
      "fairBase": 111.54,
      "fairHigh": 180.32,
      "buyCeiling": 83.66,
-     "safetyMarginPct": -13.5,
-     "impliedGrowthPct": 12.9,
+     "safetyMarginPct": -14.0,
+     "impliedGrowthPct": 13.0,
      "assumedBaseGrowthPct": 11.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -156262,8 +156263,8 @@
      "revGrowth": -0.0634,
      "epsGrowth": -0.0428,
      "fcfMargin": 0.7688,
-     "trailPE": 114.5614,
-     "psr": 17.1526,
+     "trailPE": 112.6053,
+     "psr": 16.8597,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -0.4753,
      "netCash": true,
@@ -156307,8 +156308,8 @@
      "fairBase": 69.17,
      "fairHigh": 80.03,
      "buyCeiling": 51.88,
-     "safetyMarginPct": -88.8,
-     "impliedGrowthPct": 8.6,
+     "safetyMarginPct": -85.6,
+     "impliedGrowthPct": 8.4,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -156986,8 +156987,8 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 31.3,
-   "atr": 22.4919,
-   "atrPct": 5.44,
+   "atr": 22.5459,
+   "atrPct": 5.45,
    "high52w": 759.44,
    "drawdownPct": 45.6,
    "macroDriven": false,
@@ -157021,7 +157022,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 52,
+    "scorePrev": 53,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -157035,8 +157036,8 @@
     "relStrength3m": -38.4,
     "breakoutHigh": 645.72,
     "volConfirmed": false,
-    "trailStop": 357.1203,
-    "atrPct": 5.44,
+    "trailStop": 356.9853,
+    "atrPct": 5.45,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
     "momEmoji": "⚪",
@@ -158163,8 +158164,8 @@
      "revGrowth": 0.3347,
      "epsGrowth": -0.6694,
      "fcfMargin": 0.027,
-     "trailPE": 294.702,
-     "psr": 13.006,
+     "trailPE": 279.6093,
+     "psr": 12.3399,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 25.09,
      "netCash": false,
@@ -158209,8 +158210,8 @@
      "fairBase": 47.85,
      "fairHigh": 98.2,
      "buyCeiling": 35.89,
-     "safetyMarginPct": -830.0,
-     "impliedGrowthPct": 52.7,
+     "safetyMarginPct": -782.4,
+     "impliedGrowthPct": 51.8,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -158888,7 +158889,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 9,
    "rsi": 31.1,
-   "atr": 2.2184,
+   "atr": 2.218,
    "atrPct": 5.15,
    "high52w": 130.72,
    "drawdownPct": 67.1,
@@ -158923,7 +158924,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 62,
+    "scorePrev": 53,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -158937,7 +158938,7 @@
     "relStrength3m": -17.4,
     "breakoutHigh": 64.58,
     "volConfirmed": false,
-    "trailStop": 37.524,
+    "trailStop": 37.525,
     "atrPct": 5.15,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -160065,8 +160066,8 @@
      "revGrowth": 0.1853,
      "epsGrowth": 0.3497,
      "fcfMargin": -0.0313,
-     "trailPE": 361.6923,
-     "psr": 6.5538,
+     "trailPE": 329.3846,
+     "psr": 5.9684,
      "fyEnd": "2025-12-28",
      "netDebtEbitda": -7.7111,
      "netCash": true,
@@ -160780,7 +160781,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 51.4,
-   "atr": 15.6443,
+   "atr": 15.6529,
    "atrPct": 1.7,
    "high52w": 1094.3199,
    "drawdownPct": 15.9,
@@ -160808,7 +160809,7 @@
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5",
-     "品質スコア35(低) -10",
+     "品質スコア31(低) -10",
      "ディフェンシブ銘柄: サイクル補正なし(純チャート判定・実測に基づく)"
     ],
     "bottom": {
@@ -160829,7 +160830,7 @@
     "relStrength3m": -5.8,
     "breakoutHigh": 974.03,
     "volConfirmed": false,
-    "trailStop": 881.5393,
+    "trailStop": 881.5178,
     "atrPct": 1.7,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -161946,7 +161947,7 @@
     }
    ],
    "quality": {
-    "score": 35,
+    "score": 31,
     "warnings": [],
     "metrics": {
      "roe": 0.2777,
@@ -161954,8 +161955,8 @@
      "revGrowth": 0.0817,
      "epsGrowth": 0.0994,
      "fcfMargin": 0.0285,
-     "trailPE": 49.2301,
-     "psr": 1.4445,
+     "trailPE": 50.2438,
+     "psr": 1.4742,
      "fyEnd": "2025-08-31",
      "netDebtEbitda": -0.6595,
      "netCash": true,
@@ -161974,7 +161975,7 @@
      "profit": 14.4,
      "growth": 10.8,
      "health": 3.6,
-     "valuation": 6
+     "valuation": 2
     }
    },
    "alphas": {
@@ -162000,8 +162001,8 @@
      "fairBase": 381.12,
      "fairHigh": 563.7,
      "buyCeiling": 285.84,
-     "safetyMarginPct": -135.2,
-     "impliedGrowthPct": 19.7,
+     "safetyMarginPct": -140.1,
+     "impliedGrowthPct": 20.0,
      "assumedBaseGrowthPct": 8.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -162679,7 +162680,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
    "rsi": 32.4,
-   "atr": 3.401,
+   "atr": 3.4006,
    "atrPct": 1.66,
    "high52w": 246.51,
    "drawdownPct": 17.1,
@@ -162714,7 +162715,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 86,
+    "scorePrev": 79,
     "streaks": {
      "65": 12,
      "80": 0,
@@ -162728,7 +162729,7 @@
     "relStrength3m": -16.7,
     "breakoutHigh": 239.41,
     "volConfirmed": false,
-    "trailStop": 195.9475,
+    "trailStop": 195.9485,
     "atrPct": 1.66,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -163853,8 +163854,8 @@
      "revGrowth": 0.1424,
      "epsGrowth": -0.0138,
      "fcfMargin": 0.1283,
-     "trailPE": 31.0388,
-     "psr": 3.2981,
+     "trailPE": 30.1343,
+     "psr": 3.202,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 3.0672,
      "netCash": false,
@@ -163899,8 +163900,8 @@
      "fairBase": 511.82,
      "fairHigh": 901.12,
      "buyCeiling": 383.86,
-     "safetyMarginPct": 59.4,
-     "impliedGrowthPct": 2.1,
+     "safetyMarginPct": 60.6,
+     "impliedGrowthPct": 1.7,
      "assumedBaseGrowthPct": 14.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -165749,8 +165750,8 @@
      "revGrowth": 0.245,
      "epsGrowth": -0.7293,
      "fcfMargin": 0.3966,
-     "trailPE": 974.8,
-     "psr": 27.7835,
+     "trailPE": 990.625,
+     "psr": 28.2345,
      "fyEnd": "2026-07-31",
      "netDebtEbitda": -0.3371,
      "netCash": true,
@@ -165794,8 +165795,8 @@
      "fairBase": 288.16,
      "fairHigh": 591.42,
      "buyCeiling": 216.12,
-     "safetyMarginPct": -35.3,
-     "impliedGrowthPct": 24.2,
+     "safetyMarginPct": -37.5,
+     "impliedGrowthPct": 24.4,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -166511,7 +166512,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 65,
+    "scorePrev": 50,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -167650,8 +167651,8 @@
      "revGrowth": 0.1062,
      "epsGrowth": 1.0143,
      "fcfMargin": 2.2093,
-     "trailPE": 45.1198,
-     "psr": 74.2318,
+     "trailPE": 40.9358,
+     "psr": 67.3482,
      "fyEnd": "2017-12-31",
      "netDebtEbitda": -0.4039,
      "netCash": true,
@@ -167692,8 +167693,8 @@
      "fairBase": 200.18,
      "fairHigh": 318.11,
      "buyCeiling": 150.13,
-     "safetyMarginPct": -29.8,
-     "impliedGrowthPct": 14.1,
+     "safetyMarginPct": -17.8,
+     "impliedGrowthPct": 12.8,
      "assumedBaseGrowthPct": 10.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -168371,7 +168372,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 49.5,
-   "atr": 11.5551,
+   "atr": 11.555,
    "atrPct": 6.31,
    "high52w": 387.27,
    "drawdownPct": 52.7,
@@ -168418,7 +168419,7 @@
     "relStrength3m": 9.0,
     "breakoutHigh": 201.07,
     "volConfirmed": false,
-    "trailStop": 154.1123,
+    "trailStop": 154.1125,
     "atrPct": 6.31,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -169545,7 +169546,7 @@
      "revGrowth": 0.094,
      "epsGrowth": -0.5113,
      "fcfMargin": 0.3375,
-     "trailPE": 44.7663,
+     "trailPE": 42.5371,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": -3.2936,
      "netCash": true,
@@ -170290,7 +170291,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 72,
+    "scorePrev": 68,
     "streaks": {
      "65": 3,
      "80": 0,
@@ -171421,7 +171422,7 @@
     }
    ],
    "quality": {
-    "score": 63,
+    "score": 69,
     "warnings": [],
     "metrics": {
      "roe": 0.2954,
@@ -171429,8 +171430,8 @@
      "revGrowth": 0.0326,
      "epsGrowth": 0.0045,
      "fcfMargin": 0.174,
-     "trailPE": 22.006,
-     "psr": 3.8908,
+     "trailPE": 21.7447,
+     "psr": 3.8446,
      "fyEnd": "2026-06-30",
      "netDebtEbitda": 0.5631,
      "netCash": false,
@@ -171449,7 +171450,7 @@
      "profit": 23.8,
      "growth": 5.4,
      "health": 21.8,
-     "valuation": 12
+     "valuation": 18
     }
    },
    "alphas": {
@@ -171475,8 +171476,8 @@
      "fairBase": 97.74,
      "fairHigh": 124.77,
      "buyCeiling": 73.3,
-     "safetyMarginPct": -49.1,
-     "impliedGrowthPct": 8.7,
+     "safetyMarginPct": -47.3,
+     "impliedGrowthPct": 8.5,
      "assumedBaseGrowthPct": 3.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -172186,7 +172187,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 48,
+    "scorePrev": 43,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -173325,8 +173326,8 @@
      "revGrowth": 0.0187,
      "epsGrowth": 0.2329,
      "fcfMargin": 0.1105,
-     "trailPE": 28.9803,
-     "psr": 7.9066,
+     "trailPE": 28.3224,
+     "psr": 7.7271,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 2.1502,
      "netCash": false,
@@ -173371,8 +173372,8 @@
      "fairBase": 16.67,
      "fairHigh": 20.41,
      "buyCeiling": 12.5,
-     "safetyMarginPct": -428.5,
-     "impliedGrowthPct": 24.5,
+     "safetyMarginPct": -416.5,
+     "impliedGrowthPct": 24.1,
      "assumedBaseGrowthPct": 1.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -174050,7 +174051,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
    "rsi": 40.1,
-   "atr": 2.1716,
+   "atr": 2.172,
    "atrPct": 2.08,
    "high52w": 134.2,
    "drawdownPct": 22.3,
@@ -174098,7 +174099,7 @@
     "relStrength3m": -9.4,
     "breakoutHigh": 116.01,
     "volConfirmed": false,
-    "trailStop": 98.831,
+    "trailStop": 98.83,
     "atrPct": 2.08,
     "momState": "WAIT",
     "momStateLabel": "⚪ 待機(モメンタム対象外)",
@@ -175223,8 +175224,8 @@
      "revGrowth": 0.0473,
      "epsGrowth": 0.1264,
      "fcfMargin": 0.0211,
-     "trailPE": 39.4103,
-     "psr": 1.2083,
+     "trailPE": 38.1905,
+     "psr": 1.1709,
      "fyEnd": "2026-01-31",
      "netDebtEbitda": 0.59,
      "netCash": false,
@@ -175268,8 +175269,8 @@
      "fairBase": 31.43,
      "fairHigh": 41.94,
      "buyCeiling": 23.57,
-     "safetyMarginPct": -242.3,
-     "impliedGrowthPct": 21.4,
+     "safetyMarginPct": -231.7,
+     "impliedGrowthPct": 20.9,
      "assumedBaseGrowthPct": 4.7,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -177122,8 +177123,8 @@
      "revGrowth": 0.0297,
      "epsGrowth": 0.0507,
      "fcfMargin": 0.1497,
-     "trailPE": 32.0424,
-     "psr": 6.3498,
+     "trailPE": 32.1321,
+     "psr": 6.3675,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 1.2318,
      "netCash": false,
@@ -177168,7 +177169,7 @@
      "fairBase": 162.11,
      "fairHigh": 205.15,
      "buyCeiling": 121.58,
-     "safetyMarginPct": -188.8,
+     "safetyMarginPct": -189.6,
      "impliedGrowthPct": 17.3,
      "assumedBaseGrowthPct": 3.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -177879,7 +177880,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 52,
+    "scorePrev": 33,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -179016,8 +179017,8 @@
      "opMargin": 0.2588,
      "revGrowth": 0.0007,
      "fcfMargin": 0.2227,
-     "trailPE": 24.8552,
-     "psr": 4.1097,
+     "trailPE": 23.8897,
+     "psr": 3.9501,
      "fyEnd": "2025-12-31",
      "netDebtEbitda": 0.5808,
      "netCash": false,
@@ -179062,8 +179063,8 @@
      "fairBase": 46.39,
      "fairHigh": 53.79,
      "buyCeiling": 34.8,
-     "safetyMarginPct": -55.4,
-     "impliedGrowthPct": 6.1,
+     "safetyMarginPct": -49.3,
+     "impliedGrowthPct": 5.5,
      "assumedBaseGrowthPct": 0.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -179741,7 +179742,7 @@
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
    "rsi": 51.6,
-   "atr": 4.0895,
+   "atr": 4.0909,
    "atrPct": 1.98,
    "high52w": 217.77,
    "drawdownPct": 5.1,
@@ -179773,7 +179774,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 29,
+    "scorePrev": 30,
     "streaks": {
      "65": 0,
      "80": 0,
@@ -179787,7 +179788,7 @@
     "relStrength3m": 15.9,
     "breakoutHigh": 217.77,
     "volConfirmed": false,
-    "trailStop": 196.4663,
+    "trailStop": 196.4628,
     "atrPct": 1.98,
     "momState": "HOLD",
     "momStateLabel": "🟡 保有継続(新規は押し目待ち)",
@@ -180913,8 +180914,8 @@
      "revGrowth": -0.0464,
      "epsGrowth": -0.3036,
      "fcfMargin": 0.184,
-     "trailPE": 31.0181,
-     "psr": 2.2031,
+     "trailPE": 31.2368,
+     "psr": 2.2186,
      "fyEnd": "2025-12-31",
      "netCash": false,
      "currentRatio": 1.1547,
@@ -180955,8 +180956,8 @@
      "fairBase": 203.0,
      "fairHigh": 234.87,
      "buyCeiling": 152.25,
-     "safetyMarginPct": -1.3,
-     "impliedGrowthPct": 0.2,
+     "safetyMarginPct": -2.0,
+     "impliedGrowthPct": 0.3,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -180974,10 +180975,6 @@
    "tradePolicy": "accumulate",
    "noAlloc": false,
    "history": [
-    {
-     "d": "2026-04-26",
-     "c": 78657.539062
-    },
     {
      "d": "2026-04-27",
      "c": 77366.625
@@ -181612,20 +181609,24 @@
     },
     {
      "d": "2026-10-02",
-     "c": 84550.296875
+     "c": 84497.210938
+    },
+    {
+     "d": "2026-10-03",
+     "c": 84798.976562
     }
    ],
    "state": "SELL",
-   "price": 84550.2969,
-   "top": 76143.1924,
-   "bottom": 68820.9736,
-   "band": 219.6666,
-   "pctInRange": 214.8,
-   "distToBottomPct": 22.86,
-   "distToTopPct": -9.94,
-   "smaShort": 82048.2453,
-   "smaLong": 78123.9609,
-   "smaTrend": 71371.5023,
+   "price": 84798.9766,
+   "top": 76161.079,
+   "bottom": 72141.4386,
+   "band": 120.5892,
+   "pctInRange": 314.9,
+   "distToBottomPct": 17.55,
+   "distToTopPct": -10.19,
+   "smaShort": 82443.632,
+   "smaLong": 78559.3669,
+   "smaTrend": 71425.6194,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -181633,15 +181634,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 8,
-   "rsi": 63.2,
-   "atr": 2285.3513,
-   "atrPct": 2.7,
+   "rsi": 63.8,
+   "atr": 2177.5853,
+   "atrPct": 2.57,
    "high52w": 89184.5703,
-   "drawdownPct": 5.2,
+   "drawdownPct": 4.9,
    "macroDriven": null,
-   "topLong": 110178.2025,
-   "bottomLong": 95955.8909,
-   "pctInRangeLong": -80.2,
+   "topLong": 110022.7147,
+   "bottomLong": 95379.0277,
+   "pctInRangeLong": -72.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -181671,7 +181672,7 @@
      "80": 0,
      "90": 0
     },
-    "streakBar": "2026-10-02"
+    "streakBar": "2026-10-03"
    },
    "momentum": {
     "signal": "none",
@@ -182772,8 +182773,8 @@
      "c": 84458.0859
     },
     {
-     "d": "2026-10-02",
-     "c": 84550.2969
+     "d": "2026-10-03",
+     "c": 84798.9766
     }
    ]
   },
@@ -182789,10 +182790,6 @@
    "tradePolicy": "accumulate",
    "noAlloc": false,
    "history": [
-    {
-     "d": "2026-04-26",
-     "c": 2369.729004
-    },
     {
      "d": "2026-04-27",
      "c": 2303.063965
@@ -183427,20 +183424,24 @@
     },
     {
      "d": "2026-10-02",
-     "c": 2669.02002
+     "c": 2668.151123
+    },
+    {
+     "d": "2026-10-03",
+     "c": 2687.780029
     }
    ],
    "state": "SELL",
-   "price": 2669.02,
-   "top": 2329.0191,
-   "bottom": 2015.81,
-   "band": 9.3963,
-   "pctInRange": 208.6,
-   "distToBottomPct": 32.4,
-   "distToTopPct": -12.74,
-   "smaShort": 2626.8693,
-   "smaLong": 2467.974,
-   "smaTrend": 2113.9696,
+   "price": 2687.78,
+   "top": 2330.0747,
+   "bottom": 2016.3547,
+   "band": 9.4116,
+   "pctInRange": 214.0,
+   "distToBottomPct": 33.3,
+   "distToTopPct": -13.31,
+   "smaShort": 2637.3638,
+   "smaLong": 2484.0992,
+   "smaTrend": 2115.8139,
    "trend": "up",
    "trend200DownDays": 0,
    "cross": null,
@@ -183448,15 +183449,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 58.9,
-   "atr": 89.1234,
-   "atrPct": 3.34,
+   "rsi": 60.6,
+   "atr": 85.1951,
+   "atrPct": 3.17,
    "high52w": 3022.2109,
-   "drawdownPct": 11.7,
+   "drawdownPct": 11.1,
    "macroDriven": null,
-   "topLong": 3088.4741,
-   "bottomLong": 2656.4334,
-   "pctInRangeLong": 2.9,
+   "topLong": 3088.8813,
+   "bottomLong": 2656.7069,
+   "pctInRangeLong": 7.2,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -183471,7 +183472,7 @@
     "tier": "none",
     "tierLabel": "-",
     "factors": [
-     "5年レンジ下段(3%位置) +19",
+     "5年レンジ下段(7%位置) +19",
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "半減期サイクル: 底形成ウィンドウ +5"
@@ -183480,13 +183481,13 @@
      "ok": true,
      "note": "🟢 底確認(20日線上・上向き)"
     },
-    "scorePrev": 33,
+    "scorePrev": 34,
     "streaks": {
      "65": 0,
      "80": 0,
      "90": 0
     },
-    "streakBar": "2026-10-02"
+    "streakBar": "2026-10-03"
    },
    "momentum": {
     "signal": "none",
@@ -184587,8 +184588,8 @@
      "c": 2686.9268
     },
     {
-     "d": "2026-10-02",
-     "c": 2669.02
+     "d": "2026-10-03",
+     "c": 2687.78
     }
    ]
   },
@@ -185242,20 +185243,20 @@
     },
     {
      "d": "2026-10-02",
-     "c": 4172.100098
+     "c": 4162.299805
     }
    ],
    "state": "SUPER_SELL",
-   "price": 4172.1001,
+   "price": 4162.2998,
    "top": 4551.0958,
    "bottom": 4279.4103,
    "band": 8.1506,
-   "pctInRange": -39.5,
-   "distToBottomPct": -2.51,
-   "distToTopPct": 9.08,
-   "smaShort": 4334.82,
-   "smaLong": 4366.468,
-   "smaTrend": 4553.4145,
+   "pctInRange": -43.1,
+   "distToBottomPct": -2.74,
+   "distToTopPct": 9.34,
+   "smaShort": 4334.33,
+   "smaLong": 4366.272,
+   "smaTrend": 4553.3655,
    "trend": "up",
    "trend200DownDays": 3,
    "cross": "dead",
@@ -185263,15 +185264,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 6,
-   "rsi": 34.7,
+   "rsi": 34.1,
    "atr": 96.6799,
    "atrPct": 2.32,
    "high52w": 5318.3999,
-   "drawdownPct": 21.6,
+   "drawdownPct": 21.7,
    "macroDriven": null,
    "topLong": 4495.1867,
    "bottomLong": 4185.0192,
-   "pctInRangeLong": -4.2,
+   "pctInRangeLong": -7.3,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": true,
@@ -185289,7 +185290,7 @@
      "1年レンジ下限圏(0%位置) +25",
      "5年レンジ下段(0%位置) +20",
      "高値-22% +14",
-     "RSI35 +8",
+     "RSI34 +8",
      "5年トレンド上向き +6",
      "200日線上向き +4"
     ],
@@ -185297,7 +185298,7 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 75,
+    "scorePrev": 77,
     "streaks": {
      "65": 4,
      "80": 0,
@@ -185320,10 +185321,10 @@
     "stars": 4,
     "level": "B",
     "action": "buy",
-    "expReturnPct": 9.08,
+    "expReturnPct": 9.34,
     "expDays": 6,
     "expPeriodLabel": "約6営業日",
-    "annualizedPct": 381.4,
+    "annualizedPct": 392.3,
     "note": "🟦購入検討"
    },
    "histW": [
@@ -186405,7 +186406,7 @@
     },
     {
      "d": "2026-10-02",
-     "c": 4172.1001
+     "c": 4162.2998
     }
    ]
   },
@@ -187059,20 +187060,20 @@
     },
     {
      "d": "2026-10-02",
-     "c": 60.709999
+     "c": 59.977001
     }
    ],
    "state": "BUY",
-   "price": 60.71,
+   "price": 59.977,
    "top": 71.7667,
    "bottom": 65.3196,
    "band": 0.1934,
-   "pctInRange": -71.5,
-   "distToBottomPct": -7.06,
-   "distToTopPct": 18.21,
-   "smaShort": 63.9724,
-   "smaLong": 63.9088,
-   "smaTrend": 72.6301,
+   "pctInRange": -82.9,
+   "distToBottomPct": -8.18,
+   "distToTopPct": 19.66,
+   "smaShort": 63.9358,
+   "smaLong": 63.8941,
+   "smaTrend": 72.6264,
    "trend": "up",
    "trend200DownDays": 1,
    "cross": null,
@@ -187080,15 +187081,15 @@
    "brokeBelowRecently": true,
    "trendMethod": "pivot",
    "cycleHalfDays": 7,
-   "rsi": 38.9,
-   "atr": 1.5477,
-   "atrPct": 2.55,
+   "rsi": 36.9,
+   "atr": 1.4839,
+   "atrPct": 2.47,
    "high52w": 115.08,
-   "drawdownPct": 47.2,
-   "macroDriven": null,
+   "drawdownPct": 47.9,
+   "macroDriven": false,
    "topLong": 62.7221,
    "bottomLong": 53.9514,
-   "pctInRangeLong": 77.1,
+   "pctInRangeLong": 68.7,
    "trendLong": "up",
    "longRangeAvailable": true,
    "longTermLow": false,
@@ -187097,15 +187098,16 @@
    "emoji": "🟦",
    "color": "#2563eb",
    "side": "buy",
-   "actionable": true,
+   "actionable": false,
    "value": {
-    "score": 73,
-    "tier": "consider",
-    "tierLabel": "🟦購入検討",
+    "score": 59,
+    "tier": "watch",
+    "tierLabel": "👀監視",
     "factors": [
      "1年レンジ下限圏(0%位置) +25",
-     "高値-47%の暴落水準 +20",
-     "RSI39 +8",
+     "高値-48%の暴落水準 +20",
+     "RSI37 +8",
+     "個別要因の下落の疑い(falling knife) -15",
      "5年トレンド上向き +6",
      "200日線上向き +4",
      "買い場帯 +5"
@@ -187114,9 +187116,9 @@
      "ok": false,
      "note": "🩸 底未確認(20日線下または下向き=下落継続の可能性)"
     },
-    "scorePrev": 63,
+    "scorePrev": 73,
     "streaks": {
-     "65": 1,
+     "65": 0,
      "80": 0,
      "90": 0
     },
@@ -187133,15 +187135,15 @@
     "note": ""
    },
    "rec": {
-    "score": 73,
-    "stars": 4,
-    "level": "B",
-    "action": "buy",
-    "expReturnPct": 18.21,
-    "expDays": 7,
-    "expPeriodLabel": "約7営業日",
-    "annualizedPct": 655.6,
-    "note": "🟦購入検討"
+    "score": 59,
+    "stars": 3,
+    "level": "C",
+    "action": "hold",
+    "expReturnPct": null,
+    "expDays": null,
+    "expPeriodLabel": null,
+    "annualizedPct": null,
+    "note": ""
    },
    "histW": [
     {
@@ -188222,7 +188224,7 @@
     },
     {
      "d": "2026-10-02",
-     "c": 60.71
+     "c": 59.977
     }
    ]
   }
@@ -188255,7 +188257,7 @@
    },
    "lockupDays": 180,
    "phaseLabel": "S-1機密提出済",
-   "daysToListing": 13,
+   "daysToListing": 12,
    "beneficiaries": [
     {
      "ticker": "GOOGL",
@@ -188343,7 +188345,7 @@
     }
    ],
    "alerts": [
-    "上場観測まで約13日: 新規仕込みは原則停止フェーズへ",
+    "上場観測まで約12日: 新規仕込みは原則停止フェーズへ",
     "AVGO: 🟦購入検討(スコア78) — イベント仕込み好機",
     "VRT: 🟦購入検討(スコア73) — イベント仕込み好機"
    ]
@@ -188375,7 +188377,7 @@
    },
    "lockupDays": 180,
    "phaseLabel": "S-1機密提出済",
-   "daysToListing": 180,
+   "daysToListing": 179,
    "beneficiaries": [
     {
      "ticker": "MSFT",
@@ -188469,18 +188471,11 @@
    "detail": "🩸 底未確認(20日線下または下向き=下落継続の可能性) / 1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20"
   },
   {
-   "type": "THESIS_REVIEW",
-   "ticker": "SPGI",
-   "priority": 2,
-   "title": "🧐 SPGI テーゼ見直し(新規)",
-   "detail": "5年チャネル下抜け+200日線が下向き継続。前提(テーゼ)の再検証を推奨 / 財務面の警告: 金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
-  },
-  {
    "type": "IPO_EVENT",
    "ticker": "Anthropic IPO",
    "priority": 2,
    "title": "🔔 Anthropic IPO",
-   "detail": "上場観測まで約13日: 新規仕込みは原則停止フェーズへ"
+   "detail": "上場観測まで約12日: 新規仕込みは原則停止フェーズへ"
   },
   {
    "type": "IPO_EVENT",
@@ -188635,20 +188630,6 @@
    "priority": 3,
    "title": "🟦 gold 購入検討 (スコア77)",
    "detail": "1年レンジ下限圏(0%位置) +25 / 5年レンジ下段(0%位置) +20 / 高値-22% +14"
-  },
-  {
-   "type": "BUY_CONSIDER",
-   "ticker": "silver",
-   "priority": 3,
-   "title": "🟦 silver 購入検討 (スコア73)",
-   "detail": "1年レンジ下限圏(0%位置) +25 / 高値-47%の暴落水準 +20 / RSI39 +8"
-  },
-  {
-   "type": "MACRO_EVENT",
-   "ticker": "雇用統計",
-   "priority": 2,
-   "title": "👷 雇用統計まであと0日(2026-10-02)",
-   "detail": "毎月第1金曜(米東部8:30)。強すぎる雇用=利下げ観測後退=グロース逆風、弱すぎ=景気後退懸念。どちらに転んでもボラが出るため、前日までにtrade銘柄の損切りラインを確認…"
   }
  ],
  "plannerWeights": {
@@ -188658,20 +188639,20 @@
   "AMZN": 1.42,
   "AVGO": 2.38,
   "NVDA": 1.91,
-  "META": 1.4,
+  "META": 1.43,
   "TSLA": 0.88,
   "AMD": 0.91,
   "PLTR": 0.89,
   "IBM": 1.08,
   "ASML": 2.14,
-  "TSM": 1.94,
-  "MRVL": 1.47,
+  "TSM": 1.93,
+  "MRVL": 1.46,
   "CLMB": 0.48,
   "DELL": 0.87,
   "ADBE": 0.95,
   "AMAT": 1.52,
   "LRCX": 1.5,
-  "SNPS": 1.5,
+  "SNPS": 1.49,
   "MU": 1.43,
   "ARM": 1.05,
   "IONQ": 0.95,
@@ -188756,7 +188737,7 @@
    {
     "type": "presidential",
     "label": "中間選挙カウントダウン",
-    "note": "中間選挙まで約32日。統計的には選挙前の調整がValueの仕込み場、通過後は上昇しやすい。選挙前に戦略キャッシュを厚めに"
+    "note": "中間選挙まで約31日。統計的には選挙前の調整がValueの仕込み場、通過後は上昇しやすい。選挙前に戦略キャッシュを厚めに"
    },
    {
     "type": "seasonal",
@@ -188859,7 +188840,7 @@
    {
     "label": "中間選挙",
     "date": "2026-11-03",
-    "weeksTo": 5,
+    "weeksTo": 4,
     "prep": "選挙前の調整はValueの仕込み場。直前2週間は新規大口を控え、通過後の上昇に乗る準備"
    }
   ],
@@ -188880,7 +188861,7 @@
   },
   "btcHalving": {
    "lastHalving": "2024-04-19",
-   "monthsSince": 29.4,
+   "monthsSince": 29.5,
    "phase": "bottom",
    "phaseLabel": "⛏️ 底形成・仕込みウィンドウ",
    "note": "過去3サイクルの底はすべて半減期+26〜30ヶ月に出現。歴史的にはこの時間帯の分割買いが次サイクルの主リターン源",
@@ -188913,26 +188894,26 @@
     "peakPrice": 124753,
     "peakDate": "2025-10-06",
     "peakMonths": 17.6,
-    "currentPrice": 84550,
-    "ddFromPeakPct": -32.2
+    "currentPrice": 84799,
+    "ddFromPeakPct": -32.0
    },
-   "action": "現在は半減期+29.4ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
+   "action": "現在は半減期+29.5ヶ月。過去3サイクル中3回、底はこの時間帯(+26〜30ヶ月)に出現し、底値から次サイクル天井までの上昇は最小でも約8倍だった(逓減傾向あり: 95→30→7.9倍)。次の天井が過去パターン通りなら推定2029年後半(次半減期+12〜18ヶ月)。→ 段階買い(40/30/30)の実行を検討する歴史的ウィンドウ。ただし標本3回の傾向であり保証ではない"
   },
   "macro": [
    {
     "type": "雇用統計",
     "icon": "👷",
     "date": "2026-10-02",
-    "daysTo": 0,
-    "phase": "imminent",
-    "guide": "毎月第1金曜(米東部8:30)。強すぎる雇用=利下げ観測後退=グロース逆風、弱すぎ=景気後退懸念。どちらに転んでもボラが出るため、前日までにtrade銘柄の損切りラインを確認",
+    "daysTo": -1,
+    "phase": "post",
+    "guide": "通過。市場の初期反応が翌週に反転することも多い(過剰反応の修正)。数字の解釈はブリーフィング参照",
     "approx": false
    },
    {
     "type": "CPI",
     "icon": "📊",
     "date": "2026-10-13",
-    "daysTo": 11,
+    "daysTo": 10,
     "phase": "upcoming",
     "guide": "消費者物価(月中旬・目安)。インフレ再加速→金利高止まり→ハイテクPER圧縮の経路に注意。発表前の新規買いは控えめに、Valueの押し目リストを準備(下振れ時は好機になりやすい)",
     "approx": true
@@ -188941,7 +188922,7 @@
     "type": "FOMC",
     "icon": "🏛️",
     "date": "2026-10-28",
-    "daysTo": 26,
+    "daysTo": 25,
     "phase": "upcoming",
     "guide": "政策金利決定+会見。金・BTC・グロース株が最も動くイベント。発表2日前〜当日は新規の大口買いを控える。発表直後30分の値動きはダマシが多く、追いかけない。ドットチャート(金利見通し)が想定よりタカ派ならグロース逆風/ハト派なら追い風",
     "approx": false
@@ -188950,7 +188931,7 @@
     "type": "雇用統計",
     "icon": "👷",
     "date": "2026-11-06",
-    "daysTo": 35,
+    "daysTo": 34,
     "phase": "upcoming",
     "guide": "毎月第1金曜(米東部8:30)。強すぎる雇用=利下げ観測後退=グロース逆風、弱すぎ=景気後退懸念。どちらに転んでもボラが出るため、前日までにtrade銘柄の損切りラインを確認",
     "approx": false
@@ -188959,7 +188940,7 @@
     "type": "CPI",
     "icon": "📊",
     "date": "2026-11-13",
-    "daysTo": 42,
+    "daysTo": 41,
     "phase": "upcoming",
     "guide": "消費者物価(月中旬・目安)。インフレ再加速→金利高止まり→ハイテクPER圧縮の経路に注意。発表前の新規買いは控えめに、Valueの押し目リストを準備(下振れ時は好機になりやすい)",
     "approx": true
@@ -188967,7 +188948,7 @@
   ]
  },
  "modelPortfolio": {
-  "generatedAt": "2026-10-02",
+  "generatedAt": "2026-10-03",
   "assets": {
    "stocks": 57,
    "btc": 12,
@@ -189080,7 +189061,7 @@
     "tier": "🚨絶対的買い場",
     "sec": "宇宙・防衛",
     "flow": "neutral",
-    "wPct": 2.1
+    "wPct": 2.0
    },
    {
     "ticker": "GOOGL",
@@ -189110,21 +189091,21 @@
     "wPct": 1.8
    },
    {
-    "ticker": "SNPS",
-    "conviction": 4,
-    "q": 43,
-    "tier": "-",
-    "sec": "AI・半導体/クラウド",
-    "flow": "inflow",
-    "wPct": 1.8
-   },
-   {
     "ticker": "RKLB",
     "conviction": 5,
     "q": 18,
     "tier": "-",
     "sec": "宇宙・防衛",
     "flow": "neutral",
+    "wPct": 1.7
+   },
+   {
+    "ticker": "MRVL",
+    "conviction": 4,
+    "q": 53,
+    "tier": "-",
+    "sec": "AI・半導体/クラウド",
+    "flow": "inflow",
     "wPct": 1.7
    }
   ],
@@ -189273,7 +189254,7 @@
     },
     "volPct": 21.2,
     "maxDDPct": 19.8,
-    "cagrPct": 37.0,
+    "cagrPct": 36.9,
     "riskContribPct": {
      "stocks": 18.5,
      "btc": 22.9,
@@ -190384,7 +190365,7 @@
    "c": 157.463
   },
   {
-   "d": "2026-10-02",
+   "d": "2026-10-03",
    "c": 157.83
   }
  ],
