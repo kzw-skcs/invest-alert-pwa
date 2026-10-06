@@ -37,24 +37,6 @@
    "confirmPrice": 523.7
   },
   {
-   "id": "NOC-value80-chal-2026-09-26",
-   "ticker": "NOC",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-09-26",
-   "startPrice": 510.52,
-   "startScore": 88,
-   "startStreak": 1,
-   "maxScore": 98,
-   "q": 51,
-   "regime": "strong",
-   "riskOff": 0,
-   "rotSector": "資本財",
-   "sectorTrend": "outflow",
-   "confirmDate": "2026-10-03",
-   "confirmPrice": 478.0
-  },
-  {
    "id": "LMT-value80-chal-2026-09-30",
    "ticker": "LMT",
    "strat": "value80",
@@ -87,40 +69,6 @@
    "sectorTrend": "outflow",
    "confirmDate": "2026-10-02",
    "confirmPrice": 302.09
-  },
-  {
-   "id": "NOC-value90-2026-10-01",
-   "ticker": "NOC",
-   "strat": "value90",
-   "arm": "champion",
-   "startDate": "2026-10-01",
-   "startPrice": 483.48,
-   "startScore": 95,
-   "startStreak": 1,
-   "maxScore": 98,
-   "q": 51,
-   "regime": "strong",
-   "riskOff": 0,
-   "rotSector": "資本財",
-   "sectorTrend": "outflow",
-   "confirmDate": "2026-10-03",
-   "confirmPrice": 478.0
-  },
-  {
-   "id": "NOC-value90-chal-2026-10-01",
-   "ticker": "NOC",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-10-01",
-   "startPrice": 483.48,
-   "startScore": 95,
-   "startStreak": 1,
-   "maxScore": 98,
-   "q": 51,
-   "regime": "strong",
-   "riskOff": 0,
-   "rotSector": "資本財",
-   "sectorTrend": "outflow"
   }
  ],
  "closed": [
@@ -1697,6 +1645,67 @@
    "endDate": "2026-10-03",
    "endPrice": 204.45,
    "endReason": "tierExit"
+  },
+  {
+   "id": "NOC-value90-2026-10-01",
+   "ticker": "NOC",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-10-01",
+   "startPrice": 483.48,
+   "startScore": 95,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 51,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": "資本財",
+   "sectorTrend": "outflow",
+   "confirmDate": "2026-10-03",
+   "confirmPrice": 478.0,
+   "endDate": "2026-10-06",
+   "endPrice": 478.0,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "NOC-value80-chal-2026-09-26",
+   "ticker": "NOC",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-09-26",
+   "startPrice": 510.52,
+   "startScore": 88,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 51,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": "資本財",
+   "sectorTrend": "outflow",
+   "confirmDate": "2026-10-03",
+   "confirmPrice": 478.0,
+   "endDate": "2026-10-06",
+   "endPrice": 478.0,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "NOC-value90-chal-2026-10-01",
+   "ticker": "NOC",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-10-01",
+   "startPrice": 483.48,
+   "startScore": 95,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 51,
+   "regime": "strong",
+   "riskOff": 0,
+   "rotSector": "資本財",
+   "sectorTrend": "outflow",
+   "endDate": "2026-10-06",
+   "endPrice": 478.0,
+   "endReason": "tierExit"
   }
  ],
  "chalStreaks": {
@@ -1771,8 +1780,8 @@
    "_bar": "2026-10-02"
   },
   "NOC": {
-   "80": 5,
-   "90": 3,
+   "80": 0,
+   "90": 0,
    "_bar": "2026-10-02"
   },
   "RKLB": {
@@ -2168,22 +2177,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-04"
+   "_bar": "2026-10-06"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-04"
+   "_bar": "2026-10-06"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-04"
+   "_bar": "2026-10-06"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-04"
+   "_bar": "2026-10-06"
   },
   "CEVA": {
    "80": 0,
