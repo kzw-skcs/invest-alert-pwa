@@ -1,55 +1,55 @@
 {
  "latest": {
-  "date": "2026-10-12 09:46 JST",
+  "date": "2026-10-19 08:45 JST",
   "episodeStats": {
    "value80": {
     "速報": {
-     "n": 38,
-     "win": 34,
-     "loss": 4,
+     "n": 47,
+     "win": 39,
+     "loss": 8,
      "expired": 0,
-     "open": 17,
-     "winRatePct": 89.5,
-     "expectancyPct": 5.37,
-     "avgWinPct": 7.0,
-     "avgLossPct": -8.46,
-     "profitFactor": 7.04
+     "open": 21,
+     "winRatePct": 83.0,
+     "expectancyPct": 4.11,
+     "avgWinPct": 6.85,
+     "avgLossPct": -9.22,
+     "profitFactor": 3.62
     },
     "確定": {
-     "n": 11,
-     "win": 8,
-     "loss": 3,
+     "n": 18,
+     "win": 14,
+     "loss": 4,
      "expired": 0,
-     "open": 8,
-     "winRatePct": 72.7,
-     "expectancyPct": 2.44,
-     "avgWinPct": 7.25,
+     "open": 7,
+     "winRatePct": 77.8,
+     "expectancyPct": 2.76,
+     "avgWinPct": 6.51,
      "avgLossPct": -10.38,
-     "profitFactor": 1.86
+     "profitFactor": 2.2
     }
    },
    "value90": {
     "速報": {
-     "n": 3,
-     "win": 3,
-     "loss": 0,
+     "n": 7,
+     "win": 5,
+     "loss": 2,
      "expired": 0,
      "open": 4,
-     "winRatePct": 100.0,
-     "expectancyPct": 7.14,
-     "avgWinPct": 7.14,
-     "avgLossPct": null,
-     "profitFactor": null
+     "winRatePct": 71.4,
+     "expectancyPct": 2.05,
+     "avgWinPct": 7.23,
+     "avgLossPct": -10.88,
+     "profitFactor": 1.66
     },
     "確定": {
-     "n": 0,
-     "win": 0,
+     "n": 1,
+     "win": 1,
      "loss": 0,
      "expired": 0,
-     "open": 1,
-     "winRatePct": null,
-     "expectancyPct": null,
-     "avgWinPct": null,
+     "open": 0,
+     "winRatePct": 100.0,
+     "expectancyPct": 8.76,
+     "avgWinPct": 8.76,
      "avgLossPct": null,
      "profitFactor": null
     }
@@ -58,64 +58,64 @@
   "challengerStats": {
    "value80": {
     "速報": {
-     "n": 15,
-     "win": 13,
-     "loss": 2,
+     "n": 26,
+     "win": 21,
+     "loss": 5,
      "expired": 0,
-     "open": 13,
-     "winRatePct": 86.7,
-     "expectancyPct": 4.5,
-     "avgWinPct": 6.79,
-     "avgLossPct": -10.38,
-     "profitFactor": 4.25
+     "open": 10,
+     "winRatePct": 80.8,
+     "expectancyPct": 3.65,
+     "avgWinPct": 6.92,
+     "avgLossPct": -10.1,
+     "profitFactor": 2.88
     },
     "確定": {
-     "n": 1,
-     "win": 0,
+     "n": 3,
+     "win": 2,
      "loss": 1,
      "expired": 0,
-     "open": 3,
-     "winRatePct": 0.0,
-     "expectancyPct": -8.19,
-     "avgWinPct": null,
+     "open": 1,
+     "winRatePct": 66.7,
+     "expectancyPct": 2.93,
+     "avgWinPct": 8.5,
      "avgLossPct": -8.19,
-     "profitFactor": 0.0
+     "profitFactor": 2.07
     }
    },
    "value90": {
     "速報": {
-     "n": 1,
-     "win": 1,
-     "loss": 0,
+     "n": 4,
+     "win": 2,
+     "loss": 2,
      "expired": 0,
-     "open": 3,
-     "winRatePct": 100.0,
-     "expectancyPct": 9.29,
-     "avgWinPct": 9.29,
-     "avgLossPct": null,
-     "profitFactor": null
+     "open": 4,
+     "winRatePct": 50.0,
+     "expectancyPct": -1.24,
+     "avgWinPct": 8.4,
+     "avgLossPct": -10.88,
+     "profitFactor": 0.77
     }
    }
   },
   "challengerVerdict": {
    "status": "accumulating",
-   "text": "蓄積中(独立エピソード15/50件・経過92/180日)。判定はまだ。",
+   "text": "蓄積中(独立エピソード26/50件・経過99/180日)。判定はまだ。",
    "started": "2026-07-12",
    "label": "厳選アーム(閾値85/92・確定5日)"
   },
-  "episodeCount": 94,
+  "episodeCount": 123,
   "legacyStats": {
    "value": {
-    "n": 869,
-    "win": 654,
-    "loss": 185,
-    "expired": 30,
-    "open": 427,
-    "winRatePct": 77.9,
-    "expectancyPct": 3.4,
-    "avgWinPct": 7.36,
-    "avgLossPct": -9.47,
-    "profitFactor": 2.59
+    "n": 1128,
+    "win": 816,
+    "loss": 279,
+    "expired": 33,
+    "open": 328,
+    "winRatePct": 74.5,
+    "expectancyPct": 2.64,
+    "avgWinPct": 7.14,
+    "avgLossPct": -9.86,
+    "profitFactor": 2.04
    },
    "momentum": {
     "n": 3,
@@ -130,12 +130,12 @@
     "profitFactor": 0.0
    }
   },
-  "valueHitRate": 89.5,
+  "valueHitRate": 83.0,
   "momentumHitRate": null,
   "note": "",
   "suggestions": [
-   "Value80速報が好調(勝率89.5%・期待値5.37%、n=38)。minScoreToAlert 60→55 で機会を増やす選択肢あり",
-   "二段構え前向き検証: 速報 期待値5.37%/勝率89.5% vs 確定 期待値2.44%/勝率72.7%(バックテストでは確定優位。実運用で逆転したら要再検討)"
+   "Value80速報が好調(勝率83.0%・期待値4.11%、n=47)。minScoreToAlert 60→55 で機会を増やす選択肢あり",
+   "二段構え前向き検証: 速報 期待値4.11%/勝率83.0% vs 確定 期待値2.76%/勝率77.8%(バックテストでは確定優位。実運用で逆転したら要再検討)"
   ],
   "adjustments": []
  },
@@ -3031,6 +3031,146 @@
    "suggestions": [
     "Value80速報が好調(勝率89.5%・期待値5.37%、n=38)。minScoreToAlert 60→55 で機会を増やす選択肢あり",
     "二段構え前向き検証: 速報 期待値5.37%/勝率89.5% vs 確定 期待値2.44%/勝率72.7%(バックテストでは確定優位。実運用で逆転したら要再検討)"
+   ],
+   "adjustments": []
+  },
+  {
+   "date": "2026-10-19 08:45 JST",
+   "episodeStats": {
+    "value80": {
+     "速報": {
+      "n": 47,
+      "win": 39,
+      "loss": 8,
+      "expired": 0,
+      "open": 21,
+      "winRatePct": 83.0,
+      "expectancyPct": 4.11,
+      "avgWinPct": 6.85,
+      "avgLossPct": -9.22,
+      "profitFactor": 3.62
+     },
+     "確定": {
+      "n": 18,
+      "win": 14,
+      "loss": 4,
+      "expired": 0,
+      "open": 7,
+      "winRatePct": 77.8,
+      "expectancyPct": 2.76,
+      "avgWinPct": 6.51,
+      "avgLossPct": -10.38,
+      "profitFactor": 2.2
+     }
+    },
+    "value90": {
+     "速報": {
+      "n": 7,
+      "win": 5,
+      "loss": 2,
+      "expired": 0,
+      "open": 4,
+      "winRatePct": 71.4,
+      "expectancyPct": 2.05,
+      "avgWinPct": 7.23,
+      "avgLossPct": -10.88,
+      "profitFactor": 1.66
+     },
+     "確定": {
+      "n": 1,
+      "win": 1,
+      "loss": 0,
+      "expired": 0,
+      "open": 0,
+      "winRatePct": 100.0,
+      "expectancyPct": 8.76,
+      "avgWinPct": 8.76,
+      "avgLossPct": null,
+      "profitFactor": null
+     }
+    }
+   },
+   "challengerStats": {
+    "value80": {
+     "速報": {
+      "n": 26,
+      "win": 21,
+      "loss": 5,
+      "expired": 0,
+      "open": 10,
+      "winRatePct": 80.8,
+      "expectancyPct": 3.65,
+      "avgWinPct": 6.92,
+      "avgLossPct": -10.1,
+      "profitFactor": 2.88
+     },
+     "確定": {
+      "n": 3,
+      "win": 2,
+      "loss": 1,
+      "expired": 0,
+      "open": 1,
+      "winRatePct": 66.7,
+      "expectancyPct": 2.93,
+      "avgWinPct": 8.5,
+      "avgLossPct": -8.19,
+      "profitFactor": 2.07
+     }
+    },
+    "value90": {
+     "速報": {
+      "n": 4,
+      "win": 2,
+      "loss": 2,
+      "expired": 0,
+      "open": 4,
+      "winRatePct": 50.0,
+      "expectancyPct": -1.24,
+      "avgWinPct": 8.4,
+      "avgLossPct": -10.88,
+      "profitFactor": 0.77
+     }
+    }
+   },
+   "challengerVerdict": {
+    "status": "accumulating",
+    "text": "蓄積中(独立エピソード26/50件・経過99/180日)。判定はまだ。",
+    "started": "2026-07-12",
+    "label": "厳選アーム(閾値85/92・確定5日)"
+   },
+   "episodeCount": 123,
+   "legacyStats": {
+    "value": {
+     "n": 1128,
+     "win": 816,
+     "loss": 279,
+     "expired": 33,
+     "open": 328,
+     "winRatePct": 74.5,
+     "expectancyPct": 2.64,
+     "avgWinPct": 7.14,
+     "avgLossPct": -9.86,
+     "profitFactor": 2.04
+    },
+    "momentum": {
+     "n": 3,
+     "win": 0,
+     "loss": 3,
+     "expired": 0,
+     "open": 0,
+     "winRatePct": 0.0,
+     "expectancyPct": -8.13,
+     "avgWinPct": null,
+     "avgLossPct": -8.13,
+     "profitFactor": 0.0
+    }
+   },
+   "valueHitRate": 83.0,
+   "momentumHitRate": null,
+   "note": "",
+   "suggestions": [
+    "Value80速報が好調(勝率83.0%・期待値4.11%、n=47)。minScoreToAlert 60→55 で機会を増やす選択肢あり",
+    "二段構え前向き検証: 速報 期待値4.11%/勝率83.0% vs 確定 期待値2.76%/勝率77.8%(バックテストでは確定優位。実運用で逆転したら要再検討)"
    ],
    "adjustments": []
   }
