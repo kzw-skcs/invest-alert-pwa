@@ -339,6 +339,22 @@
    "riskOff": 20,
    "rotSector": "情報技術",
    "sectorTrend": "outflow"
+  },
+  {
+   "id": "silver-value80-2026-10-26",
+   "ticker": "silver",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-10-26",
+   "startPrice": 54.185,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": null,
+   "sectorTrend": null
   }
  ],
  "closed": [
@@ -3292,22 +3308,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-24"
+   "_bar": "2026-10-25"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-24"
+   "_bar": "2026-10-25"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-23"
+   "_bar": "2026-10-25"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-23"
+   "_bar": "2026-10-25"
   },
   "CEVA": {
    "80": 0,
