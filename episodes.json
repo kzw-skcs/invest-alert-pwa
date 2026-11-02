@@ -151,22 +151,6 @@
    "sectorTrend": "outflow"
   },
   {
-   "id": "VRT-value80-chal-2026-10-31",
-   "ticker": "VRT",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 232.5,
-   "startScore": 87,
-   "startStreak": 1,
-   "maxScore": 87,
-   "q": 72,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "資本財",
-   "sectorTrend": "neutral"
-  },
-  {
    "id": "AEM-value80-2026-10-31",
    "ticker": "AEM",
    "strat": "value80",
@@ -261,38 +245,6 @@
    "riskOff": 20,
    "rotSector": "エネルギー",
    "sectorTrend": "inflow"
-  },
-  {
-   "id": "CCJ-value90-chal-2026-10-31",
-   "ticker": "CCJ",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 76.91,
-   "startScore": 92,
-   "startStreak": 1,
-   "maxScore": 92,
-   "q": 59,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "エネルギー",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "HOOD-value80-2026-10-31",
-   "ticker": "HOOD",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-10-31",
-   "startPrice": 84.99,
-   "startScore": 80,
-   "startStreak": 1,
-   "maxScore": 80,
-   "q": 77,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "AI・半導体/クラウド",
-   "sectorTrend": "outflow"
   },
   {
    "id": "gold-value80-2026-10-31",
@@ -3214,6 +3166,63 @@
    "endDate": "2026-10-30",
    "endPrice": 887.85,
    "endReason": "tierExit"
+  },
+  {
+   "id": "VRT-value80-chal-2026-10-31",
+   "ticker": "VRT",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 232.5,
+   "startScore": 87,
+   "startStreak": 1,
+   "maxScore": 87,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "neutral",
+   "endDate": "2026-11-02",
+   "endPrice": 232.5,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "CCJ-value90-chal-2026-10-31",
+   "ticker": "CCJ",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 76.91,
+   "startScore": 92,
+   "startStreak": 1,
+   "maxScore": 92,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "エネルギー",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-02",
+   "endPrice": 76.91,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "HOOD-value80-2026-10-31",
+   "ticker": "HOOD",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-10-31",
+   "startPrice": 84.99,
+   "startScore": 80,
+   "startStreak": 1,
+   "maxScore": 80,
+   "q": 77,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-02",
+   "endPrice": 84.99,
+   "endReason": "tierExit"
   }
  ],
  "chalStreaks": {
@@ -3323,7 +3332,7 @@
    "_bar": "2026-10-30"
   },
   "VRT": {
-   "80": 1,
+   "80": 0,
    "90": 0,
    "_bar": "2026-10-30"
   },
@@ -3579,7 +3588,7 @@
   },
   "CCJ": {
    "80": 1,
-   "90": 1,
+   "90": 0,
    "_bar": "2026-10-30"
   },
   "KTOS": {
@@ -3685,22 +3694,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-31"
+   "_bar": "2026-11-02"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-31"
+   "_bar": "2026-11-02"
   },
   "gold": {
-   "80": 1,
+   "80": 2,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "CEVA": {
    "80": 0,
