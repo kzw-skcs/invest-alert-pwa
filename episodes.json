@@ -19,58 +19,6 @@
    "confirmPrice": 214.75
   },
   {
-   "id": "CCJ-value80-2026-10-23",
-   "ticker": "CCJ",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-10-23",
-   "startPrice": 78.93,
-   "startScore": 92,
-   "startStreak": 1,
-   "maxScore": 92,
-   "q": 59,
-   "regime": "strong",
-   "riskOff": 20,
-   "rotSector": "エネルギー",
-   "sectorTrend": "inflow",
-   "confirmDate": "2026-10-27",
-   "confirmPrice": 79.07
-  },
-  {
-   "id": "UBER-value80-2026-10-24",
-   "ticker": "UBER",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-10-24",
-   "startPrice": 66.7,
-   "startScore": 81,
-   "startStreak": 1,
-   "maxScore": 89,
-   "q": 72,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "資本財",
-   "sectorTrend": "neutral",
-   "confirmDate": "2026-10-28",
-   "confirmPrice": 65.78
-  },
-  {
-   "id": "UBER-value80-chal-2026-10-28",
-   "ticker": "UBER",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-10-28",
-   "startPrice": 65.78,
-   "startScore": 85,
-   "startStreak": 1,
-   "maxScore": 89,
-   "q": 78,
-   "regime": "strong",
-   "riskOff": 20,
-   "rotSector": "資本財",
-   "sectorTrend": "neutral"
-  },
-  {
    "id": "GOOGL-value80-2026-10-30",
    "ticker": "GOOGL",
    "strat": "value80",
@@ -84,7 +32,9 @@
    "regime": "strong",
    "riskOff": 20,
    "rotSector": "コミュニケーション",
-   "sectorTrend": "outflow"
+   "sectorTrend": "outflow",
+   "confirmDate": "2026-11-03",
+   "confirmPrice": 278.99
   },
   {
    "id": "GOOGL-value80-chal-2026-10-31",
@@ -101,38 +51,6 @@
    "riskOff": 20,
    "rotSector": "コミュニケーション",
    "sectorTrend": "outflow"
-  },
-  {
-   "id": "AMZN-value80-2026-10-31",
-   "ticker": "AMZN",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-10-31",
-   "startPrice": 240.35,
-   "startScore": 88,
-   "startStreak": 1,
-   "maxScore": 88,
-   "q": 64,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "一般消費財",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "AMZN-value80-chal-2026-10-31",
-   "ticker": "AMZN",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 240.35,
-   "startScore": 88,
-   "startStreak": 1,
-   "maxScore": 88,
-   "q": 64,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "一般消費財",
-   "sectorTrend": "inflow"
   },
   {
    "id": "AVGO-value80-2026-10-31",
@@ -167,116 +85,52 @@
    "sectorTrend": "inflow"
   },
   {
-   "id": "AEM-value90-2026-10-31",
-   "ticker": "AEM",
+   "id": "VRT-value90-2026-11-03",
+   "ticker": "VRT",
    "strat": "value90",
    "arm": "champion",
-   "startDate": "2026-10-31",
-   "startPrice": 165.38,
-   "startScore": 98,
+   "startDate": "2026-11-03",
+   "startPrice": 224.24,
+   "startScore": 91,
    "startStreak": 1,
-   "maxScore": 98,
-   "q": 89,
+   "maxScore": 91,
+   "q": 72,
    "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "素材",
+   "riskOff": 40,
+   "rotSector": "資本財",
    "sectorTrend": "inflow"
   },
   {
-   "id": "AEM-value80-chal-2026-10-31",
-   "ticker": "AEM",
+   "id": "VRT-value80-chal-2026-11-03",
+   "ticker": "VRT",
    "strat": "value80",
    "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 165.38,
-   "startScore": 98,
+   "startDate": "2026-11-03",
+   "startPrice": 224.24,
+   "startScore": 91,
    "startStreak": 1,
-   "maxScore": 98,
-   "q": 89,
+   "maxScore": 91,
+   "q": 72,
    "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "素材",
+   "riskOff": 40,
+   "rotSector": "資本財",
    "sectorTrend": "inflow"
   },
   {
-   "id": "AEM-value90-chal-2026-10-31",
-   "ticker": "AEM",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 165.38,
-   "startScore": 98,
-   "startStreak": 1,
-   "maxScore": 98,
-   "q": 89,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "素材",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "CCJ-value90-2026-10-31",
-   "ticker": "CCJ",
-   "strat": "value90",
-   "arm": "champion",
-   "startDate": "2026-10-31",
-   "startPrice": 76.91,
-   "startScore": 92,
-   "startStreak": 1,
-   "maxScore": 92,
-   "q": 59,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "エネルギー",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "CCJ-value80-chal-2026-10-31",
-   "ticker": "CCJ",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 76.91,
-   "startScore": 92,
-   "startStreak": 1,
-   "maxScore": 92,
-   "q": 59,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": "エネルギー",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "gold-value80-2026-10-31",
-   "ticker": "gold",
+   "id": "GEV-value80-2026-11-03",
+   "ticker": "GEV",
    "strat": "value80",
    "arm": "champion",
-   "startDate": "2026-10-31",
-   "startPrice": 3884.8999,
-   "startScore": 85,
+   "startDate": "2026-11-03",
+   "startPrice": 862.25,
+   "startScore": 80,
    "startStreak": 1,
-   "maxScore": 85,
-   "q": null,
+   "maxScore": 80,
+   "q": 55,
    "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": null,
-   "sectorTrend": null
-  },
-  {
-   "id": "gold-value80-chal-2026-10-31",
-   "ticker": "gold",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-10-31",
-   "startPrice": 3884.8999,
-   "startScore": 85,
-   "startStreak": 1,
-   "maxScore": 85,
-   "q": null,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": null,
-   "sectorTrend": null
+   "riskOff": 40,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
   }
  ],
  "closed": [
@@ -3223,518 +3077,750 @@
    "endDate": "2026-11-02",
    "endPrice": 84.99,
    "endReason": "tierExit"
+  },
+  {
+   "id": "AMZN-value80-2026-10-31",
+   "ticker": "AMZN",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-10-31",
+   "startPrice": 240.35,
+   "startScore": 88,
+   "startStreak": 1,
+   "maxScore": 88,
+   "q": 64,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "一般消費財",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 245.63,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AMZN-value80-chal-2026-10-31",
+   "ticker": "AMZN",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 240.35,
+   "startScore": 88,
+   "startStreak": 1,
+   "maxScore": 88,
+   "q": 64,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "一般消費財",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 245.63,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AEM-value90-2026-10-31",
+   "ticker": "AEM",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-10-31",
+   "startPrice": 165.38,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 89,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "素材",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 170.41,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AEM-value80-chal-2026-10-31",
+   "ticker": "AEM",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 165.38,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 89,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "素材",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 170.41,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AEM-value90-chal-2026-10-31",
+   "ticker": "AEM",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 165.38,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 89,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "素材",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 170.41,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "CCJ-value80-2026-10-23",
+   "ticker": "CCJ",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-10-23",
+   "startPrice": 78.93,
+   "startScore": 92,
+   "startStreak": 1,
+   "maxScore": 92,
+   "q": 59,
+   "regime": "strong",
+   "riskOff": 20,
+   "rotSector": "エネルギー",
+   "sectorTrend": "inflow",
+   "confirmDate": "2026-10-27",
+   "confirmPrice": 79.07,
+   "endDate": "2026-11-03",
+   "endPrice": 73.38,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "CCJ-value90-2026-10-31",
+   "ticker": "CCJ",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-10-31",
+   "startPrice": 76.91,
+   "startScore": 92,
+   "startStreak": 1,
+   "maxScore": 92,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "エネルギー",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 73.38,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "CCJ-value80-chal-2026-10-31",
+   "ticker": "CCJ",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 76.91,
+   "startScore": 92,
+   "startStreak": 1,
+   "maxScore": 92,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "エネルギー",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-03",
+   "endPrice": 73.38,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "UBER-value80-2026-10-24",
+   "ticker": "UBER",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-10-24",
+   "startPrice": 66.7,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 89,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "neutral",
+   "confirmDate": "2026-10-28",
+   "confirmPrice": 65.78,
+   "endDate": "2026-11-03",
+   "endPrice": 66.71,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "UBER-value80-chal-2026-10-28",
+   "ticker": "UBER",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-10-28",
+   "startPrice": 65.78,
+   "startScore": 85,
+   "startStreak": 1,
+   "maxScore": 89,
+   "q": 78,
+   "regime": "strong",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "neutral",
+   "endDate": "2026-11-03",
+   "endPrice": 66.71,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "gold-value80-2026-10-31",
+   "ticker": "gold",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-10-31",
+   "startPrice": 3884.8999,
+   "startScore": 85,
+   "startStreak": 1,
+   "maxScore": 85,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": null,
+   "sectorTrend": null,
+   "endDate": "2026-11-03",
+   "endPrice": 3954.6001,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "gold-value80-chal-2026-10-31",
+   "ticker": "gold",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-10-31",
+   "startPrice": 3884.8999,
+   "startScore": 85,
+   "startStreak": 1,
+   "maxScore": 85,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": null,
+   "sectorTrend": null,
+   "endDate": "2026-11-03",
+   "endPrice": 3954.6001,
+   "endReason": "tierExit"
   }
  ],
  "chalStreaks": {
   "AAPL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "MSFT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "GOOGL": {
-   "80": 1,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AMZN": {
-   "80": 1,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AVGO": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "NVDA": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "META": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "TSLA": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AMD": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "PLTR": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "XOM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "NEE": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "LMT": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "RTX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "NOC": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "RKLB": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "IBM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ASML": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "TSM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "MRVL": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ANET": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "VRT": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "CLMB": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "IQV": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "CACI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "MCO": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AXP": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "SPGI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "DELL": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ADBE": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "BDX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "MA": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "HON": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "NKE": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "DE": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ACN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ICE": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "UNH": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "V": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "IBKR": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "GDDY": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "BN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AMAT": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "LRCX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "UBER": {
-   "80": 4,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "PGR": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "HCA": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "KKR": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "JXN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "FERG": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "USFD": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "RLI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "BLDR": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "FTAI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "PAYX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "OTIS": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "TLN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "TSCO": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "MSA": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "BUR": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "PBI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "XPEL": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "BKTI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "HWKN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "GPGI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "BMI": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ISRG": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AXON": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "SNPS": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "CEG": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "GEV": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "VST": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "CCJ": {
-   "80": 1,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "KTOS": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "MU": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "ARM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "COST": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "WM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "PANW": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "FNV": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "AEM": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-10-30"
-  },
-  "COIN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "PG": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "KO": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "WMT": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "LIN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "FCX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "IONQ": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "SNDK": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "DRAM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "HOOD": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "VOO": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "CVX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-10-30"
-  },
-  "btc": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-02"
-  },
-  "eth": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-02"
-  },
-  "gold": {
    "80": 2,
    "90": 0,
    "_bar": "2026-11-02"
   },
-  "silver": {
+  "AMZN": {
    "80": 0,
    "90": 0,
    "_bar": "2026-11-02"
   },
+  "AVGO": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "NVDA": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "META": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "TSLA": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "AMD": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "PLTR": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "XOM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "NEE": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "LMT": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "RTX": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "NOC": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "RKLB": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "IBM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ASML": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "TSM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "MRVL": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ANET": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "VRT": {
+   "80": 1,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "CLMB": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "IQV": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "CACI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "MCO": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "AXP": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "SPGI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "DELL": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ADBE": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "BDX": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "MA": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "HON": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "NKE": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "DE": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ACN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ICE": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "UNH": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "V": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "IBKR": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "GDDY": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "BN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "AMAT": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "LRCX": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "UBER": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "PGR": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "HCA": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "KKR": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "JXN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "FERG": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "USFD": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "RLI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "BLDR": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "FTAI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "PAYX": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "OTIS": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "TLN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "TSCO": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "MSA": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "BUR": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "PBI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "XPEL": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "BKTI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "HWKN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "GPGI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "BMI": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ISRG": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "AXON": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "SNPS": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "CEG": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "GEV": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "VST": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "CCJ": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "KTOS": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "MU": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "ARM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "COST": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "WM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "PANW": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "FNV": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "AEM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "COIN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "PG": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "KO": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "WMT": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "LIN": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "FCX": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "IONQ": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "SNDK": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "DRAM": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "HOOD": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "VOO": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "CVX": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-02"
+  },
+  "btc": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-03"
+  },
+  "eth": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-03"
+  },
+  "gold": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-03"
+  },
+  "silver": {
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-03"
+  },
   "CEVA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "XERS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "SMH": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "SPCX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   },
   "BSX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-10-30"
+   "_bar": "2026-11-02"
   }
  },
  "chalDate": "2026-07-12"
