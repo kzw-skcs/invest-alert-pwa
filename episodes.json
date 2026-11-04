@@ -131,6 +131,70 @@
    "riskOff": 40,
    "rotSector": "資本財",
    "sectorTrend": "inflow"
+  },
+  {
+   "id": "silver-value80-2026-11-04",
+   "ticker": "silver",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-04",
+   "startPrice": 49.46,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": null,
+   "sectorTrend": null
+  },
+  {
+   "id": "silver-value90-2026-11-04",
+   "ticker": "silver",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-04",
+   "startPrice": 49.46,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": null,
+   "sectorTrend": null
+  },
+  {
+   "id": "silver-value80-chal-2026-11-04",
+   "ticker": "silver",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-04",
+   "startPrice": 49.46,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": null,
+   "sectorTrend": null
+  },
+  {
+   "id": "silver-value90-chal-2026-11-04",
+   "ticker": "silver",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-04",
+   "startPrice": 49.46,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": null,
+   "sectorTrend": null
   }
  ],
  "closed": [
@@ -3780,22 +3844,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-03"
+   "_bar": "2026-11-04"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-03"
+   "_bar": "2026-11-04"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-03"
+   "_bar": "2026-11-04"
   },
   "silver": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-03"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-04"
   },
   "CEVA": {
    "80": 0,
