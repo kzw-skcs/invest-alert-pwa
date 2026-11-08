@@ -847,6 +847,22 @@
    "riskOff": 60,
    "rotSector": "素材",
    "sectorTrend": "inflow"
+  },
+  {
+   "id": "silver-value80-2026-11-08",
+   "ticker": "silver",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-08",
+   "startPrice": 51.803,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": null,
+   "sectorTrend": null
   }
  ],
  "closed": [
@@ -4806,12 +4822,12 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-07"
+   "_bar": "2026-11-08"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-07"
+   "_bar": "2026-11-08"
   },
   "gold": {
    "80": 0,
