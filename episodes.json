@@ -849,15 +849,15 @@
    "sectorTrend": "inflow"
   },
   {
-   "id": "silver-value80-2026-11-08",
-   "ticker": "silver",
+   "id": "btc-value80-2026-11-09",
+   "ticker": "btc",
    "strat": "value80",
    "arm": "champion",
-   "startDate": "2026-11-08",
-   "startPrice": 51.803,
-   "startScore": 84,
+   "startDate": "2026-11-09",
+   "startPrice": 74961.5469,
+   "startScore": 81,
    "startStreak": 1,
-   "maxScore": 84,
+   "maxScore": 81,
    "q": null,
    "regime": "neutral",
    "riskOff": 60,
@@ -4351,6 +4351,25 @@
    "endDate": "2026-11-07",
    "endPrice": 51.965,
    "endReason": "tierExit"
+  },
+  {
+   "id": "silver-value80-2026-11-08",
+   "ticker": "silver",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-08",
+   "startPrice": 51.803,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": null,
+   "sectorTrend": null,
+   "endDate": "2026-11-09",
+   "endPrice": 52.42,
+   "endReason": "tierExit"
   }
  ],
  "chalStreaks": {
@@ -4822,22 +4841,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-08"
+   "_bar": "2026-11-09"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-08"
+   "_bar": "2026-11-09"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "CEVA": {
    "80": 0,
