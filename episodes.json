@@ -14,7 +14,9 @@
    "regime": "downtrend",
    "riskOff": 80,
    "rotSector": "エネルギー",
-   "sectorTrend": "inflow"
+   "sectorTrend": "inflow",
+   "confirmDate": "2026-11-10",
+   "confirmPrice": 75.37
   },
   {
    "id": "IBKR-value80-2026-11-06",
@@ -30,7 +32,9 @@
    "regime": "downtrend",
    "riskOff": 80,
    "rotSector": "金融",
-   "sectorTrend": "inflow"
+   "sectorTrend": "inflow",
+   "confirmDate": "2026-11-10",
+   "confirmPrice": 77.57
   },
   {
    "id": "IBKR-value80-chal-2026-11-06",
@@ -49,41 +53,9 @@
    "sectorTrend": "inflow"
   },
   {
-   "id": "BKTI-value80-2026-11-06",
-   "ticker": "BKTI",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-06",
-   "startPrice": 66.97,
-   "startScore": 81,
-   "startStreak": 1,
-   "maxScore": 81,
-   "q": 91,
-   "regime": "downtrend",
-   "riskOff": 80,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
    "id": "AVGO-value80-2026-11-07",
    "ticker": "AVGO",
    "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 293.69,
-   "startScore": 94,
-   "startStreak": 1,
-   "maxScore": 94,
-   "q": 55,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "AVGO-value90-2026-11-07",
-   "ticker": "AVGO",
-   "strat": "value90",
    "arm": "champion",
    "startDate": "2026-11-07",
    "startPrice": 293.69,
@@ -113,22 +85,6 @@
    "sectorTrend": "outflow"
   },
   {
-   "id": "AVGO-value90-chal-2026-11-07",
-   "ticker": "AVGO",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 293.69,
-   "startScore": 94,
-   "startStreak": 1,
-   "maxScore": 94,
-   "q": 55,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
    "id": "NVDA-value80-2026-11-07",
    "ticker": "NVDA",
    "strat": "value80",
@@ -137,7 +93,7 @@
    "startPrice": 186.64,
    "startScore": 97,
    "startStreak": 1,
-   "maxScore": 97,
+   "maxScore": 100,
    "q": 81,
    "regime": "neutral",
    "riskOff": 60,
@@ -153,7 +109,7 @@
    "startPrice": 186.64,
    "startScore": 97,
    "startStreak": 1,
-   "maxScore": 97,
+   "maxScore": 100,
    "q": 81,
    "regime": "neutral",
    "riskOff": 60,
@@ -169,7 +125,7 @@
    "startPrice": 186.64,
    "startScore": 97,
    "startStreak": 1,
-   "maxScore": 97,
+   "maxScore": 100,
    "q": 81,
    "regime": "neutral",
    "riskOff": 60,
@@ -185,40 +141,8 @@
    "startPrice": 186.64,
    "startScore": 97,
    "startStreak": 1,
-   "maxScore": 97,
+   "maxScore": 100,
    "q": 81,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "RKLB-value80-2026-11-07",
-   "ticker": "RKLB",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 53.07,
-   "startScore": 82,
-   "startStreak": 1,
-   "maxScore": 82,
-   "q": 18,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "資本財",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "TSM-value80-2026-11-07",
-   "ticker": "TSM",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 375.44,
-   "startScore": 81,
-   "startStreak": 1,
-   "maxScore": 81,
-   "q": 100,
    "regime": "neutral",
    "riskOff": 60,
    "rotSector": "情報技術",
@@ -241,54 +165,6 @@
    "sectorTrend": "outflow"
   },
   {
-   "id": "MRVL-value90-2026-11-07",
-   "ticker": "MRVL",
-   "strat": "value90",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 141.2,
-   "startScore": 96,
-   "startStreak": 1,
-   "maxScore": 96,
-   "q": 53,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "MRVL-value80-chal-2026-11-07",
-   "ticker": "MRVL",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 141.2,
-   "startScore": 96,
-   "startStreak": 1,
-   "maxScore": 96,
-   "q": 53,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "MRVL-value90-chal-2026-11-07",
-   "ticker": "MRVL",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 141.2,
-   "startScore": 96,
-   "startStreak": 1,
-   "maxScore": 96,
-   "q": 53,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
    "id": "VRT-value80-2026-11-07",
    "ticker": "VRT",
    "strat": "value80",
@@ -297,92 +173,12 @@
    "startPrice": 182.86,
    "startScore": 84,
    "startStreak": 1,
-   "maxScore": 84,
+   "maxScore": 100,
    "q": 72,
    "regime": "neutral",
    "riskOff": 60,
    "rotSector": "資本財",
    "sectorTrend": "inflow"
-  },
-  {
-   "id": "DELL-value80-2026-11-07",
-   "ticker": "DELL",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 328.53,
-   "startScore": 85,
-   "startStreak": 1,
-   "maxScore": 85,
-   "q": 44,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "DELL-value80-chal-2026-11-07",
-   "ticker": "DELL",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 328.53,
-   "startScore": 85,
-   "startStreak": 1,
-   "maxScore": 85,
-   "q": 44,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "AMAT-value80-2026-11-07",
-   "ticker": "AMAT",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 332.715,
-   "startScore": 90,
-   "startStreak": 1,
-   "maxScore": 90,
-   "q": 61,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "AMAT-value90-2026-11-07",
-   "ticker": "AMAT",
-   "strat": "value90",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 332.715,
-   "startScore": 90,
-   "startStreak": 1,
-   "maxScore": 90,
-   "q": 61,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "AMAT-value80-chal-2026-11-07",
-   "ticker": "AMAT",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 332.715,
-   "startScore": 90,
-   "startStreak": 1,
-   "maxScore": 90,
-   "q": 61,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "情報技術",
-   "sectorTrend": "outflow"
   },
   {
    "id": "LRCX-value80-2026-11-07",
@@ -529,22 +325,6 @@
    "sectorTrend": "outflow"
   },
   {
-   "id": "CCJ-value90-2026-11-07",
-   "ticker": "CCJ",
-   "strat": "value90",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 71.3,
-   "startScore": 94,
-   "startStreak": 1,
-   "maxScore": 94,
-   "q": 59,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "エネルギー",
-   "sectorTrend": "outflow"
-  },
-  {
    "id": "CCJ-value80-chal-2026-11-07",
    "ticker": "CCJ",
    "strat": "value80",
@@ -558,70 +338,6 @@
    "regime": "neutral",
    "riskOff": 60,
    "rotSector": "エネルギー",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "CCJ-value90-chal-2026-11-07",
-   "ticker": "CCJ",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 71.3,
-   "startScore": 94,
-   "startStreak": 1,
-   "maxScore": 94,
-   "q": 59,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "エネルギー",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "SMH-value80-2026-11-07",
-   "ticker": "SMH",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 463.96,
-   "startScore": 91,
-   "startStreak": 1,
-   "maxScore": 91,
-   "q": null,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "AI・半導体/クラウド",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "SMH-value90-2026-11-07",
-   "ticker": "SMH",
-   "strat": "value90",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 463.96,
-   "startScore": 91,
-   "startStreak": 1,
-   "maxScore": 91,
-   "q": null,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "AI・半導体/クラウド",
-   "sectorTrend": "outflow"
-  },
-  {
-   "id": "SMH-value80-chal-2026-11-07",
-   "ticker": "SMH",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 463.96,
-   "startScore": 91,
-   "startStreak": 1,
-   "maxScore": 91,
-   "q": null,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "AI・半導体/クラウド",
    "sectorTrend": "outflow"
   },
   {
@@ -721,38 +437,6 @@
    "sectorTrend": "inflow"
   },
   {
-   "id": "IBKR-value90-chal-2026-11-07",
-   "ticker": "IBKR",
-   "strat": "value90",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 75.82,
-   "startScore": 98,
-   "startStreak": 1,
-   "maxScore": 98,
-   "q": 53,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "金融",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "MSA-value80-2026-11-07",
-   "ticker": "MSA",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 170.14,
-   "startScore": 82,
-   "startStreak": 1,
-   "maxScore": 82,
-   "q": 59,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "資本財",
-   "sectorTrend": "inflow"
-  },
-  {
    "id": "COIN-value80-2026-11-07",
    "ticker": "COIN",
    "strat": "value80",
@@ -817,38 +501,6 @@
    "sectorTrend": "inflow"
   },
   {
-   "id": "FCX-value80-2026-11-07",
-   "ticker": "FCX",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-07",
-   "startPrice": 59.42,
-   "startScore": 89,
-   "startStreak": 1,
-   "maxScore": 89,
-   "q": 72,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "素材",
-   "sectorTrend": "inflow"
-  },
-  {
-   "id": "FCX-value80-chal-2026-11-07",
-   "ticker": "FCX",
-   "strat": "value80",
-   "arm": "challenger",
-   "startDate": "2026-11-07",
-   "startPrice": 59.42,
-   "startScore": 89,
-   "startStreak": 1,
-   "maxScore": 89,
-   "q": 72,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": "素材",
-   "sectorTrend": "inflow"
-  },
-  {
    "id": "btc-value80-2026-11-09",
    "ticker": "btc",
    "strat": "value80",
@@ -863,6 +515,54 @@
    "riskOff": 60,
    "rotSector": null,
    "sectorTrend": null
+  },
+  {
+   "id": "VRT-value90-2026-11-10",
+   "ticker": "VRT",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-10",
+   "startPrice": 200.47,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "VRT-value80-chal-2026-11-10",
+   "ticker": "VRT",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-10",
+   "startPrice": 200.47,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "VRT-value90-chal-2026-11-10",
+   "ticker": "VRT",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-10",
+   "startPrice": 200.47,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
   }
  ],
  "closed": [
@@ -4370,518 +4070,936 @@
    "endDate": "2026-11-09",
    "endPrice": 52.42,
    "endReason": "tierExit"
+  },
+  {
+   "id": "AVGO-value90-2026-11-07",
+   "ticker": "AVGO",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 293.69,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 55,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 319.48,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AVGO-value90-chal-2026-11-07",
+   "ticker": "AVGO",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 293.69,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 55,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 319.48,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "RKLB-value80-2026-11-07",
+   "ticker": "RKLB",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 53.07,
+   "startScore": 82,
+   "startStreak": 1,
+   "maxScore": 82,
+   "q": 18,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-10",
+   "endPrice": 58.86,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "TSM-value80-2026-11-07",
+   "ticker": "TSM",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 375.44,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": 100,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 388.62,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "MRVL-value90-2026-11-07",
+   "ticker": "MRVL",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 141.2,
+   "startScore": 96,
+   "startStreak": 1,
+   "maxScore": 96,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 154.6,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "MRVL-value80-chal-2026-11-07",
+   "ticker": "MRVL",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 141.2,
+   "startScore": 96,
+   "startStreak": 1,
+   "maxScore": 96,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 154.6,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "MRVL-value90-chal-2026-11-07",
+   "ticker": "MRVL",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 141.2,
+   "startScore": 96,
+   "startStreak": 1,
+   "maxScore": 96,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 154.6,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "DELL-value80-2026-11-07",
+   "ticker": "DELL",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 328.53,
+   "startScore": 85,
+   "startStreak": 1,
+   "maxScore": 85,
+   "q": 44,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 346.31,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "DELL-value80-chal-2026-11-07",
+   "ticker": "DELL",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 328.53,
+   "startScore": 85,
+   "startStreak": 1,
+   "maxScore": 85,
+   "q": 44,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 346.31,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AMAT-value80-2026-11-07",
+   "ticker": "AMAT",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 332.715,
+   "startScore": 90,
+   "startStreak": 1,
+   "maxScore": 90,
+   "q": 61,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 370.55,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AMAT-value90-2026-11-07",
+   "ticker": "AMAT",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 332.715,
+   "startScore": 90,
+   "startStreak": 1,
+   "maxScore": 90,
+   "q": 61,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 370.55,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "AMAT-value80-chal-2026-11-07",
+   "ticker": "AMAT",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 332.715,
+   "startScore": 90,
+   "startStreak": 1,
+   "maxScore": 90,
+   "q": 61,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 370.55,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "CCJ-value90-2026-11-07",
+   "ticker": "CCJ",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 71.3,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "エネルギー",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 75.37,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "CCJ-value90-chal-2026-11-07",
+   "ticker": "CCJ",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 71.3,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "エネルギー",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 75.37,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "SMH-value80-2026-11-07",
+   "ticker": "SMH",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 463.96,
+   "startScore": 91,
+   "startStreak": 1,
+   "maxScore": 91,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 487.41,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "SMH-value90-2026-11-07",
+   "ticker": "SMH",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 463.96,
+   "startScore": 91,
+   "startStreak": 1,
+   "maxScore": 91,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 487.41,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "SMH-value80-chal-2026-11-07",
+   "ticker": "SMH",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 463.96,
+   "startScore": 91,
+   "startStreak": 1,
+   "maxScore": 91,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 487.41,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "IBKR-value90-chal-2026-11-07",
+   "ticker": "IBKR",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 75.82,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "金融",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-10",
+   "endPrice": 77.57,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "MSA-value80-2026-11-07",
+   "ticker": "MSA",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 170.14,
+   "startScore": 82,
+   "startStreak": 1,
+   "maxScore": 82,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-10",
+   "endPrice": 173.07,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "BKTI-value80-2026-11-06",
+   "ticker": "BKTI",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-06",
+   "startPrice": 66.97,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": 91,
+   "regime": "downtrend",
+   "riskOff": 80,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow",
+   "endDate": "2026-11-10",
+   "endPrice": 69.36,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "FCX-value80-2026-11-07",
+   "ticker": "FCX",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-07",
+   "startPrice": 59.42,
+   "startScore": 89,
+   "startStreak": 1,
+   "maxScore": 89,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "素材",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-10",
+   "endPrice": 62.33,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "FCX-value80-chal-2026-11-07",
+   "ticker": "FCX",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-07",
+   "startPrice": 59.42,
+   "startScore": 89,
+   "startStreak": 1,
+   "maxScore": 89,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": "素材",
+   "sectorTrend": "inflow",
+   "endDate": "2026-11-10",
+   "endPrice": 62.33,
+   "endReason": "tierExit"
   }
  ],
  "chalStreaks": {
   "AAPL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "MSFT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "GOOGL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AMZN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AVGO": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 0,
+   "_bar": "2026-11-09"
   },
   "NVDA": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 2,
+   "_bar": "2026-11-09"
   },
   "META": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "TSLA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AMD": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "PLTR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "XOM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "NEE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "LMT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "RTX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "NOC": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "RKLB": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "IBM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "ASML": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "TSM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "MRVL": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 0,
+   "90": 0,
+   "_bar": "2026-11-09"
   },
   "ANET": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "VRT": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-06"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-09"
   },
   "CLMB": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "IQV": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "CACI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "MCO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AXP": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "SPGI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "DELL": {
-   "80": 1,
+   "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "ADBE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BDX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "MA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "HON": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "NKE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "DE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "ACN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "ICE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "UNH": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "V": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "IBKR": {
-   "80": 2,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 3,
+   "90": 0,
+   "_bar": "2026-11-09"
   },
   "GDDY": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AMAT": {
-   "80": 1,
+   "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "LRCX": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 2,
+   "_bar": "2026-11-09"
   },
   "UBER": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "PGR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "HCA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "KKR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "JXN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "FERG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "USFD": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "RLI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BLDR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "FTAI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "PAYX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "OTIS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "TLN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "TSCO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "MSA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BUR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "PBI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "XPEL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BKTI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "HWKN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "GPGI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BMI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "ISRG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AXON": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "SNPS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "CEG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "GEV": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "VST": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "CCJ": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 0,
+   "_bar": "2026-11-09"
   },
   "KTOS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "MU": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "ARM": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 2,
+   "_bar": "2026-11-09"
   },
   "COST": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "WM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "PANW": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "FNV": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "AEM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "COIN": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 2,
+   "_bar": "2026-11-09"
   },
   "PG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "KO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "WMT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "LIN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "FCX": {
-   "80": 1,
+   "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "IONQ": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "SNDK": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "DRAM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "HOOD": {
-   "80": 1,
-   "90": 1,
-   "_bar": "2026-11-06"
+   "80": 2,
+   "90": 2,
+   "_bar": "2026-11-09"
   },
   "VOO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "CVX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-09"
+   "_bar": "2026-11-10"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-09"
+   "_bar": "2026-11-10"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-09"
+   "_bar": "2026-11-10"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-09"
+   "_bar": "2026-11-10"
   },
   "CEVA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "XERS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "SMH": {
-   "80": 1,
+   "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "SPCX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   },
   "BSX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-06"
+   "_bar": "2026-11-09"
   }
  },
  "chalDate": "2026-07-12"
