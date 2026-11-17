@@ -9,7 +9,7 @@
    "startPrice": 206.51,
    "startScore": 91,
    "startStreak": 1,
-   "maxScore": 91,
+   "maxScore": 100,
    "q": 72,
    "regime": "neutral",
    "riskOff": 20,
@@ -27,7 +27,7 @@
    "startPrice": 206.51,
    "startScore": 91,
    "startStreak": 1,
-   "maxScore": 91,
+   "maxScore": 100,
    "q": 72,
    "regime": "neutral",
    "riskOff": 20,
@@ -45,7 +45,7 @@
    "startPrice": 206.51,
    "startScore": 91,
    "startStreak": 1,
-   "maxScore": 91,
+   "maxScore": 100,
    "q": 72,
    "regime": "neutral",
    "riskOff": 20,
@@ -61,12 +61,14 @@
    "startPrice": 166.19,
    "startScore": 85,
    "startStreak": 1,
-   "maxScore": 85,
+   "maxScore": 100,
    "q": 81,
    "regime": "neutral",
    "riskOff": 20,
    "rotSector": "情報技術",
-   "sectorTrend": "outflow"
+   "sectorTrend": "outflow",
+   "confirmDate": "2026-11-17",
+   "confirmPrice": 156.14
   },
   {
    "id": "NVDA-value80-chal-2026-11-14",
@@ -77,7 +79,7 @@
    "startPrice": 166.19,
    "startScore": 85,
    "startStreak": 1,
-   "maxScore": 85,
+   "maxScore": 100,
    "q": 81,
    "regime": "neutral",
    "riskOff": 20,
@@ -93,12 +95,14 @@
    "startPrice": 66.88,
    "startScore": 81,
    "startStreak": 1,
-   "maxScore": 89,
+   "maxScore": 99,
    "q": 91,
    "regime": "neutral",
    "riskOff": 20,
    "rotSector": "情報技術",
-   "sectorTrend": "outflow"
+   "sectorTrend": "outflow",
+   "confirmDate": "2026-11-17",
+   "confirmPrice": 59.5
   },
   {
    "id": "eth-value80-2026-11-14",
@@ -127,12 +131,732 @@
    "startPrice": 61.48,
    "startScore": 89,
    "startStreak": 1,
-   "maxScore": 89,
+   "maxScore": 99,
    "q": 91,
    "regime": "neutral",
    "riskOff": 20,
    "rotSector": "情報技術",
    "sectorTrend": "outflow"
+  },
+  {
+   "id": "NVDA-value90-2026-11-17",
+   "ticker": "NVDA",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 156.14,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 81,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "NVDA-value90-chal-2026-11-17",
+   "ticker": "NVDA",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 156.14,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 81,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "ASML-value80-2026-11-17",
+   "ticker": "ASML",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 1406.79,
+   "startScore": 82,
+   "startStreak": 1,
+   "maxScore": 82,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "TSM-value80-2026-11-17",
+   "ticker": "TSM",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 373.45,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": 100,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "MRVL-value80-2026-11-17",
+   "ticker": "MRVL",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 145.36,
+   "startScore": 88,
+   "startStreak": 1,
+   "maxScore": 88,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "MRVL-value80-chal-2026-11-17",
+   "ticker": "MRVL",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 145.36,
+   "startScore": 88,
+   "startStreak": 1,
+   "maxScore": 88,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "VRT-value90-chal-2026-11-17",
+   "ticker": "VRT",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 188.67,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "AMAT-value80-2026-11-17",
+   "ticker": "AMAT",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 350.25,
+   "startScore": 91,
+   "startStreak": 1,
+   "maxScore": 91,
+   "q": 61,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "AMAT-value90-2026-11-17",
+   "ticker": "AMAT",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 350.25,
+   "startScore": 91,
+   "startStreak": 1,
+   "maxScore": 91,
+   "q": 61,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "AMAT-value80-chal-2026-11-17",
+   "ticker": "AMAT",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 350.25,
+   "startScore": 91,
+   "startStreak": 1,
+   "maxScore": 91,
+   "q": 61,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "LRCX-value80-2026-11-17",
+   "ticker": "LRCX",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 210.83,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 81,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "LRCX-value90-2026-11-17",
+   "ticker": "LRCX",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 210.83,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 81,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "LRCX-value80-chal-2026-11-17",
+   "ticker": "LRCX",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 210.83,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 81,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "LRCX-value90-chal-2026-11-17",
+   "ticker": "LRCX",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 210.83,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 81,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "MU-value80-2026-11-17",
+   "ticker": "MU",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 719.02,
+   "startScore": 83,
+   "startStreak": 1,
+   "maxScore": 83,
+   "q": 100,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "ARM-value80-2026-11-17",
+   "ticker": "ARM",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 175.05,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 60,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "ARM-value90-2026-11-17",
+   "ticker": "ARM",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 175.05,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 60,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "ARM-value80-chal-2026-11-17",
+   "ticker": "ARM",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 175.05,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 60,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "ARM-value90-chal-2026-11-17",
+   "ticker": "ARM",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 175.05,
+   "startScore": 98,
+   "startStreak": 1,
+   "maxScore": 98,
+   "q": 60,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "AEM-value80-2026-11-17",
+   "ticker": "AEM",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 170.81,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": 89,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "素材",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "IONQ-value80-2026-11-17",
+   "ticker": "IONQ",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 26.45,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": 27,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "CCJ-value80-2026-11-17",
+   "ticker": "CCJ",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 65.99,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "エネルギー",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "CCJ-value90-2026-11-17",
+   "ticker": "CCJ",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 65.99,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "エネルギー",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "CCJ-value80-chal-2026-11-17",
+   "ticker": "CCJ",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 65.99,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "エネルギー",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "CCJ-value90-chal-2026-11-17",
+   "ticker": "CCJ",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 65.99,
+   "startScore": 94,
+   "startStreak": 1,
+   "maxScore": 94,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "エネルギー",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "SMH-value80-2026-11-17",
+   "ticker": "SMH",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 461.9,
+   "startScore": 93,
+   "startStreak": 1,
+   "maxScore": 93,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "SMH-value90-2026-11-17",
+   "ticker": "SMH",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 461.9,
+   "startScore": 93,
+   "startStreak": 1,
+   "maxScore": 93,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "SMH-value80-chal-2026-11-17",
+   "ticker": "SMH",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 461.9,
+   "startScore": 93,
+   "startStreak": 1,
+   "maxScore": 93,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "SMH-value90-chal-2026-11-17",
+   "ticker": "SMH",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 461.9,
+   "startScore": 93,
+   "startStreak": 1,
+   "maxScore": 93,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "HOOD-value80-2026-11-17",
+   "ticker": "HOOD",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 72.06,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 77,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "HOOD-value90-2026-11-17",
+   "ticker": "HOOD",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 72.06,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 77,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "HOOD-value80-chal-2026-11-17",
+   "ticker": "HOOD",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 72.06,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 77,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "HOOD-value90-chal-2026-11-17",
+   "ticker": "HOOD",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 72.06,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 77,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "AI・半導体/クラウド",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "IBKR-value80-2026-11-17",
+   "ticker": "IBKR",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 78.43,
+   "startScore": 80,
+   "startStreak": 1,
+   "maxScore": 80,
+   "q": 53,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "金融",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "MSA-value80-2026-11-17",
+   "ticker": "MSA",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 170.48,
+   "startScore": 82,
+   "startStreak": 1,
+   "maxScore": 82,
+   "q": 59,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "資本財",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "BKTI-value90-2026-11-17",
+   "ticker": "BKTI",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 59.5,
+   "startScore": 99,
+   "startStreak": 1,
+   "maxScore": 99,
+   "q": 91,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "BKTI-value90-chal-2026-11-17",
+   "ticker": "BKTI",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 59.5,
+   "startScore": 99,
+   "startStreak": 1,
+   "maxScore": 99,
+   "q": 91,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "情報技術",
+   "sectorTrend": "outflow"
+  },
+  {
+   "id": "COIN-value80-2026-11-17",
+   "ticker": "COIN",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 119.84,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 57,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "金融",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "COIN-value90-2026-11-17",
+   "ticker": "COIN",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 119.84,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 57,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "金融",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "COIN-value80-chal-2026-11-17",
+   "ticker": "COIN",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 119.84,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 57,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "金融",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "COIN-value90-chal-2026-11-17",
+   "ticker": "COIN",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 119.84,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 57,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "金融",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "FCX-value80-2026-11-17",
+   "ticker": "FCX",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 55.19,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "素材",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "FCX-value90-2026-11-17",
+   "ticker": "FCX",
+   "strat": "value90",
+   "arm": "champion",
+   "startDate": "2026-11-17",
+   "startPrice": 55.19,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "素材",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "FCX-value80-chal-2026-11-17",
+   "ticker": "FCX",
+   "strat": "value80",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 55.19,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "素材",
+   "sectorTrend": "inflow"
+  },
+  {
+   "id": "FCX-value90-chal-2026-11-17",
+   "ticker": "FCX",
+   "strat": "value90",
+   "arm": "challenger",
+   "startDate": "2026-11-17",
+   "startPrice": 55.19,
+   "startScore": 100,
+   "startStreak": 1,
+   "maxScore": 100,
+   "q": 72,
+   "regime": "neutral",
+   "riskOff": 40,
+   "rotSector": "素材",
+   "sectorTrend": "inflow"
   }
  ],
  "closed": [
@@ -4754,512 +5478,512 @@
   "AAPL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "MSFT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "GOOGL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AMZN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AVGO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "NVDA": {
-   "80": 2,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 3,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "META": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "TSLA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AMD": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "PLTR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "XOM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "NEE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "LMT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "RTX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "NOC": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "RKLB": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "IBM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ASML": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "TSM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "MRVL": {
-   "80": 0,
+   "80": 1,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ANET": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "VRT": {
-   "80": 3,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 4,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "CLMB": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "IQV": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "CACI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "MCO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AXP": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "SPGI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "DELL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ADBE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BDX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "MA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "HON": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "NKE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "DE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ACN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ICE": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "UNH": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "V": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "IBKR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "GDDY": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AMAT": {
-   "80": 0,
+   "80": 1,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "LRCX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "UBER": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "PGR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "HCA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "KKR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "JXN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "FERG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "USFD": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "RLI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BLDR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "FTAI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "PAYX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "OTIS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "TLN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "TSCO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "MSA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BUR": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "PBI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "XPEL": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BKTI": {
-   "80": 1,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 2,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "HWKN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "GPGI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BMI": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ISRG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AXON": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "SNPS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "CEG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "GEV": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "VST": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "CCJ": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "KTOS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "MU": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "ARM": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "COST": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "WM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "PANW": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "FNV": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "AEM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "COIN": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "PG": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "KO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "WMT": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "LIN": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "FCX": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "IONQ": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "SNDK": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "DRAM": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "HOOD": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "VOO": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "CVX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-16"
+   "_bar": "2026-11-17"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-16"
+   "_bar": "2026-11-17"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-16"
+   "_bar": "2026-11-17"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-16"
+   "_bar": "2026-11-17"
   },
   "CEVA": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "XERS": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "SMH": {
-   "80": 0,
-   "90": 0,
-   "_bar": "2026-11-13"
+   "80": 1,
+   "90": 1,
+   "_bar": "2026-11-16"
   },
   "SPCX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   },
   "BSX": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-13"
+   "_bar": "2026-11-16"
   }
  },
  "chalDate": "2026-07-12"
