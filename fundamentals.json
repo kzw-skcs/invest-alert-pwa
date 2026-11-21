@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14 11:47 JST",
+ "updated": "2026-11-21 12:38 JST",
  "source": "SEC EDGAR(年次) + Yahoo(株価)",
  "tickers": {
   "AAPL": {
@@ -17,8 +17,8 @@
     "revGrowth": 0.1506,
     "epsGrowth": 0.18,
     "fcfMargin": 0.2841,
-    "trailPE": 39.6737,
-    "psr": 10.8125,
+    "trailPE": 38.147,
+    "psr": 10.3964,
     "fyEnd": "2026-09-26",
     "netDebtEbitda": 0.186,
     "netCash": false,
@@ -56,8 +56,8 @@
      "fairBase": 336.89,
      "fairHigh": 606.75,
      "buyCeiling": 252.67,
-     "safetyMarginPct": -5.8,
-     "impliedGrowthPct": 15.8,
+     "safetyMarginPct": -1.7,
+     "impliedGrowthPct": 15.3,
      "assumedBaseGrowthPct": 15.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -78,8 +78,8 @@
     "revGrowth": 0.1779,
     "epsGrowth": 0.3134,
     "fcfMargin": 0.2019,
-    "trailPE": 29.1855,
-    "psr": 11.7239,
+    "trailPE": 26.9928,
+    "psr": 10.843,
     "fyEnd": "2026-06-30",
     "netDebtEbitda": 0.0653,
     "netCash": false,
@@ -117,8 +117,8 @@
      "fairBase": 397.03,
      "fairHigh": 769.48,
      "buyCeiling": 297.78,
-     "safetyMarginPct": -31.9,
-     "impliedGrowthPct": 21.6,
+     "safetyMarginPct": -22.0,
+     "impliedGrowthPct": 20.5,
      "assumedBaseGrowthPct": 17.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -139,7 +139,7 @@
     "revGrowth": 0.1509,
     "epsGrowth": 0.3201,
     "fcfMargin": 0.1819,
-    "trailPE": 27.3608,
+    "trailPE": 24.5412,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.1227,
     "netCash": false,
@@ -189,8 +189,8 @@
     "revGrowth": 0.1238,
     "epsGrowth": 0.3109,
     "fcfMargin": 0.1852,
-    "trailPE": 37.1911,
-    "psr": 4.0219,
+    "trailPE": 34.424,
+    "psr": 3.7227,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.1452,
     "netCash": true,
@@ -223,13 +223,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 15,
+     "score": 20,
      "fairLow": 240.26,
      "fairBase": 380.52,
      "fairHigh": 635.93,
      "buyCeiling": 285.39,
-     "safetyMarginPct": 29.9,
-     "impliedGrowthPct": 7.6,
+     "safetyMarginPct": 35.1,
+     "impliedGrowthPct": 6.6,
      "assumedBaseGrowthPct": 12.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -250,8 +250,8 @@
     "revGrowth": 0.2387,
     "epsGrowth": -0.5814,
     "fcfMargin": 0.4213,
-    "trailPE": 72.7484,
-    "psr": 25.9286,
+    "trailPE": 63.8176,
+    "psr": 22.7455,
     "fyEnd": "2025-11-02",
     "netDebtEbitda": 1.7974,
     "netCash": false,
@@ -284,25 +284,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 0,
+     "score": 2,
      "fairLow": 139.34,
      "fairBase": 291.89,
      "fairHigh": 599.07,
      "buyCeiling": 218.92,
-     "safetyMarginPct": -18.9,
-     "impliedGrowthPct": 22.4,
+     "safetyMarginPct": -4.3,
+     "impliedGrowthPct": 20.6,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "NVDA": {
-   "score": 81,
+   "score": 87,
    "parts": {
     "profit": 25.0,
     "growth": 25.0,
     "health": 25.0,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [],
    "metrics": {
@@ -311,8 +311,8 @@
     "revGrowth": 0.6547,
     "epsGrowth": 0.6475,
     "fcfMargin": 0.475,
-    "trailPE": 33.2347,
-    "psr": 18.1751,
+    "trailPE": 25.6184,
+    "psr": 14.0099,
     "fyEnd": "2026-01-25",
     "netDebtEbitda": -0.0235,
     "netCash": true,
@@ -345,13 +345,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 15,
+     "score": 25,
      "fairLow": 105.34,
      "fairBase": 220.66,
      "fairHigh": 452.87,
      "buyCeiling": 165.49,
-     "safetyMarginPct": 26.2,
-     "impliedGrowthPct": 15.9,
+     "safetyMarginPct": 43.1,
+     "impliedGrowthPct": 12.4,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -372,7 +372,7 @@
     "revGrowth": 0.2217,
     "epsGrowth": -0.0305,
     "fcfMargin": 0.2294,
-    "trailPE": 27.3176,
+    "trailPE": 23.8757,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.2245,
     "netCash": false,
@@ -424,8 +424,8 @@
     "revGrowth": -0.0293,
     "epsGrowth": -0.465,
     "fcfMargin": 0.0656,
-    "trailPE": 361.3148,
-    "psr": 16.2659,
+    "trailPE": 320.2037,
+    "psr": 14.4151,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -1.9376,
     "netCash": true,
@@ -462,8 +462,8 @@
      "fairBase": 18.6,
      "fairHigh": 21.52,
      "buyCeiling": 13.95,
-     "safetyMarginPct": -1998.4,
-     "impliedGrowthPct": 42.4,
+     "safetyMarginPct": -1759.7,
+     "impliedGrowthPct": 40.6,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -484,8 +484,8 @@
     "revGrowth": 0.3434,
     "epsGrowth": 1.6417,
     "fcfMargin": 0.1944,
-    "trailPE": 201.5321,
-    "psr": 25.2867,
+    "trailPE": 160.1472,
+    "psr": 20.094,
     "fyEnd": "2025-12-27",
     "netDebtEbitda": -0.8149,
     "netCash": true,
@@ -523,8 +523,8 @@
      "fairBase": 212.6,
      "fairHigh": 436.33,
      "buyCeiling": 159.45,
-     "safetyMarginPct": -151.2,
-     "impliedGrowthPct": 32.9,
+     "safetyMarginPct": -99.6,
+     "impliedGrowthPct": 29.6,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -545,7 +545,7 @@
     "revGrowth": 0.5618,
     "epsGrowth": 2.5159,
     "fcfMargin": 0.4694,
-    "trailPE": 266.6508,
+    "trailPE": 227.7619,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.9886,
     "netCash": true,
@@ -631,8 +631,8 @@
     "revGrowth": 0.0564,
     "epsGrowth": -0.0598,
     "fcfMargin": 0.1015,
-    "trailPE": 27.7357,
-    "psr": 1.8347,
+    "trailPE": 26.3146,
+    "psr": 1.7407,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.7425,
     "netCash": false,
@@ -665,13 +665,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 5,
+     "score": 10,
      "fairLow": 537.84,
      "fairBase": 662.17,
      "fairHigh": 908.19,
      "buyCeiling": 496.63,
-     "safetyMarginPct": 10.0,
-     "impliedGrowthPct": 4.2,
+     "safetyMarginPct": 14.6,
+     "impliedGrowthPct": 3.5,
      "assumedBaseGrowthPct": 5.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -696,7 +696,7 @@
     "revGrowth": 0.3796,
     "epsGrowth": 0.0422,
     "fcfMargin": -0.5347,
-    "psr": 64.62,
+    "psr": 47.701,
     "fyEnd": "2025-12-31",
     "netCash": true,
     "interestCoverage": -8.639,
@@ -730,12 +730,12 @@
    }
   },
   "IBM": {
-   "score": 77,
+   "score": 83,
    "parts": {
     "profit": 25.0,
     "growth": 17.8,
     "health": 22.4,
-    "valuation": 12
+    "valuation": 18
    },
    "warnings": [],
    "metrics": {
@@ -743,8 +743,8 @@
     "revGrowth": 0.0762,
     "epsGrowth": 0.7588,
     "fcfMargin": 0.1792,
-    "trailPE": 22.1244,
-    "psr": 3.4585,
+    "trailPE": 20.0931,
+    "psr": 3.1409,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "currentRatio": 0.9557,
@@ -774,13 +774,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 5,
+     "score": 10,
      "fairLow": 199.99,
      "fairBase": 265.16,
      "fairHigh": 385.88,
      "buyCeiling": 198.87,
-     "safetyMarginPct": 6.8,
-     "impliedGrowthPct": 6.7,
+     "safetyMarginPct": 15.4,
+     "impliedGrowthPct": 5.4,
      "assumedBaseGrowthPct": 7.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -801,8 +801,8 @@
     "revGrowth": 0.1558,
     "epsGrowth": 0.2691,
     "fcfMargin": 0.3393,
-    "trailPE": 60.5083,
-    "psr": 17.6403,
+    "trailPE": 51.2432,
+    "psr": 14.9392,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.828,
     "netCash": true,
@@ -840,8 +840,8 @@
      "fairBase": 1075.81,
      "fairHigh": 1965.47,
      "buyCeiling": 806.86,
-     "safetyMarginPct": -39.0,
-     "impliedGrowthPct": 20.1,
+     "safetyMarginPct": -17.7,
+     "impliedGrowthPct": 17.8,
      "assumedBaseGrowthPct": 15.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -862,8 +862,8 @@
     "revGrowth": 0.3389,
     "epsGrowth": 0.36,
     "fcfMargin": 0.3006,
-    "trailPE": 8.9261,
-    "psr": 3.5726,
+    "trailPE": 7.1348,
+    "psr": 2.8556,
     "fyEnd": "2024-12-31",
     "netDebtEbitda": -1.6093,
     "netCash": true,
@@ -898,20 +898,20 @@
      "fairBase": 1737.21,
      "fairHigh": 3565.4,
      "buyCeiling": 1302.91,
-     "safetyMarginPct": 77.0,
-     "impliedGrowthPct": 0.1,
+     "safetyMarginPct": 81.7,
+     "impliedGrowthPct": -3.0,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "MRVL": {
-   "score": 53,
+   "score": 57,
    "parts": {
     "profit": 17.4,
     "growth": 12.5,
     "health": 21.3,
-    "valuation": 2
+    "valuation": 6
    },
    "warnings": [],
    "metrics": {
@@ -920,8 +920,8 @@
     "revGrowth": 0.4209,
     "epsGrowth": -4.0171,
     "fcfMargin": 0.1704,
-    "trailPE": 51.0619,
-    "psr": 16.7748,
+    "trailPE": 39.8306,
+    "psr": 13.0851,
     "fyEnd": "2026-01-31",
     "netDebtEbitda": 0.8183,
     "netCash": false,
@@ -959,8 +959,8 @@
      "fairBase": 82.44,
      "fairHigh": 169.2,
      "buyCeiling": 61.83,
-     "safetyMarginPct": -90.1,
-     "impliedGrowthPct": 28.9,
+     "safetyMarginPct": -48.3,
+     "impliedGrowthPct": 25.4,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -981,8 +981,8 @@
     "revGrowth": 0.286,
     "epsGrowth": 0.2312,
     "fcfMargin": 0.4837,
-    "trailPE": 71.7418,
-    "psr": 27.6777,
+    "trailPE": 60.9527,
+    "psr": 23.5153,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.4999,
     "netCash": true,
@@ -1015,25 +1015,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 2,
+     "score": 5,
      "fairLow": 85.52,
      "fairBase": 179.15,
      "fairHigh": 367.69,
      "buyCeiling": 134.36,
-     "safetyMarginPct": -10.1,
-     "impliedGrowthPct": 21.3,
+     "safetyMarginPct": 6.4,
+     "impliedGrowthPct": 19.1,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "VRT": {
-   "score": 72,
+   "score": 76,
    "parts": {
     "profit": 21.4,
     "growth": 25.0,
     "health": 23.1,
-    "valuation": 2
+    "valuation": 6
    },
    "warnings": [],
    "metrics": {
@@ -1042,8 +1042,8 @@
     "revGrowth": 0.2769,
     "epsGrowth": 1.6882,
     "fcfMargin": 0.1851,
-    "trailPE": 59.2581,
-    "psr": 7.6061,
+    "trailPE": 48.7507,
+    "psr": 6.2574,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.5442,
     "netCash": false,
@@ -1076,13 +1076,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 15,
+     "score": 20,
      "fairLow": 121.55,
      "fairBase": 254.62,
      "fairHigh": 522.58,
      "buyCeiling": 190.97,
-     "safetyMarginPct": 20.6,
-     "impliedGrowthPct": 16.9,
+     "safetyMarginPct": 34.7,
+     "impliedGrowthPct": 14.2,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1103,8 +1103,8 @@
     "revGrowth": 0.4014,
     "epsGrowth": 0.1462,
     "fcfMargin": 0.0254,
-    "trailPE": 8.9806,
-    "psr": 1.1915,
+    "trailPE": 8.6509,
+    "psr": 1.1478,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.9905,
     "netCash": true,
@@ -1136,25 +1136,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 5,
+     "score": 10,
      "fairLow": 21.99,
      "fairBase": 46.07,
      "fairHigh": 94.56,
      "buyCeiling": 34.55,
-     "safetyMarginPct": 9.6,
-     "impliedGrowthPct": 18.6,
+     "safetyMarginPct": 12.9,
+     "impliedGrowthPct": 18.1,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "IQV": {
-   "score": 49,
+   "score": 55,
    "parts": {
     "profit": 17.1,
     "growth": 6.0,
     "health": 20.3,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [],
    "metrics": {
@@ -1163,8 +1163,8 @@
     "revGrowth": 0.0587,
     "epsGrowth": -0.0095,
     "fcfMargin": 0.1627,
-    "trailPE": 33.8163,
-    "psr": 2.6788,
+    "trailPE": 31.3546,
+    "psr": 2.4838,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 3.5791,
     "netCash": false,
@@ -1197,13 +1197,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 5,
+     "score": 10,
      "fairLow": 235.88,
      "fairBase": 292.99,
      "fairHigh": 404.71,
      "buyCeiling": 219.74,
-     "safetyMarginPct": 9.5,
-     "impliedGrowthPct": 4.5,
+     "safetyMarginPct": 16.1,
+     "impliedGrowthPct": 3.5,
      "assumedBaseGrowthPct": 5.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1226,8 +1226,8 @@
     "revGrowth": 0.1089,
     "epsGrowth": 0.072,
     "fcfMargin": 0.0927,
-    "trailPE": 26.582,
-    "psr": 1.4909,
+    "trailPE": 24.3299,
+    "psr": 1.3646,
     "fyEnd": "2026-06-30",
     "netDebtEbitda": 4.6751,
     "netCash": false,
@@ -1260,13 +1260,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 20,
+     "score": 25,
      "fairLow": 703.64,
      "fairBase": 1054.46,
      "fairHigh": 1689.04,
      "buyCeiling": 790.84,
-     "safetyMarginPct": 39.1,
-     "impliedGrowthPct": 4.2,
+     "safetyMarginPct": 44.3,
+     "impliedGrowthPct": 3.0,
      "assumedBaseGrowthPct": 10.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1325,8 +1325,8 @@
     "revGrowth": 0.0889,
     "epsGrowth": 0.1948,
     "fcfMargin": 0.3336,
-    "trailPE": 37.1763,
-    "psr": 11.3519,
+    "trailPE": 34.15,
+    "psr": 10.4278,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.2033,
     "netCash": false,
@@ -1361,8 +1361,8 @@
      "fairBase": 339.85,
      "fairHigh": 513.47,
      "buyCeiling": 254.89,
-     "safetyMarginPct": -49.5,
-     "impliedGrowthPct": 14.3,
+     "safetyMarginPct": -37.4,
+     "impliedGrowthPct": 13.2,
      "assumedBaseGrowthPct": 8.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1383,7 +1383,7 @@
     "revGrowth": 3.7444,
     "epsGrowth": 2.8721,
     "fcfMargin": 0.0753,
-    "trailPE": 39.6924,
+    "trailPE": 32.03,
     "fyEnd": "2026-01-30",
     "netDebtEbitda": 1.0722,
     "netCash": false,
@@ -1433,8 +1433,8 @@
     "revGrowth": 0.1053,
     "epsGrowth": 0.2824,
     "fcfMargin": 0.4145,
-    "trailPE": 14.5557,
-    "psr": 3.9803,
+    "trailPE": 13.0365,
+    "psr": 3.5648,
     "fyEnd": "2025-11-28",
     "netDebtEbitda": 0.0818,
     "netCash": false,
@@ -1472,8 +1472,8 @@
      "fairBase": 650.64,
      "fairHigh": 1031.22,
      "buyCeiling": 487.98,
-     "safetyMarginPct": 62.6,
-     "impliedGrowthPct": -2.9,
+     "safetyMarginPct": 66.5,
+     "impliedGrowthPct": -4.4,
      "assumedBaseGrowthPct": 10.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1496,8 +1496,8 @@
     "revGrowth": 0.0747,
     "epsGrowth": 0.2037,
     "fcfMargin": 0.3393,
-    "trailPE": 30.9376,
-    "psr": 7.8925,
+    "trailPE": 29.4627,
+    "psr": 7.5163,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 2.7388,
     "netCash": false,
@@ -1533,8 +1533,8 @@
      "fairBase": 157.21,
      "fairHigh": 227.78,
      "buyCeiling": 117.9,
-     "safetyMarginPct": -13.6,
-     "impliedGrowthPct": 9.2,
+     "safetyMarginPct": -8.1,
+     "impliedGrowthPct": 8.5,
      "assumedBaseGrowthPct": 7.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1557,7 +1557,7 @@
     "revGrowth": 0.1476,
     "epsGrowth": 0.1718,
     "fcfMargin": 0.5169,
-    "psr": 4.3527,
+    "psr": 4.1084,
     "fyEnd": "2026-09-30",
     "netDebtEbitda": 0.2174,
     "netCash": false,
@@ -1592,8 +1592,8 @@
      "fairBase": 1779.13,
      "fairHigh": 3177.77,
      "buyCeiling": 1334.35,
-     "safetyMarginPct": 76.1,
-     "impliedGrowthPct": -4.7,
+     "safetyMarginPct": 77.4,
+     "impliedGrowthPct": -5.6,
      "assumedBaseGrowthPct": 14.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1617,7 +1617,7 @@
     "revGrowth": -0.1268,
     "epsGrowth": 1.039,
     "fcfMargin": -0.0505,
-    "trailPE": 83.6122,
+    "trailPE": 77.0408,
     "fyEnd": "2025-12-31",
     "netCash": true,
     "fcfPosYears": 2,
@@ -1658,8 +1658,8 @@
     "revGrowth": 0.0439,
     "epsGrowth": -0.0249,
     "fcfMargin": 0.2009,
-    "trailPE": 42.7829,
-    "psr": 10.3648,
+    "trailPE": 34.9457,
+    "psr": 8.4661,
     "fyEnd": "2025-10-26",
     "netDebtEbitda": -0.0901,
     "netCash": true,
@@ -1697,20 +1697,20 @@
      "fairBase": 117.01,
      "fairHigh": 154.54,
      "buyCeiling": 87.76,
-     "safetyMarginPct": -216.6,
-     "impliedGrowthPct": 20.0,
+     "safetyMarginPct": -158.6,
+     "impliedGrowthPct": 17.2,
      "assumedBaseGrowthPct": 4.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "LRCX": {
-   "score": 81,
+   "score": 87,
    "parts": {
     "profit": 25.0,
     "growth": 25.0,
     "health": 25.0,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [],
    "metrics": {
@@ -1719,8 +1719,8 @@
     "revGrowth": 0.2602,
     "epsGrowth": 0.3559,
     "fcfMargin": 0.2521,
-    "trailPE": 39.2222,
-    "psr": 12.1472,
+    "trailPE": 31.8177,
+    "psr": 9.854,
     "fyEnd": "2026-06-28",
     "netDebtEbitda": -0.2149,
     "netCash": true,
@@ -1753,13 +1753,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 5,
+     "score": 15,
      "fairLow": 115.89,
      "fairBase": 242.77,
      "fairHigh": 498.25,
      "buyCeiling": 182.08,
-     "safetyMarginPct": 6.9,
-     "impliedGrowthPct": 19.0,
+     "safetyMarginPct": 24.5,
+     "impliedGrowthPct": 16.2,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1781,8 +1781,8 @@
     "revGrowth": 0.0633,
     "epsGrowth": 0.1665,
     "fcfMargin": 0.3234,
-    "trailPE": 15.9382,
-    "psr": 3.3941,
+    "trailPE": 16.3707,
+    "psr": 3.4862,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "fcfPosYears": 5,
@@ -1813,8 +1813,8 @@
      "fairBase": 124.86,
      "fairHigh": 174.85,
      "buyCeiling": 93.65,
-     "safetyMarginPct": 44.2,
-     "impliedGrowthPct": -1.6,
+     "safetyMarginPct": 42.7,
+     "impliedGrowthPct": -1.3,
      "assumedBaseGrowthPct": 6.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1837,8 +1837,8 @@
     "revGrowth": 0.4453,
     "epsGrowth": 1.3316,
     "fcfMargin": -0.135,
-    "trailPE": 39.1739,
-    "psr": 7.3492,
+    "trailPE": 32.613,
+    "psr": 6.1184,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "currentRatio": 5.283,
@@ -1884,8 +1884,8 @@
     "revGrowth": 0.1647,
     "epsGrowth": 0.062,
     "fcfMargin": 0.3685,
-    "trailPE": 23.6564,
-    "psr": 6.5353,
+    "trailPE": 23.0327,
+    "psr": 6.363,
     "fyEnd": "2026-05-31",
     "netDebtEbitda": 1.1743,
     "netCash": false,
@@ -1923,8 +1923,8 @@
      "fairBase": 260.51,
      "fairHigh": 487.5,
      "buyCeiling": 195.38,
-     "safetyMarginPct": 55.6,
-     "impliedGrowthPct": 5.5,
+     "safetyMarginPct": 56.8,
+     "impliedGrowthPct": 5.2,
      "assumedBaseGrowthPct": 16.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -1948,7 +1948,7 @@
     "revGrowth": 0.5997,
     "epsGrowth": -1.2194,
     "fcfMargin": 0.2407,
-    "psr": 6.4966,
+    "psr": 5.7521,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 32.2381,
     "netCash": false,
@@ -1986,8 +1986,8 @@
      "fairBase": 721.15,
      "fairHigh": 1480.06,
      "buyCeiling": 540.86,
-     "safetyMarginPct": 47.9,
-     "impliedGrowthPct": 11.2,
+     "safetyMarginPct": 53.8,
+     "impliedGrowthPct": 9.5,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2012,8 +2012,8 @@
     "revGrowth": -0.2431,
     "epsGrowth": -0.5728,
     "fcfMargin": -0.0709,
-    "trailPE": 12.8929,
-    "psr": 1.9178,
+    "trailPE": 11.5714,
+    "psr": 1.7212,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 6.5705,
     "netCash": false,
@@ -2060,8 +2060,8 @@
     "revGrowth": 0.1327,
     "epsGrowth": 0.1261,
     "fcfMargin": 0.1322,
-    "trailPE": 20.4595,
-    "psr": 2.1871,
+    "trailPE": 20.6054,
+    "psr": 2.2027,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.8046,
     "netCash": true,
@@ -2099,8 +2099,8 @@
      "fairBase": 72.08,
      "fairHigh": 123.55,
      "buyCeiling": 54.06,
-     "safetyMarginPct": 47.5,
-     "impliedGrowthPct": 4.6,
+     "safetyMarginPct": 47.1,
+     "impliedGrowthPct": 4.7,
      "assumedBaseGrowthPct": 13.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2125,7 +2125,7 @@
     "revGrowth": -0.8578,
     "epsGrowth": 1.5318,
     "fcfMargin": -0.3825,
-    "psr": 67.6005,
+    "psr": 62.8515,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "interestCoverage": -8.1345,
@@ -2172,8 +2172,8 @@
     "revGrowth": 0.2051,
     "epsGrowth": 0.2297,
     "fcfMargin": 0.3011,
-    "trailPE": 56.3647,
-    "psr": 15.2779,
+    "trailPE": 50.7052,
+    "psr": 13.7439,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -1.1434,
     "netCash": true,
@@ -2205,25 +2205,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 5,
+     "score": 10,
      "fairLow": 216.06,
      "fairBase": 452.61,
      "fairHigh": 928.92,
      "buyCeiling": 339.46,
-     "safetyMarginPct": 2.0,
-     "impliedGrowthPct": 19.7,
+     "safetyMarginPct": 11.8,
+     "impliedGrowthPct": 18.3,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "SNPS": {
-   "score": 43,
+   "score": 47,
    "parts": {
     "profit": 8.8,
     "growth": 8.4,
     "health": 23.9,
-    "valuation": 2
+    "valuation": 6
    },
    "warnings": [
     "重警告: 純負債/EBITDA 6.7倍(過大な負債)"
@@ -2234,8 +2234,8 @@
     "revGrowth": 0.1512,
     "epsGrowth": -0.4114,
     "fcfMargin": 0.1913,
-    "trailPE": 56.6169,
-    "psr": 12.3661,
+    "trailPE": 49.2749,
+    "psr": 10.7625,
     "fyEnd": "2025-10-31",
     "netDebtEbitda": 6.7124,
     "netCash": false,
@@ -2273,8 +2273,8 @@
      "fairBase": 254.54,
      "fairHigh": 459.25,
      "buyCeiling": 190.91,
-     "safetyMarginPct": -78.8,
-     "impliedGrowthPct": 23.1,
+     "safetyMarginPct": -55.6,
+     "impliedGrowthPct": 21.1,
      "assumedBaseGrowthPct": 15.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2297,8 +2297,8 @@
     "revGrowth": 0.1951,
     "epsGrowth": -0.3814,
     "fcfMargin": 0.0568,
-    "trailPE": 37.8649,
-    "psr": 4.3806,
+    "trailPE": 32.0824,
+    "psr": 3.7116,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.1695,
     "netCash": false,
@@ -2335,8 +2335,8 @@
      "fairBase": 181.51,
      "fairHigh": 367.84,
      "buyCeiling": 136.13,
-     "safetyMarginPct": -54.4,
-     "impliedGrowthPct": 25.5,
+     "safetyMarginPct": -30.8,
+     "impliedGrowthPct": 23.2,
      "assumedBaseGrowthPct": 19.5,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2357,8 +2357,8 @@
     "revGrowth": 2.5633,
     "epsGrowth": 8.9507,
     "fcfMargin": 0.4427,
-    "trailPE": 10.471,
-    "psr": 6.6117,
+    "trailPE": 7.9983,
+    "psr": 5.0503,
     "fyEnd": "2026-09-03",
     "netDebtEbitda": -0.3268,
     "netCash": true,
@@ -2396,8 +2396,8 @@
      "fairBase": 2698.04,
      "fairHigh": 5537.36,
      "buyCeiling": 2023.53,
-     "safetyMarginPct": 71.2,
-     "impliedGrowthPct": 3.2,
+     "safetyMarginPct": 78.0,
+     "impliedGrowthPct": -0.5,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2418,8 +2418,8 @@
     "revGrowth": 0.2279,
     "epsGrowth": 0.1414,
     "fcfMargin": 0.199,
-    "trailPE": 224.1529,
-    "psr": 41.2062,
+    "trailPE": 179.0588,
+    "psr": 32.9165,
     "fyEnd": "2026-03-31",
     "netDebtEbitda": -2.3943,
     "netCash": true,
@@ -2455,8 +2455,8 @@
      "fairBase": 47.63,
      "fairHigh": 97.76,
      "buyCeiling": 35.73,
-     "safetyMarginPct": -300.0,
-     "impliedGrowthPct": 39.7,
+     "safetyMarginPct": -219.5,
+     "impliedGrowthPct": 36.4,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2477,8 +2477,8 @@
     "revGrowth": 0.4371,
     "epsGrowth": 1.3536,
     "fcfMargin": 0.3694,
-    "trailPE": 20.1411,
-    "psr": 7.4937,
+    "trailPE": 17.0767,
+    "psr": 6.3535,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.6083,
     "netCash": true,
@@ -2516,8 +2516,8 @@
      "fairBase": 455.44,
      "fairHigh": 934.72,
      "buyCeiling": 341.58,
-     "safetyMarginPct": 60.8,
-     "impliedGrowthPct": 7.3,
+     "safetyMarginPct": 66.8,
+     "impliedGrowthPct": 5.1,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2541,7 +2541,7 @@
     "revGrowth": 2.0185,
     "epsGrowth": 0.5389,
     "fcfMargin": -2.3044,
-    "psr": 96.0614,
+    "psr": 68.9194,
     "fyEnd": "2025-12-31",
     "netCash": true,
     "currentRatio": 15.5039,
@@ -2574,12 +2574,12 @@
    }
   },
   "CEVA": {
-   "score": 26,
+   "score": 34,
    "parts": {
     "profit": 0.0,
     "growth": 19.9,
     "health": 0.0,
-    "valuation": 6
+    "valuation": 14
    },
    "warnings": [
     "FCF赤字"
@@ -2590,7 +2590,7 @@
     "revGrowth": 0.2045,
     "epsGrowth": 0.2108,
     "fcfMargin": -0.0717,
-    "psr": 8.3423,
+    "psr": 7.3057,
     "fyEnd": "2017-12-31",
     "netCash": true,
     "currentRatio": 9.9305,
@@ -2624,12 +2624,12 @@
    }
   },
   "CCJ": {
-   "score": 59,
+   "score": 63,
    "parts": {
     "profit": 13.1,
     "growth": 19.2,
     "health": 25.0,
-    "valuation": 2
+    "valuation": 6
    },
    "warnings": [],
    "metrics": {
@@ -2638,8 +2638,8 @@
     "revGrowth": 0.1104,
     "epsGrowth": 2.4307,
     "fcfMargin": 0.3089,
-    "trailPE": 52.3926,
-    "psr": 8.8456,
+    "trailPE": 42.963,
+    "psr": 7.2536,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -1.2235,
     "netCash": true,
@@ -2669,13 +2669,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 2,
+     "score": 10,
      "fairLow": 43.76,
      "fairBase": 65.94,
      "fairHigh": 106.06,
      "buyCeiling": 49.45,
-     "safetyMarginPct": -7.3,
-     "impliedGrowthPct": 12.0,
+     "safetyMarginPct": 12.0,
+     "impliedGrowthPct": 9.3,
      "assumedBaseGrowthPct": 11.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2700,7 +2700,7 @@
     "revGrowth": 0.4372,
     "epsGrowth": -1.0101,
     "fcfMargin": 0.0944,
-    "psr": 10.4294,
+    "psr": 10.6235,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 4.1701,
     "netCash": false,
@@ -2737,28 +2737,28 @@
      "fairBase": 8.11,
      "fairHigh": 16.65,
      "buyCeiling": 6.08,
-     "safetyMarginPct": -105.4,
-     "impliedGrowthPct": 30.0,
+     "safetyMarginPct": -109.2,
+     "impliedGrowthPct": 30.3,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "BSX": {
-   "score": 74,
+   "score": 80,
    "parts": {
     "profit": 18.0,
     "growth": 20.7,
     "health": 22.8,
-    "valuation": 12
+    "valuation": 18
    },
    "warnings": [],
    "metrics": {
     "opMargin": 0.18,
     "revGrowth": 0.1987,
     "fcfMargin": 0.1822,
-    "trailPE": 22.8557,
-    "psr": 3.2016,
+    "trailPE": 21.6392,
+    "psr": 3.0312,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.8414,
     "netCash": false,
@@ -2796,8 +2796,8 @@
      "fairBase": 129.38,
      "fairHigh": 264.64,
      "buyCeiling": 97.04,
-     "safetyMarginPct": 65.7,
-     "impliedGrowthPct": 5.4,
+     "safetyMarginPct": 67.6,
+     "impliedGrowthPct": 4.7,
      "assumedBaseGrowthPct": 19.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2820,8 +2820,8 @@
     "revGrowth": 1.753,
     "epsGrowth": -7.9671,
     "fcfMargin": 0.5677,
-    "trailPE": 11.9985,
-    "psr": 6.2193,
+    "trailPE": 1.2798,
+    "psr": 0.6633,
     "fyEnd": "2026-07-03",
     "netDebtEbitda": -0.3798,
     "netCash": true,
@@ -2858,20 +2858,20 @@
      "fairBase": 4182.08,
      "fairHigh": 8583.16,
      "buyCeiling": 3136.56,
-     "safetyMarginPct": 78.8,
-     "impliedGrowthPct": -1.0,
+     "safetyMarginPct": 97.7,
+     "impliedGrowthPct": -41.3,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "HOOD": {
-   "score": 77,
+   "score": 83,
    "parts": {
     "profit": 20.6,
     "growth": 25.0,
     "health": 25.0,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [
     "FCF赤字が常態(生存力に疑問)"
@@ -2881,7 +2881,7 @@
     "revGrowth": 0.5158,
     "epsGrowth": 0.3345,
     "fcfMargin": 0.3662,
-    "trailPE": 37.9805,
+    "trailPE": 30.3268,
     "fyEnd": "2025-12-31",
     "netCash": true,
     "currentRatio": 1.2619,
@@ -2928,8 +2928,8 @@
     "revGrowth": 0.0974,
     "epsGrowth": 0.4101,
     "fcfMargin": 0.0896,
-    "trailPE": 40.0363,
-    "psr": 3.0244,
+    "trailPE": 38.3407,
+    "psr": 2.8963,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.9632,
     "netCash": false,
@@ -2967,8 +2967,8 @@
      "fairBase": 142.65,
      "fairHigh": 220.98,
      "buyCeiling": 106.99,
-     "safetyMarginPct": -39.2,
-     "impliedGrowthPct": 14.2,
+     "safetyMarginPct": -33.3,
+     "impliedGrowthPct": 13.6,
      "assumedBaseGrowthPct": 9.7,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -2989,8 +2989,8 @@
     "revGrowth": 0.0224,
     "epsGrowth": 0.0019,
     "fcfMargin": 0.0788,
-    "trailPE": 18.9281,
-    "psr": 1.8639,
+    "trailPE": 18.3738,
+    "psr": 1.8093,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.7983,
     "netCash": false,
@@ -3027,8 +3027,8 @@
      "fairBase": 324.04,
      "fairHigh": 401.15,
      "buyCeiling": 243.03,
-     "safetyMarginPct": -69.9,
-     "impliedGrowthPct": 9.4,
+     "safetyMarginPct": -64.9,
+     "impliedGrowthPct": 9.0,
      "assumedBaseGrowthPct": 2.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3049,8 +3049,8 @@
     "revGrowth": 0.0897,
     "epsGrowth": 2.1469,
     "fcfMargin": 0.131,
-    "trailPE": 45.4002,
-    "psr": 5.584,
+    "trailPE": 39.5325,
+    "psr": 4.8623,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -6.3746,
     "netCash": true,
@@ -3086,8 +3086,8 @@
      "fairBase": 431.27,
      "fairHigh": 653.13,
      "buyCeiling": 323.45,
-     "safetyMarginPct": -86.2,
-     "impliedGrowthPct": 17.4,
+     "safetyMarginPct": -62.2,
+     "impliedGrowthPct": 15.5,
      "assumedBaseGrowthPct": 9.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3111,8 +3111,8 @@
     "revGrowth": 0.1914,
     "epsGrowth": -0.645,
     "fcfMargin": 0.0749,
-    "trailPE": 61.0138,
-    "psr": 2.567,
+    "trailPE": 52.867,
+    "psr": 2.2242,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 4.1773,
     "netCash": false,
@@ -3145,13 +3145,13 @@
      "FCF創出の一貫性": 2
     },
     "money": {
-     "score": 15,
+     "score": 20,
      "fairLow": 92.95,
      "fairBase": 188.75,
      "fairHigh": 378.92,
      "buyCeiling": 141.56,
-     "safetyMarginPct": 29.5,
-     "impliedGrowthPct": 14.4,
+     "safetyMarginPct": 38.9,
+     "impliedGrowthPct": 12.5,
      "assumedBaseGrowthPct": 19.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3175,8 +3175,8 @@
     "revGrowth": -0.1218,
     "epsGrowth": -0.016,
     "fcfMargin": 3.6993,
-    "trailPE": 25.7939,
-    "psr": 52.5939,
+    "trailPE": 25.2879,
+    "psr": 51.562,
     "fyEnd": "2012-12-31",
     "netDebtEbitda": 5.8374,
     "netCash": false,
@@ -3212,8 +3212,8 @@
      "fairBase": 70.75,
      "fairHigh": 81.86,
      "buyCeiling": 53.06,
-     "safetyMarginPct": -20.3,
-     "impliedGrowthPct": 2.5,
+     "safetyMarginPct": -17.9,
+     "impliedGrowthPct": 2.3,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3236,8 +3236,8 @@
     "revGrowth": 0.0639,
     "epsGrowth": 0.0695,
     "fcfMargin": 0.3874,
-    "trailPE": 20.8453,
-    "psr": 5.2048,
+    "trailPE": 19.6164,
+    "psr": 4.898,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 3.0253,
     "netCash": false,
@@ -3267,25 +3267,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 15,
+     "score": 20,
      "fairLow": 356.17,
      "fairBase": 450.92,
      "fairHigh": 632.47,
      "buyCeiling": 338.19,
-     "safetyMarginPct": 28.9,
-     "impliedGrowthPct": 1.8,
+     "safetyMarginPct": 33.1,
+     "impliedGrowthPct": 0.9,
      "assumedBaseGrowthPct": 6.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "SPGI": {
-   "score": 64,
+   "score": 70,
    "parts": {
     "profit": 19.7,
     "growth": 12.9,
     "health": 25.0,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [
     "金融業: 簡易モデル(負債指標は業種特性上評価対象外)"
@@ -3296,8 +3296,8 @@
     "revGrowth": 0.0794,
     "epsGrowth": 0.1607,
     "fcfMargin": 0.364,
-    "trailPE": 32.3049,
-    "psr": 8.9524,
+    "trailPE": 29.9843,
+    "psr": 8.3093,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.3876,
     "netCash": false,
@@ -3333,8 +3333,8 @@
      "fairBase": 413.33,
      "fairHigh": 607.23,
      "buyCeiling": 310.0,
-     "safetyMarginPct": -14.6,
-     "impliedGrowthPct": 9.8,
+     "safetyMarginPct": -6.3,
+     "impliedGrowthPct": 8.8,
      "assumedBaseGrowthPct": 7.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3355,8 +3355,8 @@
     "revGrowth": 0.0824,
     "epsGrowth": -0.0158,
     "fcfMargin": 0.1223,
-    "trailPE": 37.4622,
-    "psr": 2.7193,
+    "trailPE": 36.5601,
+    "psr": 2.6538,
     "fyEnd": "2025-09-30",
     "netDebtEbitda": 3.3684,
     "netCash": false,
@@ -3394,8 +3394,8 @@
      "fairBase": 212.49,
      "fairHigh": 314.94,
      "buyCeiling": 159.37,
-     "safetyMarginPct": -2.6,
-     "impliedGrowthPct": 8.6,
+     "safetyMarginPct": -0.1,
+     "impliedGrowthPct": 8.3,
      "assumedBaseGrowthPct": 8.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3418,8 +3418,8 @@
     "revGrowth": 0.1642,
     "epsGrowth": -0.2912,
     "fcfMargin": 0.5233,
-    "trailPE": 40.0236,
-    "psr": 2.4707,
+    "trailPE": 37.8686,
+    "psr": 2.3376,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.3835,
     "netCash": false,
@@ -3455,8 +3455,8 @@
      "fairBase": 5570.71,
      "fairHigh": 10409.27,
      "buyCeiling": 4178.04,
-     "safetyMarginPct": 88.1,
-     "impliedGrowthPct": -13.4,
+     "safetyMarginPct": 88.8,
+     "impliedGrowthPct": -14.2,
      "assumedBaseGrowthPct": 16.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3477,7 +3477,7 @@
     "revGrowth": 0.034,
     "epsGrowth": -1.063,
     "fcfMargin": 0.5556,
-    "psr": 7.235,
+    "psr": 6.9157,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.7403,
     "netCash": false,
@@ -3514,8 +3514,8 @@
      "fairBase": 258.93,
      "fairHigh": 331.96,
      "buyCeiling": 194.19,
-     "safetyMarginPct": 14.1,
-     "impliedGrowthPct": 1.3,
+     "safetyMarginPct": 17.9,
+     "impliedGrowthPct": 0.7,
      "assumedBaseGrowthPct": 3.4,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3535,8 +3535,8 @@
     "revGrowth": 0.0019,
     "epsGrowth": -0.0345,
     "fcfMargin": 0.0471,
-    "trailPE": 18.0905,
-    "psr": 0.7003,
+    "trailPE": 15.6762,
+    "psr": 0.6069,
     "fyEnd": "2026-05-31",
     "netCash": true,
     "currentRatio": 1.9609,
@@ -3566,13 +3566,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 0,
+     "score": 2,
      "fairLow": 30.39,
      "fairBase": 30.6,
      "fairHigh": 35.61,
      "buyCeiling": 22.95,
-     "safetyMarginPct": -24.2,
-     "impliedGrowthPct": 3.2,
+     "safetyMarginPct": -7.6,
+     "impliedGrowthPct": 1.2,
      "assumedBaseGrowthPct": 0.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3595,8 +3595,8 @@
     "revGrowth": -0.1166,
     "epsGrowth": -0.292,
     "fcfMargin": 0.1335,
-    "trailPE": 36.4076,
-    "psr": 3.9752,
+    "trailPE": 32.9324,
+    "psr": 3.5958,
     "fyEnd": "2025-11-02",
     "netDebtEbitda": 2.1842,
     "netCash": false,
@@ -3633,8 +3633,8 @@
      "fairBase": 267.32,
      "fairHigh": 309.29,
      "buyCeiling": 200.49,
-     "safetyMarginPct": -152.0,
-     "impliedGrowthPct": 12.5,
+     "safetyMarginPct": -127.9,
+     "impliedGrowthPct": 11.2,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3657,8 +3657,8 @@
     "revGrowth": -0.0021,
     "epsGrowth": -0.1487,
     "fcfMargin": 0.6221,
-    "trailPE": 76.1368,
-    "psr": 8.5425,
+    "trailPE": 67.2249,
+    "psr": 7.5426,
     "fyEnd": "2026-08-31",
     "netDebtEbitda": -0.6578,
     "netCash": true,
@@ -3691,13 +3691,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 0,
+     "score": 2,
      "fairLow": 215.58,
      "fairBase": 215.58,
      "fairHigh": 249.43,
      "buyCeiling": 161.68,
-     "safetyMarginPct": -16.2,
-     "impliedGrowthPct": 2.1,
+     "safetyMarginPct": -2.6,
+     "impliedGrowthPct": 0.4,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3718,8 +3718,8 @@
     "revGrowth": 0.1181,
     "epsGrowth": -0.1631,
     "fcfMargin": 0.0359,
-    "trailPE": 30.7982,
-    "psr": 0.8157,
+    "trailPE": 25.6878,
+    "psr": 0.6804,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 2.0559,
     "netCash": false,
@@ -3752,13 +3752,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 10,
+     "score": 20,
      "fairLow": 327.17,
      "fairBase": 507.4,
      "fairHigh": 834.49,
      "buyCeiling": 380.55,
-     "safetyMarginPct": 19.7,
-     "impliedGrowthPct": 8.9,
+     "safetyMarginPct": 33.0,
+     "impliedGrowthPct": 6.4,
      "assumedBaseGrowthPct": 11.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3780,8 +3780,8 @@
     "revGrowth": 0.2342,
     "epsGrowth": 0.2035,
     "fcfMargin": 6.4799,
-    "trailPE": 36.8423,
-    "psr": 1.4156,
+    "trailPE": 32.0676,
+    "psr": 1.2322,
     "fyEnd": "2025-12-31",
     "netCash": true,
     "fcfPosYears": 5,
@@ -3834,8 +3834,8 @@
     "revGrowth": 0.0826,
     "epsGrowth": -0.0661,
     "fcfMargin": 0.3182,
-    "trailPE": 18.3473,
-    "psr": 2.7953,
+    "trailPE": 16.0016,
+    "psr": 2.4379,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 2.158,
     "netCash": false,
@@ -3872,8 +3872,8 @@
      "fairBase": 282.18,
      "fairHigh": 418.56,
      "buyCeiling": 211.64,
-     "safetyMarginPct": 59.6,
-     "impliedGrowthPct": -4.1,
+     "safetyMarginPct": 64.7,
+     "impliedGrowthPct": -6.1,
      "assumedBaseGrowthPct": 8.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3894,8 +3894,8 @@
     "revGrowth": 0.1828,
     "epsGrowth": 0.02,
     "fcfMargin": 0.1877,
-    "trailPE": 14.7336,
-    "psr": 2.7356,
+    "trailPE": 13.4186,
+    "psr": 2.4915,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.5436,
     "netCash": false,
@@ -3933,8 +3933,8 @@
      "fairBase": 218.19,
      "fairHigh": 428.36,
      "buyCeiling": 163.64,
-     "safetyMarginPct": 68.1,
-     "impliedGrowthPct": 2.9,
+     "safetyMarginPct": 70.9,
+     "impliedGrowthPct": 1.6,
      "assumedBaseGrowthPct": 18.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -3956,8 +3956,8 @@
     "revGrowth": 0.1632,
     "epsGrowth": 0.3335,
     "fcfMargin": 0.1962,
-    "trailPE": 12.2611,
-    "psr": 1.5581,
+    "trailPE": 12.0328,
+    "psr": 1.5291,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "fcfPosYears": 5,
@@ -3988,8 +3988,8 @@
      "fairBase": 1172.4,
      "fairHigh": 2184.91,
      "buyCeiling": 879.3,
-     "safetyMarginPct": 79.9,
-     "impliedGrowthPct": -5.6,
+     "safetyMarginPct": 80.3,
+     "impliedGrowthPct": -5.8,
      "assumedBaseGrowthPct": 16.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4009,8 +4009,8 @@
     "revGrowth": 0.0708,
     "epsGrowth": 0.1778,
     "fcfMargin": 0.1017,
-    "trailPE": 17.6156,
-    "psr": 1.3789,
+    "trailPE": 16.7868,
+    "psr": 1.3141,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "currentRatio": 0.9653,
@@ -4044,8 +4044,8 @@
      "fairBase": 732.41,
      "fairHigh": 1048.79,
      "buyCeiling": 549.31,
-     "safetyMarginPct": 31.9,
-     "impliedGrowthPct": 1.9,
+     "safetyMarginPct": 35.1,
+     "impliedGrowthPct": 1.2,
      "assumedBaseGrowthPct": 7.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4068,7 +4068,7 @@
     "revGrowth": -0.1104,
     "epsGrowth": -0.2294,
     "fcfMargin": 0.0145,
-    "psr": 4.4941,
+    "psr": 4.0582,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "fcfPosYears": 2,
@@ -4100,8 +4100,8 @@
      "fairBase": 6.33,
      "fairHigh": 7.32,
      "buyCeiling": 4.75,
-     "safetyMarginPct": -1449.3,
-     "impliedGrowthPct": 37.9,
+     "safetyMarginPct": -1299.1,
+     "impliedGrowthPct": 36.4,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4123,7 +4123,7 @@
     "revGrowth": 1.0431,
     "epsGrowth": -0.9715,
     "fcfMargin": 0.8616,
-    "psr": 1.3735,
+    "psr": 1.2565,
     "fyEnd": "2025-12-31",
     "netCash": true,
     "fcfPosYears": 5,
@@ -4154,8 +4154,8 @@
      "fairBase": 4512.66,
      "fairHigh": 9261.62,
      "buyCeiling": 3384.49,
-     "safetyMarginPct": 96.9,
-     "impliedGrowthPct": -33.8,
+     "safetyMarginPct": 97.2,
+     "impliedGrowthPct": -35.9,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4176,8 +4176,8 @@
     "revGrowth": 0.038,
     "epsGrowth": 0.0697,
     "fcfMargin": 0.062,
-    "trailPE": 27.5182,
-    "psr": 1.6145,
+    "trailPE": 25.8176,
+    "psr": 1.5147,
     "fyEnd": "2025-07-31",
     "netDebtEbitda": 1.0332,
     "netCash": false,
@@ -4214,8 +4214,8 @@
      "fairBase": 153.81,
      "fairHigh": 199.59,
      "buyCeiling": 115.35,
-     "safetyMarginPct": -66.7,
-     "impliedGrowthPct": 10.7,
+     "safetyMarginPct": -56.4,
+     "impliedGrowthPct": 9.8,
      "assumedBaseGrowthPct": 3.8,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4236,8 +4236,8 @@
     "revGrowth": 0.0408,
     "epsGrowth": 0.3684,
     "fcfMargin": 0.0243,
-    "trailPE": 36.8878,
-    "psr": 0.5906,
+    "trailPE": 36.5136,
+    "psr": 0.5846,
     "fyEnd": "2025-12-27",
     "netDebtEbitda": 3.0235,
     "netCash": false,
@@ -4275,20 +4275,20 @@
      "fairBase": 71.19,
      "fairHigh": 93.17,
      "buyCeiling": 53.39,
-     "safetyMarginPct": -52.3,
-     "impliedGrowthPct": 9.8,
+     "safetyMarginPct": -50.8,
+     "impliedGrowthPct": 9.6,
      "assumedBaseGrowthPct": 4.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "BLDR": {
-   "score": 33,
+   "score": 40,
    "parts": {
     "profit": 7.6,
     "growth": 0.0,
     "health": 7.0,
-    "valuation": 18
+    "valuation": 25
    },
    "warnings": [
     "売上成長マイナス"
@@ -4299,8 +4299,8 @@
     "revGrowth": -0.0738,
     "epsGrowth": -0.5963,
     "fcfMargin": 0.0562,
-    "trailPE": 15.599,
-    "psr": 0.4298,
+    "trailPE": 14.1465,
+    "psr": 0.3898,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 3.0814,
     "netCash": false,
@@ -4333,25 +4333,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 20,
+     "score": 25,
      "fairLow": 93.71,
      "fairBase": 93.71,
      "fairHigh": 108.42,
      "buyCeiling": 70.28,
-     "safetyMarginPct": 35.2,
-     "impliedGrowthPct": -6.1,
+     "safetyMarginPct": 41.3,
+     "impliedGrowthPct": -7.5,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "OTIS": {
-   "score": 36,
+   "score": 42,
    "parts": {
     "profit": 7.4,
     "growth": 2.6,
     "health": 13.8,
-    "valuation": 12
+    "valuation": 18
    },
    "warnings": [],
    "metrics": {
@@ -4360,8 +4360,8 @@
     "revGrowth": 0.0119,
     "epsGrowth": -0.1587,
     "fcfMargin": 0.1106,
-    "trailPE": 22.1429,
-    "psr": 2.0446,
+    "trailPE": 21.7286,
+    "psr": 2.0063,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 2.7211,
     "netCash": false,
@@ -4399,8 +4399,8 @@
      "fairBase": 54.03,
      "fairHigh": 64.8,
      "buyCeiling": 40.52,
-     "safetyMarginPct": -43.4,
-     "impliedGrowthPct": 6.1,
+     "safetyMarginPct": -40.8,
+     "impliedGrowthPct": 5.8,
      "assumedBaseGrowthPct": 1.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4421,8 +4421,8 @@
     "revGrowth": 0.0431,
     "epsGrowth": -0.0047,
     "fcfMargin": 0.0477,
-    "trailPE": 17.6942,
-    "psr": 1.2176,
+    "trailPE": 18.6602,
+    "psr": 1.2841,
     "fyEnd": "2025-12-27",
     "netDebtEbitda": 0.8009,
     "netCash": false,
@@ -4460,8 +4460,8 @@
      "fairBase": 23.13,
      "fairHigh": 30.48,
      "buyCeiling": 17.35,
-     "safetyMarginPct": -57.6,
-     "impliedGrowthPct": 10.4,
+     "safetyMarginPct": -66.2,
+     "impliedGrowthPct": 11.1,
      "assumedBaseGrowthPct": 4.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4482,8 +4482,8 @@
     "revGrowth": 0.0907,
     "epsGrowth": 0.2488,
     "fcfMargin": 0.5782,
-    "trailPE": 78.81,
-    "psr": 13.132,
+    "trailPE": 76.9367,
+    "psr": 12.8198,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.9193,
     "netCash": false,
@@ -4520,8 +4520,8 @@
      "fairBase": 176.82,
      "fairHigh": 268.55,
      "buyCeiling": 132.61,
-     "safetyMarginPct": 1.5,
-     "impliedGrowthPct": 8.9,
+     "safetyMarginPct": 3.8,
+     "impliedGrowthPct": 8.5,
      "assumedBaseGrowthPct": 9.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4541,8 +4541,8 @@
     "revGrowth": 2.667,
     "epsGrowth": -4.8717,
     "fcfMargin": 0.1675,
-    "trailPE": 18.5595,
-    "psr": 1.1166,
+    "trailPE": 17.4048,
+    "psr": 1.0471,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "currentRatio": 0.711,
@@ -4577,8 +4577,8 @@
      "fairBase": 121.06,
      "fairHigh": 248.46,
      "buyCeiling": 90.8,
-     "safetyMarginPct": 87.1,
-     "impliedGrowthPct": -8.1,
+     "safetyMarginPct": 87.9,
+     "impliedGrowthPct": -9.1,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4601,8 +4601,8 @@
     "revGrowth": 0.4542,
     "epsGrowth": 0.6193,
     "fcfMargin": 0.2484,
-    "trailPE": 17.8721,
-    "psr": 3.1299,
+    "trailPE": 16.5698,
+    "psr": 2.9018,
     "fyEnd": "2023-12-31",
     "netDebtEbitda": -1.1823,
     "netCash": true,
@@ -4638,8 +4638,8 @@
      "fairBase": 252.57,
      "fairHigh": 518.36,
      "buyCeiling": 189.43,
-     "safetyMarginPct": 75.7,
-     "impliedGrowthPct": 0.9,
+     "safetyMarginPct": 77.4,
+     "impliedGrowthPct": -0.2,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4660,8 +4660,8 @@
     "revGrowth": 0.1121,
     "epsGrowth": -0.0332,
     "fcfMargin": 0.0794,
-    "trailPE": 38.0256,
-    "psr": 2.8526,
+    "trailPE": 37.5166,
+    "psr": 2.8144,
     "fyEnd": "2026-03-29",
     "netDebtEbitda": 1.3811,
     "netCash": false,
@@ -4697,8 +4697,8 @@
      "fairBase": 111.99,
      "fairHigh": 181.04,
      "buyCeiling": 83.99,
-     "safetyMarginPct": -32.8,
-     "impliedGrowthPct": 15.0,
+     "safetyMarginPct": -31.0,
+     "impliedGrowthPct": 14.9,
      "assumedBaseGrowthPct": 11.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4721,8 +4721,8 @@
     "revGrowth": -0.0634,
     "epsGrowth": -0.0428,
     "fcfMargin": 0.7688,
-    "trailPE": 135.7193,
-    "psr": 20.0238,
+    "trailPE": 135.3246,
+    "psr": 19.9655,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -0.4753,
     "netCash": true,
@@ -4759,7 +4759,7 @@
      "fairBase": 70.2,
      "fairHigh": 81.22,
      "buyCeiling": 52.65,
-     "safetyMarginPct": -120.4,
+     "safetyMarginPct": -119.8,
      "impliedGrowthPct": 10.7,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -4784,8 +4784,8 @@
     "revGrowth": 0.3347,
     "epsGrowth": -0.6694,
     "fcfMargin": 0.027,
-    "trailPE": 208.894,
-    "psr": 9.2412,
+    "trailPE": 192.808,
+    "psr": 8.5296,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 25.09,
     "netCash": false,
@@ -4823,8 +4823,8 @@
      "fairBase": 47.73,
      "fairHigh": 97.97,
      "buyCeiling": 35.8,
-     "safetyMarginPct": -560.8,
-     "impliedGrowthPct": 47.3,
+     "safetyMarginPct": -509.9,
+     "impliedGrowthPct": 46.1,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -4848,8 +4848,8 @@
     "revGrowth": 0.1853,
     "epsGrowth": 0.3497,
     "fcfMargin": -0.0313,
-    "trailPE": 260.8462,
-    "psr": 4.7404,
+    "trailPE": 206.8461,
+    "psr": 3.759,
     "fyEnd": "2025-12-28",
     "netDebtEbitda": -7.7111,
     "netCash": true,
@@ -4899,8 +4899,8 @@
     "revGrowth": 0.1014,
     "epsGrowth": 0.1392,
     "fcfMargin": 0.0309,
-    "trailPE": 53.2856,
-    "psr": 1.617,
+    "trailPE": 53.0901,
+    "psr": 1.611,
     "fyEnd": "2026-08-30",
     "netDebtEbitda": -1.1347,
     "netCash": true,
@@ -4938,7 +4938,7 @@
      "fairBase": 528.88,
      "fairHigh": 828.94,
      "buyCeiling": 396.66,
-     "safetyMarginPct": -109.2,
+     "safetyMarginPct": -108.4,
      "impliedGrowthPct": 20.1,
      "assumedBaseGrowthPct": 10.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -4960,8 +4960,8 @@
     "revGrowth": 0.1424,
     "epsGrowth": -0.0138,
     "fcfMargin": 0.1283,
-    "trailPE": 36.3925,
-    "psr": 3.8468,
+    "trailPE": 35.7657,
+    "psr": 3.7806,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 3.0672,
     "netCash": false,
@@ -4999,8 +4999,8 @@
      "fairBase": 514.5,
      "fairHigh": 905.84,
      "buyCeiling": 385.87,
-     "safetyMarginPct": 52.6,
-     "impliedGrowthPct": 4.2,
+     "safetyMarginPct": 53.4,
+     "impliedGrowthPct": 3.9,
      "assumedBaseGrowthPct": 14.2,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -5021,8 +5021,8 @@
     "revGrowth": 0.245,
     "epsGrowth": -0.7293,
     "fcfMargin": 0.3966,
-    "trailPE": 805.6,
-    "psr": 22.961,
+    "trailPE": 858.3,
+    "psr": 24.5528,
     "fyEnd": "2026-07-31",
     "netDebtEbitda": -0.3371,
     "netCash": true,
@@ -5054,13 +5054,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 2,
-     "fairLow": 137.56,
-     "fairBase": 288.16,
-     "fairHigh": 591.42,
-     "buyCeiling": 216.12,
-     "safetyMarginPct": -11.8,
-     "impliedGrowthPct": 21.5,
+     "score": 0,
+     "fairLow": 137.06,
+     "fairBase": 287.11,
+     "fairHigh": 589.25,
+     "buyCeiling": 215.33,
+     "safetyMarginPct": -19.6,
+     "impliedGrowthPct": 22.5,
      "assumedBaseGrowthPct": 20.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -5081,8 +5081,8 @@
     "revGrowth": 0.1062,
     "epsGrowth": 1.0143,
     "fcfMargin": 2.2093,
-    "trailPE": 42.8837,
-    "psr": 70.5529,
+    "trailPE": 38.7517,
+    "psr": 63.755,
     "fyEnd": "2017-12-31",
     "netDebtEbitda": -0.4039,
     "netCash": true,
@@ -5111,13 +5111,13 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 0,
+     "score": 2,
      "fairLow": 134.96,
      "fairBase": 200.18,
      "fairHigh": 318.11,
      "buyCeiling": 150.13,
-     "safetyMarginPct": -23.4,
-     "impliedGrowthPct": 13.4,
+     "safetyMarginPct": -11.5,
+     "impliedGrowthPct": 12.1,
      "assumedBaseGrowthPct": 10.6,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -5140,7 +5140,7 @@
     "revGrowth": 0.094,
     "epsGrowth": -0.5113,
     "fcfMargin": 0.3375,
-    "trailPE": 28.6854,
+    "trailPE": 22.9146,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": -3.2936,
     "netCash": true,
@@ -5188,8 +5188,8 @@
     "revGrowth": 0.0326,
     "epsGrowth": 0.0045,
     "fcfMargin": 0.174,
-    "trailPE": 25.6495,
-    "psr": 4.522,
+    "trailPE": 25.5846,
+    "psr": 4.5106,
     "fyEnd": "2026-06-30",
     "netDebtEbitda": 0.5631,
     "netCash": false,
@@ -5227,20 +5227,20 @@
      "fairBase": 98.02,
      "fairHigh": 125.13,
      "buyCeiling": 73.51,
-     "safetyMarginPct": -73.2,
-     "impliedGrowthPct": 10.7,
+     "safetyMarginPct": -72.8,
+     "impliedGrowthPct": 10.6,
      "assumedBaseGrowthPct": 3.3,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "KO": {
-   "score": 58,
+   "score": 64,
    "parts": {
     "profit": 25.0,
     "growth": 13.0,
     "health": 13.8,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [],
    "metrics": {
@@ -5249,8 +5249,8 @@
     "revGrowth": 0.0187,
     "epsGrowth": 0.2329,
     "fcfMargin": 0.1105,
-    "trailPE": 32.648,
-    "psr": 8.906,
+    "trailPE": 31.9046,
+    "psr": 8.7032,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 2.1502,
     "netCash": false,
@@ -5288,8 +5288,8 @@
      "fairBase": 16.67,
      "fairHigh": 20.41,
      "buyCeiling": 12.5,
-     "safetyMarginPct": -495.3,
-     "impliedGrowthPct": 26.1,
+     "safetyMarginPct": -481.7,
+     "impliedGrowthPct": 25.8,
      "assumedBaseGrowthPct": 1.9,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -5310,8 +5310,8 @@
     "revGrowth": 0.0473,
     "epsGrowth": 0.1264,
     "fcfMargin": 0.0211,
-    "trailPE": 46.9194,
-    "psr": 1.4386,
+    "trailPE": 46.8681,
+    "psr": 1.437,
     "fyEnd": "2026-01-31",
     "netDebtEbitda": 0.59,
     "netCash": false,
@@ -5348,7 +5348,7 @@
      "fairBase": 31.43,
      "fairHigh": 41.94,
      "buyCeiling": 23.57,
-     "safetyMarginPct": -307.5,
+     "safetyMarginPct": -307.1,
      "impliedGrowthPct": 23.8,
      "assumedBaseGrowthPct": 4.7,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
@@ -5370,8 +5370,8 @@
     "revGrowth": 0.0297,
     "epsGrowth": 0.0507,
     "fcfMargin": 0.1497,
-    "trailPE": 36.0068,
-    "psr": 7.106,
+    "trailPE": 34.4168,
+    "psr": 6.7922,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 1.2318,
     "netCash": false,
@@ -5409,8 +5409,8 @@
      "fairBase": 162.78,
      "fairHigh": 206.0,
      "buyCeiling": 122.08,
-     "safetyMarginPct": -223.2,
-     "impliedGrowthPct": 18.8,
+     "safetyMarginPct": -208.9,
+     "impliedGrowthPct": 18.2,
      "assumedBaseGrowthPct": 3.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
@@ -5429,8 +5429,8 @@
     "opMargin": 0.2588,
     "revGrowth": 0.0007,
     "fcfMargin": 0.2227,
-    "trailPE": 20.4276,
-    "psr": 3.3751,
+    "trailPE": 15.8586,
+    "psr": 2.6202,
     "fyEnd": "2025-12-31",
     "netDebtEbitda": 0.5808,
     "netCash": false,
@@ -5463,25 +5463,25 @@
      "FCF創出の一貫性": 4
     },
     "money": {
-     "score": 0,
+     "score": 5,
      "fairLow": 46.32,
      "fairBase": 46.43,
      "fairHigh": 53.83,
      "buyCeiling": 34.82,
-     "safetyMarginPct": -27.6,
-     "impliedGrowthPct": 3.4,
+     "safetyMarginPct": 0.9,
+     "impliedGrowthPct": -0.1,
      "assumedBaseGrowthPct": 0.1,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
    }
   },
   "CVX": {
-   "score": 36,
+   "score": 42,
    "parts": {
     "profit": 6.6,
     "growth": 0.1,
     "health": 23.0,
-    "valuation": 6
+    "valuation": 12
    },
    "warnings": [
     "売上成長マイナス"
@@ -5491,8 +5491,8 @@
     "revGrowth": -0.0464,
     "epsGrowth": -0.3036,
     "fcfMargin": 0.184,
-    "trailPE": 33.1659,
-    "psr": 2.3433,
+    "trailPE": 31.4284,
+    "psr": 2.2205,
     "fyEnd": "2025-12-31",
     "netCash": false,
     "currentRatio": 1.1547,
@@ -5526,8 +5526,8 @@
      "fairBase": 204.07,
      "fairHigh": 236.11,
      "buyCeiling": 153.05,
-     "safetyMarginPct": -7.8,
-     "impliedGrowthPct": 1.0,
+     "safetyMarginPct": -2.1,
+     "impliedGrowthPct": 0.3,
      "assumedBaseGrowthPct": 0.0,
      "note": "簡易DCF(割引率10%・終端3%・実績成長ベース)。仮定に強く依存する参考値であり、精密な企業価値評価の代替ではない"
     }
