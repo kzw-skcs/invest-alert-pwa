@@ -109,24 +109,6 @@
    "confirmPrice": 59.5
   },
   {
-   "id": "eth-value80-2026-11-14",
-   "ticker": "eth",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-14",
-   "startPrice": 1931.02,
-   "startScore": 81,
-   "startStreak": 1,
-   "maxScore": 81,
-   "q": null,
-   "regime": "neutral",
-   "riskOff": 20,
-   "rotSector": null,
-   "sectorTrend": null,
-   "confirmDate": "2026-11-16",
-   "confirmPrice": 1815.37
-  },
-  {
    "id": "BKTI-value80-chal-2026-11-15",
    "ticker": "BKTI",
    "strat": "value80",
@@ -1021,24 +1003,6 @@
    "sectorTrend": "inflow"
   },
   {
-   "id": "btc-value80-2026-11-24",
-   "ticker": "btc",
-   "strat": "value80",
-   "arm": "champion",
-   "startDate": "2026-11-24",
-   "startPrice": 60513.9102,
-   "startScore": 81,
-   "startStreak": 1,
-   "maxScore": 81,
-   "q": null,
-   "regime": "neutral",
-   "riskOff": 60,
-   "rotSector": null,
-   "sectorTrend": null,
-   "confirmDate": "2026-11-26",
-   "confirmPrice": 60613.6016
-  },
-  {
    "id": "GOOGL-value90-chal-2026-11-25",
    "ticker": "GOOGL",
    "strat": "value90",
@@ -1517,6 +1481,22 @@
    "riskOff": 80,
    "rotSector": "インデックス",
    "sectorTrend": "neutral"
+  },
+  {
+   "id": "silver-value80-2026-11-27",
+   "ticker": "silver",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-27",
+   "startPrice": 43.91,
+   "startScore": 84,
+   "startStreak": 1,
+   "maxScore": 84,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": null,
+   "sectorTrend": null
   }
  ],
  "closed": [
@@ -8361,6 +8341,48 @@
    "endDate": "2026-11-26",
    "endPrice": 3603.8999,
    "endReason": "tierExit"
+  },
+  {
+   "id": "btc-value80-2026-11-24",
+   "ticker": "btc",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-24",
+   "startPrice": 60513.9102,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 60,
+   "rotSector": null,
+   "sectorTrend": null,
+   "confirmDate": "2026-11-26",
+   "confirmPrice": 60613.6016,
+   "endDate": "2026-11-27",
+   "endPrice": 61453.2305,
+   "endReason": "tierExit"
+  },
+  {
+   "id": "eth-value80-2026-11-14",
+   "ticker": "eth",
+   "strat": "value80",
+   "arm": "champion",
+   "startDate": "2026-11-14",
+   "startPrice": 1931.02,
+   "startScore": 81,
+   "startStreak": 1,
+   "maxScore": 81,
+   "q": null,
+   "regime": "neutral",
+   "riskOff": 20,
+   "rotSector": null,
+   "sectorTrend": null,
+   "confirmDate": "2026-11-16",
+   "confirmPrice": 1815.37,
+   "endDate": "2026-11-27",
+   "endPrice": 1726.66,
+   "endReason": "tierExit"
   }
  ],
  "chalStreaks": {
@@ -8832,22 +8854,22 @@
   "btc": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-26"
+   "_bar": "2026-11-27"
   },
   "eth": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-26"
+   "_bar": "2026-11-27"
   },
   "gold": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-26"
+   "_bar": "2026-11-27"
   },
   "silver": {
    "80": 0,
    "90": 0,
-   "_bar": "2026-11-26"
+   "_bar": "2026-11-27"
   },
   "CEVA": {
    "80": 0,
